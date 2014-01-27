@@ -1,0 +1,6 @@
+<div t:id="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+	<h1>${message:list.of.speakers}</h1>
+	
+	<table t:id="speakers" class="table table-bordered table-striped">
+	</table>
+</div>
