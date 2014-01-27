@@ -1,4 +1,4 @@
-package org.ehfg.app.external.repository;
+package org.ehfg.app.core.repository;
 
 import java.util.List;
 

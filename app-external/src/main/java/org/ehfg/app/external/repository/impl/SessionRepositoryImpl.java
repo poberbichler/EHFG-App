@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.ehfg.app.api.dto.SessionDTO;
-import org.ehfg.app.external.repository.SessionRepository;
+import org.ehfg.app.core.repository.SessionRepository;
 
 public class SessionRepositoryImpl implements SessionRepository {
 	private final static Map<Long, SessionDTO> sessionMap = new HashMap<Long, SessionDTO>() {

@@ -13,10 +13,5 @@
 			<groupId>org.ehfg</groupId>
 			<artifactId>app-api</artifactId>
 		</dependency>
-		
-		<dependency>
-			<groupId>org.ehfg</groupId>
-			<artifactId>app-external-api</artifactId>
-		</dependency>
 	</dependencies>
 </project>

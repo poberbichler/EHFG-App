@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.ehfg.app.api.dto.SpeakerDTO;
-import org.ehfg.app.external.repository.SpeakerRepository;
+import org.ehfg.app.core.repository.SpeakerRepository;
 
 public class SpeakerRepositoryImpl implements SpeakerRepository {
 	private final static Map<Long, SpeakerDTO> speakerMap = new HashMap<Long, SpeakerDTO>() {

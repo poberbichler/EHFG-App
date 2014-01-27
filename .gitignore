@@ -2,3 +2,7 @@
 *.jar
 *.war
 .project
+
+.classpath
+.project
+.settings/

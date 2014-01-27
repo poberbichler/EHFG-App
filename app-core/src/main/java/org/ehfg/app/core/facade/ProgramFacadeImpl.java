@@ -5,8 +5,8 @@ import java.util.List;
 import org.ehfg.app.api.dto.SessionDTO;
 import org.ehfg.app.api.dto.SpeakerDTO;
 import org.ehfg.app.api.facade.ProgramFacade;
-import org.ehfg.app.external.repository.SessionRepository;
-import org.ehfg.app.external.repository.SpeakerRepository;
+import org.ehfg.app.core.repository.SessionRepository;
+import org.ehfg.app.core.repository.SpeakerRepository;
 
 public class ProgramFacadeImpl implements ProgramFacade {
 	private final SpeakerRepository speakerRepository;

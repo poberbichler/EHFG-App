@@ -16,7 +16,7 @@
 		
 		<dependency>
 			<groupId>org.ehfg</groupId>
-			<artifactId>app-external-api</artifactId>
+			<artifactId>app-core</artifactId>
 		</dependency>
 	</dependencies>
 </project>
