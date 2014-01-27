@@ -1,7 +1,0 @@
-<div xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
-	<div class="list-group">
-		<t:loop t:id="pageLoop">
-			<a t:id="currentLink" class="list-group-item ${active}">${pageLabel}</a>
-		</t:loop>
-	</div>
-</div>

@@ -1,3 +1,0 @@
-<div t:id="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
-	<h1>hallo welt <small>more stuff coming soon</small></h1>
-</div>
