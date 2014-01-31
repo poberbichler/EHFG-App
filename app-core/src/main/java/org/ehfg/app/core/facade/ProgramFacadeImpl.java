@@ -41,8 +41,7 @@ public class ProgramFacadeImpl implements ProgramFacade {
 
 	@Override
 	public List<SessionDTO> findSessionsBySpeaker(Long speakerId) {
-		// TODO Auto-generated method stub
-		return null;
+		return sessionRepository.findBySpeaker(speakerId);
 	}
 
 	@Override

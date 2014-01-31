@@ -24,4 +24,8 @@
 	<bean id="speakerRestService" class="org.ehfg.app.rest.SpeakerRestService">
 		<constructor-arg ref="programFacade"/>
 	</bean>
+	
+	<bean id="sessionRestService" class="org.ehfg.app.rest.SessionRestService">
+		<constructor-arg ref="programFacade"/>
+	</bean>
 </beans>

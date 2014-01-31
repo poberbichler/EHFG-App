@@ -14,23 +14,23 @@ import org.ehfg.app.api.facade.ProgramFacade;
 
 @Path("speaker")
 public class SpeakerRestService {
-	private final ProgramFacade speakerFacade;
+	private final ProgramFacade programFacade;
 	
-	public SpeakerRestService(ProgramFacade speakerFacade) {
-		this.speakerFacade = speakerFacade;
+	public SpeakerRestService(ProgramFacade programFacade) {
+		this.programFacade = programFacade;
 	}
 
 	@GET
 	@Path("all")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<SpeakerDTO> findAllSpeakers() {
-		return speakerFacade.findAllSpeakers();
+		return programFacade.findAllSpeakers();
 	}
 	
 	@GET
 	@Path("single/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public SpeakerDTO findById(@PathParam("id") Long id) {
-		return speakerFacade.findSpeakerById(id);
+		return programFacade.findSpeakerById(id);
 	}
 }

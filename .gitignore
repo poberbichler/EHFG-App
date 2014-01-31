@@ -2,9 +2,11 @@
 *.jar
 *.war
 .project
+.DS_Store
 
 .classpath
 .project
 .settings/
 bin/
 /target
+.idea/
