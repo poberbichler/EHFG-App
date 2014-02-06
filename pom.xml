@@ -12,6 +12,7 @@
 		<module>app-web</module>
 		<module>app-rest</module>
 		<module>app-external</module>
+		<module>app-ws</module>
 	</modules>
 
 	<properties>

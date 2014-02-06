@@ -1,34 +1,23 @@
 $(function() {
     $("[data-role='navbar']").navbar();
-    $("[data-role='footer'], [data-role='header']").toolbar();
+    $("[data-role='footer']").toolbar({theme: "a"});
+    //$("[data-role='header']").toolbar({theme: "a"});
 });
 
 $(document).on("pageshow", "[data-role='page']", function() {
-    $("[data-role='footer'], [data-role='header']").attr("data-theme", "a");
+    var activeClass = "ui-btn-active";
+    var header = $(this).find("[data-role='header']");
 
-    var test = $("[data-role='navbar'] a.ui-btn-active");
-    console.log(test);
-    $("[data-role='navbar'] a").each(function(index, element) {
+    // remove acitve class first, in case of a page refresh
+    $("[data-role='navbar'] a." + activeClass).removeClass(activeClass);
 
-    });
+    $("[data-role='navbar'] a").each(function() {
+        var currentElement = $(this);
 
-    /*
-    var current = $(this).jqmData("title");
-
-    var asdf = $("[data-role='header'] h1");
-    asdf.text("sessions");
-
-    //console.log(asdf.text());
-    //$("[data-role='header'] h1").text(current);
-
-
-
-        console.log('this:', $(this).text(), 'asdf:', asdf.text());
-        if ($(this).text() === asdf.text()) {
-            console.log('adding...');
-            $(this).addClass("ui-btn-active");
-
-            console.log($(this));
+        if (header !== undefined && header.text() !== undefined && currentElement.text() !== undefined) {
+            if (header.text().trim().toLowerCase() === currentElement.text().trim().toLowerCase()) {
+                currentElement.addClass(activeClass);
+            }
         }
-    }); */
+    });
 });

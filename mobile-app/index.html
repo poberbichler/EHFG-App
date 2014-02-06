@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Page Title</title>
+    <title>EHFG 2014</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/jquery.mobile-1.4.0.css">
     <script src="js/lib/jquery-1.10.2.js"></script>
@@ -11,6 +11,10 @@
 
 <body>
     <div data-role="page" id="speakers">
+        <div data-role="header">
+            <h1>Speakers</h1>
+        </div>
+
         <div role="main" class="ui-content">
             <p>speakers!</p>
         </div>
@@ -18,20 +22,20 @@
 
 
     <div data-role="page" id="sessions">
+        <div data-role="header">
+            <h1>Sessions</h1>
+        </div>
+
         <div role="main" class="ui-content">
             <p>sessions!</p>
         </div>
     </div>
 
-    <div data-role="header" data-position="fixed" data-theme="a">
-        <h1>blup!</h1>
-    </div>
-
-    <div data-role="footer" data-position="fixed">
+    <div data-role="footer" data-position="fixed" data-tap-toggle="false">
         <div data-role="navbar">
             <ul>
-                <li><a href="#speakers" class="ui-btn-active">sessions</a></li>
-                <li><a href="#sessions" class="ui-btn">speaker</a></li>
+                <li><a href="#sessions" class="ui-btn-active">sessions</a></li>
+                <li><a href="#speakers" class="ui-btn">speakers</a></li>
             </ul>
         </div>
     </div>
