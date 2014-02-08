@@ -10,6 +10,8 @@
      	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
      	http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd">
      	
+     <import resource="classpath:META-INF\ws.spring.xml"/>
+     	
      <bean id="speakerRepository" class="org.ehfg.app.external.repository.impl.SpeakerRepositoryImpl">
      </bean>
      

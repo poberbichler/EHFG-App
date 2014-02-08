@@ -9,8 +9,9 @@ public class AppModule {
 			MappedConfiguration<String, JavaScriptStack> configuration) {
 		configuration.addInstance("bootstrap", BootstrapStack.class);
 	}
-	
+
 	public static void contributeIgnoredPathsFilter(Configuration<String> configuration) {
 		configuration.add("/rest/.*");
+		configuration.add("/ws/.*");
 	}
 }

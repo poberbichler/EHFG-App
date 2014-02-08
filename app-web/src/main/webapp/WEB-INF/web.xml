@@ -44,8 +44,21 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	
+	<!-- JAXWS -->
+	<servlet>
+		<servlet-name>jaxws-servlet</servlet-name>
+		<servlet-class>com.sun.xml.ws.transport.http.servlet.WSSpringServlet</servlet-class>
+		
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	
 	<servlet-mapping>
 		<servlet-name>EHFG-REST</servlet-name>
 		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>jaxws-servlet</servlet-name>
+		<url-pattern>/ws/*</url-pattern>
 	</servlet-mapping>
 </web-app>
