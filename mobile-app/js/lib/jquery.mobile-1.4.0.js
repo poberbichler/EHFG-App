@@ -4848,6 +4848,8 @@ $.widget( "mobile.page", {
 
 				// BEGIN DEPRECATED ---------------------------------------------------
 				// Let listeners know the content loaded successfully.
+
+                console.log(this.element);
 				this.element.trigger( "pageload" );
 				// END DEPRECATED -----------------------------------------------------
 

@@ -6,38 +6,89 @@
     <link rel="stylesheet" href="css/jquery.mobile-1.4.0.css">
     <script src="js/lib/jquery-1.10.2.js"></script>
     <script src="js/lib/jquery.mobile-1.4.0.js"></script>
-    <script src="js/navbar.js"></script>
 </head>
 
 <body>
+    <!-- NEWS FEED -->
+    <div data-role="page" id="newsfeed">
+        <div data-role="header">
+            <h1>News Feed</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <ul>
+                <li>twitter stuff</li>
+                <li>and tweets</li>
+                <li>and so on</li>
+            </ul>
+        </div>
+    </div>
+    <!-- END OF NEWS FEED -->
+
+    <!-- SPEAKERS -->
     <div data-role="page" id="speakers">
         <div data-role="header">
             <h1>Speakers</h1>
         </div>
 
         <div role="main" class="ui-content">
-            <p>speakers!</p>
+            <ul id="speakerList" data-role="listview" data-filter="true"/>
         </div>
     </div>
+    <!-- END OF SPEAKERS -->
 
-
+    <!-- SESSIONS -->
     <div data-role="page" id="sessions">
         <div data-role="header">
             <h1>Sessions</h1>
         </div>
 
         <div role="main" class="ui-content">
-            <p>sessions!</p>
+            <ul id="sessionList" data-role="listview" data-filter="true"/>
         </div>
     </div>
+    <!-- END OF SESSIONS -->
 
+    <!-- MAPS -->
+    <div data-role="page" id="map">
+        <div data-role="header">
+            <h1>Map</h1>
+        </div>
+
+        <div role="main">
+             google maps n stuff
+        </div>
+    </div>
+    <!-- END OF MAPS -->
+
+    <!-- SPEAKER DETAILS -->
+    <div data-role="page" id="speaker-detail">
+        <div data-role="header">
+            <h1 id="speakerDetailHeader" />
+        </div>
+
+        <div role="main" class="ui-content">
+            some content....
+        </div>
+    </div>
+    <!-- END OF SPEAKER DETAILS -->
+
+    <!-- FOOTER -->
     <div data-role="footer" data-position="fixed" data-tap-toggle="false">
         <div data-role="navbar">
             <ul>
+                <li><a href="#newsfeed">newsfeed</a></li>
                 <li><a href="#sessions" class="ui-btn-active">sessions</a></li>
                 <li><a href="#speakers" class="ui-btn">speakers</a></li>
+                <li><a href="#map">map</a></li>
             </ul>
         </div>
     </div>
+    <!-- END OF FOOTER -->
+
+    <script src="js/navbar.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/content-utils.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
