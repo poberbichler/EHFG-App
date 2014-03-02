@@ -10,7 +10,7 @@
 
 <body>
     <!-- NEWS FEED -->
-    <div data-role="page" id="newsfeed">
+    <div data-role="page" id="newsfeed" data-override-header="newsfeed">
         <div data-role="header">
             <h1>News Feed</h1>
         </div>
@@ -49,6 +49,18 @@
     </div>
     <!-- END OF SESSIONS -->
 
+    <!-- SESSION DETAILS -->
+    <div data-role="page" id="session-detail" data-override-header="sessions">
+        <div data-role="header">
+            <h1 id="session-header"/>
+        </div>
+
+        <div role="main" class="ui-content">
+            blalbup, some description stuff
+        </div>
+    </div>
+    <!-- END OF SESSION DETAILS -->
+
     <!-- MAPS -->
     <div data-role="page" id="map">
         <div data-role="header">
@@ -62,13 +74,18 @@
     <!-- END OF MAPS -->
 
     <!-- SPEAKER DETAILS -->
-    <div data-role="page" id="speaker-detail">
+    <div data-role="page" id="speaker-detail" data-override-header="speakers">
         <div data-role="header">
             <h1 id="speakerDetailHeader" />
         </div>
 
         <div role="main" class="ui-content">
-            some content....
+            <h3>description</h3>
+            <p id="speakerDescription" />
+
+            <ul id="speakerSessionList" data-role="listview" data-inset="true">
+                <li data-role="list-divider">sessions</li>
+            </ul>
         </div>
     </div>
     <!-- END OF SPEAKER DETAILS -->
@@ -78,8 +95,8 @@
         <div data-role="navbar">
             <ul>
                 <li><a href="#newsfeed">newsfeed</a></li>
-                <li><a href="#sessions" class="ui-btn-active">sessions</a></li>
-                <li><a href="#speakers" class="ui-btn">speakers</a></li>
+                <li><a href="#sessions">sessions</a></li>
+                <li><a href="#speakers">speakers</a></li>
                 <li><a href="#map">map</a></li>
             </ul>
         </div>
@@ -88,7 +105,7 @@
 
     <script src="js/navbar.js"></script>
     <script src="js/service.js"></script>
-    <script src="js/content-utils.js"></script>
+    <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
