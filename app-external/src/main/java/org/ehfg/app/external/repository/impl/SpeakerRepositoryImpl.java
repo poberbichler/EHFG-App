@@ -12,8 +12,8 @@ public class SpeakerRepositoryImpl implements SpeakerRepository {
 	private final static Map<Long, SpeakerDTO> speakerMap = new HashMap<Long, SpeakerDTO>() {
 		private static final long serialVersionUID = 2853113529863078141L;
 	{
-		put(0L, new SpeakerDTO(0L, "Kim", "Jong-Il"));
-		put(1L, new SpeakerDTO(1L, "Vladimir", "Putin"));
+		put(0L, new SpeakerDTO(0L, "Kim", "Jong-Il", "dead north korean \"terrorist\""));
+		put(1L, new SpeakerDTO(1L, "Vladimir", "Putin", "loves to kill bears\nrules russia during his free time"));
 	}};
 	
 

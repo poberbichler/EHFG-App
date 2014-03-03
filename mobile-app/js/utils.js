@@ -50,7 +50,7 @@ var createListView = function(elementId, source, labelField, page, pageField) {
     });
 
     list.listview('refresh');
-}
+};
 
 /**
  * shorthand function for searching for a given id in the list
@@ -64,7 +64,7 @@ var createListView = function(elementId, source, labelField, page, pageField) {
  */
 var findByIdInList = function(list, value) {
     return findByPropertyInList(list, 'id', value);
-}
+};
 
 /**
  * searches in the given list for the object with the given propertyValue as property
@@ -88,7 +88,7 @@ var findByPropertyInList = function(list, propertyName, propertyValue) {
     });
 
     return result;
-}
+};
 
 /**
  * shorthand function for searching the values of the given list by the paramter 'id' of the objects
@@ -102,7 +102,7 @@ var findByPropertyInList = function(list, propertyName, propertyValue) {
  */
 var findListByIdInList = function(list, value) {
     return findListByPropertyNameInList(list, 'id', value);
-}
+};
 
 /**
  * searches in the given list for the object with the given propertyValue as property
@@ -124,4 +124,4 @@ var findListByPropertyNameInList = function(list, propertyName, propertyValue) {
     });
 
     return result;
-}
+};

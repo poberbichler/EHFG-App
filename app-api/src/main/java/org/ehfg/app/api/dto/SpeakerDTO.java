@@ -12,12 +12,27 @@ public class SpeakerDTO {
 	private Long id;
 	private String firstName;
 	private String lastName;
+	private String description;
+	
+	public SpeakerDTO() {
+		
+	}
 
-	public SpeakerDTO(Long id, String firstName, String lastName) {
+	public SpeakerDTO(Long id, String firstName, String lastName,
+			String description) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.description = description;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public Long getId() {

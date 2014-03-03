@@ -13,8 +13,8 @@ public class SessionRepositoryImpl implements SessionRepository {
 	private final static Map<Long, SessionDTO> sessionMap = new HashMap<Long, SessionDTO>() {
 		private static final long serialVersionUID = -32316877290559606L;
 		{
-			put(0L, new SessionDTO(0L, 0L, "sessioName", "sessionDescription", "01.02.2014 10:00", "01.02.2014 12:00"));
-			put(1L, new SessionDTO(1L, 1L, "another sessioName","antoher sessionDescription", "02.02.2014 15:00", "02.02.2014 18:00"));
+			put(0L, new SessionDTO(0L, "sessioName", "sessionDescription", "01.02.2014 10:00", "01.02.2014 12:00", 0L, 1L, 0L));
+			put(1L, new SessionDTO(1L, "another sessioName","antoher sessionDescription", "02.02.2014 15:00", "02.02.2014 18:00", 1L, 0L));
 		}
 	};
 
@@ -32,7 +32,7 @@ public class SessionRepositoryImpl implements SessionRepository {
 	public List<SessionDTO> findBySpeaker(Long speakerId) {
 		List<SessionDTO> result = new ArrayList<SessionDTO>();
 		for (Entry<Long, SessionDTO> entry : sessionMap.entrySet()) {
-			if (entry.getValue().getSpeakerId().equals(speakerId)) {
+			if (entry.getValue().getSpeakers().contains(speakerId)) {
 				result.add(entry.getValue());
 			}
 		}

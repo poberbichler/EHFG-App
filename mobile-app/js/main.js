@@ -1,5 +1,19 @@
 var PAGE_EVENT = 'pagebeforeshow';
 
+var cacheAllData = function(webserviceUrl) {
+    $.ajax(webserviceUrl, {
+        headers: {'Access-Control-Allow-Origin': '*'},
+        crossDomain: true,
+        contentType: 'application/json',
+        type: 'GET',
+        dataType: 'jsonp'
+    }).success(function(data) {
+        console.log('success', data);
+    });
+};
+
+cacheAllData("http://localhost:8080/rest/speaker/all");
+
 $('#sessions').on(PAGE_EVENT, function() {
     createListView('sessionList', sessionService().findSessions(), 'name', 'session-detail', 'id');
 });
@@ -15,7 +29,7 @@ $('#speaker-detail').on(PAGE_EVENT, function() {
         $.mobile.changePage('#speakers');
         return;
     }
-
+    
     $('#speakerDetailHeader').text(speaker.name);
     $('#speakerDescription').text(speaker.description);
     createListView('speakerSessionList', sessionService().findBySpeakerId(speaker.id));
