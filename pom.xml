@@ -13,12 +13,15 @@
 		<module>app-rest</module>
 		<module>app-external</module>
 		<module>app-ws</module>
+		<module>ehfg-twitter</module>
+		<module>app-twitter</module>
 	</modules>
 
 	<properties>
 		<tapestry-version>5.3.6</tapestry-version>
 		<spring-version>3.2.2.RELEASE</spring-version>
 		<jersey-version>1.18</jersey-version>
+		<twitter4j-version>3.0.5</twitter4j-version>
 	</properties>
 
 	<dependencyManagement>
@@ -85,13 +88,13 @@
 				<artifactId>spring-beans</artifactId>
 				<version>${spring-version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-aop</artifactId>
 				<version>${spring-version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-asm</artifactId>
@@ -123,46 +126,59 @@
 				<version>${jersey-version}</version>
 			</dependency>
 
-<!-- 			<dependency> -->
-<!-- 				<groupId>com.sun.jersey.contribs</groupId> -->
-<!-- 				<artifactId>jersey-spring</artifactId> -->
-<!-- 				<version>${jersey-version}</version> -->
-<!-- 			</dependency> -->
+			<dependency>
+				<groupId>com.sun.jersey.contribs</groupId>
+				<artifactId>jersey-spring</artifactId>
+				<version>${jersey-version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-core</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-web</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-beans</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-context</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
 
-<dependency>
-			<groupId>com.sun.jersey.contribs</groupId>
-			<artifactId>jersey-spring</artifactId>
-			<version>${jersey-version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-core</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-web</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-beans</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-context</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
- 
+			<!-- TWITTER -->
+			<dependency>
+				<groupId>org.twitter4j</groupId>
+				<artifactId>twitter4j-core</artifactId>
+				<version>${twitter4j-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.twitter4j</groupId>
+				<artifactId>twitter4j-stream</artifactId>
+				<version>${twitter4j-version}</version>
+			</dependency>
+
 
 			<!-- STUFF -->
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>
 				<version>3.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-collections4</artifactId>
+				<version>4.0</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

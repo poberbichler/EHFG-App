@@ -1,0 +1,9 @@
+Request token: hKM5Qa7mPh3Bysk3NTcfeAA0Dr9krTloLMvFSmmwsgc
+Request token secret: wA66mgkZSMVPuZeLQwsqkdnRjjOyGZxc7xjk7Hh7e4
+Open the following URL and grant access to your account:
+https://api.twitter.com/oauth/authorize?oauth_token=hKM5Qa7mPh3Bysk3NTcfeAA0Dr9krTloLMvFSmmwsgc
+Enter the PIN(if available) and hit enter after you granted access.[PIN]:1397728
+Got access token.
+Access token: 215640018-XKpgfqh3gqMTAbqxEgquCJ5FL2cOSsliZ7YnhPzv
+Access token secret: 1Oec9b8ichpWOhPExBLfvvIQyXCBrQtIKWArfFk3WIF7R
+Successfully stored access token to /Users/patrick/git-repository/app-parent/app-twitter/twitter4j.properties.

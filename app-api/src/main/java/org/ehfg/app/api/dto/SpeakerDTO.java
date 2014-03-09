@@ -1,5 +1,8 @@
 package org.ehfg.app.api.dto;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
@@ -8,6 +11,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @author patrick
  * @since 25.01.2014
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
 public class SpeakerDTO {
 	private Long id;
 	private String firstName;
@@ -25,6 +29,10 @@ public class SpeakerDTO {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.description = description;
+	}
+	
+	public String getFullName() {
+		return String.format("%s %s", firstName, lastName);
 	}
 
 	public String getDescription() {
@@ -58,7 +66,7 @@ public class SpeakerDTO {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
+	
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);

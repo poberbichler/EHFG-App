@@ -1,5 +1,7 @@
 package org.ehfg.app.rest;
 
-final class Type {
-	static final String JAVASCRIPT = "application/x-javascript";
+import javax.ws.rs.core.MediaType;
+
+final class Type extends MediaType {
+	static final String JSONP = "application/x-javascript";
 }

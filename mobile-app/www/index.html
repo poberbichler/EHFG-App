@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EHFG 2014</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.0.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="js/lib/jquery-1.10.2.js"></script>
+    <script src="js/lib/jquery-mobile-router.js"></script>
+    <script src="js/lib/jquery.mobile-1.4.0.js"></script>
+    <script src="js/routing.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKWeN8bGUtPNZhBKSx8z81Je4lJT1z1PY&sensor=true"></script>
+</head>
+
+<body>
+    <!-- NEWS FEED -->
+    <div data-role="page" id="newsfeed" data-override-header="newsfeed">
+        <div data-role="header">
+            <h1>News Feed</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <!--
+            <a class="twitter-timeline" href="https://twitter.com/search?q=%23EHFG2014" data-widget-id="441961532344123392">Tweets about "#EHFG2014"</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+            -->
+
+            <div id="twitter-container">
+                <div class="header">
+                    <h1>#EHFG2014</h1>
+                    <img src="http://hilt.harvard.edu/files/hilt/files/twitter-bird-light-bgs.png" class="twitter-logo"/>
+                </div>
+
+                <div class="tweets">
+                    <div class="tweet">
+                        <div class="names">
+                            <img class="profile-image" src="https://pbs.twimg.com/profile_images/2441790961/b1nxj0dyy72d4gt17ylz_bigger.png"/>
+                            <span class="full-name">GasteinForum</span>
+                            <span class="nickname">@GasteinForum</span>
+                        </div>
+
+                        <p class="message">
+                            Our theme for #EHFG2014 is:
+                            ELECTING HEALTH - THE EUROPE WE WANT!
+                            Find out more here: <a href="http://fb.me/18zI5XNVm">http://fb.me/18zI5XNVm</a>
+                        </p>
+                    </div>
+
+                    <div class="tweet last">
+                        <div class="names">
+                            <img class="profile-image" src="https://pbs.twimg.com/profile_images/2676740923/c9b658d3bacf16ee98769073487ae43c_bigger.jpeg"/>
+                            <span class="full-name">I Fix Everything</span>
+                            <span class="nickname">@ifetgastein</span>
+                        </div>
+
+                        <p class="message">
+                            asdf
+                        </p>
+
+                        <!--
+                        <p class="message">
+                            wifi vs. congress participants - who will win at the closing plenary at #ehfg2013?
+                            #HeavyUnderLoad #FixingStuff
+                        </p>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END OF NEWS FEED -->
+
+    <!-- SPEAKERS -->
+    <div data-role="page" id="speakers">
+        <div data-role="header">
+            <h1>Speakers</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <ul id="speakerList" data-role="listview" data-filter="true"/>
+        </div>
+    </div>
+    <!-- END OF SPEAKERS -->
+
+    <!-- SPEAKER DETAILS -->
+    <div data-role="page" id="speaker-detail" data-override-header="speakers">
+        <div data-role="header">
+            <h1 id="speakerDetailHeader" />
+        </div>
+
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-a ui-corner-all">
+                <h3>description</h3>
+                <p id="speakerDescription" />
+            </div>
+
+            <ul id="speakerSessionList" data-role="listview" data-inset="true">
+                <li data-role="list-divider">sessions</li>
+            </ul>
+        </div>
+    </div>
+    <!-- END OF SPEAKER DETAILS -->
+
+    <!-- SESSIONS -->
+    <div data-role="page" id="sessions">
+        <div data-role="header">
+            <h1>Sessions</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <ul id="sessionList" data-role="listview" data-filter="true"/>
+        </div>
+    </div>
+    <!-- END OF SESSIONS -->
+
+    <!-- SESSION DETAILS -->
+    <div data-role="page" id="session-detail" data-override-header="sessions">
+        <div data-role="header">
+            <h1 id="session-header"/>
+        </div>
+
+        <div role="main" class="ui-content">
+            blalbup, some description stuff
+        </div>
+    </div>
+    <!-- END OF SESSION DETAILS -->
+
+    <!-- MAPS -->
+    <div data-role="page" id="map">
+        <div data-role="header">
+            <h1>Map</h1>
+        </div>
+
+        <div role="main" id="map-parent">
+            <div id="map-canvas"/>
+        </div>
+    </div>
+    <!-- END OF MAPS -->
+
+    <!-- FOOTER -->
+    <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#newsfeed">newsfeed</a></li>
+                <li><a href="#sessions">sessions</a></li>
+                <li><a href="#speakers">speakers</a></li>
+                <li><a href="#map">map</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- END OF FOOTER -->
+
+    <script src="js/navbar.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

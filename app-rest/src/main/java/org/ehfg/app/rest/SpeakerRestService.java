@@ -5,7 +5,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.MediaType;
 
 import org.ehfg.app.api.dto.SpeakerDTO;
 import org.ehfg.app.api.facade.ProgramFacade;
@@ -23,14 +22,14 @@ public class SpeakerRestService {
 
 	@GET
 	@Path("all")
-	@Produces(Type.JAVASCRIPT)
+	@Produces(Type.JSONP)
 	public JSONWithPadding findAllSpeakers(@QueryParam("callback") String callback) {
 		return new JSONWithPadding(programFacade.findAllSpeakers(), callback);
 	}
 
 	@GET
 	@Path("single/{id}")
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(Type.JSONP)
 	public SpeakerDTO findById(@PathParam("id") Long id) {
 		return programFacade.findSpeakerById(id);
 	}
