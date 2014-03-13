@@ -1,0 +1,12 @@
+<div t:id="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+	<h1>maintenance</h1>
+
+	<form t:id="inputForm" class="form-horizontal" role="form">
+		<div class="form-group">
+			<label for="hashtag" class="col-sm-2 control-label">hashtag</label>
+			<div class="col-sm-4">
+				<input t:id="hashtag" class="form-control" />
+			</div>
+		</div>
+	</form>
+</div>

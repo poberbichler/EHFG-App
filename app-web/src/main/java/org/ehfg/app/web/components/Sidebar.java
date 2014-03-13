@@ -15,6 +15,7 @@ import org.apache.tapestry5.services.ComponentClassResolver;
 import org.ehfg.app.web.pages.Index;
 import org.ehfg.app.web.pages.SessionOverview;
 import org.ehfg.app.web.pages.SpeakerOverview;
+import org.ehfg.app.web.pages.maintenance.GeneralMaintenance;
 
 public class Sidebar {
 	@Component(parameters = {"source=pageList", "value=currentPage"})
@@ -39,7 +40,8 @@ public class Sidebar {
 		return Arrays.asList(
 				resolver.resolvePageClassNameToPageName(Index.class.getName()),
 				resolver.resolvePageClassNameToPageName(SpeakerOverview.class.getName()),
-				resolver.resolvePageClassNameToPageName(SessionOverview.class.getName())
+				resolver.resolvePageClassNameToPageName(SessionOverview.class.getName()),
+				resolver.resolvePageClassNameToPageName(GeneralMaintenance.class.getName())
 		);
 	}
 	

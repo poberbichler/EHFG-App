@@ -20,6 +20,7 @@
 	<properties>
 		<tapestry-version>5.3.6</tapestry-version>
 		<spring-version>3.2.2.RELEASE</spring-version>
+		<hibernate-version>4.2.7.Final</hibernate-version>
 		<jersey-version>1.18</jersey-version>
 		<twitter4j-version>3.0.5</twitter4j-version>
 	</properties>
@@ -91,6 +92,12 @@
 
 			<dependency>
 				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
 				<artifactId>spring-aop</artifactId>
 				<version>${spring-version}</version>
 			</dependency>
@@ -99,6 +106,25 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-asm</artifactId>
 				<version>${spring-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-jpa</artifactId>
+				<version>1.3.4.RELEASE</version>
+			</dependency>
+
+			<!-- HIBERNATE -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>${hibernate-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<version>${hibernate-version}</version>
 			</dependency>
 
 			<!-- JERSEY -->
@@ -179,6 +205,12 @@
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-collections4</artifactId>
 				<version>4.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>5.1.21</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
