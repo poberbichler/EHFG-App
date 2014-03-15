@@ -10,8 +10,8 @@
 
 	<context:annotation-config />
 
-	<import resource="classpath:META-INF\ws.spring.xml" />
 	<import resource="classpath:META-INF\spring\spring.base.xml" />
 	<import resource="classpath:META-INF\spring\spring.persistence.xml" />
 	<import resource="classpath:META-INF\spring\spring.rest.xml" />
+	<import resource="classpath:META-INF\spring\spring.twitter.xml"/>
 </beans>

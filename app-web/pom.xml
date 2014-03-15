@@ -13,29 +13,27 @@
 		<dependency>
 			<groupId>org.ehfg</groupId>
 			<artifactId>app-api</artifactId>
+			<version>${project.parent.version}</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>org.ehfg</groupId>
 			<artifactId>app-core</artifactId>
+			<version>${project.parent.version}</version>
 		</dependency>
 	
 		<dependency>
 			<groupId>org.ehfg</groupId>
 			<artifactId>app-rest</artifactId>
+			<version>${project.parent.version}</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>org.ehfg</groupId>
 			<artifactId>app-external</artifactId>
+			<version>${project.parent.version}</version>
 		</dependency>
 		
-		<dependency>
-			<groupId>org.ehfg</groupId>
-			<artifactId>app-ws</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.apache.tapestry</groupId>
 			<artifactId>tapestry-core</artifactId>

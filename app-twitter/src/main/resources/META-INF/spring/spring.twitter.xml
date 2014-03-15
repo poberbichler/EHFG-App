@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+	<bean id="twitterStreamingFacade" class="org.ehfg.app.twitter.TwitterStreamingFacadeImpl">
+		<constructor-arg ref="twitterStreamFactory" />
+		<constructor-arg ref="listenerFactory" />
+	</bean>
+
+	<bean id="twitterStreamFactory" class="twitter4j.TwitterStreamFactory">
+		<constructor-arg ref="twitterConfiguration" />
+	</bean>
+
+	<bean id="listenerFactory" class="org.ehfg.app.twitter.PersistenceStreamListenerFactory">
+		<constructor-arg ref="tweetRepository" />
+		<constructor-arg ref="twitterUserRepository" />
+	</bean>
+
+	<bean id="twitterConfiguration" class="twitter4j.conf.Configuration"
+		factory-bean="twitterConfigurationBuilder" factory-method="build">
+	</bean>
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:config/twitter.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="twitterConfigurationBuilder" class="twitter4j.conf.ConfigurationBuilder">
+		<property name="debugEnabled" value="${twitter.debug.enabled}" />
+		<property name="oAuthConsumerKey" value="${twitter.consumer.key}" />
+		<property name="oAuthConsumerSecret" value="${twitter.consumer.secret}" />
+		<property name="oAuthAccessToken" value="${twitter.access.token}" />
+		<property name="oAuthAccessTokenSecret" value="${twitter.access.secret}" />
+		<property name="useSSL" value="${twitter.use.ssl}" />
+	</bean>
+</beans>

@@ -59,3 +59,73 @@ Terminating in response to SpringBoard's termination.
 2014-03-09 17:38:12.053 EHFG[4390:80b] Finished load of: file:///Users/patrick/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/C9FA6FE5-8632-4079-9F04-89606BBA8FA4/EHFG.app/www/index.html
 2014-03-09 17:38:13.752 EHFG[4390:80b] Resetting plugins due to page load.
 2014-03-09 17:38:19.249 EHFG[4390:80b] Finished load of: http://www.ehfg.org/ehfg-congress.html
+2014-03-14 07:24:58.480 EHFG[10895:80b] Multi-tasking -> Device: YES, App: YES
+2014-03-14 07:24:58.505 EHFG[10895:80b] Unlimited access to network resources
+2014-03-14 07:24:58.922 EHFG[10895:80b] Resetting plugins due to page load.
+2014-03-14 07:24:59.227 EHFG[10895:80b] Finished load of: file:///Users/patrick/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/C9FA6FE5-8632-4079-9F04-89606BBA8FA4/EHFG.app/www/index.html
+Terminating in response to SpringBoard's termination.
+2014-03-14 07:25:58.223 EHFG[11920:80b] Multi-tasking -> Device: YES, App: YES
+2014-03-14 07:25:58.232 EHFG[11920:80b] Unlimited access to network resources
+2014-03-14 07:25:58.420 EHFG[11920:80b] Resetting plugins due to page load.
+2014-03-14 07:25:59.239 EHFG[11920:80b] Finished load of: file:///Users/patrick/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/C9FA6FE5-8632-4079-9F04-89606BBA8FA4/EHFG.app/www/index.html
+2014-03-14 07:26:02.966 EHFG[11920:80b] Resetting plugins due to page load.
+2014-03-14 07:26:04.901 EHFG[11920:80b] Finished load of: http://www.ehfg.org/ehfg-congress.html
+2014-03-14 07:29:30.755 EHFG[12969:80b] Multi-tasking -> Device: YES, App: YES
+2014-03-14 07:29:30.764 EHFG[12969:80b] Unlimited access to network resources
+2014-03-14 07:29:30.825 EHFG[12969:80b] Resetting plugins due to page load.
+2014-03-14 07:29:31.388 EHFG[12969:80b] Finished load of: file:///Users/patrick/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/C9FA6FE5-8632-4079-9F04-89606BBA8FA4/EHFG.app/www/index.html
+2014-03-14 07:29:32.991 EHFG[12969:80b] CDVWebViewDelegate: Navigation started when state=1
+2014-03-14 07:29:32.991 EHFG[12969:80b] Failed to load webpage with error: CDVWebViewDelegate: Navigation started when state=1
+2014-03-14 07:29:32.992 EHFG[12969:80b] Resetting plugins due to page load.
+2014-03-14 07:29:33.578 EHFG[12969:80b] Finished load of: https://www.google.at/
+2014-03-14 07:30:41.031 EHFG[13993:80b] Multi-tasking -> Device: YES, App: YES
+2014-03-14 07:30:41.040 EHFG[13993:80b] Unlimited access to network resources
+2014-03-14 07:30:41.190 EHFG[13993:80b] Resetting plugins due to page load.
+2014-03-14 07:30:41.767 EHFG[13993:80b] Finished load of: file:///Users/patrick/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/C9FA6FE5-8632-4079-9F04-89606BBA8FA4/EHFG.app/www/index.html
+2014-03-14 07:30:55.943 EHFG[13993:80b] CDVWebViewDelegate: Navigation started when state=1
+2014-03-14 07:30:55.943 EHFG[13993:80b] Failed to load webpage with error: CDVWebViewDelegate: Navigation started when state=1
+2014-03-14 07:30:55.945 EHFG[13993:80b] Resetting plugins due to page load.
+2014-03-14 07:30:56.538 EHFG[13993:80b] Finished load of: https://www.google.at/
+Terminating in response to SpringBoard's termination.
+2014-03-14 07:39:08.326 EHFG[15147:80b] Multi-tasking -> Device: YES, App: YES
+2014-03-14 07:39:08.333 EHFG[15147:80b] Unlimited access to network resources
+2014-03-14 07:39:08.395 EHFG[15147:80b] Resetting plugins due to page load.
+2014-03-14 07:39:09.037 EHFG[15147:80b] Finished load of: file:///Users/patrick/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/C9FA6FE5-8632-4079-9F04-89606BBA8FA4/EHFG.app/www/index.html
+2014-03-14 07:39:10.414 EHFG[15147:80b] CDVWebViewDelegate: Navigation started when state=1
+2014-03-14 07:39:10.415 EHFG[15147:80b] Failed to load webpage with error: CDVWebViewDelegate: Navigation started when state=1
+2014-03-14 07:39:10.416 EHFG[15147:80b] Resetting plugins due to page load.
+2014-03-14 07:39:11.004 EHFG[15147:80b] Finished load of: https://www.google.at/
+2014-03-14 07:42:08.654 EHFG[16202:80b] Multi-tasking -> Device: YES, App: YES
+2014-03-14 07:42:08.662 EHFG[16202:80b] Unlimited access to network resources
+2014-03-14 07:42:08.725 EHFG[16202:80b] Resetting plugins due to page load.
+2014-03-14 07:42:09.306 EHFG[16202:80b] Finished load of: file:///Users/patrick/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/C9FA6FE5-8632-4079-9F04-89606BBA8FA4/EHFG.app/www/index.html
+2014-03-14 07:42:20.184 EHFG[16202:80b] Resetting plugins due to page load.
+2014-03-14 07:42:21.508 EHFG[16202:80b] Finished load of: http://www.ehfg.org/ehfg-congress.html
+2014-03-14 07:46:12.345 EHFG[17249:80b] Multi-tasking -> Device: YES, App: YES
+2014-03-14 07:46:12.354 EHFG[17249:80b] Unlimited access to network resources
+2014-03-14 07:46:12.505 EHFG[17249:80b] Resetting plugins due to page load.
+2014-03-14 07:46:13.132 EHFG[17249:80b] THREAD WARNING: ['InAppBrowser'] took '57.181885' ms. Plugin should use a background thread.
+2014-03-14 07:46:13.154 EHFG[17249:80b] Finished load of: file:///Users/patrick/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/C9FA6FE5-8632-4079-9F04-89606BBA8FA4/EHFG.app/www/index.html
+2014-03-14 07:46:13.154 EHFG[17249:80b] Gave lock 2
+2014-03-14 07:47:11.624 EHFG[18288:80b] Multi-tasking -> Device: YES, App: YES
+2014-03-14 07:47:11.633 EHFG[18288:80b] Unlimited access to network resources
+2014-03-14 07:47:11.786 EHFG[18288:80b] Resetting plugins due to page load.
+2014-03-14 07:47:12.417 EHFG[18288:80b] Finished load of: file:///Users/patrick/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/C9FA6FE5-8632-4079-9F04-89606BBA8FA4/EHFG.app/www/index.html
+2014-03-14 07:47:13.925 EHFG[18288:80b] CDVWebViewDelegate: Navigation started when state=1
+2014-03-14 07:47:13.925 EHFG[18288:80b] Failed to load webpage with error: CDVWebViewDelegate: Navigation started when state=1
+2014-03-14 07:47:13.927 EHFG[18288:80b] Resetting plugins due to page load.
+2014-03-14 07:47:14.527 EHFG[18288:80b] Finished load of: https://www.google.at/
+2014-03-14 07:48:53.426 EHFG[19334:80b] Multi-tasking -> Device: YES, App: YES
+2014-03-14 07:48:53.436 EHFG[19334:80b] Unlimited access to network resources
+2014-03-14 07:48:53.662 EHFG[19334:80b] Resetting plugins due to page load.
+2014-03-14 07:48:54.324 EHFG[19334:80b] Finished load of: file:///Users/patrick/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/C9FA6FE5-8632-4079-9F04-89606BBA8FA4/EHFG.app/www/index.html
+2014-03-14 07:49:10.416 EHFG[19334:80b] THREAD WARNING: ['InAppBrowser'] took '19.253906' ms. Plugin should use a background thread.
+2014-03-14 07:49:10.421 EHFG[19334:80b] Resetting plugins due to page load.
+2014-03-14 07:49:10.424 EHFG[19334:80b] Warning: Attempt to dismiss from view controller <MainViewController: 0xa75d680> while a presentation or dismiss is in progress!
+2014-03-14 07:49:11.034 EHFG[19334:80b] Finished load of: https://www.google.at/
+Terminating in response to SpringBoard's termination.
+2014-03-14 07:49:57.660 EHFG[20370:80b] Multi-tasking -> Device: YES, App: YES
+2014-03-14 07:49:57.669 EHFG[20370:80b] Unlimited access to network resources
+2014-03-14 07:49:57.852 EHFG[20370:80b] Resetting plugins due to page load.
+2014-03-14 07:49:58.462 EHFG[20370:80b] Finished load of: file:///Users/patrick/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/C9FA6FE5-8632-4079-9F04-89606BBA8FA4/EHFG.app/www/index.html
+2014-03-14 07:50:00.044 EHFG[20370:80b] THREAD WARNING: ['InAppBrowser'] took '27.150879' ms. Plugin should use a background thread.

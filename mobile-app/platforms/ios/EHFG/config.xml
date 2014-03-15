@@ -25,6 +25,9 @@
     <description>
         Hello World sample application that responds to the deviceready event.
     </description>
+    <feature name="InAppBrowser">
+        <param name="ios-package" value="CDVInAppBrowser" />
+    </feature>
     <name>EHFG</name>
     <description>
         Hello World sample application that responds to the deviceready event.

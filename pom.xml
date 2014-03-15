@@ -15,6 +15,7 @@
 		<module>app-ws</module>
 		<module>ehfg-twitter</module>
 		<module>app-twitter</module>
+		<module>app-external-api</module>
 	</modules>
 
 	<properties>
@@ -27,37 +28,6 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<!-- PROJECT -->
-			<dependency>
-				<groupId>org.ehfg</groupId>
-				<artifactId>app-api</artifactId>
-				<version>${parent.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.ehfg</groupId>
-				<artifactId>app-core</artifactId>
-				<version>${parent.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.ehfg</groupId>
-				<artifactId>app-web</artifactId>
-				<version>${parent.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.ehfg</groupId>
-				<artifactId>app-rest</artifactId>
-				<version>${parent.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.ehfg</groupId>
-				<artifactId>app-external</artifactId>
-				<version>${parent.version}</version>
-			</dependency>
-
 			<!-- TAPESTRY -->
 			<dependency>
 				<groupId>org.apache.tapestry</groupId>

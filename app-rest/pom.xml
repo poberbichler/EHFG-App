@@ -12,6 +12,7 @@
 		<dependency>
 			<groupId>org.ehfg</groupId>
 			<artifactId>app-api</artifactId>
+			<version>${project.parent.version}</version>
 		</dependency>
 		
 		<dependency>

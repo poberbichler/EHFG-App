@@ -1,0 +1,18 @@
+<div t:id="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+	<h1>maintenance</h1>
+	<p>hallo welt</p>
+	
+	<table t:id="streamListZone" class="table table-striped table-bordered">
+		<tbody>
+			<tr t:id="streams">
+				<td>${currentStream}</td>
+				<td><a t:id="deleteStream">delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<form t:id="inputForm">
+		<input t:id="hashtag" />
+		<button t:id="addStream" value="add"></button>
+	</form>
+</div>

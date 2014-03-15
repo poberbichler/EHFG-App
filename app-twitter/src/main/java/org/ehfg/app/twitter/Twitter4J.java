@@ -30,7 +30,7 @@ public class Twitter4J {
 		Configuration build = builder.build();
 
 		Twitter twitter = new TwitterFactory(build).getInstance();
-		Query searchQuery = new Query("#ehfg2014");
+		Query searchQuery = new Query("#baghipups");
 		searchQuery.setSince("2014-02-25");
 		searchQuery.setUntil("2014-03-02");
 		searchQuery.setResultType(Query.RECENT);
@@ -57,6 +57,7 @@ public class Twitter4J {
 
 			@Override
 			public void onStatus(Status arg0) {
+				System.out.println(arg0);
 				System.out.println("@" + arg0.getUser().getScreenName() + " "
 						+ arg0.getText());
 

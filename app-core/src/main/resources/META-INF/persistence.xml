@@ -5,8 +5,10 @@
 	version="1.0">
 	
 	<persistence-unit name="ehfgAppPersistenceUnit">
-	
+		<class>org.ehfg.app.core.entities.AppConfig</class>
+		<class>org.ehfg.app.core.entities.Tweet</class>
+		<class>org.ehfg.app.core.entities.TwitterUser</class>
+		
+		<exclude-unlisted-classes />
 	</persistence-unit>
-	
-	
 </persistence>

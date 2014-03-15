@@ -12,11 +12,13 @@
 		<dependency>
 			<groupId>org.ehfg</groupId>
 			<artifactId>app-api</artifactId>
+			<version>${project.parent.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.ehfg</groupId>
 			<artifactId>app-core</artifactId>
+			<version>${project.parent.version}</version>
 		</dependency>
 	</dependencies>
 </project>

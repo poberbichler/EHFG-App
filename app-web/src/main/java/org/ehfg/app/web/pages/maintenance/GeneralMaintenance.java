@@ -1,11 +1,22 @@
 package org.ehfg.app.web.pages.maintenance;
 
+import javax.inject.Inject;
+
+import org.apache.tapestry5.EventConstants;
 import org.apache.tapestry5.annotations.Component;
+import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.corelib.components.Form;
+import org.apache.tapestry5.corelib.components.Submit;
 import org.apache.tapestry5.corelib.components.TextField;
+import org.ehfg.app.api.dto.ConfigurationDTO;
+import org.ehfg.app.api.facade.MasterDataFacade;
 import org.ehfg.app.web.components.BootstrapLayout;
 
+/**
+ * @author patrick
+ * @since 14.03.2014
+ */
 public class GeneralMaintenance {
 	@Component
 	private BootstrapLayout layout;
@@ -13,9 +24,24 @@ public class GeneralMaintenance {
 	@Component
 	private Form inputForm;
 	
-	@Component(parameters = {"value=configuration"})
+	@Component(parameters = {"value=configuration.hashtag"})
 	private TextField hashtag;
 	
+	@Component
+	private Submit submitInputForm;
+	
+	@Inject
+	private MasterDataFacade masterDataFacade;
+	
 	@Property
-	private String configuration;
+	private ConfigurationDTO configuration;
+	
+	void onPrepare() {
+		configuration = masterDataFacade.getAppConfiguration();
+	}
+	
+	@OnEvent(component = "inputForm", value = EventConstants.SUCCESS)
+	void onSuccessFromInputForm() {
+		masterDataFacade.saveAppConfiguration(configuration);
+	}
 }

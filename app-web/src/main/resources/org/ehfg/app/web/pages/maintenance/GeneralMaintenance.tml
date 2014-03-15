@@ -8,5 +8,7 @@
 				<input t:id="hashtag" class="form-control" />
 			</div>
 		</div>
+		
+		<button t:id="submitInputForm" class="btn btn-primary" value="save changes"></button>
 	</form>
 </div>

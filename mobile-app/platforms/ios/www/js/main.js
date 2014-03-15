@@ -32,7 +32,7 @@ $('#speaker-detail').on(PAGE_EVENT, function() {
         return;
     }
     
-    $('#speakerDetailHeader').text(speaker.name);
+    $('#speakerDetailHeader').text(speaker.fullName);
     $('#speakerDescription').text(speaker.description);
     createListView('speakerSessionList', sessionService().findBySpeakerId(speaker.id));
 });
@@ -58,4 +58,9 @@ google.maps.event.addDomListener(window, 'load', function() {
     };
     var map = new google.maps.Map(document.getElementById("map-canvas"),
         mapOptions);
+});
+
+
+$('#newsfeed').on(PAGE_EVENT, function() {
+    createTwitterFeed();
 });

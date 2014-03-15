@@ -10,6 +10,7 @@
     <script src="js/lib/jquery.mobile-1.4.0.js"></script>
     <script src="js/routing.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKWeN8bGUtPNZhBKSx8z81Je4lJT1z1PY&sensor=true"></script>
+    <script src="cordova.js"></script>
 </head>
 
 <body>
@@ -20,53 +21,17 @@
         </div>
 
         <div data-role="main" class="ui-content">
-            <!--
-            <a class="twitter-timeline" href="https://twitter.com/search?q=%23EHFG2014" data-widget-id="441961532344123392">Tweets about "#EHFG2014"</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-            -->
-
             <div id="twitter-container">
                 <div class="header">
                     <h1>#EHFG2014</h1>
-                    <img src="http://hilt.harvard.edu/files/hilt/files/twitter-bird-light-bgs.png" class="twitter-logo"/>
+                    <img src="img/twitter-logo.png" class="twitter-logo"/>
                 </div>
 
-                <div class="tweets">
-                    <div class="tweet">
-                        <div class="names">
-                            <img class="profile-image" src="https://pbs.twimg.com/profile_images/2441790961/b1nxj0dyy72d4gt17ylz_bigger.png"/>
-                            <span class="full-name">GasteinForum</span>
-                            <span class="nickname">@GasteinForum</span>
-                        </div>
-
-                        <p class="message">
-                            Our theme for #EHFG2014 is:
-                            ELECTING HEALTH - THE EUROPE WE WANT!
-                            Find out more here: <a href="http://fb.me/18zI5XNVm">http://fb.me/18zI5XNVm</a>
-                        </p>
-                    </div>
-
-                    <div class="tweet last">
-                        <div class="names">
-                            <img class="profile-image" src="https://pbs.twimg.com/profile_images/2676740923/c9b658d3bacf16ee98769073487ae43c_bigger.jpeg"/>
-                            <span class="full-name">I Fix Everything</span>
-                            <span class="nickname">@ifetgastein</span>
-                        </div>
-
-                        <p class="message">
-                            asdf
-                        </p>
-
-                        <!--
-                        <p class="message">
-                            wifi vs. congress participants - who will win at the closing plenary at #ehfg2013?
-                            #HeavyUnderLoad #FixingStuff
-                        </p>
-                        -->
-                    </div>
+                <div id="tweets" />
                 </div>
             </div>
+
+            <a href="#" onclick="window.open('http://apache.org', '_blank');">blup</a>
         </div>
     </div>
     <!-- END OF NEWS FEED -->
@@ -155,5 +120,6 @@
     <script src="js/service.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/twitter.js"></script>
 </body>
 </html>
