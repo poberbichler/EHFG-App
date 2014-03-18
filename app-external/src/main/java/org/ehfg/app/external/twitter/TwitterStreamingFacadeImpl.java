@@ -1,4 +1,4 @@
-package org.ehfg.app.twitter;
+package org.ehfg.app.external.twitter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,8 +17,8 @@ import twitter4j.TwitterStreamFactory;
  * @author patrick
  * @since 14.03.2014
  */
-public class TwitterStreamingFacadeImpl implements TwitterStreamingFacade {
-	private Map<String, TwitterStream> streams = new HashMap<String, TwitterStream>();
+class TwitterStreamingFacadeImpl implements TwitterStreamingFacade {
+	private final Map<String, TwitterStream> streams = new HashMap<String, TwitterStream>();
 	private final TwitterStreamFactory streamFactory;
 	private final PersistenceStreamListenerFactory listenerFactory;
 

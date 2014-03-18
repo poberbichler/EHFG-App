@@ -3,7 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
 
-	<bean id="twitterStreamingFacade" class="org.ehfg.app.twitter.TwitterStreamingFacadeImpl">
+	<bean id="twitterStreamingFacade"
+		class="org.ehfg.app.external.twitter.TwitterStreamingFacadeImpl">
 		<constructor-arg ref="twitterStreamFactory" />
 		<constructor-arg ref="listenerFactory" />
 	</bean>
@@ -12,7 +13,8 @@
 		<constructor-arg ref="twitterConfiguration" />
 	</bean>
 
-	<bean id="listenerFactory" class="org.ehfg.app.twitter.PersistenceStreamListenerFactory">
+	<bean id="listenerFactory"
+		class="org.ehfg.app.external.twitter.PersistenceStreamListenerFactory">
 		<constructor-arg ref="tweetRepository" />
 		<constructor-arg ref="twitterUserRepository" />
 	</bean>
@@ -21,8 +23,9 @@
 		factory-bean="twitterConfigurationBuilder" factory-method="build">
 	</bean>
 
-	<bean
-		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<bean id="twitterConfigPlaceHolder"
+		class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
 		<property name="locations">
 			<list>
 				<value>classpath:config/twitter.properties</value>

@@ -1,4 +1,4 @@
-package org.ehfg.app.twitter;
+package org.ehfg.app.external.twitter;
 
 import org.ehfg.app.core.entities.Tweet;
 import org.ehfg.app.core.entities.TwitterUser;
@@ -16,7 +16,7 @@ import twitter4j.User;
  * @author patrick
  * @since 14.03.2014
  */
-public class PeristenceStreamListener implements StatusListener {
+class PeristenceStreamListener implements StatusListener {
 	private final TweetRepository tweetRepository;
 	private final TwitterUserRepository twitterUserRepository;
 	private final String hashtag;

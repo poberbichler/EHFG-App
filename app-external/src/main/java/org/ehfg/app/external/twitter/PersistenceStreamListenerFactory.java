@@ -1,4 +1,4 @@
-package org.ehfg.app.twitter;
+package org.ehfg.app.external.twitter;
 
 import org.ehfg.app.core.repository.TweetRepository;
 import org.ehfg.app.core.repository.TwitterUserRepository;
@@ -7,7 +7,7 @@ import org.ehfg.app.core.repository.TwitterUserRepository;
  * @author patrick
  * @since 14.03.2014
  */
-public class PersistenceStreamListenerFactory {
+class PersistenceStreamListenerFactory {
 	private final TweetRepository tweetRepository;
 	private final TwitterUserRepository userRepository;
 

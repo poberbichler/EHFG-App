@@ -13,9 +13,8 @@
 		<module>app-rest</module>
 		<module>app-external</module>
 		<module>app-ws</module>
-		<module>ehfg-twitter</module>
-		<module>app-twitter</module>
 		<module>app-external-api</module>
+		<module>app-assembly</module>
 	</modules>
 
 	<properties>
