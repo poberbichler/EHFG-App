@@ -2,7 +2,7 @@ package org.ehfg.app.core.external;
 
 import java.util.List;
 
-import org.ehfg.app.api.dto.twitter.TweetDTO;
+import org.ehfg.app.api.dto.TweetDTO;
 
 /**
  * @author patrick

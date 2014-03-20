@@ -12,9 +12,7 @@ var cacheAllData = function(webserviceUrl) {
     });
 };
 
-var id;
-
-cacheAllData("http://localhost:8080/rest/speaker/all");
+//cacheAllData("http://localhost:8080/rest/speaker/all");
 
 $('#sessions').on(PAGE_EVENT, function() {
     createListView('sessionList', sessionService().findSessions(), 'name', 'session-detail', 'id');
@@ -37,7 +35,7 @@ $('#speaker-detail').on(PAGE_EVENT, function() {
     createListView('speakerSessionList', sessionService().findBySpeakerId(speaker.id));
 });
 
-$('#session-detail').on(PAGE_EVENT), function() {
+$('#session-detail').on(PAGE_EVENT, function() {
     var session = sessionService().findById($.mobile.pageParameters.id);
     if (session === null) {
         $.mobile.changePage("#sessions");
@@ -45,13 +43,10 @@ $('#session-detail').on(PAGE_EVENT), function() {
     }
 
     $('#session-header').text(session.name);
-};
+});
 
-$('#maps').on('pagechange'), function() {
-
-};
-
-google.maps.event.addDomListener(window, 'load', function() {
+$('#map').on(PAGE_EVENT, function() {
+    console.log('called');
     var mapOptions = {
         center: new google.maps.LatLng(47.170329, 13.103852),
         zoom: 16
@@ -59,7 +54,6 @@ google.maps.event.addDomListener(window, 'load', function() {
     var map = new google.maps.Map(document.getElementById("map-canvas"),
         mapOptions);
 });
-
 
 $('#newsfeed').on(PAGE_EVENT, function() {
     createTwitterFeed();

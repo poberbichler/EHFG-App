@@ -11,10 +11,12 @@ import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.corelib.components.ActionLink;
 import org.apache.tapestry5.corelib.components.Form;
+import org.apache.tapestry5.corelib.components.Grid;
 import org.apache.tapestry5.corelib.components.Loop;
 import org.apache.tapestry5.corelib.components.Submit;
 import org.apache.tapestry5.corelib.components.TextField;
 import org.apache.tapestry5.corelib.components.Zone;
+import org.ehfg.app.api.dto.TweetDTO;
 import org.ehfg.app.api.facade.TwitterFacade;
 import org.ehfg.app.web.components.BootstrapLayout;
 
@@ -35,7 +37,7 @@ public class TwitterStreamMaintenance {
 	@Component(parameters = { "context=currentStream", "zone=streamListZone" })
 	private ActionLink deleteStream;
 
-	@Component
+	@Component(parameters = { "update=show" })
 	private Zone streamListZone;
 
 	@Component(parameters = { "value=hashtagValue" })
@@ -43,6 +45,15 @@ public class TwitterStreamMaintenance {
 
 	@Component
 	private Submit addStream;
+
+	@Component(parameters = { "source=tweetList" })
+	private Grid tweets;
+
+	@Component(parameters = { "update=show" })
+	private Zone tweetZone;
+
+	@Component(parameters = { "zone=tweetZone" })
+	private ActionLink refreshTweets;
 
 	@Inject
 	private TwitterFacade twitterFacade;
@@ -58,6 +69,16 @@ public class TwitterStreamMaintenance {
 		return twitterFacade.findStreams();
 	}
 
+	@Cached
+	public List<TweetDTO> getTweetList() {
+		return twitterFacade.findAllTweets();
+	}
+
+	@OnEvent(component = "refreshTweets", value = EventConstants.ACTION)
+	Object onActionFromRefreshTweets() {
+		return tweetZone;
+	}
+
 	@OnEvent(component = "deleteStream", value = EventConstants.ACTION)
 	Object onActionFromDeleteStream(String context) {
 		twitterFacade.removeStream(context);
@@ -67,5 +88,13 @@ public class TwitterStreamMaintenance {
 	@OnEvent(component = "inputForm", value = EventConstants.SUCCESS)
 	void onSuccessFromInputForm() {
 		twitterFacade.addStream(hashtagValue);
+	}
+
+	public Boolean getStreamsNotEmpty() {
+		return !getStreamList().isEmpty();
+	}
+
+	public Integer getTotalTweets() {
+		return getTweetList().size();
 	}
 }

@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.ehfg.app.api.dto.twitter.TweetDTO;
+import org.ehfg.app.api.dto.TweetDTO;
 import org.ehfg.app.core.external.TwitterStreamingFacade;
 
 import twitter4j.FilterQuery;
@@ -31,14 +31,15 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade {
 
 	@Override
 	public void addListener(String hashtag) {
+		if (!hashtag.startsWith("#")) {
+			hashtag = "#".concat(hashtag);
+		}
+		
 		if (!streams.containsKey(hashtag)) {
 			final TwitterStream stream = streamFactory.getInstance();
 			stream.addListener(listenerFactory.getInstance(hashtag));
 
 			FilterQuery query = new FilterQuery();
-			if (!hashtag.startsWith("#")) {
-				hashtag = "#".concat(hashtag);
-			}
 			
 			query.track(new String[] { hashtag });
 			stream.filter(query);

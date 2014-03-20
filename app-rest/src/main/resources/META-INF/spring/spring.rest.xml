@@ -28,4 +28,8 @@
 	<bean id="sessionRestService" class="org.ehfg.app.rest.SessionRestService">
 		<constructor-arg ref="programFacade" />
 	</bean>
+	
+	<bean id="twitterRestService" class="org.ehfg.app.rest.TwitterRestService">
+		<constructor-arg ref="twitterFacade"/>
+	</bean>
 </beans>

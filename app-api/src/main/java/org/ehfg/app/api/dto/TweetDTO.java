@@ -1,4 +1,4 @@
-package org.ehfg.app.api.dto.twitter;
+package org.ehfg.app.api.dto;
 
 import java.util.Date;
 
@@ -6,21 +6,22 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
  * @author patrick
- * @since 14.03.2014
+ * @since 20.03.2014
  */
-public class SaveTweetDTO extends TweetDTO {
+public class TweetDTO {
 	public final String fullName;
 	public final String nickName;
+	public final String message;
 	public final String profileImage;
+	public final Date timestamp;
 
-	public SaveTweetDTO(Long id, Long authorId, Date creationDate,
-			String message, String hashtag, String fullName, String nickName,
-			String profileImage) {
-		super(id, authorId, creationDate, message, hashtag);
-
+	public TweetDTO(String fullName, String nickName, String message, String profileImage, Date timestamp) {
+		super();
 		this.fullName = fullName;
 		this.nickName = nickName;
+		this.message = message;
 		this.profileImage = profileImage;
+		this.timestamp = timestamp;
 	}
 
 	@Override

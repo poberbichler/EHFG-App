@@ -29,7 +29,6 @@ public class TwitterUser {
 	public TwitterUser() {
 		
 	}
-	
 
 	public TwitterUser(Long id, String fullName, String nickName,
 			String profileImage) {
