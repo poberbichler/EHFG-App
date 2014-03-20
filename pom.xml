@@ -93,6 +93,12 @@
 				<version>${hibernate-version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>5.1.0.Final</version>
+			</dependency>
+
 			<!-- JERSEY -->
 			<dependency>
 				<groupId>com.sun.jersey</groupId>
@@ -161,6 +167,12 @@
 
 
 			<!-- STUFF -->
+			<dependency>
+				<groupId>javax.validation</groupId>
+				<artifactId>validation-api</artifactId>
+				<version>1.1.0.Final</version>
+			</dependency>
+
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>

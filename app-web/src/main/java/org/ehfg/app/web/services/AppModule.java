@@ -13,7 +13,7 @@ public class AppModule {
 	public static void contributeApplicationDefaults(MappedConfiguration<String, String> configuration) {
 		configuration.add(SymbolConstants.HMAC_PASSPHRASE, "gjkfg!98gdkljYX__jf909kjKLDG3kjdfADSF");
 	}
-
+	
 	public static void contributeIgnoredPathsFilter(Configuration<String> configuration) {
 		configuration.add("/rest/.*");
 		configuration.add("/ws/.*");

@@ -2,6 +2,16 @@
  * creates a twitter feed with the given data
  */
 var createTwitterFeed = function() {
+    $.ajax('localhost:8080/rest/twitter', {
+        headers: {'Access-Control-Allow-Origin': '*'},
+        crossDomain: true,
+        contentType: 'application/json',
+        type: 'GET',
+        dataType: 'jsonp'
+    }).success(function(data) {
+       console.log(data);
+    });
+
     var data = [{profileImage: 'https://pbs.twimg.com/profile_images/2441790961/b1nxj0dyy72d4gt17ylz_bigger.png',
                 fullName: 'GasteinForum', nickName: 'GasteinForum', message: 'Our theme for #EHFG2014 is:\nELECTING HEALTH - THE EUROPE WE WANT!\nFind out more here: <a href="http://fb.me/18zI5XNVm">http://fb.me/18zI5XNVm</a>'}];
 
@@ -14,6 +24,7 @@ var createTwitterFeed = function() {
         tweet += '<img class="profile-image" src=' + value.profileImage + '/>';
         tweet += '<span class="full-name">' + value.fullName + '</span>';
         tweet += '<span class="nickname">@' + value.nickName + '</span>';
+        tweet += '<span class="timestamp">' + '4. Nov' + '</span>'
         tweet += '</div>';
 
         tweet += '<p class="message">' + value.message + '</p>';

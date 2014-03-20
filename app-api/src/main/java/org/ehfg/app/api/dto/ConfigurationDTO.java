@@ -1,5 +1,7 @@
 package org.ehfg.app.api.dto;
 
+import javax.validation.constraints.NotNull;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
@@ -7,6 +9,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @since 14.03.2013
  */
 public class ConfigurationDTO {
+	@NotNull
 	private String hashtag;
 
 	public ConfigurationDTO(String hashtag) {

@@ -71,8 +71,16 @@ div.timeline-footer {
 }
 
 .tweet .nickname {
+    padding-left: 4px;
     font-size: 12px;
     color: #66757f;
+}
+
+.tweet .timestamp {
+    float: right;
+    font-size: 12px;
+    color: #66757f;
+    padding-top: 3px;
 }
 
 

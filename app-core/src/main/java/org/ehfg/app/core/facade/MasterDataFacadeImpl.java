@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 public class MasterDataFacadeImpl implements MasterDataFacade {
 	private final AppConfigRepository configRepository;
-
+	
 	public MasterDataFacadeImpl(AppConfigRepository configRepository) {
 		super();
 		this.configRepository = configRepository;
@@ -28,7 +28,17 @@ public class MasterDataFacadeImpl implements MasterDataFacade {
 	@Transactional(readOnly = false)
 	public void saveAppConfiguration(ConfigurationDTO source) {
 		AppConfig target = new AppConfig();
-		target.setHashtag(source.getHashtag());
+		
+		//FIXME: use bean validation instead
+		if (source.getHashtag() != null) {
+			if (source.getHashtag().startsWith("#")) {
+				target.setHashtag(source.getHashtag());
+			}
+			
+			else {
+				target.setHashtag(source.getHashtag());
+			}
+		}
 		
 		configRepository.save(target);
 	}

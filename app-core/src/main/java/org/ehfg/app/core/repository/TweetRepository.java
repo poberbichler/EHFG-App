@@ -17,6 +17,6 @@ public interface TweetRepository extends CrudRepository<Tweet, Long> {
 	List<TweetDTO> findTweets();
 
 	@Query("SELECT new org.ehfg.app.api.dto.TweetDTO(a.fullName, a.nickName, t.message, a.profileImage, t.creationDate) "
-			+ "FROM Tweet t INNER JOIN t.author a WHERE t.hashtag = :hashtag ORDER BY t.creationDate DESC")
+			+ "FROM Tweet t INNER JOIN t.author a WHERE t.hashtag = ?1 ORDER BY t.creationDate DESC")
 	List<TweetDTO> findTweetsByHashtag(String hashtag);
 }
