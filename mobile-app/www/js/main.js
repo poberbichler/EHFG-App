@@ -8,6 +8,7 @@ var cacheAllData = function(webserviceUrl) {
         type: 'GET',
         dataType: 'jsonp'
     }).success(function(data) {
+        console.log(data);
         speakerService().setData(data);
     });
 };
@@ -46,7 +47,6 @@ $('#session-detail').on(PAGE_EVENT, function() {
 });
 
 $('#map').on(PAGE_EVENT, function() {
-    console.log('called');
     var mapOptions = {
         center: new google.maps.LatLng(47.170329, 13.103852),
         zoom: 16
@@ -56,5 +56,5 @@ $('#map').on(PAGE_EVENT, function() {
 });
 
 $('#newsfeed').on(PAGE_EVENT, function() {
-    createTwitterFeed();
+    loadAndCreateTwitterFeed();
 });

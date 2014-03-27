@@ -70,25 +70,21 @@ class PeristenceStreamListener implements StatusListener {
 
 	@Override
 	public void onException(Exception ex) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void onTrackLimitationNotice(int numberOfLimitedStatuses) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void onScrubGeo(long userId, long upToStatusId) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void onStallWarning(StallWarning warning) {
-		// TODO Auto-generated method stub
 
 	}
 }

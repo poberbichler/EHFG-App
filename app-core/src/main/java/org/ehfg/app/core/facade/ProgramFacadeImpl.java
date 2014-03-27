@@ -46,7 +46,6 @@ public class ProgramFacadeImpl implements ProgramFacade {
 
 	@Override
 	public List<SessionDTO> findSessionByDay() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

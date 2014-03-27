@@ -16,4 +16,5 @@ public interface TwitterFacade {
 	List<TweetDTO> findAllTweets();
 	List<TweetDTO> findByHashtag(String hashtag);
 	List<TweetDTO> findTweetsForCongress();
+	String findHashtag();
 }

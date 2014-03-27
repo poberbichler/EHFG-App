@@ -125,3 +125,16 @@ var findListByPropertyNameInList = function(list, propertyName, propertyValue) {
 
     return result;
 };
+
+var restCall = function(urlExtension, callbackFn) {
+	var url = "http://localhost:8080/rest/" + urlExtension;
+    $.ajax(url, {
+        headers: {'Access-Control-Allow-Origin': '*'},
+        crossDomain: true,
+        contentType: 'application/json',
+        type: 'GET',
+        dataType: 'jsonp'
+    }).success(function(data) {
+        callbackFn(data);
+    });
+}
