@@ -25,7 +25,7 @@ Date.prototype.toTwitterDate = function() {
         return "" + value + (value == 1 ? " hour ago" : " hours ago");
     }
 
-    return "" + writtenShortMonth(this.getMonth())+ ". " + this.getHours() + ":" + this.getMinutes();
+    return "" + writtenShortMonth(this.getMonth())+ " " + this.getHours() + ":" + this.getMinutes();
 }
 
 var writtenShortMonth = function(month) {
