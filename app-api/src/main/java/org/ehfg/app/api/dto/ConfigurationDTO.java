@@ -12,8 +12,21 @@ public class ConfigurationDTO {
 	@NotNull
 	private String hashtag;
 
-	public ConfigurationDTO(String hashtag) {
+	@NotNull
+	private Integer numberOfTweets;
+
+	public ConfigurationDTO(String hashtag, Integer numberOfTweets) {
+		super();
 		this.hashtag = hashtag;
+		this.numberOfTweets = numberOfTweets;
+	}
+
+	public Integer getNumberOfTweets() {
+		return numberOfTweets;
+	}
+
+	public void setNumberOfTweets(Integer numberOfTweets) {
+		this.numberOfTweets = numberOfTweets;
 	}
 
 	public String getHashtag() {

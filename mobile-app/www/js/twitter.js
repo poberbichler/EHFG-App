@@ -25,7 +25,7 @@ Date.prototype.toTwitterDate = function() {
         return "" + value + (value == 1 ? " hour ago" : " hours ago");
     }
 
-    return "" + writtenShortMonth(this.getMonth())+ " " + this.getHours() + ":" + this.getMinutes();
+    return "" + writtenShortMonth(this.getMonth())+ " " + this.getDay() + ", " + this.getHours() + ":" + this.getMinutes();
 }
 
 var writtenShortMonth = function(month) {
@@ -67,6 +67,17 @@ var loadAndCreateTwitterFeed = function() {
 	restCall("twitter/tweets", createTwitterFeed);
     restCall("twitter/hashtag", setHashtag);
 }
+
+/**
+ *
+ * @param result
+ */
+var updateTwitterFeed = function() {
+    restCall("twitter/tweets", function(result) {
+       console.log(result);
+    });
+}
+
 
 var setHashtag = function(result) {
     $('#hashtag').text(result.hashtag);

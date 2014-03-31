@@ -57,4 +57,5 @@ $('#map').on(PAGE_EVENT, function() {
 
 $('#newsfeed').on(PAGE_EVENT, function() {
     loadAndCreateTwitterFeed();
+    $('#refresh-icon').on('click', updateTwitterFeed);
 });

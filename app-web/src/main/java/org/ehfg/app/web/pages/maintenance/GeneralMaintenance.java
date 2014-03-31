@@ -27,6 +27,9 @@ public class GeneralMaintenance {
 	@Component(parameters = {"value=configuration.hashtag"})
 	private TextField hashtag;
 	
+	@Component(parameters = {"value=configuration.numberOfTweets"})
+	private TextField numberOfTweets;
+	
 	@Component
 	private Submit submitInputForm;
 	
@@ -43,5 +46,10 @@ public class GeneralMaintenance {
 	@OnEvent(component = "inputForm", value = EventConstants.SUCCESS)
 	void onSuccessFromInputForm() {
 		masterDataFacade.saveAppConfiguration(configuration);
+	}
+	
+	Object onException(Exception e) {
+		inputForm.recordError(e.getMessage());
+		return this;
 	}
 }

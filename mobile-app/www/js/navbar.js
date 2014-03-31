@@ -1,7 +1,10 @@
 $(function() {
+    var theme = 'a';
+    //var theme = 'b';
+
     $("[data-role='navbar']").navbar();
-    $("[data-role='footer']").toolbar({theme: "a"});
-    //$("[data-role='header']").toolbar({theme: "a"});
+    $("[data-role='footer']").toolbar({theme: theme});
+    $("[data-role='header']").toolbar({theme: theme});
 });
 
 $(document).on("pageshow", "[data-role='page']", function() {

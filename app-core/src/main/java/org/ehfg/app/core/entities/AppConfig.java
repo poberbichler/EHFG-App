@@ -14,11 +14,12 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 @Entity
 public class AppConfig {
 	public static final Long CONFIG_ID = 42L;
-	
+
 	@Id
 	private final Long id = CONFIG_ID;
 
 	private String hashtag;
+	private Integer numberOfTweets;
 
 	public Long getId() {
 		return id;
@@ -30,6 +31,14 @@ public class AppConfig {
 
 	public void setHashtag(String hashtag) {
 		this.hashtag = hashtag;
+	}
+
+	public Integer getNumberOfTweets() {
+		return numberOfTweets;
+	}
+
+	public void setNumberOfTweets(Integer numberOfTweets) {
+		this.numberOfTweets = numberOfTweets;
 	}
 
 	@Override

@@ -2,8 +2,8 @@
  * creates a jquery mobile view, with the given parameters.
  * first, the list elements are added to the element with the root id.
  *
- * after that, the list view will be rendered by the refresh function of
  * the jquery mobile element of the list
+ * after that, the list view will be rendered by the refresh function of
  *
  * if the page and page field parameters are given, a link will be rendered in the
  * list elements
