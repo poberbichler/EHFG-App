@@ -69,13 +69,22 @@ var loadAndCreateTwitterFeed = function() {
 }
 
 /**
- *
- * @param result
+ * updates the current twitter feed
  */
 var updateTwitterFeed = function() {
-    restCall("twitter/tweets", function(result) {
-       console.log(result);
-    });
+    var latestTweet = JSON.parse(localStorage.getItem('lastTweet'));
+    if (latestTweet !== null) {
+        restCallWithParams("twitter/update", {lastTweet: new Date(latestTweet.timestamp)}, function(result) {
+            //$('#tweets').prepend(createTwitterElements(result)).hide().slideDown(3000);
+            $('#tweets').prepend(createTwitterElements(result));
+
+            updateTimestamps();
+        });
+    }
+
+    else {
+        loadAndCreateTwitterFeed();
+    }
 }
 
 
@@ -86,21 +95,48 @@ var setHashtag = function(result) {
 var createTwitterFeed = function(tweets) {
     var tweetContainer = $('#tweets');
     tweetContainer.children().remove();
+    tweetContainer.append(createTwitterElements(tweets));
+};
+
+/**
+ * takes an array of tweets, and created a dom element from it
+ *
+ * @param tweets to be parsed
+ * @returns {string} html text representing these tweets
+ */
+var createTwitterElements = function(tweets) {
+    var tweet = '';
 
     $.each(tweets, function(index, value) {
+        if (index === 0) {
+            localStorage.setItem('lastTweet', JSON.stringify(value));
+        }
+
         var date = new Date(value.timestamp);
 
-        var tweet = '<div class="tweet">';
+        tweet += '<div class="tweet">';
         tweet += '<div class="names">';
         tweet += '<img class="profile-image" src=' + value.profileImage + '/>';
         tweet += '<span class="full-name">' + value.fullName + '</span>';
         tweet += '<span class="nickname">@' + value.nickName + '</span>';
-        tweet += '<span class="timestamp">' + date.toTwitterDate() + '</span>'
+        tweet += '<span class="timestamp" data-timestamp1="' + date.getTime() + '">' + date.toTwitterDate() + '</span>'
         tweet += '</div>';
 
         tweet += '<p class="message">' + value.message + '</p>';
         tweet += '</div>';
-
-        tweetContainer.append(tweet);
     });
-};
+
+    return tweet;
+}
+
+/**
+ * checks for every element with the timestamp class, and update it
+ */
+var updateTimestamps = function() {
+    $('.timestamp').each(function(index, element) {
+        var timestamp = $(element).data('timestamp');
+        if (timestamp !== undefined) {
+            $(element).text(new Date(timestamp).toTwitterDate());
+        }
+    });
+}

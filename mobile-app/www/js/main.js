@@ -8,12 +8,11 @@ var cacheAllData = function(webserviceUrl) {
         type: 'GET',
         dataType: 'jsonp'
     }).success(function(data) {
-        console.log(data);
         speakerService().setData(data);
     });
 };
 
-//cacheAllData("http://localhost:8080/rest/speaker/all");
+cacheAllData("http://localhost:8080/rest/speaker/all");
 
 $('#sessions').on(PAGE_EVENT, function() {
     createListView('sessionList', sessionService().findSessions(), 'name', 'session-detail', 'id');

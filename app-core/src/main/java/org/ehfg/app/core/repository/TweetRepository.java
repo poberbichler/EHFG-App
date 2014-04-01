@@ -1,5 +1,6 @@
 package org.ehfg.app.core.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.ehfg.app.api.dto.TweetDTO;
@@ -19,4 +20,8 @@ public interface TweetRepository extends CrudRepository<Tweet, Long> {
 	@Query("SELECT new org.ehfg.app.api.dto.TweetDTO(a.fullName, a.nickName, t.message, a.profileImage, t.creationDate) "
 			+ "FROM Tweet t INNER JOIN t.author a WHERE t.hashtag = ?1 ORDER BY t.creationDate DESC")
 	List<TweetDTO> findTweetsByHashtag(String hashtag);
+
+	@Query("SELECT new org.ehfg.app.api.dto.TweetDTO(a.fullName, a.nickName, t.message, a.profileImage, t.creationDate) "
+			+ "FROM Tweet t INNER JOIN t.author a WHERE t.hashtag = ?1 AND t.creationDate > ?2")
+	List<TweetDTO> findNewerTweetsByHashtag(String hashtag, Date lastTweet);
 }

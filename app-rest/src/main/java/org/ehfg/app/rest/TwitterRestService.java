@@ -1,5 +1,7 @@
 package org.ehfg.app.rest;
 
+import java.util.Date;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -32,5 +34,12 @@ public class TwitterRestService {
 	@Produces(Type.JSONP)
 	public JSONWithPadding getHashtag(@QueryParam("callback") String callback) throws JSONException {
 		return new JSONWithPadding(new JSONObject().put("hashtag", twitterFacade.findHashtag()), callback);
+	}
+	
+	@GET
+	@Path("update")
+	@Produces(Type.JSONP)
+	public JSONWithPadding updateTweets(@QueryParam("callback") String callback, @QueryParam("lastTweet") Date lastTweet) {
+		return new JSONWithPadding(twitterFacade.findNewerTweetsForCongress(lastTweet), callback);
 	}
 }

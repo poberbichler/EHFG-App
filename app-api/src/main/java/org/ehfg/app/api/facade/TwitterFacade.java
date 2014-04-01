@@ -1,5 +1,6 @@
 package org.ehfg.app.api.facade;
 
+import java.util.Date;
 import java.util.List;
 
 import org.ehfg.app.api.dto.TweetDTO;
@@ -17,4 +18,6 @@ public interface TwitterFacade {
 	List<TweetDTO> findByHashtag(String hashtag);
 	List<TweetDTO> findTweetsForCongress();
 	String findHashtag();
+	
+	List<TweetDTO> findNewerTweetsForCongress(Date lastTweet);
 }

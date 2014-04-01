@@ -1,5 +1,7 @@
 package org.ehfg.app.core.facade;
 
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -70,11 +72,22 @@ public class TwitterFacadeImpl implements TwitterFacade {
 
 	@Override
 	public List<TweetDTO> findTweetsForCongress() {
-		return tweetRepository.findTweetsByHashtag(configRepository.find().getHashtag());
+		final ConfigurationDTO config = configRepository.find();
+		return tweetRepository.findTweetsByHashtag(config.getHashtag());
 	}
 
 	@Override
 	public String findHashtag() {
 		return configRepository.find().getHashtag();
+	}
+
+	@Override
+	public List<TweetDTO> findNewerTweetsForCongress(Date lastTweet) {
+		final ConfigurationDTO config = configRepository.find();
+		if (config != null && config.getHashtag() != null) {
+			return tweetRepository.findNewerTweetsByHashtag(config.getHashtag(), lastTweet);
+		}
+		
+		return Collections.emptyList();
 	}
 }

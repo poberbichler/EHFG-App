@@ -126,14 +126,34 @@ var findListByPropertyNameInList = function(list, propertyName, propertyValue) {
     return result;
 };
 
+/**
+ * calls the rest function with the given url extension, and calls the callbackFn when successful
+ * internally calls restCallWithParams with an empty parameter object
+ *
+ * @param urlExtension last bit of the url to be added
+ * @param callbackFn function to be called when the call was successful
+ */
 var restCall = function(urlExtension, callbackFn) {
+    restCallWithParams(urlExtension, {}, callbackFn);
+}
+
+/**
+ * calls the rest function with the given url extension, passing params to the server. after that, the callbackFn is
+ * called when being successful
+ *
+ * @param urlExtension last bit of the url to be added
+ * @param params to be sent to the server
+ * @param callbackFn function to be called when the call was successful
+ */
+var restCallWithParams = function(urlExtension, params, callbackFn) {
 	var url = "http://localhost:8080/rest/" + urlExtension;
     $.ajax(url, {
         headers: {'Access-Control-Allow-Origin': '*'},
         crossDomain: true,
         contentType: 'application/json',
         type: 'GET',
-        dataType: 'jsonp'
+        dataType: 'jsonp',
+        data: params
     }).success(function(data) {
         callbackFn(data);
     });
