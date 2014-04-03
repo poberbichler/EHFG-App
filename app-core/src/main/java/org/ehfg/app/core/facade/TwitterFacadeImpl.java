@@ -9,10 +9,15 @@ import javax.annotation.PreDestroy;
 
 import org.ehfg.app.api.dto.ConfigurationDTO;
 import org.ehfg.app.api.dto.TweetDTO;
+import org.ehfg.app.api.dto.TweetPageDTO;
 import org.ehfg.app.api.facade.TwitterFacade;
+import org.ehfg.app.core.entities.Tweet;
 import org.ehfg.app.core.external.TwitterStreamingFacade;
+import org.ehfg.app.core.mapper.TweetMapper;
 import org.ehfg.app.core.repository.AppConfigRepository;
 import org.ehfg.app.core.repository.TweetRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 /**
  * @author patrick
@@ -29,7 +34,7 @@ public class TwitterFacadeImpl implements TwitterFacade {
 		this.streamingFacade = streamingFacade;
 		this.configRepository = configRepository;
 	}
-	
+
 	@PostConstruct
 	private void addDefaultStream() {
 		final ConfigurationDTO config = configRepository.find();
@@ -37,7 +42,7 @@ public class TwitterFacadeImpl implements TwitterFacade {
 			streamingFacade.addListener(config.getHashtag());
 		}
 	}
-	
+
 	@PreDestroy
 	private void removeStreams() {
 		for (final String hashtag : streamingFacade.findAllListeners()) {
@@ -87,7 +92,15 @@ public class TwitterFacadeImpl implements TwitterFacade {
 		if (config != null && config.getHashtag() != null) {
 			return tweetRepository.findNewerTweetsByHashtag(config.getHashtag(), lastTweet);
 		}
-		
+
 		return Collections.emptyList();
+	}
+
+	@Override
+	public TweetPageDTO findTweetPage(Integer pageId) {
+		final ConfigurationDTO config = configRepository.find();
+		final Page<Tweet> tweets = tweetRepository.findAll(new PageRequest(pageId, config.getNumberOfTweets()));
+		
+		return new TweetPageDTO(TweetMapper.map(tweets.getContent()), pageId, tweets.hasNextPage());
 	}
 }

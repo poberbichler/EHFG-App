@@ -25,7 +25,8 @@ Date.prototype.toTwitterDate = function() {
         return "" + value + (value == 1 ? " hour ago" : " hours ago");
     }
 
-    return "" + writtenShortMonth(this.getMonth())+ " " + this.getDay() + ", " + this.getHours() + ":" + this.getMinutes();
+    var minuteValue = this.getMinutes() < 10 ? "0" + this.getMinutes() : this.getMinutes();
+    return "" + writtenShortMonth(this.getMonth())+ " " + this.getDay() + ", " + this.getHours() + ":" + minuteValue;
 }
 
 var writtenShortMonth = function(month) {
@@ -64,7 +65,7 @@ var writtenShortMonth = function(month) {
  * creates a twitter feed with the given data
  */
 var loadAndCreateTwitterFeed = function() {
-	restCall("twitter/tweets", createTwitterFeed);
+	restCall("twitter/tweetpage/0", createTwitterFeed);
     restCall("twitter/hashtag", setHashtag);
 }
 
@@ -92,10 +93,28 @@ var setHashtag = function(result) {
     $('#hashtag').text(result.hashtag);
 }
 
-var createTwitterFeed = function(tweets) {
+var createTwitterFeed = function(tweetPage) {
     var tweetContainer = $('#tweets');
     tweetContainer.children().remove();
-    tweetContainer.append(createTwitterElements(tweets));
+    tweetContainer.append(createTwitterElements(tweetPage));
+
+    /*
+    if (tweetPage.morePages) {
+        var moreTweetElement = '<div id="more-tweets" data-next-page="';
+        moreTweetElement += (Number(tweetPage.currentPage) + 1);
+        moreTweetElement += '">Load More</div>';
+
+        tweetContainer.append(moreTweetElement);
+        $('#more-tweets').on('click', function() {
+            var element = $(this);
+            var nextPage = element.data('next-page');
+
+            restCall("twitter/tweetpage/" + nextPage, function(result) {
+                element.remove();
+                tweetContainer.append(createTwitterElements(result.tweets));
+            });
+        });
+    } */
 };
 
 /**
@@ -104,7 +123,8 @@ var createTwitterFeed = function(tweets) {
  * @param tweets to be parsed
  * @returns {string} html text representing these tweets
  */
-var createTwitterElements = function(tweets) {
+var createTwitterElements = function(tweetPage) {
+    var tweets = tweetPage.tweets;
     var tweet = '';
 
     $.each(tweets, function(index, value) {
@@ -126,7 +146,21 @@ var createTwitterElements = function(tweets) {
         tweet += '</div>';
     });
 
+    if (tweetPage.morePages) {
+        var moreTweetElement = '<div id="more-tweets" onclick="loadMoreTweets(';
+        moreTweetElement += (Number(tweetPage.currentPage) + 1) + ')">Load More</div>';
+
+        tweet += moreTweetElement;
+    }
+
     return tweet;
+}
+
+var loadMoreTweets = function(nextPage) {
+    restCall("twitter/tweetpage/" + nextPage, function(result) {
+        $('#more-tweets').remove();
+        $('#tweets').append(createTwitterElements(result));
+    });
 }
 
 /**

@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.ehfg.app.api.dto.TweetDTO;
+import org.ehfg.app.api.dto.TweetPageDTO;
 
 /**
  * @author patrick
@@ -20,4 +21,5 @@ public interface TwitterFacade {
 	String findHashtag();
 	
 	List<TweetDTO> findNewerTweetsForCongress(Date lastTweet);
+	TweetPageDTO findTweetPage(Integer pageId);
 }

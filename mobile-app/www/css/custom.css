@@ -107,3 +107,10 @@ div.timeline-footer {
     top: 0;
     right: 0;
 }
+
+#more-tweets {
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #EFEFEF;
+}
