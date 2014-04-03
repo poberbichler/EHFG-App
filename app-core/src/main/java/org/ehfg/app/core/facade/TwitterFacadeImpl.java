@@ -99,8 +99,9 @@ public class TwitterFacadeImpl implements TwitterFacade {
 	@Override
 	public TweetPageDTO findTweetPage(Integer pageId) {
 		final ConfigurationDTO config = configRepository.find();
-		final Page<Tweet> tweets = tweetRepository.findAll(new PageRequest(pageId, config.getNumberOfTweets()));
-		
+		final Page<Tweet> tweets = tweetRepository.findByHashtagOrderByCreationDateDesc(config.getHashtag(),
+				new PageRequest(pageId, config.getNumberOfTweets()));
+
 		return new TweetPageDTO(TweetMapper.map(tweets.getContent()), pageId, tweets.hasNextPage());
 	}
 }

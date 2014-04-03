@@ -76,9 +76,7 @@ var updateTwitterFeed = function() {
     var latestTweet = JSON.parse(localStorage.getItem('lastTweet'));
     if (latestTweet !== null) {
         restCallWithParams("twitter/update", {lastTweet: new Date(latestTweet.timestamp)}, function(result) {
-            //$('#tweets').prepend(createTwitterElements(result)).hide().slideDown(3000);
-            $('#tweets').prepend(createTwitterElements(result));
-
+            $(createTwitterElements(result)).prependTo($('#tweets')).hide().slideDown(500);
             updateTimestamps();
         });
     }
@@ -97,24 +95,6 @@ var createTwitterFeed = function(tweetPage) {
     var tweetContainer = $('#tweets');
     tweetContainer.children().remove();
     tweetContainer.append(createTwitterElements(tweetPage));
-
-    /*
-    if (tweetPage.morePages) {
-        var moreTweetElement = '<div id="more-tweets" data-next-page="';
-        moreTweetElement += (Number(tweetPage.currentPage) + 1);
-        moreTweetElement += '">Load More</div>';
-
-        tweetContainer.append(moreTweetElement);
-        $('#more-tweets').on('click', function() {
-            var element = $(this);
-            var nextPage = element.data('next-page');
-
-            restCall("twitter/tweetpage/" + nextPage, function(result) {
-                element.remove();
-                tweetContainer.append(createTwitterElements(result.tweets));
-            });
-        });
-    } */
 };
 
 /**
@@ -124,9 +104,19 @@ var createTwitterFeed = function(tweetPage) {
  * @returns {string} html text representing these tweets
  */
 var createTwitterElements = function(tweetPage) {
-    var tweets = tweetPage.tweets;
-    var tweet = '';
+    console.log(tweetPage);
+    var tweets = [];
+    if ($.isArray(tweetPage)) {
+        console.log('array')
+        tweets = tweetPage;
+    }
 
+    else {
+        tweets = tweetPage.tweets;
+        console.log('no array');
+    }
+
+    var tweet = '';
     $.each(tweets, function(index, value) {
         if (index === 0) {
             localStorage.setItem('lastTweet', JSON.stringify(value));
@@ -146,20 +136,21 @@ var createTwitterElements = function(tweetPage) {
         tweet += '</div>';
     });
 
-    if (tweetPage.morePages) {
+    if (tweetPage.morePages !== undefined && tweetPage.morePages) {
         var moreTweetElement = '<div id="more-tweets" onclick="loadMoreTweets(';
         moreTweetElement += (Number(tweetPage.currentPage) + 1) + ')">Load More</div>';
 
         tweet += moreTweetElement;
     }
 
+    console.log('returning', tweet);
     return tweet;
 }
 
 var loadMoreTweets = function(nextPage) {
     restCall("twitter/tweetpage/" + nextPage, function(result) {
         $('#more-tweets').remove();
-        $('#tweets').append(createTwitterElements(result));
+        $(createTwitterElements(result)).appendTo($('#tweets')).hide().slideDown(250);
     });
 }
 
