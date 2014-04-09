@@ -52,6 +52,26 @@ var createListView = function(elementId, source, labelField, page, pageField) {
     list.listview('refresh');
 };
 
+var createSessionList = function(elementId, source) {
+    var list = $('#' + elementId);
+    list.children().remove();
+
+    var item = '';
+    $.each(source, function(dayIndex, currentDay) {
+        item += '<li>' + currentDay.description + '</li>';
+
+        $.each(currentDay.sessions, function(sessionIndex, currentSession) {
+            item += '<li>';
+            item += '<a href="#session-detail?id=' + currentSession.id + '">' + currentSession.name + '</a>';
+            item += '</li>';
+        });
+    });
+
+    console.log(item);
+    list.append(item);
+    list.listview('refresh');
+}
+
 /**
  * shorthand function for searching for a given id in the list
  * internally calls findByPropertyInList(list, 'id', value);

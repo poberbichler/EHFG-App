@@ -1,0 +1,18 @@
+<div t:id="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+	<h1>Session Days</h1>
+	
+	<div t:id="dayZone">
+		<form t:id="inputForm">
+			<ul t:id="dayLoop">
+				<li>
+					<input t:id="day" />
+					<input t:id="description" />
+					<a t:id="removeDay">remove</a>
+				</li>
+			</ul>
+	
+			<a t:id="addDay" class="btn btn-default">add day</a>
+			<button t:id="saveDays" class="btn btn-primary" value="save days"></button>
+		</form>
+	</div>
+</div>

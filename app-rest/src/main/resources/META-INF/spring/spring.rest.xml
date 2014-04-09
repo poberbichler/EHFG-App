@@ -19,6 +19,7 @@
 	<bean id="programFacade" class="org.ehfg.app.core.facade.ProgramFacadeImpl">
 		<constructor-arg ref="speakerRepository" />
 		<constructor-arg ref="sessionRepository" />
+		<constructor-arg ref="conferenceDayRepository"/>
 	</bean>
 
 	<bean id="speakerRestService" class="org.ehfg.app.rest.SpeakerRestService">

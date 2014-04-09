@@ -4,9 +4,6 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-
 import org.ehfg.app.api.dto.ConfigurationDTO;
 import org.ehfg.app.api.dto.TweetDTO;
 import org.ehfg.app.api.dto.TweetPageDTO;
@@ -27,27 +24,12 @@ public class TwitterFacadeImpl implements TwitterFacade {
 	private final TweetRepository tweetRepository;
 	private final TwitterStreamingFacade streamingFacade;
 	private final AppConfigRepository configRepository;
-
+	
 	public TwitterFacadeImpl(TweetRepository tweetRepository, TwitterStreamingFacade streamingFacade,
 			AppConfigRepository configRepository) {
 		this.tweetRepository = tweetRepository;
 		this.streamingFacade = streamingFacade;
 		this.configRepository = configRepository;
-	}
-
-	@PostConstruct
-	private void addDefaultStream() {
-		final ConfigurationDTO config = configRepository.find();
-		if (config != null && config.getHashtag() != null) {
-			streamingFacade.addListener(config.getHashtag());
-		}
-	}
-
-	@PreDestroy
-	private void removeStreams() {
-		for (final String hashtag : streamingFacade.findAllListeners()) {
-			streamingFacade.removeListener(hashtag);
-		}
 	}
 
 	@Override

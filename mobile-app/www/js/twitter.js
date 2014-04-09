@@ -113,7 +113,6 @@ var createTwitterElements = function(tweetPage) {
 
     else {
         tweets = tweetPage.tweets;
-        console.log('no array');
     }
 
     var tweet = '';

@@ -1,6 +1,7 @@
 package org.ehfg.app.web.pages;
 
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -38,7 +39,8 @@ public class SessionOverview {
 	
 	@Cached
 	public List<SessionDTO> getSessionList() {
-		return programFacade.findAllSessions();
+		return Collections.emptyList();
+		//return new ArrayList<>(programFacade.findAllSessions().values());
 	}
 	
 	public String getFormattedStartDate() {

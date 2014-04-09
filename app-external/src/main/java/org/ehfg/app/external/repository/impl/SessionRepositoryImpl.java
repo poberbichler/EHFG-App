@@ -13,8 +13,8 @@ public class SessionRepositoryImpl implements SessionRepository {
 	private final static Map<Long, SessionDTO> sessionMap = new HashMap<Long, SessionDTO>() {
 		private static final long serialVersionUID = -32316877290559606L;
 		{
-			put(0L, new SessionDTO(0L, "sessioName", "sessionDescription", "01.02.2014 10:00", "01.02.2014 12:00", 0L, 1L, 0L));
-			put(1L, new SessionDTO(1L, "another sessioName","antoher sessionDescription", "02.02.2014 15:00", "02.02.2014 18:00", 1L, 0L));
+			put(0L, new SessionDTO(0L, "sessioName", "sessionDescription", "09.04.2014 10:00", "09.04.2014 12:00", 0L, 1L, 0L));
+			put(1L, new SessionDTO(1L, "another sessioName","antoher sessionDescription", "11.04.2014 15:00", "11.04.2014 18:00", 1L, 0L));
 		}
 	};
 

@@ -7,6 +7,7 @@
 		class="org.ehfg.app.external.twitter.TwitterStreamingFacadeImpl">
 		<constructor-arg ref="twitterStreamFactory" />
 		<constructor-arg ref="listenerFactory" />
+		<constructor-arg ref="appConfigRepository" />
 	</bean>
 
 	<bean id="twitterStreamFactory" class="twitter4j.TwitterStreamFactory">

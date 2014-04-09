@@ -14,8 +14,12 @@ var cacheAllData = function(webserviceUrl) {
 
 cacheAllData("http://localhost:8080/rest/speaker/all");
 
+restCall("session/all", function(result) {
+    sessionService().setData(result);
+});
+
 $('#sessions').on(PAGE_EVENT, function() {
-    createListView('sessionList', sessionService().findSessions(), 'name', 'session-detail', 'id');
+    createSessionList('sessionList', sessionService().findSessions());
 });
 
 
