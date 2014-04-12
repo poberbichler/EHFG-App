@@ -7,7 +7,9 @@ import java.util.Map;
 
 import org.ehfg.app.api.dto.SpeakerDTO;
 import org.ehfg.app.core.repository.SpeakerRepository;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class SpeakerRepositoryImpl implements SpeakerRepository {
 	private final static Map<Long, SpeakerDTO> speakerMap = new HashMap<Long, SpeakerDTO>() {
 		private static final long serialVersionUID = 2853113529863078141L;

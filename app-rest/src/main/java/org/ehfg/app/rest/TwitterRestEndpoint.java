@@ -11,14 +11,18 @@ import javax.ws.rs.QueryParam;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 import org.ehfg.app.api.facade.TwitterFacade;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.sun.jersey.api.json.JSONWithPadding;
 
+@Component
 @Path("twitter")
-public class TwitterRestService {
+public class TwitterRestEndpoint {
 	private final TwitterFacade twitterFacade;
 
-	public TwitterRestService(TwitterFacade twitterFacade) {
+	@Autowired
+	public TwitterRestEndpoint(TwitterFacade twitterFacade) {
 		super();
 		this.twitterFacade = twitterFacade;
 	}

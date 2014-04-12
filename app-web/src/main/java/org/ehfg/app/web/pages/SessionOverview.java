@@ -13,7 +13,6 @@ import org.apache.tapestry5.corelib.components.Grid;
 import org.apache.tapestry5.corelib.components.PageLink;
 import org.apache.tapestry5.services.ComponentClassResolver;
 import org.ehfg.app.api.dto.SessionDTO;
-import org.ehfg.app.api.facade.ProgramFacade;
 import org.ehfg.app.web.components.BootstrapLayout;
 
 public class SessionOverview {
@@ -28,9 +27,6 @@ public class SessionOverview {
 	
 	@Property
 	private SessionDTO currentSession;
-	
-	@Inject
-	private ProgramFacade programFacade;
 	
 	@Inject
 	private ComponentClassResolver resolver;

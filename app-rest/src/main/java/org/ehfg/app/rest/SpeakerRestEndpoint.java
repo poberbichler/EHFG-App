@@ -8,15 +8,19 @@ import javax.ws.rs.QueryParam;
 
 import org.ehfg.app.api.dto.SpeakerDTO;
 import org.ehfg.app.api.facade.ProgramFacade;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.sun.jersey.api.json.JSONWithPadding;
 
 
+@Component
 @Path("speaker")
-public class SpeakerRestService {
+public class SpeakerRestEndpoint {
 	private final ProgramFacade programFacade;
 	
-	public SpeakerRestService(ProgramFacade programFacade) {
+	@Autowired
+	public SpeakerRestEndpoint(ProgramFacade programFacade) {
 		this.programFacade = programFacade;
 	}
 

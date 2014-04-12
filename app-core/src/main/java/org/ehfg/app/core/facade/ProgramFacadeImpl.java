@@ -15,17 +15,21 @@ import org.ehfg.app.core.mapper.ConferenceDayMapper;
 import org.ehfg.app.core.repository.ConferenceDayRepository;
 import org.ehfg.app.core.repository.SessionRepository;
 import org.ehfg.app.core.repository.SpeakerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author patrick
  * @since 06.04.2014
  */
+@Component("programFacade")
 public class ProgramFacadeImpl implements ProgramFacade {
 	private final SpeakerRepository speakerRepository;
 	private final SessionRepository sessionRepository;
 	private final ConferenceDayRepository conferenceDayRepository;
 
+	@Autowired
 	public ProgramFacadeImpl(SpeakerRepository speakerRepository, SessionRepository sessionRepository,
 			ConferenceDayRepository conferenceDayRepository) {
 		super();

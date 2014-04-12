@@ -12,15 +12,19 @@ import org.ehfg.app.api.dto.ConfigurationDTO;
 import org.ehfg.app.api.facade.MasterDataFacade;
 import org.ehfg.app.core.entities.AppConfig;
 import org.ehfg.app.core.repository.AppConfigRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author patrick
  * @since 14.03.2014
  */
+@Component
 public class MasterDataFacadeImpl implements MasterDataFacade {
 	private final AppConfigRepository configRepository;
 
+	@Autowired
 	public MasterDataFacadeImpl(AppConfigRepository configRepository) {
 		super();
 		this.configRepository = configRepository;

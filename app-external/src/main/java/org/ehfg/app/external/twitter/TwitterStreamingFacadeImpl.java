@@ -14,7 +14,9 @@ import org.ehfg.app.api.dto.ConfigurationDTO;
 import org.ehfg.app.api.dto.TweetDTO;
 import org.ehfg.app.core.external.TwitterStreamingFacade;
 import org.ehfg.app.core.repository.AppConfigRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import twitter4j.FilterQuery;
 import twitter4j.TwitterStream;
@@ -24,6 +26,7 @@ import twitter4j.TwitterStreamFactory;
  * @author patrick
  * @since 14.03.2014
  */
+@Component("twitterStreamingFacade")
 class TwitterStreamingFacadeImpl implements TwitterStreamingFacade {
 	private final Map<String, TwitterStream> streams = new HashMap<String, TwitterStream>();
 	private final TwitterStreamFactory streamFactory;
@@ -33,6 +36,7 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade {
 	@Value("${twitter.default.listener.start}")
 	private Boolean defaultStartup;
 
+	@Autowired
 	public TwitterStreamingFacadeImpl(TwitterStreamFactory streamFactory,
 			PersistenceStreamListenerFactory listenerFactory, AppConfigRepository configRepository) {
 		super();

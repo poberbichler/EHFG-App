@@ -15,14 +15,18 @@ import org.codehaus.jettison.json.JSONObject;
 import org.ehfg.app.api.dto.ConferenceDayDTO;
 import org.ehfg.app.api.dto.SessionDTO;
 import org.ehfg.app.api.facade.ProgramFacade;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.sun.jersey.api.json.JSONWithPadding;
 
+@Component
 @Path("session")
-public class SessionRestService {
+public class SessionRestEndpoint {
 	private final ProgramFacade programFacade;
 
-	public SessionRestService(ProgramFacade programFacade) {
+	@Autowired
+	public SessionRestEndpoint(ProgramFacade programFacade) {
 		super();
 		this.programFacade = programFacade;
 	}

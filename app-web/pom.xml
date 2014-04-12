@@ -20,18 +20,21 @@
 			<groupId>org.ehfg</groupId>
 			<artifactId>app-core</artifactId>
 			<version>${project.parent.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.ehfg</groupId>
 			<artifactId>app-rest</artifactId>
 			<version>${project.parent.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.ehfg</groupId>
 			<artifactId>app-external</artifactId>
 			<version>${project.parent.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>

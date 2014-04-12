@@ -13,18 +13,22 @@ import org.ehfg.app.core.external.TwitterStreamingFacade;
 import org.ehfg.app.core.mapper.TweetMapper;
 import org.ehfg.app.core.repository.AppConfigRepository;
 import org.ehfg.app.core.repository.TweetRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Component;
 
 /**
  * @author patrick
  * @since 13.03.2014
  */
+@Component
 public class TwitterFacadeImpl implements TwitterFacade {
 	private final TweetRepository tweetRepository;
 	private final TwitterStreamingFacade streamingFacade;
 	private final AppConfigRepository configRepository;
 	
+	@Autowired
 	public TwitterFacadeImpl(TweetRepository tweetRepository, TwitterStreamingFacade streamingFacade,
 			AppConfigRepository configRepository) {
 		this.tweetRepository = tweetRepository;

@@ -8,7 +8,9 @@ import java.util.Map.Entry;
 
 import org.ehfg.app.api.dto.SessionDTO;
 import org.ehfg.app.core.repository.SessionRepository;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class SessionRepositoryImpl implements SessionRepository {
 	private final static Map<Long, SessionDTO> sessionMap = new HashMap<Long, SessionDTO>() {
 		private static final long serialVersionUID = -32316877290559606L;

@@ -63,7 +63,7 @@ public class TwitterStreamMaintenance {
 
 	@Property
 	private String hashtagValue;
-
+	
 	@Cached
 	public List<String> getStreamList() {
 		return twitterFacade.findStreams();
