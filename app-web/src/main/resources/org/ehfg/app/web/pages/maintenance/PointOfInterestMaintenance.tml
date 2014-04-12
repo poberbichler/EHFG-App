@@ -1,0 +1,3 @@
+<div t:id="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+	<h1>Points of Interest</h1>
+</div>

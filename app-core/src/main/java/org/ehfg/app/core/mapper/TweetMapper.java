@@ -26,7 +26,7 @@ public class TweetMapper {
 		for (final Tweet tweet : source) {
 			final TwitterUser user = tweet.getAuthor();
 
-			String message = tweet.getFormattedMesssage() != null ? tweet.getFormattedMesssage() : tweet.getMessage();
+			final String message = tweet.getFormattedMesssage() != null ? tweet.getFormattedMesssage() : tweet.getMessage();
 			result.add(new TweetDTO(user.getFullName(), user.getNickName(), message, user.getProfileImage(), tweet.getCreationDate()));
 		}
 

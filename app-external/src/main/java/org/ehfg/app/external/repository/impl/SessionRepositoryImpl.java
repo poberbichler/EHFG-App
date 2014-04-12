@@ -16,7 +16,7 @@ public class SessionRepositoryImpl implements SessionRepository {
 		private static final long serialVersionUID = -32316877290559606L;
 		{
 			put(0L, new SessionDTO(0L, "sessioName", "sessionDescription", "09.04.2014 10:00", "09.04.2014 12:00", 0L, 1L, 0L));
-			put(1L, new SessionDTO(1L, "another sessioName","antoher sessionDescription", "11.04.2014 15:00", "11.04.2014 18:00", 1L, 0L));
+			put(1L, new SessionDTO(1L, "another sessioName", "antoher sessionDescription", "11.04.2014 15:00", "11.04.2014 18:00", 1L, 0L));
 		}
 	};
 
@@ -38,14 +38,14 @@ public class SessionRepositoryImpl implements SessionRepository {
 				result.add(entry.getValue());
 			}
 		}
-		
+
 		return result;
 	}
 
 	@Override
 	public List<SessionDTO> findByDay() {
 		List<SessionDTO> result = new ArrayList<SessionDTO>();
-		
+
 		return result;
 	}
 

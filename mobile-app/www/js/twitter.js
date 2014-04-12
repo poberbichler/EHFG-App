@@ -116,7 +116,10 @@ var createTwitterElements = function(tweetPage) {
     var tweet = '';
     $.each(tweets, function(index, value) {
         if (index === 0) {
-            localStorage.setItem('lastTweet', JSON.stringify(value));
+            var currentLastItem = JSON.parse(localStorage.getItem('lastTweet'));
+            if (currentLastItem === undefined || value.timestamp > currentLastItem.timestamp) {
+                localStorage.setItem('lastTweet', JSON.stringify(value));
+            }
         }
 
         var date = new Date(value.timestamp);
