@@ -12,17 +12,17 @@ Date.prototype.toTwitterDate = function() {
     if (difference < days) {
         if (difference < minutes) {
             var value = (difference/seconds).toFixed(0);
-            return "" + value + (value == 1 ? " second ago" : " seconds ago");
+            return "" + value + "s"
         }
 
         if (difference < hours) {
             var value = (difference/minutes).toFixed(0);
-            return "" + value + (value == 1 ? " minute ago" : " minutes ago");
+            return "" + value + "m"
 
         }
 
         var value = (difference/hours).toFixed(0);
-        return "" + value + (value == 1 ? " hour ago" : " hours ago");
+        return "" + value + "h";
     }
 
     var minuteValue = this.getMinutes() < 10 ? "0" + this.getMinutes() : this.getMinutes();
@@ -104,10 +104,8 @@ var createTwitterFeed = function(tweetPage) {
  * @returns {string} html text representing these tweets
  */
 var createTwitterElements = function(tweetPage) {
-    console.log(tweetPage);
     var tweets = [];
     if ($.isArray(tweetPage)) {
-        console.log('array')
         tweets = tweetPage;
     }
 
@@ -142,7 +140,7 @@ var createTwitterElements = function(tweetPage) {
         tweet += moreTweetElement;
     }
 
-    console.log('returning', tweet);
+    //console.log('returning', tweet);
     return tweet;
 }
 

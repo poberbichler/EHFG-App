@@ -20,6 +20,7 @@ public class Tweet {
 	private String message;
 	private Date creationDate;
 	private String hashtag;
+	private String formattedMesssage;
 
 	@ManyToOne
 	private TwitterUser author;
@@ -28,13 +29,13 @@ public class Tweet {
 
 	}
 
-	public Tweet(Long id, String message, Date creationDate, String hashtag,
-			TwitterUser author) {
+	public Tweet(Long id, String message, Date creationDate, String hashtag, String formattedMesssage, TwitterUser author) {
 		super();
 		this.id = id;
 		this.message = message;
 		this.creationDate = creationDate;
 		this.hashtag = hashtag;
+		this.formattedMesssage = formattedMesssage;
 		this.author = author;
 	}
 
@@ -76,6 +77,14 @@ public class Tweet {
 
 	public void setHashtag(String hashtag) {
 		this.hashtag = hashtag;
+	}
+
+	public String getFormattedMesssage() {
+		return formattedMesssage;
+	}
+
+	public void setFormattedMesssage(String formattedMesssage) {
+		this.formattedMesssage = formattedMesssage;
 	}
 
 	@Override

@@ -67,7 +67,6 @@ var createSessionList = function(elementId, source) {
         });
     });
 
-    console.log(item);
     list.append(item);
     list.listview('refresh');
 }

@@ -63,7 +63,7 @@ div.timeline-footer {
 
 .tweet .names {
     font-size: 14px;
-    padding: 0 20px 0 70px;
+    padding: 0 10px 0 70px;
 }
 
 .tweet .names .full-name {
@@ -113,4 +113,8 @@ div.timeline-footer {
     text-align: center;
     padding: 10px 0;
     background-color: #EFEFEF;
+}
+
+span.hashtag {
+    color: #0084B4;
 }

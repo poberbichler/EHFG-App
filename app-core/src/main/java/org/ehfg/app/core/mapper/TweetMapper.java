@@ -20,14 +20,14 @@ public class TweetMapper {
 		if (source == null) {
 			return Collections.emptyList();
 		}
-		
+
 		final List<TweetDTO> result = new ArrayList<>(source.size());
-		
+
 		for (final Tweet tweet : source) {
 			final TwitterUser user = tweet.getAuthor();
-			
-			result.add(new TweetDTO(user.getFullName(), user.getNickName(), tweet.getMessage(), 
-					user.getProfileImage(), tweet.getCreationDate()));
+
+			String message = tweet.getFormattedMesssage() != null ? tweet.getFormattedMesssage() : tweet.getMessage();
+			result.add(new TweetDTO(user.getFullName(), user.getNickName(), message, user.getProfileImage(), tweet.getCreationDate()));
 		}
 
 		return result;

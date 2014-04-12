@@ -25,8 +25,7 @@ class PeristenceStreamListener implements StatusListener {
 	private final TwitterUserRepository twitterUserRepository;
 	private final String hashtag;
 
-	public PeristenceStreamListener(TweetRepository tweetRepository, TwitterUserRepository twitterUserRepository,
-			String hashtag) {
+	public PeristenceStreamListener(TweetRepository tweetRepository, TwitterUserRepository twitterUserRepository, String hashtag) {
 		super();
 		this.tweetRepository = tweetRepository;
 		this.twitterUserRepository = twitterUserRepository;
@@ -55,7 +54,7 @@ class PeristenceStreamListener implements StatusListener {
 		Tweet tweet = tweetRepository.findOne(status.getId());
 		if (tweet == null) {
 			LOGGER.debug("adding new tweet");
-			tweet = new Tweet(status.getId(), status.getText(), status.getCreatedAt(), hashtag, author);
+			tweet = TweetFactory.create(status, hashtag, author);
 		}
 
 		tweetRepository.save(tweet);
