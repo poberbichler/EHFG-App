@@ -34,15 +34,15 @@ public class SessionRestEndpoint {
 	@GET
 	@Path("all")
 	@Produces(Type.JSONP)
-	public JSONWithPadding test(@QueryParam("callback") String callback) throws JSONException {
+	public JSONWithPadding findAllSessions(@QueryParam("callback") String callback) throws JSONException {
 		final JSONArray result = new JSONArray();
 		for (final Entry<ConferenceDayDTO, List<SessionDTO>> entry : programFacade.findAllSessions().entrySet()) {
 			final ConferenceDayDTO day = entry.getKey();
-			
+
 			final JSONObject jsonDay = new JSONObject();
 			jsonDay.put("description", day.getDescription());
 			jsonDay.put("timestamp", day.getDay().getTime());
-			
+
 			final JSONArray sessions = new JSONArray();
 			for (final SessionDTO session : entry.getValue()) {
 				final JSONObject jsonSession = new JSONObject();
@@ -53,14 +53,14 @@ public class SessionRestEndpoint {
 				jsonSession.put("name", session.getName());
 				jsonSession.put("location", session.getLocationId());
 				jsonSession.put("speakers", session.getSpeakers());
-				
+
 				sessions.put(jsonSession);
 			}
-			
+
 			jsonDay.put("sessions", sessions);
 			result.put(jsonDay);
 		}
-		
+
 		return new JSONWithPadding(result, callback);
 	}
 

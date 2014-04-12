@@ -13,12 +13,11 @@ import org.springframework.stereotype.Component;
 
 import com.sun.jersey.api.json.JSONWithPadding;
 
-
 @Component
 @Path("speaker")
 public class SpeakerRestEndpoint {
 	private final ProgramFacade programFacade;
-	
+
 	@Autowired
 	public SpeakerRestEndpoint(ProgramFacade programFacade) {
 		this.programFacade = programFacade;

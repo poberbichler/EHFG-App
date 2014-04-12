@@ -3,15 +3,24 @@
 	
 	<div t:id="dayZone">
 		<form t:id="inputForm">
-			<ul t:id="dayLoop">
-				<li>
-					<input t:id="day" />
-					<input t:id="description" />
+			<div t:id="dayLoop">
+				<div class="row" style="margin-bottom: 5px;">
+					<div class="col-xs-2">
+						<input t:id="description" />
+					</div>
+					
+					<div class="col-xs-2">
+						<input t:id="day" />
+					</div>
+					
 					<a t:id="removeDay">remove</a>
-				</li>
-			</ul>
+				</div>
+				
+				<p:addRow>
+					<a t:id="addDay">add day</a>
+				</p:addRow>
+			</div>
 	
-			<a t:id="addDay" class="btn btn-default">add day</a>
 			<button t:id="saveDays" class="btn btn-primary" value="save days"></button>
 		</form>
 	</div>

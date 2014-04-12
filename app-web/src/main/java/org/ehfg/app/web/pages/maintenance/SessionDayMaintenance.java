@@ -1,17 +1,19 @@
 package org.ehfg.app.web.pages.maintenance;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
 
-import org.apache.tapestry5.EventConstants;
+import org.apache.tapestry5.ValueEncoder;
 import org.apache.tapestry5.annotations.Component;
-import org.apache.tapestry5.annotations.OnEvent;
+import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
-import org.apache.tapestry5.corelib.components.ActionLink;
+import org.apache.tapestry5.corelib.components.AddRowLink;
+import org.apache.tapestry5.corelib.components.AjaxFormLoop;
 import org.apache.tapestry5.corelib.components.DateField;
 import org.apache.tapestry5.corelib.components.Form;
-import org.apache.tapestry5.corelib.components.Loop;
+import org.apache.tapestry5.corelib.components.RemoveRowLink;
 import org.apache.tapestry5.corelib.components.Submit;
 import org.apache.tapestry5.corelib.components.TextField;
 import org.apache.tapestry5.corelib.components.Zone;
@@ -33,15 +35,14 @@ public class SessionDayMaintenance {
 	@Component
 	private Submit saveDays;
 
-	@Component(parameters = { "zone=dayZone", "context=dayList" })
-	private ActionLink addDay;
+	@Component(parameters = { "source=dayList", "value=currentDay", "encoder=dayEncoder", "show=show" })
+	private AjaxFormLoop dayLoop;
 
-	@Component(parameters = { "zone=dayZone", "context=currentDay.id" })
-	private ActionLink removeDay;
+	@Component
+	private AddRowLink addDay;
 
-	@Property
-	@Component(parameters = { "source=dayList", "value=currentDay"})
-	private Loop<ConferenceDayDTO> dayLoop;
+	@Component
+	private RemoveRowLink removeDay;
 
 	@Component(parameters = { "value=currentDay.description" })
 	private TextField description;
@@ -54,26 +55,48 @@ public class SessionDayMaintenance {
 
 	@Inject
 	private ProgramFacade programFacade;
-	
+
 	@Property
 	private ConferenceDayDTO currentDay;
-	
+
+	@Persist
 	@Property
 	private List<ConferenceDayDTO> dayList;
-	
-	void onPrepare() {
+
+	@Property
+	private ValueEncoder<ConferenceDayDTO> dayEncoder = new ValueEncoder<ConferenceDayDTO>() {
+		@Override
+		public String toClient(ConferenceDayDTO value) {
+			return value.getId().toString();
+		}
+
+		@Override
+		public ConferenceDayDTO toValue(String clientValue) {
+			for (final ConferenceDayDTO day : dayList) {
+				if (day.getId().toString().equals(clientValue)) {
+					return day;
+				}
+			}
+
+			return null;
+		}
+	};
+
+	void beginRender() {
 		dayList = programFacade.findDays();
 	}
-	
-	@OnEvent(component = "removeDay", value = EventConstants.ACTION)
-	Object onActionFromRemoveDay(Long dayId) {
-		programFacade.removeDay(dayId);
-		return dayZone.getBody();
+
+	public ConferenceDayDTO onAddRowFromDayLoop() {
+		final ConferenceDayDTO day = new ConferenceDayDTO(new Date().getTime(), new Date(), "description");
+		dayList.add(day);
+		return day;
 	}
-	
-	@OnEvent(component = "addDay", value = EventConstants.ACTION)
-	Object onActionFromAddDay() {
-		dayList.add(programFacade.addDay());
-		return dayZone.getBody();
+
+	public void onRemoveRowFromDayLoop(ConferenceDayDTO day) {
+		dayList.remove(day);
+	}
+
+	void onSuccessFromInputForm() {
+		programFacade.saveDays(dayList);
 	}
 }

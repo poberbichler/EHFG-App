@@ -6,7 +6,7 @@ import java.util.Date;
  * @author patrick
  * @since 04.04.2014
  */
-public class ConferenceDayDTO {
+public class ConferenceDayDTO implements Comparable<ConferenceDayDTO> {
 	private Long id;
 	private Date day;
 	private String description;
@@ -83,13 +83,12 @@ public class ConferenceDayDTO {
 		this.id = id;
 	}
 
-	// @Override
-	// public String toString() {
-	// final StringBuilder builder = new StringBuilder();
-	// builder.append("{");
-	// builder.append("description: ").append(description).append(", timestamp: ").append(day.getTime());
-	// builder.append("}");
-	//
-	// return builder.toString();
-	// }
+	@Override
+	public int compareTo(ConferenceDayDTO that) {
+		if (this.day.equals(that.day)) {
+			return this.description.compareTo(that.description);
+		}
+
+		return this.day.compareTo(that.day);
+	}
 }
