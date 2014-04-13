@@ -129,3 +129,18 @@ Terminating in response to SpringBoard's termination.
 2014-03-14 07:49:57.852 EHFG[20370:80b] Resetting plugins due to page load.
 2014-03-14 07:49:58.462 EHFG[20370:80b] Finished load of: file:///Users/patrick/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/C9FA6FE5-8632-4079-9F04-89606BBA8FA4/EHFG.app/www/index.html
 2014-03-14 07:50:00.044 EHFG[20370:80b] THREAD WARNING: ['InAppBrowser'] took '27.150879' ms. Plugin should use a background thread.
+2014-04-13 10:00:41.001 EHFG[8108:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-13 10:00:41.033 EHFG[8108:70b] Unlimited access to network resources
+2014-04-13 10:00:41.360 EHFG[8108:70b] Resetting plugins due to page load.
+2014-04-13 10:00:42.189 EHFG[8108:70b] Finished load of: file:///Users/patrick/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/1D5D54FB-C9D3-4C37-801B-E2B9882462CE/EHFG.app/www/index.html
+Terminating in response to SpringBoard's termination.
+2014-04-13 10:02:32.696 EHFG[9163:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-13 10:02:32.706 EHFG[9163:70b] Unlimited access to network resources
+2014-04-13 10:02:32.879 EHFG[9163:70b] Resetting plugins due to page load.
+2014-04-13 10:02:33.642 EHFG[9163:70b] Finished load of: file:///Users/patrick/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/1D5D54FB-C9D3-4C37-801B-E2B9882462CE/EHFG.app/www/index.html
+Terminating in response to SpringBoard's termination.
+2014-04-13 10:06:59.610 EHFG[10250:70b] Multi-tasking -> Device: YES, App: YES
+2014-04-13 10:06:59.620 EHFG[10250:70b] Unlimited access to network resources
+2014-04-13 10:06:59.743 EHFG[10250:70b] Resetting plugins due to page load.
+2014-04-13 10:07:00.455 EHFG[10250:70b] Finished load of: file:///Users/patrick/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/1D5D54FB-C9D3-4C37-801B-E2B9882462CE/EHFG.app/www/index.html
+Terminating in response to SpringBoard's termination.

@@ -177,3 +177,18 @@ var restCallWithParams = function(urlExtension, params, callbackFn) {
         callbackFn(data);
     });
 }
+
+var addMarker = function(map, pos, title) {
+    var position = new google.maps.LatLng(47.170329, 13.103852);
+    var marker = new google.maps.Marker({
+        position: position,
+        map: map,
+        title: 'test123'
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+        //$.mobile.changePage( "#map-dialog", { role: "dialog" } );
+        //$('#map-dialog').dialog();
+        $('#map-dialog').popup({theme: 'a'}).popup('open');
+    });
+}

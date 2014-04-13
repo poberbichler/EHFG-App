@@ -117,7 +117,7 @@ var createTwitterElements = function(tweetPage) {
     $.each(tweets, function(index, value) {
         if (index === 0) {
             var currentLastItem = JSON.parse(localStorage.getItem('lastTweet'));
-            if (currentLastItem === undefined || value.timestamp > currentLastItem.timestamp) {
+            if (currentLastItem === undefined || currentLastItem === null || value.timestamp > currentLastItem.timestamp) {
                 localStorage.setItem('lastTweet', JSON.stringify(value));
             }
         }

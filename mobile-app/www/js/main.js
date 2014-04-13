@@ -50,12 +50,13 @@ $('#session-detail').on(PAGE_EVENT, function() {
 });
 
 $('#map').on('pageshow', function() {
-    console.log('callled now!');
     var mapOptions = {
         center: new google.maps.LatLng(47.170329, 13.103852),
         zoom: 16
     };
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+    addMarker(map, null, "baghis ist cool");
 });
 
 $('#newsfeed').on(PAGE_EVENT, function() {

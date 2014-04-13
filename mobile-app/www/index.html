@@ -28,7 +28,8 @@
                     <img src="img/twitter-logo.png" class="twitter-logo"/>
                 </div>
 
-                <div id="tweets"></div>
+                <div id="tweets" />
+                </div>
             </div>
         </div>
     </div>
@@ -95,11 +96,23 @@
             <h1>Map</h1>
         </div>
 
-        <div role="main" id="map-parent">
-            <div id="map-canvas"/>
+        <div data-role="main" id="map-parent">
+            <div id="map-canvas"/></div>
         </div>
     </div>
     <!-- END OF MAPS -->
+
+    <!-- DIALOG FOR POI -->
+    <div data-role="popup" id="map-dialog">
+        <div data-role="header">
+            <h1>dialog</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            some stuff
+        </div>
+    </div>
+    <!-- END DIALOG -->
 
     <!-- FOOTER -->
     <div data-role="footer" data-position="fixed" data-tap-toggle="false">

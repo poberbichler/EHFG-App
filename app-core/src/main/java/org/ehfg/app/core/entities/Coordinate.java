@@ -1,27 +1,27 @@
-package org.ehfg.app.api.dto;
+package org.ehfg.app.core.entities;
 
+import javax.persistence.Embeddable;
 import javax.validation.constraints.NotNull;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
- * representation of a coordinate
- * 
  * @author patrick
- * @since 02.03.2014
+ * @since 13.04.2014
  */
-public class CoordinateDTO {
+@Embeddable
+public class Coordinate {
 	@NotNull
 	private Double xValue;
 
 	@NotNull
 	private Double yValue;
 
-	public CoordinateDTO() {
+	public Coordinate() {
 
 	}
 
-	public CoordinateDTO(Double xValue, Double yValue) {
+	public Coordinate(Double xValue, Double yValue) {
 		super();
 		this.xValue = xValue;
 		this.yValue = yValue;
@@ -41,14 +41,6 @@ public class CoordinateDTO {
 
 	public void setyValue(Double yValue) {
 		this.yValue = yValue;
-	}
-	
-	public Double getBlup() {
-		return xValue;
-	}
-	
-	public Double getAsdf() {
-		return yValue;
 	}
 
 	@Override

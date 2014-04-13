@@ -12,12 +12,14 @@ var cacheAllData = function(webserviceUrl) {
     });
 };
 
-var id;
-
 cacheAllData("http://localhost:8080/rest/speaker/all");
 
+restCall("session/all", function(result) {
+    sessionService().setData(result);
+});
+
 $('#sessions').on(PAGE_EVENT, function() {
-    createListView('sessionList', sessionService().findSessions(), 'name', 'session-detail', 'id');
+    createSessionList('sessionList', sessionService().findSessions());
 });
 
 
@@ -37,7 +39,7 @@ $('#speaker-detail').on(PAGE_EVENT, function() {
     createListView('speakerSessionList', sessionService().findBySpeakerId(speaker.id));
 });
 
-$('#session-detail').on(PAGE_EVENT), function() {
+$('#session-detail').on(PAGE_EVENT, function() {
     var session = sessionService().findById($.mobile.pageParameters.id);
     if (session === null) {
         $.mobile.changePage("#sessions");
@@ -45,22 +47,19 @@ $('#session-detail').on(PAGE_EVENT), function() {
     }
 
     $('#session-header').text(session.name);
-};
+});
 
-$('#maps').on('pagechange'), function() {
-
-};
-
-google.maps.event.addDomListener(window, 'load', function() {
+$('#map').on('pageshow', function() {
     var mapOptions = {
         center: new google.maps.LatLng(47.170329, 13.103852),
         zoom: 16
     };
-    var map = new google.maps.Map(document.getElementById("map-canvas"),
-        mapOptions);
+    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+    addMarker(map, null, "baghis ist cool");
 });
 
-
 $('#newsfeed').on(PAGE_EVENT, function() {
-    createTwitterFeed();
+    loadAndCreateTwitterFeed();
+    $('#refresh-icon').on('click', updateTwitterFeed);
 });

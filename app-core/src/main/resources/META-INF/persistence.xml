@@ -6,9 +6,10 @@
 	
 	<persistence-unit name="ehfgAppPersistenceUnit">
 		<class>org.ehfg.app.core.entities.AppConfig</class>
+		<class>org.ehfg.app.core.entities.ConferenceDay</class>
+		<class>org.ehfg.app.core.entities.PointOfInterest</class>
 		<class>org.ehfg.app.core.entities.Tweet</class>
 		<class>org.ehfg.app.core.entities.TwitterUser</class>
-		<class>org.ehfg.app.core.entities.ConferenceDay</class>
 		
 		<exclude-unlisted-classes />
 	</persistence-unit>

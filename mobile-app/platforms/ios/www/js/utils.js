@@ -2,8 +2,8 @@
  * creates a jquery mobile view, with the given parameters.
  * first, the list elements are added to the element with the root id.
  *
- * after that, the list view will be rendered by the refresh function of
  * the jquery mobile element of the list
+ * after that, the list view will be rendered by the refresh function of
  *
  * if the page and page field parameters are given, a link will be rendered in the
  * list elements
@@ -51,6 +51,25 @@ var createListView = function(elementId, source, labelField, page, pageField) {
 
     list.listview('refresh');
 };
+
+var createSessionList = function(elementId, source) {
+    var list = $('#' + elementId);
+    list.children().remove();
+
+    var item = '';
+    $.each(source, function(dayIndex, currentDay) {
+        item += '<li>' + currentDay.description + '</li>';
+
+        $.each(currentDay.sessions, function(sessionIndex, currentSession) {
+            item += '<li>';
+            item += '<a href="#session-detail?id=' + currentSession.id + '">' + currentSession.name + '</a>';
+            item += '</li>';
+        });
+    });
+
+    list.append(item);
+    list.listview('refresh');
+}
 
 /**
  * shorthand function for searching for a given id in the list
@@ -125,3 +144,45 @@ var findListByPropertyNameInList = function(list, propertyName, propertyValue) {
 
     return result;
 };
+
+/**
+ * calls the rest function with the given url extension, and calls the callbackFn when successful
+ * internally calls restCallWithParams with an empty parameter object
+ *
+ * @param urlExtension last bit of the url to be added
+ * @param callbackFn function to be called when the call was successful
+ */
+var restCall = function(urlExtension, callbackFn) {
+    restCallWithParams(urlExtension, {}, callbackFn);
+}
+
+/**
+ * calls the rest function with the given url extension, passing params to the server. after that, the callbackFn is
+ * called when being successful
+ *
+ * @param urlExtension last bit of the url to be added
+ * @param params to be sent to the server
+ * @param callbackFn function to be called when the call was successful
+ */
+var restCallWithParams = function(urlExtension, params, callbackFn) {
+	var url = "http://localhost:8080/rest/" + urlExtension;
+    $.ajax(url, {
+        headers: {'Access-Control-Allow-Origin': '*'},
+        crossDomain: true,
+        contentType: 'application/json',
+        type: 'GET',
+        dataType: 'jsonp',
+        data: params
+    }).success(function(data) {
+        callbackFn(data);
+    });
+}
+
+var addMarker = function(map, pos, title) {
+    var position = new google.maps.LatLng(47.170329, 13.103852);
+    var marker = new google.maps.Marker({
+        position: position,
+        map: map,
+        title: 'test123'
+    });
+}

@@ -27,13 +27,32 @@ var sessionService = function() {
         },
 
         findById: function(sessionId) {
-            return {};
-            //return findByIdInList(sessions, sessionId);
+            var days = JSON.parse(localStorage.getItem('sessions'));
+            var result = null;
+            $.each(days, function(dayIndex, currentDay) {
+                $.each(currentDay.sessions, function(sessionIndex, currentSession) {
+                    if (currentSession.id == sessionId) {
+                        result = currentSession;
+                        return;
+                    }
+                });
+            });
+
+            return result;
         },
 
         findBySpeakerId: function(speakerId) {
-            return {};
-            //return findListByPropertyNameInList(sessions, 'speakerId', speakerId);
+            var days = JSON.parse(localStorage.getItem('sessions'));
+            var result = [];
+            $.each(days, function(dayIndex, currentDay) {
+                $.each(currentDay.sessions, function(sessionIndex, currentSession) {
+                    if (currentSession.speakers.indexOf(speakerId) !== -1) {
+                        result.push(currentSession);
+                    }
+                });
+            });
+
+            return result;
         },
 
         setData: function(data) {
