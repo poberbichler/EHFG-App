@@ -56,7 +56,11 @@ $('#map').on('pageshow', function() {
     };
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-    addMarker(map, null, "baghis ist cool");
+    restCall("points/all", function(result) {
+        $.each(result, function(index, value) {
+           addMarker(map, value);
+        });
+    });
 });
 
 $('#newsfeed').on(PAGE_EVENT, function() {

@@ -178,17 +178,24 @@ var restCallWithParams = function(urlExtension, params, callbackFn) {
     });
 }
 
-var addMarker = function(map, pos, title) {
-    var position = new google.maps.LatLng(47.170329, 13.103852);
+var addMarker = function(map, positionData) {
+    var coordinate = positionData.coordinate;
+    var position = new google.maps.LatLng(coordinate.xValue, coordinate.yValue);
+
     var marker = new google.maps.Marker({
         position: position,
-        map: map,
-        title: 'test123'
+        map: map
     });
 
-    google.maps.event.addListener(marker, 'click', function() {
-        //$.mobile.changePage( "#map-dialog", { role: "dialog" } );
-        //$('#map-dialog').dialog();
-        $('#map-dialog').popup({theme: 'a'}).popup('open');
-    });
+    var createDialog = (function(data) {
+        return function() {
+            $('#pointHeader').text(data.name);
+            $('#pointDescription').text(data.description);
+            $('#pointAddress').text(data.address);
+
+            $('#map-dialog').popup({theme: 'a'}).popup('open');
+        };
+    })(positionData);
+
+    google.maps.event.addListener(marker, 'click', createDialog);
 }
