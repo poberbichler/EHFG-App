@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.ehfg.app.api.dto.SessionDTO;
-import org.ehfg.app.core.repository.SessionRepository;
+import org.ehfg.app.core.external.SessionRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository

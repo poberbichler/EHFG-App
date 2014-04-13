@@ -28,13 +28,6 @@ public class TwitterRestEndpoint {
 	}
 
 	@GET
-	@Path("tweets")
-	@Produces(Type.JSONP)
-	public JSONWithPadding findTweets(@QueryParam("callback") String callback) {
-		return new JSONWithPadding(twitterFacade.findTweetsForCongress(), callback);
-	}
-
-	@GET
 	@Path("hashtag")
 	@Produces(Type.JSONP)
 	public JSONWithPadding getHashtag(@QueryParam("callback") String callback) throws JSONException {

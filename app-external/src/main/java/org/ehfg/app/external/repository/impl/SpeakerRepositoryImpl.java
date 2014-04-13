@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.ehfg.app.api.dto.SpeakerDTO;
-import org.ehfg.app.core.repository.SpeakerRepository;
+import org.ehfg.app.core.external.SpeakerRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
