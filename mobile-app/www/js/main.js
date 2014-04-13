@@ -49,13 +49,13 @@ $('#session-detail').on(PAGE_EVENT, function() {
     $('#session-header').text(session.name);
 });
 
-$('#map').on(PAGE_EVENT, function() {
+$('#map').on('pageshow', function() {
+    console.log('callled now!');
     var mapOptions = {
         center: new google.maps.LatLng(47.170329, 13.103852),
         zoom: 16
     };
-    var map = new google.maps.Map(document.getElementById("map-canvas"),
-        mapOptions);
+    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 });
 
 $('#newsfeed').on(PAGE_EVENT, function() {
