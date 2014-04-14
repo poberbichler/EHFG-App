@@ -73,7 +73,7 @@
         </div>
 
         <div role="main" class="ui-content">
-            <ul id="sessionList" data-role="listview" data-filter="true"/>
+            <ul id="sessionList" data-role="listview" data-filter="true"></ul>
         </div>
     </div>
     <!-- END OF SESSIONS -->
@@ -102,19 +102,6 @@
     </div>
     <!-- END OF MAPS -->
 
-    <!-- DIALOG FOR POI -->
-    <div data-role="popup" id="map-dialog">
-        <div data-role="header">
-            <h1 id="pointHeader">Point of Interest</h1>
-        </div>
-
-        <div role="main" class="ui-content">
-            <p id="pointAddress">some address</p>
-            <p id="pointDescription"></p>
-        </div>
-    </div>
-    <!-- END DIALOG -->
-
     <!-- FOOTER -->
     <div data-role="footer" data-position="fixed" data-tap-toggle="false">
         <div data-role="navbar">
@@ -127,6 +114,22 @@
         </div>
     </div>
     <!-- END OF FOOTER -->
+
+    <!-- DIALOG FOR MAP -->
+    <div data-role="popup" id="map-dialog" style="display: none">
+        <div data-role="header">
+            <h1 id="pointHeader">Point of Interest</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <p><b>address:</b></p>
+            <p id="pointAddress">some address</p>
+
+            <p><b>description:</b></p>
+            <p id="pointDescription"></p>
+        </div>
+    </div>
+    <!-- END DIALOG -->
 
     <script src="js/navbar.js"></script>
     <script src="js/program.js"></script>

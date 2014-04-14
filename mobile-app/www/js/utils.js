@@ -193,6 +193,7 @@ var addMarker = function(map, positionData) {
             $('#pointDescription').text(data.description);
             $('#pointAddress').text(data.address);
 
+            $('#map-dialog').css('display', '');
             $('#map-dialog').popup({theme: 'a'}).popup('open');
         };
     })(positionData);
