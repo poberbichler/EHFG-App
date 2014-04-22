@@ -55,6 +55,7 @@
 
         <div role="main" class="ui-content">
             <div class="ui-body ui-body-a ui-corner-all">
+                <img id="speakerImage"></img>
                 <h3>description</h3>
                 <p id="speakerDescription" />
             </div>
@@ -119,14 +120,21 @@
     <div data-role="popup" id="map-dialog" style="display: none">
         <div data-role="header">
             <h1 id="pointHeader">Point of Interest</h1>
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
         </div>
 
         <div role="main" class="ui-content">
-            <p><b>address:</b></p>
+            <p><b>Location:</b></p>
             <p id="pointAddress">some address</p>
 
-            <p><b>description:</b></p>
-            <p id="pointDescription"></p>
+            <p><b>Description:</b></p>
+            <p id="pointDescription">some description</p>
+
+            <p><b>Contact:</b></p>
+            <p id="pointContact">contact details</p>
+
+            <p><b>Website:</b></p>
+            <p id="pointWebsite">http://www.website.at</p>
         </div>
     </div>
     <!-- END DIALOG -->

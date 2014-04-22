@@ -28,6 +28,14 @@ public class PointOfInterest {
 	private String description;
 
 	@NotNull
+	private String contact;
+
+//	TODO: implement regexp, use expression from global class
+//	@Pattern(regexp = "")
+	@NotNull
+	private String website;
+
+	@NotNull
 	@Embedded
 	private Coordinate coordinate;
 
@@ -35,12 +43,14 @@ public class PointOfInterest {
 
 	}
 
-	public PointOfInterest(Long id, String name, String address, String description, Coordinate coordinate) {
+	public PointOfInterest(Long id, String name, String address, String description, String contact, String website, Coordinate coordinate) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.address = address;
 		this.description = description;
+		this.contact = contact;
+		this.website = website;
 		this.coordinate = coordinate;
 	}
 
@@ -82,6 +92,22 @@ public class PointOfInterest {
 
 	public void setCoordinate(Coordinate coordinate) {
 		this.coordinate = coordinate;
+	}
+
+	public String getContact() {
+		return contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+
+	public String getWebsite() {
+		return website;
+	}
+
+	public void setWebsite(String website) {
+		this.website = website;
 	}
 
 	@Override

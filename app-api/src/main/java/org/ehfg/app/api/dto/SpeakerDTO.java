@@ -17,20 +17,28 @@ public class SpeakerDTO {
 	private String firstName;
 	private String lastName;
 	private String description;
-	
+	private String imageUrl;
+
 	public SpeakerDTO() {
-		
+
 	}
 
-	public SpeakerDTO(Long id, String firstName, String lastName,
-			String description) {
-		super();
+	public SpeakerDTO(Long id, String firstName, String lastName, String description, String imageUrl) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.description = description;
+		this.imageUrl = imageUrl;
 	}
-	
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
 	public String getFullName() {
 		return String.format("%s %s", firstName, lastName);
 	}
@@ -66,7 +74,7 @@ public class SpeakerDTO {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	
+
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);

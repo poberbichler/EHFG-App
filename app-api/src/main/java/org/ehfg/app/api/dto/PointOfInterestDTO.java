@@ -21,23 +21,35 @@ public class PointOfInterestDTO {
 	private String description;
 
 	@NotNull
+	private String contact;
+
+//	TODO: implement regexp, use expression from global class
+//	@Pattern(regexp = "")
+	@NotNull
+	private String website;
+
+	@NotNull
 	private CoordinateDTO coordinate;
-	
+
 	public PointOfInterestDTO() {
 		this.coordinate = new CoordinateDTO();
 	}
 
-	public PointOfInterestDTO(Long id, String name, String address, String description, CoordinateDTO coordinate) {
+	public PointOfInterestDTO(Long id, String name, String address, String description, String contact, String website,
+			CoordinateDTO coordinate) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.address = address;
 		this.description = description;
+		this.contact = contact;
+		this.website = website;
 		this.coordinate = coordinate;
 	}
 
-	public PointOfInterestDTO(Long id, String name, String address, String description, Double xCoordinate, Double yCoordinate) {
-		this(id, name, address, description, new CoordinateDTO(xCoordinate, yCoordinate));
+	public PointOfInterestDTO(Long id, String name, String address, String description, String contact, String website, Double xCoordinate,
+			Double yCoordinate) {
+		this(id, name, address, description, contact, website, new CoordinateDTO(xCoordinate, yCoordinate));
 	}
 
 	public Long getId() {
@@ -79,13 +91,29 @@ public class PointOfInterestDTO {
 	public void setCoordinate(CoordinateDTO coordinate) {
 		this.coordinate = coordinate;
 	}
-	
+
 	public Double getxValue() {
 		return coordinate.getxValue();
 	}
-	
+
 	public Double getyValue() {
 		return coordinate.getyValue();
+	}
+
+	public String getContact() {
+		return contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+
+	public String getWebsite() {
+		return website;
+	}
+
+	public void setWebsite(String website) {
+		this.website = website;
 	}
 
 	@Override

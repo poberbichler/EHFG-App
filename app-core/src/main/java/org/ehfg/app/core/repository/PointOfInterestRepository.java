@@ -13,7 +13,7 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface PointOfInterestRepository extends CrudRepository<PointOfInterest, Long> {
 	@Query("SELECT new org.ehfg.app.api.dto.PointOfInterestDTO(p.id, p.name, p.address, p.description, "
-			+ "p.coordinate.xValue, p.coordinate.yValue) "
+			+ "p.contact, p.website, p.coordinate.xValue, p.coordinate.yValue) "
 			+ "FROM PointOfInterest p")
 	List<PointOfInterestDTO> findAllPoints();
 }

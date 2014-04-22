@@ -33,10 +33,12 @@ $('#speaker-detail').on(PAGE_EVENT, function() {
         $.mobile.changePage('#speakers');
         return;
     }
-    
+
+    console.log(speaker);
     $('#speakerDetailHeader').text(speaker.fullName);
     $('#speakerDescription').text(speaker.description);
-    createListView('speakerSessionList', sessionService().findBySpeakerId(speaker.id));
+    $('#speakerImage').attr('src', speaker.imageUrl);
+    createListView('speakerSessionList', sessionService().findBySpeakerId(speaker.id), 'name', 'session-detail', 'id');
 });
 
 $('#session-detail').on(PAGE_EVENT, function() {

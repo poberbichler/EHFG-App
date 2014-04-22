@@ -90,6 +90,8 @@ public class MasterDataFacadeImpl implements MasterDataFacade {
 		target.setAddress(source.getAddress());
 		target.setDescription(source.getDescription());
 		target.setName(source.getName());
+		target.setContact(source.getContact());
+		target.setWebsite(source.getWebsite());
 
 		final CoordinateDTO coordinate = source.getCoordinate();
 		target.setCoordinate(new Coordinate(coordinate.getxValue(), coordinate.getyValue()));

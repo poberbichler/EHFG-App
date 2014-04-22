@@ -1,18 +1,20 @@
-<div t:id="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+<div t:id="layout"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
 	<h1>Points of Interest</h1>
-	
+
 	<table t:id="pointGrid" class="table table-striped table-bordered">
 		<p:editCell>
 			<a t:id="editPointLink">edit</a>,
 			<a t:id="removePoint">delete</a>
 		</p:editCell>
 	</table>
-	
+
 	<div t:id="inputZone" id="inputZone">
 		<t:if test="!editPointAvailable">
 			<a t:id="createPoint" class="btn btn-primary">create new point</a>
 		</t:if>
-	
+
 		<t:if test="editPointAvailable">
 			<form t:id="inputForm" class="form-horizontal">
 				<div class="form-group">
@@ -21,39 +23,53 @@
 						<input t:id="name" class="form-control" />
 					</div>
 				</div>
-				
+
 				<div class="form-group">
 					<label for="address" class="col-sm-2 control-label">address</label>
 					<div class="col-sm-4">
 						<input t:id="address" class="form-control" />
 					</div>
 				</div>
-				
+
+				<div class="form-group">
+					<label for="address" class="col-sm-2 control-label">contact</label>
+					<div class="col-sm-4">
+						<input t:id="contact" class="form-control" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="address" class="col-sm-2 control-label">website</label>
+					<div class="col-sm-4">
+						<input t:id="website" class="form-control" />
+					</div>
+				</div>
+
 				<div class="form-group">
 					<label for="xCoordinate" class="col-sm-2 control-label">x-coordinate</label>
 					<div class="col-sm-4">
 						<input t:id="xCoordinate" class="form-control" />
 					</div>
 				</div>
-				
+
 				<div class="form-group">
 					<label for="yCoordinate" class="col-sm-2 control-label">y-coordinate</label>
 					<div class="col-sm-4">
 						<input t:id="yCoordinate" class="form-control" />
 					</div>
 				</div>
-				
+
 				<div class="form-group">
 					<label for="description" class="col-sm-2 control-label">description</label>
 					<div class="col-sm-4">
 						<textarea t:id="description" class="form-control" rows="5"></textarea>
 					</div>
 				</div>
-				
+
 				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">				
+					<div class="col-sm-offset-2 col-sm-10">
 						<button t:id="formSubmit" value="save" class="btn btn-primary"></button>
-					</div>		
+					</div>
 				</div>
 			</form>
 		</t:if>

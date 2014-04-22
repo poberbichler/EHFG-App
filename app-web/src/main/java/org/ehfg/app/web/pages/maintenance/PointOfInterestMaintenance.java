@@ -56,13 +56,19 @@ public class PointOfInterestMaintenance {
 
 	@Component(parameters = { "value=editPoint.description" })
 	private TextArea description;
+	
+	@Component(parameters = { "value=editPoint.website"})
+	private TextField website;
+	
+	@Component(parameters = { "value=editPoint.contact"})
+	private TextField contact;
 
 	@Component(parameters = { "value=editPoint.coordinate.xValue" })
 	private TextField xCoordinate;
 
 	@Component(parameters = { "value=editPoint.coordinate.yValue" })
 	private TextField yCoordinate;
-
+	
 	@Component
 	private Submit formSubmit;
 

@@ -192,6 +192,8 @@ var addMarker = function(map, positionData) {
             $('#pointHeader').text(data.name);
             $('#pointDescription').text(data.description);
             $('#pointAddress').text(data.address);
+            $('#pointContact').text(data.contact);
+            $('#pointWebsite').text(data.website);
 
             $('#map-dialog').css('display', '');
             $('#map-dialog').popup({theme: 'a'}).popup('open');

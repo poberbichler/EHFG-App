@@ -17,6 +17,7 @@
 	<properties>
 		<tapestry-version>5.3.7</tapestry-version>
 		<spring-version>4.0.2.RELEASE</spring-version>
+		<spring-security-version>3.2.3.RELEASE</spring-security-version>
 		<hibernate-version>4.3.4.Final</hibernate-version>
 		<jersey-version>1.18</jersey-version>
 		<twitter4j-version>3.0.5</twitter4j-version>
@@ -72,6 +73,24 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-asm</artifactId>
 				<version>${spring-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-core</artifactId>
+				<version>${spring-security-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-web</artifactId>
+				<version>${spring-security-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-config</artifactId>
+				<version>${spring-security-version}</version>
 			</dependency>
 
 			<dependency>
@@ -189,6 +208,14 @@
 				<groupId>mysql</groupId>
 				<artifactId>mysql-connector-java</artifactId>
 				<version>5.1.21</version>
+			</dependency>
+
+			<!-- TESTING -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.11</version>
+				<scope>test</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
