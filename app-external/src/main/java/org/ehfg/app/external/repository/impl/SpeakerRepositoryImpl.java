@@ -11,12 +11,16 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class SpeakerRepositoryImpl implements SpeakerRepository {
-	private final static Map<Long, SpeakerDTO> speakerMap = new HashMap<Long, SpeakerDTO>() {
-		private static final long serialVersionUID = 2853113529863078141L;
-	{
-		put(0L, new SpeakerDTO(0L, "Kim", "Jong-Il", "dead north korean 'terrorist'", "http://www.asdf.org/avatar.png"));
-		put(1L, new SpeakerDTO(1L, "Vladimir", "Putin", "loves to kill bears\nrules russia during his free time", "http://www.asdf.org/anotheravatar.png"));
-	}};
+	private final static Map<Long, SpeakerDTO> speakerMap;
+	
+	static {
+		speakerMap = new HashMap<Long, SpeakerDTO>();
+		speakerMap.put(0L, new SpeakerDTO(0L, "Nelson", "Mandela", "Habe vor kurzem 'Invictus' gesehen", 
+						"http://upload.wikimedia.org/wikipedia/commons/1/14/Nelson_Mandela-2008_%28edit%29.jpg"));
+				
+		speakerMap.put(1L, new SpeakerDTO(1L, "Alfred", "Nobel", "Erfindet gern Preise", 
+						"http://upload.wikimedia.org/wikipedia/commons/6/6e/AlfredNobel_adjusted.jpg"));
+	}
 	
 
 	@Override

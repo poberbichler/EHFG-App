@@ -51,7 +51,7 @@ public class SessionDTO {
 		this.name = name;
 		this.description = description;
 		this.locationId = locationId;
-		this.speakers = new HashSet<Long>(Arrays.asList(speakers));
+		this.speakers = new HashSet<>(Arrays.asList(speakers));
 
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy hh:mm");
