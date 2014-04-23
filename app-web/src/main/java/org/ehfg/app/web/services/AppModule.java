@@ -1,6 +1,7 @@
 package org.ehfg.app.web.services;
 
 import org.apache.tapestry5.ComponentParameterConstants;
+import org.apache.tapestry5.MetaDataConstants;
 import org.apache.tapestry5.SymbolConstants;
 import org.apache.tapestry5.ioc.Configuration;
 import org.apache.tapestry5.ioc.MappedConfiguration;
@@ -15,6 +16,10 @@ public class AppModule {
 		configuration.add(SymbolConstants.HMAC_PASSPHRASE, "gjkfg!98gdkljYX__jf909kjKLDG3kjdfADSF");
 		configuration.add(ComponentParameterConstants.ZONE_UPDATE_METHOD, "show");
 		configuration.add(SymbolConstants.PRODUCTION_MODE, "FALSE");
+	}
+	
+	public static void contributeMetaDataLocator(MappedConfiguration<String,String> configuration) {
+	    configuration.add(MetaDataConstants.SECURE_PAGE, "true");
 	}
 	
 	public static void contributeIgnoredPathsFilter(Configuration<String> configuration) {
