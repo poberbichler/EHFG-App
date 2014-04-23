@@ -34,7 +34,6 @@ public class MasterDataFacadeImpl implements MasterDataFacade {
 
 	@Autowired
 	public MasterDataFacadeImpl(AppConfigRepository configRepository, PointOfInterestRepository pointOfInterestRepository) {
-		super();
 		this.configRepository = configRepository;
 		this.pointOfInterestRepository = pointOfInterestRepository;
 	}

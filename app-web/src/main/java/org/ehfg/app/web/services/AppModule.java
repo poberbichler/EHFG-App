@@ -14,6 +14,7 @@ public class AppModule {
 	public static void contributeApplicationDefaults(MappedConfiguration<String, String> configuration) {
 		configuration.add(SymbolConstants.HMAC_PASSPHRASE, "gjkfg!98gdkljYX__jf909kjKLDG3kjdfADSF");
 		configuration.add(ComponentParameterConstants.ZONE_UPDATE_METHOD, "show");
+		configuration.add(SymbolConstants.PRODUCTION_MODE, "FALSE");
 	}
 	
 	public static void contributeIgnoredPathsFilter(Configuration<String> configuration) {
