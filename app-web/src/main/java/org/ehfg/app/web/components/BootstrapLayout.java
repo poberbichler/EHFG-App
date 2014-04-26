@@ -19,6 +19,10 @@ public class BootstrapLayout {
 
 	@Parameter(allowNull = false, value = "true", defaultPrefix = BindingConstants.LITERAL)
 	private Boolean singleWidget;
+	
+	@Property
+	@Parameter(allowNull = false, value = "false", defaultPrefix = BindingConstants.LITERAL)
+	private Boolean hideSidebar;
 
 	@Property
 	private Block footer;

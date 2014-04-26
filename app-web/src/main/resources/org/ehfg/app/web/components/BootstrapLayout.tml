@@ -10,13 +10,23 @@
 <!-- 	<div t:id="workingDialog"></div> -->
 	<div class="container">
 		<div class="row">
-			<div class="col-md-2">
-				<div t:id="sidebar" />
-			</div>
+			<t:if test="hideSidebar" negate="true">
+				<div class="col-md-2">
+					<div t:id="sidebar" />
+				</div>
+			</t:if>
 		
-			<div class="col-md-10 ${singleWidgetClass}">
-				<t:body />
-			</div>
+			<t:if test="hideSidebar" negate="true">
+				<div class="col-md-10 ${singleWidgetClass}">
+					<t:body />
+				</div>
+				
+				<p:else>
+					<div class="col-md-offset-1 col-md-10 well">
+						<t:body />
+					</div>
+				</p:else>
+			</t:if>
 		</div>
 
 		<t:if test="footer">

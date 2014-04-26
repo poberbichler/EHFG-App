@@ -1,0 +1,42 @@
+package org.ehfg.app.web.security;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+/**
+ * @author patrick
+ * @since 24.04.2014
+ */
+@Configuration
+@EnableWebSecurity
+class SecurityConfig extends WebSecurityConfigurerAdapter {
+	@Autowired
+	void configureGlobal(final AuthenticationManagerBuilder builder) throws Exception {
+		builder.inMemoryAuthentication().withUser("patrick").password("123").roles("USER");
+	}
+
+	@Override
+	public void configure(final WebSecurity web) {
+		web.ignoring().antMatchers("/rest/**", "/assets/**");
+	}
+
+	@Override
+	protected void configure(final HttpSecurity http) throws Exception {
+		http.authorizeRequests().anyRequest().authenticated().and()
+			.formLogin()
+			
+			.loginPage("/login")
+			.permitAll()
+			.usernameParameter("username")
+			.passwordParameter("password")
+			.loginProcessingUrl("/process-login")
+			.defaultSuccessUrl("/index")
+			.failureUrl("/login/failed")
+			.and().httpBasic().and().csrf().disable();
+	}
+}
