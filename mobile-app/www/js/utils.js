@@ -165,7 +165,7 @@ var restCall = function(urlExtension, callbackFn) {
  * @param callbackFn function to be called when the call was successful
  */
 var restCallWithParams = function(urlExtension, params, callbackFn) {
-	var url = "http://localhost:8080/rest/" + urlExtension;
+    var url = SERVER_URL + '/rest/' + urlExtension;
     $.ajax(url, {
         headers: {'Access-Control-Allow-Origin': '*'},
         crossDomain: true,

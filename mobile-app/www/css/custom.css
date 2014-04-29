@@ -64,7 +64,8 @@ div.timeline-footer {
 
 .tweet .names {
     font-size: 14px;
-    padding: 0 10px 0 70px;
+    padding: 0 7px 0 60px;
+    white-space: nowrap;
 }
 
 .tweet .names .full-name {
@@ -87,7 +88,7 @@ div.timeline-footer {
 
 .tweet .message {
     margin: 0;
-    padding: 0 20px 0 70px;
+    padding: 0 7px 0 60px;
     font-size: 14px;
     line-height: 16px;
     min-height: 32px;
@@ -98,7 +99,7 @@ div.timeline-footer {
     height: 50px;
     border-radius: 4px;
     position: absolute;
-    left: 10px;
+    left: 5px;
 }
 
 #refresh-icon {
@@ -118,4 +119,16 @@ div.timeline-footer {
 
 span.hashtag {
     color: #0084B4;
+}
+
+div.ui-content {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#speakerImage {
+    width: 10%;
+    height: 10%;
+    min-width: 120px;
+    min-height: 180px;
 }

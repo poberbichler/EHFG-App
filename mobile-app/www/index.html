@@ -11,11 +11,12 @@
     <script src="js/routing.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKWeN8bGUtPNZhBKSx8z81Je4lJT1z1PY&sensor=true"></script>
     <script src="cordova.js"></script>
+    <script src="js/config.js"></script>
 </head>
 
 <body>
     <!-- NEWS FEED -->
-    <div data-role="page" id="newsfeed" data-override-header="newsfeed">
+    <div data-role="page" id="newsfeed" data-override-header="feed">
         <div data-role="header">
             <h1>News Feed</h1>
         </div>
@@ -36,7 +37,7 @@
     <!-- END OF NEWS FEED -->
 
     <!-- SPEAKERS -->
-    <div data-role="page" id="speakers">
+    <div data-role="page" id="speaker" data-override-header="speaker">
         <div data-role="header">
             <h1>Speakers</h1>
         </div>
@@ -48,7 +49,7 @@
     <!-- END OF SPEAKERS -->
 
     <!-- SPEAKER DETAILS -->
-    <div data-role="page" id="speaker-detail" data-override-header="speakers">
+    <div data-role="page" id="speaker-detail" data-override-header="speaker">
         <div data-role="header">
             <h1 id="speakerDetailHeader" />
         </div>
@@ -68,7 +69,7 @@
     <!-- END OF SPEAKER DETAILS -->
 
     <!-- SESSIONS -->
-    <div data-role="page" id="sessions">
+    <div data-role="page" id="session" data-override-header="session">
         <div data-role="header">
             <h1>Sessions</h1>
         </div>
@@ -80,7 +81,7 @@
     <!-- END OF SESSIONS -->
 
     <!-- SESSION DETAILS -->
-    <div data-role="page" id="session-detail" data-override-header="sessions">
+    <div data-role="page" id="session-detail" data-override-header="session">
         <div data-role="header">
             <h1 id="session-header"/>
         </div>
@@ -107,10 +108,10 @@
     <div data-role="footer" data-position="fixed" data-tap-toggle="false">
         <div data-role="navbar">
             <ul>
-                <li><a href="#newsfeed">newsfeed</a></li>
-                <li><a href="#sessions">sessions</a></li>
-                <li><a href="#speakers">speakers</a></li>
-                <li><a href="#map">map</a></li>
+                <li><a href="#newsfeed">Feed</a></li>
+                <li><a href="#session">Session</a></li>
+                <li><a href="#speaker">Speaker</a></li>
+                <li><a href="#map">Map</a></li>
             </ul>
         </div>
     </div>
@@ -139,9 +140,9 @@
     </div>
     <!-- END DIALOG -->
 
+    <script src="js/utils.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/program.js"></script>
-    <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
     <script src="js/twitter.js"></script>
 </body>

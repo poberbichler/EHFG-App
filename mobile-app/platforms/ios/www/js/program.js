@@ -75,3 +75,21 @@ var locationService = function() {
 
     };
 };
+/**
+ * checks for a specific item in the local storage, and returns an object containing the data
+ * if nothing is found in the local storage, data will be fetched from the backend
+ *
+ * @param itemName
+ */
+var checkForItem = function(itemName) {
+    var data = localStorage.getItem(itemName);
+    if (data === null) {
+        restCall(itemName + '/all', function(result) {
+            localStorage.setItem('itemName', result);
+        });
+    }
+
+    return JSON.parse(data);
+}
+
+checkForItem('asdfasdf');

@@ -1,18 +1,17 @@
+var SPEAKER = "speaker";
+var SESSION = "session";
+
 /**
  * service layer for the various speaker queries
  */
 var speakerService = function(){
     return {
         findSpeakers: function() {
-            return JSON.parse(localStorage.getItem('speakers'));
+            return JSON.parse(localStorage.getItem(SPEAKER));
         },
 
         findById: function(speakerId) {
-            return findByIdInList(JSON.parse(localStorage.getItem('speakers')), speakerId);
-        },
-
-        setData: function(data) {
-            localStorage.setItem('speakers', JSON.stringify(data));
+            return findByIdInList(JSON.parse(localStorage.getItem(SPEAKER)), speakerId);
         }
     };
 };
@@ -23,11 +22,11 @@ var speakerService = function(){
 var sessionService = function() {
     return {
         findSessions: function() {
-            return JSON.parse(localStorage.getItem('sessions'));
+            return JSON.parse(localStorage.getItem(SESSION));
         },
 
         findById: function(sessionId) {
-            var days = JSON.parse(localStorage.getItem('sessions'));
+            var days = JSON.parse(localStorage.getItem(SESSION));
             var result = null;
             $.each(days, function(dayIndex, currentDay) {
                 $.each(currentDay.sessions, function(sessionIndex, currentSession) {
@@ -42,7 +41,7 @@ var sessionService = function() {
         },
 
         findBySpeakerId: function(speakerId) {
-            var days = JSON.parse(localStorage.getItem('sessions'));
+            var days = JSON.parse(localStorage.getItem(SESSION));
             var result = [];
             $.each(days, function(dayIndex, currentDay) {
                 $.each(currentDay.sessions, function(sessionIndex, currentSession) {
@@ -53,10 +52,6 @@ var sessionService = function() {
             });
 
             return result;
-        },
-
-        setData: function(data) {
-            localStorage.setItem('sessions', JSON.stringify(data));
         }
     };
 };
@@ -75,3 +70,21 @@ var locationService = function() {
 
     };
 };
+/**
+ * checks for a specific item in the local storage, and returns an object containing the data
+ * if nothing is found in the local storage, data will be fetched from the backend
+ *
+ * @param itemName
+ */
+var checkForItem = function(itemName) {
+    var data = localStorage.getItem(itemName);
+    if (data === null) {
+        restCall(itemName + '/all', function(result) {
+            localStorage.setItem(itemName, JSON.stringify(result));
+        });
+    }
+}
+
+
+checkForItem(SPEAKER);
+checkForItem(SESSION);

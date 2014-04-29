@@ -15,7 +15,7 @@ public class SpeakerRepositoryImpl implements SpeakerRepository {
 	
 	static {
 		speakerMap = new HashMap<Long, SpeakerDTO>();
-		speakerMap.put(0L, new SpeakerDTO(0L, "Nelson", "Mandela", "Habe vor kurzem 'Invictus' gesehen", 
+		speakerMap.put(0L, new SpeakerDTO(0L, "Nelson", "Mandela", "Politiker aus Suedafrika", 
 						"http://upload.wikimedia.org/wikipedia/commons/1/14/Nelson_Mandela-2008_%28edit%29.jpg"));
 				
 		speakerMap.put(1L, new SpeakerDTO(1L, "Alfred", "Nobel", "Erfindet gern Preise", 

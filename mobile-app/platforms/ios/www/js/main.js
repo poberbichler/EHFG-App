@@ -1,23 +1,5 @@
 var PAGE_EVENT = 'pagebeforeshow';
 
-var cacheAllData = function(webserviceUrl) {
-    $.ajax(webserviceUrl, {
-        headers: {'Access-Control-Allow-Origin': '*'},
-        crossDomain: true,
-        contentType: 'application/json',
-        type: 'GET',
-        dataType: 'jsonp'
-    }).success(function(data) {
-        speakerService().setData(data);
-    });
-};
-
-cacheAllData("http://localhost:8080/rest/speaker/all");
-
-restCall("session/all", function(result) {
-    sessionService().setData(result);
-});
-
 $('#sessions').on(PAGE_EVENT, function() {
     createSessionList('sessionList', sessionService().findSessions());
 });
@@ -33,10 +15,12 @@ $('#speaker-detail').on(PAGE_EVENT, function() {
         $.mobile.changePage('#speakers');
         return;
     }
-    
+
+    console.log(speaker);
     $('#speakerDetailHeader').text(speaker.fullName);
     $('#speakerDescription').text(speaker.description);
-    createListView('speakerSessionList', sessionService().findBySpeakerId(speaker.id));
+    $('#speakerImage').attr('src', speaker.imageUrl);
+    createListView('speakerSessionList', sessionService().findBySpeakerId(speaker.id), 'name', 'session-detail', 'id');
 });
 
 $('#session-detail').on(PAGE_EVENT, function() {
@@ -56,7 +40,11 @@ $('#map').on('pageshow', function() {
     };
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-    addMarker(map, null, "baghis ist cool");
+    restCall("points/all", function(result) {
+        $.each(result, function(index, value) {
+           addMarker(map, value);
+        });
+    });
 });
 
 $('#newsfeed').on(PAGE_EVENT, function() {

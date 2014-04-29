@@ -29,6 +29,11 @@ Date.prototype.toTwitterDate = function() {
     return "" + writtenShortMonth(this.getMonth())+ " " + this.getDay() + ", " + this.getHours() + ":" + minuteValue;
 }
 
+/**
+ * short representation of a single month
+ *
+ * @param month to be represented
+ */
 var writtenShortMonth = function(month) {
     switch (month) {
         case 0:
@@ -86,7 +91,10 @@ var updateTwitterFeed = function() {
     }
 }
 
-
+/**
+ *
+ * @param result
+ */
 var setHashtag = function(result) {
     $('#hashtag').text(result.hashtag);
 }
@@ -147,6 +155,10 @@ var createTwitterElements = function(tweetPage) {
     return tweet;
 }
 
+/**
+ * sends the rest call to the backend, and updates the specific elements
+ * @param nextPage
+ */
 var loadMoreTweets = function(nextPage) {
     restCall("twitter/tweetpage/" + nextPage, function(result) {
         $('#more-tweets').remove();
