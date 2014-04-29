@@ -18,7 +18,7 @@ public class AppModule {
 		configuration.add(SymbolConstants.PRODUCTION_MODE, "FALSE");
 	}
 	
-	public static void contributeMetaDataLocator(MappedConfiguration<String,String> configuration) {
+	public void contributeMetaDataLocator(MappedConfiguration<String,String> configuration) {
 	    configuration.add(MetaDataConstants.SECURE_PAGE, "true");
 	}
 	
