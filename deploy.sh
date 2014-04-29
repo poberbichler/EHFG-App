@@ -1,6 +1,6 @@
 #!/bin/bash
 readonly PARENT=~/git-repository/app-parent
-readonly TARGET=~/git-repository/tomcat-ehfg/
+readonly TARGET=~/git-repository/tomcat-ehfg/webapps
 
 cd $PARENT
 mvn clean package -DskipTests
