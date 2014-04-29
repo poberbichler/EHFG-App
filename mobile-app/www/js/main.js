@@ -33,7 +33,6 @@ $('#session-detail').on(PAGE_EVENT, function() {
 });
 
 $('#map').on('pageshow', function() {
-    console.log($('#map-canvas'));
     var mapOptions = {
         center: new google.maps.LatLng(47.170329, 13.103852),
         zoom: 16
@@ -45,8 +44,6 @@ $('#map').on('pageshow', function() {
            addMarker(map, value);
         });
     });
-
-    console.log($('#map-canvas'));
 });
 
 $('#newsfeed').on(PAGE_EVENT, function() {
