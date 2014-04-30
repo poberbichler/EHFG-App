@@ -11,6 +11,10 @@ import org.springframework.stereotype.Component;
 
 import com.sun.jersey.api.json.JSONWithPadding;
 
+/**
+ * @author patrick
+ * @since 12.04.2014
+ */
 @Component
 @Path("speaker")
 public class SpeakerRestEndpoint {

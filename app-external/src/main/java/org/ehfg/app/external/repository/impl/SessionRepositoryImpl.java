@@ -10,6 +10,10 @@ import org.ehfg.app.api.dto.SessionDTO;
 import org.ehfg.app.core.external.SessionRepository;
 import org.springframework.stereotype.Repository;
 
+/**
+ * @author patrick
+ * @since 24.03.2014
+ */
 @Repository
 public class SessionRepositoryImpl implements SessionRepository {
 	private final static Map<Long, SessionDTO> sessionMap = new HashMap<Long, SessionDTO>() {

@@ -2,6 +2,7 @@ package org.ehfg.app.api.dto;
 
 import java.util.Date;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
@@ -9,6 +10,8 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @since 20.03.2014
  */
 public class TweetDTO {
+	private final static int MAX_LENGTH = 30;
+
 	public final String fullName;
 	public final String nickName;
 	public final String message;
@@ -22,6 +25,21 @@ public class TweetDTO {
 		this.message = message;
 		this.profileImage = profileImage;
 		this.timestamp = timestamp;
+	}
+
+	/**
+	 * @return the fullname of the person, but shortended, so it can easily be
+	 *         viewed on an iphone - damn you steve jobs!
+	 */
+	public String getFullNameForScreen() {
+		int totalLength = fullName.length() + nickName.length();
+		
+		if (totalLength >= MAX_LENGTH) {
+			int maxLengthFullName = fullName.length() - (totalLength - MAX_LENGTH);
+			return StringUtils.abbreviate(fullName, maxLengthFullName);
+		}
+
+		return fullName;
 	}
 
 	@Override

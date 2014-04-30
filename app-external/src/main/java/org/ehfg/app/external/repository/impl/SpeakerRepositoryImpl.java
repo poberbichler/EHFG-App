@@ -9,6 +9,10 @@ import org.ehfg.app.api.dto.SpeakerDTO;
 import org.ehfg.app.core.external.SpeakerRepository;
 import org.springframework.stereotype.Repository;
 
+/**
+ * @author patrick
+ * @since 24.03.2014
+ */
 @Repository
 public class SpeakerRepositoryImpl implements SpeakerRepository {
 	private final static Map<Long, SpeakerDTO> speakerMap;
