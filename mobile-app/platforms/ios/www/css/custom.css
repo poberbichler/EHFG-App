@@ -125,3 +125,10 @@ div.ui-content {
     padding-left: 10px;
     padding-right: 10px;
 }
+
+#speakerImage {
+    width: 10%;
+    height: 10%;
+    min-width: 120px;
+    min-height: 180px;
+}

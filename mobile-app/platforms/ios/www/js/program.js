@@ -1,18 +1,17 @@
+var SPEAKER = "speaker";
+var SESSION = "session";
+
 /**
  * service layer for the various speaker queries
  */
 var speakerService = function(){
     return {
-        findSpeakers: function() {
-            return JSON.parse(localStorage.getItem('speakers'));
+        findSpeakers: function(callback) {
+            checkForItem(SPEAKER, callback);
         },
 
-        findById: function(speakerId) {
-            return findByIdInList(JSON.parse(localStorage.getItem('speakers')), speakerId);
-        },
-
-        setData: function(data) {
-            localStorage.setItem('speakers', JSON.stringify(data));
+        findById: function(speakerId, callback) {
+            checkForItemById(SPEAKER, speakerId, callback);
         }
     };
 };
@@ -22,41 +21,40 @@ var speakerService = function(){
  */
 var sessionService = function() {
     return {
-        findSessions: function() {
-            return JSON.parse(localStorage.getItem('sessions'));
+        findSessions: function(callback) {
+            checkForItem(SESSION, callback);
         },
 
-        findById: function(sessionId) {
-            var days = JSON.parse(localStorage.getItem('sessions'));
-            var result = null;
-            $.each(days, function(dayIndex, currentDay) {
-                $.each(currentDay.sessions, function(sessionIndex, currentSession) {
-                    if (currentSession.id == sessionId) {
-                        result = currentSession;
-                        return;
+        findById: function(sessionId, callback) {
+            checkForItem(SESSION, function(days) {
+                for (var i in days) {
+                    var sessions = days[i].sessions;
+                    for (var j in sessions) {
+                        var session = sessions[j];
+                        if (session.id == sessionId) {
+                            callback(session);
+                            return;
+                        }
                     }
-                });
+                }
             });
-
-            return result;
         },
 
-        findBySpeakerId: function(speakerId) {
-            var days = JSON.parse(localStorage.getItem('sessions'));
-            var result = [];
-            $.each(days, function(dayIndex, currentDay) {
-                $.each(currentDay.sessions, function(sessionIndex, currentSession) {
-                    if (currentSession.speakers.indexOf(speakerId) !== -1) {
-                        result.push(currentSession);
+        findBySpeakerId: function(speakerId, callback) {
+            checkForItem(SESSION, function(days) {
+                var result = [];
+                for (var i in days) {
+                    var sessions = days[i].sessions;
+                    for (var j in sessions) {
+                        var session = sessions[j];
+                        if (session.speakers.indexOf(speakerId) !== -1) {
+                            result.push(session);
+                        }
                     }
-                });
-            });
+                }
 
-            return result;
-        },
-
-        setData: function(data) {
-            localStorage.setItem('sessions', JSON.stringify(data));
+                callback(result);
+            })
         }
     };
 };
@@ -81,15 +79,35 @@ var locationService = function() {
  *
  * @param itemName
  */
-var checkForItem = function(itemName) {
+var checkForItem = function(itemName, callback) {
     var data = localStorage.getItem(itemName);
     if (data === null) {
         restCall(itemName + '/all', function(result) {
-            localStorage.setItem('itemName', result);
+            localStorage.setItem(itemName, JSON.stringify(result));
+            callback(result);
         });
     }
 
-    return JSON.parse(data);
+    else {
+        callback(JSON.parse(data));
+    }
 }
 
-checkForItem('asdfasdf');
+
+checkForItemByProperty = function(itemName, callback, idValue, property) {
+    checkForItem(itemName, function(data) {
+        for (var i in data) {
+            if ($.isArray(property)) {
+            }
+
+            else if (data[i][property] == idValue) {
+                callback(data[i]);
+                return;
+            }
+        }
+    });
+}
+
+checkForItemById = function(itemName, value, callback) {
+    checkForItemByProperty(itemName, callback, value, 'id');
+}

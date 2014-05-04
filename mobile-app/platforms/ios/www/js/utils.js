@@ -165,7 +165,7 @@ var restCall = function(urlExtension, callbackFn) {
  * @param callbackFn function to be called when the call was successful
  */
 var restCallWithParams = function(urlExtension, params, callbackFn) {
-	var url = "http://localhost:8080/rest/" + urlExtension;
+    var url = SERVER_URL + '/rest/' + urlExtension;
     $.ajax(url, {
         headers: {'Access-Control-Allow-Origin': '*'},
         crossDomain: true,
@@ -201,4 +201,11 @@ var addMarker = function(map, positionData) {
     })(positionData);
 
     google.maps.event.addListener(marker, 'click', createDialog);
+}
+
+/**
+ * checks whether the client is using an iphone/ipod or not...
+ */
+var clientIsIphone = function() {
+    return navigator.userAgent.match(/iPhone/i) != null || navigator.userAgent.match(/iPod/i) != null;
 }

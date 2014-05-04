@@ -132,3 +132,8 @@ div.ui-content {
     min-width: 120px;
     min-height: 180px;
 }
+
+#session-header, #speakerDetailHeader {
+    width: 75%;
+    margin: auto;
+}

@@ -47,10 +47,23 @@ $('#map').on('pageshow', function() {
     };
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
+    google.maps.event.addListenerOnce(map, 'idle', function() {
+        var navHeight = $('.ui-navbar').height() + 15;
+
+        var mapCanvas = $('.gm-style');
+        mapCanvas.css('height', 'auto');
+        mapCanvas.css('bottom', navHeight);
+
+        var mapChild = mapCanvas.children(':first');
+        mapChild.children(':first').css('height', 'auto');
+        mapChild.children(':first').css('bottom', navHeight);
+    });
+
     restCall("points/all", function(result) {
         for (i in result) {
            addMarker(map, result[i]);
         }
+
     });
 });
 
