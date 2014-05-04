@@ -15,17 +15,15 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class SpeakerRepositoryImpl implements SpeakerRepository {
-	private final static Map<Long, SpeakerDTO> speakerMap;
-	
+	private final static Map<Long, SpeakerDTO> speakerMap = new HashMap<>();
+
 	static {
-		speakerMap = new HashMap<Long, SpeakerDTO>();
-		speakerMap.put(0L, new SpeakerDTO(0L, "Nelson", "Mandela", "Politiker aus Suedafrika", 
-						"http://upload.wikimedia.org/wikipedia/commons/1/14/Nelson_Mandela-2008_%28edit%29.jpg"));
-				
-		speakerMap.put(1L, new SpeakerDTO(1L, "Alfred", "Nobel", "Erfindet gern Preise", 
-						"http://upload.wikimedia.org/wikipedia/commons/6/6e/AlfredNobel_adjusted.jpg"));
+		speakerMap.put(0L, new SpeakerDTO(0L, "Nelson", "Mandela", "Politiker aus Suedafrika",
+				"http://upload.wikimedia.org/wikipedia/commons/1/14/Nelson_Mandela-2008_%28edit%29.jpg"));
+
+		speakerMap.put(1L, new SpeakerDTO(1L, "Alfred", "Nobel", "Erfindet gern Preise",
+				"http://upload.wikimedia.org/wikipedia/commons/6/6e/AlfredNobel_adjusted.jpg"));
 	}
-	
 
 	@Override
 	public SpeakerDTO findById(Long speakerId) {
@@ -36,5 +34,4 @@ public class SpeakerRepositoryImpl implements SpeakerRepository {
 	public List<SpeakerDTO> findAll() {
 		return new ArrayList<SpeakerDTO>(speakerMap.values());
 	}
-
 }

@@ -3,9 +3,9 @@ package org.ehfg.app.core.facade;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.ehfg.app.api.dto.ConferenceDayDTO;
 import org.ehfg.app.api.dto.SessionDTO;
@@ -52,7 +52,7 @@ public class ProgramFacadeImpl implements ProgramFacade {
 
 	@Override
 	public Map<ConferenceDayDTO, List<SessionDTO>> findAllSessions() {
-		final Map<ConferenceDayDTO, List<SessionDTO>> result = new HashMap<>();
+		final Map<ConferenceDayDTO, List<SessionDTO>> result = new TreeMap<>();
 		final List<ConferenceDayDTO> conferenceDays = ConferenceDayMapper.map(conferenceDayRepository.findAll());
 
 		for (final SessionDTO session : sessionRepository.findAll()) {

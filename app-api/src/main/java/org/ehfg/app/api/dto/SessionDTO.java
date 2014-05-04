@@ -23,13 +23,12 @@ public class SessionDTO {
 
 	private Long locationId;
 	private Set<Long> speakers;
-	
+
 	public SessionDTO() {
-		
+
 	}
 
-	public SessionDTO(Long id, String name, String description, Date startTime,
-			Date endTime, Long locationId, Set<Long> speakers) {
+	public SessionDTO(Long id, String name, String description, Date startTime, Date endTime, Long locationId, Set<Long> speakers) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -43,10 +42,9 @@ public class SessionDTO {
 	 * another constructor, but uses strings for the dates format is:
 	 * <strong>dd.MM.yyyy hh:mm</strong>
 	 * 
-	 * @deprecated use only for testing
+	 * should only be used for testing...
 	 */
-	public SessionDTO(Long id, String name, String description,
-			String startString, String endString, Long locationId, Long... speakers) {
+	public SessionDTO(Long id, String name, String description, String startString, String endString, Long locationId, Long... speakers) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
