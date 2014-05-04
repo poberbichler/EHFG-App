@@ -151,7 +151,6 @@ var createTwitterElements = function(tweetPage) {
         tweet += moreTweetElement;
     }
 
-    //console.log('returning', tweet);
     return tweet;
 }
 

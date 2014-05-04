@@ -207,7 +207,5 @@ var addMarker = function(map, positionData) {
  * checks whether the client is using an iphone/ipod or not...
  */
 var clientIsIphone = function() {
-    console.log(navigator.userAgent);//, (navigator.userAgent.match(/iPhone/i) != null), (navigator.userAgent.match(/iPod/i)), navigator.userAgent.match(/Mac/i));
-    console.log(navigator.userAgent.match(/iPhone/i) != null || navigator.userAgent.match(/iPod/i) != null);
     return navigator.userAgent.match(/iPhone/i) != null || navigator.userAgent.match(/iPod/i) != null;
 }
