@@ -58,7 +58,7 @@ var createSessionList = function(elementId, source) {
 
     var item = '';
     $.each(source, function(dayIndex, currentDay) {
-        item += '<li>' + currentDay.description + '</li>';
+        item += '<li class="test">' + currentDay.description + '</li>';
 
         $.each(currentDay.sessions, function(sessionIndex, currentSession) {
             item += '<li>';

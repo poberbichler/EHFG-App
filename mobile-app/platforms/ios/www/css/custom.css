@@ -117,10 +117,6 @@ div.timeline-footer {
     background-color: #EFEFEF;
 }
 
-span.hashtag {
-    color: #0084B4;
-}
-
 div.ui-content {
     padding-left: 10px;
     padding-right: 10px;
@@ -131,4 +127,64 @@ div.ui-content {
     height: 10%;
     min-width: 120px;
     min-height: 180px;
+}
+
+#session-header, #speakerDetailHeader {
+    width: 75%;
+    margin: auto;
+}
+
+span.hashtag {
+    color: #6699cc;
+}
+
+div.ui-header.ui-bar-a h1.ui-title {
+    color: white;
+    text-shadow: 0px 1px 0px rgb(50, 50, 50);
+    outline-color: black;
+}
+
+#more-tweets {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.ui-li-static.ui-body-inherit {
+    font-weight: bolder;
+    background-color: rgb(225, 225, 225);
+    font-size: 1em;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+li a.ui-btn {
+    font-weight: normal;
+}
+
+li a.ui-btn.ui-btn-icon-right.ui-icon-carat-r:hover {
+    background-color: #f6f6f6;
+}
+
+.remove-top-padding {
+    padding-top: 0;
+}
+
+div.ui-navbar ul.ui-grid-c a.ui-btn {
+    font-weight: bold;
+    background-color: rgb(225, 225, 225);
+    border-color: rgb(150, 150, 150);
+}
+
+div.ui-navbar ul.ui-grid-c a.ui-btn.ui-btn-active,
+div.ui-header.ui-bar-a {
+    background-color: #6699cc;
+}
+
+#footer {
+    border-top-color: rgb(150, 150, 150);
+    border-bottom: 0;
+}
+
+div.ui-header {
+    border-top: 0;
 }
