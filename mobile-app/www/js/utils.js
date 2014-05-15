@@ -202,10 +202,3 @@ var addMarker = function(map, positionData) {
 
     google.maps.event.addListener(marker, 'click', createDialog);
 }
-
-/**
- * checks whether the client is using an iphone/ipod or not...
- */
-var clientIsIphone = function() {
-    return navigator.userAgent.match(/iPhone/i) != null || navigator.userAgent.match(/iPod/i) != null;
-}
