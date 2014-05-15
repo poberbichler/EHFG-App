@@ -135,8 +135,11 @@ var createTwitterElements = function(tweetPage) {
         tweet += '<div class="tweet">';
         tweet += '<div class="names">';
         tweet += '<img class="profile-image" src=' + value.profileImage + '/>';
-        tweet += '<span class="full-name">' + (clientIsIphone() ? value.fullNameForScreen : value.fullName) + '</span>';
+        //tweet += '<span class="full-name">' + (clientIsIphone() ? value.fullNameForScreen : value.fullName) + '</span>';
+        tweet += '<div class="name-wrapper">';
+        tweet += '<span class="full-name">' + value.fullName + '</span>';
         tweet += '<span class="nickname">@' + value.nickName + '</span>';
+        tweet += '</div>';
         tweet += '<span class="timestamp" data-timestamp1="' + date.getTime() + '">' + date.toTwitterDate() + '</span>'
         tweet += '</div>';
 
