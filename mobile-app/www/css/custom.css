@@ -171,6 +171,10 @@ li a.ui-btn.ui-btn-icon-right.ui-icon-carat-r:hover {
     background-color: #f6f6f6;
 }
 
+li a.ui-btn.ui-btn-icon-right.ui-icon-carat-r.ui-btn-active:hover {
+    background-color: #6699cc;
+}
+
 .remove-top-padding {
     padding-top: 0;
 }
