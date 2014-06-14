@@ -19,8 +19,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * Reads the data from a rss stream, converts it and caches it for an hour<br>
- * ideally, the time is configurable with a quartz job, but this still has to be
- * done
+ * after the hour is over, the internally known task is ran again by the given {@link Timer} 
  * 
  * @author patrick
  * @since 06.06.2014
