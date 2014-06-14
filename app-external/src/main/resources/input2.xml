@@ -1,0 +1,8 @@
+<rss version="2.0">
+	<channel>
+		<title>EHFG Events</title>
+		<description>EHFG Event Feed</description>
+		<language>en-us</language>
+		<link>http://www.ehfg.org/feed/</link>
+	</channel>
+</rss>

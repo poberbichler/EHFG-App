@@ -56,9 +56,9 @@ var createSessionList = function(elementId, source) {
     var list = $('#' + elementId);
     list.children().remove();
 
-    var item = '';
+    var item = appendCurrentSessions(source);
     $.each(source, function(dayIndex, currentDay) {
-        item += '<li class="test">' + currentDay.description + '</li>';
+        item += '<li>' + currentDay.description + '</li>';
 
         $.each(currentDay.sessions, function(sessionIndex, currentSession) {
             item += '<li>';
@@ -201,4 +201,34 @@ var addMarker = function(map, positionData) {
     })(positionData);
 
     google.maps.event.addListener(marker, 'click', createDialog);
+}
+
+var appendCurrentSessions = function(sessionList) {
+    var currentSessions = [];
+    var currentTimestamp = new Date().getTime();
+    var item = '';
+
+    for (var i in sessionList) {
+        var sessions = sessionList[i].sessions;
+        for (var j in sessions) {
+            var session = sessions[j];
+            if (session.start < currentTimestamp && currentTimestamp < session.end) {
+                currentSessions.push(session);
+            }
+        }
+    }
+
+    console.log(currentSessions);
+
+    if (currentSessions.length != 0) {
+        item += "<li>What's going on right now?</li>";
+        for (var i in currentSessions) {
+            var session = currentSessions[i];
+            item += '<li>';
+            item += '<a href="#session-detail?id="' + session.id + '">' + session.name + '</a>';
+            item += '</li>';
+        }
+    }
+
+    return item;
 }

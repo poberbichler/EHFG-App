@@ -19,7 +19,7 @@ public class SessionRepositoryImpl implements SessionRepository {
 	private final static Map<Long, SessionDTO> sessionMap = new LinkedHashMap<>();
 
 	static {
-		sessionMap.put(0L, new SessionDTO(0L, "session Name 1", "sessionDescription", "09.04.2014 10:00", "09.04.2014 12:00", 0L, 1L, 0L));
+		sessionMap.put(0L, new SessionDTO(0L, "session Name 1", "sessionDescription", "14.06.2014 07:00", "14.06.2014 15:00", 0L, 1L, 0L));
 		sessionMap.put(6L, new SessionDTO(0L, "session Name 2", "sessionDescription", "09.04.2014 10:00", "09.04.2014 12:00", 0L, 1L, 0L));
 		sessionMap.put(7L, new SessionDTO(0L, "session Name 3", "sessionDescription", "09.04.2014 10:00", "09.04.2014 12:00", 0L, 1L, 0L));
 		sessionMap.put(8L, new SessionDTO(0L, "session Name 4", "sessionDescription", "09.04.2014 10:00", "09.04.2014 12:00", 0L, 1L, 0L));

@@ -55,6 +55,24 @@ var sessionService = function() {
 
                 callback(result);
             })
+        },
+
+        findCurrentSessions: function(callback) {
+            var currentTimestamp = new Date().getTime();
+            checkForItem(SESSION, function(days) {
+                var result = [];
+                for (var i in days) {
+                    var sessions = days[i].sessions;
+                    for (var j in sessions) {
+                        var session = sessions[j];
+                        if (session.startTime > currentTimestamp && session.endTime < currentTimestamp) {
+                            result.push(session);
+                        }
+                    }
+                }
+
+                callback(result);
+            });
         }
     };
 };

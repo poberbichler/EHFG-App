@@ -1,0 +1,267 @@
+<rss version="2.0">
+	<channel>
+		<title>EHFG Events</title>
+		<description>EHFG Event Feed</description>
+		<language>en-us</language>
+		<link>http://www.ehfg.org/feed/</link>
+		<item>
+			<event>Opening Plenary</event>
+			<day>2013-10-02</day>
+			<start>12:30</start>
+			<end>14:30</end>
+			<room>Kursaal A</room>
+		</item>
+		<item>
+			<event>Closing Plenary</event>
+			<day>2013-10-04</day>
+			<start>15:00</start>
+			<end>17:00</end>
+			<room>Kursaal A</room>
+		</item>
+		<item>
+			<event>Mental health</event>
+			<day>2013-10-02</day>
+			<start>15:00</start>
+			<end>18:00</end>
+			<room>Conference Centre Room 2</room>
+		</item>
+		<item>
+			<event>Non-Communicable Diseases</event>
+			<day>2013-10-04</day>
+			<start>09:00</start>
+			<end>12:00</end>
+			<room>Conference Centre Room 2</room>
+		</item>
+		<item>
+			<event>Tackling NCD in Russia &amp; CIS</event>
+			<day>2013-10-02</day>
+			<start>09:00</start>
+			<end>12:00</end>
+			<room>Kursaal A</room>
+		</item>
+		<item>
+			<event>Mental health</event>
+			<day>2013-10-03</day>
+			<start>09:00</start>
+			<end>12:00</end>
+			<room>Conference Centre Room 2</room>
+		</item>
+		<item>
+			<event>Free-Trade Zone EU-US</event>
+			<day>2013-10-02</day>
+			<start>15:00</start>
+			<end>18:00</end>
+			<room>Conference Centre Room 1</room>
+		</item>
+		<item>
+			<event>Free-Trade Zone EU-US</event>
+			<day>2013-10-03</day>
+			<start>09:00</start>
+			<end>12:00</end>
+			<room>Conference Centre Room 1</room>
+		</item>
+		<item>
+			<event>Resilient Healthcare Systems</event>
+			<day>2013-10-03</day>
+			<start>14:30</start>
+			<end>17:30</end>
+			<room>Kursaal A</room>
+		</item>
+		<item>
+			<event>Investing in health</event>
+			<day>2013-10-02</day>
+			<start>15:00</start>
+			<end>18:00</end>
+			<room>Kursaal A</room>
+		</item>
+		<item>
+			<event>Resilient Healthcare Systems</event>
+			<day>2013-10-04</day>
+			<start>09:00</start>
+			<end>12:00</end>
+			<room>Kursaal A</room>
+		</item>
+		<item>
+			<event>mHealth for Innovation</event>
+			<day>2013-10-03</day>
+			<start>14:30</start>
+			<end>17:30</end>
+			<room>Conference Centre Room 1</room>
+		</item>
+		<item>
+			<event>mHealth for Innovation</event>
+			<day>2013-10-04</day>
+			<start>09:00</start>
+			<end>12:00</end>
+			<room>Conference Centre Room 1</room>
+		</item>
+		<item>
+			<event>Non-Communicable Diseases</event>
+			<day>2013-10-03</day>
+			<start>14:30</start>
+			<end>17:30</end>
+			<room>Conference Centre Room 2</room>
+		</item>
+		<item>
+			<event>Patient-centred care</event>
+			<day>2013-10-02</day>
+			<start>09:00</start>
+			<end>12:00</end>
+			<room>Conference Centre Room 2</room>
+		</item>
+		<item>
+			<event>Investing in health</event>
+			<day>2013-10-03</day>
+			<start>09:00</start>
+			<end>12:00</end>
+			<room>Kursaal A</room>
+		</item>
+		<item>
+			<event>Resilient Gx policy</event>
+			<day>2013-10-02</day>
+			<start>09:00</start>
+			<end>12:00</end>
+			<room>Conference Centre Room 1</room>
+		</item>
+		<item>
+			<event>Knowledge translation</event>
+			<day>2013-10-02</day>
+			<start>18:30</start>
+			<end>20:00</end>
+			<room>Conference Centre Room 2</room>
+		</item>
+		<item>
+			<event>Health economics</event>
+			<day>2013-10-02</day>
+			<start>18:30</start>
+			<end>20:00</end>
+			<room>Conference Centre Room 1</room>
+		</item>
+		<item>
+			<event>Outcome variation</event>
+			<day>2013-10-03</day>
+			<start>07:30</start>
+			<end>09:00</end>
+			<room>Kursaal B</room>
+		</item>
+		<item>
+			<event>Patient involvement</event>
+			<day>2013-10-04</day>
+			<start>07:30</start>
+			<end>09:00</end>
+			<room>Kursaal B</room>
+		</item>
+		<item>
+			<event>HAI</event>
+			<day>2013-10-03</day>
+			<start>12:30</start>
+			<end>14:00</end>
+			<room>Hotel Norica</room>
+		</item>
+		<item>
+			<event>Self-care perceptions</event>
+			<day>2013-10-03</day>
+			<start>12:30</start>
+			<end>14:00</end>
+			<room>Hotel Grand Park</room>
+		</item>
+		<item>
+			<event>Schizophrenia and inclusion</event>
+			<day>2013-10-03</day>
+			<start>12:30</start>
+			<end>14:00</end>
+			<room>Conference Centre Room 2</room>
+		</item>
+		<item>
+			<event>Navigating health systems</event>
+			<day>2013-10-03</day>
+			<start>12:30</start>
+			<end>14:00</end>
+			<room>Conference Centre Room 1</room>
+		</item>
+		<item>
+			<event>Transatlantic lessons</event>
+			<day>2013-10-03</day>
+			<start>18:00</start>
+			<end>19:30</end>
+			<room>Conference Centre Room 2</room>
+		</item>
+		<item>
+			<event>State of oncology 2013</event>
+			<day>2013-10-03</day>
+			<start>18:00</start>
+			<end>19:30</end>
+			<room>Conference Centre Room 1</room>
+		</item>
+		<item>
+			<event>Anti-discrimination in health</event>
+			<day>2013-10-03</day>
+			<start>18:00</start>
+			<end>19:30</end>
+			<room>Kursaal A</room>
+		</item>
+		<item>
+			<event>A health literate Europe</event>
+			<day>2013-10-04</day>
+			<start>13:00</start>
+			<end>14:30</end>
+			<room>Hotel Norica</room>
+		</item>
+		<item>
+			<event>EU Health programme</event>
+			<day>2013-10-04</day>
+			<start>13:00</start>
+			<end>14:30</end>
+			<room>Conference Centre Room 2</room>
+		</item>
+		<item>
+			<event>Men's health</event>
+			<day>2013-10-04</day>
+			<start>13:00</start>
+			<end>14:30</end>
+			<room>Hotel Grand Park</room>
+		</item>
+		<item>
+			<event>Big Data</event>
+			<day>2013-10-04</day>
+			<start>13:00</start>
+			<end>14:30</end>
+			<room>Conference Centre Room 1</room>
+		</item>
+		<item>
+			<event>EC reception</event>
+			<day>2013-10-04</day>
+			<start>12:00</start>
+			<end>12:30</end>
+			<room>Kursaal Foyer/Tent</room>
+		</item>
+		<item>
+			<event>Welcome reception</event>
+			<day>2013-10-02</day>
+			<start>21:00</start>
+			<end>24:00</end>
+			<room>Kursaal A</room>
+		</item>
+		<item>
+			<event>Networking evening</event>
+			<day>2013-10-03</day>
+			<start>20:30</start>
+			<end>24:00</end>
+			<room>No Room</room>
+		</item>
+		<item>
+			<event>Conclusion evening</event>
+			<day>2013-10-04</day>
+			<start>19:30</start>
+			<end>24:00</end>
+			<room>No Room</room>
+		</item>
+		<item>
+			<event>Solving the conundrum</event>
+			<day>2013-10-02</day>
+			<start>12:00</start>
+			<end>14:00</end>
+			<room>Conference Centre Room 1</room>
+		</item>
+	</channel>
+</rss>
