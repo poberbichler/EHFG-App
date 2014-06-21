@@ -2,6 +2,7 @@ package org.ehfg.app.api.dto;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -10,25 +11,26 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
  * basic representation of a session
+ * TODO: refactor to builder pattern
  * 
  * @author patrick
  * @since 02.03.2014
  */
 public class SessionDTO {
-	private Long id;
+	private String id;
 	private String name;
 	private String description;
 	private Date startTime;
 	private Date endTime;
 
-	private Long locationId;
-	private Set<Long> speakers;
+	private String location;
+	private Set<String> speakers;
 
 	public SessionDTO() {
 
 	}
 
-	public SessionDTO(Long id, String name, String description, Date startTime, Date endTime, Long locationId, Set<Long> speakers) {
+	public SessionDTO(String id, String name, String description, Date startTime, Date endTime, String locationId, Set<String> speakers) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -44,11 +46,11 @@ public class SessionDTO {
 	 * 
 	 * should only be used for testing...
 	 */
-	public SessionDTO(Long id, String name, String description, String startString, String endString, Long locationId, Long... speakers) {
+	public SessionDTO(String id, String name, String description, String startString, String endString, String location, String... speakers) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
-		this.locationId = locationId;
+		this.location = location;
 		this.speakers = new HashSet<>(Arrays.asList(speakers));
 
 		try {
@@ -79,11 +81,11 @@ public class SessionDTO {
 		this.endTime = endTime;
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -103,20 +105,20 @@ public class SessionDTO {
 		this.description = description;
 	}
 
-	public Set<Long> getSpeakers() {
+	public Set<String> getSpeakers() {
+		if (speakers == null) {
+			return Collections.emptySet();
+		}
+		
 		return speakers;
 	}
 
-	public void setSpeakers(Set<Long> speakers) {
-		this.speakers = speakers;
+	public String getLocationId() {
+		return location;
 	}
 
-	public Long getLocationId() {
-		return locationId;
-	}
-
-	public void setLocationId(Long locationId) {
-		this.locationId = locationId;
+	public void setLocationId(String location) {
+		this.location = location;
 	}
 
 	@Override

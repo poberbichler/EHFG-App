@@ -21,17 +21,17 @@ class SessionRepositoryMock implements SessionRepository {
 	private final static Map<Long, SessionDTO> sessionMap = new LinkedHashMap<>();
 
 	static {
-		sessionMap.put(0L, new SessionDTO(0L, "session Name 1", "sessionDescription", "14.06.2014 07:00", "14.06.2014 15:00", 0L, 1L, 0L));
-		sessionMap.put(6L, new SessionDTO(0L, "session Name 2", "sessionDescription", "09.04.2014 10:00", "09.04.2014 12:00", 0L, 1L, 0L));
-		sessionMap.put(7L, new SessionDTO(0L, "session Name 3", "sessionDescription", "09.04.2014 10:00", "09.04.2014 12:00", 0L, 1L, 0L));
-		sessionMap.put(8L, new SessionDTO(0L, "session Name 4", "sessionDescription", "09.04.2014 10:00", "09.04.2014 12:00", 0L, 1L, 0L));
-		sessionMap.put(9L, new SessionDTO(0L, "session Name 5", "sessionDescription", "09.04.2014 10:00", "09.04.2014 12:00", 0L, 1L, 0L));
+		sessionMap.put(0L, new SessionDTO("0", "session Name 1", "sessionDescription", "14.06.2014 07:00", "14.06.2014 15:00", "Raum1", "1", "0"));
+		sessionMap.put(6L, new SessionDTO("0", "session Name 2", "sessionDescription", "09.04.2014 10:00", "09.04.2014 12:00", "Raum1", "1", "0"));
+		sessionMap.put(7L, new SessionDTO("0", "session Name 3", "sessionDescription", "09.04.2014 10:00", "09.04.2014 12:00", "Raum1", "1", "0"));
+		sessionMap.put(8L, new SessionDTO("0", "session Name 4", "sessionDescription", "09.04.2014 10:00", "09.04.2014 12:00", "Raum1", "1", "0"));
+		sessionMap.put(9L, new SessionDTO("0", "session Name 5", "sessionDescription", "09.04.2014 10:00", "09.04.2014 12:00", "Raum1", "1", "0"));
 
-		sessionMap.put(1L, new SessionDTO(1L, "another Name 6", "antoher Description", "11.04.2014 15:00", "11.04.2014 18:00", 1L, 0L));
-		sessionMap.put(2L, new SessionDTO(1L, "another Name 7", "antoher Description", "11.04.2014 15:00", "11.04.2014 18:00", 1L, 0L));
-		sessionMap.put(3L, new SessionDTO(1L, "another Name 8", "antoher Description", "11.04.2014 15:00", "11.04.2014 18:00", 1L, 0L));
-		sessionMap.put(4L, new SessionDTO(1L, "another Name 9", "antoher Description", "11.04.2014 15:00", "11.04.2014 18:00", 1L, 0L));
-		sessionMap.put(5L, new SessionDTO(1L, "another Name 0", "antoher Description", "11.04.2014 15:00", "11.04.2014 18:00", 1L, 0L));
+		sessionMap.put(1L, new SessionDTO("1", "another Name 6", "antoher Description", "11.04.2014 15:00", "11.04.2014 18:00", "Raum1", "0"));
+		sessionMap.put(2L, new SessionDTO("1", "another Name 7", "antoher Description", "11.04.2014 15:00", "11.04.2014 18:00", "Raum1", "0"));
+		sessionMap.put(3L, new SessionDTO("1", "another Name 8", "antoher Description", "11.04.2014 15:00", "11.04.2014 18:00", "Raum1", "0"));
+		sessionMap.put(4L, new SessionDTO("1", "another Name 9", "antoher Description", "11.04.2014 15:00", "11.04.2014 18:00", "Raum1", "0"));
+		sessionMap.put(5L, new SessionDTO("1", "another Name 0", "antoher Description", "11.04.2014 15:00", "11.04.2014 18:00", "Raum1", "0"));
 	}
 
 	@Override
@@ -55,12 +55,4 @@ class SessionRepositoryMock implements SessionRepository {
 
 		return result;
 	}
-
-	@Override
-	public List<SessionDTO> findByDay() {
-		List<SessionDTO> result = new ArrayList<SessionDTO>();
-
-		return result;
-	}
-
 }

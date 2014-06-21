@@ -8,5 +8,4 @@ public interface SessionRepository {
 	List<SessionDTO> findAll();
 	SessionDTO findById(Long sessionId);
 	List<SessionDTO> findBySpeaker(Long speakerId);
-	List<SessionDTO> findByDay();
 }

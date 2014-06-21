@@ -7,13 +7,14 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
  * basic represenation of a speaker
+ * TODO: refactor to builder pattern
  * 
  * @author patrick
  * @since 25.01.2014
  */
 @XmlAccessorType(XmlAccessType.PROPERTY)
 public class SpeakerDTO {
-	private Long id;
+	private String id;
 	private String firstName;
 	private String lastName;
 	private String description;
@@ -23,7 +24,7 @@ public class SpeakerDTO {
 
 	}
 
-	public SpeakerDTO(Long id, String firstName, String lastName, String description, String imageUrl) {
+	public SpeakerDTO(String id, String firstName, String lastName, String description, String imageUrl) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -51,11 +52,11 @@ public class SpeakerDTO {
 		this.description = description;
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

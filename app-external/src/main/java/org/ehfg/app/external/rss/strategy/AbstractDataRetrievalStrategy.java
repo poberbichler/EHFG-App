@@ -36,6 +36,10 @@ public abstract class AbstractDataRetrievalStrategy<T> {
 	private final String urlSnippet;
 	private final Class<T> fetchedClazz;
 
+	/**
+	 * @param fetchedClazz class to be searched for
+	 * @param urlSnippet snipped of the url, e.g. <code>"events"</code> or <code>"speakers"</code>
+	 */
 	protected AbstractDataRetrievalStrategy(Class<T> fetchedClazz, String urlSnippet) {
 		this.fetchedClazz = fetchedClazz;
 		this.urlSnippet = urlSnippet;
@@ -60,6 +64,16 @@ public abstract class AbstractDataRetrievalStrategy<T> {
 		return fetchedClazz;
 	}
 
+	/**
+	 * builds the valid url, e.g.: <br>
+	 * <code>http://www.ehfg.org/feed/events/data.rss</code>
+	 * <p>
+	 * leading or ending slashed will automatically be removed/added, so the result will always be a valid url
+	 * 
+	 * @return
+	 * @throws MalformedURLException
+	 *             in case of an error
+	 */
 	private String buildUrl() throws MalformedURLException {
 		if (baseUrl == null) {
 			return "";

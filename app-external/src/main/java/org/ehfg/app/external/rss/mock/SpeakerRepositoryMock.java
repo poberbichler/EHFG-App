@@ -20,10 +20,10 @@ class SpeakerRepositoryMock implements SpeakerRepository {
 	private final static Map<Long, SpeakerDTO> speakerMap = new HashMap<>();
 
 	static {
-		speakerMap.put(0L, new SpeakerDTO(0L, "Nelson", "Mandela", "Politiker aus Suedafrika",
+		speakerMap.put(0L, new SpeakerDTO("0", "Nelson", "Mandela", "Politiker aus Suedafrika",
 				"http://upload.wikimedia.org/wikipedia/commons/1/14/Nelson_Mandela-2008_%28edit%29.jpg"));
 
-		speakerMap.put(1L, new SpeakerDTO(1L, "Alfred", "Nobel", "Erfindet gern Preise",
+		speakerMap.put(1L, new SpeakerDTO("1", "Alfred", "Nobel", "Erfindet gern Preise",
 				"http://upload.wikimedia.org/wikipedia/commons/6/6e/AlfredNobel_adjusted.jpg"));
 	}
 

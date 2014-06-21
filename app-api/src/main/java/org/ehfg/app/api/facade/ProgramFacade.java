@@ -31,4 +31,6 @@ public interface ProgramFacade {
 	void removeDay(Long dayId);
 
 	ConferenceDayDTO addDay();
+	
+	List<SessionDTO> findAllSessionsWithoutDayInformation();
 }

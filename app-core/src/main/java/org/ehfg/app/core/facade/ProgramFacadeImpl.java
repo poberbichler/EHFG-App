@@ -142,4 +142,9 @@ public class ProgramFacadeImpl implements ProgramFacade {
 
 		return ConferenceDayMapper.map(day);
 	}
+
+	@Override
+	public List<SessionDTO> findAllSessionsWithoutDayInformation() {
+		return sessionRepository.findAll();
+	}
 }
