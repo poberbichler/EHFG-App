@@ -1,13 +1,13 @@
-package org.ehfg.app.external.data;
+package org.ehfg.app.external.rss.data.speaker;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
+@XmlRootElement(name = "rss")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Rss {
+public class RssSpeaker {
 	@XmlElement
 	private Channel channel;
 
@@ -18,5 +18,4 @@ public class Rss {
 	public void setChannel(Channel channel) {
 		this.channel = channel;
 	}
-
 }

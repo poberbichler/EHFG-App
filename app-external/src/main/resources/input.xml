@@ -1,267 +1,1112 @@
-<rss version="2.0">
-	<channel>
-		<title>EHFG Events</title>
-		<description>EHFG Event Feed</description>
-		<language>en-us</language>
-		<link>http://www.ehfg.org/feed/</link>
-		<item>
-			<event>Opening Plenary</event>
-			<day>2013-10-02</day>
-			<start>12:30</start>
-			<end>14:30</end>
-			<room>Kursaal A</room>
-		</item>
-		<item>
-			<event>Closing Plenary</event>
-			<day>2013-10-04</day>
-			<start>15:00</start>
-			<end>17:00</end>
-			<room>Kursaal A</room>
-		</item>
-		<item>
-			<event>Mental health</event>
-			<day>2013-10-02</day>
-			<start>15:00</start>
-			<end>18:00</end>
-			<room>Conference Centre Room 2</room>
-		</item>
-		<item>
-			<event>Non-Communicable Diseases</event>
-			<day>2013-10-04</day>
-			<start>09:00</start>
-			<end>12:00</end>
-			<room>Conference Centre Room 2</room>
-		</item>
-		<item>
-			<event>Tackling NCD in Russia &amp; CIS</event>
-			<day>2013-10-02</day>
-			<start>09:00</start>
-			<end>12:00</end>
-			<room>Kursaal A</room>
-		</item>
-		<item>
-			<event>Mental health</event>
-			<day>2013-10-03</day>
-			<start>09:00</start>
-			<end>12:00</end>
-			<room>Conference Centre Room 2</room>
-		</item>
-		<item>
-			<event>Free-Trade Zone EU-US</event>
-			<day>2013-10-02</day>
-			<start>15:00</start>
-			<end>18:00</end>
-			<room>Conference Centre Room 1</room>
-		</item>
-		<item>
-			<event>Free-Trade Zone EU-US</event>
-			<day>2013-10-03</day>
-			<start>09:00</start>
-			<end>12:00</end>
-			<room>Conference Centre Room 1</room>
-		</item>
-		<item>
-			<event>Resilient Healthcare Systems</event>
-			<day>2013-10-03</day>
-			<start>14:30</start>
-			<end>17:30</end>
-			<room>Kursaal A</room>
-		</item>
-		<item>
-			<event>Investing in health</event>
-			<day>2013-10-02</day>
-			<start>15:00</start>
-			<end>18:00</end>
-			<room>Kursaal A</room>
-		</item>
-		<item>
-			<event>Resilient Healthcare Systems</event>
-			<day>2013-10-04</day>
-			<start>09:00</start>
-			<end>12:00</end>
-			<room>Kursaal A</room>
-		</item>
-		<item>
-			<event>mHealth for Innovation</event>
-			<day>2013-10-03</day>
-			<start>14:30</start>
-			<end>17:30</end>
-			<room>Conference Centre Room 1</room>
-		</item>
-		<item>
-			<event>mHealth for Innovation</event>
-			<day>2013-10-04</day>
-			<start>09:00</start>
-			<end>12:00</end>
-			<room>Conference Centre Room 1</room>
-		</item>
-		<item>
-			<event>Non-Communicable Diseases</event>
-			<day>2013-10-03</day>
-			<start>14:30</start>
-			<end>17:30</end>
-			<room>Conference Centre Room 2</room>
-		</item>
-		<item>
-			<event>Patient-centred care</event>
-			<day>2013-10-02</day>
-			<start>09:00</start>
-			<end>12:00</end>
-			<room>Conference Centre Room 2</room>
-		</item>
-		<item>
-			<event>Investing in health</event>
-			<day>2013-10-03</day>
-			<start>09:00</start>
-			<end>12:00</end>
-			<room>Kursaal A</room>
-		</item>
-		<item>
-			<event>Resilient Gx policy</event>
-			<day>2013-10-02</day>
-			<start>09:00</start>
-			<end>12:00</end>
-			<room>Conference Centre Room 1</room>
-		</item>
-		<item>
-			<event>Knowledge translation</event>
-			<day>2013-10-02</day>
-			<start>18:30</start>
-			<end>20:00</end>
-			<room>Conference Centre Room 2</room>
-		</item>
-		<item>
-			<event>Health economics</event>
-			<day>2013-10-02</day>
-			<start>18:30</start>
-			<end>20:00</end>
-			<room>Conference Centre Room 1</room>
-		</item>
-		<item>
-			<event>Outcome variation</event>
-			<day>2013-10-03</day>
-			<start>07:30</start>
-			<end>09:00</end>
-			<room>Kursaal B</room>
-		</item>
-		<item>
-			<event>Patient involvement</event>
-			<day>2013-10-04</day>
-			<start>07:30</start>
-			<end>09:00</end>
-			<room>Kursaal B</room>
-		</item>
-		<item>
-			<event>HAI</event>
-			<day>2013-10-03</day>
-			<start>12:30</start>
-			<end>14:00</end>
-			<room>Hotel Norica</room>
-		</item>
-		<item>
-			<event>Self-care perceptions</event>
-			<day>2013-10-03</day>
-			<start>12:30</start>
-			<end>14:00</end>
-			<room>Hotel Grand Park</room>
-		</item>
-		<item>
-			<event>Schizophrenia and inclusion</event>
-			<day>2013-10-03</day>
-			<start>12:30</start>
-			<end>14:00</end>
-			<room>Conference Centre Room 2</room>
-		</item>
-		<item>
-			<event>Navigating health systems</event>
-			<day>2013-10-03</day>
-			<start>12:30</start>
-			<end>14:00</end>
-			<room>Conference Centre Room 1</room>
-		</item>
-		<item>
-			<event>Transatlantic lessons</event>
-			<day>2013-10-03</day>
-			<start>18:00</start>
-			<end>19:30</end>
-			<room>Conference Centre Room 2</room>
-		</item>
-		<item>
-			<event>State of oncology 2013</event>
-			<day>2013-10-03</day>
-			<start>18:00</start>
-			<end>19:30</end>
-			<room>Conference Centre Room 1</room>
-		</item>
-		<item>
-			<event>Anti-discrimination in health</event>
-			<day>2013-10-03</day>
-			<start>18:00</start>
-			<end>19:30</end>
-			<room>Kursaal A</room>
-		</item>
-		<item>
-			<event>A health literate Europe</event>
-			<day>2013-10-04</day>
-			<start>13:00</start>
-			<end>14:30</end>
-			<room>Hotel Norica</room>
-		</item>
-		<item>
-			<event>EU Health programme</event>
-			<day>2013-10-04</day>
-			<start>13:00</start>
-			<end>14:30</end>
-			<room>Conference Centre Room 2</room>
-		</item>
-		<item>
-			<event>Men's health</event>
-			<day>2013-10-04</day>
-			<start>13:00</start>
-			<end>14:30</end>
-			<room>Hotel Grand Park</room>
-		</item>
-		<item>
-			<event>Big Data</event>
-			<day>2013-10-04</day>
-			<start>13:00</start>
-			<end>14:30</end>
-			<room>Conference Centre Room 1</room>
-		</item>
-		<item>
-			<event>EC reception</event>
-			<day>2013-10-04</day>
-			<start>12:00</start>
-			<end>12:30</end>
-			<room>Kursaal Foyer/Tent</room>
-		</item>
-		<item>
-			<event>Welcome reception</event>
-			<day>2013-10-02</day>
-			<start>21:00</start>
-			<end>24:00</end>
-			<room>Kursaal A</room>
-		</item>
-		<item>
-			<event>Networking evening</event>
-			<day>2013-10-03</day>
-			<start>20:30</start>
-			<end>24:00</end>
-			<room>No Room</room>
-		</item>
-		<item>
-			<event>Conclusion evening</event>
-			<day>2013-10-04</day>
-			<start>19:30</start>
-			<end>24:00</end>
-			<room>No Room</room>
-		</item>
-		<item>
-			<event>Solving the conundrum</event>
-			<day>2013-10-02</day>
-			<start>12:00</start>
-			<end>14:00</end>
-			<room>Conference Centre Room 1</room>
-		</item>
-	</channel>
-</rss>
+<rss version="2.0"><channel><title>EHFG Events</title><description>EHFG Event Feed</description><language>en-us</language><link>http://www.ehfg.org/feed/</link><item><id>39</id><event>Opening Plenary</event><details>&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636122719633/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/02/we-must-not-speak-about-crisis-we-must-speak-about-new-reality/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	The future development of health and health systems will be at the core of this year&amp;rsquo;s EHFG.&amp;nbsp; We would like to build on last year&amp;rsquo;s topic of Health in an Age of Austerity by taking the discussion further and asking: &amp;ldquo;What can we learn from the current financial and political crisis and how can we react in a resilient and innovative way for better population health and more effective health systems?&amp;rdquo; Recent struggles with the impact of the crisis have shown us the urgent need to rethink current policies and approaches.&lt;/p&gt;
+&lt;p&gt;
+	In the plenary sessions we will address the following questions:&amp;bull; What are the key strategies to make health systems resilient?&lt;br /&gt;
+	&amp;bull; What are the most important innovations to promote health system performance and resilience?&lt;br /&gt;
+	&amp;bull; How can decision makers best introduce and implement these innovations?&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;Welcome address and official opening&lt;/strong&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Helm&lt;font color="3366FF"&gt;ut&lt;/font&gt; Brand, President, International Forum Gastein&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Zsuzsanna Jakab, Regional Director, WHO Regional Office for Europe&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Paola Testori Coggi, Director-General, DG Health and Consumers, European Commission&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;EU-Trio Presidency debate&lt;/strong&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Vytenis Andriukaitis, Minister of Health, Lithuania&lt;br /&gt;
+	Adonis Georgiades, Minis&lt;font color="3366FF"&gt;ter of Health, Greece&lt;/font&gt;&lt;br /&gt;
+	Fergal Lynch, Deputy Secretary General, Ministry of Health, Ireland&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Twitter round-up&lt;br /&gt;
+	Maggie Davies, Executive Director, HAPI and Paul Giepmans, Young Forum Gastein Scholar&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;Keynote speech: How to use innovation on the way to recovery&lt;/strong&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Uwe E Reinhardt, James Madison Professor of Political Economy, Professor of Economics and Public Affairs, Woodrow Wilson School of Public and International Affairs, Princeton University, USA&lt;/font&gt;&lt;br /&gt;
+	&amp;nbsp;&lt;/p&gt;
+</details><day>2013-10-02</day><start>12:30</start><end>14:30</end><room>Kursaal A</room><categoryid>27</categoryid><category>Plenary</category><code>Plenary</code></item><item><id>40</id><event>Closing Plenary</event><details>&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636300630303/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/08/to-dos-to-achieve-resillient-and-innovative-health-systems-or-is-an-innovation-an-innovation/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	The future development of health and health systems will be at the core of this year&amp;rsquo;s EHFG.&amp;nbsp; We would like to build on last year&amp;rsquo;s topic of Health in an Age of Austerity by taking the discussion further and asking: &amp;ldquo;What can we learn from the current financial and political crisis and how can we react in a resilient and innovative way for better population health and more effective health systems?&amp;rdquo; Recent struggles with the impact of the crisis have shown us the urgent need to rethink current policies and approaches.&lt;/p&gt;
+&lt;p&gt;
+	In the plenary sessions we will address the following questions:&lt;br /&gt;
+	&amp;bull; What are the key strategies to make health systems resilient?&lt;br /&gt;
+	&amp;bull; What are the most important innovations to promote health system performance and resilience?&lt;br /&gt;
+	&amp;bull; How can decision makers best introduce and implement these innovations?&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;Video reflection and conclusion&lt;/strong&gt;&lt;br /&gt;
+	&lt;font color="003366"&gt;Presented by T Rose, Independent EU Health Advocate and the following Young Forum Gastein Scholars:&lt;br /&gt;
+	K Korsager, T Lourenco, A Peralta Santos&lt;/font&gt;&lt;br /&gt;
+	Moderated by H Brand, President, International Forum Gastein&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;Keynote speeches&lt;/strong&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;T Borg, EU Commissioner for Health, European Commission&lt;br /&gt;
+	A St&amp;ouml;ger, Minister of Health, Austria&lt;br /&gt;
+	D Bahr, Minister of Health, Germany&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;High-level debate&lt;/strong&gt;&lt;br /&gt;
+	&lt;font color="333399"&gt;T Borg, EU Commissioner for Health, European Commission (tbc)&lt;br /&gt;
+	A St&amp;ouml;ger, Minister of Health, Austria&lt;br /&gt;
+	D Bahr, Minister of Health, Germany&lt;br /&gt;
+	K Kadenbach, Member of the European Parliament (S&amp;amp;D, Austria)&lt;br /&gt;
+	P Poc, Member of the European Parliament (S&amp;amp;D, Czech Republic)&lt;br /&gt;
+	H Brand, President, International Forum Gastein&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Moderated by T Zeltner, former Secretary of Health of Switzerland and Director-General of the Swiss&lt;br /&gt;
+	National Health Authority, Special Envoy on WHO&amp;#39;s Engagement with Non-State Actors&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;Twitter round-up&lt;/strong&gt;&lt;br /&gt;
+	&lt;font color="003366"&gt;M Kosinska, Secretary General, EPHA and L Palumbo, Young Forum Gastein Scholar&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-04</day><start>15:00</start><end>17:00</end><room>Kursaal A</room><categoryid>27</categoryid><category>Plenary</category><code>Plenary</code></item><item><id>41</id><event>Mental health</event><details>&lt;p&gt;
+	&lt;strong&gt;Mental health. The motor for a healthy economy&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by Lundbeck A/S&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636121939185/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/03/mental-health-in-times-of-crisis/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Mental health will be the motor for a healthy economy in the 21st century.&amp;nbsp; In order to successfully face current and future economic, social and public health challenges, all relevant policies and mental healthcare services must be reshaped based on smart, innovative, cost-efficient and integrated delivery models.&amp;nbsp; In this forum we will aim to analyse the value of targeted policy measures and the different components integrated policy approaches should encompass.&amp;nbsp; Participants will be invited to analyse the integration of mental health promotion and the management of brain diseases into broader health and employment policies in order to effectively tackle current and future social and economic challenges.&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;Innovative mental health delivery models in times of austerity and financial crisis&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="003366"&gt;Introduction by Robert Madelin, Director-General, DG CONNECT of the European Commission&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Gediminas Cerniauskas, Vice Minister of Health, Lithuania&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;David McDaid, Scientific expert, Editor of Eurohealth&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Mark Pearson, Head of Health Division, OECD&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Margaret Walker, Interim CEO, European Liver Patient Association (ELPA)&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Representative of the Department of Health of Ireland (tbc)&lt;br /&gt;
+	Michael H&amp;uuml;bel, Head of Unit, DG Health and Consumers, European Commission&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="003366"&gt;Round-table discussion moderated by Patricia Kelly, Journalist&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	The discussion will focus on the following questions:&lt;br /&gt;
+	&amp;bull; What is the real value of health prevention strategies in the area of mental health?&lt;br /&gt;
+	&amp;bull; What approaches and policy trends are occurring at global and regional levels?&lt;br /&gt;
+	&amp;bull; What is the role of the European Union in the improvement of mental health and holistic, targeted policies?&lt;br /&gt;
+	&amp;bull; Which key components should integrated mental health policies encompass?&lt;br /&gt;
+	&amp;bull; What innovative experiences in health management could be successfully applied to mental health management and service planning?&lt;br /&gt;
+	&amp;bull; What are the crucial patient needs that will set up tomorrow&amp;#39;s mental health landscape?&lt;/p&gt;
+&lt;p&gt;
+	Case studies on alcohol dependence and depression will be analysed.&lt;/p&gt;
+</details><day>2013-10-02</day><start>15:00</start><end>18:00</end><room>Conference Centre Room 2</room><categoryid>12</categoryid><category>Forum 1</category><code>F1</code></item><item><id>52</id><event>Non-Communicable Diseases</event><details>&lt;p&gt;
+	Non-Communicable Diseases. From research to action&lt;br /&gt;
+	&lt;strong&gt;Policy developments and innovations in the fight against NCDs&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organized by Health Promotion Administration, Ministry of Health and Welfare, Taiwan, R.O.C.&lt;/em&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636184333143/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/08/political-buy-in-and-collaboration-are-key-to-making-progress-on-ncds/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	The World Health Assembly has set a goal of reducing premature mortality from NCDs by 25% by 2025.&amp;nbsp; Evidence-based research, innovative approaches and political will are critical to make a difference in building responsive and robust health systems, effect widespread policy shifts and drive behavioural change. We will look at the key policies of those countries doing best in preventing NCD related mortality; hear from policymakers pushing boundaries to build resilient public health policy capable of fighting chronic disease, and discuss the pioneering research that will inform the NCD prevention policies of the future.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	In session two we will consider how policy-makers and civil society are responding to the NCD challenge at national, regional and global levels.&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	Innovative measures to tackle NCDs in Asia: a policy-maker perspective&lt;br /&gt;
+	&lt;font color="3366FF"&gt;ST Chiou, Director-General, &lt;/font&gt;&lt;font color="3366FF"&gt;Health Promotion Administration, Taiwan, R.O.C&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	NCDs and WHO Regional Office for Europe: from policy to action&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Pamela Rendi-Wagner, Chief Medical Officer, Ministry of Health, Austria&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	The EU contribution to addressing chronic diseases&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Michael H&amp;uuml;bel, Head of Unit, DG Health and Consumers, European Commission&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Tobacco control in Taiwan: a Taiwanese NGO perspective&lt;br /&gt;
+	&lt;font color="3366FF"&gt;SW Yau, CEO, John Tung Foundation, Taiwan, R.O.C&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Driving prevention from the grassroots&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Wendy Yared, Director, Association of European Cancer Leagues&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;Interactive plenary discussion and conclusion&lt;/strong&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="003366"&gt;Moderated by M McKee, Professor of Public Health, London School of Hygiene and Tropical Medicine, UK&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-04</day><start>09:00</start><end>12:00</end><room>Conference Centre Room 2</room><categoryid>17</categoryid><category>Forum 6</category><code>F6</code></item><item><id>53</id><event>Tackling NCD in Russia &amp; CIS</event><details>&lt;p&gt;
+	Tackling NCD in Russia &amp;amp; CIS&lt;br /&gt;
+	&lt;strong&gt;Harnessing innovations to improve access and quality of NCD treatment in Russia and CIS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;This session has been supported by Roche-Moscow and R-Pharm&lt;/em&gt;&lt;br /&gt;
+	&lt;em&gt;Organised by &lt;/em&gt;&lt;em&gt;Non-commercial Partnership Equal Right to Life&lt;/em&gt;&lt;br /&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636123626063/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/02/tackling-ncd-in-russia-and-cis/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;br /&gt;
+	How to tackle Non-Communicable Disease (NCD) is a growing topic of importance in emerging markets and middle income countries. The Russian Federation could be perceived as a benchmark country in this group with regard to how NCD issues are being addressed.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	During the course of the workshop a clear action plan of work on NCD should be developed.&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	&lt;font color="3366FF"&gt;D Borisov, ERL, Russian Federation&lt;br /&gt;
+	Representative of Federal Ministry of Health, Russian Federation&lt;br /&gt;
+	EI Alexeeva, Federal State Budgetary Institution, Scientific Centre of Children&amp;#39;S H&lt;font color="3366FF"&gt;ealth, Russian Academy o&lt;font color="3366FF"&gt;f Medical Science, Russi&lt;font color="3366FF"&gt;an Fe&lt;font color="3366FF"&gt;deration&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;br /&gt;
+	R Khabriev, Institute of Public Healthcare, Russian Federation&lt;br /&gt;
+	Representative of the Ministry of Health, Kazakhstan&lt;br /&gt;
+	V Yanin, Minister of Public Health, Krasnoyarsk Region, Russian Federation&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="3366FF"&gt;Representatives of the Federal and Regional Healthcare Authorities from Russian Federation and CIS countries&lt;br /&gt;
+	WHO representatives&lt;br /&gt;
+	Healthcare administrators&lt;br /&gt;
+	Representatives of Patients&amp;#39; Advocacy&lt;br /&gt;
+	Groups and NGO leaders&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="003366"&gt;Co-chaired by O Chestnov, Assistant Director-General, NCD and Mental Health, WHO&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;This session has been supported by Roche-Moscow and R-Pharm&lt;/em&gt;&lt;/p&gt;
+</details><day>2013-10-02</day><start>09:00</start><end>12:00</end><room>Kursaal A</room><categoryid>1</categoryid><category>Workshop 1</category><code>W1</code></item><item><id>42</id><event>Mental health</event><details>&lt;p&gt;
+	&lt;strong&gt;Mental health. The motor for a healthy economy&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by Lundbeck A/S&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636148561364/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/04/tackling-mental-health-problems-where-they-occur-in-the-workplace/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Mental health will be the motor for a healthy economy in the 21st century.&amp;nbsp; In order to successfully face current and future economic, social and public health challenges, all relevant policies and mental healthcare services must be reshaped based on smart, innovative, cost-efficient and integrated delivery models.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	In this forum we will aim to analyse the value of targeted policy measures and the different components integrated policy approaches should encompass.&amp;nbsp; Participants will be invited to analyse the integration of mental health promotion and the management of brain diseases into broader health and employment policies in order to effectively tackle current and future social and economic challenges.&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;Mental health: Europe&amp;#39;s greatest health challenge in the 21st century?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="003366"&gt;Introduction by John Bowis, former Member of the European Parliament&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="3366FF"&gt;&lt;font color="3366FF"&gt;Zinta Podniece&lt;font color="3366FF"&gt;, &lt;/font&gt;&lt;/font&gt;DG Employment, Social Affairs &amp;amp; Inclusion, European Commission&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;George Christodoulou, World Federation for Mental Health (WFMH)&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Peter Anderson, Professor, Maastricht University, The Netherlands&lt;br /&gt;
+	Olaf Tscharnezk&lt;font color="3366FF"&gt;i, Medical Director, Unilever&lt;/font&gt;&lt;br /&gt;
+	Don Shenker, Alcohol Health Network, UK&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="003366"&gt;Round-table discussion moderated by Peter O&amp;rsquo;Donnell, Journalist, European Voice and Patricia Kelly, Journalist&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	The discussion will focus on the following questions:&lt;br /&gt;
+	&amp;bull; What are the social and economic impacts of brain diseases in Europe and globally?&lt;br /&gt;
+	&amp;bull; What impact do brain diseases have on work productivity and the broader community: the case studies of depression and alcohol dependence.&lt;br /&gt;
+	&amp;bull; What are the main research and policy gaps in this area which should be addressed to overcome health, social and economic challenges of the 21st century?&lt;br /&gt;
+	&amp;bull; What concrete components should targeted workplace policies encompass to promote mental health, prevent brain disorders and to help people stay and reintegrate at work?&lt;br /&gt;
+	&amp;bull; What is the role of the EU in supporting national efforts in this direction?&lt;/p&gt;
+&lt;p&gt;
+	Case studies on alcohol dependence and depression will be analysed.&lt;/p&gt;
+&lt;p&gt;
+	&amp;nbsp;&lt;/p&gt;
+</details><day>2013-10-03</day><start>09:00</start><end>12:00</end><room>Conference Centre Room 2</room><categoryid>12</categoryid><category>Forum 1</category><code>F1</code></item><item><id>45</id><event>Free-Trade Zone EU-US</event><details>&lt;p&gt;
+	Free-Trade Zone EU-US&lt;br /&gt;
+	&lt;strong&gt;Implications for health systems&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by European Alliance for Personalised Medicine (EAPM), IPHG at Maastricht University and Max Planck Institute for Molecular Genetics (MPIMG)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636122522154/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/03/free-trade-zone-eu-usa-success-or-failure/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	The world&amp;#39;s biggest free-trade zone negotiations between the EU and the US are a historic opportunity to address legacy issues such as the independence of the national regulatory authorities.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	The EU Commissioner for Trade, Karel De Gucht, has called it a &amp;ldquo;living agreement&amp;rdquo; to be finished by the end of 2014. The Treaty of Rome (1957) was groundbreaking in promoting the idea of an &amp;ldquo;ever closer union&amp;rdquo;. Is that compatible with the Trans-Atlantic Free Trade Agreement (TAFTA)? Politics can shift the sands quickly, creating a &amp;ldquo;tragedy of the commons&amp;rdquo; scenario in which an overall positive outcome is blocked by special interests.&lt;/p&gt;
+&lt;p&gt;
+	On the other hand, there is great hope that cooperation will reduce unnessary regulation on both sides of the Atlantic. However, healthcare is not an arena where the free market works perfectly. For example, can the FDA and other American authorities accept European certificates without question and vice versa?&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	The parallel forum will discuss the pro-and-con implications for health focussing on products, services, providers and users. Above all, the opportunities for innovation collaboration will be analysed.&lt;br /&gt;
+	&lt;br /&gt;
+	The forum will address:&lt;br /&gt;
+	&amp;bull; Medical devices and drugs - regulatory issues and bottlenecks&lt;br /&gt;
+	&amp;bull; Implications for personalised medicine and healthcare&lt;br /&gt;
+	&amp;bull; Importance of positioning&lt;br /&gt;
+	&amp;bull; Adding value for citizens and health systems&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	&lt;font color="003366"&gt;Introduction by Angela Brand, Institute for Public Health Genomics, Maastricht University, The Netherlands&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Expectations EU&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Bernard Merkel, Minister Counselor, Delegation to the United States of America, European Union&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Open Society Foundations (OSF) perspective&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Els Torreele, Director, Access to Essential Medicines Initiative, Open Society Foundations, USA&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Big Data perspective&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Jody Ranck, Director of Digital Health, TeleManagement Forum, USA&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Industry perspective&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Pierre Anhoury, Senior Executive, Accenture, France&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;Interactive Panel Discussion&lt;/strong&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="003366"&gt;Chaired by &lt;/font&gt;&lt;font color="003366"&gt;Stephane Berghmans, VP Academic &amp;amp; Research Relations EU, Elsevier Global Academic Relations, The Netherlands&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="003366"&gt;Co-chaired by Kristine Steinhausen, European Sci&lt;font color="003366"&gt;ence Foundation, France&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-02</day><start>15:00</start><end>18:00</end><room>Conference Centre Room 1</room><categoryid>14</categoryid><category>Forum 3</category><code>F3</code></item><item><id>46</id><event>Free-Trade Zone EU-US</event><details>&lt;p&gt;
+	&lt;strong&gt;Free-Trade Zone EU-US&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by European Alliance for Personalised Medicine (EAPM), IPHG at Maastricht University and Max Planck Institute for Molecular Genetics (MPIMG)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636148746236/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/03/who-benefits-from-the-free-trade-zone-eu-usa/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	The world&amp;#39;s biggest free-trade zone negotiations between the EU and the US are a historic opportunity to address legacy issues such as the independence of the national regulatory authorities.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	The EU Commissioner for Trade, Karel De Gucht, has called it a &amp;ldquo;living agreement&amp;rdquo; to be finished by the end of 2014. The Treaty of Rome (1957) was groundbreaking in promoting the idea of an &amp;ldquo;ever closer union&amp;rdquo;. Is that compatible with the Trans-Atlantic Free Trade Agreement (TAFTA)? Politics can shift the sands quickly, creating a &amp;ldquo;tragedy of the commons&amp;rdquo; scenario in which an overall positive outcome is blocked by special interests.&lt;/p&gt;
+&lt;p&gt;
+	On the other hand, there is great hope that cooperation will reduce unnessary regulation on both sides of the Atlantic. However, healthcare is not an arena where the free market works perfectly. For example, can the FDA and other American authorities accept European certificates without question and vice versa?&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	The parallel forum will discuss the pro-and-con implications for health focussing on products, services, providers and users. Above all, the opportunities for innovation collaboration will be analysed.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	The forum will address:&lt;br /&gt;
+	&amp;bull; Medical devices and drugs - regulatory issues and bottlenecks&lt;br /&gt;
+	&amp;bull; Implications for personalised medicine and healthcare&lt;br /&gt;
+	&amp;bull; Importance of positioning&lt;br /&gt;
+	&amp;bull; Adding value for citizens and health systems&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	Global perspective&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Detlev Ganten, President, World Health Summit&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Patient organisation perspective&lt;br /&gt;
+	&lt;font color="3366FF"&gt;George McVie, Secretary, European Alliance for Personalised Medicine&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	European Medicines Agency (EMA) perspective&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Falk Ehmann, Scientific Support and Projects, European Medicines Agency (EMA), UK&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	European Parliament perspective&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Petru Luhan, Member of the European Parliament (EPP, Romania)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;Interactive Panel Discussion&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="003366"&gt;Chaired by E Anklam, Director, Institute for Reference Materials and Measurements, Joint Research Centre, European Commission&lt;br /&gt;
+	Co-chaired by S Berghmans, VP Academic &amp;amp; Research Relations EU, Elsevier Global Academic Relations, The Netherlands&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-03</day><start>09:00</start><end>12:00</end><room>Conference Centre Room 1</room><categoryid>14</categoryid><category>Forum 3</category><code>F3</code></item><item><id>47</id><event>Resilient Healthcare Systems</event><details>&lt;p&gt;
+	&lt;strong&gt;Building resilient healthcare systems&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by International Forum Gastein&lt;br /&gt;
+	Sponsored by an unrestricted educational grant from MSD&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636155652183/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/04/3195/"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Suggested reading list &lt;/em&gt;&lt;a href="http://www.ehfg.org/fileadmin/user_upload/EHFG_2013_Forum_4_Suggested_Reading.pdf"&gt;http://www.ehfg.org/fileadmin/user_upload/EHFG_2013_Forum_4_Suggested_Reading.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	Resilience is the intrinsic ability of a system to adapt and respond to unexpected internal and external pressures and shocks. Like bamboo, it does not crack but swings back, seizing the opportunity for strengthening and carrying out needed reform.&lt;/p&gt;
+&lt;p&gt;
+	Resilience rests on strong governance including accountability, transparency, participation and integrity and policy capacity.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	Do our responses to the financial crisis and other health system pressures also strengthen health system resilience? Are these reforms improving the alignment of accountability relationships and do we gain more transparency? Are citizens, patients and stakeholders involved when appropriate? Can we trust that the reforms are rolled out in a predictable manner? Did we have enough policy capacity to avoid reform failures?&lt;/p&gt;
+&lt;p&gt;
+	Session 1 will provide the story line for the forum by clarifying the concepts of resilience and governance. Top policy makers will share their views, and we will discuss recent country experiences with a view to EU policies and civil society organizations.&lt;/p&gt;
+&lt;p&gt;
+	Session 2 focuses on the health systems starting with the potential efficiency gains from structural reforms and how these reforms are linked to enhanced transparency and accountability. We will discuss the WHO agenda on strengthening health systems and recent country experience.&lt;/p&gt;
+&lt;p&gt;
+	Together with the audience, we will thrash out good practice lessons for building resilient health systems.&lt;br /&gt;
+	&lt;br /&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;Round 1 | Strengthening health systems resilience: An Introduction&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	Building resilient health systems in times of crisis: a brief outline&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Josep Figueras, European Observatory on Health Systems and Policies&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	What makes health systems resilient: a governance oriented framework&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Scott Greer, University of Michigan&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Health systems in times of crisis&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Miklos Szocska, Minister of State for Health of the Ministry of Human Resources, Hungary&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Panel discussion:&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Isabel de la Mata, Principal Adviser, DG Health and Consumers, European Commission&lt;br /&gt;
+	Monika Kosinska, Secretary General, European Public Health Alliance&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;Round 2&lt;/strong&gt; | &lt;strong&gt;Resilience through health system reform?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	Introduction: Enhancing health systems performance&lt;br /&gt;
+	How large are the potential efficiency gains and what are the most promising areas for structural reform?&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Peter C Smith, Imperial College, UK&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Panel discussion with:&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Hans Kluge, WHO Regional Office for Europe&lt;br /&gt;
+	Dessislava Dimitrova, former Deputy Minister of Health, Bulgaria&lt;br /&gt;
+	Harry Cayton, Professional Standards Authority, UK&lt;/font&gt;&lt;br /&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	Facilitators and chairs include:&lt;br /&gt;
+	&lt;font color="003366"&gt;Boris Aza&amp;iuml;s, Director Public Policy, MSD&lt;br /&gt;
+	Helmut Brand, President, International Forum Gastein&lt;/font&gt;&lt;br /&gt;
+	&amp;nbsp;&lt;/p&gt;
+</details><day>2013-10-03</day><start>14:30</start><end>17:30</end><room>Kursaal A</room><categoryid>15</categoryid><category>Forum 4</category><code>F4</code></item><item><id>43</id><event>Investing in health</event><details>&lt;p&gt;
+	&lt;strong&gt;Investing in health. From health to wealth&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by DG Health and Consumers of the European &lt;/em&gt;&lt;em&gt;Commission&lt;/em&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636122168556/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/03/running-healthcare-systems-in-an-age-of-austerity-riding-the-rodeo-bull/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/03/florence-nightingale-and-mae-west-the-unsung-pioneers-of-health-policy/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	As a result of the financial and economic crisis, several Member States of the European Union reduced their budgets which led to a drop in health expenditure for the first time in decades.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	Beyond the possible direct or indirect effects on the health of the population, budgetary constraints force countries to rethink &lt;em&gt;how &lt;/em&gt;to reform their health systems to make them fit for purpose to address growing challenges such as an ageing population, patients&amp;rsquo; expectations and technological progress with at times decreased resources.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	In these parallel forum sessions the speakers will:&lt;br /&gt;
+	&amp;bull; Highlight the need for effective investments in health systems and the health status of the population&lt;br /&gt;
+	&amp;bull; Exemplify areas of investing in health that could lead to gains in efficiency of public spending, to better quality of care and to reducing inequalities in health&lt;br /&gt;
+	&amp;bull; Discuss different approaches to the reform of national health systems in the EU, including through prevention and health promotion&lt;br /&gt;
+	&amp;bull; Highlight examples of policy innovation in health systems&lt;br /&gt;
+	&amp;bull; Showcase good practice from member countries of the European Union&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;Round 1 | &lt;/strong&gt;&lt;strong&gt;Investing in health &amp;ndash; the case for better public spending&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="003366"&gt;Introduction and moderation by Josep Figueras, Director, European Observatory on Health Systems and Policies&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Investing in health&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Paola Testori Coggi, Director General, Health and Consumers, European Commission&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Where to invest, where to cut? Healthcare reforms in times of austerity&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Raed Arafat, Secretary of State for Health, Ministry for Health, Romania&lt;br /&gt;
+	Mikl&lt;font color="3366FF"&gt;&amp;oacute;s&lt;/font&gt; Sz&amp;oacute;cska, Minister of State for Health, Ministry of Human Resources, Hungary&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Paola Testori Coggi, Director General, Health and Consumers, European Commission&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;Round 2 | &lt;/strong&gt;&lt;strong&gt;Resolving the efficiency and quality dilemma&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="003366"&gt;Introduction and moderation by &lt;font color="003366"&gt;Sylvain Giraud, H&lt;font color="003366"&gt;ead of Unit, DG Health and Consum&lt;font color="003366"&gt;ers, Euro&lt;font color="003366"&gt;pean Commission&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Resolving the efficiency and quality dilemma &amp;ndash; the Portuguese experience&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Pedro Pita Barros, Professor of Economics, Centre for Economic Policy Research, UK&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Health systems performance assessment &amp;ndash; in search for the magic formula&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Olivia Wigzell, Deputy Director General, Ministry of Health and Social Affairs, Sweden&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Health Technology Assessment &amp;ndash; opportunities and limitations&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Rosanna Tarricone, Project Director, HTA Project at CERGAS, Bocconi University, Italy&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Fostering cooperation in the EU on Health Technology Assesment&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Tapani Piha, Head of Unit, DG Health and Consumers, European Commission&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Patients&amp;rsquo; perspective&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Nicola Bedlington, Executive Director, European Patients&amp;rsquo; Forum&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-02</day><start>15:00</start><end>18:00</end><room>Kursaal A</room><categoryid>13</categoryid><category>Forum 2</category><code>F2</code></item><item><id>48</id><event>Resilient Healthcare Systems</event><details>&lt;p&gt;
+	&lt;strong&gt;Building resilient healthcare systems&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by International Forum Gastein&lt;br /&gt;
+	Sponsored by an unrestricted educational grant from MSD&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636183698926/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/08/building-resilient-healthcare-systems-resilience-through-new-models-and-technologies/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/08/building-resilient-healthcare-systems-resilience-through-public-health-reform/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	&lt;em&gt;Suggested reading list &lt;/em&gt;&lt;a href="http://www.ehfg.org/fileadmin/user_upload/EHFG_2013_Forum_4_Suggested_Reading.pdf"&gt;http://www.ehfg.org/fileadmin/user_upload/EHFG_2013_Forum_4_Suggested_Reading.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	On the second day of the parallel forum we will resume the discussion on how to build resilient health systems with a particular focus on strengthening accountability, transparency, participation, integrity and policy capacity.&lt;/p&gt;
+&lt;p&gt;
+	Session 3 will focus on new models and technologies. They hold a lot of promise, at the same time they add new complexities and sometimes can provoke concerns and anxieties. What are the innovations that strengthen health system resilience and what needs to be avoided when embracing new technologies? What is the role of accountability, transparency and participation in introducing these technologies?&lt;/p&gt;
+&lt;p&gt;
+	Session&amp;nbsp; 4 will deal with public health responses with a particular focus on Health in All Policies HiAP. We will review recent experience on the successes and failures of public health. The discussion will emphasize what it takes to seize opportunities and implement HiAP and health promotion.&lt;/p&gt;
+&lt;p&gt;
+	The discussion in this session will also build on the results of session 1 and 2 of parallel forum to draw lessons for building resilient health systems.&lt;br /&gt;
+	&lt;br /&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;Round 3 | Resilience through new models and technologies&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	Introduction: More health through systemic innovation&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Bernhard B&amp;uuml;hrlen, MetaForum Innovation for more health&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Panel discussion with:&lt;br /&gt;
+	&lt;font size="2"&gt;&lt;font color="3366FF"&gt;Beatrice Falise-Mirat, Director of Government Relations and Regulatory Affairs, Orange Healthcare&lt;br /&gt;
+	Boris Aza&amp;iuml;s, Director Public Policy, MSD&lt;br /&gt;
+	Helmut Brand, President, International Forum Gastein&lt;br /&gt;
+	Jose Carvalho des Neves, President, Central Administration of the National Health System, Portugal&lt;/font&gt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;Round 4&lt;/strong&gt; | &lt;strong&gt;Resilience through public health reform?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	Introduction: Health in All Policies&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Matthias Wis&lt;font color="3366FF"&gt;mar, &lt;/font&gt;&lt;/font&gt;&lt;font color="3366FF"&gt;&lt;font color="3366FF"&gt;&lt;font color="3366FF"&gt;European Observatory on Health Syste&lt;font color="3366FF"&gt;m&lt;/font&gt;s and Policies&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Panel discussion with:&lt;br /&gt;
+	&lt;font color="3366FF"&gt;&lt;font color="3366FF"&gt;&lt;font color="3366FF"&gt;Gauden Galea, WHO Regi&lt;font color="3366FF"&gt;onal Office for Europe&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;&lt;font color="3366FF"&gt;Vesna-Kerstin Petric, Ministry of Health, Slovenia&lt;/font&gt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;br /&gt;
+	Facilitators include:&lt;br /&gt;
+	&lt;font color="003366"&gt;Willy Palm, &lt;/font&gt;&lt;br /&gt;
+	&lt;font color="003366"&gt;European Obstervatory on Health Systems and Policies&lt;/font&gt;&lt;font color="003366"&gt;Matthias Wismar, European Obstervatory on Health Systems and Policies&lt;/font&gt;&lt;br /&gt;
+	&amp;nbsp;&lt;/p&gt;
+</details><day>2013-10-04</day><start>09:00</start><end>12:00</end><room>Kursaal A</room><categoryid>15</categoryid><category>Forum 4</category><code>F4</code></item><item><id>49</id><event>mHealth for Innovation</event><details>&lt;p&gt;
+	&lt;strong&gt;mHealth. Health at your fingertips&lt;/strong&gt;&lt;br /&gt;
+	&lt;strong&gt;Users&amp;#39; viewpoint&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by DG CONNECT of the European Commission&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636155784583/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the blog post on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="800080"&gt;Watch this session via web stream &lt;a href="http://webcast.ec.europa.eu/eutv/portal/archive.html?viewConference=20775&amp;amp;catId=20732" target="_blank"&gt;HERE&lt;/a&gt;!&lt;/font&gt;&lt;br /&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="000000"&gt;This parallel session will look at the recent developments and challenges in the area of mobile health (&amp;#39;mHealth&amp;#39;). &lt;font color="000000"&gt;T&lt;/font&gt;he increasing penetration of smartphones, as well as the 3g and 4g networks, provides a significant boost to the use of mobile platforms for providing healthcare services.&lt;br /&gt;
+	Use of mobile technology for health and healthcare/social care has tremendous potential for patient engagement and improved clinical care. mHealth has already shown to be successful and cost-effective both when using applications assisting individuals in their own health and wellness management as well as when using mobile apps targeted at healthcare providers as tools to improve and facilitate the delivery of care.&lt;br /&gt;
+	However, there is a lack of awareness of added value and benefits of mHealth. also, to achieve wider evidence-based mHealth deployment more data should be made available on the efficacy and costeffectiveness of these solutions. Furthermore, guidance with respect to the application of regulation in the area of mHealth is needed, in order to protect privacy and security, standards and interoperability. &lt;font color="000000"&gt;S&lt;/font&gt;uch guidance helps to ensure that the potential of mHealth with respect to the health sector, but also growth, jobs and trade, is realised.&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="000000"&gt;T&lt;/font&gt;his parallel forum will explore mHealth opportunities and challenges from multiple perspectives:&lt;br /&gt;
+	&amp;bull; &lt;font color="000000"&gt;T&lt;/font&gt;he end-user perspective &amp;ndash; citizens and patients experience and expectations&lt;br /&gt;
+	&amp;bull; Healthcare professional perspective: existing evidence on the benefits of mHealth &amp;ndash; health impacts and cost effectiveness&lt;br /&gt;
+	&amp;bull; Researchers&amp;#39; perspective &amp;ndash; challenges and opportunities&lt;br /&gt;
+	&amp;bull; &lt;font color="000000"&gt;I&lt;/font&gt;ndustry perspective &amp;ndash; recent and possible future market developments&lt;br /&gt;
+	&amp;bull; Policy maker perspective &amp;ndash; regulatory issues related to mHealth&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="000000"&gt;&lt;font color="000000"&gt;Design of a mobile, safety-critical in-hospital Glucose Management System&lt;/font&gt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="000000"&gt;&lt;font color="000000"&gt;&lt;font color="3366FF"&gt;Peter Beck, Joanneum Research, Austria&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Use of mobile health apps in psychiatric practice&lt;br /&gt;
+	&lt;font color="3366FF"&gt;S Kooij, Psycho-medical Programmes Expertise Centre Adult ADHD, The Netherlands&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="000000"&gt;&lt;font color="000000"&gt;People&amp;rsquo;s view on medical and wellbeing apps&lt;br /&gt;
+	&lt;font color="3366FF"&gt;A Wyke, Founder and CEO, Patientview, UK&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="000000"&gt;&lt;font color="000000"&gt;&lt;font color="000000"&gt;I&lt;/font&gt;nput from researchers&lt;br /&gt;
+	&lt;font color="3366FF"&gt;J O&amp;#39;Donoghue, UCC&amp;rsquo;s Health Information Systems Research Centre, University College Cork, Ireland&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	World-wide experience&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Sameer Pujari, World Health Organization&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;&lt;font color="000000"&gt;I&lt;/font&gt;nteractive discussion&lt;/strong&gt;&lt;/font&gt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="000000"&gt;&lt;font color="000000"&gt;&lt;font color="003366"&gt;Moderated by J Thestrup, In-Jet, Denmark&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-03</day><start>14:30</start><end>17:30</end><room>Conference Centre Room 1</room><categoryid>16</categoryid><category>Forum 5</category><code>F5</code></item><item><id>50</id><event>mHealth for Innovation</event><details>&lt;p&gt;
+	&lt;strong&gt;mHealth. Health at your fingertips&lt;br /&gt;
+	Regulatory issues&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by DG CONNECT of the European Commission&lt;/em&gt;&lt;br /&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636183810846/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the blog post on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="800080"&gt;Watch this session via web stream &lt;a href="http://webcast.ec.europa.eu/eutv/portal/archive.html?viewConference=20775&amp;amp;catId=20759" target="_blank"&gt;HERE&lt;/a&gt;!&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="000000"&gt;This parallel session will look at the recent developments and challenges in the area of mobile health (&amp;#39;mHealth&amp;#39;). &lt;font color="000000"&gt;T&lt;/font&gt;he increasing penetration of smartphones, as well as the 3g and 4g networks, provides a significant boost to the use of mobile platforms for providing healthcare services.&lt;br /&gt;
+	Use of mobile technology for health and healthcare/social care has tremendous potential for patient engagement and improved clinical care. mHealth has already shown to be successful and cost-effective both when using applications assisting individuals in their own health and wellness management as well as when using mobile apps targeted at healthcare providers as tools to improve and facilitate the delivery of care.&lt;br /&gt;
+	However, there is a lack of awareness of added value and benefits of mHealth. also, to achieve wider evidence-based mHealth deployment more data should be made available on the efficacy and costeffectiveness of these solutions. Furthermore, guidance with respect to the application of regulation in the area of mHealth is needed, in order to protect privacy and security, standards and interoperability. &lt;font color="000000"&gt;S&lt;/font&gt;uch guidance helps to ensure that the potential of mHealth with respect to the health sector, but also growth, jobs and trade, is realised.&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="000000"&gt;T&lt;/font&gt;his parallel forum will explore mHealth opportunities and challenges from multiple perspectives:&lt;br /&gt;
+	&amp;bull; &lt;font color="000000"&gt;T&lt;/font&gt;he end-user perspective &amp;ndash; citizens and patients experience and expectations&lt;br /&gt;
+	&amp;bull; Healthcare professional perspective: existing evidence on the benefits of mHealth &amp;ndash; health impacts and cost effectiveness&lt;br /&gt;
+	&amp;bull; Researchers&amp;#39; perspective &amp;ndash; challenges and opportunities&lt;br /&gt;
+	&amp;bull; &lt;font color="000000"&gt;I&lt;/font&gt;ndustry perspective &amp;ndash; recent and possible future market developments&lt;br /&gt;
+	&amp;bull; Policy maker perspective &amp;ndash; regulatory issues related to mHealth&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	Socioeconomic impact of mHealth &amp;ndash; an assessment report for the European Union&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Jeanine Vos, Executive Director, mHealth, GSMA&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Industry view&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Peter Ohnemus, Vice-Chairman, Founder and CEO, dacadoo ag, Switzerland&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Evaluation of apps&lt;br /&gt;
+	&lt;font color="3366FF"&gt;David Sainati, Medappcare, France&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Analysis of mobile health and wellbeing apps in the EU&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Tapani Piha, HEad of Unit, DG Health and Consumers, European Commission&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Viewpoint of a Member State&amp;#39;s authority&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Robert Sinclair, Regional Secretariat Department of Health Care, Sweden&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;Interactive discussion&lt;/strong&gt;&lt;br /&gt;
+	&lt;font color="003366"&gt;Moderated by Robert Madelin, Director-General, DG CONNECT, European Commission&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-04</day><start>09:00</start><end>12:00</end><room>Conference Centre Room 1</room><categoryid>16</categoryid><category>Forum 5</category><code>F5</code></item><item><id>51</id><event>Non-Communicable Diseases</event><details>&lt;p&gt;
+	&lt;strong&gt;Non-Communicable Diseases. From research to action&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organized by Health Promotion Administration, Ministry of Health and Welfare, Taiwan, R.O.C.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636155870394/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/04/heading-towards-a-successful-fight-against-the-worlds-biggest-killers/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;br /&gt;
+	The World Health Assembly has set a goal of reducing premature mortality from NCDs by 25% by 2025.&amp;nbsp; Evidence-based research, innovative approaches and political will are critical to make a difference in building responsive and robust health systems, effect widespread policy shifts and drive behavioural change.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	We will look at the key policies of those countries doing best in preventing NCD related mortality; hear from policymakers pushing boundaries to build resilient public health policy capable of fighting chronic disease, and discuss the pioneering research that will inform the NCD prevention policies of the future.&amp;nbsp;&lt;br /&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	In the this session we will present recent research including a comparative analysis of the performance of public health policies of particular relevance to NCDs in Europe and Asia, and use interactive methods to ask the audience to assess factors critical to their success, what we can learn from the data presented and how to bring about change in our different countries.&lt;/p&gt;
+&lt;p&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;NCD research: critical factors for building resilience&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="003366"&gt;Introduction by Martin McKee, Professor of Public Health, London School of Hygiene and Tropical Medicine, UK&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	NCD health policies in Europe &amp;ndash; factors critical for success&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Johan Mackenbach, Chair of the Department of Public Health, Erasmus MC, The Netherlands&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Public health policy performance against NCDs: Examples of opportunities and challenges from Asia&lt;br /&gt;
+	&lt;font color="3366FF"&gt;ST Chiou, Director &lt;font color="3366FF"&gt;General,&lt;font color="3366FF"&gt; Health Pro&lt;font color="3366FF"&gt;motion Administration,&lt;/font&gt;&lt;/font&gt;&lt;/font&gt; Ministry of Health and Welfare, Taiwan, R.O.C&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Obamacare and US health policy on NCDs&lt;br /&gt;
+	&lt;font color="3366FF"&gt;TM&lt;/font&gt;&lt;font color="3366FF"&gt; Cheng, Health Policy Research Analyst, Princeton University, USA&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Building health resilience to NCDs: factors that promote or diminish people&amp;rsquo;s resilience to economic shocks, findings from a systematic review and wider implications&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Bayard Roberts, Senior Lecturer in Health Systems and Policy, London School of Hygiene and Tropical Medicine, UK&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Young Forum Gastein NCD Research Showcase&lt;br /&gt;
+	&lt;font color="3366FF"&gt;H Brinsden, Policy/Advocacy Researcher, International Association for the Study of Obesity, UK&lt;br /&gt;
+	A Ferrario, Research Officer, London School of Economics and Political Science, UK&lt;br /&gt;
+	S Kumpunen, Research Officer, London School of Economics and Political Science, UK&lt;br /&gt;
+	C K&amp;uuml;hlbrandt, Research Assistant, LSHTM, UK&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;Interactive plenary discussion and conclusion&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="003366"&gt;Moderated by Martin McKee, Professor of Public Health, London School of Hygiene and Tropical Medicine, UK&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-03</day><start>14:30</start><end>17:30</end><room>Conference Centre Room 2</room><categoryid>17</categoryid><category>Forum 6</category><code>F6</code></item><item><id>54</id><event>Patient-centred care</event><details>&lt;p&gt;
+	Patient-centred care&lt;br /&gt;
+	&lt;strong&gt;Exploring barriers and solutions to patient-centred care in diabetes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Sponsored and organised by &lt;/em&gt;&lt;em&gt;Novo Nordisk&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636113949776/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/02/patient-centered-care-dawn-2-a-new-dimension-of-patient-centered-care/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;br /&gt;
+	Chronic diseases pose an ever growing burden on societies across Europe at a time of economic crisis. There is growing recognition of the need to implement innovative healthcare solutions to better prevent, detect and control chronic diseases. At the heart of this are the people and families living their daily lives with chronic conditions.&amp;nbsp; Empowering these people and delivering patient-centred care will be essential to maintain sustainable healthcare systems.&lt;/p&gt;
+&lt;p&gt;
+	By using diabetes as a case study, this workshop will:&lt;br /&gt;
+	&amp;bull; Explore the social and psychological barriers to implementing patient-centred care.&lt;br /&gt;
+	&amp;bull; Map the current landscape of patient-centred diabetes care in Europe.&lt;br /&gt;
+	&amp;bull; Facilitate dialogue on how to improve patient involvement, self-management and psychosocial support as part of innovative healthcare.&lt;br /&gt;
+	&amp;bull; Share best practice in the area of patient-centred care taking diabetes as a model.&lt;/p&gt;
+&lt;p&gt;
+	The workshop takes point of departure in the Diabetes Attitudes Wishes and Needs 2 (DAWN2&amp;trade;) study, which is a multinational study that gives a holistic view on diabetes care with insights from more than 15,000 people and 17 countries.&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="3366FF"&gt;A Forbes, Professor in Diabetes Nursing, King&amp;rsquo;s College London, UK&lt;br /&gt;
+	A Bevers, Board Member, International Diabetes Federation Europe, The Netherlands&lt;br /&gt;
+	J Kr&amp;ouml;ger, Doctor, Centre for Diabetes Care, Hambug-East, Germany&lt;br /&gt;
+	M Comaschi, Professor, ICLAS Rapallo, Italy&lt;br /&gt;
+	S Eik Skovlund, Global Director Patient Research and Engagement, Novo Nordisk, Denmark&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="003366"&gt;Moderated by N Fahy, Independent Consultant and Researcher, United Kingdom&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-02</day><start>09:00</start><end>12:00</end><room>Conference Centre Room 2</room><categoryid>2</categoryid><category>Workshop 2</category><code>W2</code></item><item><id>44</id><event>Investing in health</event><details>&lt;p&gt;
+	&lt;strong&gt;Investing in health. From health to wealth&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by DG Health and Consumers of the European &lt;/em&gt;&lt;em&gt;Commission&lt;/em&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636148570486/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/03/hug-a-politician-health-prevention-is-tough-on-them/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/03/investing-in-health-in-europe-progress-to-make-but-at-least-now-were-moving/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	As a result of the financial and economic crisis, several Member States of the European Union reduced their budgets which led to a drop in health expenditure for the first time in decades.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	Beyond the possible direct or indirect effects on the health of the population, budgetary constraints force countries to rethink &lt;em&gt;how &lt;/em&gt;to reform their health systems to make them fit for purpose to address growing challenges such as an ageing population, patients&amp;rsquo; expectations and technological progress with at times decreased resources.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	In these parallel forum sessions the speakers will:&lt;br /&gt;
+	&amp;bull; Highlight the need for effective investments in health systems and the health status of the population&lt;br /&gt;
+	&amp;bull; Exemplify areas of investing in health that could lead to gains in efficiency of public spending, to better quality of care and to reducing inequalities in health&lt;br /&gt;
+	&amp;bull; Discuss different approaches to the reform of national health systems in the EU, including through prevention and health promotion&lt;br /&gt;
+	&amp;bull; Highlight examples of policy innovation in health systems&lt;br /&gt;
+	&amp;bull; Showcase good practice from member countries of the European Union&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;Round 1 | &lt;/strong&gt;&lt;strong&gt;Prevention &amp;ndash; a way to avoid the financing and ageing dilemma?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="003366"&gt;Introduction and moderation of interactive discussion by C Needle, Director, EuroHealthNet&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	The economics of prevention&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Mar&lt;font color="3366FF"&gt;k Pearson, H&lt;font color="3366FF"&gt;ead of the Heal&lt;font color="3366FF"&gt;th Di&lt;font color="3366FF"&gt;vision&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;, OECD&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Tackling the determinants of health - strategies for prevention and health promotion&lt;br /&gt;
+	&lt;font color="3366FF"&gt;John F Ryan, Director of Unit, DG Health and Consumers, European Commission&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Innovation in active and health ageing &amp;ndash; preventing immunosenescence&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Sibilia Quilici, Senior Manager, Health Policy, Sanofi Pasteur MSD&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;Round 2 | &lt;/strong&gt;&lt;strong&gt;From health to wealth &amp;ndash; priorities for investment by 2020&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	Round-table discussion with:&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Antonyia Parvanova, Member of the European Parilament (ALDE, Bulgaria)&lt;br /&gt;
+	W Piskorz, Head of Unit, DG Regional Policy and Urban (DG REGIO), European Commission&lt;br /&gt;
+	Paul Hendrik Smit, Advisor, Agathellon&lt;br /&gt;
+	Monika Kosinska, Secretary General, European Public Health Alliance&lt;br /&gt;
+	Pascal Garel, Chief Executive, European Hospital and Healthcare Federation (HOPE)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="003366"&gt;Moderated by Pao&lt;font color="003366"&gt;la&lt;/font&gt; Testori Coggi, Director-General, DG Health and Consumers, European Commission&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-03</day><start>09:00</start><end>12:00</end><room>Kursaal A</room><categoryid>13</categoryid><category>Forum 2</category><code>F2</code></item><item><id>55</id><event>Resilient Gx policy</event><details>&lt;p&gt;
+	&lt;strong&gt;Resilient Gx policy&lt;br /&gt;
+	Will generic use policy stand up to resiliency?&lt;/strong&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;em&gt;Sponsored by Abbott Products Operations AG, Switzerland and co-organised by Health Outcomes Strategies GmbH&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636113932225/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/02/resilient-generics-policy-save-money-with-a-holistic-view-on-the-health-care-system/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Despite the promise of generics (Gx) in lowering costs there are concerns around outcomes and total healthcare costs which are currently not addressed in generics policies. This workshop will examine the concerns with generics policies and the need for more rational off-patent policies in order to strengthen healthcare systems and widen the discussion beyond the current paradigm of from lowest-price-priority to value-based priority (cost per health outcome).&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	The speakers will build on an overview of healthcare policies regulating on-patent and off-patent pharmaceuticals in relation to healthcare efficiency and the underlying definitions before presenting evidence around the impact of such policies on health outcomes, access to drugs and economic parameters as well as considering funding scenarios.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	Alternative models for value based decision making and core drivers of value will be discussed and elaborated with the audience by using a structured group discussion approach.&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	&lt;font color="#2672EC" style=""&gt;N Maniadakis, Professor, National School of Public Health, Greece&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="#2672EC" style=""&gt;Z Kalo, Professor, E&amp;ouml;tv&amp;ouml;s Lor&amp;aacute;nd University (ELTE), Hungary&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="#2672EC" style=""&gt;J Shen, Abbott Products Operations AG, Switzerland&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="#2672EC" style=""&gt;H Chung, Head of Health Policy Research, Swiss Re Services ltd., UK&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="003366"&gt;Moderated by&amp;nbsp; D Brixner, Professor, Pharmacotherapy Outcomes Research, University of Utah, USA&lt;br /&gt;
+	&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; AP Holtorf, Health Outcomes Strategies GmbH, Switzerland&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-02</day><start>09:00</start><end>12:00</end><room>Conference Centre Room 1</room><categoryid>3</categoryid><category>Workshop 3</category><code>W3</code></item><item><id>56</id><event>Knowledge translation</event><details>&lt;p&gt;
+	Knowledge translation&lt;br /&gt;
+	&lt;strong&gt;Research knowledge translation for policy development: barriers and facilitators&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by DG Research and Innovation of the European Commission&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636125014236/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/03/from-research-to-policy-making-it-possible/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Evidence-based policy-making requires evidence emanating from research to be accessible and presented in such a way that it fits the needs of policy-makers.&lt;/p&gt;
+&lt;p&gt;
+	Based on concrete experiences of research conducted under the EU&amp;#39;s 7&lt;sup&gt;th&lt;/sup&gt; Framework Programme for Research and Technological Development, this workshop will explore the barriers and facilitators in knowledge translation. Theoretical approaches and international experience in this field will be shared.&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	Scientific community, civil society and policy-makers: resistances and facilitators for transcribing knowledge into social reality on the sensitive subject of child abuse and neglect&lt;br /&gt;
+	&lt;font color="3366FF"&gt;G Nikolaidis, Department of Mental Health &amp;amp; Social Welfare, Centre for the Study &amp;amp; Prevention of Child Abuse, Athens, Greece&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Knowledge translation to health care providers and policy makers in the field of pain medicine: Bridging the gap between RCTs and real-world data&lt;br /&gt;
+	&lt;font color="3366FF"&gt;W Meissner, Department of Anaesthesiology and Intensive Care, Friedrich-Schiller University Hospital, Jena, Germany&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	From science to policy - transdisciplinary research in alcohol and the addictions&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Peter Anderson, Substance Use, Policy and Practice, Institute of Health and Society, Newcastle University, UK; Alcohol and Health, Faculty of Health, Medicine and Life Sciences, Maastricht University, The Netherlands&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	Bridging the Research-Policy Gap within the WHO European Region - EVIPNet Europe&lt;br /&gt;
+	&lt;font color="3366FF"&gt;T Kuchenmuller, Evidence and Intelligence for Policy-making, Division of Information, Evidence, Research and Innovation, WHO Regional Office for Europe&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="003366"&gt;Moderated by Barbara Kersti&amp;euml;ns, Head of sector Public Health, DG Research and Innovation, European Commission&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-02</day><start>18:30</start><end>20:00</end><room>Conference Centre Room 2</room><categoryid>4</categoryid><category>Workshop 4</category><code>W4</code></item><item><id>57</id><event>Health economics</event><details>&lt;p&gt;
+	Health economics&lt;br /&gt;
+	&lt;strong&gt;Stress test for health economics&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by Federal Ministry of Health, Austria&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636125152456/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/03/dont-blame-the-economists/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Most European health systems face more or less similar conditions: health expenditures are rising for different reasons whereas available funding - depending on the general status of national economies - remains on the same level or is even decreasing.&lt;br /&gt;
+	&lt;br /&gt;
+	Only a few countries plan to increase health expenditures in a moderate way in the years to come.&lt;br /&gt;
+	&lt;br /&gt;
+	Measures have to be taken to maintain health systems resilient and innovative over a longer period.&lt;br /&gt;
+	&lt;br /&gt;
+	Health economists are asked to offer support and provide their advice. But are their findings transferable into tangible health policy measures? Are decisions in health politics based on scientific evidence and good data or are decisions conditioned by other factors?&lt;br /&gt;
+	&lt;br /&gt;
+	The goal of this workshop is to work out whether health economics is able to prepare or facilitate political processes and decision-making or if health economics has its strength only in retrospective analysis.&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Peter C Smith, Imperial College London, UK&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Robert B Saltman, Health Policy and Management, Rollins School of Public Health, Emory University, USA&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Clemens&lt;font color="3366FF"&gt;-&lt;/font&gt;Maria Auer, Federal Ministry of Health, Austria&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="003366"&gt;Chaired by Thomas Czypionka, Institute for Advanced Studies, Austria&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-02</day><start>18:30</start><end>20:00</end><room>Conference Centre Room 1</room><categoryid>5</categoryid><category>Workshop 5</category><code>W5</code></item><item><id>58</id><event>Outcome variation</event><details>&lt;p&gt;
+	Outcome variation&lt;br /&gt;
+	&lt;strong&gt;Moving towards safer and more efficient health services &amp;ndash; evidence from the ECHO project on systematic variations in healthcare delivery&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by European Collaboration for Health Optimization (ECHO) project&lt;/em&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636144149956/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/03/outcome-variations-across-europe-evidence-from-the-echo-project/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Quality, access and efficiency of healthcare services are growing concerns in Europe and are at the heart of all debates in health policy-making and management. The European Collaboration for Health Optimization (ECHO) project is an international effort to deliver unique insights in the variation in utilisation, safety, efficiency of health systems and services using both a geographical and hospital approach.&lt;/p&gt;
+&lt;p&gt;
+	This workshop brings you the first results of the project and shows how the output can result in better decision-making in healthcare. Participants will be engaged in discussions around the best possible uptake of results and how different stakeholders can engage in turning evidence into good decision making.&lt;br /&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="3366FF"&gt;Enrique Bernal-Delgado, Head of the Health Services Research Unit, Aragon Health Sciences Institute (IACS)&lt;br /&gt;
+	Jeni Bremner, Director, European Health Management Association (EHMA)&lt;br /&gt;
+	Mark Pearson, Head of the Health Division, OECD&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	The session is co-financed by the European Commission in the framework of the 7th Framework Programme (Grant Agreement FP7-health-2009-242189).&lt;/p&gt;
+</details><day>2013-10-03</day><start>07:30</start><end>09:00</end><room>Kursaal B</room><categoryid>24</categoryid><category>Breakfast Workshop 1</category><code>B1</code></item><item><id>59</id><event>Patient involvement</event><details>&lt;p&gt;
+	&lt;strong&gt;Patient involvement&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by the European Patients&amp;#39; Forum in cooperation with Sanofi&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636183510856/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/04/patient%C2%B4s-involvement-breakfast-workshop/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	The current economic crisis has resulted in health budget cuts throughout the EU, impacting access to screening,&lt;br /&gt;
+	diagnosis, treatment, rehabilitation and health management &amp;ndash; and, ultimately, health outcomes.&lt;br /&gt;
+	A recent Commission Staff Working Document addressing &amp;lsquo;Investment in health&amp;rsquo; underlines the importance of good health as a key factor in economic growth and personal wellbeing. Achieving high standards of health should be considered as one of the key drivers of economic recovery. Continued and well-targeted investment in health and health services is therefore crucial.&lt;br /&gt;
+	Health stakeholders have a place in this debate, with patients playing a central role as they experience the full budget restrictions and diminished access. Increasingly, they are expected to take on greater responsibility for their health and lifestyle choices as a condition for such access.&lt;/p&gt;
+&lt;p&gt;
+	Given these trends, patient empowerment and health literacy are key concepts.&lt;br /&gt;
+	This session will explore:&lt;br /&gt;
+	&amp;bull; To what extent patients are engaging in the health policy decisions that affect them and how this engagement can be fostered to address the gaps across Europe.&lt;br /&gt;
+	&amp;bull; Which measures can support better health outcomes and how these can be implemented most effectively.&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="3366FF"&gt;&lt;font color="3366FF"&gt;&lt;font color="3366FF"&gt;S&lt;/font&gt;ylvian Giraud, &lt;/font&gt;DG &lt;font color="3366FF"&gt;Health and Consumers, European Commission&lt;/font&gt;&lt;br /&gt;
+	Nicola Bedlington, Exec&lt;font color="3366FF"&gt;utive Director&lt;/font&gt;, European Patients&amp;#39; Forum&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Rebecca Muller, GAMIAN-Europe&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Katr&amp;iacute;n Fje&lt;font color="3366FF"&gt;l&lt;font color="3366FF"&gt;dsted&lt;/font&gt;&lt;/font&gt;, CPME&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Marion Olsson, EHMA&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Karin Kadenbac&lt;font color="3366FF"&gt;h&lt;/font&gt; M&lt;font color="3366FF"&gt;em&lt;font color="3366FF"&gt;ber of the European Parliament&lt;/font&gt;&lt;/font&gt; (S&amp;amp;D Austria)&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Milena Richter, Sanofi&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="003366"&gt;Chaired by Tamsin Rose, Independent EU Health Activist&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;C Duguay, Vice President European Public Affairs, Sanofi (cancelled)&lt;/em&gt;&lt;/p&gt;
+</details><day>2013-10-04</day><start>07:30</start><end>09:00</end><room>Kursaal B</room><categoryid>25</categoryid><category>Breakfast Workshop 2</category><code>B2</code></item><item><id>60</id><event>HAI</event><details>&lt;p&gt;
+	HAI&lt;br /&gt;
+	&lt;strong&gt;Healthcare-associated infections (HAI)&lt;/strong&gt;: &lt;strong&gt;time to take responsibility&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by European Centre for Disease Prevention and Control (ECDC)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636149060634/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/04/health-assocoiated-infections-hai/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Healthcare-associated infections represent an urgent public health issue and a threat to the safety of European patients. Controlling and preventing these infections is therefore a responsibility for any healthcare system and any institution providing healthcare to European patients.&lt;br /&gt;
+	&lt;br /&gt;
+	The objective of this session is to engage key stakeholders, the state, the hospital, the patient and the healthcare inspectorate, as well as our audience, in a discussion about how Europe can provide the highest standards of hygiene and infection control in its innovative healthcare systems. ECDC will also be presenting the latest data available from across the EU countries.&lt;br /&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="3366FF"&gt;John F Ryan, DG Health and Consumers, European Commission&lt;br /&gt;
+	Elisabeth Presterl, Professor, Clinical Institute of Hospital Hygiene, Medical University of Vienna, Austria&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Jan Wijngaarden, Chief Inspector of Public Health, The Health Care Inspectorate, Ministry of Health, Welfare and Sport, The Netherlands&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Lau&lt;font color="3366FF"&gt;r&amp;egrave;ne&lt;/font&gt; Souchet, European Patients&amp;rsquo; Forum&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Dominique Monnet, Senior Expert &amp;amp; Head of Programme, Antimicrobial Resistance and Healthcare-Associated Infections, European Centre for Disease Prevention and Control&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="003366"&gt;Moderated by Marc Sprenger, Director, European Centre for Disease Prevention and Control (ECDC)&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-03</day><start>12:30</start><end>14:00</end><room>Hotel Norica</room><categoryid>19</categoryid><category>Lunchworkshop 1</category><code>L1</code></item><item><id>61</id><event>Self-care perceptions</event><details>&lt;p&gt;
+	Self-care perceptions&lt;br /&gt;
+	&lt;strong&gt;Epposi Self-Care Perception Barometer: Today&amp;rsquo;s perception can lead to tomorrow&amp;rsquo;s reality&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by European Platform for Patient Organisations, Science and Industry (Epposi)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636149368433/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/04/3184/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Self-Care describes the activities undertaken by individuals and the wider community in order to improve health, prevent disease and manage illness. The take-up of Self-Care coincides with a growing interest in personal health and wellbeing, increased access to health&amp;nbsp; information, and government funded public health promotions that have targeted smoking, obesity and consumption of alcohol. All this means that there needs to be fundamental change to entrench a powerful preventative health culture in the community, including the role of Self-Care for those who are able to take greater responsibility for personal health.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	The workshop will explore the results of a major piece of quantitative research establishing a European baseline of public perceptions towards Self-Care gathered in ten EU countries. The session will cover issues such as: How do consumers define self-care? Who do they trust in its delivery? What are the opportunities and risks involved and how can these be managed from a policy to practice perspective?&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	Multi-stakeholder discussion leaders of an open fishbowl conversation:&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="3366FF"&gt;&lt;font color="3366FF"&gt;Audrey Birt, Health and Social Care Alliance&lt;/font&gt;&lt;br /&gt;
+	Andrea Pavlickova, Project Manager, Epposi&lt;br /&gt;
+	Paul de Raeve, European Federation of Nurses Associations (EFN)&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Ilaria Passarani European Consumer Organization (BEUC)&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Vincent Clay, Pfizer&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="003366"&gt;Moderated by Jacqueline Bowman-Busato, Epposi&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-03</day><start>12:30</start><end>14:00</end><room>Hotel Grand Park</room><categoryid>20</categoryid><category>Lunchworkshop 2</category><code>L2</code></item><item><id>62</id><event>Schizophrenia and inclusion</event><details>&lt;p&gt;
+	Schizophrenia and inclusion&lt;br /&gt;
+	&lt;strong&gt;Schizophrenia and social inclusion: Perspectives, needs and solutions&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by F. Hoffmann-La Roche Ltd&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636156201144/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/03/schizophrenia-and-inclusion-no-job-no-social-life/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Only 8% of people living with schizophrenia in the UK are in employment. Is this the tip of an iceberg highlighting the true extent of social exclusion? How are individuals with this severe brain disorder, diagnosed in the prime of their lives, impacted across key aspects of their lives, throughout their lives? What is the unrecognised potential for their active role in society?&amp;nbsp; Hot on the heels of the World Federation for Mental Health 2013 World Congress, which dedicated its programme to social inclusion, this workshop seeks to address the many unanswered questions for people affected by schizophrenia, both for individuals living with the condition and their carers:&lt;/p&gt;
+&lt;p&gt;
+	&amp;bull; What is the level of social exclusion among those affected?&lt;br /&gt;
+	&amp;bull; How is social exclusion impacting people affected by schizophrenia?&lt;br /&gt;
+	&amp;bull; What are the benefits of integrating people affected by schizophrenia &amp;ndash; for individuals and for society?&lt;br /&gt;
+	&amp;bull; What are the policy solutions to support integration of those affected?&lt;/p&gt;
+&lt;p&gt;
+	This highly interactive session will report findings of a new global study on social inclusion. A live survey where your personal votes and opinions will spark debate on this key topic will help to inform the relevant policy changes needed to enhance levels of social inclusion for those affected.&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="3366FF"&gt;Kevin Jones, Secretary General, EUFAMI&lt;br /&gt;
+	&lt;span lang="EN-GB" style=""&gt;Esko Hanninen, Health and Social Policy Advisor&lt;/span&gt;&lt;/font&gt;&lt;br /&gt;
+	&lt;span lang="EN-GB" style=""&gt;&lt;font color="3366FF"&gt;John Bowis, Health Policy Advisor&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="003366"&gt;Moderated by N Fahy, Senior Advisor Health, A&amp;amp;R Edelman&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-03</day><start>12:30</start><end>14:00</end><room>Conference Centre Room 2</room><categoryid>21</categoryid><category>Lunchworkshop 3</category><code>L3</code></item><item><id>63</id><event>Navigating health systems</event><details>&lt;p&gt;
+	&lt;strong&gt;Navigating health systems&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by the World Health Organization, Regional Office for Europe&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636156430323/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/03/navigating-health-systems/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	In April 2013 the Government of Norway hosted a WHO High-Level Meeting in Oslo on &amp;ldquo;Health systems in times of global economic crisis: an update of the situation in the WHO European Region&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;
+	The objective of this session is to review the latest evidence on the impact of the economic crisis on population health and on health systems in the WHO European Region, particularly in the following broad areas:&lt;/p&gt;
+&lt;p&gt;
+	&amp;bull; Maintaining and reinforcing equity, solidarity and universal coverage&lt;br /&gt;
+	&amp;bull; Policy responses to growing fiscal pressure, with a focus on hard-hit countries and measures to improve efficiency&lt;br /&gt;
+	&amp;bull; Improving health system preparedness and resilience&lt;/p&gt;
+&lt;p&gt;
+	During the workshop we will present the policy lessons and recommendations from the High Level Meeting.&amp;nbsp; These will have been discussed at the WHO Regional Committee in Izmir, Turkey, September 2013 by the 53 WHO European Member States.&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	Policy lessons and recommendations of the WHO High-Level Meeting in Oslo&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Hans Kluge, WHO Regional Office for Europe&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Health financing policy in times of economic crisis&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Tam&amp;aacute;s Evetovits, Acting Head, WHO Barcelona Office&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Panel discussion with:&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Josep Figueras, Director, European Observatory on Health Systems and Policies&lt;br /&gt;
+	Clive Needle, Director, EuroHealthNet&lt;br /&gt;
+	Giulia Del Brenna, EU Task Force for Greece, ECFIN&lt;br /&gt;
+	Gediminas Cerniauskas, Vice Minister of Health, Lithuania&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="003366"&gt;Moderated by Hans Kluge, WHO Regional Office for Europe&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-03</day><start>12:30</start><end>14:00</end><room>Conference Centre Room 1</room><categoryid>22</categoryid><category>Lunchworkshop 4</category><code>L4</code></item><item><id>64</id><event>Transatlantic lessons</event><details>&lt;p&gt;
+	Transatlantic lessons&lt;br /&gt;
+	&lt;strong&gt;What can the US and Europe learn from each other?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by European Observatory on Health Systems and Policies&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636157219475/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/04/transatlantic-lessons/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	The US and Europe are considered to differ fundamentally in terms of how healthcare is organised. Traditionally, Europe focuses on the significant gaps in coverage in the US with large parts of the population uninsured or underinsured. On the other hand, in the US the European model is often pictured as rigid and overregulated. These stereotypes may cloud our views and impede the potential to learn from each other&amp;rsquo;s experience.&amp;nbsp; With the new Patient Protection and Affordable Care Act that was adopted in 2010, it may seem that the US health system is converging towards the European model. However, similarly, reforms in Europe over the last two decades have been inspired by concepts and ideas that crossed the Atlantic, such as managed care and competition.&amp;nbsp; In the face of a global economic crisis with soaring public budgets, it is time to take a closer look at each other&amp;rsquo;s health system policies and identify best practices that could help to overcome the immense health challenges ahead.&lt;/p&gt;
+&lt;p&gt;
+	At this event the Observatory&amp;#39;s newest Hit health system review on the United states will be presented and launched.&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Andrew J Barnes, Assistant Professor, Virginia Commonwealth University School of Medicine, USA&lt;br /&gt;
+	Uwe E Reinhardt, Professor of Economics and Public Affairs, Princeton University, USA&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Maria M Hofmarcher, European Centre for Soci&lt;font color="3366FF"&gt;al Welfare Policy and Research, Austria&lt;/font&gt;&lt;/font&gt;&lt;br /&gt;
+	Ewout van Ginneken, WHO Collaborating Centre for Health Systems Research and Management, Berlin University of Technology, Germany&lt;br /&gt;
+	Bernard Merkel, Policy Analyst, DG Health and Consumers, European Commission&lt;br /&gt;
+	Richard B Saltman, Professor of Health Policy and Management, Emory University, USA&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="003366"&gt;Facilitated by Josep Figueras, Director, European Observatory on Health Systems and Policies&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-03</day><start>18:00</start><end>19:30</end><room>Conference Centre Room 2</room><categoryid>6</categoryid><category>Workshop 6</category><code>W6</code></item><item><id>65</id><event>State of oncology 2013</event><details>&lt;p&gt;
+	&lt;strong&gt;State of Oncology 2013&lt;/strong&gt;&lt;br /&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by F. Hoffmann-La Roche Ltd&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636157458846/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/04/breast-cancer-in-high-resource-countries-is-not-the-same-as-breast-cancer-in-low-resource-countries/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	&amp;bull; How can we continue to advance care for people with cancer in Europe in the current financial climate?&lt;br /&gt;
+	&amp;bull; What public policy changes are needed in order to keep the cancer care promises of the last 50 years?&lt;/p&gt;
+&lt;p&gt;
+	This interactive workshop aims to address these questions head-on in a fast paced speed-networking session, based on the findings of &lt;em&gt;The State of&lt;/em&gt; &lt;em&gt;Oncology Report&lt;/em&gt;. The report looks at 50 years of change in cancer care worldwide &amp;ndash; praising successes and critically examining failures, with a focus on public policy implications for Europe and what lessons should be learned as we strive to ensure another 50 years of progress. The session will be introduced by lead author, Professor Peter Boyle, followed by speed-networking, where participants will get to know each other&amp;rsquo;s thoughts and ideas by spending time debating the core issues in pairs.&amp;nbsp; The session will then gather together the points raised by the audience, inviting them to share their views and ask questions about the report. The conclusions drawn by participants during the workshop will lay the foundations for the next steps of &lt;em&gt;The&lt;/em&gt; &lt;em&gt;State of Oncology Report, &lt;/em&gt;and the future work based around it.&lt;/p&gt;
+&lt;p&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="3366FF"&gt;P Boyle, International Prevention Research Institute Lyon, France&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	Facilitated by (speed networking):&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="003366"&gt;Y Venable, Head of International Public Policy, Roche&lt;br /&gt;
+	K Wilhelmsson, Director, Health Policy and Market Access, Edelman&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-03</day><start>18:00</start><end>19:30</end><room>Conference Centre Room 1</room><categoryid>7</categoryid><category>Workshop 7</category><code>W7</code></item><item><id>66</id><event>Anti-discrimination in health</event><details>&lt;p&gt;
+	&lt;strong&gt;Anti-discrimination in health&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by DG Health and Consumers of the European Commission&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636180906485/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the blog post on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	EU Session on improving access and combating discrimination in healthcare with a focus on vulnerable groups.&lt;/p&gt;
+&lt;p&gt;
+	This session will explore the two aspects of discrimination in healthcare and improving access to healthcare.&lt;br /&gt;
+	In this context the main objectives are:&lt;/p&gt;
+&lt;p&gt;
+	&amp;bull; To identify issues in relation to discrimination in the access to healthcare in the EU.&lt;br /&gt;
+	&amp;bull; To highlight the European Commission&amp;#39;s commitment to the promotion and protection of fundamental rights in access to healthcare&lt;br /&gt;
+	&amp;bull; To discuss EU and Member States&amp;rsquo; possible actions on improving the access to healthcare in the EU, identifying gaps and challenges and highlighting evidence and best practices.&lt;/p&gt;
+&lt;p&gt;
+	The session will present a range of perspectives of what the current issues are as well as panel discussions on actions.&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;Part 1 | Opening speech and setting the scene&lt;/strong&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Opening speech&lt;br /&gt;
+	&lt;font color="3366FF"&gt;T Borg, EU Commissioner for Health, European Commission&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Facts: Report of studies carried out by Fundamental Rights agency&lt;br /&gt;
+	&lt;font color="3366FF"&gt;M Kjaerum, Director, Fundamental Rights Agency&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	What is the EU doing?&lt;br /&gt;
+	&lt;font color="3366FF"&gt;M Cashman, Member of the European Parliament (S&amp;amp;D, UK)&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	What is the EC doing?&lt;br /&gt;
+	&lt;font color="3366FF"&gt;A Ciobanu-Dordea, Director, DG Justice, European Commission&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;strong&gt;Part 2 | Panel discussion&lt;/strong&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="3366FF"&gt;G Mitchell, Member of the European Parliament (EPP, Ireland)&lt;br /&gt;
+	A Athanasiu, European Committee of Social Rights, Council of Europe&lt;br /&gt;
+	F Vanbiervliet, European Advocacy Officer, M&amp;eacute;decins du Monde (Doctors of the World)&lt;br /&gt;
+	M Kosinska, Secretary General, European Public Health Alliance (EPHA)&lt;br /&gt;
+	R Petrova-Benedict, International Organisation for Migration&lt;br /&gt;
+	C Gr&amp;eacute;boval, Secretary General, European Women&amp;#39;s Lobby&lt;br /&gt;
+	S Aujean, International Lesbian, Gay, Bisexual, Trans and Intersex Association&lt;br /&gt;
+	L Mendao, EATG, European AIDS Treatment Group&lt;br /&gt;
+	Representative of the European Disability Forum (tbc)&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="003366"&gt;Moderated by J Cohen, Open Society Foundations&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-03</day><start>18:00</start><end>19:30</end><room>Kursaal A</room><categoryid>30</categoryid><category>EC Session</category><code>EC</code></item><item><id>67</id><event>A health literate Europe</event><details>&lt;p&gt;
+	A health literate Europe&lt;br /&gt;
+	&lt;strong&gt;Shaping a health literate Europe &amp;ndash; a recipe for sustainable healthcare&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by Maastricht University and MSD in collaboration with the European Patients&amp;#39; Forum and the Standing Committee of European Doctors&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636184654364/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/10/promoting-health-literacy-challenge-for-national-governments/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Improving healthcare systems is usually related to restructuring health services, changing incentive schemes or cutting costs. But what about the citizens? And patients? What is their role in health systems?&lt;/p&gt;
+&lt;p&gt;
+	Strengthening citizens and patients by investing in health literacy puts citizens and patients at the center of health and healthcare. This approach acknowledges that citizens and patients are not only the &amp;ldquo;end-users&amp;rdquo; of these systems but also play a central role in improving health and health outcomes. A more health literate Europe means that EU healthcare systems can meet the health needs of the citizens. Health literacy strengthens the role of citizens with regard to their own health, thereby allowing to reduce the growing burden on health systems.&lt;/p&gt;
+&lt;p&gt;
+	The workshop will discuss how health systems care about its users and citizens. It will also look at the cost-benefits of better health literacy on health systems, and society as a whole.&lt;/p&gt;
+&lt;p&gt;
+	The interactive panel discussion will cover:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		The first Consensus Paper on &amp;lsquo;Shaping a health literate Europe&amp;rsquo;, on the importance of making Health Literacy a priority in the EU&lt;/li&gt;
+	&lt;li&gt;
+		The Solid Facts on Health Literacy from the new WHO publication;&lt;/li&gt;
+	&lt;li&gt;
+		The cost-benefits of investing in health literacy, in the context of a resilient Europe;&lt;/li&gt;
+	&lt;li&gt;
+		The European Union&amp;rsquo;s approach to health literacy within the health strategy&lt;/li&gt;
+	&lt;li&gt;
+		And finally, the national perspective on the role citizens and patients play in health care&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+	&lt;font color="3366FF"&gt;S Giraud, DG Health and Consumers, European Commission&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;K Immonen-Charalambous, Senior Policy Adviser, European Patients&amp;rsquo; Forum (EPF)&lt;br /&gt;
+	K Fjeldsted, President, Standing Committee of European Doctors (CPME)&lt;br /&gt;
+	K Sorensen, Maastricht University&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;A Parvanova, Member of the European Parliament (ALDE, Bulgaria)&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;K Kadenbach, Member of the European Parliament (S&amp;amp;D, Austria)&lt;br /&gt;
+	ST Chiou, Director-General, Health Promotion Administration, Ministry of Health and Welfare, Taiwan R.O.C.&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Gediminas Cerniauskas, Vice Minister of Health, Lithuania&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;J Probst, Director General, Main Association of Austrian Social Security Institutions, Austria&lt;br /&gt;
+	A Roediger, MSD&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="003366"&gt;Moderated by P O&amp;rsquo;Donnell, Journalist, European Voice&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-04</day><start>13:00</start><end>14:30</end><room>Hotel Norica</room><categoryid>8</categoryid><category>Workshop 8</category><code>W8</code></item><item><id>68</id><event>EU Health programme</event><details>&lt;p&gt;
+	EU Health programme&lt;br /&gt;
+	&lt;strong&gt;EU health programme 2014&amp;ndash;2020 information workshop&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by DG Health and Consumers of the European Commission&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636184860344/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/08/workshop-on-eu-health-programme-2014-2020/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="000000"&gt;&lt;font color="000000"&gt;T&lt;/font&gt;he purpose of the workshop is to inform participants about the state of play regarding the new EU Health Programme, its main goals, objectives and funding instruments, as well as the steps now taken towards implementation from 2014 following the adoption of the programme by the European Parliament and the Council.&lt;br /&gt;
+	&lt;font color="000000"&gt;T&lt;/font&gt;he 3rd multi-annual programme of EU action in the field of health is part of the EU&amp;#39;s Multi-annual Financial Framework for 2014&amp;ndash;2020 with a foreseen budget of &amp;euro;446 million. it identifies four priority areas: contribute to innovative and sustainable health system, increased access to better and safer healthcare for EU citizens, prevent disease and promote good health, protect citizens from cross-border health threats.&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="3366FF"&gt;M H&amp;uuml;bel, Head of Unit, DG Health and Consumers, European Commission&lt;br /&gt;
+	I Keller, Executive Agency for Health and Consumers&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-04</day><start>13:00</start><end>14:30</end><room>Conference Centre Room 2</room><categoryid>9</categoryid><category>Workshop 9</category><code>W9</code></item><item><id>69</id><event>Men's health</event><details>&lt;p&gt;
+	&lt;strong&gt;A step into no man&amp;#39;s land: Improving men&amp;rsquo;s use of primary care services in Europe&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by European Men&amp;#39;s Health Forum (EMHF)&lt;br /&gt;
+	Sponsored by European Federation of Pharmaceutical Industries and Associations (EFPIA), Pfizer, Amgen and PGT Healthcare&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636184288856/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/fileadmin/ehfg/Programm/2013/EHFG_2013_EMHF_Workshop_Report_final.pdf" target="_blank"&gt;EMHF Final Report&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Men&amp;rsquo;s health across Europe is unnecessarily poor, with nearly 630,000 men aged 15&amp;ndash;64 dying annually across the old EU 27 Member States compared to 300,000 women. This is a major human and financial cost to men, their families, communities, employers and national health systems.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	Primary healthcare services are central to strategies to improve men&amp;#39;s health in terms of prevention, early diagnosis and treatment. Currently, however, services (general practice, dentists, pharmacy, optometry and others) are used ineffectively by men. They attend less frequently than women, especially for prevention and screening, and it has been suggested that men&amp;rsquo;s lower contact with primary care is linked to their higher use of hospital services.&lt;/p&gt;
+&lt;p&gt;
+	This workshop will explore why and how men under-use the range of primary care services and, more importantly, how men&amp;#39;s access can be improved by changes to policy and service delivery.&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Nicola Bedlington, Executive Director, European Patients&amp;#39; Forum (EPF)&lt;br /&gt;
+	Monika Kosinska, Secretary General, European Public Health Alliance (EPHA)&lt;br /&gt;
+	John Bowis, H&lt;font color="3366FF"&gt;on President&lt;font color="3366FF"&gt;, Health First Europe and EMHF Board Member&lt;br /&gt;
+	Jacques de Haller Vi&lt;font color="3366FF"&gt;ce &lt;/font&gt;President&lt;font color="3366FF"&gt;, St&lt;font color="3366FF"&gt;anding Committee of European Doctors&lt;br /&gt;
+	Maximin Liebl, Presi&lt;font color="3366FF"&gt;dent, Pharmaceutical Group of the European Union&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="003366"&gt;Moderated by Ian Banks, President, European Men&amp;#39;s Health Forum (EMHF)&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-04</day><start>13:00</start><end>14:30</end><room>Hotel Grand Park</room><categoryid>10</categoryid><category>Workshop 10</category><code>W10</code></item><item><id>70</id><event>Big Data</event><details>&lt;p&gt;
+	&lt;strong&gt;How can we harness Big Data to improve R&amp;amp;D and translation of new therapies?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised and supported the Lithuanian Presidency of the Council of the European Union 2013, EAPM, EFPIA, Pfizer, IBM and Vital Transformation&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;gt;&amp;gt;See the &lt;a href="http://www.flickr.com/photos/ehfg/sets/72157636184406076/" target="_blank"&gt;photo relation&lt;/a&gt; here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="666699"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;gt;&amp;gt;Read the &lt;a href="http://www.ehfg.org/blog/2013/10/10/big-data-too-big-to-handle/" target="_blank"&gt;blog post&lt;/a&gt; on this session here&amp;lt;&amp;lt;&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	The ongoing IT revolution has made possible the ability to analyse enormous data sets from different locations.&amp;nbsp; Volume, variety, velocity and value are the key characteristics of datasets feeding contemporary algorithms and improved data mining methodologies create new frontiers of statistical inference. Analytics continue to evolve, with their ability to consume and interpret terabits of data growing exponentially in power year on year.&lt;/p&gt;
+&lt;p&gt;
+	Healthcare is an area where Big Data can have a tremendous impact, marking a transformation from human judgment to automated decisions for genomics, the development of new therapies, the monitoring of real world efficiency, and improving the timely delivery of care for patients.&lt;/p&gt;
+&lt;p&gt;
+	This workshop will feature a panel of international experts from research, policy and industry discussing new ways to harness Big Data and translate it from the lab with better indications, improve our understanding of benefit risk, provide tools for more accurate health technology assessment, and reduce the dreaded efficacy/efficiency gap.&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="000000"&gt;&lt;font color="000000"&gt;I&lt;/font&gt;n the course of this workshop session we will discuss following topics:&lt;br /&gt;
+	&amp;bull; Big Data and best practice for public health&lt;br /&gt;
+	&amp;bull; Data sharing for improved research and translation&lt;br /&gt;
+	&amp;bull; Big Data a&lt;font color="000000"&gt;n&lt;/font&gt;d improved evaluation models for efficacy and efficiency&lt;/font&gt;&lt;br /&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="3366FF"&gt;Amelia Andersdotter, Member of the European Parliament&lt;br /&gt;
+	Terje Peetso, Unit H1 - Health and Well Being, DG Connect, European Commission&lt;br /&gt;
+	Leonas Kaletinas, Member Board of Directors, Lithuanian Health Forum&lt;br /&gt;
+	&lt;br /&gt;
+	Barbara Kerstiens, Head of Sector Public health, DG Research, European Commission&lt;br /&gt;
+	Angela Brand, Prof. of Health, Medicine and Life Sciences, Maastricht University: Session Co-Chair for EAPM&lt;br /&gt;
+	Bonnie Wolff-Boenisch, Head of Research Affairs, Science Europe&lt;br /&gt;
+	&lt;br /&gt;
+	Ernst Hafen, Institute of Molecular Systems Biology, ETH Zurich&lt;br /&gt;
+	John Crawford, Healthcare Industry Leader Europe, IBM&lt;br /&gt;
+	Adam Heathfield, Director Science Policy Europe, Pfizer&lt;/font&gt;&lt;br /&gt;
+	&lt;br /&gt;
+	Closing remarks &lt;font color="003366"&gt;A Brand, Maastricht University&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="003366"&gt;Moderated by D Schulthess, Managing Director, Vital Transformation and co-chaired by A Brand, Maastricht University&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-04</day><start>13:00</start><end>14:30</end><room>Conference Centre Room 1</room><categoryid>11</categoryid><category>Workshop 11</category><code>W11</code></item><item><id>71</id><event>EC reception</event><details/><day>2013-10-04</day><start>12:00</start><end>12:30</end><room>Kursaal Foyer/Tent</room><categoryid>29</categoryid><category>Reception</category><code>Reception</code></item><item><id>72</id><event>Welcome reception</event><details>&lt;p&gt;
+	On Wednesday evening you are invited to the Welcome Reception with finger-food buffet which commences at 21:00 in the Kursaal, Bad Hofgastein. During the evening the European Health Award Ceremony will take place.&lt;/p&gt;
+</details><day>2013-10-02</day><start>21:00</start><end>24:00</end><room>Kursaal A</room><categoryid>28</categoryid><category>Evening Event</category><code>Evening Event</code></item><item><id>73</id><event>Networking evening</event><details>&lt;p&gt;
+	On thursday evening you are invited to the networking Dinner, which will be held in the Festival Hall of the Hotel Palace from 20:30. During the evening the launch of the new Austrian health system review (Hit) will take place.&lt;/p&gt;
+&lt;p&gt;
+	The networking Dinner has a &amp;ldquo;Back to the 50s&amp;rdquo; theme. Please do feel free to come in fancy dress appropriate to the theme.&lt;/p&gt;
+&lt;p&gt;
+	&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	&lt;img class="rg_i" data-sz="f" height="267" name="CaMP7YPei-gPeM:" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSIzN05PB9egxC-vUMRa6R76Zku6VOCgbEVUBwro3G8p-ABdjni" style="margin-left: 0px; margin-right: 0px; margin-top: -6px;" width="225" /&gt;&lt;/p&gt;
+</details><day>2013-10-03</day><start>20:30</start><end>24:00</end><room>No Room</room><categoryid>28</categoryid><category>Evening Event</category><code>Evening Event</code></item><item><id>74</id><event>Conclusion evening</event><details>&lt;p&gt;
+	Tonight&amp;rsquo;s dinner will take place at the Hotel Europ&amp;auml;ischer Hof in Bad gastein at 20:00, followed by music and dancing until the early hours. shuttles to the hotel will be available from the Conference Centre in Bad Hofgastein at 19:30.&lt;/p&gt;
+</details><day>2013-10-04</day><start>19:30</start><end>24:00</end><room>No Room</room><categoryid>28</categoryid><category>Evening Event</category><code>Evening Event</code></item><item><id>75</id><event>Solving the conundrum</event><details>&lt;p&gt;
+	&lt;strong&gt;Solving the conundrum:&lt;br /&gt;
+	How can we balance care coordination and patient choice?&lt;/strong&gt;&lt;br /&gt;
+	Different Perspectives on the trade-off between freedom of choice and a strong Primary Health Care System&lt;/p&gt;
+&lt;p&gt;
+	&lt;em&gt;Organised by Federal Ministry of Health, Austria&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="008080"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/font&gt;&lt;br /&gt;
+	(text 2013)&lt;br /&gt;
+	Most European health systems face more or less similar conditions: health expenditures are rising for different reasons whereas available funding - depending on the general status of national economies - remains on the same level or is even decreasing.&lt;br /&gt;
+	&lt;br /&gt;
+	Only a few countries plan to increase health expenditures in a moderate way in the years to come.&lt;br /&gt;
+	&lt;br /&gt;
+	Measures have to be taken to maintain health systems resilient and innovative over a longer period.&lt;br /&gt;
+	&lt;br /&gt;
+	Health economists are asked to offer support and provide their advice. But are their findings transferable into tangible health policy measures? Are decisions in health politics based on scientific evidence and good data or are decisions conditioned by other factors?&lt;br /&gt;
+	&lt;br /&gt;
+	The goal of this workshop is to work out whether health economics is able to prepare or facilitate political processes and decision-making or if health economics has its strength only in retrospective analysis.&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Peter C Smith, Imperial College London, UK&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Robert B Saltman, Health Policy and Management, Rollins School of Public Health, Emory University, USA&lt;/font&gt;&lt;br /&gt;
+	&lt;font color="3366FF"&gt;Clemens&lt;font color="3366FF"&gt;-&lt;/font&gt;Maria Auer, Federal Ministry of Health, Austria&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;font color="003366"&gt;Chaired by Thomas Czypionka, Institute for Advanced Studies, Austria&lt;/font&gt;&lt;/p&gt;
+</details><day>2013-10-02</day><start>12:00</start><end>14:00</end><room>Conference Centre Room 1</room><categoryid>12</categoryid><category>Forum 1</category><code>F1</code></item></channel></rss>

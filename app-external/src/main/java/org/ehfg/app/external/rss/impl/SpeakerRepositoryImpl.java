@@ -1,4 +1,4 @@
-package org.ehfg.app.external.repository.impl;
+package org.ehfg.app.external.rss.impl;
 
 import java.util.ArrayList;
 import java.util.HashMap;

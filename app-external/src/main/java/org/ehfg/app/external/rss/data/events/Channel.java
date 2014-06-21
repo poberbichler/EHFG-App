@@ -1,4 +1,4 @@
-package org.ehfg.app.external.data;
+package org.ehfg.app.external.rss.data.events;
 
 import java.util.List;
 
@@ -23,7 +23,7 @@ public class Channel {
 	private String link;
 
 	@XmlElement(name = "item")
-	private List<Item> items;
+	private List<Event> items;
 
 	public String getTitle() {
 		return title;
@@ -57,11 +57,11 @@ public class Channel {
 		this.link = link;
 	}
 
-	public List<Item> getItems() {
+	public List<Event> getItems() {
 		return items;
 	}
 
-	public void setItems(List<Item> items) {
+	public void setItems(List<Event> items) {
 		this.items = items;
 	}
 }
