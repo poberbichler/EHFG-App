@@ -13,13 +13,16 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
+ * Abstract strategy for retrieving data from the ehfg server <br>
+ * to use it, this class has to be subclassed - that's it
+ * 
  * @author patrick
  * @since 21.06.2014
  */
-@Component
+@Service
 public abstract class AbstractDataRetrievalStrategy<T> {
 	private static final String URL_DELIMITER = "/";
 	private final Logger logger = LoggerFactory.getLogger(getClass());
