@@ -11,6 +11,7 @@ import org.ehfg.app.external.rss.strategy.AbstractDataRetrievalStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Repository;
 
@@ -22,6 +23,7 @@ import org.springframework.stereotype.Repository;
  * @since 06.06.2014
  */
 @Repository
+@Profile("!mock")
 class RSSReader {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 	
@@ -33,7 +35,7 @@ class RSSReader {
 		this.strategies = strategies;
 		
 		for (AbstractDataRetrievalStrategy<?> strategy : strategies) {
-			logger.info("retrieved strategy {}", strategy.getClass());
+			logger.info("registered strategy {}", strategy.getClass());
 		}
 	}
 
