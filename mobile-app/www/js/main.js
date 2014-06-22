@@ -21,7 +21,8 @@ $('#speaker-detail').on(PAGE_EVENT, function() {
         }
 
         $('#speakerDetailHeader').text(speaker.fullName);
-        $('#speakerDescription').text(speaker.description);
+        //$('#speakerDescription').text(speaker.description);
+        $('#speakerDescription').html(speaker.description);
         $('#speakerImage').attr('src', speaker.imageUrl);
         sessionService().findBySpeakerId(speaker.id, function(sessions) {
             createListView('speakerSessionList', sessions, 'name', 'session-detail', 'id');

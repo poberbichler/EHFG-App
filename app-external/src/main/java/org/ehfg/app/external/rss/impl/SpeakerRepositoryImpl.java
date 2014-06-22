@@ -5,10 +5,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.ehfg.app.api.dto.SpeakerDTO;
 import org.ehfg.app.core.external.SpeakerRepository;
 import org.ehfg.app.external.rss.data.speaker.RssSpeaker;
 import org.ehfg.app.external.rss.data.speaker.Speaker;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationListener;
@@ -47,8 +52,28 @@ class SpeakerRepositoryImpl implements SpeakerRepository, ApplicationListener<Da
 			logger.info("received {} speakers", speakers.size());
 			dataCache.clear();
 			for (final Speaker speaker : speakers) {
+				String escapedBio = StringEscapeUtils.unescapeHtml4(speaker.getBio().replaceAll("&nbsp;", ""));
+				Document document = Jsoup.parse(escapedBio);
+				
+				// remove stuff overriding our own styles
+				document.select("img").remove();
+				
+				// remove different fonts
+				Elements select = document.select("*[style*=font-family]");
+				String styleAttribute = select.attr("style");
+				String replace = styleAttribute.replaceAll("font-family: '[A-Za-z0-9]*'", "");
+				select.attr("style", replace);
+				
+				// remove empty paragraphs
+				for (Element element : document.select("p")) {
+					if (element.text().trim().isEmpty()) {
+						element.remove();
+					}
+				}
+				
+				
 				SpeakerDTO speakerDTO = new SpeakerDTO.Builder().id(speaker.getId()).firstName(speaker.getFirstname())
-						.lastName(speaker.getLastname()).description(speaker.getBio()).imageUrl("").build();
+						.lastName(speaker.getLastname()).description(document.html()).imageUrl("").build();
 
 				dataCache.put(speaker.getId(), speakerDTO);
 			}

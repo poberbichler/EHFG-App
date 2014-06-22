@@ -27,7 +27,6 @@ public class TwitterRestEndpoint {
 
 	@Autowired
 	public TwitterRestEndpoint(TwitterFacade twitterFacade) {
-		super();
 		this.twitterFacade = twitterFacade;
 	}
 

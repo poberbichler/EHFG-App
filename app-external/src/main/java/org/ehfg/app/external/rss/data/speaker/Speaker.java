@@ -5,6 +5,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Speaker {
@@ -50,5 +52,10 @@ public class Speaker {
 
 	public void setBio(String bio) {
 		this.bio = bio;
+	}
+	
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
 	}
 }

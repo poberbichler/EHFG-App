@@ -7,5 +7,5 @@ import javax.ws.rs.core.MediaType;
  * @since 12.04.2014
  */
 final class Type extends MediaType {
-	static final String JSONP = "application/x-javascript";
+	static final String JSONP = "application/x-javascript; charset=UTF-8";
 }
