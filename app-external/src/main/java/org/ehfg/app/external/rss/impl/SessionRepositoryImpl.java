@@ -66,14 +66,15 @@ class SessionRepositoryImpl implements SessionRepository, ApplicationListener<Da
 			dataCache.clear();
 			logger.info("received {} sessions", sessions.size());
 			for (final Event session : sessions) {
-				dataCache.put(session.getId(), new SessionDTO.Builder()
-					.id(session.getId())
-					.name(session.getCode())
-					.description(session.getDetails())
-					.startTime(session.getDay().toDateTime(session.getStart()))
-					.endTime(session.getDay().toDateTime(session.getEnd()))
-					.location(session.getRoom())
-					.speakers(speakerMap.get(session.getId())).build());
+				logger.debug("preparing text for session {}", session);
+
+				dataCache.put(
+						session.getId(),
+						new SessionDTO.Builder().id(session.getId()).name(session.getCode())
+								.description(EscapeUtils.escapeText(session.getDetails()))
+								.startTime(session.getDay().toDateTime(session.getStart()))
+								.endTime(session.getDay().toDateTime(session.getEnd())).location(session.getRoom())
+								.speakers(speakerMap.get(session.getId())).build());
 			}
 		}
 

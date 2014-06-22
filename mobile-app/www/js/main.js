@@ -21,7 +21,6 @@ $('#speaker-detail').on(PAGE_EVENT, function() {
         }
 
         $('#speakerDetailHeader').text(speaker.fullName);
-        //$('#speakerDescription').text(speaker.description);
         $('#speakerDescription').html(speaker.description);
         $('#speakerImage').attr('src', speaker.imageUrl);
         sessionService().findBySpeakerId(speaker.id, function(sessions) {
@@ -38,6 +37,11 @@ $('#session-detail').on(PAGE_EVENT, function() {
         }
 
         $('#session-header').text(session.name);
+        $('#sessionDescription').html(session.description);
+
+        speakerService().findByIds(session.speakers, function(speakers) {
+           createListView('sessionSpeakerList', speakers, 'fullName', 'speaker-detail', 'id');
+        });
     });
 });
 

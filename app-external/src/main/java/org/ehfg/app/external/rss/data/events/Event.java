@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.ehfg.app.external.rss.adapter.LocalDateAdapter;
 import org.ehfg.app.external.rss.adapter.LocalTimeAdapter;
 import org.joda.time.LocalDate;
@@ -125,5 +126,10 @@ public class Event {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+	
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
 	}
 }

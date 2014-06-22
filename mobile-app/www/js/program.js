@@ -12,6 +12,20 @@ var speakerService = function(){
 
         findById: function(speakerId, callback) {
             checkForItemById(SPEAKER, speakerId, callback);
+        },
+
+        findByIds: function(speakerIds, callback) {
+            var result = [];
+            checkForItem(SPEAKER, function(speakers) {
+                for (var i in speakers) {
+                    var speaker = speakers[i];
+                    if (speakerIds.indexOf(speaker.id) !== -1) {
+                        result.push(speaker);
+                    }
+                }
+            });
+
+            callback(result);
         }
     };
 };

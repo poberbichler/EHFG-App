@@ -20,7 +20,7 @@ public class SessionOverview {
 	@Component
 	private BootstrapLayout layout;
 
-	@Component(parameters = { "source=sessionList", "row=currentSession", "add=detail,startTime,endTime", "exclude=description" })
+	@Component(parameters = { "source=sessionList", "row=currentSession", "add=startTime,endTime", "exclude=description" })
 	private Grid sessions;
 
 	@Component(parameters = { "page=prop:sessionDetailPage", "context=currentSession.id" })
