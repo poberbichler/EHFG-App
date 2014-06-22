@@ -21,17 +21,34 @@ class SessionRepositoryMock implements SessionRepository {
 	private final static Map<Long, SessionDTO> sessionMap = new LinkedHashMap<>();
 
 	static {
-		sessionMap.put(0L, new SessionDTO("0", "session Name 1", "sessionDescription", "14.06.2014 07:00", "14.06.2014 15:00", "Raum1", "1", "0"));
-		sessionMap.put(6L, new SessionDTO("0", "session Name 2", "sessionDescription", "09.04.2014 10:00", "09.04.2014 12:00", "Raum1", "1", "0"));
-		sessionMap.put(7L, new SessionDTO("0", "session Name 3", "sessionDescription", "09.04.2014 10:00", "09.04.2014 12:00", "Raum1", "1", "0"));
-		sessionMap.put(8L, new SessionDTO("0", "session Name 4", "sessionDescription", "09.04.2014 10:00", "09.04.2014 12:00", "Raum1", "1", "0"));
-		sessionMap.put(9L, new SessionDTO("0", "session Name 5", "sessionDescription", "09.04.2014 10:00", "09.04.2014 12:00", "Raum1", "1", "0"));
+		sessionMap.put(0L,
+				new SessionDTO.Builder().id("0").name("session Name 1").description("session Description").startTime("14.06.2014 07:00")
+						.endTime("14.06.2014 15:00").location("Raum1").speakers("1", "0").build());
+		sessionMap.put(1L,
+				new SessionDTO.Builder().id("0").name("session Name 2").description("session Description").startTime("14.06.2014 07:00")
+						.endTime("14.06.2014 15:00").location("Raum1").speakers("1", "0").build());
+		sessionMap.put(2L,
+				new SessionDTO.Builder().id("0").name("session Name 3").description("session Description").startTime("14.06.2014 07:00")
+						.endTime("14.06.2014 15:00").location("Raum1").speakers("1", "0").build());
+		sessionMap.put(3L,
+				new SessionDTO.Builder().id("0").name("session Name 4").description("session Description").startTime("14.06.2014 07:00")
+						.endTime("14.06.2014 15:00").location("Raum1").speakers("1", "0").build());
+		sessionMap.put(4L,
+				new SessionDTO.Builder().id("0").name("session Name 5").description("session Description").startTime("14.06.2014 07:00")
+						.endTime("14.06.2014 15:00").location("Raum1").speakers("1", "0").build());
 
-		sessionMap.put(1L, new SessionDTO("1", "another Name 6", "antoher Description", "11.04.2014 15:00", "11.04.2014 18:00", "Raum1", "0"));
-		sessionMap.put(2L, new SessionDTO("1", "another Name 7", "antoher Description", "11.04.2014 15:00", "11.04.2014 18:00", "Raum1", "0"));
-		sessionMap.put(3L, new SessionDTO("1", "another Name 8", "antoher Description", "11.04.2014 15:00", "11.04.2014 18:00", "Raum1", "0"));
-		sessionMap.put(4L, new SessionDTO("1", "another Name 9", "antoher Description", "11.04.2014 15:00", "11.04.2014 18:00", "Raum1", "0"));
-		sessionMap.put(5L, new SessionDTO("1", "another Name 0", "antoher Description", "11.04.2014 15:00", "11.04.2014 18:00", "Raum1", "0"));
+		sessionMap.put(5L,
+				new SessionDTO.Builder().id("0").name("another Name 1").description("another Description").startTime("14.06.2014 07:00")
+						.endTime("14.06.2014 15:00").location("Raum1").speakers("0").build());
+		sessionMap.put(6L,
+				new SessionDTO.Builder().id("0").name("another Name 2").description("another Description").startTime("14.06.2014 07:00")
+						.endTime("14.06.2014 15:00").location("Raum1").speakers("0").build());
+		sessionMap.put(7L,
+				new SessionDTO.Builder().id("0").name("another Name 3").description("another Description").startTime("14.06.2014 07:00")
+						.endTime("14.06.2014 15:00").location("Raum1").speakers("0").build());
+		sessionMap.put(8L,
+				new SessionDTO.Builder().id("0").name("another Name 4").description("another Description").startTime("14.06.2014 07:00")
+						.endTime("14.06.2014 15:00").location("Raum1").speakers("0").build());
 	}
 
 	@Override

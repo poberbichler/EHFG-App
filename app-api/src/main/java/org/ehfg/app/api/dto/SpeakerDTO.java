@@ -6,8 +6,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
- * basic represenation of a speaker
- * TODO: refactor to builder pattern
+ * basic represenation of a speaker TODO: refactor to builder pattern
  * 
  * @author patrick
  * @since 25.01.2014
@@ -21,15 +20,15 @@ public class SpeakerDTO {
 	private String imageUrl;
 
 	public SpeakerDTO() {
-
+		// needed for jaxrs
 	}
-
-	public SpeakerDTO(String id, String firstName, String lastName, String description, String imageUrl) {
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.description = description;
-		this.imageUrl = imageUrl;
+	
+	private SpeakerDTO(Builder builder) {
+		this.id = builder.id;
+		this.firstName = builder.firstName;
+		this.lastName = builder.lastName;
+		this.description = builder.description;
+		this.imageUrl = builder.imageUrl;
 	}
 
 	public String getImageUrl() {
@@ -79,5 +78,42 @@ public class SpeakerDTO {
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
+	}
+
+	public static class Builder {
+		private String id;
+		private String firstName;
+		private String lastName;
+		private String description;
+		private String imageUrl;
+
+		public Builder id(String id) {
+			this.id = id;
+			return this;
+		}
+
+		public Builder firstName(String firstName) {
+			this.firstName = firstName;
+			return this;
+		}
+
+		public Builder lastName(String lastName) {
+			this.lastName = lastName;
+			return this;
+		}
+
+		public Builder description(String description) {
+			this.description = description;
+			return this;
+		}
+
+		public Builder imageUrl(String imageUrl) {
+			this.imageUrl = imageUrl;
+			return this;
+		}
+
+		public SpeakerDTO build() {
+			return new SpeakerDTO(this);
+		}
 	}
 }

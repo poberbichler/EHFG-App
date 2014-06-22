@@ -11,7 +11,6 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
  * basic representation of a session
- * TODO: refactor to builder pattern
  * 
  * @author patrick
  * @since 02.03.2014
@@ -25,44 +24,19 @@ public class SessionDTO {
 
 	private String location;
 	private Set<String> speakers;
-
+	
 	public SessionDTO() {
-
+		// default ctor is needed for jaxrs
 	}
 
-	public SessionDTO(String id, String name, String description, Date startTime, Date endTime, String locationId, Set<String> speakers) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.description = description;
-		this.startTime = startTime;
-		this.endTime = endTime;
-		this.speakers = speakers;
-	}
-
-	/**
-	 * another constructor, but uses strings for the dates format is:
-	 * <strong>dd.MM.yyyy hh:mm</strong>
-	 * 
-	 * should only be used for testing...
-	 */
-	public SessionDTO(String id, String name, String description, String startString, String endString, String location, String... speakers) {
-		this.id = id;
-		this.name = name;
-		this.description = description;
-		this.location = location;
-		this.speakers = new HashSet<>(Arrays.asList(speakers));
-
-		try {
-			SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy hh:mm");
-			this.startTime = sdf.parse(startString);
-			this.endTime = sdf.parse(endString);
-		}
-
-		catch (Exception e) {
-			this.startTime = new Date();
-			this.endTime = new Date();
-		}
+	private SessionDTO(Builder builder) {
+		this.id = builder.id;
+		this.name = builder.name;
+		this.description = builder.description;
+		this.startTime = builder.startTime;
+		this.endTime = builder.endTime;
+		this.location = builder.location;
+		this.speakers = builder.speakers;
 	}
 
 	public Date getStartTime() {
@@ -109,7 +83,7 @@ public class SessionDTO {
 		if (speakers == null) {
 			return Collections.emptySet();
 		}
-		
+
 		return speakers;
 	}
 
@@ -124,5 +98,91 @@ public class SessionDTO {
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
+	}
+	
+	/**
+	 * builder to map the given values
+	 * 
+	 * @author patrick
+	 * @since 21.06.2014
+	 */
+	public static class Builder {
+		private String id;
+		private String name;
+		private String description;
+		private Date startTime;
+		private Date endTime;
+
+		private String location;
+		private Set<String> speakers;
+
+		public SessionDTO build() {
+			return new SessionDTO(this);
+		}
+
+		public Builder id(String id) {
+			this.id = id;
+			return this;
+		}
+
+		public Builder name(String name) {
+			this.name = name;
+			return this;
+		}
+
+		public Builder description(String description) {
+			this.description = description;
+			return this;
+		}
+
+		public Builder startTime(Date startTime) {
+			this.startTime = startTime;
+			return this;
+		}
+
+		public Builder endTime(Date endTime) {
+			this.endTime = endTime;
+			return this;
+		}
+
+		public Builder location(String location) {
+			this.location = location;
+			return this;
+		}
+
+		public Builder speakers(Set<String> speakers) {
+			this.speakers = speakers;
+			return this;
+		}
+		
+		public Builder speakers(String... speakers) {
+			this.speakers = new HashSet<>(Arrays.asList(speakers));
+			return this;
+		}
+
+		public Builder startTime(String startTime) {
+			this.startTime = convertToDate(startTime);
+			return this;
+		}
+		
+		public Builder endTime(String endTime) {
+			this.endTime = convertToDate(endTime);
+			return this;
+		}
+		
+		/**
+		 * @param timeString to be converted
+		 * @return new {@link Date} with the given value, or current timestamp in case of an error
+		 */
+		private Date convertToDate(String timeString) {
+			try {
+				SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+				return sdf.parse(timeString);
+			}
+
+			catch (Exception e) {
+				return new Date();
+			}
+		}
 	}
 }

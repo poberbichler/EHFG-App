@@ -67,8 +67,14 @@ class SessionRepositoryImpl implements SessionRepository, ApplicationListener<Da
 			dataCache.clear();
 			logger.info("received {} sessions", sessions.size());
 			for (final Event session : sessions) {
-				dataCache.put(session.getId(), new SessionDTO(session.getId(), session.getCode(), session.getDetails(), new Date(),
-						new Date(), session.getRoom(), speakerMap.get(session.getId())));
+				dataCache.put(session.getId(), new SessionDTO.Builder()
+					.id(session.getId())
+					.name(session.getCode())
+					.description(session.getDetails())
+					.startTime(new Date())
+					.endTime(new Date())
+					.location(session.getRoom())
+					.speakers(speakerMap.get(session.getId())).build());
 			}
 		}
 
@@ -81,21 +87,21 @@ class SessionRepositoryImpl implements SessionRepository, ApplicationListener<Da
 		if (data != null) {
 			List<SpeakerEvent> speakerEvents = data.getChannel().getSpeakerEvents();
 			Map<String, Set<String>> result = new HashMap<>(speakerEvents.size());
-			
+
 			logger.info("received {} speakers for events", speakerEvents.size());
 			for (SpeakerEvent speakerEvent : speakerEvents) {
 				final String eventId = speakerEvent.getEventid();
-				
+
 				if (!result.containsKey(eventId)) {
 					result.put(eventId, new HashSet<String>());
 				}
-				
+
 				result.get(eventId).add(speakerEvent.getSpeakerid());
 			}
-			
+
 			return result;
 		}
-		
+
 		logger.error("did not receive data for {}", RssSpeakerEvents.class.getName());
 		return Collections.emptyMap();
 	}

@@ -43,14 +43,17 @@ class SpeakerRepositoryImpl implements SpeakerRepository, ApplicationListener<Da
 		final RssSpeaker data = event.getDataForClass(RssSpeaker.class);
 		if (data != null) {
 			List<Speaker> speakers = data.getChannel().getSpeakers();
-			
+
 			logger.info("received {} speakers", speakers.size());
 			dataCache.clear();
 			for (final Speaker speaker : speakers) {
-				dataCache.put(speaker.getId(), new SpeakerDTO(speaker.getId(), speaker.getFirstname(), speaker.getLastname(), speaker.getBio(), ""));
+				SpeakerDTO speakerDTO = new SpeakerDTO.Builder().id(speaker.getId()).firstName(speaker.getFirstname())
+						.lastName(speaker.getLastname()).description(speaker.getBio()).imageUrl("").build();
+
+				dataCache.put(speaker.getId(), speakerDTO);
 			}
 		}
-		
+
 		else {
 			logger.error("did not receive data for {}", RssSpeaker.class.getName());
 		}
