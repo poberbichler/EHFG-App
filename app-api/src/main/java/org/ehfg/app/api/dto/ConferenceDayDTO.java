@@ -1,6 +1,6 @@
 package org.ehfg.app.api.dto;
 
-import java.util.Date;
+import org.joda.time.LocalDate;
 
 /**
  * @author patrick
@@ -8,15 +8,14 @@ import java.util.Date;
  */
 public class ConferenceDayDTO implements Comparable<ConferenceDayDTO> {
 	private Long id;
-	private Date day;
+	private LocalDate day;
 	private String description;
 
 	public ConferenceDayDTO() {
 
 	}
 
-	public ConferenceDayDTO(Long id, Date day, String description) {
-		super();
+	public ConferenceDayDTO(Long id, LocalDate day, String description) {
 		this.id = id;
 		this.day = day;
 		this.description = description;
@@ -59,11 +58,11 @@ public class ConferenceDayDTO implements Comparable<ConferenceDayDTO> {
 		return true;
 	}
 
-	public Date getDay() {
+	public LocalDate getDay() {
 		return day;
 	}
 
-	public void setDay(Date day) {
+	public void setDay(LocalDate day) {
 		this.day = day;
 	}
 

@@ -1,6 +1,5 @@
 package org.ehfg.app.web.pages;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -16,39 +15,40 @@ import org.ehfg.app.api.facade.ProgramFacade;
 import org.ehfg.app.web.components.BootstrapLayout;
 
 public class SessionOverview {
+	private static final String DATE_PATTERN = "dd.MM. HH:mm";
+
 	@Component
 	private BootstrapLayout layout;
-	
-	@Component(parameters = {"source=sessionList", "row=currentSession", "add=detail", "exclude=description"})
+
+	@Component(parameters = { "source=sessionList", "row=currentSession", "add=detail,startTime,endTime", "exclude=description" })
 	private Grid sessions;
-	
-	@Component(parameters = {"page=prop:sessionDetailPage", "context=currentSession.id"})
+
+	@Component(parameters = { "page=prop:sessionDetailPage", "context=currentSession.id" })
 	private PageLink sessionDetails;
-	
+
 	@Property
 	private SessionDTO currentSession;
-	
+
 	@Inject
 	private ComponentClassResolver resolver;
-	
+
 	@Inject
 	private ProgramFacade programFacade;
-	
-	private final SimpleDateFormat sdf = new SimpleDateFormat("dd.MM hh:mm");
-	
+
 	@Cached
 	public List<SessionDTO> getSessionList() {
-		return programFacade.findAllSessionsWithoutDayInformation();
+		List<SessionDTO> findAllSessionsWithoutDayInformation = programFacade.findAllSessionsWithoutDayInformation();
+		return findAllSessionsWithoutDayInformation;
 	}
-	
+
 	public String getFormattedStartDate() {
-		return sdf.format(currentSession.getStartTime());
+		return currentSession.getStartTime().toString(DATE_PATTERN);
 	}
-	
+
 	public String getFormattedEndDate() {
-		return sdf.format(currentSession.getEndTime());
+		return currentSession.getEndTime().toString(DATE_PATTERN);
 	}
-	
+
 	public Object getSessionDetailPage() {
 		return resolver.resolvePageClassNameToPageName(SessionDetails.class.getName());
 	}

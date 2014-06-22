@@ -53,6 +53,7 @@ class SpeakerRepositoryImpl implements SpeakerRepository, ApplicationListener<Da
 			dataCache.clear();
 			for (final Speaker speaker : speakers) {
 				logger.debug("preparing text for speaker {}", speaker);
+				
 				String escapedBio = StringEscapeUtils.unescapeHtml4(speaker.getBio().replaceAll("&nbsp;", ""));
 				Document document = Jsoup.parse(escapedBio);
 				

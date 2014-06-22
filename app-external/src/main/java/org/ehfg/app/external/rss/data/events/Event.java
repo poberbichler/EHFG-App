@@ -4,6 +4,12 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import org.ehfg.app.external.rss.adapter.LocalDateAdapter;
+import org.ehfg.app.external.rss.adapter.LocalTimeAdapter;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalTime;
 
 @XmlRootElement(name = "item")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -18,13 +24,16 @@ public class Event {
 	private String details;
 
 	@XmlElement
-	private String day;
+	@XmlJavaTypeAdapter(value = LocalDateAdapter.class)
+	private LocalDate day;
 
 	@XmlElement
-	private String start;
+	@XmlJavaTypeAdapter(value = LocalTimeAdapter.class)
+	private LocalTime start;
 
 	@XmlElement
-	private String end;
+	@XmlJavaTypeAdapter(value = LocalTimeAdapter.class)
+	private LocalTime end;
 
 	@XmlElement
 	private String room;
@@ -62,27 +71,27 @@ public class Event {
 		this.details = details;
 	}
 
-	public String getDay() {
+	public LocalDate getDay() {
 		return day;
 	}
 
-	public void setDay(String day) {
+	public void setDay(LocalDate day) {
 		this.day = day;
 	}
 
-	public String getStart() {
+	public LocalTime getStart() {
 		return start;
 	}
 
-	public void setStart(String start) {
+	public void setStart(LocalTime start) {
 		this.start = start;
 	}
 
-	public String getEnd() {
+	public LocalTime getEnd() {
 		return end;
 	}
 
-	public void setEnd(String end) {
+	public void setEnd(LocalTime end) {
 		this.end = end;
 	}
 

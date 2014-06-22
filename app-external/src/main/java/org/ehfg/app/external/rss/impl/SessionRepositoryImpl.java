@@ -2,7 +2,6 @@ package org.ehfg.app.external.rss.impl;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -71,8 +70,8 @@ class SessionRepositoryImpl implements SessionRepository, ApplicationListener<Da
 					.id(session.getId())
 					.name(session.getCode())
 					.description(session.getDetails())
-					.startTime(new Date())
-					.endTime(new Date())
+					.startTime(session.getDay().toDateTime(session.getStart()))
+					.endTime(session.getDay().toDateTime(session.getEnd()))
 					.location(session.getRoom())
 					.speakers(speakerMap.get(session.getId())).build());
 			}

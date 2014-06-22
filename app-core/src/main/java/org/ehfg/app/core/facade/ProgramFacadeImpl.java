@@ -16,6 +16,7 @@ import org.ehfg.app.core.external.SessionRepository;
 import org.ehfg.app.core.external.SpeakerRepository;
 import org.ehfg.app.core.mapper.ConferenceDayMapper;
 import org.ehfg.app.core.repository.ConferenceDayRepository;
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -82,12 +83,10 @@ public class ProgramFacadeImpl implements ProgramFacade {
 	 * @return the resulting {@link ConferenceDayDTO}
 	 */
 	private ConferenceDayDTO findDay(final List<ConferenceDayDTO> days, final SessionDTO session) {
-		final Date sessionDate = session.getStartTime();
+		final DateTime sessionDate = session.getStartTime();
+		
 		for (final ConferenceDayDTO day : days) {
-			final Date dayStart = day.getDay();
-			final Date dayEnd = new Date(dayStart.getTime() + 1000 * 60 * 60 * 24);
-
-			if (sessionDate.after(dayStart) && sessionDate.before(dayEnd)) {
+			if (sessionDate.toLocalDate().equals(day.getDay())) {
 				return day;
 			}
 		}

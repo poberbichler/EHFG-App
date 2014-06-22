@@ -20,6 +20,7 @@ import org.apache.tapestry5.corelib.components.Zone;
 import org.ehfg.app.api.dto.ConferenceDayDTO;
 import org.ehfg.app.api.facade.ProgramFacade;
 import org.ehfg.app.web.components.BootstrapLayout;
+import org.joda.time.LocalDate;
 
 /**
  * @author patrick
@@ -87,7 +88,7 @@ public class SessionDayMaintenance {
 	}
 
 	public ConferenceDayDTO onAddRowFromDayLoop() {
-		final ConferenceDayDTO day = new ConferenceDayDTO(new Date().getTime(), new Date(), "description");
+		final ConferenceDayDTO day = new ConferenceDayDTO(new Date().getTime(), LocalDate.now(), "description");
 		dayList.add(day);
 		return day;
 	}

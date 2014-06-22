@@ -1,13 +1,13 @@
 package org.ehfg.app.api.dto;
 
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
 
 /**
  * basic representation of a session
@@ -19,8 +19,8 @@ public class SessionDTO {
 	private String id;
 	private String name;
 	private String description;
-	private Date startTime;
-	private Date endTime;
+	private DateTime startTime;
+	private DateTime endTime;
 
 	private String location;
 	private Set<String> speakers;
@@ -39,19 +39,19 @@ public class SessionDTO {
 		this.speakers = builder.speakers;
 	}
 
-	public Date getStartTime() {
+	public DateTime getStartTime() {
 		return startTime;
 	}
 
-	public void setStartTime(Date startTime) {
+	public void setStartTime(DateTime startTime) {
 		this.startTime = startTime;
 	}
 
-	public Date getEndTime() {
+	public DateTime getEndTime() {
 		return endTime;
 	}
 
-	public void setEndTime(Date endTime) {
+	public void setEndTime(DateTime endTime) {
 		this.endTime = endTime;
 	}
 
@@ -110,8 +110,8 @@ public class SessionDTO {
 		private String id;
 		private String name;
 		private String description;
-		private Date startTime;
-		private Date endTime;
+		private DateTime startTime;
+		private DateTime endTime;
 
 		private String location;
 		private Set<String> speakers;
@@ -135,12 +135,12 @@ public class SessionDTO {
 			return this;
 		}
 
-		public Builder startTime(Date startTime) {
+		public Builder startTime(DateTime startTime) {
 			this.startTime = startTime;
 			return this;
 		}
 
-		public Builder endTime(Date endTime) {
+		public Builder endTime(DateTime endTime) {
 			this.endTime = endTime;
 			return this;
 		}
@@ -172,16 +172,15 @@ public class SessionDTO {
 		
 		/**
 		 * @param timeString to be converted
-		 * @return new {@link Date} with the given value, or current timestamp in case of an error
+		 * @return new {@link DateTime} with the given value, or current timestamp in case of an error
 		 */
-		private Date convertToDate(String timeString) {
+		private DateTime convertToDate(String timeString) {
 			try {
-				SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy hh:mm");
-				return sdf.parse(timeString);
+				return DateTime.parse(timeString, DateTimeFormat.forPattern("dd.MM.yyyy HH:mm")); 
 			}
 
 			catch (Exception e) {
-				return new Date();
+				return DateTime.now();
 			}
 		}
 	}

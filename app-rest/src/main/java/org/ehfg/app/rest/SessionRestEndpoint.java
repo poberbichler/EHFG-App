@@ -44,15 +44,15 @@ public class SessionRestEndpoint {
 
 			final JSONObject jsonDay = new JSONObject();
 			jsonDay.put("description", day.getDescription());
-			jsonDay.put("timestamp", day.getDay().getTime());
+			jsonDay.put("timestamp", day.getDay().toDate().getTime());
 
 			final JSONArray sessions = new JSONArray();
 			for (final SessionDTO session : entry.getValue()) {
 				final JSONObject jsonSession = new JSONObject();
 				jsonSession.put("id", session.getId());
 				jsonSession.put("description", session.getDescription());
-				jsonSession.put("start", session.getStartTime().getTime());
-				jsonSession.put("end", session.getEndTime().getTime());
+				jsonSession.put("start", session.getStartTime().getMillis());
+				jsonSession.put("end", session.getEndTime().getMillis());
 				jsonSession.put("name", session.getName());
 				jsonSession.put("location", session.getLocationId());
 				jsonSession.put("speakers", session.getSpeakers());

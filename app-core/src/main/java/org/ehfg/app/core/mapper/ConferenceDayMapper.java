@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.ehfg.app.api.dto.ConferenceDayDTO;
 import org.ehfg.app.core.entities.ConferenceDay;
+import org.joda.time.LocalDate;
 
 /**
  * @author patrick
@@ -22,7 +23,7 @@ public class ConferenceDayMapper {
 		for (final ConferenceDayDTO day : source) {
 			ConferenceDay target = new ConferenceDay();
 			target.setId(day.getId());
-			target.setDate(day.getDay());
+			target.setDate(day.getDay().toDate());
 			target.setDescription(day.getDescription());
 
 			result.add(target);
@@ -35,14 +36,13 @@ public class ConferenceDayMapper {
 		final Iterator<ConferenceDay> iterator = source.iterator();
 		final List<ConferenceDayDTO> result = new ArrayList<>();
 		while (iterator.hasNext()) {
-			final ConferenceDay day = iterator.next();
-			result.add(new ConferenceDayDTO(day.getId(), day.getDate(), day.getDescription()));
+			result.add(map(iterator.next()));
 		}
 		
 		return result;
 	}
 	
 	public static final ConferenceDayDTO map(final ConferenceDay source) {
-		return new ConferenceDayDTO(source.getId(), source.getDate(), source.getDescription());
+		return new ConferenceDayDTO(source.getId(), LocalDate.fromDateFields(source.getDate()), source.getDescription());
 	}
 }
