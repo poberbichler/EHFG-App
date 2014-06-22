@@ -70,7 +70,8 @@ class SessionRepositoryImpl implements SessionRepository, ApplicationListener<Da
 
 				dataCache.put(
 						session.getId(),
-						new SessionDTO.Builder().id(session.getId()).name(session.getCode())
+						new SessionDTO.Builder().id(session.getId())
+								.name(new StringBuilder(session.getCode()).append(" - ").append(session.getEvent()).toString())
 								.description(EscapeUtils.escapeText(session.getDetails()))
 								.startTime(session.getDay().toDateTime(session.getStart()))
 								.endTime(session.getDay().toDateTime(session.getEnd())).location(session.getRoom())
