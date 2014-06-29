@@ -1,18 +1,12 @@
 package org.ehfg.app.core.facade;
 
 import java.util.List;
-import java.util.Set;
-
-import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.validation.ValidationException;
-import javax.validation.Validator;
-import javax.validation.groups.Default;
 
 import org.ehfg.app.api.dto.ConfigurationDTO;
 import org.ehfg.app.api.dto.CoordinateDTO;
 import org.ehfg.app.api.dto.PointOfInterestDTO;
 import org.ehfg.app.api.facade.MasterDataFacade;
+import org.ehfg.app.api.validation.Validate;
 import org.ehfg.app.core.entities.AppConfig;
 import org.ehfg.app.core.entities.Coordinate;
 import org.ehfg.app.core.entities.PointOfInterest;
@@ -44,29 +38,20 @@ public class MasterDataFacadeImpl implements MasterDataFacade {
 	}
 
 	@Override
+	@Validate
 	@Transactional(readOnly = false)
 	public void saveAppConfiguration(ConfigurationDTO source) {
 		final AppConfig target = new AppConfig();
-		final Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
-
-		// FIXME: better, but still not ideal
-		final Set<ConstraintViolation<ConfigurationDTO>> validationResult = validator.validate(source, Default.class);
-		if (validationResult.isEmpty()) {
-			if (source.getHashtag().startsWith("#")) {
-				target.setHashtag(source.getHashtag());
-			}
-
-			else {
-				target.setHashtag(source.getHashtag());
-			}
-
-			target.setNumberOfTweets(source.getNumberOfTweets());
-			configRepository.save(target);
+		if (source.getHashtag().startsWith("#")) {
+			target.setHashtag(source.getHashtag());
 		}
 
 		else {
-			throw new ValidationException(String.format("%s input parameters are invalid", validationResult.size()));
+			target.setHashtag(source.getHashtag());
 		}
+
+		target.setNumberOfTweets(source.getNumberOfTweets());
+		configRepository.save(target);
 	}
 
 	@Override

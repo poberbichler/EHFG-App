@@ -258,6 +258,18 @@
 				<version>${logback-version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>1.8.0</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.glassfish.web</groupId>
+				<artifactId>el-impl</artifactId>
+				<version>2.2</version>
+			</dependency>
+
 			<!-- TESTING -->
 			<dependency>
 				<groupId>junit</groupId>
