@@ -113,7 +113,9 @@ var locationService = function() {
  */
 var checkForItem = function(itemName, callback) {
     var data = localStorage.getItem(itemName);
-    if (data === null) {
+
+    // the string '[]' has length of 2, so there is no data, just an empty array
+    if (data === null || data.length === 2) {
         restCall(itemName + '/all', function(result) {
             localStorage.setItem(itemName, JSON.stringify(result));
             callback(result);

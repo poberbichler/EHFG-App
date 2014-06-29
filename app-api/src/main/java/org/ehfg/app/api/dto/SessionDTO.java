@@ -15,7 +15,7 @@ import org.joda.time.format.DateTimeFormat;
  * @author patrick
  * @since 02.03.2014
  */
-public class SessionDTO {
+public class SessionDTO implements Comparable<SessionDTO> {
 	private String id;
 	private String name;
 	private String description;
@@ -98,6 +98,11 @@ public class SessionDTO {
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
+	}
+	
+	@Override
+	public int compareTo(SessionDTO that) {
+		return this.name.compareTo(that.name);
 	}
 	
 	/**

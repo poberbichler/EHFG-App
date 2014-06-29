@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -32,7 +33,7 @@ import org.springframework.stereotype.Repository;
 @Profile({ "!mock" })
 class SessionRepositoryImpl implements SessionRepository, ApplicationListener<DataUpdatedEvent> {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
-	private final Map<String, SessionDTO> dataCache = new HashMap<>();
+	private final Map<String, SessionDTO> dataCache = new LinkedHashMap<>();
 
 	@Override
 	public List<SessionDTO> findAll() {
@@ -65,17 +66,22 @@ class SessionRepositoryImpl implements SessionRepository, ApplicationListener<Da
 
 			dataCache.clear();
 			logger.info("received {} sessions", sessions.size());
+			
+			List<SessionDTO> sessionList = new ArrayList<>(sessions.size());
 			for (final Event session : sessions) {
 				logger.debug("preparing text for session {}", session);
 
-				dataCache.put(
-						session.getId(),
-						new SessionDTO.Builder().id(session.getId())
-								.name(new StringBuilder(session.getCode()).append(" - ").append(session.getEvent()).toString())
-								.description(EscapeUtils.escapeText(session.getDetails()))
-								.startTime(session.getDay().toDateTime(session.getStart()))
-								.endTime(session.getDay().toDateTime(session.getEnd())).location(session.getRoom())
-								.speakers(speakerMap.get(session.getId())).build());
+				sessionList.add(new SessionDTO.Builder().id(session.getId())
+						.name(new StringBuilder(session.getCode()).append(" - ").append(session.getEvent()).toString())
+						.description(EscapeUtils.escapeText(session.getDetails()))
+						.startTime(session.getDay().toDateTime(session.getStart()))
+						.endTime(session.getDay().toDateTime(session.getEnd())).location(session.getRoom())
+						.speakers(speakerMap.get(session.getId())).build());
+			}
+			
+			Collections.sort(sessionList);
+			for (SessionDTO session : sessionList) {
+				dataCache.put(session.getId(), session);
 			}
 		}
 

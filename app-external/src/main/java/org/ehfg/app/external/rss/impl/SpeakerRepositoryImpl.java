@@ -1,7 +1,8 @@
 package org.ehfg.app.external.rss.impl;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -26,7 +27,7 @@ import org.springframework.stereotype.Repository;
 @Profile({ "!mock" })
 class SpeakerRepositoryImpl implements SpeakerRepository, ApplicationListener<DataUpdatedEvent> {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
-	private final Map<String, SpeakerDTO> dataCache = new HashMap<>();
+	private final Map<String, SpeakerDTO> dataCache = new LinkedHashMap<>();
 
 	@Override
 	public SpeakerDTO findById(Long speakerId) {
@@ -46,13 +47,19 @@ class SpeakerRepositoryImpl implements SpeakerRepository, ApplicationListener<Da
 
 			logger.info("received {} speakers", speakers.size());
 			dataCache.clear();
+			
+			List<SpeakerDTO> speakerList = new ArrayList<>(speakers.size());
 			for (final Speaker speaker : speakers) {
 				logger.debug("preparing text for speaker {}", speaker);
 
-				SpeakerDTO speakerDTO = new SpeakerDTO.Builder().id(speaker.getId()).firstName(speaker.getFirstname())
-						.lastName(speaker.getLastname()).description(EscapeUtils.escapeText(speaker.getBio())).imageUrl("").build();
+				speakerList.add(new SpeakerDTO.Builder().id(speaker.getId()).firstName(speaker.getFirstname())
+						.lastName(speaker.getLastname()).description(EscapeUtils.escapeText(speaker.getBio())).imageUrl("").build());
 
-				dataCache.put(speaker.getId(), speakerDTO);
+			}
+
+			Collections.sort(speakerList);
+			for (SpeakerDTO speaker : speakerList) {
+				dataCache.put(speaker.getId(), speaker);
 			}
 		}
 

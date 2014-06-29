@@ -3,6 +3,7 @@ package org.ehfg.app.api.dto;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
@@ -12,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @since 25.01.2014
  */
 @XmlAccessorType(XmlAccessType.PROPERTY)
-public class SpeakerDTO {
+public class SpeakerDTO implements Comparable<SpeakerDTO> {
 	private String id;
 	private String firstName;
 	private String lastName;
@@ -80,6 +81,33 @@ public class SpeakerDTO {
 		return ToStringBuilder.reflectionToString(this);
 	}
 
+	@Override
+	public int compareTo(SpeakerDTO that) {
+		if (StringUtils.isEmpty(firstName) || StringUtils.isEmpty(lastName)) {
+			return 1;
+		}
+		
+		else if (StringUtils.isEmpty(that.firstName) || StringUtils.isEmpty(that.lastName)) {
+			return -1;
+		}
+		
+		else if (StringUtils.isEmpty(this.firstName) && StringUtils.isEmpty(that.firstName)) {
+			return this.lastName.compareTo(that.lastName);
+		}
+		
+		else if (StringUtils.isEmpty(this.lastName) && StringUtils.isEmpty(that.lastName)) {
+			return this.firstName.compareTo(that.firstName);
+		}
+		
+		return this.getFullName().compareTo(that.getFullName());
+	}
+
+	/**
+	 * internal builder class
+	 * 
+	 * @author patrick
+	 * @since 29.06.2014
+	 */
 	public static class Builder {
 		private String id;
 		private String firstName;
@@ -116,4 +144,5 @@ public class SpeakerDTO {
 			return new SpeakerDTO(this);
 		}
 	}
+
 }
