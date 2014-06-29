@@ -92,20 +92,6 @@ var sessionService = function() {
 };
 
 /**
- * service layer for the various location queries
- */
-var locationService = function() {
-    var locations = [{id: 0, name: 'Congress Center 1'},
-        {id: 1, name: 'Congress Center 2'},
-        {id: 2, name: 'Kursaal A'},
-        {id: 3, name: 'Kursaal B'}
-    ];
-
-    return {
-
-    };
-};
-/**
  * checks for a specific item in the local storage, and returns an object containing the data
  * if nothing is found in the local storage, data will be fetched from the backend
  *
