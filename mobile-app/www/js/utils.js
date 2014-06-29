@@ -218,8 +218,6 @@ var appendCurrentSessions = function(sessionList) {
         }
     }
 
-    console.log(currentSessions);
-
     if (currentSessions.length != 0) {
         item += "<li>What's going on right now?</li>";
         for (var i in currentSessions) {

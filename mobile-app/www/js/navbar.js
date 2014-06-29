@@ -2,9 +2,37 @@ $(function() {
     var theme = 'a';
     //var theme = 'b';
 
+    var settingsButton = '<a href="#settingsPanel" id="settingsButton" ';
+    settingsButton += 'class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-gear" ';
+    settingsButton += '>&nbsp;</a>';
+
     $("[data-role='navbar']").navbar();
     $("[data-role='footer']").toolbar({theme: theme});
-    $("[data-role='header']").toolbar({theme: theme});
+    $("[data-role='header']").toolbar({theme: theme}).append(settingsButton);
+
+    $('#settingsPanel').panel();
+    $('#panelList').listview();
+});
+
+var CLICK_ACTION = 'click';
+
+$('#showFavouriteSessions').on(CLICK_ACTION, function() {
+    var element = $(this);
+    $('li[class=selected]').removeClass('selected');
+
+    element.parent().addClass('selected');
+});
+
+$('#showAllSessions').on(CLICK_ACTION, function() {
+    var element = $(this);
+    $('li[class=selected]').removeClass('selected');
+
+    element.parent().addClass('selected');
+});
+
+$('#resetData').on(CLICK_ACTION, function() {
+    localStorage.clear();
+    window.location.reload();
 });
 
 $(document).on("pageshow", "[data-role='page']", function() {
@@ -35,3 +63,4 @@ $(document).on("pageshow", "[data-role='page']", function() {
         }
     });
 });
+

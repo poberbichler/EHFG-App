@@ -155,6 +155,7 @@ div.ui-header.ui-bar-a h1.ui-title {
     font-size: 14px;
 }
 
+#panelList li.ui-li-divider,
 .ui-li-static.ui-body-inherit {
     font-weight: bolder;
     background-color: rgb(225, 225, 225);
@@ -171,6 +172,12 @@ li a.ui-btn.ui-btn-icon-right.ui-icon-carat-r:hover {
     background-color: #f6f6f6;
 }
 
+#panelList li a.ui-btn.ui-btn-icon-right {
+    background-color: #f6f6f6;
+    color: black;
+}
+
+#panelList li a.ui-btn.ui-btn-icon-right.ui-btn-active:hover,
 li a.ui-btn.ui-btn-icon-right.ui-icon-carat-r.ui-btn-active:hover {
     background-color: #6699cc;
 }
@@ -197,4 +204,21 @@ div.ui-header.ui-bar-a {
 
 div.ui-header {
     border-top: 0;
+}
+
+#settingsButton {
+    border-color: #6699cc;
+    background-color: #6699cc;
+}
+
+#settingsPanel {
+    background-color: #f6f6f6;
+}
+
+#panelList li, #panelList a {
+    border-color: #dddddd;
+}
+
+#panelList li.selected .ui-icon-check:after{
+    background-color: #6699cc;
 }

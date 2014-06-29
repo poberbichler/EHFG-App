@@ -102,7 +102,7 @@ public class SessionDTO implements Comparable<SessionDTO> {
 	
 	@Override
 	public int compareTo(SessionDTO that) {
-		return this.name.compareTo(that.name);
+		return this.startTime.compareTo(that.startTime);
 	}
 	
 	/**
