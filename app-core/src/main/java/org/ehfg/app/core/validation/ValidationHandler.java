@@ -13,8 +13,6 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 /**
@@ -23,8 +21,7 @@ import org.springframework.stereotype.Service;
  */
 @Aspect
 @Service
-public class ValidationHandler {
-	private final Logger logger = LoggerFactory.getLogger(getClass());
+class ValidationHandler {
 	private final Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
 	
 	@Pointcut("execution(* *(@org.ehfg.app.api.validation.Validate (*)))")
@@ -38,11 +35,9 @@ public class ValidationHandler {
 	}
 	
 	@Before("methodAnnotated() or parameterAnnotated()")
-	public void validateParameters(JoinPoint jp) {
-		logger.info("i got called, yesyo!");
-		
+	public void validateParameters(JoinPoint joinPoint) {
 		final Set<ConstraintViolation<Object>> violations = new HashSet<>();
-		for (Object argument : jp.getArgs()) {
+		for (Object argument : joinPoint.getArgs()) {
 			violations.addAll(validator.validate(argument, Default.class));
 		}
 		
