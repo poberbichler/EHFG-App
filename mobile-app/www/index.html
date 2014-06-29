@@ -123,7 +123,7 @@
 
     <!-- DIALOG FOR MAP -->
     <div data-role="popup" id="map-dialog" style="display: none">
-        <div data-role="header">
+        <div data-role="header" data-settings="off">
             <h1 id="pointHeader">Point of Interest</h1>
             <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
         </div>
@@ -153,10 +153,22 @@
 
             <li data-role="list-divider">Settings</li>
             <li><a id="resetData" data-rel="close">Reset data</a></li>
-            <li><a href="#">About</a></li>
+            <li><a id="aboutLink" data-rel="close">About</a></li>
         </ul>
     </div>
     <!-- END PANEL -->
+
+    <div id="aboutPopup">
+        <div data-role="header" data-settings="off">
+            <h1>About</h1>
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            text, who made this app<br/>
+            and stuff like that
+        </div>
+    </div>
 
     <script src="js/utils.js"></script>
     <script src="js/navbar.js"></script>

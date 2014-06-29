@@ -10,6 +10,8 @@ $(function() {
     $("[data-role='footer']").toolbar({theme: theme});
     $("[data-role='header']").toolbar({theme: theme}).append(settingsButton);
 
+    $("[data-settings='off'] > #settingsButton").remove();
+
     $('#settingsPanel').panel();
     $('#panelList').listview();
 });
@@ -33,6 +35,11 @@ $('#showAllSessions').on(CLICK_ACTION, function() {
 $('#resetData').on(CLICK_ACTION, function() {
     localStorage.clear();
     window.location.reload();
+});
+
+$('#aboutLink').on(CLICK_ACTION, function() {
+    $('#aboutPopup').css('display', '');
+    $('#aboutPopup').popup({theme: 'a'}).popup('open');
 });
 
 $(document).on("pageshow", "[data-role='page']", function() {

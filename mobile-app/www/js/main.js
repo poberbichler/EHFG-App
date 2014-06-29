@@ -65,7 +65,7 @@ $('#map').on('pageshow', function() {
     });
 
     restCall("points/all", function(result) {
-        for (i in result) {
+        for (var i in result) {
            addMarker(map, result[i]);
         }
 
