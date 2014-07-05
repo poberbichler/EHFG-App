@@ -1,14 +1,9 @@
 var PAGE_EVENT = 'pagebeforeshow';
+var FAVOURITE_SESSIONS = "favouriteSessions";
 
 $('#session').on(PAGE_EVENT, function() {
     sessionService().findSessions(function(result) {
-        if (isFavouriteSessionSelected()) {
-
-        }
-
-        else {
-            createSessionList('sessionList', result);
-        }
+        createSessionList('sessionList', result);
     });
 });
 
@@ -44,6 +39,22 @@ $('#session-detail').on(PAGE_EVENT, function() {
 
         $('#session-header').text(session.name);
         $('#sessionDescription').html(session.description);
+        $('#sessionLocation').text(session.location);
+
+        if (getFavouriteSessions().indexOf(session.id) === -1) {
+            $('#toggleFavourite').text('Add to Favourites');
+        }
+
+        else {
+            $('#toggleFavourite').text('Remove from Favourites');
+        }
+
+
+        var start = new Date(session.start);
+        var end = new Date(session.end);
+
+        var timeText = start.toSessionTime() + ' - ' + end.toSessionTime();
+        $('#sessionTime').text(timeText);
 
         speakerService().findByIds(session.speakers, function(speakers) {
            createListView('sessionSpeakerList', speakers, 'fullName', 'speaker-detail', 'id');
@@ -82,3 +93,29 @@ $('#newsfeed').on(PAGE_EVENT, function() {
     loadAndCreateTwitterFeed();
     $('#refresh-icon').on('click', updateTwitterFeed);
 });
+
+
+$('#toggleFavourite').on('click', function() {
+    var sessionId = $.mobile.pageParameters.id;
+    var favouriteSessions = getFavouriteSessions();
+
+    var index = favouriteSessions.indexOf(sessionId);
+    var linkText;
+    if (index === -1) {
+        favouriteSessions.push(sessionId);
+        linkText = "Remove from Favourites";
+    }
+
+    else {
+        favouriteSessions.splice(index, 1);
+        linkText = "Add to Favourites";
+    }
+
+    $('#toggleFavourite').text(linkText);
+    localStorage.setItem(FAVOURITE_SESSIONS, JSON.stringify(favouriteSessions));
+});
+
+var getFavouriteSessions = function() {
+    var storage = JSON.parse(localStorage.getItem(FAVOURITE_SESSIONS));
+    return storage || [];
+}

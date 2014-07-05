@@ -56,15 +56,51 @@ var createSessionList = function(elementId, source) {
     var list = $('#' + elementId);
     list.children().remove();
 
+    /*
+    if (isFavouriteSessionSelected()) {
+        var favouriteSessions = getFavouriteSessions();
+
+        var sessionList = [];
+
+        for (var i in result) {
+            var session = result[i];
+            console.log(favouriteSessions, session);
+            if (favouriteSessions.indexOf(session.id) !== -1) {
+                sessionList.push(session);
+            }
+        }
+
+        createSessionList('sessionList', sessionList);
+
+    */
+
+    var favouriteSessionSelected = isFavouriteSessionSelected();
+    var favouriteSessions = getFavouriteSessions();
     var item = appendCurrentSessions(source);
     $.each(source, function(dayIndex, currentDay) {
-        item += '<li>' + currentDay.description + '</li>';
 
+        var sessionItem = '';
         $.each(currentDay.sessions, function(sessionIndex, currentSession) {
-            item += '<li>';
-            item += '<a href="#session-detail?id=' + currentSession.id + '">' + currentSession.name + '</a>';
-            item += '</li>';
+            // favourite session selected, and list contains current session
+            if (favouriteSessionSelected && favouriteSessions.indexOf(currentSession.id) !== -1) {
+                sessionItem += '<li>';
+                sessionItem += '<a href="#session-detail?id=' + currentSession.id + '">' + currentSession.name + '</a>';
+                sessionItem += '</li>';
+            }
+
+            // add every session
+            else if (!favouriteSessionSelected) {
+                sessionItem += '<li>';
+                sessionItem += '<a href="#session-detail?id=' + currentSession.id + '">' + currentSession.name + '</a>';
+                sessionItem += '</li>';
+            }
         });
+
+
+        if (sessionItem.length !== 0) {
+            item += '<li>' + currentDay.description + '</li>';
+            item += sessionItem;
+        }
     });
 
     list.append(item);
@@ -229,4 +265,26 @@ var appendCurrentSessions = function(sessionList) {
     }
 
     return item;
+}
+
+
+Date.prototype.toSessionTime = function() {
+    var hours = this.getHours();
+    var minutes = this.getMinutes();
+
+    var result = '';
+
+    if (hours < 10) {
+        result += '0';
+    }
+
+    result += hours + ':';
+
+    if (minutes < 10) {
+        result += '0';
+    }
+
+    result += minutes;
+
+    return result;
 }

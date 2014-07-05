@@ -18,10 +18,14 @@ $(function() {
     if (!isFavouriteSessionSelected()) {
         $('#showAllSessions').parent().addClass('selected');
     }
+
+    else {
+        $('#showFavouriteSessions').parent().addClass('selected');
+    }
 });
 
 var CLICK_ACTION = 'click';
-var SHOW_FAVOURITE_SESSIONS = "favouriteSessions";
+var SHOW_FAVOURITE_SESSIONS = "showFavouriteSessions";
 
 $('#showFavouriteSessions').on(CLICK_ACTION, function() {
     var element = $(this);
