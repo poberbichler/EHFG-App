@@ -56,27 +56,10 @@ var createSessionList = function(elementId, source) {
     var list = $('#' + elementId);
     list.children().remove();
 
-    /*
-    if (isFavouriteSessionSelected()) {
-        var favouriteSessions = getFavouriteSessions();
-
-        var sessionList = [];
-
-        for (var i in result) {
-            var session = result[i];
-            console.log(favouriteSessions, session);
-            if (favouriteSessions.indexOf(session.id) !== -1) {
-                sessionList.push(session);
-            }
-        }
-
-        createSessionList('sessionList', sessionList);
-
-    */
-
     var favouriteSessionSelected = isFavouriteSessionSelected();
     var favouriteSessions = getFavouriteSessions();
     var item = appendCurrentSessions(source);
+
     $.each(source, function(dayIndex, currentDay) {
 
         var sessionItem = '';

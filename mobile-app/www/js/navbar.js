@@ -33,6 +33,7 @@ $('#showFavouriteSessions').on(CLICK_ACTION, function() {
 
     if (!isFavouriteSessionSelected()) {
         toggleSessionSelected();
+        window.location.reload();
     }
 
     element.parent().addClass('selected');
@@ -44,6 +45,7 @@ $('#showAllSessions').on(CLICK_ACTION, function() {
 
     if (isFavouriteSessionSelected()) {
         toggleSessionSelected();
+        window.location.reload();
     }
 
     element.parent().addClass('selected');
