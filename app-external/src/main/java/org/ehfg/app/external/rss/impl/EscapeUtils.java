@@ -36,6 +36,9 @@ class EscapeUtils {
 
 		// remove stuff overriding our own styles
 		document.select("img").remove();
+		
+		// remove colors of fonts
+		document.select("font").removeAttr("color").attr("style", "font-style: italic");
 
 		// remove different fonts
 		Elements select = document.select("*[style*=font-family]");

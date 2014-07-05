@@ -14,13 +14,22 @@ $(function() {
 
     $('#settingsPanel').panel();
     $('#panelList').listview();
+
+    if (!isFavouriteSessionSelected()) {
+        $('#showAllSessions').parent().addClass('selected');
+    }
 });
 
 var CLICK_ACTION = 'click';
+var SHOW_FAVOURITE_SESSIONS = "favouriteSessions";
 
 $('#showFavouriteSessions').on(CLICK_ACTION, function() {
     var element = $(this);
     $('li[class=selected]').removeClass('selected');
+
+    if (!isFavouriteSessionSelected()) {
+        toggleSessionSelected();
+    }
 
     element.parent().addClass('selected');
 });
@@ -29,12 +38,18 @@ $('#showAllSessions').on(CLICK_ACTION, function() {
     var element = $(this);
     $('li[class=selected]').removeClass('selected');
 
+    if (isFavouriteSessionSelected()) {
+        toggleSessionSelected();
+    }
+
     element.parent().addClass('selected');
 });
 
 $('#resetData').on(CLICK_ACTION, function() {
     localStorage.clear();
     window.location.reload();
+
+    isFavouriteSessionSelected();
 });
 
 $('#aboutLink').on(CLICK_ACTION, function() {
@@ -71,3 +86,17 @@ $(document).on("pageshow", "[data-role='page']", function() {
     });
 });
 
+var isFavouriteSessionSelected = function() {
+    var favouriteSessions = localStorage.getItem(SHOW_FAVOURITE_SESSIONS);
+    if (favouriteSessions == null) {
+        favouriteSessions = 'false';
+        localStorage.setItem(SHOW_FAVOURITE_SESSIONS, favouriteSessions);
+    }
+
+    return favouriteSessions === 'true';
+}
+
+var toggleSessionSelected = function() {
+    var selected = isFavouriteSessionSelected();
+    localStorage.setItem(SHOW_FAVOURITE_SESSIONS, !selected);
+}

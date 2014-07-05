@@ -15,7 +15,7 @@ import org.ehfg.app.api.facade.ProgramFacade;
 import org.ehfg.app.web.components.BootstrapLayout;
 
 public class SessionOverview {
-	private static final String DATE_PATTERN = "dd.MM. HH:mm";
+	private static final String DATE_PATTERN = "dd.MM.yyyy HH:mm";
 
 	@Component
 	private BootstrapLayout layout;

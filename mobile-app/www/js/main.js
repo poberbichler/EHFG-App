@@ -2,7 +2,13 @@ var PAGE_EVENT = 'pagebeforeshow';
 
 $('#session').on(PAGE_EVENT, function() {
     sessionService().findSessions(function(result) {
-        createSessionList('sessionList', result);
+        if (isFavouriteSessionSelected()) {
+
+        }
+
+        else {
+            createSessionList('sessionList', result);
+        }
     });
 });
 
