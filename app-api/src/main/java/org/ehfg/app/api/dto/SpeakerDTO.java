@@ -83,23 +83,36 @@ public class SpeakerDTO implements Comparable<SpeakerDTO> {
 
 	@Override
 	public int compareTo(SpeakerDTO that) {
-		if (StringUtils.isEmpty(firstName) || StringUtils.isEmpty(lastName)) {
+		if (StringUtils.isEmpty(this.firstName) && StringUtils.isEmpty(that.firstName)) {
+			return this.lastName.compareTo(that.lastName);
+		}
+
+		else if (StringUtils.isEmpty(this.firstName)) {
 			return 1;
 		}
 		
-		else if (StringUtils.isEmpty(that.firstName) || StringUtils.isEmpty(that.lastName)) {
+		else if (StringUtils.isEmpty(that.firstName)) {
 			return -1;
 		}
 		
-		else if (StringUtils.isEmpty(this.firstName) && StringUtils.isEmpty(that.firstName)) {
-			return this.lastName.compareTo(that.lastName);
-		}
-		
-		else if (StringUtils.isEmpty(this.lastName) && StringUtils.isEmpty(that.lastName)) {
+		if (StringUtils.isEmpty(this.lastName) && StringUtils.isEmpty(that.lastName)) {
 			return this.firstName.compareTo(that.firstName);
 		}
 		
-		return this.getFullName().compareTo(that.getFullName());
+		else if (StringUtils.isEmpty(this.lastName)) {
+			return 1;
+		}
+		
+		else if (StringUtils.isEmpty(that.lastName)) {
+			return -1;
+		}
+		
+		int result = this.firstName.compareTo(that.firstName);
+		if (result != 0) {
+			return result;
+		}
+		
+		return this.lastName.compareTo(that.lastName);
 	}
 
 	/**
