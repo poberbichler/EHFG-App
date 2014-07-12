@@ -1,4 +1,4 @@
-package org.ehfg.app.external.rss.impl;
+package org.ehfg.app.external.rss.repository;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,55 +18,24 @@ import org.ehfg.app.external.rss.data.speakerevents.RssSpeakerEvents;
 import org.ehfg.app.external.rss.data.speakerevents.SpeakerEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.ApplicationListener;
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Repository;
 
 /**
- * takes care of transforming the data from {@link RssEvent} into usable
- * {@link SessionDTO}, and caches the given data
  * 
  * @author patrick
- * @since 21.06.2014
+ * @since 12.07.2014
  */
-@Repository
-@Profile({ "!mock" })
-class SessionRepositoryImpl implements SessionRepository, ApplicationListener<DataUpdatedEvent> {
-	private final Logger logger = LoggerFactory.getLogger(getClass());
-	private final Map<String, SessionDTO> dataCache = new LinkedHashMap<>();
+public abstract class AbstractSessionRepository implements SessionRepository {
+	protected final Logger logger = LoggerFactory.getLogger(getClass());
+	protected final Map<String, SessionDTO> dataCache = new LinkedHashMap<>();
 
-	@Override
-	public List<SessionDTO> findAll() {
-		return new ArrayList<>(dataCache.values());
-	}
-
-	@Override
-	public SessionDTO findById(Long sessionId) {
-		return dataCache.get(sessionId.toString());
-	}
-
-	@Override
-	public List<SessionDTO> findBySpeaker(Long speakerId) {
-		final List<SessionDTO> result = new ArrayList<>();
-		for (final SessionDTO session : dataCache.values()) {
-			if (session.getSpeakers().contains(speakerId)) {
-				result.add(session);
-			}
-		}
-
-		return result;
-	}
-
-	@Override
-	public void onApplicationEvent(DataUpdatedEvent event) {
-		final RssEvent data = event.getDataForClass(RssEvent.class);
+	protected void fillCache(RssEvent data, RssSpeakerEvents speakerEvents) {
 		if (data != null) {
 			List<Event> sessions = data.getChannel().getItems();
-			Map<String, Set<String>> speakerMap = buildSpeakerMap(event.getDataForClass(RssSpeakerEvents.class));
+			Map<String, Set<String>> speakerMap = buildSpeakerMap(speakerEvents);
 
 			dataCache.clear();
 			logger.info("received {} sessions", sessions.size());
-			
+
 			List<SessionDTO> sessionList = new ArrayList<>(sessions.size());
 			for (final Event session : sessions) {
 				logger.debug("preparing text for session {}", session);
@@ -74,11 +43,10 @@ class SessionRepositoryImpl implements SessionRepository, ApplicationListener<Da
 				sessionList.add(new SessionDTO.Builder().id(session.getId())
 						.name(new StringBuilder(session.getCode()).append(" - ").append(session.getEvent()).toString())
 						.description(EscapeUtils.escapeText(session.getDetails()))
-						.startTime(session.getDay().toDateTime(session.getStart()))
-						.endTime(session.getDay().toDateTime(session.getEnd())).location(session.getRoom())
-						.speakers(speakerMap.get(session.getId())).build());
+						.startTime(session.getDay().toDateTime(session.getStart())).endTime(session.getDay().toDateTime(session.getEnd()))
+						.location(session.getRoom()).speakers(speakerMap.get(session.getId())).build());
 			}
-			
+
 			Collections.sort(sessionList);
 			for (SessionDTO session : sessionList) {
 				dataCache.put(session.getId(), session);

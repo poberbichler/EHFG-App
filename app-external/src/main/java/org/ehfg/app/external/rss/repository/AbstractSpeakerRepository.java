@@ -1,4 +1,4 @@
-package org.ehfg.app.external.rss.impl;
+package org.ehfg.app.external.rss.repository;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,46 +13,26 @@ import org.ehfg.app.external.rss.data.speaker.RssSpeaker;
 import org.ehfg.app.external.rss.data.speaker.Speaker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.ApplicationListener;
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Repository;
 
 /**
- * takes care of transforming the data from {@link RssSpeaker} into usable
- * {@link SpeakerDTO}, and caches the given data
- * 
  * @author patrick
- * @since 21.06.2014
+ * @since 12.07.2014
  */
-@Repository
-@Profile({ "!mock" })
-class SpeakerRepositoryImpl implements SpeakerRepository, ApplicationListener<DataUpdatedEvent> {
-	private final Logger logger = LoggerFactory.getLogger(getClass());
-	private final Map<String, SpeakerDTO> dataCache = new LinkedHashMap<>();
+public abstract class AbstractSpeakerRepository implements SpeakerRepository {
+	protected final Logger logger = LoggerFactory.getLogger(getClass());
+	protected final Map<String, SpeakerDTO> dataCache = new LinkedHashMap<>();
 
-	@Override
-	public SpeakerDTO findById(Long speakerId) {
-		return dataCache.get(speakerId.toString());
-	}
-
-	@Override
-	public List<SpeakerDTO> findAll() {
-		return new ArrayList<>(dataCache.values());
-	}
-
-	@Override
-	public void onApplicationEvent(DataUpdatedEvent event) {
-		final RssSpeaker data = event.getDataForClass(RssSpeaker.class);
+	protected void fillCache(RssSpeaker data) {
 		if (data != null) {
 			List<Speaker> speakers = data.getChannel().getSpeakers();
 
 			logger.info("received {} speakers", speakers.size());
 			dataCache.clear();
-			
+
 			List<SpeakerDTO> speakerList = new ArrayList<>(speakers.size());
 			for (final Speaker speaker : speakers) {
 				logger.debug("preparing text for speaker {}", speaker);
-				
+
 				if (StringUtils.isEmpty(speaker.getFirstname()) && StringUtils.isEmpty(speaker.getLastname())) {
 					continue;
 				}
@@ -61,7 +41,7 @@ class SpeakerRepositoryImpl implements SpeakerRepository, ApplicationListener<Da
 						.lastName(speaker.getLastname()).description(EscapeUtils.escapeText(speaker.getBio())).imageUrl("").build());
 
 			}
-			
+
 			Collections.sort(speakerList);
 			for (SpeakerDTO speaker : speakerList) {
 				dataCache.put(speaker.getId(), speaker);

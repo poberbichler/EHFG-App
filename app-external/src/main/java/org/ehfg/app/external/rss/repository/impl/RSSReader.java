@@ -1,4 +1,4 @@
-package org.ehfg.app.external.rss.impl;
+package org.ehfg.app.external.rss.repository.impl;
 
 import java.io.IOException;
 import java.util.HashMap;

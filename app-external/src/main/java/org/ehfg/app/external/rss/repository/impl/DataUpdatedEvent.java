@@ -1,4 +1,4 @@
-package org.ehfg.app.external.rss.impl;
+package org.ehfg.app.external.rss.repository.impl;
 
 import java.util.Map;
 
@@ -12,7 +12,7 @@ import org.springframework.context.ApplicationEvent;
  * @author patrick
  * @since 21.06.2014
  */
-public class DataUpdatedEvent extends ApplicationEvent {
+class DataUpdatedEvent extends ApplicationEvent {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 	
 	private static final long serialVersionUID = 1L;
