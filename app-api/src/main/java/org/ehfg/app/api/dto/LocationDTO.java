@@ -1,5 +1,8 @@
 package org.ehfg.app.api.dto;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
@@ -10,7 +13,11 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  */
 public class LocationDTO {
 	private Long id;
+	@NotNull
 	private String name;
+	
+	@Valid
+	@NotNull
 	private CoordinateDTO coordinate;
 	
 	public LocationDTO() {

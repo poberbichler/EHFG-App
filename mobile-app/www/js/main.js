@@ -80,8 +80,7 @@ $('#map').on('pageshow', function() {
 
             new google.maps.Marker({
                 position: mapCoordinate,
-                map: map,
-                title: 'Hello world!'
+                map: map
             });
         });
     }

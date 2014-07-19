@@ -93,6 +93,11 @@ public class LocationMaintenance {
 	public void onActionFromDeleteLink(Long locationId) {
 		masterDataFacade.deleteLocation(locationId);
 	}
+	
+	Object onException(Exception e) {
+		inputForm.recordError(e.getMessage());
+		return this;
+	}
 
 	public String getMapLink() {
 		final Double yValue = currentLocation.getCoordinate().getyValue();
