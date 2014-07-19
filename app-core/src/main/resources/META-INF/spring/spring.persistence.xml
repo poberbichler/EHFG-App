@@ -24,13 +24,17 @@
 			</props>
 		</property>
 	</bean>
-	
-	<jee:jndi-lookup id="dataSource" jndi-name="jdbc/MySQLDS" />
 
-	<jpa:repositories base-package="org.ehfg.app.core.repository" query-lookup-strategy="create-if-not-found" />
+
+	<jpa:repositories base-package="org.ehfg.app.core.repository"
+		query-lookup-strategy="create-if-not-found" />
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
+
+	<beans profile="!in-memory-db">
+		<jee:jndi-lookup id="dataSource" jndi-name="jdbc/MySQLDS" />
+	</beans>
 </beans>

@@ -15,7 +15,7 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:META-INF/spring/spring.complete.xml</param-value>
 	</context-param>
-
+	
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
