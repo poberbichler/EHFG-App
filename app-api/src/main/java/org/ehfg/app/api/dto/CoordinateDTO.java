@@ -43,14 +43,6 @@ public class CoordinateDTO {
 		this.yValue = yValue;
 	}
 	
-	public Double getBlup() {
-		return xValue;
-	}
-	
-	public Double getAsdf() {
-		return yValue;
-	}
-
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
