@@ -24,6 +24,7 @@ $('#speaker-detail').on(PAGE_EVENT, function() {
         $('#speakerDetailHeader').text(speaker.fullName);
         $('#speakerDescription').html(speaker.description);
         $('#speakerImage').attr('src', speaker.imageUrl);
+
         sessionService().findBySpeakerId(speaker.id, function(sessions) {
             createListView('speakerSessionList', sessions, 'name', 'session-detail', 'id');
         });
@@ -40,6 +41,7 @@ $('#session-detail').on(PAGE_EVENT, function() {
         $('#session-header').text(session.name);
         $('#sessionDescription').html(session.description);
         $('#sessionLocation').text(session.location);
+        $('#showOnMap').attr('href', '#map?location=' + session.location);
 
         if (getFavouriteSessions().indexOf(session.id) === -1) {
             $('#toggleFavourite').text('Add to Favourites');
@@ -63,11 +65,27 @@ $('#session-detail').on(PAGE_EVENT, function() {
 });
 
 $('#map').on('pageshow', function() {
-    var mapOptions = {
+    var options = {
         center: new google.maps.LatLng(47.170329, 13.103852),
         zoom: 16
     };
-    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+    var map = new google.maps.Map(document.getElementById("map-canvas"), options);
+
+    if ($.mobile.pageParameters !== undefined && $.mobile.pageParameters.location !== undefined) {
+        locationService().findCoordinatesByName($.mobile.pageParameters.location, function(result) {
+            var coord = result.coordinate;
+            var mapCoordinate = new google.maps.LatLng(coord.xValue, coord.yValue);
+            map.panTo(mapCoordinate);
+
+            new google.maps.Marker({
+                position: mapCoordinate,
+                map: map,
+                title: 'Hello world!'
+            });
+        });
+    }
+
 
     google.maps.event.addListenerOnce(map, 'idle', function() {
         var navHeight = $('.ui-navbar').height() + 15;
