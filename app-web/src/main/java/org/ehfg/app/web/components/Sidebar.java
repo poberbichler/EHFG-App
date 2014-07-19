@@ -16,6 +16,7 @@ import org.ehfg.app.web.pages.Index;
 import org.ehfg.app.web.pages.SessionOverview;
 import org.ehfg.app.web.pages.SpeakerOverview;
 import org.ehfg.app.web.pages.maintenance.GeneralMaintenance;
+import org.ehfg.app.web.pages.maintenance.LocationMaintenance;
 import org.ehfg.app.web.pages.maintenance.PointOfInterestMaintenance;
 import org.ehfg.app.web.pages.maintenance.SessionDayMaintenance;
 import org.ehfg.app.web.pages.maintenance.TwitterStreamMaintenance;
@@ -47,7 +48,8 @@ public class Sidebar {
 				resolver.resolvePageClassNameToPageName(GeneralMaintenance.class.getName()),
 				resolver.resolvePageClassNameToPageName(TwitterStreamMaintenance.class.getName()),
 				resolver.resolvePageClassNameToPageName(SessionDayMaintenance.class.getName()),
-				resolver.resolvePageClassNameToPageName(PointOfInterestMaintenance.class.getName())
+				resolver.resolvePageClassNameToPageName(PointOfInterestMaintenance.class.getName()),
+				resolver.resolvePageClassNameToPageName(LocationMaintenance.class.getName())
 		);
 	}
 	

@@ -1,0 +1,52 @@
+<div t:id="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+	<h1>maintenance</h1>
+	
+	<table t:id="locationGrid" class="table table-striped table-bordered">
+		<p:xCoordinateCell>
+			${currentLocation.coordinate.xValue}
+		</p:xCoordinateCell>
+		
+		<p:yCoordinateCell>
+			${currentLocation.coordinate.yValue}
+		</p:yCoordinateCell>
+	
+		<p:deleteCell>
+			<a t:id="deleteLink"><span class="glyphicon glyphicon-remove"></span></a>
+		</p:deleteCell>
+		
+		<p:showOnMapCell>
+			<a href="${mapLink}" target="_blank">show on map</a>
+		</p:showOnMapCell>
+	</table>
+
+	<form t:id="inputForm" class="form-horizontal">
+		<t:errors />
+		
+		<div class="form-group">
+			<label for="locationName" class="col-sm-2 control-label">Name</label>
+			<div class="col-sm-4">
+				<input t:id="locationName" class="form-control" />
+			</div>
+		</div>
+	
+		<div class="form-group">
+			<label for="xCoordinate" class="col-sm-2 control-label">X-Coordinate</label>
+			<div class="col-sm-4">
+				<input t:id="xCoordinate" class="form-control" />
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="yCoordinate" class="col-sm-2 control-label">Y-Coordinate</label>
+			<div class="col-sm-4">
+				<input t:id="yCoordinate" class="form-control" />
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button t:id="submitInputForm" class="btn btn-primary" value="save changes"></button>
+			</div>
+		</div>
+	</form>
+</div>

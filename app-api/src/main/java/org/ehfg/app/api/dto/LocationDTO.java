@@ -12,12 +12,20 @@ public class LocationDTO {
 	private Long id;
 	private String name;
 	private CoordinateDTO coordinate;
+	
+	public LocationDTO() {
+		coordinate = new CoordinateDTO();
+	}
 
 	public LocationDTO(Long id, String name, CoordinateDTO coordinate) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.coordinate = coordinate;
+	}
+	
+	public LocationDTO(Long id, String name, Double xValue, Double yValue) {
+		this(id, name, new CoordinateDTO(xValue, yValue));
 	}
 
 	public Long getId() {

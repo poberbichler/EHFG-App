@@ -33,4 +33,6 @@ public interface ProgramFacade {
 	ConferenceDayDTO addDay();
 	
 	List<SessionDTO> findAllSessionsWithoutDayInformation();
+	
+	List<String> findAvailableLocations();
 }

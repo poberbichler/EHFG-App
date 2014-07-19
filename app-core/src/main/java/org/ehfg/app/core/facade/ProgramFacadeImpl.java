@@ -3,8 +3,11 @@ package org.ehfg.app.core.facade;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 import org.ehfg.app.api.dto.ConferenceDayDTO;
@@ -145,5 +148,15 @@ public class ProgramFacadeImpl implements ProgramFacade {
 	@Override
 	public List<SessionDTO> findAllSessionsWithoutDayInformation() {
 		return sessionRepository.findAll();
+	}
+
+	@Override
+	public List<String> findAvailableLocations() {
+		Set<String> result = new HashSet<>();
+		for (SessionDTO session : sessionRepository.findAll()) {
+			result.add(session.getLocationId());
+		}
+		
+		return new LinkedList<>(result);
 	}
 }

@@ -4,13 +4,16 @@ import java.util.List;
 
 import org.ehfg.app.api.dto.ConfigurationDTO;
 import org.ehfg.app.api.dto.CoordinateDTO;
+import org.ehfg.app.api.dto.LocationDTO;
 import org.ehfg.app.api.dto.PointOfInterestDTO;
 import org.ehfg.app.api.facade.MasterDataFacade;
 import org.ehfg.app.api.validation.Validate;
 import org.ehfg.app.core.entities.AppConfig;
 import org.ehfg.app.core.entities.Coordinate;
+import org.ehfg.app.core.entities.Location;
 import org.ehfg.app.core.entities.PointOfInterest;
 import org.ehfg.app.core.repository.AppConfigRepository;
+import org.ehfg.app.core.repository.LocationRepository;
 import org.ehfg.app.core.repository.PointOfInterestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -25,11 +28,14 @@ import org.springframework.transaction.annotation.Transactional;
 public class MasterDataFacadeImpl implements MasterDataFacade {
 	private final AppConfigRepository configRepository;
 	private final PointOfInterestRepository pointOfInterestRepository;
+	private final LocationRepository locationRepository;
 
 	@Autowired
-	public MasterDataFacadeImpl(AppConfigRepository configRepository, PointOfInterestRepository pointOfInterestRepository) {
+	public MasterDataFacadeImpl(AppConfigRepository configRepository, PointOfInterestRepository pointOfInterestRepository,
+			LocationRepository locationRepository) {
 		this.configRepository = configRepository;
 		this.pointOfInterestRepository = pointOfInterestRepository;
+		this.locationRepository = locationRepository;
 	}
 
 	@Override
@@ -88,5 +94,27 @@ public class MasterDataFacadeImpl implements MasterDataFacade {
 	@Transactional(readOnly = false)
 	public void removePoint(Long id) {
 		pointOfInterestRepository.delete(id);
+	}
+
+	@Override
+	public List<LocationDTO> findAllLocation() {
+		return locationRepository.findAllLocations();
+	}
+
+	@Override
+	@Validate
+	@Transactional(readOnly = false)
+	public Long saveLocation(LocationDTO source) {
+		Location target = new Location(source.getId(), source.getName(), 
+				source.getCoordinate().getxValue(), source.getCoordinate().getyValue());
+		
+		locationRepository.save(target);
+		return target.getId();
+	}
+
+	@Override
+	@Transactional(readOnly = false)
+	public void deleteLocation(Long locationId) {
+		locationRepository.delete(locationId);
 	}
 }
