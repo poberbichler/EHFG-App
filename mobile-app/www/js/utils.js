@@ -17,6 +17,8 @@
  */
 var createListView = function(elementId, source, labelField, page, pageField) {
     var list = $('#' + elementId);
+
+    console.log(source, source.length);
     if (source.length === 0) {
         list.hide();
         return;
