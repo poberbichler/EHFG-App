@@ -17,6 +17,11 @@
  */
 var createListView = function(elementId, source, labelField, page, pageField) {
     var list = $('#' + elementId);
+    if (source.length === 0) {
+        list.hide();
+        return;
+    }
+
 
     $.each(list.children(), function(index, value) {
         if ($(value).data('dynamic-creation')) {
