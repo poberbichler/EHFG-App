@@ -21,10 +21,11 @@ public class SessionDTO implements Comparable<SessionDTO> {
 	private String description;
 	private DateTime startTime;
 	private DateTime endTime;
+	private String sessionCode;
 
 	private String location;
 	private Set<String> speakers;
-	
+
 	public SessionDTO() {
 		// default ctor is needed for jaxrs
 	}
@@ -37,6 +38,15 @@ public class SessionDTO implements Comparable<SessionDTO> {
 		this.endTime = builder.endTime;
 		this.location = builder.location;
 		this.speakers = builder.speakers;
+		this.sessionCode = builder.sessionCode;
+	}
+
+	public String getSessionCode() {
+		return sessionCode;
+	}
+
+	public void setSessionCode(String sessionCode) {
+		this.sessionCode = sessionCode;
 	}
 
 	public DateTime getStartTime() {
@@ -99,12 +109,12 @@ public class SessionDTO implements Comparable<SessionDTO> {
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
 	}
-	
+
 	@Override
 	public int compareTo(SessionDTO that) {
 		return this.startTime.compareTo(that.startTime);
 	}
-	
+
 	/**
 	 * builder to map the given values
 	 * 
@@ -117,6 +127,7 @@ public class SessionDTO implements Comparable<SessionDTO> {
 		private String description;
 		private DateTime startTime;
 		private DateTime endTime;
+		private String sessionCode;
 
 		private String location;
 		private Set<String> speakers;
@@ -159,9 +170,14 @@ public class SessionDTO implements Comparable<SessionDTO> {
 			this.speakers = speakers;
 			return this;
 		}
-		
+
 		public Builder speakers(String... speakers) {
 			this.speakers = new HashSet<>(Arrays.asList(speakers));
+			return this;
+		}
+
+		public Builder sessionCode(String sessionCode) {
+			this.sessionCode = sessionCode;
 			return this;
 		}
 
@@ -169,19 +185,22 @@ public class SessionDTO implements Comparable<SessionDTO> {
 			this.startTime = convertToDate(startTime);
 			return this;
 		}
-		
+
 		public Builder endTime(String endTime) {
 			this.endTime = convertToDate(endTime);
 			return this;
 		}
 		
+
 		/**
-		 * @param timeString to be converted
-		 * @return new {@link DateTime} with the given value, or current timestamp in case of an error
+		 * @param timeString
+		 *            to be converted
+		 * @return new {@link DateTime} with the given value, or current
+		 *         timestamp in case of an error
 		 */
 		private DateTime convertToDate(String timeString) {
 			try {
-				return DateTime.parse(timeString, DateTimeFormat.forPattern("dd.MM.yyyy HH:mm")); 
+				return DateTime.parse(timeString, DateTimeFormat.forPattern("dd.MM.yyyy HH:mm"));
 			}
 
 			catch (Exception e) {

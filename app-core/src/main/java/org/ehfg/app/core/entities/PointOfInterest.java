@@ -27,12 +27,10 @@ public class PointOfInterest {
 	@NotNull
 	private String description;
 
-	@NotNull
 	private String contact;
 
 //	TODO: implement regexp, use expression from global class
 //	@Pattern(regexp = "")
-	@NotNull
 	private String website;
 
 	@NotNull

@@ -29,19 +29,37 @@ public abstract class AbstractSpeakerRepository implements SpeakerRepository {
 			logger.info("received {} speakers", speakers.size());
 			dataCache.clear();
 
+			int filterCounter = 0;
 			List<SpeakerDTO> speakerList = new ArrayList<>(speakers.size());
 			for (final Speaker speaker : speakers) {
 				logger.debug("preparing text for speaker {}", speaker);
 
-				if (StringUtils.isEmpty(speaker.getFirstname()) && StringUtils.isEmpty(speaker.getLastname())) {
+				if ((StringUtils.isEmpty(speaker.getFirstname()) && StringUtils.isEmpty(speaker.getLastname()))
+						|| StringUtils.isEmpty(speaker.getBio())) {
+					filterCounter++;
 					continue;
 				}
+				
+				// TODO: superawesome regexp would be better
+				String description = EscapeUtils.escapeText(speaker.getBio());
+				description = StringUtils.remove(description.trim(), "<strong>");
+				description = StringUtils.remove(description.trim(), "<div>");
+				description = StringUtils.remove(description.trim(), "\n");
+				description = StringUtils.removeStart(description.trim(), speaker.getFirstname());
+				description = StringUtils.removeStart(description.trim(), speaker.getLastname());
+				description = StringUtils.removeStart(description.trim(), speaker.getFirstname());
+				description = StringUtils.removeStart(description.trim(), "</div>");
+				description = StringUtils.removeStart(description.trim(), "</strong>");
+				description = StringUtils.removeStart(description.trim(), ";");
+				description = StringUtils.removeStart(description.trim(), ",");
 
 				speakerList.add(new SpeakerDTO.Builder().id(speaker.getId()).firstName(speaker.getFirstname())
-						.lastName(speaker.getLastname()).description(EscapeUtils.escapeText(speaker.getBio())).imageUrl("").build());
+						.lastName(speaker.getLastname()).description(description).imageUrl("").build());
 
 			}
 
+			logger.info("filtered {} speakers", filterCounter);
+			
 			Collections.sort(speakerList);
 			for (SpeakerDTO speaker : speakerList) {
 				dataCache.put(speaker.getId(), speaker);

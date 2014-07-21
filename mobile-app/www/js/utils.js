@@ -18,13 +18,6 @@
 var createListView = function(elementId, source, labelField, page, pageField) {
     var list = $('#' + elementId);
 
-    console.log(source, source.length);
-    if (source.length === 0) {
-        list.hide();
-        return;
-    }
-
-
     $.each(list.children(), function(index, value) {
         if ($(value).data('dynamic-creation')) {
             $(value).remove();
@@ -74,14 +67,14 @@ var createSessionList = function(elementId, source) {
             // favourite session selected, and list contains current session
             if (favouriteSessionSelected && favouriteSessions.indexOf(currentSession.id) !== -1) {
                 sessionItem += '<li>';
-                sessionItem += '<a href="#session-detail?id=' + currentSession.id + '">' + currentSession.name + '</a>';
+                sessionItem += '<a href="#session-detail?id=' + currentSession.id + '">' + currentSession.code + ' - ' + currentSession.name + '</a>';
                 sessionItem += '</li>';
             }
 
             // add every session
             else if (!favouriteSessionSelected) {
                 sessionItem += '<li>';
-                sessionItem += '<a href="#session-detail?id=' + currentSession.id + '">' + currentSession.name + '</a>';
+                sessionItem += '<a href="#session-detail?id=' + currentSession.id + '">' + currentSession.code + ' - ' + currentSession.name + '</a>';
                 sessionItem += '</li>';
             }
         });
@@ -218,8 +211,19 @@ var addMarker = function(map, positionData) {
             $('#pointHeader').text(data.name);
             $('#pointDescription').text(data.description);
             $('#pointAddress').text(data.address);
-            $('#pointContact').text(data.contact);
-            $('#pointWebsite').text(data.website);
+
+
+            var contact = $('#pointContact');
+            contact.text(data.contact);
+            if (data.contact.length === 0) {
+                contact.parent().hide();
+            }
+
+            var website = $('#pointWebsite');
+            website.text(data.website);
+            if (data.website.length === 0) {
+                website.parent().hide();
+            }
 
             $('#map-dialog').css('display', '');
             $('#map-dialog').popup({theme: 'a'}).popup('open');

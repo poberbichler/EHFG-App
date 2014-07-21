@@ -38,7 +38,8 @@ $('#session-detail').on(PAGE_EVENT, function() {
             return;
         }
 
-        $('#session-header').text(session.name);
+        $('#sessionName').text(session.name);
+        $('#session-header').text(session.code + ' - ' + session.name);
         $('#sessionDescription').html(session.description);
         $('#sessionLocation').text(session.location);
         $('#showOnMap').attr('href', '#map?location=' + session.location);

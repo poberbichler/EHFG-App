@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.commons.lang3.StringUtils;
 import org.ehfg.app.api.dto.SessionDTO;
 import org.ehfg.app.core.external.SessionRepository;
 import org.ehfg.app.external.rss.data.events.Event;
@@ -40,9 +41,20 @@ public abstract class AbstractSessionRepository implements SessionRepository {
 			for (final Event session : sessions) {
 				logger.debug("preparing text for session {}", session);
 
+				// TODO: superawesome regexp would be better
+				String details = EscapeUtils.escapeText(session.getDetails());
+				details = StringUtils.removeStart(details, "<p> ");
+				details = StringUtils.removeStart(details, "<strong>");
+				details = StringUtils.removeStart(details, EscapeUtils.escapeText(session.getEvent()));
+				details = StringUtils.removeStart(details, ".");
+				details = StringUtils.removeStart(details, "<br>");
+				details = StringUtils.removeStart(details, "<br/>");
+				details = StringUtils.removeStart(details, "<br />");
+				details = StringUtils.removeStart(details, "<br></br>");
+
 				sessionList.add(new SessionDTO.Builder().id(session.getId())
-						.name(new StringBuilder(session.getCode()).append(" - ").append(session.getEvent()).toString())
-						.description(EscapeUtils.escapeText(session.getDetails()))
+						.name(session.getEvent()).sessionCode(session.getCode())
+						.description(EscapeUtils.escapeText(details))
 						.startTime(session.getDay().toDateTime(session.getStart())).endTime(session.getDay().toDateTime(session.getEnd()))
 						.location(session.getRoom()).speakers(speakerMap.get(session.getId())).build());
 			}

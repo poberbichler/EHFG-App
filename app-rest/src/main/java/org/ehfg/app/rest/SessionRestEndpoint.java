@@ -56,6 +56,7 @@ public class SessionRestEndpoint {
 				jsonSession.put("name", session.getName());
 				jsonSession.put("location", session.getLocationId());
 				jsonSession.put("speakers", session.getSpeakers());
+				jsonSession.put("code", session.getSessionCode());
 
 				sessions.put(jsonSession);
 			}

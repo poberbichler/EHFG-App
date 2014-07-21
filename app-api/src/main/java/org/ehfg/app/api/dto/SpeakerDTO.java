@@ -7,7 +7,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
- * basic represenation of a speaker TODO: refactor to builder pattern
+ * basic represenation of a speaker
  * 
  * @author patrick
  * @since 25.01.2014
