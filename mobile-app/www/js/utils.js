@@ -203,7 +203,8 @@ var addMarker = function(map, positionData) {
 
     var marker = new google.maps.Marker({
         position: position,
-        map: map
+        map: map,
+        icon: 'img/marker.png'
     });
 
     var createDialog = (function(data) {
