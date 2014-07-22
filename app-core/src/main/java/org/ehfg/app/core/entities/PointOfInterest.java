@@ -22,15 +22,11 @@ public class PointOfInterest {
 	private String name;
 
 	@NotNull
-	private String address;
-
-	@NotNull
 	private String description;
 
+	private String address;
 	private String contact;
 
-//	TODO: implement regexp, use expression from global class
-//	@Pattern(regexp = "")
 	private String website;
 
 	@NotNull

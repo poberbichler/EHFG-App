@@ -1,5 +1,6 @@
 package org.ehfg.app.api.dto;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -15,19 +16,13 @@ public class PointOfInterestDTO {
 	private String name;
 
 	@NotNull
-	private String address;
-
-	@NotNull
 	private String description;
 
-	@NotNull
+	private String address;
 	private String contact;
-
-//	TODO: implement regexp, use expression from global class
-//	@Pattern(regexp = "")
-	@NotNull
 	private String website;
 
+	@Valid
 	@NotNull
 	private CoordinateDTO coordinate;
 
