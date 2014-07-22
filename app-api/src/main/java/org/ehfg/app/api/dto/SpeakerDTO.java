@@ -41,7 +41,7 @@ public class SpeakerDTO implements Comparable<SpeakerDTO> {
 	}
 
 	public String getFullName() {
-		return String.format("%s %s", firstName, lastName);
+		return String.format("%s %s", lastName, firstName);
 	}
 
 	public String getDescription() {
@@ -95,7 +95,7 @@ public class SpeakerDTO implements Comparable<SpeakerDTO> {
 			return -1;
 		}
 		
-		if (StringUtils.isEmpty(this.lastName) && StringUtils.isEmpty(that.lastName)) {
+		if (StringUtils.isEmpty(this.firstName) && StringUtils.isEmpty(that.firstName)) {
 			return this.firstName.compareTo(that.firstName);
 		}
 		
@@ -107,12 +107,12 @@ public class SpeakerDTO implements Comparable<SpeakerDTO> {
 			return -1;
 		}
 		
-		int result = this.firstName.compareTo(that.firstName);
+		int result = this.lastName.compareTo(that.lastName);
 		if (result != 0) {
 			return result;
 		}
 		
-		return this.lastName.compareTo(that.lastName);
+		return this.firstName.compareTo(that.firstName);
 	}
 
 	/**
