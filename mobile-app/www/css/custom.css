@@ -227,3 +227,7 @@ div.ui-header {
     height: 42px;
     position: absolute;
 }
+
+#pointDescription ul {
+    margin-top: 0;
+}
