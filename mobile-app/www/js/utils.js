@@ -210,19 +210,19 @@ var addMarker = function(map, positionData) {
     var createDialog = (function(data) {
         return function() {
             $('#pointHeader').text(data.name);
-            $('#pointDescription').text(data.description);
+            $('#pointDescription').html(data.description);
             $('#pointAddress').text(data.address);
 
 
             var contact = $('#pointContact');
             contact.text(data.contact);
-            if (data.contact.length === 0) {
+            if (data.contact === null || data.contact.length === 0) {
                 contact.parent().hide();
             }
-
+            
             var website = $('#pointWebsite');
             website.text(data.website);
-            if (data.website.length === 0) {
+            if (data.website === null || data.contact.length === 0) {
                 website.parent().hide();
             }
 

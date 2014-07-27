@@ -4,6 +4,7 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -29,6 +30,7 @@ public class PointOfInterest {
 
 	private String website;
 
+	@Valid
 	@NotNull
 	@Embedded
 	private Coordinate coordinate;
