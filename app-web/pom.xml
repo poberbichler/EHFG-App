@@ -119,12 +119,12 @@
 								<id>prepare-backup</id>
 								<phase>prepare-package</phase>
 								<configuration>
-									<target>
+									<target name="backup local config and replace with server-config">
 										<!-- backup the local config.js file -->
-										<copy file="${mobile-path}/js/config.js" tofile="${mobile-path}/js/config-tmp.js" />
+										<copy file="${mobile-path}/js/config.js" tofile="${mobile-path}/js/config-tmp.js" overwrite="true"/>
 										
 										<!-- rename config-server.js to config.js -->
-										<copy file="${mobile-path}/js/config-server.js" tofile="${mobile-path}/js/config.js" />
+										<copy file="${mobile-path}/js/config-server.js" tofile="${mobile-path}/js/config.js" overwrite="true"/>
 									</target>
 								</configuration>
 
@@ -137,8 +137,7 @@
 								<id>retrieve-backup</id>
 								<phase>package</phase>
 								<configuration>
-									<target>
-										<!-- copy back the previously file from backup -->
+									<target name="move back file from backup">
 										<move file="${mobile-path}/js/config-tmp.js" tofile="${mobile-path}/js/config.js" />
 									</target>
 								</configuration>
