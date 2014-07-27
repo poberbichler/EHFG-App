@@ -22,7 +22,7 @@
 		<jersey-version>1.18</jersey-version>
 		<twitter4j-version>3.0.5</twitter4j-version>
 		<logback-version>1.1.2</logback-version>
-		
+
 		<java-version>1.7</java-version>
 	</properties>
 
@@ -283,6 +283,13 @@
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>4.11</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-core</artifactId>
+				<version>1.9.5</version>
 				<scope>test</scope>
 			</dependency>
 		</dependencies>
