@@ -231,3 +231,8 @@ div.ui-header {
 #pointDescription ul {
     margin-top: 0;
 }
+
+div.tweet p.message a {
+    color: #6699cc;
+    font-weight: normal;
+}
