@@ -30,7 +30,6 @@
 			<scope>runtime</scope>
 		</dependency>
 
-
 		<dependency>
 			<groupId>org.ehfg</groupId>
 			<artifactId>app-external</artifactId>
@@ -79,21 +78,78 @@
 		</dependency>
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.4</version>
+	<profiles>
+		<profile>
+			<id>server</id>
+			
+			<properties>
+				<mobile-path>../mobile-app/www</mobile-path>
+			</properties>
+			
+			<build>
+				<plugins>
+					<!-- war plugin has to be specified before the antrun plugin - otherwise build would break -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.4</version>
 
-				<configuration>
-					<webResources>
-						<resource>
-							<directory>../mobile-app/www</directory>
-						</resource>
-					</webResources>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+						<configuration>
+							<webResources>
+								<resource>
+									<directory>${mobile-path}</directory>
+									<excludes>
+										<exclude>**/config-tmp.js</exclude>
+										<exclude>**/config-server.js</exclude>
+									</excludes>
+								</resource>
+							</webResources>
+							
+							<warSourceExcludes>**/config-tmp.js,**/config-server.js</warSourceExcludes>
+						</configuration>
+					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<version>1.7</version>
+
+						<executions>
+							<execution>
+								<id>prepare-backup</id>
+								<phase>prepare-package</phase>
+								<configuration>
+									<target>
+										<!-- backup the local config.js file -->
+										<copy file="${mobile-path}/js/config.js" tofile="${mobile-path}/js/config-tmp.js" />
+										
+										<!-- rename config-server.js to config.js -->
+										<copy file="${mobile-path}/js/config-server.js" tofile="${mobile-path}/js/config.js" />
+									</target>
+								</configuration>
+
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+
+							<execution>
+								<id>retrieve-backup</id>
+								<phase>package</phase>
+								<configuration>
+									<target>
+										<!-- copy back the previously file from backup -->
+										<move file="${mobile-path}/js/config-tmp.js" tofile="${mobile-path}/js/config.js" />
+									</target>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
