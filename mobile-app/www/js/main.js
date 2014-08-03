@@ -23,7 +23,15 @@ $('#speaker-detail').on(PAGE_EVENT, function() {
 
         $('#speakerDetailHeader').text(speaker.fullName);
         $('#speakerDescription').html(speaker.description);
-        $('#speakerImage').attr('src', speaker.imageUrl);
+
+        var imageUrls = speaker.imageUrl.split("/");
+        var imageUrl = '/img/' + imageUrls[imageUrls.length-1];
+
+        $.get(imageUrl).done(function() {
+            $('#speakerImage').attr('src', imageUrl);
+        }).error(function() {
+            $('#speakerImage').attr('src', speaker.imageUrl);
+        });
 
         sessionService().findBySpeakerId(speaker.id, function(sessions) {
             createListView('speakerSessionList', sessions, 'name', 'session-detail', 'id');

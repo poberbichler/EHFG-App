@@ -54,7 +54,7 @@ public abstract class AbstractSpeakerRepository implements SpeakerRepository {
 				description = StringUtils.removeStart(description.trim(), ",");
 
 				speakerList.add(new SpeakerDTO.Builder().id(speaker.getId()).firstName(speaker.getFirstname())
-						.lastName(speaker.getLastname()).description(description).imageUrl("").build());
+						.lastName(speaker.getLastname()).description(description).imageUrl(speaker.getImagePath().trim()).build());
 
 			}
 

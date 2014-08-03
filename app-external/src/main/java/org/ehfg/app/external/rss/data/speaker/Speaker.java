@@ -12,15 +12,18 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 public class Speaker {
 	@XmlElement
 	private String id;
-	
+
 	@XmlElement
 	private String lastname;
-	
+
 	@XmlElement
 	private String firstname;
-	
+
 	@XmlElement
 	private String bio;
+
+	@XmlElement(name = "imgpath")
+	private String imagePath;
 
 	public String getId() {
 		return id;
@@ -53,7 +56,15 @@ public class Speaker {
 	public void setBio(String bio) {
 		this.bio = bio;
 	}
-	
+
+	public String getImagePath() {
+		return imagePath;
+	}
+
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
+
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
