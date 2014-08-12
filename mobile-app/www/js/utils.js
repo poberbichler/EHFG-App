@@ -204,7 +204,7 @@ var addMarker = function(map, positionData) {
     var marker = new google.maps.Marker({
         position: position,
         map: map,
-        icon: 'img/marker.png'
+        icon: 'img/marker2.png'
     });
 
     var createDialog = (function(data) {
