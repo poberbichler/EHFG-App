@@ -25,7 +25,7 @@ $('#speaker-detail').on(PAGE_EVENT, function() {
         $('#speakerDescription').html(speaker.description);
 
         var imageUrls = speaker.imageUrl.split("/");
-        var imageUrl = '/img/' + imageUrls[imageUrls.length-1];
+        var imageUrl = '/img/speakers/' + imageUrls[imageUrls.length-1];
 
         $.get(imageUrl).done(function() {
             $('#speakerImage').attr('src', imageUrl);
