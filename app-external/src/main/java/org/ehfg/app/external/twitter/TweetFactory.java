@@ -33,7 +33,8 @@ public class TweetFactory {
 
 			else if (urlMap.containsKey(split)) {
 				URLEntity urlEntity = urlMap.get(split);
-				split = String.format("<a href=\"%s\" target=\"_blank\">%s</a>", urlEntity.getExpandedURL(), urlEntity.getDisplayURL());
+				//split = String.format("<a href=\"%s\" target=\"_blank\">%s</a>", urlEntity.getExpandedURL(), urlEntity.getDisplayURL());
+				split = String.format("<a href=\"#\" onclick=\"window.open('%s', '_blank')\">%s</a>", urlEntity.getExpandedURL(), urlEntity.getDisplayURL());
 			}
 
 			builder.append(split).append(" ");

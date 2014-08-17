@@ -12,6 +12,20 @@ var speakerService = function(){
 
         findById: function(speakerId, callback) {
             checkForItemById(SPEAKER, speakerId, callback);
+        },
+
+        findByIds: function(speakerIds, callback) {
+            var result = [];
+            checkForItem(SPEAKER, function(speakers) {
+                for (var i in speakers) {
+                    var speaker = speakers[i];
+                    if (speakerIds.indexOf(speaker.id) !== -1) {
+                        result.push(speaker);
+                    }
+                }
+            });
+
+            callback(result);
         }
     };
 };
@@ -55,24 +69,28 @@ var sessionService = function() {
 
                 callback(result);
             })
+        },
+
+        findCurrentSessions: function(callback) {
+            var currentTimestamp = new Date().getTime();
+            checkForItem(SESSION, function(days) {
+                var result = [];
+                for (var i in days) {
+                    var sessions = days[i].sessions;
+                    for (var j in sessions) {
+                        var session = sessions[j];
+                        if (session.startTime > currentTimestamp && session.endTime < currentTimestamp) {
+                            result.push(session);
+                        }
+                    }
+                }
+
+                callback(result);
+            });
         }
     };
 };
 
-/**
- * service layer for the various location queries
- */
-var locationService = function() {
-    var locations = [{id: 0, name: 'Congress Center 1'},
-        {id: 1, name: 'Congress Center 2'},
-        {id: 2, name: 'Kursaal A'},
-        {id: 3, name: 'Kursaal B'}
-    ];
-
-    return {
-
-    };
-};
 /**
  * checks for a specific item in the local storage, and returns an object containing the data
  * if nothing is found in the local storage, data will be fetched from the backend
@@ -81,7 +99,9 @@ var locationService = function() {
  */
 var checkForItem = function(itemName, callback) {
     var data = localStorage.getItem(itemName);
-    if (data === null) {
+
+    // the string '[]' has length of 2, so there is no data, just an empty array
+    if (data === null || data.length === 2) {
         restCall(itemName + '/all', function(result) {
             localStorage.setItem(itemName, JSON.stringify(result));
             callback(result);

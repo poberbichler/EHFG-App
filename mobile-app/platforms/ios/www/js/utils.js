@@ -56,15 +56,34 @@ var createSessionList = function(elementId, source) {
     var list = $('#' + elementId);
     list.children().remove();
 
-    var item = '';
-    $.each(source, function(dayIndex, currentDay) {
-        item += '<li class="test">' + currentDay.description + '</li>';
+    var favouriteSessionSelected = isFavouriteSessionSelected();
+    var favouriteSessions = getFavouriteSessions();
+    var item = appendCurrentSessions(source);
 
+    $.each(source, function(dayIndex, currentDay) {
+
+        var sessionItem = '';
         $.each(currentDay.sessions, function(sessionIndex, currentSession) {
-            item += '<li>';
-            item += '<a href="#session-detail?id=' + currentSession.id + '">' + currentSession.name + '</a>';
-            item += '</li>';
+            // favourite session selected, and list contains current session
+            if (favouriteSessionSelected && favouriteSessions.indexOf(currentSession.id) !== -1) {
+                sessionItem += '<li>';
+                sessionItem += '<a href="#session-detail?id=' + currentSession.id + '">' + currentSession.code + ' - ' + currentSession.name + '</a>';
+                sessionItem += '</li>';
+            }
+
+            // add every session
+            else if (!favouriteSessionSelected) {
+                sessionItem += '<li>';
+                sessionItem += '<a href="#session-detail?id=' + currentSession.id + '">' + currentSession.code + ' - ' + currentSession.name + '</a>';
+                sessionItem += '</li>';
+            }
         });
+
+
+        if (sessionItem.length !== 0) {
+            item += '<li>' + currentDay.description + '</li>';
+            item += sessionItem;
+        }
     });
 
     list.append(item);
@@ -184,16 +203,28 @@ var addMarker = function(map, positionData) {
 
     var marker = new google.maps.Marker({
         position: position,
-        map: map
+        map: map,
+        icon: 'img/marker2.png'
     });
 
     var createDialog = (function(data) {
         return function() {
             $('#pointHeader').text(data.name);
-            $('#pointDescription').text(data.description);
+            $('#pointDescription').html(data.description);
             $('#pointAddress').text(data.address);
-            $('#pointContact').text(data.contact);
-            $('#pointWebsite').text(data.website);
+
+
+            var contact = $('#pointContact');
+            contact.text(data.contact);
+            if (data.contact === null || data.contact.length === 0) {
+                contact.parent().hide();
+            }
+            
+            var website = $('#pointWebsite');
+            website.text(data.website);
+            if (data.website === null || data.contact.length === 0) {
+                website.parent().hide();
+            }
 
             $('#map-dialog').css('display', '');
             $('#map-dialog').popup({theme: 'a'}).popup('open');
@@ -203,9 +234,52 @@ var addMarker = function(map, positionData) {
     google.maps.event.addListener(marker, 'click', createDialog);
 }
 
-/**
- * checks whether the client is using an iphone/ipod or not...
- */
-var clientIsIphone = function() {
-    return navigator.userAgent.match(/iPhone/i) != null || navigator.userAgent.match(/iPod/i) != null;
+var appendCurrentSessions = function(sessionList) {
+    var currentSessions = [];
+    var currentTimestamp = new Date().getTime();
+    var item = '';
+
+    for (var i in sessionList) {
+        var sessions = sessionList[i].sessions;
+        for (var j in sessions) {
+            var session = sessions[j];
+            if (session.start < currentTimestamp && currentTimestamp < session.end) {
+                currentSessions.push(session);
+            }
+        }
+    }
+
+    if (currentSessions.length != 0) {
+        item += "<li>What's going on right now?</li>";
+        for (var i in currentSessions) {
+            var session = currentSessions[i];
+            item += '<li>';
+            item += '<a href="#session-detail?id="' + session.id + '">' + session.name + '</a>';
+            item += '</li>';
+        }
+    }
+
+    return item;
+}
+
+
+Date.prototype.toSessionTime = function() {
+    var hours = this.getHours();
+    var minutes = this.getMinutes();
+
+    var result = '';
+
+    if (hours < 10) {
+        result += '0';
+    }
+
+    result += hours + ':';
+
+    if (minutes < 10) {
+        result += '0';
+    }
+
+    result += minutes;
+
+    return result;
 }
