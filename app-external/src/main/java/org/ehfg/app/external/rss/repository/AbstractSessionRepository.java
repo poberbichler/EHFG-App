@@ -92,4 +92,26 @@ public abstract class AbstractSessionRepository implements SessionRepository {
 		logger.error("did not receive data for {}", RssSpeakerEvents.class.getName());
 		return Collections.emptyMap();
 	}
+	
+	@Override
+	public List<SessionDTO> findAll() {
+		return new ArrayList<>(dataCache.values());
+	}
+	
+	@Override
+	public SessionDTO findById(Long sessionId) {
+		return dataCache.get(sessionId.toString());
+	}
+	
+	@Override
+	public List<SessionDTO> findBySpeaker(Long speakerId) {
+		final List<SessionDTO> result = new ArrayList<>();
+		for (final SessionDTO session : dataCache.values()) {
+			if (session.getSpeakers().contains(speakerId)) {
+				result.add(session);
+			}
+		}
+
+		return result;
+	}
 }

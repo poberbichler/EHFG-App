@@ -28,7 +28,7 @@ import twitter4j.TwitterStreamFactory;
  */
 @Component("twitterStreamingFacade")
 class TwitterStreamingFacadeImpl implements TwitterStreamingFacade {
-	private final Map<String, TwitterStream> streams = new HashMap<String, TwitterStream>();
+	private final Map<String, TwitterStream> streams = new HashMap<>();
 	private final TwitterStreamFactory streamFactory;
 	private final PersistenceStreamListenerFactory listenerFactory;
 	private final AppConfigRepository configRepository;
@@ -83,7 +83,7 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade {
 
 	@Override
 	public List<String> findAllListeners() {
-		return new ArrayList<String>(streams.keySet());
+		return new ArrayList<>(streams.keySet());
 	}
 
 	@Override

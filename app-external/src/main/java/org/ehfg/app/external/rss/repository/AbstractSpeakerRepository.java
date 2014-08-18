@@ -39,7 +39,7 @@ public abstract class AbstractSpeakerRepository implements SpeakerRepository {
 					filterCounter++;
 					continue;
 				}
-				
+
 				// TODO: superawesome regexp would be better
 				String description = EscapeUtils.escapeText(speaker.getBio());
 				description = StringUtils.remove(description.trim(), "<strong>");
@@ -59,7 +59,7 @@ public abstract class AbstractSpeakerRepository implements SpeakerRepository {
 			}
 
 			logger.info("filtered {} speakers", filterCounter);
-			
+
 			Collections.sort(speakerList);
 			for (SpeakerDTO speaker : speakerList) {
 				dataCache.put(speaker.getId(), speaker);
@@ -70,4 +70,15 @@ public abstract class AbstractSpeakerRepository implements SpeakerRepository {
 			logger.error("did not receive data for {}", RssSpeaker.class.getName());
 		}
 	}
+
+	@Override
+	public SpeakerDTO findById(Long speakerId) {
+		return dataCache.get(speakerId);
+	}
+
+	@Override
+	public List<SpeakerDTO> findAll() {
+		return new ArrayList<>(dataCache.values());
+	}
+
 }

@@ -1,8 +1,5 @@
 package org.ehfg.app.external.rss.repository.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.ehfg.app.api.dto.SpeakerDTO;
 import org.ehfg.app.external.rss.data.speaker.RssSpeaker;
 import org.ehfg.app.external.rss.repository.AbstractSpeakerRepository;
@@ -20,16 +17,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Profile({ "!mock" })
 class SpeakerRepositoryImpl extends AbstractSpeakerRepository implements ApplicationListener<DataUpdatedEvent> {
-	@Override
-	public SpeakerDTO findById(Long speakerId) {
-		return dataCache.get(speakerId.toString());
-	}
-
-	@Override
-	public List<SpeakerDTO> findAll() {
-		return new ArrayList<>(dataCache.values());
-	}
-
 	@Override
 	public void onApplicationEvent(DataUpdatedEvent event) {
 		super.fillCache(event.getDataForClass(RssSpeaker.class));

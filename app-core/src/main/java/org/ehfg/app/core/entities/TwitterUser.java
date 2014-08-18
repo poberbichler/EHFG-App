@@ -24,7 +24,7 @@ public class TwitterUser {
 	private String profileImage;
 
 	@OneToMany(mappedBy = "author")
-	private final List<Tweet> tweets = new ArrayList<Tweet>();
+	private final List<Tweet> tweets = new ArrayList<>();
 
 	public TwitterUser() {
 		
