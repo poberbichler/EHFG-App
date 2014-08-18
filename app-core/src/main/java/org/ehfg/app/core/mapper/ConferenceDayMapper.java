@@ -1,7 +1,7 @@
 package org.ehfg.app.core.mapper;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Collection;
 import java.util.List;
 
 import org.ehfg.app.api.dto.ConferenceDayDTO;
@@ -14,10 +14,10 @@ import org.joda.time.LocalDate;
  */
 public class ConferenceDayMapper {
 	private ConferenceDayMapper() {
-
+		// do not allow instantiation
 	}
 
-	public static final List<ConferenceDay> map(final List<ConferenceDayDTO> source) {
+	public static final List<ConferenceDay> map(final Collection<ConferenceDayDTO> source) {
 		final List<ConferenceDay> result = new ArrayList<>(source.size());
 
 		for (final ConferenceDayDTO day : source) {
@@ -33,10 +33,9 @@ public class ConferenceDayMapper {
 	}
 	
 	public static final List<ConferenceDayDTO> map(final Iterable<ConferenceDay> source) {
-		final Iterator<ConferenceDay> iterator = source.iterator();
 		final List<ConferenceDayDTO> result = new ArrayList<>();
-		while (iterator.hasNext()) {
-			result.add(map(iterator.next()));
+		for (final ConferenceDay day : source) {
+			result.add(map(day));
 		}
 		
 		return result;

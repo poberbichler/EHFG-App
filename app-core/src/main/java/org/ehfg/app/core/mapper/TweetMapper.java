@@ -1,6 +1,7 @@
 package org.ehfg.app.core.mapper;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -14,9 +15,10 @@ import org.ehfg.app.core.entities.TwitterUser;
  */
 public class TweetMapper {
 	private TweetMapper() {
+		// do not allow instantiation
 	}
 
-	public static final List<TweetDTO> map(final List<Tweet> source) {
+	public static final List<TweetDTO> map(final Collection<Tweet> source) {
 		if (source == null) {
 			return Collections.emptyList();
 		}
