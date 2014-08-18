@@ -16,8 +16,6 @@ public interface TwitterFacade {
 	void removeStream(String hashtag);
 	
 	List<TweetDTO> findAllTweets();
-	List<TweetDTO> findByHashtag(String hashtag);
-	List<TweetDTO> findTweetsForCongress();
 	String findHashtag();
 	
 	List<TweetDTO> findNewerTweetsForCongress(Date lastTweet);

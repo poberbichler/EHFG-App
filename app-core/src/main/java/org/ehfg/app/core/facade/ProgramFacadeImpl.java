@@ -50,11 +50,6 @@ public class ProgramFacadeImpl implements ProgramFacade {
 	}
 
 	@Override
-	public SpeakerDTO findSpeakerById(Long speakerId) {
-		return speakerRepository.findById(speakerId);
-	}
-
-	@Override
 	public Map<ConferenceDayDTO, List<SessionDTO>> findAllSessions() {
 		final Map<ConferenceDayDTO, List<SessionDTO>> result = new TreeMap<>();
 		final List<ConferenceDayDTO> conferenceDays = ConferenceDayMapper.map(conferenceDayRepository.findAll());
@@ -98,21 +93,6 @@ public class ProgramFacadeImpl implements ProgramFacade {
 	}
 
 	@Override
-	public SessionDTO findSessionById(Long sessionId) {
-		return sessionRepository.findById(sessionId);
-	}
-
-	@Override
-	public List<SessionDTO> findSessionsBySpeaker(Long speakerId) {
-		return sessionRepository.findBySpeaker(speakerId);
-	}
-
-	@Override
-	public List<SessionDTO> findSessionByDay() {
-		return null;
-	}
-
-	@Override
 	public List<ConferenceDayDTO> findDays() {
 		List<ConferenceDayDTO> result = ConferenceDayMapper.map(conferenceDayRepository.findAll());
 		Collections.sort(result);
@@ -126,12 +106,6 @@ public class ProgramFacadeImpl implements ProgramFacade {
 		final List<ConferenceDay> source = ConferenceDayMapper.map(dayList);
 		conferenceDayRepository.deleteAll();
 		conferenceDayRepository.save(source);
-	}
-
-	@Override
-	@Transactional(readOnly = false)
-	public void removeDay(Long dayId) {
-		conferenceDayRepository.delete(dayId);
 	}
 
 	@Override

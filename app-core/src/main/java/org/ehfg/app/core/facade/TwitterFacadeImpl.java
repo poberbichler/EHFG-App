@@ -57,17 +57,6 @@ public class TwitterFacadeImpl implements TwitterFacade {
 	}
 
 	@Override
-	public List<TweetDTO> findByHashtag(String hashtag) {
-		return tweetRepository.findTweetsByHashtag(hashtag);
-	}
-
-	@Override
-	public List<TweetDTO> findTweetsForCongress() {
-		final ConfigurationDTO config = configRepository.find();
-		return tweetRepository.findTweetsByHashtag(config.getHashtag());
-	}
-
-	@Override
 	public String findHashtag() {
 		return configRepository.find().getHashtag();
 	}
