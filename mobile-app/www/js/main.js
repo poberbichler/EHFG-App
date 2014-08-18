@@ -21,7 +21,7 @@ $('#speaker-detail').on(PAGE_EVENT, function() {
            return;
         }
 
-        $('#speakerDetailHeader').text(speaker.fullName);
+        $('#speakerDetailHeader').html(speaker.fullName);
         $('#speakerDescription').html(speaker.description);
 
         var imageUrls = speaker.imageUrl.split("/");
