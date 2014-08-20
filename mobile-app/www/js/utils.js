@@ -51,6 +51,7 @@ var createListView = function(elementId, source, labelField, page, pageField) {
             list.append(item);
         });
 
+        list.show();
         list.listview('refresh');
     }
 

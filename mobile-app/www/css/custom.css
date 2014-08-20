@@ -186,6 +186,14 @@ li a.ui-btn.ui-btn-icon-right.ui-icon-carat-r.ui-btn-active:hover {
     padding-top: 0;
 }
 
+.default-top-padding {
+    padding-top: 40px;
+}
+
+.detail-top-padding {
+    padding-top: 50px;
+}
+
 div.ui-navbar ul.ui-grid-c a.ui-btn {
     font-weight: bold;
     background-color: rgb(225, 225, 225);

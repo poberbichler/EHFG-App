@@ -17,12 +17,12 @@
 <body>
     <!-- NEWS FEED -->
     <div data-role="page" id="newsfeed" data-override-header="feed">
-        <div data-role="header">
+        <div data-role="header" data-position="fixed">
             <img src="img/ehfglogo.png" class="ehfg-logo" />
             <h1>News Feed</h1>
         </div>
 
-        <div data-role="main" class="ui-content">
+        <div data-role="main" class="ui-content detail-top-padding">
             <div id="twitter-container">
                 <div class="header">
                     <h1 id="hashtag">#EHFG</h1>
@@ -39,12 +39,12 @@
 
     <!-- SPEAKERS -->
     <div data-role="page" id="speaker" data-override-header="speaker">
-        <div data-role="header">
+        <div data-role="header" data-position="fixed">
             <img src="img/ehfglogo.png" class="ehfg-logo" />
             <h1>Speakers</h1>
         </div>
 
-        <div role="main" class="ui-content remove-top-padding">
+        <div role="main" class="ui-content default-top-padding">
             <ul id="speakerList" data-role="listview" data-filter="true"/>
         </div>
     </div>
@@ -52,12 +52,12 @@
 
     <!-- SPEAKER DETAILS -->
     <div data-role="page" id="speaker-detail" data-override-header="speaker">
-        <div data-role="header">
+        <div data-role="header" data-position="fixed">
             <img src="img/ehfglogo.png" class="ehfg-logo" />
             <h1 id="speakerDetailHeader" />
         </div>
 
-        <div role="main" class="ui-content">
+        <div role="main" class="ui-content detail-top-padding">
             <div class="ui-body ui-body-a ui-corner-all">
                 <img id="speakerImage" style="margin-top: 10px;"></img>
                 <p id="speakerDescription" />
@@ -72,12 +72,12 @@
 
     <!-- SESSIONS -->
     <div data-role="page" id="session" data-override-header="session">
-        <div data-role="header">
+        <div data-role="header" data-position="fixed">
             <img src="img/ehfglogo.png" class="ehfg-logo" />
             <h1>Sessions</h1>
         </div>
 
-        <div role="main" class="ui-content remove-top-padding">
+        <div role="main" class="ui-content default-top-padding">
             <ul id="sessionList" data-role="listview" data-filter="true"></ul>
         </div>
     </div>
@@ -85,12 +85,12 @@
 
     <!-- SESSION DETAILS -->
     <div data-role="page" id="session-detail" data-override-header="session">
-        <div data-role="header">
+        <div data-role="header" data-position="fixed">
             <img src="img/ehfglogo.png" class="ehfg-logo" />
             <h1 id="session-header"/>
         </div>
 
-        <div role="main" class="ui-content">
+        <div role="main" class="ui-content default-top-padding">
             <p style="margin-bottom: 0px;">
                 <span id="sessionTime"></span>
                 &nbsp;|&nbsp;
@@ -108,7 +108,7 @@
 
     <!-- MAPS -->
     <div data-role="page" id="map">
-        <div data-role="header">
+        <div data-role="header" data-position="fixed">
             <img src="img/ehfglogo.png" class="ehfg-logo" />
             <h1>Map</h1>
         </div>
