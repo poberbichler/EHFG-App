@@ -21,7 +21,7 @@ public class SpeakerDTO implements Comparable<SpeakerDTO> {
 	private String imageUrl;
 
 	public SpeakerDTO() {
-		// needed for jaxrs
+		// needed for JAXRS
 	}
 	
 	private SpeakerDTO(Builder builder) {
