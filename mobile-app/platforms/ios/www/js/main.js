@@ -21,12 +21,14 @@ $('#speaker-detail').on(PAGE_EVENT, function() {
            return;
         }
 
-        $('#speakerDetailHeader').text(speaker.fullName);
+        $('#speakerDetailHeader').html(speaker.fullName);
         $('#speakerDescription').html(speaker.description);
 
+        console.log('speakers has imageurl', speaker.imageUrl);
         var imageUrls = speaker.imageUrl.split("/");
-        var imageUrl = '/img/speakers/' + imageUrls[imageUrls.length-1];
+        var imageUrl = 'img/speakers/' + imageUrls[imageUrls.length-1];
 
+        console.log('query for', imageUrl, imageUrls)
         $.get(imageUrl).done(function() {
             $('#speakerImage').attr('src', imageUrl);
         }).error(function() {

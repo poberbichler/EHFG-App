@@ -24,32 +24,41 @@ var createListView = function(elementId, source, labelField, page, pageField) {
         }
     });
 
-    $.each(source, function(index, current) {
-        var item = new String();
-        item += '<li data-dynamic-creation="true">';
-        if (page !== undefined) {
-            item += "<a href=#";
-            item += page;
+    // if the source is empty, do not iterate over the elements
+    if (source != null && source != undefined && source.length != 0) {
+        $.each(source, function(index, current) {
+            var item = new String();
+            item += '<li data-dynamic-creation="true">';
+            if (page !== undefined) {
+                item += "<a href=#";
+                item += page;
 
-            if (pageField !== undefined) {
-                item += "?id=";
-                item += current[pageField];
+                if (pageField !== undefined) {
+                    item += "?id=";
+                    item += current[pageField];
+                }
+
+                item += ">";
             }
 
-            item += ">";
-        }
+            item += current[labelField !== undefined ? labelField : 'name'];
 
-        item += current[labelField !== undefined ? labelField : 'name'];
+            if (page !== undefined) {
+                item += "</a>";
+            }
 
-        if (page !== undefined) {
-            item += "</a>";
-        }
+            item += "</li>";
+            list.append(item);
+        });
 
-        item += "</li>";
-        list.append(item);
-    });
+        list.show();
+        list.listview('refresh');
+    }
 
-    list.listview('refresh');
+    // and also hide the list
+    else {
+        list.hide();
+    }
 };
 
 var createSessionList = function(elementId, source) {
