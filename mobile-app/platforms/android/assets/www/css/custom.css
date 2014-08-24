@@ -1,0 +1,246 @@
+#map {
+    height: 100%;
+}
+
+#map-canvas {
+    height: 100%;
+    width: 100%;
+}
+
+#map-parent {
+    height: 100%;
+    width: 100%;
+}
+
+#twitter-widget-0 {
+    height: 100%;
+    max-height: 100%;
+}
+
+#twitter-wrapper {
+    height: 100%;
+}
+
+div.timeline-footer {
+    display: none;
+}
+
+#twitter-container {
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #e8e8e8;
+    max-width: 500px;
+}
+
+#twitter-container .header {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 10px;
+    position: relative;
+}
+
+#twitter-container .header .twitter-logo {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#twitter-container .header h1 {
+    font-size: 22px;
+    line-height: 22px;
+    margin: 0 0 0 25px;
+}
+
+.tweet {
+    position: relative;
+    padding: 10px 0;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.tweet.last {
+    border-bottom: 0;
+}
+
+.tweet .names {
+    font-size: 14px;
+    padding: 0 7px 0 60px;
+    white-space: nowrap;
+}
+
+.tweet .names .name-wrapper {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-right: 73px;
+}
+
+.tweet .names .full-name {
+    font-weight: bold;
+}
+
+.tweet .nickname {
+    padding-left: 4px;
+    font-size: 12px;
+    color: #66757f;
+}
+
+.tweet .timestamp {
+    float: right;
+    font-size: 12px;
+    color: #66757f;
+    margin-top: -15px;
+}
+
+
+.tweet .message {
+    margin: 0;
+    padding: 0 7px 0 60px;
+    font-size: 14px;
+    line-height: 16px;
+    min-height: 32px;
+}
+
+.tweet .profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    position: absolute;
+    left: 5px;
+}
+
+#refresh-icon {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#more-tweets {
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #EFEFEF;
+}
+
+div.ui-content {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#speakerImage {
+    width: 10%;
+    height: 10%;
+    min-width: 120px;
+    min-height: 180px;
+}
+
+#session-header, #speakerDetailHeader {
+    width: 75%;
+    margin: auto;
+}
+
+span.hashtag {
+    color: #6699cc;
+}
+
+div.ui-header.ui-bar-a h1.ui-title {
+    color: white;
+    text-shadow: 0px 1px 0px rgb(50, 50, 50);
+    outline-color: black;
+}
+
+#more-tweets {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#panelList li.ui-li-divider,
+.ui-li-static.ui-body-inherit {
+    font-weight: bolder;
+    background-color: rgb(225, 225, 225);
+    font-size: 1em;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+li a.ui-btn {
+    font-weight: normal;
+}
+
+li a.ui-btn.ui-btn-icon-right.ui-icon-carat-r:hover {
+    background-color: #f6f6f6;
+}
+
+#panelList li a.ui-btn.ui-btn-icon-right {
+    background-color: #f6f6f6;
+    color: black;
+}
+
+#panelList li a.ui-btn.ui-btn-icon-right.ui-btn-active:hover,
+li a.ui-btn.ui-btn-icon-right.ui-icon-carat-r.ui-btn-active:hover {
+    background-color: #6699cc;
+}
+
+.remove-top-padding {
+    padding-top: 0;
+}
+
+.default-top-padding {
+    padding-top: 40px;
+}
+
+.detail-top-padding {
+    padding-top: 50px;
+}
+
+div.ui-navbar ul.ui-grid-c a.ui-btn {
+    font-weight: bold;
+    background-color: rgb(225, 225, 225);
+    border-color: rgb(150, 150, 150);
+}
+
+div.ui-navbar ul.ui-grid-c a.ui-btn.ui-btn-active,
+div.ui-header.ui-bar-a {
+    background-color: #6699cc;
+}
+
+#footer {
+    border-top-color: rgb(150, 150, 150);
+    border-bottom: 0;
+}
+
+div.ui-header {
+    border-top: 0;
+}
+
+#settingsButton {
+    border-color: #6699cc;
+    background-color: #6699cc;
+}
+
+#settingsPanel {
+    background-color: #f6f6f6;
+}
+
+#panelList li, #panelList a {
+    border-color: #dddddd;
+}
+
+#panelList li.selected .ui-icon-check:after{
+    background-color: #6699cc;
+}
+
+.ehfg-logo {
+    height: 42px;
+    position: absolute;
+}
+
+#pointDescription ul {
+    margin-top: 0;
+}
+
+div.tweet p.message a {
+    color: #6699cc;
+    font-weight: normal;
+}

@@ -266,3 +266,11 @@ Terminating in response to SpringBoard's termination.
 2014-08-21 19:38:16.643 EHFG[26679:70b] Unlimited access to network resources
 2014-08-21 19:38:17.148 EHFG[26679:70b] Resetting plugins due to page load.
 2014-08-21 19:38:18.880 EHFG[26679:70b] Finished load of: file:///Users/patrick/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/9F804247-D7FB-4583-8003-43C6D31769B8/EHFG.app/www/index.html
+2014-08-24 16:12:49.849 EHFG[32159:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-24 16:12:49.875 EHFG[32159:70b] Unlimited access to network resources
+2014-08-24 16:12:50.196 EHFG[32159:70b] Resetting plugins due to page load.
+2014-08-24 16:12:50.910 EHFG[32159:70b] Finished load of: file:///Users/patrick/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/9F804247-D7FB-4583-8003-43C6D31769B8/EHFG.app/www/index.html
+2014-08-24 16:31:49.684 EHFG[34115:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-24 16:31:49.697 EHFG[34115:70b] Unlimited access to network resources
+2014-08-24 16:31:49.842 EHFG[34115:70b] Resetting plugins due to page load.
+2014-08-24 16:31:50.545 EHFG[34115:70b] Finished load of: file:///Users/patrick/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/9F804247-D7FB-4583-8003-43C6D31769B8/EHFG.app/www/index.html
