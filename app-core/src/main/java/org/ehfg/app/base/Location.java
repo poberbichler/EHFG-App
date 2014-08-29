@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @since 19.07.2014
  */
 @Entity
-public class Location {
+final class Location {
 	@Id
 	@GeneratedValue
 	private Long id;

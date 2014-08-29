@@ -1,5 +1,5 @@
 package org.ehfg.app.web.pages;
 
-public class SessionDetails {
+public final class SessionDetails {
 
 }

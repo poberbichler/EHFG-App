@@ -10,7 +10,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @author patrick
  * @since 02.03.2014
  */
-public class CoordinateDTO {
+public final class CoordinateDTO {
 	@NotNull
 	private Double xValue;
 

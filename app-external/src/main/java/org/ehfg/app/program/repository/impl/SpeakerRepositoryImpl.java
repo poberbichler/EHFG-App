@@ -1,8 +1,8 @@
 package org.ehfg.app.program.repository.impl;
 
+import org.ehfg.app.program.AbstractSpeakerRepository;
 import org.ehfg.app.program.SpeakerDTO;
 import org.ehfg.app.program.data.speaker.RssSpeaker;
-import org.ehfg.app.program.repository.AbstractSpeakerRepository;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;

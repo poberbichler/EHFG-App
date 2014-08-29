@@ -24,7 +24,7 @@ import org.ehfg.app.web.components.BootstrapLayout;
  * @author patrick
  * @since 14.03.2014
  */
-public class TwitterStreamMaintenance {
+public final class TwitterStreamMaintenance {
 	@Component
 	private BootstrapLayout layout;
 

@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
  * @author patrick
  * @since 22.06.2014
  */
-public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
+public final class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
 	private static final Logger logger = LoggerFactory.getLogger(LocalDateAdapter.class);
 	
 	@Override

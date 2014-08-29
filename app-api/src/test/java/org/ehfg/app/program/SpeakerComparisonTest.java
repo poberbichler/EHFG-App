@@ -13,7 +13,7 @@ import org.junit.Test;
  * @since 05.07.2014
  */
 @Ignore
-public class SpeakerComparisonTest {
+public final class SpeakerComparisonTest {
 	@Test
 	public void shouldReturn0forSameSpeaker() {
 		assertEquals(0, speaker("a", "b").compareTo(speaker("a", "b")));

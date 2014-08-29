@@ -12,7 +12,7 @@ import org.ehfg.app.web.components.BootstrapLayout;
  * @author patrick
  * @since 26.04.2014
  */
-public class Login {
+public final class Login {
 	@Component(parameters = {"hideSidebar=true"})
 	private BootstrapLayout layout;
 	

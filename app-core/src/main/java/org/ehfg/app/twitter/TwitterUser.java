@@ -15,7 +15,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @since 13.03.2014
  */
 @Entity
-public class TwitterUser {
+final class TwitterUser {
 	@Id
 	private Long id;
 

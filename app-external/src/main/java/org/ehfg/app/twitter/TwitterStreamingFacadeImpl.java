@@ -10,10 +10,8 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 import org.apache.commons.lang3.BooleanUtils;
-import org.ehfg.app.base.AppConfigRepository;
 import org.ehfg.app.base.ConfigurationDTO;
-import org.ehfg.app.twitter.TweetDTO;
-import org.ehfg.app.twitter.TwitterStreamingFacade;
+import org.ehfg.app.base.MasterDataFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -31,24 +29,23 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade {
 	private final Map<String, TwitterStream> streams = new HashMap<>();
 	private final TwitterStreamFactory streamFactory;
 	private final PersistenceStreamListenerFactory listenerFactory;
-	private final AppConfigRepository configRepository;
+	private final MasterDataFacade masterDataFacade;
 
 	@Value("${twitter.default.listener.start}")
 	private Boolean defaultStartup;
 
 	@Autowired
-	public TwitterStreamingFacadeImpl(TwitterStreamFactory streamFactory,
-			PersistenceStreamListenerFactory listenerFactory, AppConfigRepository configRepository) {
-		super();
+	public TwitterStreamingFacadeImpl(TwitterStreamFactory streamFactory, PersistenceStreamListenerFactory listenerFactory,
+			MasterDataFacade masterDataFacade) {
 		this.streamFactory = streamFactory;
 		this.listenerFactory = listenerFactory;
-		this.configRepository = configRepository;
+		this.masterDataFacade = masterDataFacade;
 	}
 
 	@PostConstruct
 	private void addDefaultStream() {
 		if (BooleanUtils.isTrue(defaultStartup)) {
-			final ConfigurationDTO config = configRepository.find();
+			final ConfigurationDTO config = masterDataFacade.getAppConfiguration();
 			if (config != null && config.getHashtag() != null) {
 				this.addListener(config.getHashtag());
 			}

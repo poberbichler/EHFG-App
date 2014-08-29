@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @since 13.03.2014
  */
 @Entity
-public class Tweet {
+final class Tweet {
 	@Id
 	private Long id;
 

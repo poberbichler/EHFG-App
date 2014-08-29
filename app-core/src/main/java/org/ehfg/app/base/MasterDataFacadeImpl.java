@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Component
 @Transactional(readOnly = true)
-public class MasterDataFacadeImpl implements MasterDataFacade {
+final class MasterDataFacadeImpl implements MasterDataFacade {
 	private final AppConfigRepository configRepository;
 	private final PointOfInterestRepository pointOfInterestRepository;
 	private final LocationRepository locationRepository;

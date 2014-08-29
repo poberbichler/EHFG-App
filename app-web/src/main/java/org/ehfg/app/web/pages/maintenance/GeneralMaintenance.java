@@ -17,7 +17,7 @@ import org.ehfg.app.web.components.BootstrapLayout;
  * @author patrick
  * @since 14.03.2014
  */
-public class GeneralMaintenance {
+public final class GeneralMaintenance {
 	@Component
 	private BootstrapLayout layout;
 	

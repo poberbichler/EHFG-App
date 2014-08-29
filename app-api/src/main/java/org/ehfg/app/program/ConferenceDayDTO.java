@@ -6,7 +6,7 @@ import org.joda.time.LocalDate;
  * @author patrick
  * @since 04.04.2014
  */
-public class ConferenceDayDTO implements Comparable<ConferenceDayDTO> {
+public final class ConferenceDayDTO implements Comparable<ConferenceDayDTO> {
 	private Long id;
 	private LocalDate day;
 	private String description;

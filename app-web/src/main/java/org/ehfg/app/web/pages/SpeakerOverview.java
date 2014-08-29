@@ -11,7 +11,7 @@ import org.ehfg.app.program.ProgramFacade;
 import org.ehfg.app.program.SpeakerDTO;
 import org.ehfg.app.web.components.BootstrapLayout;
 
-public class SpeakerOverview {
+public final class SpeakerOverview {
 	@Component
 	private BootstrapLayout layout;
 	

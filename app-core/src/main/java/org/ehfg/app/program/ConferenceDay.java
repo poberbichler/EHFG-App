@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @since 04.04.2014
  */
 @Entity
-public class ConferenceDay implements Comparable<ConferenceDay> {
+final class ConferenceDay implements Comparable<ConferenceDay> {
 	@Id
 	@GeneratedValue
 	private Long id;

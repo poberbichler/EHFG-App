@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Component("programFacade")
 @Transactional(readOnly = true)
-public class ProgramFacadeImpl implements ProgramFacade {
+final class ProgramFacadeImpl implements ProgramFacade {
 	private final SpeakerRepository speakerRepository;
 	private final SessionRepository sessionRepository;
 	private final ConferenceDayRepository conferenceDayRepository;

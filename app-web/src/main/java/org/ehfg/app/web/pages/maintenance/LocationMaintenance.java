@@ -25,7 +25,7 @@ import org.ehfg.app.web.components.BootstrapLayout;
  * @author patrick
  * @since 19.07.2014
  */
-public class LocationMaintenance {
+public final class LocationMaintenance {
 	@Component
 	private BootstrapLayout layout;
 

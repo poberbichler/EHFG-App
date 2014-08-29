@@ -9,7 +9,7 @@ import org.springframework.data.repository.CrudRepository;
  * @author patrick
  * @since 19.07.2014
  */
-public interface LocationRepository extends CrudRepository<Location, Long>{
-	@Query("SELECT new org.ehfg.app.api.dto.LocationDTO(l.id, l.name, l.coordinate.xValue, l.coordinate.yValue) FROM Location l")
+interface LocationRepository extends CrudRepository<Location, Long>{
+	@Query("SELECT new org.ehfg.app.base.LocationDTO(l.id, l.name, l.coordinate.xValue, l.coordinate.yValue) FROM Location l")
 	List<LocationDTO> findAllLocations();
 }

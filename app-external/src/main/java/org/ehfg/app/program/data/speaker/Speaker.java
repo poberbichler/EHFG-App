@@ -9,7 +9,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Speaker {
+public final class Speaker {
 	@XmlElement
 	private String id;
 

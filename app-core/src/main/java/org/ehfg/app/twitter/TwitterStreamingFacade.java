@@ -6,7 +6,7 @@ import java.util.List;
  * @author patrick
  * @since 14.03.2014
  */
-public interface TwitterStreamingFacade {
+interface TwitterStreamingFacade {
 	void addListener(String hashtag);
 	void removeListener(String hashtag);
 	List<String> findAllListeners();

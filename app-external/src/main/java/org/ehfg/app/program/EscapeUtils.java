@@ -1,4 +1,4 @@
-package org.ehfg.app.program.repository;
+package org.ehfg.app.program;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.jsoup.Jsoup;

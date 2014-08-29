@@ -9,7 +9,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @author patrick
  * @since 20.03.2014
  */
-public class TweetDTO {
+public final class TweetDTO {
 	private final static int MAX_LENGTH = 30;
 
 	public final String fullName;

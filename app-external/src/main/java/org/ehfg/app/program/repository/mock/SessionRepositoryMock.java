@@ -7,9 +7,9 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
+import org.ehfg.app.program.AbstractSessionRepository;
 import org.ehfg.app.program.data.events.RssEvent;
 import org.ehfg.app.program.data.speakerevents.RssSpeakerEvents;
-import org.ehfg.app.program.repository.AbstractSessionRepository;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;

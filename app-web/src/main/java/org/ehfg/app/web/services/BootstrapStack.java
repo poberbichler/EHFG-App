@@ -9,7 +9,7 @@ import org.apache.tapestry5.services.AssetSource;
 import org.apache.tapestry5.services.javascript.JavaScriptStack;
 import org.apache.tapestry5.services.javascript.StylesheetLink;
 
-public class BootstrapStack implements JavaScriptStack {
+public final class BootstrapStack implements JavaScriptStack {
 	private final Asset[] javascripts;
 	private final StylesheetLink[] stylesheets;
 	

@@ -4,8 +4,8 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import org.ehfg.app.base.AppConfigRepository;
 import org.ehfg.app.base.ConfigurationDTO;
+import org.ehfg.app.base.MasterDataFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,17 +16,16 @@ import org.springframework.stereotype.Component;
  * @since 13.03.2014
  */
 @Component
-public class TwitterFacadeImpl implements TwitterFacade {
+final class TwitterFacadeImpl implements TwitterFacade {
 	private final TweetRepository tweetRepository;
 	private final TwitterStreamingFacade streamingFacade;
-	private final AppConfigRepository configRepository;
-	
+	private final MasterDataFacade masterDataFacade;
+
 	@Autowired
-	public TwitterFacadeImpl(TweetRepository tweetRepository, TwitterStreamingFacade streamingFacade,
-			AppConfigRepository configRepository) {
+	public TwitterFacadeImpl(TweetRepository tweetRepository, TwitterStreamingFacade streamingFacade, MasterDataFacade masterDataFacade) {
 		this.tweetRepository = tweetRepository;
 		this.streamingFacade = streamingFacade;
-		this.configRepository = configRepository;
+		this.masterDataFacade = masterDataFacade;
 	}
 
 	@Override
@@ -51,12 +50,12 @@ public class TwitterFacadeImpl implements TwitterFacade {
 
 	@Override
 	public String findHashtag() {
-		return configRepository.find().getHashtag();
+		return masterDataFacade.getAppConfiguration().getHashtag();
 	}
 
 	@Override
 	public List<TweetDTO> findNewerTweetsForCongress(Date lastTweet) {
-		final ConfigurationDTO config = configRepository.find();
+		final ConfigurationDTO config = masterDataFacade.getAppConfiguration();
 		if (config != null && config.getHashtag() != null) {
 			return tweetRepository.findNewerTweetsByHashtag(config.getHashtag(), lastTweet);
 		}
@@ -66,7 +65,7 @@ public class TwitterFacadeImpl implements TwitterFacade {
 
 	@Override
 	public TweetPageDTO findTweetPage(Integer pageId) {
-		final ConfigurationDTO config = configRepository.find();
+		final ConfigurationDTO config = masterDataFacade.getAppConfiguration();
 		final Page<Tweet> tweets = tweetRepository.findByHashtagOrderByCreationDateDesc(config.getHashtag(),
 				new PageRequest(pageId, config.getNumberOfTweets()));
 

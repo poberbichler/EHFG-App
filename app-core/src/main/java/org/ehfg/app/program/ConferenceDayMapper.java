@@ -10,7 +10,7 @@ import org.joda.time.LocalDate;
  * @author patrick
  * @since 04.04.2014
  */
-public class ConferenceDayMapper {
+final class ConferenceDayMapper {
 	private ConferenceDayMapper() {
 		// do not allow instantiation
 	}

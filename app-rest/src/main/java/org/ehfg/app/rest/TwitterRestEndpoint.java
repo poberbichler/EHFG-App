@@ -22,7 +22,7 @@ import com.sun.jersey.api.json.JSONWithPadding;
  */
 @Component
 @Path("twitter")
-public class TwitterRestEndpoint {
+public final class TwitterRestEndpoint {
 	private final TwitterFacade twitterFacade;
 
 	@Autowired

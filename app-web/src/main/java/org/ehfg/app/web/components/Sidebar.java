@@ -21,7 +21,7 @@ import org.ehfg.app.web.pages.maintenance.PointOfInterestMaintenance;
 import org.ehfg.app.web.pages.maintenance.SessionDayMaintenance;
 import org.ehfg.app.web.pages.maintenance.TwitterStreamMaintenance;
 
-public class Sidebar {
+public final class Sidebar {
 	@Component(parameters = {"source=pageList", "value=currentPage"})
 	private Loop<String> pageLoop;
 	

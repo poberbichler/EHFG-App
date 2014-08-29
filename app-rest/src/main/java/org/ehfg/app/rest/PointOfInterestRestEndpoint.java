@@ -17,7 +17,7 @@ import com.sun.jersey.api.json.JSONWithPadding;
  */
 @Component
 @Path("points")
-public class PointOfInterestRestEndpoint {
+public final class PointOfInterestRestEndpoint {
 	private final MasterDataFacade masterDataFacade;
 
 	@Autowired

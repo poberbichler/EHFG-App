@@ -6,13 +6,13 @@ import javax.persistence.Id;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
- * class for the general configuration of the app
+ * final class for the general configuration of the app
  * 
  * @author patrick
  * @since 14.03.2014
  */
 @Entity
-public class AppConfig {
+public final class AppConfig {
 	public static final Long CONFIG_ID = 42L;
 
 	@Id

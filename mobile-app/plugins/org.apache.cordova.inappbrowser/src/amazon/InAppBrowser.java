@@ -65,7 +65,7 @@ import java.util.HashMap;
 import java.util.StringTokenizer;
 
 @SuppressLint("SetJavaScriptEnabled")
-public class InAppBrowser extends CordovaPlugin {
+public final class InAppBrowser extends CordovaPlugin {
 
     private static final String NULL = "null";
     protected static final String LOG_TAG = "InAppBrowser";
@@ -637,7 +637,7 @@ public class InAppBrowser extends CordovaPlugin {
     /**
      * The webview client receives notifications about appView
      */
-    public class InAppBrowserClient extends AmazonWebViewClient {
+    public final class InAppBrowserClient extends AmazonWebViewClient {
         EditText edittext;
         CordovaWebView webView;
 

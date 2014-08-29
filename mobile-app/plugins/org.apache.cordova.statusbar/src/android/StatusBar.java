@@ -32,7 +32,7 @@ import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PluginResult;
 import org.json.JSONException;
 
-public class StatusBar extends CordovaPlugin {
+public final class StatusBar extends CordovaPlugin {
     private static final String TAG = "StatusBar";
 
     /**

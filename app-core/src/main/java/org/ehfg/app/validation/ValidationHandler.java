@@ -21,15 +21,15 @@ import org.springframework.stereotype.Service;
  */
 @Aspect
 @Service
-class ValidationHandler {
+final class ValidationHandler {
 	private final Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
 	
-	@Pointcut("execution(* *(@org.ehfg.app.api.validation.Validate (*)))")
+	@Pointcut("execution(* *(@org.ehfg.app.validation.Validate (*)))")
 	public void parameterAnnotated() {
 		// pointcut has to be empty 
 	}
 	
-	@Pointcut("execution(@org.ehfg.app.api.validation.Validate * *(*))")
+	@Pointcut("execution(@org.ehfg.app.validation.Validate * *(*))")
 	public void methodAnnotated() {
 		// pointcut has to be empty
 	}

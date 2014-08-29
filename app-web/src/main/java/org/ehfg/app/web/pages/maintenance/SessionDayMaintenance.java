@@ -26,7 +26,7 @@ import org.joda.time.LocalDate;
  * @author patrick
  * @since 04.04.2014
  */
-public class SessionDayMaintenance {
+public final class SessionDayMaintenance {
 	@Component
 	private BootstrapLayout layout;
 

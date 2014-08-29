@@ -17,7 +17,7 @@ import com.sun.jersey.api.json.JSONWithPadding;
  */
 @Component
 @Path("speaker")
-public class SpeakerRestEndpoint {
+public final class SpeakerRestEndpoint {
 	private final ProgramFacade programFacade;
 
 	@Autowired

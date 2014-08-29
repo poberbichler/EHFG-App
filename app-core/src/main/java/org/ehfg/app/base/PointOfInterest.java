@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @since 13.04.2014
  */
 @Entity
-public class PointOfInterest {
+final class PointOfInterest {
 	@Id
 	@GeneratedValue
 	private Long id;

@@ -15,7 +15,7 @@ import org.joda.time.format.DateTimeFormat;
  * @author patrick
  * @since 02.03.2014
  */
-public class SessionDTO implements Comparable<SessionDTO> {
+public final class SessionDTO implements Comparable<SessionDTO> {
 	private String id;
 	private String name;
 	private String description;

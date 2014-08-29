@@ -25,7 +25,7 @@ import com.sun.jersey.api.json.JSONWithPadding;
  */
 @Component
 @Path("session")
-public class SessionRestEndpoint {
+public final class SessionRestEndpoint {
 	private final ProgramFacade programFacade;
 
 	@Autowired

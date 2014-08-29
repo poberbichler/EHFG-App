@@ -9,7 +9,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @author patrick
  * @since 13.04.2014
  */
-public class PointOfInterestDTO {
+public final class PointOfInterestDTO {
 	private Long id;
 
 	@NotNull

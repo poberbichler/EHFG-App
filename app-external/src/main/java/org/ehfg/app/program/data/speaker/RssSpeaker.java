@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "rss")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class RssSpeaker {
+public final class RssSpeaker {
 	@XmlElement
 	private Channel channel;
 

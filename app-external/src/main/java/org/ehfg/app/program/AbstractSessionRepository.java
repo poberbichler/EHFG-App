@@ -1,4 +1,4 @@
-package org.ehfg.app.program.repository;
+package org.ehfg.app.program;
 
 import java.util.ArrayList;
 import java.util.Collections;

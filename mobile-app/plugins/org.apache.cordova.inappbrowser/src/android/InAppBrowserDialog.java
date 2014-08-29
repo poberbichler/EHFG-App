@@ -29,7 +29,7 @@ import org.json.JSONObject;
 /**
  * Created by Oliver on 22/11/2013.
  */
-public class InAppBrowserDialog extends Dialog {
+public final class InAppBrowserDialog extends Dialog {
     Context context;
     InAppBrowser inAppBrowser = null;
 

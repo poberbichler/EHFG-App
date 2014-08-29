@@ -1,9 +1,9 @@
 package org.ehfg.app.program.repository.impl;
 
+import org.ehfg.app.program.AbstractSessionRepository;
 import org.ehfg.app.program.SessionDTO;
 import org.ehfg.app.program.data.events.RssEvent;
 import org.ehfg.app.program.data.speakerevents.RssSpeakerEvents;
-import org.ehfg.app.program.repository.AbstractSessionRepository;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;

@@ -12,7 +12,7 @@ import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.Messages;
 
 @Import(stack = { "bootstrap" })
-public class BootstrapLayout {
+public final class BootstrapLayout {
 	@Property
 	@Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
 	private String title;

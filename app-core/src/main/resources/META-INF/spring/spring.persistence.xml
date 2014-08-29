@@ -26,7 +26,7 @@
 	</bean>
 
 
-	<jpa:repositories base-package="org.ehfg.app.core.repository"
+	<jpa:repositories base-package="org.ehfg.app.base,org.ehfg.app.program,org.ehfg.app.twitter"
 		query-lookup-strategy="create-if-not-found" />
 
 	<tx:annotation-driven transaction-manager="transactionManager" />

@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
  * @author patrick
  * @since 22.06.2014
  */
-public class LocalTimeAdapter extends XmlAdapter<String, LocalTime> {
+public final class LocalTimeAdapter extends XmlAdapter<String, LocalTime> {
 	private static final Logger logger = LoggerFactory.getLogger(LocalTimeAdapter.class);
 	private static final DateTimeFormatter PATTERN = DateTimeFormat.forPattern("HH:mm");
 	

@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @since 25.01.2014
  */
 @XmlAccessorType(XmlAccessType.PROPERTY)
-public class SpeakerDTO implements Comparable<SpeakerDTO> {
+public final class SpeakerDTO implements Comparable<SpeakerDTO> {
 	private String id;
 	private String firstName;
 	private String lastName;

@@ -13,7 +13,7 @@ import com.amazon.android.webkit.AmazonWebStorage;
 import com.amazon.android.webkit.AmazonWebView;
 import com.amazon.android.webkit.AmazonWebViewClient;
 
-public class InAppChromeClient extends AmazonWebChromeClient {
+public final class InAppChromeClient extends AmazonWebChromeClient {
 
     private CordovaWebView webView;
     private String LOG_TAG = "InAppChromeClient";

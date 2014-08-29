@@ -12,7 +12,7 @@ import org.apache.tapestry5.ioc.services.CoercionTuple;
 import org.apache.tapestry5.services.javascript.JavaScriptStack;
 import org.joda.time.LocalDate;
 
-public class AppModule {
+public final class AppModule {
 	public static void contributeJavaScriptStackSource(MappedConfiguration<String, JavaScriptStack> configuration) {
 		configuration.addInstance("bootstrap", BootstrapStack.class);
 	}

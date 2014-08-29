@@ -25,7 +25,7 @@ import org.ehfg.app.web.components.BootstrapLayout;
  * @author patrick
  * @since 12.04.2014
  */
-public class PointOfInterestMaintenance {
+public final class PointOfInterestMaintenance {
 	@Component
 	private BootstrapLayout layout;
 

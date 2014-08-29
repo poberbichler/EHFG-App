@@ -9,7 +9,7 @@ import java.util.List;
  * @author patrick
  * @since 02.04.2014
  */
-public class TweetMapper {
+final class TweetMapper {
 	private TweetMapper() {
 		// do not allow instantiation
 	}

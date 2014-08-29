@@ -19,7 +19,7 @@ import twitter4j.Status;
 import twitter4j.URLEntity;
 
 @RunWith(MockitoJUnitRunner.class)
-public class TweetFactoryTest {
+public final class TweetFactoryTest {
 	@Mock
 	private Status status;
 

@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class SpeakerEvent {
+public final class SpeakerEvent {
 	@XmlElement
 	private String speakerid;
 

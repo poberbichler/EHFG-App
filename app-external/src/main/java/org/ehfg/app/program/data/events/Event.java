@@ -14,7 +14,7 @@ import org.joda.time.LocalTime;
 
 @XmlRootElement(name = "item")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Event {
+public final class Event {
 	@XmlElement
 	private String id;
 
