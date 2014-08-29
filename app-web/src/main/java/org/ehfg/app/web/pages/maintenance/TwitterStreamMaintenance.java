@@ -16,8 +16,8 @@ import org.apache.tapestry5.corelib.components.Loop;
 import org.apache.tapestry5.corelib.components.Submit;
 import org.apache.tapestry5.corelib.components.TextField;
 import org.apache.tapestry5.corelib.components.Zone;
-import org.ehfg.app.api.dto.TweetDTO;
-import org.ehfg.app.api.facade.TwitterFacade;
+import org.ehfg.app.twitter.TweetDTO;
+import org.ehfg.app.twitter.TwitterFacade;
 import org.ehfg.app.web.components.BootstrapLayout;
 
 /**

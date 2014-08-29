@@ -7,8 +7,8 @@ import javax.inject.Inject;
 import org.apache.tapestry5.annotations.Cached;
 import org.apache.tapestry5.annotations.Component;
 import org.apache.tapestry5.corelib.components.Grid;
-import org.ehfg.app.api.dto.SpeakerDTO;
-import org.ehfg.app.api.facade.ProgramFacade;
+import org.ehfg.app.program.ProgramFacade;
+import org.ehfg.app.program.SpeakerDTO;
 import org.ehfg.app.web.components.BootstrapLayout;
 
 public class SpeakerOverview {

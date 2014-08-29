@@ -17,8 +17,8 @@ import org.apache.tapestry5.corelib.components.RemoveRowLink;
 import org.apache.tapestry5.corelib.components.Submit;
 import org.apache.tapestry5.corelib.components.TextField;
 import org.apache.tapestry5.corelib.components.Zone;
-import org.ehfg.app.api.dto.ConferenceDayDTO;
-import org.ehfg.app.api.facade.ProgramFacade;
+import org.ehfg.app.program.ConferenceDayDTO;
+import org.ehfg.app.program.ProgramFacade;
 import org.ehfg.app.web.components.BootstrapLayout;
 import org.joda.time.LocalDate;
 

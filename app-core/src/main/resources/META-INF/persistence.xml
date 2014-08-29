@@ -5,12 +5,12 @@
 	version="1.0">
 	
 	<persistence-unit name="ehfgAppPersistenceUnit">
-		<class>org.ehfg.app.core.entities.AppConfig</class>
-		<class>org.ehfg.app.core.entities.ConferenceDay</class>
-		<class>org.ehfg.app.core.entities.Location</class>
-		<class>org.ehfg.app.core.entities.PointOfInterest</class>
-		<class>org.ehfg.app.core.entities.Tweet</class>
-		<class>org.ehfg.app.core.entities.TwitterUser</class>
+		<class>org.ehfg.app.base.AppConfig</class>
+		<class>org.ehfg.app.program.ConferenceDay</class>
+		<class>org.ehfg.app.base.Location</class>
+		<class>org.ehfg.app.base.PointOfInterest</class>
+		<class>org.ehfg.app.twitter.Tweet</class>
+		<class>org.ehfg.app.twitter.TwitterUser</class>
 		
 		<exclude-unlisted-classes />
 	</persistence-unit>

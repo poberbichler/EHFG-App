@@ -16,9 +16,9 @@ import org.apache.tapestry5.corelib.components.Grid;
 import org.apache.tapestry5.corelib.components.Select;
 import org.apache.tapestry5.corelib.components.Submit;
 import org.apache.tapestry5.corelib.components.TextField;
-import org.ehfg.app.api.dto.LocationDTO;
-import org.ehfg.app.api.facade.MasterDataFacade;
-import org.ehfg.app.api.facade.ProgramFacade;
+import org.ehfg.app.base.LocationDTO;
+import org.ehfg.app.base.MasterDataFacade;
+import org.ehfg.app.program.ProgramFacade;
 import org.ehfg.app.web.components.BootstrapLayout;
 
 /**

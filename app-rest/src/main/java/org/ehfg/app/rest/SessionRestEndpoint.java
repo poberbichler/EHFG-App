@@ -11,9 +11,9 @@ import javax.ws.rs.QueryParam;
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
-import org.ehfg.app.api.dto.ConferenceDayDTO;
-import org.ehfg.app.api.dto.SessionDTO;
-import org.ehfg.app.api.facade.ProgramFacade;
+import org.ehfg.app.program.ConferenceDayDTO;
+import org.ehfg.app.program.ProgramFacade;
+import org.ehfg.app.program.SessionDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

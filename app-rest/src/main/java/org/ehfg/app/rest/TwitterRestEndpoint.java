@@ -10,7 +10,7 @@ import javax.ws.rs.QueryParam;
 
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
-import org.ehfg.app.api.facade.TwitterFacade;
+import org.ehfg.app.twitter.TwitterFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

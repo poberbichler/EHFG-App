@@ -9,8 +9,8 @@ import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.corelib.components.Form;
 import org.apache.tapestry5.corelib.components.Submit;
 import org.apache.tapestry5.corelib.components.TextField;
-import org.ehfg.app.api.dto.ConfigurationDTO;
-import org.ehfg.app.api.facade.MasterDataFacade;
+import org.ehfg.app.base.ConfigurationDTO;
+import org.ehfg.app.base.MasterDataFacade;
 import org.ehfg.app.web.components.BootstrapLayout;
 
 /**

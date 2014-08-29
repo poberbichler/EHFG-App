@@ -17,8 +17,8 @@ import org.apache.tapestry5.corelib.components.Submit;
 import org.apache.tapestry5.corelib.components.TextArea;
 import org.apache.tapestry5.corelib.components.TextField;
 import org.apache.tapestry5.corelib.components.Zone;
-import org.ehfg.app.api.dto.PointOfInterestDTO;
-import org.ehfg.app.api.facade.MasterDataFacade;
+import org.ehfg.app.base.MasterDataFacade;
+import org.ehfg.app.base.PointOfInterestDTO;
 import org.ehfg.app.web.components.BootstrapLayout;
 
 /**
