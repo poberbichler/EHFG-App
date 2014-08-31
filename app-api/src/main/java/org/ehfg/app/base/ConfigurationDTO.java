@@ -8,7 +8,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @author patrick
  * @since 14.03.2013
  */
-public final class ConfigurationDTO {
+public class ConfigurationDTO {
 	@NotNull
 	private String hashtag;
 

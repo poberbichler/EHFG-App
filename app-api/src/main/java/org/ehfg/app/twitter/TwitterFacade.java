@@ -17,4 +17,11 @@ public interface TwitterFacade {
 	
 	List<TweetDTO> findNewerTweetsForCongress(Date lastTweet);
 	TweetPageDTO findTweetPage(Integer pageId);
+	
+	/**
+	 * checks if this year's stream is running, and starts it in case it wasn't running
+	 * 
+	 * @return the {@link TwitterStreamStatus}, based on the current stream
+	 */
+	TwitterStreamStatus checkIfRelevantStreamIsRunning();
 }

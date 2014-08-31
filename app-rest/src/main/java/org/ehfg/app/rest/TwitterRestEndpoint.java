@@ -11,6 +11,7 @@ import javax.ws.rs.QueryParam;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 import org.ehfg.app.twitter.TwitterFacade;
+import org.ehfg.app.twitter.TwitterStreamStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -49,5 +50,24 @@ public final class TwitterRestEndpoint {
 	@Produces(Type.JSONP)
 	public JSONWithPadding findTweetsByPage(@QueryParam("callback") String callback, @PathParam("page") Integer pageId) {
 		return new JSONWithPadding(twitterFacade.findTweetPage(pageId), callback);
+	}
+	
+	@GET
+	@Path("check")
+	@Produces(Type.TEXT_PLAIN)
+	public String checkIfRunning() {
+		TwitterStreamStatus status = twitterFacade.checkIfRelevantStreamIsRunning();
+		
+		switch (status) {
+			case HAD_TO_RESTART:
+				return "stream had to be restarted";
+				
+			case RUNNING:
+				return "stream was already running";
+				
+			case NOT_RUNNING:
+			default:
+				return "thats bad, bro";
+		}
 	}
 }

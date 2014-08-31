@@ -71,4 +71,17 @@ final class TwitterFacadeImpl implements TwitterFacade {
 
 		return new TweetPageDTO(TweetMapper.map(tweets.getContent()), pageId, tweets.hasNextPage());
 	}
+
+	@Override
+	public TwitterStreamStatus checkIfRelevantStreamIsRunning() {
+		final List<String> currentStreams = findStreams();
+		final String thisYearsHashtag = findHashtag();
+		
+		if (currentStreams.isEmpty() || !currentStreams.contains(thisYearsHashtag)) {
+			addStream(thisYearsHashtag);
+			return TwitterStreamStatus.HAD_TO_RESTART;
+		}
+		
+		return TwitterStreamStatus.RUNNING;
+	}
 }
