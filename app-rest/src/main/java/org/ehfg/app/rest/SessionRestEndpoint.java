@@ -14,6 +14,7 @@ import org.codehaus.jettison.json.JSONObject;
 import org.ehfg.app.program.ConferenceDayDTO;
 import org.ehfg.app.program.ProgramFacade;
 import org.ehfg.app.program.SessionDTO;
+import org.joda.time.DateTimeZone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -26,6 +27,8 @@ import com.sun.jersey.api.json.JSONWithPadding;
 @Component
 @Path("session")
 public final class SessionRestEndpoint {
+	private static final DateTimeZone viennaTimeZone = DateTimeZone.forID("Europe/Vienna");
+	
 	private final ProgramFacade programFacade;
 
 	@Autowired
@@ -39,20 +42,21 @@ public final class SessionRestEndpoint {
 	@Produces(Type.JSONP)
 	public JSONWithPadding findAllSessions(@QueryParam("callback") String callback) throws JSONException {
 		final JSONArray result = new JSONArray();
+
 		for (final Entry<ConferenceDayDTO, List<SessionDTO>> entry : programFacade.findAllSessions().entrySet()) {
 			final ConferenceDayDTO day = entry.getKey();
 
 			final JSONObject jsonDay = new JSONObject();
 			jsonDay.put("description", day.getDescription());
 			jsonDay.put("timestamp", day.getDay().toDate().getTime());
-
+			
 			final JSONArray sessions = new JSONArray();
 			for (final SessionDTO session : entry.getValue()) {
 				final JSONObject jsonSession = new JSONObject();
 				jsonSession.put("id", session.getId());
 				jsonSession.put("description", session.getDescription());
-				jsonSession.put("start", session.getStartTime().getMillis());
-				jsonSession.put("end", session.getEndTime().getMillis());
+				jsonSession.put("start", session.getStartTime().withZone(viennaTimeZone).getMillis());
+				jsonSession.put("end", session.getEndTime().withZone(viennaTimeZone).getMillis());
 				jsonSession.put("name", session.getName());
 				jsonSession.put("location", session.getLocationId());
 				jsonSession.put("speakers", session.getSpeakers());
