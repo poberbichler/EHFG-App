@@ -112,6 +112,14 @@ public final class SessionDTO implements Comparable<SessionDTO> {
 
 	@Override
 	public int compareTo(SessionDTO that) {
+		if (this.startTime.equals(that.startTime)) {
+			if (this.sessionCode.equals(that.sessionCode)) {
+				return this.name.compareTo(that.name);
+			}
+			
+			return this.sessionCode.compareTo(that.sessionCode);
+		}
+		
 		return this.startTime.compareTo(that.startTime);
 	}
 

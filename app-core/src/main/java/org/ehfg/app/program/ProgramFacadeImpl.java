@@ -57,7 +57,7 @@ final class ProgramFacadeImpl implements ProgramFacade {
 
 			result.get(conferenceDay).add(session);
 		}
-
+		
 		return result;
 	}
 
