@@ -29,6 +29,6 @@ public final class SpeakerRestEndpoint {
 	@Path("all")
 	@Produces(Type.JSONP)
 	public JSONWithPadding findAllSpeakers(@QueryParam("callback") String callback) {
-		return new JSONWithPadding(programFacade.findAllSpeakers(), callback);
+		return new JSONWithPadding(programFacade.findSpeakersWithSession(), callback);
 	}
 }

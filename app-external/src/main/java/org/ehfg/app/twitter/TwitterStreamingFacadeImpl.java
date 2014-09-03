@@ -32,7 +32,7 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade {
 	private final MasterDataFacade masterDataFacade;
 
 	@Value("${twitter.default.listener.start}")
-	private Boolean defaultStartup;
+	private boolean defaultStartup;
 
 	@Autowired
 	public TwitterStreamingFacadeImpl(TwitterStreamFactory streamFactory, PersistenceStreamListenerFactory listenerFactory,

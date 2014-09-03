@@ -34,8 +34,7 @@ public abstract class AbstractSpeakerRepository implements SpeakerRepository {
 			for (final Speaker speaker : speakers) {
 				logger.debug("preparing text for speaker {}", speaker);
 
-				if ((StringUtils.isEmpty(speaker.getFirstname()) && StringUtils.isEmpty(speaker.getLastname()))
-						|| StringUtils.isEmpty(speaker.getBio())) {
+				if (StringUtils.isEmpty(speaker.getFirstname()) && StringUtils.isEmpty(speaker.getLastname())) {
 					filterCounter++;
 					continue;
 				}

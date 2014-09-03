@@ -1,5 +1,6 @@
 package org.ehfg.app.program;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -9,6 +10,8 @@ import java.util.Map;
  */
 public interface ProgramFacade {
 	List<SpeakerDTO> findAllSpeakers();
+	
+	Collection<SpeakerDTO> findSpeakersWithSession();
 
 	Map<ConferenceDayDTO, List<SessionDTO>> findAllSessions();
 

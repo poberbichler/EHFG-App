@@ -1,6 +1,7 @@
 package org.ehfg.app.program;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
@@ -9,6 +10,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections4.Predicate;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -28,7 +31,6 @@ final class ProgramFacadeImpl implements ProgramFacade {
 	@Autowired
 	public ProgramFacadeImpl(SpeakerRepository speakerRepository, SessionRepository sessionRepository,
 			ConferenceDayRepository conferenceDayRepository) {
-		super();
 		this.speakerRepository = speakerRepository;
 		this.sessionRepository = sessionRepository;
 		this.conferenceDayRepository = conferenceDayRepository;
@@ -37,6 +39,25 @@ final class ProgramFacadeImpl implements ProgramFacade {
 	@Override
 	public List<SpeakerDTO> findAllSpeakers() {
 		return speakerRepository.findAll();
+	}
+	
+	@Override
+	public Collection<SpeakerDTO> findSpeakersWithSession() {
+		Set<SpeakerDTO> speakers = new HashSet<>(findAllSpeakers());
+		
+		final Set<String> eventSpeakers = new HashSet<>();
+		for (SessionDTO session : findAllSessionsWithoutDayInformation()) {
+			eventSpeakers.addAll(session.getSpeakers());
+		}
+		
+		CollectionUtils.filter(speakers, new Predicate<SpeakerDTO>() {
+			@Override
+			public boolean evaluate(SpeakerDTO object) {
+				return eventSpeakers.contains(object.getId());
+			}
+		});
+		
+		return speakers;
 	}
 
 	@Override
