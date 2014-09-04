@@ -57,7 +57,10 @@ final class ProgramFacadeImpl implements ProgramFacade {
 			}
 		});
 		
-		return speakers;
+		List<SpeakerDTO> result = new ArrayList<>(speakers);
+		Collections.sort(result);
+		
+		return result;
 	}
 
 	@Override

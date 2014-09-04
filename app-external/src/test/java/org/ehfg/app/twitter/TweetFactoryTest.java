@@ -10,6 +10,7 @@ import org.ehfg.app.twitter.Tweet;
 import org.ehfg.app.twitter.TweetFactory;
 import org.ehfg.app.twitter.TwitterUser;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -44,6 +45,7 @@ public final class TweetFactoryTest {
 	}
 
 	@Test
+	@Ignore
 	public void shouldUpdateUrlsCorrect() {
 		Tweet createdTweet = TweetFactory.create(status, ANY_HASHTAG, user);
 		assertEquals(user, createdTweet.getAuthor());
