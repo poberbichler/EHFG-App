@@ -90,7 +90,8 @@ var createSessionList = function(elementId, source) {
 
 
         if (sessionItem.length !== 0) {
-            item += '<li>' + currentDay.description + '</li>';
+            console.log(currentDay);
+            item += '<li>' + currentDay.description + ' - ' + new Date(currentDay.timestamp).toSessionDate() + '</li>';
             item += sessionItem;
         }
     });
@@ -131,42 +132,6 @@ var findByPropertyInList = function(list, propertyName, propertyValue) {
     $.each(list, function(index, value) {
         if (value[propertyName] == propertyValue) {
             result = value;
-        }
-    });
-
-    return result;
-};
-
-/**
- * shorthand function for searching the values of the given list by the paramter 'id' of the objects
- * internally call findListByPropertyNameInList(list, 'id', value)
- *
- * FIXME: can most likely be removed, because ids normally should be unique
- *
- * @param list source for the search
- * @param value to be searched
- * @returns array with the given parameters
- */
-var findListByIdInList = function(list, value) {
-    return findListByPropertyNameInList(list, 'id', value);
-};
-
-/**
- * searches in the given list for the object with the given propertyValue as property
- * of the objects
- *
- * FIXME: see findByPropertyInList
- *
- * @param list source for the search
- * @param propertyName name of the property to be searched for. e.g. 'sessionId'
- * @param propertyValue value to be searched for
- * @returns an {Array} with the given values
- */
-var findListByPropertyNameInList = function(list, propertyName, propertyValue) {
-    var result = [];
-    $.each(list, function(index, value) {
-        if (value[propertyName] === propertyValue) {
-            result.push(value);
         }
     });
 
@@ -291,4 +256,68 @@ Date.prototype.toSessionTime = function() {
     result += minutes;
 
     return result;
+}
+
+Date.prototype.toSessionDate = function() {
+    var day = this.getDate();
+    var month = this.getMonth();
+
+    var daySuffix = '';
+    var lastNumberOfDay = day % 10;
+
+    switch (lastNumberOfDay) {
+    case 1:
+        daySuffix = 'st';
+        break;
+    case 2:
+        daySuffix = 'nd';
+        break;
+    case 3:
+        daySuffix = 'rd';
+        break;
+    default:
+        daySuffix = 'th';
+    }
+
+    var englishMonth = '';
+    switch (month) {
+        case 0:
+            englishMonth = 'January';
+            break;
+        case 1:
+            englishMonth = 'February';
+            break;
+        case 2:
+            englishMonth = 'March';
+            break;
+        case 3:
+            englishMonth = 'April';
+            break;
+        case 4:
+            englishMonth = 'May';
+            break;
+        case 5:
+            englishMonth = 'June';
+            break;
+        case 6:
+            englishMonth = 'July';
+            break;
+        case 7:
+            englishMonth = 'August';
+            break;
+        case 8:
+            englishMonth = 'September';
+            break;
+        case 9:
+            englishMonth = 'October';
+            break;
+        case 10:
+            englishMonth = 'November';
+            break;
+        case 11:
+            englishMonth = 'December';
+            break;
+    }
+
+    return day + daySuffix + ' ' + englishMonth;
 }

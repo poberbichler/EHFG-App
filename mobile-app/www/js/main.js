@@ -64,7 +64,8 @@ $('#session-detail').on(PAGE_EVENT, function() {
         var start = new Date(session.start);
         var end = new Date(session.end);
 
-        var timeText = start.toSessionTime() + ' - ' + end.toSessionTime();
+        var timeText = start.toSessionDate() + ': ';
+        timeText += start.toSessionTime() + ' - ' + end.toSessionTime();
         $('#sessionTime').text(timeText);
 
         speakerService().findByIds(session.speakers, function(speakers) {
