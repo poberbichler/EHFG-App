@@ -1,5 +1,6 @@
 var SPEAKER = "speaker";
 var SESSION = "session";
+var LAST_UPDATE = "lastUpdate";
 
 /**
  * service layer for the various speaker queries
@@ -104,12 +105,35 @@ var checkForItem = function(itemName, callback) {
     if (data === null || data.length === 2) {
         restCall(itemName + '/all', function(result) {
             localStorage.setItem(itemName, JSON.stringify(result));
+
+            localStorage.setItem(LAST_UPDATE, new Date().getTime());
             callback(result);
         });
     }
 
     else {
-        callback(JSON.parse(data));
+        var lastUpdate = localStorage.getItem(LAST_UPDATE);
+        if (lastUpdate != null) {
+            var lastUpdateTime = new Date(new Number(lastUpdate)).getTime();
+
+            //12 hours
+            if (new Date().getTime() - lastUpdateTime > 1000 * 60 * 60 * 12) {
+                restCall(itemName + '/all', function(result) {
+                    localStorage.setItem(itemName, JSON.stringify(result));
+                    localStorage.setItem(LAST_UPDATE, new Date().getTime());
+                    callback(result);
+                });
+            }
+
+            else {
+                callback(JSON.parse(data));
+            }
+        }
+
+        else {
+            localStorage.setItem(LAST_UPDATE, new Date().getTime());
+            callback(JSON.parse(data));
+        }
     }
 }
 

@@ -90,7 +90,6 @@ var createSessionList = function(elementId, source) {
 
 
         if (sessionItem.length !== 0) {
-            console.log(currentDay);
             item += '<li>' + currentDay.description + ' - ' + new Date(currentDay.timestamp).toSessionDate() + '</li>';
             item += sessionItem;
         }
@@ -99,44 +98,6 @@ var createSessionList = function(elementId, source) {
     list.append(item);
     list.listview('refresh');
 }
-
-/**
- * shorthand function for searching for a given id in the list
- * internally calls findByPropertyInList(list, 'id', value);
- *
- * if it should be searched for anything else than id, then call findByPropertyInList
- *
- * @param list source list
- * @param value to be searched for
- * @returns the value with the given id, or {null} otherwise
- */
-var findByIdInList = function(list, value) {
-    return findByPropertyInList(list, 'id', value);
-};
-
-/**
- * searches in the given list for the object with the given propertyValue as property
- * of the objects
- *
- * FIXME: can/should be refactored to a native for loop, if any performance problems occur
- * would also be better to be independent of jQuery, but who the hell does not use jQuery?
- *
- *
- * @param list source list
- * @param propertyName name of the property
- * @param propertyValue value of the property
- * @returns the value with the given propertyName, or {null} otherwise
- */
-var findByPropertyInList = function(list, propertyName, propertyValue) {
-    var result = null;
-    $.each(list, function(index, value) {
-        if (value[propertyName] == propertyValue) {
-            result = value;
-        }
-    });
-
-    return result;
-};
 
 /**
  * calls the rest function with the given url extension, and calls the callbackFn when successful
