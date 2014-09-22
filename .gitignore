@@ -12,3 +12,4 @@ bin/
 .idea/
 
 */platforms/*
+*/plugins/org.apache.cordova.inappbrowser/*

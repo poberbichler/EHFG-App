@@ -25,6 +25,9 @@
     <preference name="android-installLocation" value="auto" />
 	<preference name="StatusBarOverlaysWebView" value="false" />
 	<!--<preference name="StatusBarBackgroundColor" value="#6699cc" />-->
+	<feature name="InAppBrowser">
+	    <param name="ios-package" value="CDVInAppBrowser" />
+	</feature>
     <icon src="icon.png" />
     <icon gap:density="ldpi" gap:platform="android" src="res/icon/android/icon-36-ldpi.png" />
     <icon gap:density="mdpi" gap:platform="android" src="res/icon/android/icon-48-mdpi.png" />
