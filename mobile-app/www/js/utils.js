@@ -189,7 +189,7 @@ var appendCurrentSessions = function(sessionList) {
         for (var i in currentSessions) {
             var session = currentSessions[i];
             item += '<li>';
-            item += '<a href="#session-detail?id="' + session.id + '">' + session.name + '</a>';
+            item += '<a href="#session-detail?id=' + session.id + '">' + session.name + '</a>';
             item += '</li>';
         }
     }

@@ -20,6 +20,19 @@ public final class AppConfig {
 
 	private String hashtag;
 	private Integer numberOfTweets;
+	
+	/**
+	 * sets the given hashtag, and adds a {@code #} sign at the beginning, whether there is one or not 
+	 */
+	public void setAndFixHashtag(String hashtag) {
+		if (hashtag.startsWith("#")) {
+			this.hashtag = hashtag;
+		}
+		
+		else {
+			this.hashtag = "#".concat(hashtag);
+		}
+	}
 
 	public Long getId() {
 		return id;

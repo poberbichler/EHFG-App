@@ -117,7 +117,7 @@ var checkForItem = function(itemName, callback) {
             var lastUpdateTime = new Date(new Number(lastUpdate)).getTime();
 
             //12 hours
-            if (new Date().getTime() - lastUpdateTime > 1000 * 60 * 60 * 12) {
+            if (new Date().getTime() - lastUpdateTime > 1000 * 60 * 60) {
                 restCall(itemName + '/all', function(result) {
                     localStorage.setItem(itemName, JSON.stringify(result));
                     localStorage.setItem(LAST_UPDATE, new Date().getTime());

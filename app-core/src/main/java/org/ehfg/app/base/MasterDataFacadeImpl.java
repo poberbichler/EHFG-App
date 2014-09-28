@@ -36,15 +36,10 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 	@Transactional(readOnly = false)
 	public void saveAppConfiguration(ConfigurationDTO source) {
 		final AppConfig target = new AppConfig();
-		if (source.getHashtag().startsWith("#")) {
-			target.setHashtag(source.getHashtag());
-		}
-
-		else {
-			target.setHashtag(source.getHashtag());
-		}
-
+		
+		target.setAndFixHashtag(source.getHashtag());
 		target.setNumberOfTweets(source.getNumberOfTweets());
+		
 		configRepository.save(target);
 	}
 
@@ -56,26 +51,42 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 	@Override
 	@Transactional(readOnly = false)
 	public List<PointOfInterestDTO> savePointOfInterest(PointOfInterestDTO source) {
-		PointOfInterest target;
-		if (source.getId() == null) {
-			target = new PointOfInterest();
-		}
+		PointOfInterest target = fetchOrCreatePointOfInterest(source.getId());
+		mapFromDtoEntity(source, target);
 
+		pointOfInterestRepository.save(target);
+		return findAllPointsOfInterest();
+	}
+
+	/**
+	 * fetches the point for the given id.<br>
+	 * if the id is null, a newly created point will be returned
+	 * 
+	 * @param id to be checked
+	 * @return a {@link PointOfInterest} (never null)
+	 */
+	private PointOfInterest fetchOrCreatePointOfInterest(Long id) {
+		if (id == null) {
+			return new PointOfInterest();
+		}
+		
 		else {
-			target = pointOfInterestRepository.findOne(source.getId());
+			return pointOfInterestRepository.findOne(id);
 		}
+	}
 
+	/**
+	 * maps the values from the source to the target
+	 */
+	private void mapFromDtoEntity(PointOfInterestDTO source, PointOfInterest target) {
 		target.setAddress(source.getAddress());
 		target.setDescription(source.getDescription());
 		target.setName(source.getName());
 		target.setContact(source.getContact());
 		target.setWebsite(source.getWebsite());
-
+		
 		final CoordinateDTO coordinate = source.getCoordinate();
 		target.setCoordinate(new Coordinate(coordinate.getxValue(), coordinate.getyValue()));
-
-		pointOfInterestRepository.save(target);
-		return findAllPointsOfInterest();
 	}
 
 	@Override
