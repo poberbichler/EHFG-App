@@ -7,8 +7,8 @@
     	</p>
     	<p><span>
     		<a ng-href="#map/{{session.location}}">Show on map</a>&nbsp;|&nbsp;
-    		<a ng-hide="session.isInFavourites" ng-click="addToFavourites()" href>add to favourites</a>
-    		<a ng-show="session.isInFavourites" ng-click="removeFromFavourites()" href>remove from favourites</a>
+    		<a ng-hide="session.isInFavourites" ng-click="addToFavourites()" href="">add to favourites</a>
+    		<a ng-show="session.isInFavourites" ng-click="removeFromFavourites()" href="">remove from favourites</a>
     	</span></p>
 
         <h2>{{::session.name}}</h2>
@@ -16,7 +16,7 @@
 
         <div class="list list-inset">
 			<ion-item class="item item-divider">Speakers</ion-item>
-            <ion-item class="item" ng-repeat="speaker in speakers" ng-href="#/speakers/{{speaker.id}}">
+            <ion-item class="item" ng-repeat="speaker in speakers track by speaker.id" ng-href="#/speakers/{{speaker.id}}">
                 {{::speaker.fullName}}
             </ion-item>
         </div>

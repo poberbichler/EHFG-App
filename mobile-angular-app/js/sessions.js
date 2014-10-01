@@ -3,7 +3,11 @@
 		var vm = this;
 		sessionService.findAll().then(function(conferenceDays) {
 			vm.conferenceDays = conferenceDays;
-		})
+		});
+
+		sessionService.findCurrentSessions().then(function(sessions) {
+			vm.currentSessions = sessions;
+		});
 	}
 	
 	var SessionDetailCtrl = function($scope, $stateParams, sessionService, speakerService) {
@@ -46,104 +50,9 @@
 		});
 	}
 	
-	var SessionService = function($q, sessionResource, localStorageService) {
-	    return {
-	    	findAll: findAll,
-	    	findById: findById,
-	    	findBySpeakerId: findBySpeakerId,
-	    	
-	    	showAllSessions: showAllSessions,
-	    	showFavouriteSessions: showFavouriteSessions,
-	    	getFavouriteSessionFlag: getFavouriteSessionFlag,
-	    	
-	    	isFavouriteSession: isFavouriteSession,
-	    	findFavouriteSessions: findFavouriteSessions,
-	    	addToFavourites: addToFavourites,
-	    	removeFromFavourites: removeFromFavourites
-	    }
-	        
-	    function findAll() {
-            var storage = localStorageService.findSessions();
-            if (storage.length === 0) {
-            	return sessionResource.findAll(function(data) {
-            		localStorageService.setSessions(data);
-            	}).$promise;
-            }
-            
-            return $q.when(storage);
-        }
-	
-        function findById(sessionId) {
-            return this.findAll().then(function(conferenceDays) {
-                for (var i in conferenceDays) {
-                    var day = conferenceDays[i];
-                    for (var j in day.sessions) {
-                        var session = day.sessions[j];
-
-                        if (session.id == sessionId) {
-                            return $q.when(session);
-                        }
-                    }
-                }
-
-                return null;
-            });
-        }
-        
-        function findBySpeakerId(speakerId) {
-        	return this.findAll().then(function(conferenceDays) {
-        		var result = [];
-        		for (var i in conferenceDays) {
-        			var day = conferenceDays[i];
-        			
-        			for (var j in day.sessions) {
-        				var session = day.sessions[j];
-        				for (var speaker in session.speakers) {
-        					if (session.speakers[speaker] === speakerId) {
-        						result.push(session);
-        						break;
-        					}
-        				}
-        			}
-        		}
-        		
-        		return $q.when(result);
-        	});
-        }
-        
-        function showAllSessions() {
-        	localStorageService.setFavouriteSessionSelected(false);
-        }
-        
-        function showFavouriteSessions() {
-    		localStorageService.setFavouriteSessionSelected(true);
-        }
-        
-        function getFavouriteSessionFlag() {
-        	return localStorageService.showFavouriteSessionsSelected();
-        }
-        
-        function findFavouriteSessions() {
-        	return localStorageService.findFavouriteSessions();
-        }
-
-        function isFavouriteSession(sessionId) {
-        	return this.findFavouriteSessions().indexOf(sessionId) !== -1;
-        }
-        
-        function addToFavourites(sessionId) {
-        	localStorageService.addToFavouriteSessions(sessionId);
-        }
-        
-        function removeFromFavourites(sessionId) {
-        	localStorageService.removeFromFavouriteSessions(sessionId);
-        }
-	}
-	
 	angular.module('ehfgApp.sessions', [])
 		.controller('SessionCtrl', ['SessionService', SessionCtrl])
 		.controller('SessionDetailCtrl', ['$scope', '$stateParams','SessionService', 'SpeakerService', SessionDetailCtrl])
 		.filter('favouriteSessions', ['SessionService', FavouriteSessionFilter])
-		.factory('SessionService', ['$q', 'SessionResource', 'LocalStorageService', SessionService])
 		.factory('SessionResource', ['$resource', 'BASE_URL', SessionResource])
 })();

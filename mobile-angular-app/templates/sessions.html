@@ -1,6 +1,13 @@
 <ion-view title="Sessions">
     <ion-content class="has-header has-footer">
         <ion-list>
+            <div ng-show="sessionCtrl.currentSessions.length > 0">
+                <ion-item class="item item-divider">What's happening right now?</ion-item>
+                <ion-item ng-repeat="session in sessionCtrl.currentSessions track by session.id" ng-href="#/sessions/{{::session.id}}">
+                    {{::session.code}} - {{::session.name}}
+                </ion-item>
+            </div>
+
             <div ng-repeat="day in ::sessionCtrl.conferenceDays">
                 <ion-item class="item item-divider">
                     {{::day.description}}
