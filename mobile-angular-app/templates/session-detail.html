@@ -1,0 +1,12 @@
+<ion-view title="{{session.code}} - {{session.name}}">
+    <ion-content class="has-header">
+        <h1>{{session.name}}</h1>
+        <p ng-bind-html="session.description"></p>
+
+        <ion-list>
+            <ion-item ng-repeat="speaker in speakers">
+                {{speaker.name}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
