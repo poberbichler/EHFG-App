@@ -1,0 +1,12 @@
+<div t:id="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+	<h1>Tweets for "${currentHashtag}"</h1>
+	<table t:id="tweets" class="table table-striped table-bordered">
+		<p:profileImageCell>
+			<img src="${currentTweet.profileImage}" style="height: 35px; width: 35px"/>
+		</p:profileImageCell>
+
+		<p:timestampCell>
+			${formattedTimestamp}
+		</p:timestampCell>
+	</table>
+</div>
