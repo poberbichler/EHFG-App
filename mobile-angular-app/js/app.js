@@ -30,6 +30,9 @@ angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.me
                 templateUrl: 'templates/twitter.html',
                 controller: 'TwitterCtrl'
             }
+        },
+        data: {
+            menuHighlight: 'twitter'
         }
     });
 
@@ -40,6 +43,9 @@ angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.me
                 templateUrl: 'templates/speakers.html',
                 controller: 'SpeakerCtrl'
             }
+        },
+        data: {
+            menuHighlight: 'speaker'
         }
     });
 
@@ -50,6 +56,9 @@ angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.me
                 templateUrl: 'templates/sessions.html',
                 controller: 'SessionCtrl'
             }
+        },
+        data: {
+            menuHighlight: 'session'
         }
     });
 
@@ -60,7 +69,10 @@ angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.me
                templateUrl: 'templates/session-detail.html',
                controller: 'SessionDetailCtrl'
            }
-       }
+       },
+        data: {
+            menuHighlight: 'session'
+        }
     });
 
   $urlRouterProvider.otherwise('/twitter');
