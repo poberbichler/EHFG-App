@@ -10,6 +10,7 @@
 bin/
 /target
 .idea/
+.springBeans
 
 */platforms/*
 */plugins/org.apache.cordova.inappbrowser/*
