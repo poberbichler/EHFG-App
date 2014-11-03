@@ -1,5 +1,6 @@
 package org.ehfg.app.base;
 
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -13,10 +14,15 @@ public class ConfigurationDTO {
 	private String hashtag;
 
 	@NotNull
+	@Max(10)
 	private Integer numberOfTweets;
+	
+	@SuppressWarnings("unused")
+	private ConfigurationDTO() {
+		// default ctor, needed by various frameworks
+	}
 
 	public ConfigurationDTO(String hashtag, Integer numberOfTweets) {
-		super();
 		this.hashtag = hashtag;
 		this.numberOfTweets = numberOfTweets;
 	}

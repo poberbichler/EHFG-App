@@ -16,12 +16,13 @@
 
 	<properties>
 		<tapestry-version>5.3.7</tapestry-version>
-		<spring-version>4.0.2.RELEASE</spring-version>
+		<spring-version>4.1.0.RELEASE</spring-version>
 		<spring-security-version>3.2.3.RELEASE</spring-security-version>
 		<hibernate-version>4.3.4.Final</hibernate-version>
 		<jersey-version>1.18</jersey-version>
 		<twitter4j-version>3.0.5</twitter4j-version>
 		<logback-version>1.1.2</logback-version>
+		<jackson-version>2.4.2</jackson-version>
 
 		<java-version>1.7</java-version>
 	</properties>
@@ -95,6 +96,12 @@
 				<artifactId>spring-web</artifactId>
 				<version>${spring-version}</version>
 			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
 
 			<dependency>
 				<groupId>org.springframework.security</groupId>
@@ -119,6 +126,20 @@
 				<artifactId>spring-data-jpa</artifactId>
 				<version>1.5.0.RELEASE</version>
 			</dependency>
+			
+			<!-- JACKSON -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>${jackson-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson-version}</version>
+			</dependency>
+			
 			<!-- HIBERNATE -->
 			<dependency>
 				<groupId>org.hibernate</groupId>

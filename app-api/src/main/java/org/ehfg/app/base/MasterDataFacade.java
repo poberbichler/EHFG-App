@@ -8,7 +8,7 @@ import java.util.List;
  */
 public interface MasterDataFacade {
 	ConfigurationDTO getAppConfiguration();
-	void saveAppConfiguration(ConfigurationDTO config);
+	ConfigurationDTO saveAppConfiguration(ConfigurationDTO config);
 	List<PointOfInterestDTO> findAllPointsOfInterest();
 	List<PointOfInterestDTO> savePointOfInterest(PointOfInterestDTO source);
 	void removePoint(Long id);

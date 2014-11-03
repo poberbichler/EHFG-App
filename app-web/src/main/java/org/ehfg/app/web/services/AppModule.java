@@ -54,5 +54,6 @@ public final class AppModule {
 	public static void contributeIgnoredPathsFilter(Configuration<String> configuration) {
 		configuration.add("/rest/.*");
 		configuration.add("/ws/.*");
+		configuration.add("/mvc/.*");
 	}
 }

@@ -7,8 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
-import org.ehfg.app.program.SpeakerDTO;
-import org.ehfg.app.program.SpeakerRepository;
 import org.ehfg.app.program.data.speaker.RssSpeaker;
 import org.ehfg.app.program.data.speaker.Speaker;
 import org.slf4j.Logger;

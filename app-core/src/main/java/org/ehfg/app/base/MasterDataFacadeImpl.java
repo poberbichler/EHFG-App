@@ -34,13 +34,15 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 	@Override
 	@Validate
 	@Transactional(readOnly = false)
-	public void saveAppConfiguration(ConfigurationDTO source) {
+	public ConfigurationDTO saveAppConfiguration(ConfigurationDTO source) {
 		final AppConfig target = new AppConfig();
 		
 		target.setAndFixHashtag(source.getHashtag());
 		target.setNumberOfTweets(source.getNumberOfTweets());
 		
 		configRepository.save(target);
+		
+		return getAppConfiguration();
 	}
 
 	@Override

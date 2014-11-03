@@ -43,22 +43,27 @@ final class ProgramFacadeImpl implements ProgramFacade {
 	
 	@Override
 	public Collection<SpeakerDTO> findSpeakersWithSession() {
-		Set<SpeakerDTO> speakers = new HashSet<>(findAllSpeakers());
+		final Set<String> eventSpeakers = findEverySpeakerForSession();
+		final Set<SpeakerDTO> allSpeakers = new HashSet<>(findAllSpeakers());
 		
-		final Set<String> eventSpeakers = new HashSet<>();
-		for (SessionDTO session : findAllSessionsWithoutDayInformation()) {
-			eventSpeakers.addAll(session.getSpeakers());
-		}
-		
-		CollectionUtils.filter(speakers, new Predicate<SpeakerDTO>() {
+		CollectionUtils.filter(allSpeakers, new Predicate<SpeakerDTO>() {
 			@Override
 			public boolean evaluate(SpeakerDTO object) {
 				return eventSpeakers.contains(object.getId());
 			}
 		});
 		
-		List<SpeakerDTO> result = new ArrayList<>(speakers);
+		List<SpeakerDTO> result = new ArrayList<>(allSpeakers);
 		Collections.sort(result);
+		
+		return result;
+	}
+
+	private Set<String> findEverySpeakerForSession() {
+		final Set<String> result = new HashSet<>();
+		for (SessionDTO session : findAllSessionsWithoutDayInformation()) {
+			result.addAll(session.getSpeakers());
+		}
 		
 		return result;
 	}

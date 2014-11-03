@@ -12,8 +12,13 @@ import javax.annotation.PreDestroy;
 import org.apache.commons.lang3.BooleanUtils;
 import org.ehfg.app.base.ConfigurationDTO;
 import org.ehfg.app.base.MasterDataFacade;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 import twitter4j.FilterQuery;
@@ -25,11 +30,15 @@ import twitter4j.TwitterStreamFactory;
  * @since 14.03.2014
  */
 @Component("twitterStreamingFacade")
-class TwitterStreamingFacadeImpl implements TwitterStreamingFacade {
+class TwitterStreamingFacadeImpl implements TwitterStreamingFacade, ApplicationContextAware {
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	
 	private final Map<String, TwitterStream> streams = new HashMap<>();
 	private final TwitterStreamFactory streamFactory;
 	private final PersistenceStreamListenerFactory listenerFactory;
 	private final MasterDataFacade masterDataFacade;
+	
+	private ApplicationContext applicationContext;
 
 	@Value("${twitter.default.listener.start}")
 	private boolean defaultStartup;
@@ -64,18 +73,39 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade {
 		if (!hashtag.startsWith("#")) {
 			hashtag = "#".concat(hashtag);
 		}
+		
 
 		if (!streams.containsKey(hashtag)) {
-			final TwitterStream stream = streamFactory.getInstance();
-			stream.addListener(listenerFactory.getInstance(hashtag));
-
-			FilterQuery query = new FilterQuery();
-
-			query.track(new String[] { hashtag });
-			stream.filter(query);
-
-			streams.put(hashtag, stream);
+			//TODO: use spring mock profile for streamfactory, so we do not need this if
+			if (isMockProfileActive()) {
+				logger.warn("adding mock stream for hashtag {} - mock profile is active", hashtag);
+				streams.put(hashtag, MockStream.getInstance());
+			}
+			
+			else {
+				final TwitterStream stream = streamFactory.getInstance();
+				stream.addListener(listenerFactory.getInstance(hashtag));
+				
+				FilterQuery query = new FilterQuery();
+				
+				query.track(new String[] { hashtag });
+				stream.filter(query);
+				streams.put(hashtag, stream);
+			}
 		}
+	}
+
+	/**
+	 * @return {@code true} if the 'mock' profile is active, {@code false} otherwise
+	 */
+	private boolean isMockProfileActive() {
+		for (final String profile : applicationContext.getEnvironment().getActiveProfiles()) {
+			if (profile.equalsIgnoreCase("mock")) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 
 	@Override
@@ -90,10 +120,22 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade {
 
 	@Override
 	public void removeListener(String hashtag) {
+		if (!hashtag.startsWith("#")) {
+			hashtag = "#".concat(hashtag);
+		}
+		
+		logger.info("removing stream for hashtag '{}'", hashtag);
+		
+		
 		TwitterStream stream = streams.get(hashtag);
 		if (stream != null) {
 			stream.cleanUp();
 			streams.remove(hashtag);
 		}
+	}
+
+	@Override
+	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+		this.applicationContext = applicationContext;
 	}
 }

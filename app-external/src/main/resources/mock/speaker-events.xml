@@ -749,7 +749,7 @@
 		<item>
 			<speakerid>180</speakerid>
 			<lastname>Duedal Pedersen</lastname>
-			<firstname>C</firstname>
+			<firstname>Claus</firstname>
 			<eventid>2</eventid>
 			<event>eHealth</event>
 		</item>
@@ -2423,7 +2423,7 @@
 		<item>
 			<speakerid>359</speakerid>
 			<lastname>Greer</lastname>
-			<firstname>S</firstname>
+			<firstname>Scott</firstname>
 			<eventid>47</eventid>
 			<event>Resilient Healthcare Systems</event>
 		</item>
@@ -3142,11 +3142,11 @@
 			<event>Mental health</event>
 		</item>
 		<item>
-			<speakerid>428</speakerid>
-			<lastname>Vanbiervliet</lastname>
-			<firstname>Frank</firstname>
-			<eventid>66</eventid>
-			<event>Anti-discrimination in health</event>
+			<speakerid>596</speakerid>
+			<lastname>Jakubowski</lastname>
+			<firstname> Elke </firstname>
+			<eventid>98</eventid>
+			<event>Health for jobs and prosperity in SEE</event>
 		</item>
 		<item>
 			<speakerid>429</speakerid>
@@ -3235,7 +3235,7 @@
 		<item>
 			<speakerid>448</speakerid>
 			<lastname>Crawford</lastname>
-			<firstname>J</firstname>
+			<firstname>John</firstname>
 			<eventid>70</eventid>
 			<event>Big Data</event>
 		</item>
@@ -3275,18 +3275,18 @@
 			<event>Health system performance</event>
 		</item>
 		<item>
-			<speakerid>355</speakerid>
-			<lastname>Azais</lastname>
-			<firstname>Boris</firstname>
-			<eventid>96</eventid>
-			<event>Health system performance</event>
+			<speakerid>332</speakerid>
+			<lastname>Fahy</lastname>
+			<firstname>Nick</firstname>
+			<eventid>107</eventid>
+			<event>Our health in 2040</event>
 		</item>
 		<item>
-			<speakerid>355</speakerid>
-			<lastname>Azais</lastname>
-			<firstname>Boris</firstname>
-			<eventid>103</eventid>
-			<event>Health system performance</event>
+			<speakerid>102</speakerid>
+			<lastname>Kosinska</lastname>
+			<firstname>Monika</firstname>
+			<eventid>107</eventid>
+			<event>Our health in 2040</event>
 		</item>
 		<item>
 			<speakerid>455</speakerid>
@@ -3296,11 +3296,11 @@
 			<event>Health system performance</event>
 		</item>
 		<item>
-			<speakerid>456</speakerid>
-			<lastname>Busse</lastname>
-			<firstname>Reinhard</firstname>
-			<eventid>96</eventid>
-			<event>Health system performance</event>
+			<speakerid>566</speakerid>
+			<lastname>Meulenbergs</lastname>
+			<firstname> Leen </firstname>
+			<eventid>82</eventid>
+			<event>Building EU health policy</event>
 		</item>
 		<item>
 			<speakerid>457</speakerid>
@@ -3326,23 +3326,23 @@
 		<item>
 			<speakerid>359</speakerid>
 			<lastname>Greer</lastname>
-			<firstname>S</firstname>
+			<firstname>Scott</firstname>
 			<eventid>103</eventid>
 			<event>Health system performance</event>
 		</item>
 		<item>
-			<speakerid>356</speakerid>
-			<lastname>Wismar</lastname>
-			<firstname>Matthias</firstname>
-			<eventid>96</eventid>
-			<event>Health system performance</event>
+			<speakerid>568</speakerid>
+			<lastname>Signe</lastname>
+			<firstname> Ratso</firstname>
+			<eventid>82</eventid>
+			<event>Building EU health policy</event>
 		</item>
 		<item>
-			<speakerid>356</speakerid>
-			<lastname>Wismar</lastname>
-			<firstname>Matthias</firstname>
-			<eventid>103</eventid>
-			<event>Health system performance</event>
+			<speakerid>567</speakerid>
+			<lastname>Koivusalo</lastname>
+			<firstname> Meri </firstname>
+			<eventid>82</eventid>
+			<event>Building EU health policy</event>
 		</item>
 		<item>
 			<speakerid>460</speakerid>
@@ -3352,16 +3352,16 @@
 			<event>Health system performance</event>
 		</item>
 		<item>
-			<speakerid>461</speakerid>
-			<lastname>Campbell</lastname>
-			<firstname>Jim</firstname>
-			<eventid>103</eventid>
-			<event>Health system performance</event>
+			<speakerid>501</speakerid>
+			<lastname>Czabanowska</lastname>
+			<firstname>Kasia</firstname>
+			<eventid>81</eventid>
+			<event>Public health leadership</event>
 		</item>
 		<item>
-			<speakerid>329</speakerid>
-			<lastname>Andriukaitis</lastname>
-			<firstname>Vytenis</firstname>
+			<speakerid>481</speakerid>
+			<lastname>Hasardzhiev</lastname>
+			<firstname>Stanimir</firstname>
 			<eventid>103</eventid>
 			<event>Health system performance</event>
 		</item>
@@ -3373,67 +3373,60 @@
 			<event>Health system performance</event>
 		</item>
 		<item>
-			<speakerid>463</speakerid>
-			<lastname>Polton</lastname>
-			<firstname>Dominique</firstname>
+			<speakerid>546</speakerid>
+			<lastname>Buchan</lastname>
+			<firstname>James</firstname>
 			<eventid>103</eventid>
 			<event>Health system performance</event>
 		</item>
 		<item>
-			<speakerid>451</speakerid>
-			<lastname>Czabanowska</lastname>
-			<firstname>K</firstname>
-			<eventid>81</eventid>
-			<event>Public health leadership</event>
+			<speakerid>548</speakerid>
+			<lastname>Ramazan</lastname>
+			<firstname>Salman</firstname>
+			<eventid>92</eventid>
+			<event>Health literacy</event>
 		</item>
 		<item>
-			<speakerid>464</speakerid>
-			<lastname>Hu</lastname>
-			<firstname>J</firstname>
-			<eventid>81</eventid>
-			<event>Public health leadership</event>
+			<speakerid>376</speakerid>
+			<lastname>Garel</lastname>
+			<firstname>Pascal</firstname>
+			<eventid>90</eventid>
+			<event>Human resource mobility</event>
 		</item>
 		<item>
-			<speakerid>465</speakerid>
-			<lastname>Riggare</lastname>
-			<firstname>S</firstname>
-			<eventid>81</eventid>
-			<event>Public health leadership</event>
-		</item>
-		<item>
-			<speakerid>466</speakerid>
-			<lastname>Burns</lastname>
-			<firstname>H</firstname>
-			<eventid>81</eventid>
-			<event>Public health leadership</event>
-		</item>
-		<item>
-			<speakerid>169</speakerid>
-			<lastname>Chiou</lastname>
-			<firstname>Shu-Ti</firstname>
-			<eventid>87</eventid>
-			<event>Public health leadership</event>
+			<speakerid>565</speakerid>
+			<lastname>Chamorro</lastname>
+			<firstname> Lourdes </firstname>
+			<eventid>82</eventid>
+			<event>Building EU health policy</event>
 		</item>
 		<item>
 			<speakerid>123</speakerid>
 			<lastname>Kickbusch</lastname>
 			<firstname>Ilona</firstname>
+			<eventid>0</eventid>
+			<event />
+		</item>
+		<item>
+			<speakerid>467</speakerid>
+			<lastname>Rutter</lastname>
+			<firstname>Harry</firstname>
 			<eventid>87</eventid>
 			<event>Public health leadership</event>
 		</item>
 		<item>
 			<speakerid>467</speakerid>
 			<lastname>Rutter</lastname>
-			<firstname>H</firstname>
+			<firstname>Harry</firstname>
 			<eventid>81</eventid>
 			<event>Public health leadership</event>
 		</item>
 		<item>
-			<speakerid>467</speakerid>
-			<lastname>Rutter</lastname>
-			<firstname>H</firstname>
-			<eventid>87</eventid>
-			<event>Public health leadership</event>
+			<speakerid>577</speakerid>
+			<lastname>Emiroglu</lastname>
+			<firstname>Nedret </firstname>
+			<eventid>108</eventid>
+			<event>From MDGs to the post-2015 agenda</event>
 		</item>
 		<item>
 			<speakerid>157</speakerid>
@@ -3445,14 +3438,14 @@
 		<item>
 			<speakerid>468</speakerid>
 			<lastname>Leyens</lastname>
-			<firstname>L</firstname>
+			<firstname>Lada</firstname>
 			<eventid>89</eventid>
 			<event>Personalised Medicine 2020</event>
 		</item>
 		<item>
 			<speakerid>469</speakerid>
-			<lastname>Hakenitz</lastname>
-			<firstname>E</firstname>
+			<lastname>Hackenitz</lastname>
+			<firstname>Erika</firstname>
 			<eventid>89</eventid>
 			<event>Personalised Medicine 2020</event>
 		</item>
@@ -3466,7 +3459,7 @@
 		<item>
 			<speakerid>470</speakerid>
 			<lastname>Vayena</lastname>
-			<firstname>E</firstname>
+			<firstname>Effy</firstname>
 			<eventid>89</eventid>
 			<event>Personalised Medicine 2020</event>
 		</item>
@@ -3480,35 +3473,35 @@
 		<item>
 			<speakerid>471</speakerid>
 			<lastname>Andreu Periz</lastname>
-			<firstname>AL</firstname>
+			<firstname>Antonio L.</firstname>
 			<eventid>89</eventid>
 			<event>Personalised Medicine 2020</event>
 		</item>
 		<item>
 			<speakerid>472</speakerid>
 			<lastname>Hajnal</lastname>
-			<firstname>F</firstname>
+			<firstname>Ferenc</firstname>
 			<eventid>89</eventid>
 			<event>Personalised Medicine 2020</event>
 		</item>
 		<item>
 			<speakerid>473</speakerid>
 			<lastname>Klein</lastname>
-			<firstname>C</firstname>
+			<firstname>Christoph</firstname>
 			<eventid>89</eventid>
 			<event>Personalised Medicine 2020</event>
 		</item>
 		<item>
 			<speakerid>474</speakerid>
 			<lastname>Boorsma</lastname>
-			<firstname>A</firstname>
+			<firstname>Andre</firstname>
 			<eventid>89</eventid>
 			<event>Personalised Medicine 2020</event>
 		</item>
 		<item>
 			<speakerid>475</speakerid>
 			<lastname>Cookson</lastname>
-			<firstname>C</firstname>
+			<firstname>Clive</firstname>
 			<eventid>89</eventid>
 			<event>Personalised Medicine 2020</event>
 		</item>
@@ -3517,103 +3510,103 @@
 			<lastname>Kickbusch</lastname>
 			<firstname>Ilona</firstname>
 			<eventid>91</eventid>
-			<event>Person-centred care</event>
+			<event>Patient empowerment</event>
 		</item>
 		<item>
 			<speakerid>481</speakerid>
 			<lastname>Hasardzhiev</lastname>
-			<firstname>S</firstname>
+			<firstname>Stanimir</firstname>
 			<eventid>91</eventid>
-			<event>Person-centred care</event>
+			<event>Patient empowerment</event>
 		</item>
 		<item>
 			<speakerid>326</speakerid>
 			<lastname>Banks</lastname>
 			<firstname>Ian</firstname>
 			<eventid>91</eventid>
-			<event>Person-centred care</event>
+			<event>Patient empowerment</event>
 		</item>
 		<item>
-			<speakerid>398</speakerid>
-			<lastname>Duguay</lastname>
-			<firstname>Corinne</firstname>
+			<speakerid>604</speakerid>
+			<lastname>Richter</lastname>
+			<firstname>Milena</firstname>
 			<eventid>91</eventid>
-			<event>Person-centred care</event>
+			<event>Patient empowerment</event>
 		</item>
 		<item>
 			<speakerid>462</speakerid>
 			<lastname>Chaze</lastname>
 			<firstname>Nathalie</firstname>
 			<eventid>91</eventid>
-			<event>Person-centred care</event>
+			<event>Patient empowerment</event>
 		</item>
 		<item>
 			<speakerid>109</speakerid>
 			<lastname>Rose</lastname>
 			<firstname>Tamsin</firstname>
 			<eventid>91</eventid>
-			<event>Person-centred care</event>
+			<event>Patient empowerment</event>
 		</item>
 		<item>
-			<speakerid>326</speakerid>
-			<lastname>Banks</lastname>
-			<firstname>Ian</firstname>
+			<speakerid>520</speakerid>
+			<lastname>Harris</lastname>
+			<firstname>Glendon</firstname>
 			<eventid>78</eventid>
-			<event>Avoidable Blindness</event>
+			<event>Preventable Blindness</event>
 		</item>
 		<item>
 			<speakerid>482</speakerid>
 			<lastname>Saka</lastname>
-			<firstname>O</firstname>
+			<firstname>Omer</firstname>
 			<eventid>78</eventid>
-			<event>Avoidable Blindness</event>
+			<event>Preventable Blindness</event>
 		</item>
 		<item>
 			<speakerid>483</speakerid>
 			<lastname>Rothman</lastname>
-			<firstname>B</firstname>
+			<firstname>Brian</firstname>
 			<eventid>79</eventid>
 			<event>Real world patient data</event>
 		</item>
 		<item>
 			<speakerid>484</speakerid>
 			<lastname>Currie</lastname>
-			<firstname>W</firstname>
+			<firstname>Wendy</firstname>
 			<eventid>79</eventid>
 			<event>Real world patient data</event>
 		</item>
 		<item>
-			<speakerid>485</speakerid>
-			<lastname>Bowman</lastname>
-			<firstname>J</firstname>
+			<speakerid>605</speakerid>
+			<lastname>Ifty</lastname>
+			<firstname>Ahmed</firstname>
 			<eventid>79</eventid>
 			<event>Real world patient data</event>
 		</item>
 		<item>
-			<speakerid>486</speakerid>
-			<lastname>Timmers</lastname>
-			<firstname>P</firstname>
-			<eventid>79</eventid>
-			<event>Real world patient data</event>
+			<speakerid>608</speakerid>
+			<lastname>Hilderink</lastname>
+			<firstname>Henk</firstname>
+			<eventid>107</eventid>
+			<event>Our health in 2040</event>
 		</item>
 		<item>
-			<speakerid>487</speakerid>
-			<lastname>Williams</lastname>
-			<firstname>T</firstname>
-			<eventid>79</eventid>
-			<event>Real world patient data</event>
+			<speakerid>603</speakerid>
+			<lastname />
+			<firstname />
+			<eventid>82</eventid>
+			<event>Building EU health policy</event>
 		</item>
 		<item>
-			<speakerid>488</speakerid>
-			<lastname>Kent</lastname>
-			<firstname>A</firstname>
-			<eventid>79</eventid>
-			<event>Real world patient data</event>
+			<speakerid>529</speakerid>
+			<lastname>Costongs</lastname>
+			<firstname>Caroline</firstname>
+			<eventid>107</eventid>
+			<event>Our health in 2040</event>
 		</item>
 		<item>
 			<speakerid>489</speakerid>
 			<lastname>Torbett</lastname>
-			<firstname>R</firstname>
+			<firstname>Richard</firstname>
 			<eventid>79</eventid>
 			<event>Real world patient data</event>
 		</item>
@@ -3627,14 +3620,14 @@
 		<item>
 			<speakerid>490</speakerid>
 			<lastname>Baskent</lastname>
-			<firstname>D</firstname>
+			<firstname>Deniz</firstname>
 			<eventid>85</eventid>
 			<event>Hearing loss</event>
 		</item>
 		<item>
 			<speakerid>491</speakerid>
 			<lastname>Kofoed</lastname>
-			<firstname>J</firstname>
+			<firstname>Jens</firstname>
 			<eventid>85</eventid>
 			<event>Hearing loss</event>
 		</item>
@@ -3648,7 +3641,7 @@
 		<item>
 			<speakerid>492</speakerid>
 			<lastname>Frachet</lastname>
-			<firstname>B</firstname>
+			<firstname>Bruno</firstname>
 			<eventid>85</eventid>
 			<event>Hearing loss</event>
 		</item>
@@ -3667,18 +3660,18 @@
 			<event>Closing Plenary</event>
 		</item>
 		<item>
-			<speakerid>214</speakerid>
-			<lastname>Figueras</lastname>
-			<firstname>Josep</firstname>
-			<eventid>76</eventid>
-			<event>Opening Plenary</event>
+			<speakerid>276</speakerid>
+			<lastname>Zilgalvis</lastname>
+			<firstname>Peteris</firstname>
+			<eventid>92</eventid>
+			<event>Health literacy</event>
 		</item>
 		<item>
-			<speakerid>268</speakerid>
-			<lastname />
-			<firstname>Alois</firstname>
-			<eventid>76</eventid>
-			<event>Opening Plenary</event>
+			<speakerid>551</speakerid>
+			<lastname>van Bolhuis</lastname>
+			<firstname>Annemiek</firstname>
+			<eventid>107</eventid>
+			<event>Our health in 2040</event>
 		</item>
 		<item>
 			<speakerid>129</speakerid>
@@ -3688,11 +3681,11 @@
 			<event>Opening Plenary</event>
 		</item>
 		<item>
-			<speakerid>253</speakerid>
-			<lastname>Testori Coggi</lastname>
-			<firstname>Paola</firstname>
-			<eventid>76</eventid>
-			<event>Opening Plenary</event>
+			<speakerid>109</speakerid>
+			<lastname>Rose</lastname>
+			<firstname>Tamsin</firstname>
+			<eventid>105</eventid>
+			<event>Closing Plenary</event>
 		</item>
 		<item>
 			<speakerid>192</speakerid>
@@ -3702,18 +3695,1152 @@
 			<event>Closing Plenary</event>
 		</item>
 		<item>
-			<speakerid>109</speakerid>
-			<lastname>Rose</lastname>
-			<firstname>Tamsin</firstname>
+			<speakerid>432</speakerid>
+			<lastname>Wolff-Boenisch</lastname>
+			<firstname>Bonnie</firstname>
 			<eventid>105</eventid>
 			<event>Closing Plenary</event>
 		</item>
 		<item>
-			<speakerid>299</speakerid>
-			<lastname>Borg</lastname>
-			<firstname>Tonio </firstname>
+			<speakerid>329</speakerid>
+			<lastname>Andriukaitis</lastname>
+			<firstname>Vytenis</firstname>
+			<eventid>103</eventid>
+			<event>Health system performance</event>
+		</item>
+		<item>
+			<speakerid>306</speakerid>
+			<lastname>van Ginneken</lastname>
+			<firstname>Ewout</firstname>
+			<eventid>0</eventid>
+			<event />
+		</item>
+		<item>
+			<speakerid>578</speakerid>
+			<lastname>Ginneken</lastname>
+			<firstname>Ewout</firstname>
+			<eventid>97</eventid>
+			<event>European integration &amp; social health insurance</event>
+		</item>
+		<item>
+			<speakerid>493</speakerid>
+			<lastname>Terwey</lastname>
+			<firstname>Franz</firstname>
+			<eventid>97</eventid>
+			<event>European integration &amp; social health insurance</event>
+		</item>
+		<item>
+			<speakerid>129</speakerid>
+			<lastname>Jakab</lastname>
+			<firstname>Zsuzsanna</firstname>
+			<eventid>98</eventid>
+			<event>Health for jobs and prosperity in SEE</event>
+		</item>
+		<item>
+			<speakerid>357</speakerid>
+			<lastname>Palm</lastname>
+			<firstname>Willy</firstname>
+			<eventid>97</eventid>
+			<event>European integration &amp; social health insurance</event>
+		</item>
+		<item>
+			<speakerid>419</speakerid>
+			<lastname>Probst</lastname>
+			<firstname>Josef</firstname>
+			<eventid>97</eventid>
+			<event>European integration &amp; social health insurance</event>
+		</item>
+		<item>
+			<speakerid>494</speakerid>
+			<lastname>De Cock</lastname>
+			<firstname>Jo</firstname>
+			<eventid>97</eventid>
+			<event>European integration &amp; social health insurance</event>
+		</item>
+		<item>
+			<speakerid>463</speakerid>
+			<lastname>Polton</lastname>
+			<firstname>Dominique</firstname>
+			<eventid>97</eventid>
+			<event>European integration &amp; social health insurance</event>
+		</item>
+		<item>
+			<speakerid>495</speakerid>
+			<lastname>Pfeiffer</lastname>
+			<firstname>Doris</firstname>
+			<eventid>97</eventid>
+			<event>European integration &amp; social health insurance</event>
+		</item>
+		<item>
+			<speakerid>255</speakerid>
+			<lastname>Jeurissen</lastname>
+			<firstname>Patrick</firstname>
+			<eventid>97</eventid>
+			<event>European integration &amp; social health insurance</event>
+		</item>
+		<item>
+			<speakerid>496</speakerid>
+			<lastname>Kacevicius</lastname>
+			<firstname>Gintaras</firstname>
+			<eventid>97</eventid>
+			<event>European integration &amp; social health insurance</event>
+		</item>
+		<item>
+			<speakerid>355</speakerid>
+			<lastname>Azais</lastname>
+			<firstname>Boris</firstname>
+			<eventid>103</eventid>
+			<event>Health system performance</event>
+		</item>
+		<item>
+			<speakerid>90</speakerid>
+			<lastname />
+			<firstname />
+			<eventid>90</eventid>
+			<event>Human resource mobility</event>
+		</item>
+		<item>
+			<speakerid>572</speakerid>
+			<lastname>Bon</lastname>
+			<firstname>Edith</firstname>
+			<eventid>88</eventid>
+			<event>Building EU health policy</event>
+		</item>
+		<item>
+			<speakerid>498</speakerid>
+			<lastname>Rumler</lastname>
+			<firstname>Robin</firstname>
+			<eventid>84</eventid>
+			<event>Healthcare partnerships</event>
+		</item>
+		<item>
+			<speakerid>499</speakerid>
+			<lastname>Huber</lastname>
+			<firstname>Jan Oliver</firstname>
+			<eventid>84</eventid>
+			<event>Healthcare partnerships</event>
+		</item>
+		<item>
+			<speakerid>276</speakerid>
+			<lastname>Zilgalvis</lastname>
+			<firstname>Peteris</firstname>
+			<eventid>95</eventid>
+			<event>Deploying eHealth</event>
+		</item>
+		<item>
+			<speakerid>276</speakerid>
+			<lastname>Zilgalvis</lastname>
+			<firstname>Peteris</firstname>
+			<eventid>102</eventid>
+			<event>Deploying eHealth</event>
+		</item>
+		<item>
+			<speakerid>395</speakerid>
+			<lastname>Davies</lastname>
+			<firstname>Maggie</firstname>
+			<eventid>76</eventid>
+			<event>Opening Plenary</event>
+		</item>
+		<item>
+			<speakerid>119</speakerid>
+			<lastname>Parvanova</lastname>
+			<firstname>Antonyia</firstname>
+			<eventid>0</eventid>
+			<event />
+		</item>
+		<item>
+			<speakerid>547</speakerid>
+			<lastname>Geissler</lastname>
+			<firstname>Jan </firstname>
+			<eventid>92</eventid>
+			<event>Health literacy</event>
+		</item>
+		<item>
+			<speakerid>156</speakerid>
+			<lastname>Bowis</lastname>
+			<firstname>John</firstname>
+			<eventid>0</eventid>
+			<event />
+		</item>
+		<item>
+			<speakerid>156</speakerid>
+			<lastname>Bowis</lastname>
+			<firstname>John</firstname>
+			<eventid>76</eventid>
+			<event>Opening Plenary</event>
+		</item>
+		<item>
+			<speakerid>214</speakerid>
+			<lastname>Figueras</lastname>
+			<firstname>Josep</firstname>
+			<eventid>90</eventid>
+			<event>Human resource mobility</event>
+		</item>
+		<item>
+			<speakerid>546</speakerid>
+			<lastname>Buchan</lastname>
+			<firstname>James</firstname>
+			<eventid>90</eventid>
+			<event>Human resource mobility</event>
+		</item>
+		<item>
+			<speakerid>217</speakerid>
+			<lastname>Auer</lastname>
+			<firstname>Clemens-Martin</firstname>
+			<eventid>0</eventid>
+			<event />
+		</item>
+		<item>
+			<speakerid>545</speakerid>
+			<lastname>Hagenauer</lastname>
+			<firstname>Alexander</firstname>
+			<eventid>84</eventid>
+			<event>Healthcare partnerships</event>
+		</item>
+		<item>
+			<speakerid>544</speakerid>
+			<lastname>Peterle</lastname>
+			<firstname>Alojz</firstname>
+			<eventid>76</eventid>
+			<event>Opening Plenary</event>
+		</item>
+		<item>
+			<speakerid>419</speakerid>
+			<lastname>Probst</lastname>
+			<firstname>Josef</firstname>
+			<eventid>0</eventid>
+			<event />
+		</item>
+		<item>
+			<speakerid>352</speakerid>
+			<lastname>Rendi-Wagner</lastname>
+			<firstname>Pamela</firstname>
+			<eventid>84</eventid>
+			<event>Healthcare partnerships</event>
+		</item>
+		<item>
+			<speakerid>174</speakerid>
+			<lastname>Nolte</lastname>
+			<firstname>Ellen</firstname>
+			<eventid>83</eventid>
+			<event>Care coordination &amp; patient choice</event>
+		</item>
+		<item>
+			<speakerid>505</speakerid>
+			<lastname>Martin-Moreno</lastname>
+			<firstname>Jose Maria</firstname>
+			<eventid>83</eventid>
+			<event>Care coordination &amp; patient choice</event>
+		</item>
+		<item>
+			<speakerid>506</speakerid>
+			<lastname>Palkonen</lastname>
+			<firstname>Suzanna</firstname>
+			<eventid>83</eventid>
+			<event>Care coordination &amp; patient choice</event>
+		</item>
+		<item>
+			<speakerid>463</speakerid>
+			<lastname>Polton</lastname>
+			<firstname>Dominique</firstname>
+			<eventid>0</eventid>
+			<event />
+		</item>
+		<item>
+			<speakerid>543</speakerid>
+			<lastname>Papandreou</lastname>
+			<firstname>George</firstname>
+			<eventid>76</eventid>
+			<event>Opening Plenary</event>
+		</item>
+		<item>
+			<speakerid>507</speakerid>
+			<lastname>Wilson</lastname>
+			<firstname>Petra</firstname>
+			<eventid>0</eventid>
+			<event />
+		</item>
+		<item>
+			<speakerid>359</speakerid>
+			<lastname>Greer</lastname>
+			<firstname>Scott</firstname>
+			<eventid>107</eventid>
+			<event>Our health in 2040</event>
+		</item>
+		<item>
+			<speakerid>419</speakerid>
+			<lastname>Probst</lastname>
+			<firstname>Josef</firstname>
+			<eventid>83</eventid>
+			<event>Care coordination &amp; patient choice</event>
+		</item>
+		<item>
+			<speakerid>356</speakerid>
+			<lastname>Wismar</lastname>
+			<firstname>Matthias</firstname>
+			<eventid>103</eventid>
+			<event>Health system performance</event>
+		</item>
+		<item>
+			<speakerid>180</speakerid>
+			<lastname>Duedal Pedersen</lastname>
+			<firstname>Claus</firstname>
+			<eventid>95</eventid>
+			<event>Deploying eHealth</event>
+		</item>
+		<item>
+			<speakerid>508</speakerid>
+			<lastname>Ross</lastname>
+			<firstname>Peeter</firstname>
+			<eventid>95</eventid>
+			<event>Deploying eHealth</event>
+		</item>
+		<item>
+			<speakerid>403</speakerid>
+			<lastname>Hafen</lastname>
+			<firstname>Ernst</firstname>
+			<eventid>0</eventid>
+			<event />
+		</item>
+		<item>
+			<speakerid>403</speakerid>
+			<lastname>Hafen</lastname>
+			<firstname>Ernst</firstname>
+			<eventid>95</eventid>
+			<event>Deploying eHealth</event>
+		</item>
+		<item>
+			<speakerid>177</speakerid>
+			<lastname>Riper</lastname>
+			<firstname>Heleen</firstname>
+			<eventid>95</eventid>
+			<event>Deploying eHealth</event>
+		</item>
+		<item>
+			<speakerid>509</speakerid>
+			<lastname>Melarga</lastname>
+			<firstname>Marcello</firstname>
+			<eventid>102</eventid>
+			<event>Deploying eHealth</event>
+		</item>
+		<item>
+			<speakerid>510</speakerid>
+			<lastname />
+			<firstname>Magdalena</firstname>
+			<eventid>102</eventid>
+			<event>Deploying eHealth</event>
+		</item>
+		<item>
+			<speakerid>511</speakerid>
+			<lastname>Witkamp</lastname>
+			<firstname>Leonard</firstname>
+			<eventid>102</eventid>
+			<event>Deploying eHealth</event>
+		</item>
+		<item>
+			<speakerid>512</speakerid>
+			<lastname>Burci Nielsen</lastname>
+			<firstname>Claus</firstname>
+			<eventid>102</eventid>
+			<event>Deploying eHealth</event>
+		</item>
+		<item>
+			<speakerid>513</speakerid>
+			<lastname>Brosch</lastname>
+			<firstname>Peter</firstname>
+			<eventid>102</eventid>
+			<event>Deploying eHealth</event>
+		</item>
+		<item>
+			<speakerid>129</speakerid>
+			<lastname>Jakab</lastname>
+			<firstname>Zsuzsanna</firstname>
+			<eventid>108</eventid>
+			<event>From MDGs to the post-2015 agenda</event>
+		</item>
+		<item>
+			<speakerid>585</speakerid>
+			<lastname>Heinisch</lastname>
+			<firstname>Renate </firstname>
+			<eventid>78</eventid>
+			<event>Preventable Blindness</event>
+		</item>
+		<item>
+			<speakerid>448</speakerid>
+			<lastname>Crawford</lastname>
+			<firstname>John</firstname>
+			<eventid>79</eventid>
+			<event>Real world patient data</event>
+		</item>
+		<item>
+			<speakerid>584</speakerid>
+			<lastname>Borgonovi</lastname>
+			<firstname>Elio </firstname>
+			<eventid>78</eventid>
+			<event>Preventable Blindness</event>
+		</item>
+		<item>
+			<speakerid>292</speakerid>
+			<lastname />
+			<firstname>Barbara</firstname>
+			<eventid>109</eventid>
+			<event>Moving for health and well-being</event>
+		</item>
+		<item>
+			<speakerid>479</speakerid>
+			<lastname>Roux</lastname>
+			<firstname>Philippe</firstname>
+			<eventid>109</eventid>
+			<event>Moving for health and well-being</event>
+		</item>
+		<item>
+			<speakerid>607</speakerid>
+			<lastname>Fontaine</lastname>
+			<firstname>Olivier</firstname>
+			<eventid>109</eventid>
+			<event>Moving for health and well-being</event>
+		</item>
+		<item>
+			<speakerid>355</speakerid>
+			<lastname>Azais</lastname>
+			<firstname>Boris</firstname>
+			<eventid>96</eventid>
+			<event>Health system performance</event>
+		</item>
+		<item>
+			<speakerid>195</speakerid>
+			<lastname>Kadenbach</lastname>
+			<firstname>Karin</firstname>
+			<eventid>92</eventid>
+			<event>Health literacy</event>
+		</item>
+		<item>
+			<speakerid>550</speakerid>
+			<lastname>Zabala</lastname>
+			<firstname>Ane Fullaondo</firstname>
+			<eventid>102</eventid>
+			<event>Deploying eHealth</event>
+		</item>
+		<item>
+			<speakerid>519</speakerid>
+			<lastname>Leyshon</lastname>
+			<firstname>Stephen</firstname>
+			<eventid>0</eventid>
+			<event />
+		</item>
+		<item>
+			<speakerid>569</speakerid>
+			<lastname>Woodford</lastname>
+			<firstname> Emma</firstname>
+			<eventid>82</eventid>
+			<event>Building EU health policy</event>
+		</item>
+		<item>
+			<speakerid>326</speakerid>
+			<lastname>Banks</lastname>
+			<firstname>Ian</firstname>
+			<eventid>78</eventid>
+			<event>Preventable Blindness</event>
+		</item>
+		<item>
+			<speakerid>521</speakerid>
+			<lastname>Reitsamer</lastname>
+			<firstname>Herbert</firstname>
+			<eventid>78</eventid>
+			<event>Preventable Blindness</event>
+		</item>
+		<item>
+			<speakerid>556</speakerid>
+			<lastname>Roda</lastname>
+			<firstname>Sara</firstname>
+			<eventid>88</eventid>
+			<event>Building EU health policy</event>
+		</item>
+		<item>
+			<speakerid>525</speakerid>
+			<lastname>Todorov</lastname>
+			<firstname>Nikola</firstname>
+			<eventid>98</eventid>
+			<event>Health for jobs and prosperity in SEE</event>
+		</item>
+		<item>
+			<speakerid>526</speakerid>
+			<lastname>Shani</lastname>
+			<firstname>Nand</firstname>
+			<eventid>98</eventid>
+			<event>Health for jobs and prosperity in SEE</event>
+		</item>
+		<item>
+			<speakerid>580</speakerid>
+			<lastname />
+			<firstname> Petra Leroy</firstname>
+			<eventid>100</eventid>
+			<event>Active and Healthy Ageing</event>
+		</item>
+		<item>
+			<speakerid>527</speakerid>
+			<lastname>Milevska</lastname>
+			<firstname>Neda</firstname>
+			<eventid>98</eventid>
+			<event>Health for jobs and prosperity in SEE</event>
+		</item>
+		<item>
+			<speakerid>529</speakerid>
+			<lastname>Costongs</lastname>
+			<firstname>Caroline</firstname>
+			<eventid>98</eventid>
+			<event>Health for jobs and prosperity in SEE</event>
+		</item>
+		<item>
+			<speakerid>530</speakerid>
+			<lastname>Cerkez</lastname>
+			<firstname>Goran</firstname>
+			<eventid>98</eventid>
+			<event>Health for jobs and prosperity in SEE</event>
+		</item>
+		<item>
+			<speakerid>531</speakerid>
+			<lastname>Brown</lastname>
+			<firstname>Chris</firstname>
+			<eventid>98</eventid>
+			<event>Health for jobs and prosperity in SEE</event>
+		</item>
+		<item>
+			<speakerid>532</speakerid>
+			<lastname>Dedeu</lastname>
+			<firstname>Toni</firstname>
+			<eventid>100</eventid>
+			<event>Active and Healthy Ageing</event>
+		</item>
+		<item>
+			<speakerid>533</speakerid>
+			<lastname />
+			<firstname>Leocadio</firstname>
+			<eventid>100</eventid>
+			<event>Active and Healthy Ageing</event>
+		</item>
+		<item>
+			<speakerid>406</speakerid>
+			<lastname>Huebel</lastname>
+			<firstname>Michael</firstname>
+			<eventid>0</eventid>
+			<event />
+		</item>
+		<item>
+			<speakerid>406</speakerid>
+			<lastname>Huebel</lastname>
+			<firstname>Michael</firstname>
+			<eventid>99</eventid>
+			<event>EU Health Programme 2014-2020</event>
+		</item>
+		<item>
+			<speakerid>534</speakerid>
+			<lastname>Remacle</lastname>
+			<firstname>Jacques</firstname>
+			<eventid>99</eventid>
+			<event>EU Health Programme 2014-2020</event>
+		</item>
+		<item>
+			<speakerid>126</speakerid>
+			<lastname>Sprenger</lastname>
+			<firstname>Marc</firstname>
+			<eventid>112</eventid>
+			<event>Ebola Breakfast Workshop</event>
+		</item>
+		<item>
+			<speakerid>536</speakerid>
+			<lastname>Vanbiervliet</lastname>
+			<firstname>Frank</firstname>
+			<eventid>111</eventid>
+			<event>Undocumented migrants</event>
+		</item>
+		<item>
+			<speakerid>537</speakerid>
+			<lastname>Keith</lastname>
+			<firstname>Lilana</firstname>
+			<eventid>111</eventid>
+			<event>Undocumented migrants</event>
+		</item>
+		<item>
+			<speakerid>570</speakerid>
+			<lastname>Bonk</lastname>
+			<firstname>Mathias </firstname>
+			<eventid>82</eventid>
+			<event>Building EU health policy</event>
+		</item>
+		<item>
+			<speakerid>276</speakerid>
+			<lastname>Zilgalvis</lastname>
+			<firstname>Peteris</firstname>
+			<eventid>79</eventid>
+			<event>Real world patient data</event>
+		</item>
+		<item>
+			<speakerid>231</speakerid>
+			<lastname>Baker</lastname>
+			<firstname>Mary G</firstname>
+			<eventid>79</eventid>
+			<event>Real world patient data</event>
+		</item>
+		<item>
+			<speakerid>296</speakerid>
+			<lastname>Giraud</lastname>
+			<firstname>Sylvian</firstname>
+			<eventid>92</eventid>
+			<event>Health literacy</event>
+		</item>
+		<item>
+			<speakerid>360</speakerid>
+			<lastname />
+			<firstname />
+			<eventid>90</eventid>
+			<event>Human resource mobility</event>
+		</item>
+		<item>
+			<speakerid>384</speakerid>
+			<lastname>O'Donnell</lastname>
+			<firstname>Peter</firstname>
+			<eventid>92</eventid>
+			<event>Health literacy</event>
+		</item>
+		<item>
+			<speakerid>571</speakerid>
+			<lastname>McCarthy</lastname>
+			<firstname>Kevin </firstname>
+			<eventid>82</eventid>
+			<event>Building EU health policy</event>
+		</item>
+		<item>
+			<speakerid>123</speakerid>
+			<lastname>Kickbusch</lastname>
+			<firstname>Ilona</firstname>
+			<eventid>82</eventid>
+			<event>Building EU health policy</event>
+		</item>
+		<item>
+			<speakerid>463</speakerid>
+			<lastname>Polton</lastname>
+			<firstname>Dominique</firstname>
+			<eventid>83</eventid>
+			<event>Care coordination &amp; patient choice</event>
+		</item>
+		<item>
+			<speakerid>504</speakerid>
+			<lastname>Groenewegen</lastname>
+			<firstname>Peter</firstname>
+			<eventid>83</eventid>
+			<event>Care coordination &amp; patient choice</event>
+		</item>
+		<item>
+			<speakerid>217</speakerid>
+			<lastname>Auer</lastname>
+			<firstname>Clemens-Martin</firstname>
+			<eventid>83</eventid>
+			<event>Care coordination &amp; patient choice</event>
+		</item>
+		<item>
+			<speakerid>214</speakerid>
+			<lastname>Figueras</lastname>
+			<firstname>Josep</firstname>
+			<eventid>83</eventid>
+			<event>Care coordination &amp; patient choice</event>
+		</item>
+		<item>
+			<speakerid>554</speakerid>
+			<lastname />
+			<firstname>Eduardo </firstname>
+			<eventid>88</eventid>
+			<event>Building EU health policy</event>
+		</item>
+		<item>
+			<speakerid>555</speakerid>
+			<lastname>Vey</lastname>
+			<firstname>Matthias</firstname>
+			<eventid>88</eventid>
+			<event>Building EU health policy</event>
+		</item>
+		<item>
+			<speakerid>557</speakerid>
+			<lastname>Platzek</lastname>
+			<firstname>Thomas</firstname>
+			<eventid>88</eventid>
+			<event>Building EU health policy</event>
+		</item>
+		<item>
+			<speakerid>516</speakerid>
+			<lastname>Turk</lastname>
+			<firstname>Eva</firstname>
+			<eventid>93</eventid>
+			<event>Person-centred care</event>
+		</item>
+		<item>
+			<speakerid>519</speakerid>
+			<lastname>Leyshon</lastname>
+			<firstname>Stephen</firstname>
+			<eventid>93</eventid>
+			<event>Person-centred care</event>
+		</item>
+		<item>
+			<speakerid>604</speakerid>
+			<lastname>Richter</lastname>
+			<firstname>Milena</firstname>
+			<eventid>91</eventid>
+			<event>Patient empowerment</event>
+		</item>
+		<item>
+			<speakerid>517</speakerid>
+			<lastname />
+			<firstname>Hedinn</firstname>
+			<eventid>93</eventid>
+			<event>Person-centred care</event>
+		</item>
+		<item>
+			<speakerid>332</speakerid>
+			<lastname>Fahy</lastname>
+			<firstname>Nick</firstname>
+			<eventid>93</eventid>
+			<event>Person-centred care</event>
+		</item>
+		<item>
+			<speakerid>586</speakerid>
+			<lastname>Oberhauser</lastname>
+			<firstname>Sabine </firstname>
+			<eventid>76</eventid>
+			<event>Opening Plenary</event>
+		</item>
+		<item>
+			<speakerid>575</speakerid>
+			<lastname>Pettersson</lastname>
+			<firstname>Bo Goran </firstname>
+			<eventid>108</eventid>
+			<event>From MDGs to the post-2015 agenda</event>
+		</item>
+		<item>
+			<speakerid>579</speakerid>
+			<lastname>Kuppens</lastname>
+			<firstname>Jacqueline </firstname>
+			<eventid>100</eventid>
+			<event>Active and Healthy Ageing</event>
+		</item>
+		<item>
+			<speakerid>571</speakerid>
+			<lastname>McCarthy</lastname>
+			<firstname>Kevin </firstname>
+			<eventid>108</eventid>
+			<event>From MDGs to the post-2015 agenda</event>
+		</item>
+		<item>
+			<speakerid>563</speakerid>
+			<lastname>Goodwin</lastname>
+			<firstname>Frazer</firstname>
+			<eventid>108</eventid>
+			<event>From MDGs to the post-2015 agenda</event>
+		</item>
+		<item>
+			<speakerid>214</speakerid>
+			<lastname>Figueras</lastname>
+			<firstname>Josep</firstname>
+			<eventid>76</eventid>
+			<event>Opening Plenary</event>
+		</item>
+		<item>
+			<speakerid>466</speakerid>
+			<lastname>Burns</lastname>
+			<firstname>Harry</firstname>
+			<eventid>81</eventid>
+			<event>Public health leadership</event>
+		</item>
+		<item>
+			<speakerid>465</speakerid>
+			<lastname>Riggare</lastname>
+			<firstname>Sara</firstname>
+			<eventid>81</eventid>
+			<event>Public health leadership</event>
+		</item>
+		<item>
+			<speakerid>587</speakerid>
+			<lastname>Sheu</lastname>
+			<firstname>Jin-Chuan </firstname>
+			<eventid>81</eventid>
+			<event>Public health leadership</event>
+		</item>
+		<item>
+			<speakerid>588</speakerid>
+			<lastname>Nien</lastname>
+			<firstname>Hsiao-Ching </firstname>
+			<eventid>81</eventid>
+			<event>Public health leadership</event>
+		</item>
+		<item>
+			<speakerid>589</speakerid>
+			<lastname>van Schaik</lastname>
+			<firstname> Louise </firstname>
+			<eventid>82</eventid>
+			<event>Building EU health policy</event>
+		</item>
+		<item>
+			<speakerid>109</speakerid>
+			<lastname>Rose</lastname>
+			<firstname>Tamsin</firstname>
+			<eventid>0</eventid>
+			<event />
+		</item>
+		<item>
+			<speakerid>127</speakerid>
+			<lastname>Aluttis</lastname>
+			<firstname>Christoph</firstname>
+			<eventid>82</eventid>
+			<event>Building EU health policy</event>
+		</item>
+		<item>
+			<speakerid>464</speakerid>
+			<lastname>Hu</lastname>
+			<firstname>Jason</firstname>
+			<eventid>87</eventid>
+			<event>Public health leadership</event>
+		</item>
+		<item>
+			<speakerid>581</speakerid>
+			<lastname>Ahmeti</lastname>
+			<firstname>Shpend </firstname>
+			<eventid>87</eventid>
+			<event>Public health leadership</event>
+		</item>
+		<item>
+			<speakerid>169</speakerid>
+			<lastname>Chiou</lastname>
+			<firstname>Shu-Ti</firstname>
+			<eventid>87</eventid>
+			<event>Public health leadership</event>
+		</item>
+		<item>
+			<speakerid>544</speakerid>
+			<lastname>Peterle</lastname>
+			<firstname>Alojz</firstname>
+			<eventid>87</eventid>
+			<event>Public health leadership</event>
+		</item>
+		<item>
+			<speakerid>123</speakerid>
+			<lastname>Kickbusch</lastname>
+			<firstname>Ilona</firstname>
+			<eventid>87</eventid>
+			<event>Public health leadership</event>
+		</item>
+		<item>
+			<speakerid>502</speakerid>
+			<lastname>Melin</lastname>
+			<firstname>Hanne</firstname>
+			<eventid>88</eventid>
+			<event>Building EU health policy</event>
+		</item>
+		<item>
+			<speakerid>503</speakerid>
+			<lastname>Stuckler</lastname>
+			<firstname>David</firstname>
+			<eventid>88</eventid>
+			<event>Building EU health policy</event>
+		</item>
+		<item>
+			<speakerid>590</speakerid>
+			<lastname>Brooks</lastname>
+			<firstname>Eleanor </firstname>
+			<eventid>88</eventid>
+			<event>Building EU health policy</event>
+		</item>
+		<item>
+			<speakerid>384</speakerid>
+			<lastname>O'Donnell</lastname>
+			<firstname>Peter</firstname>
+			<eventid>88</eventid>
+			<event>Building EU health policy</event>
+		</item>
+		<item>
+			<speakerid>515</speakerid>
+			<lastname>Strupler</lastname>
+			<firstname>Pascal</firstname>
+			<eventid>90</eventid>
+			<event>Human resource mobility</event>
+		</item>
+		<item>
+			<speakerid>455</speakerid>
+			<lastname>Colombo</lastname>
+			<firstname>Francesca</firstname>
+			<eventid>90</eventid>
+			<event>Human resource mobility</event>
+		</item>
+		<item>
+			<speakerid>478</speakerid>
+			<lastname>Schweizer</lastname>
+			<firstname>Christian </firstname>
+			<eventid>109</eventid>
+			<event>Moving for health and well-being</event>
+		</item>
+		<item>
+			<speakerid>477</speakerid>
+			<lastname>Duda</lastname>
+			<firstname>Joan</firstname>
+			<eventid>109</eventid>
+			<event>Moving for health and well-being</event>
+		</item>
+		<item>
+			<speakerid>514</speakerid>
+			<lastname>Wyke</lastname>
+			<firstname>Sally</firstname>
+			<eventid>109</eventid>
+			<event>Moving for health and well-being</event>
+		</item>
+		<item>
+			<speakerid>476</speakerid>
+			<lastname>Brandi</lastname>
+			<firstname>Maria Luisa</firstname>
+			<eventid>109</eventid>
+			<event>Moving for health and well-being</event>
+		</item>
+		<item>
+			<speakerid>358</speakerid>
+			<lastname>Galea</lastname>
+			<firstname>Gauden</firstname>
+			<eventid>110</eventid>
+			<event>NCDs &amp; the private sector</event>
+		</item>
+		<item>
+			<speakerid>593</speakerid>
+			<lastname>Gunn</lastname>
+			<firstname>Trevor </firstname>
+			<eventid>110</eventid>
+			<event>NCDs &amp; the private sector</event>
+		</item>
+		<item>
+			<speakerid>329</speakerid>
+			<lastname>Andriukaitis</lastname>
+			<firstname>Vytenis</firstname>
 			<eventid>105</eventid>
 			<event>Closing Plenary</event>
+		</item>
+		<item>
+			<speakerid>595</speakerid>
+			<lastname>Peetz-Schou</lastname>
+			<firstname>Mette </firstname>
+			<eventid>110</eventid>
+			<event>NCDs &amp; the private sector</event>
+		</item>
+		<item>
+			<speakerid>123</speakerid>
+			<lastname>Kickbusch</lastname>
+			<firstname>Ilona</firstname>
+			<eventid>110</eventid>
+			<event>NCDs &amp; the private sector</event>
+		</item>
+		<item>
+			<speakerid>273</speakerid>
+			<lastname>Bedlington</lastname>
+			<firstname>Nicola</firstname>
+			<eventid>91</eventid>
+			<event>Patient empowerment</event>
+		</item>
+		<item>
+			<speakerid>454</speakerid>
+			<lastname>Seychell</lastname>
+			<firstname>Martin</firstname>
+			<eventid>82</eventid>
+			<event>Building EU health policy</event>
+		</item>
+		<item>
+			<speakerid>454</speakerid>
+			<lastname>Seychell</lastname>
+			<firstname>Martin</firstname>
+			<eventid>76</eventid>
+			<event>Opening Plenary</event>
+		</item>
+		<item>
+			<speakerid>591</speakerid>
+			<lastname>Dussault</lastname>
+			<firstname>Gilles </firstname>
+			<eventid>90</eventid>
+			<event>Human resource mobility</event>
+		</item>
+		<item>
+			<speakerid>602</speakerid>
+			<lastname>Kayadjanian</lastname>
+			<firstname>Nathalie</firstname>
+			<eventid>79</eventid>
+			<event>Real world patient data</event>
+		</item>
+		<item>
+			<speakerid>123</speakerid>
+			<lastname>Kickbusch</lastname>
+			<firstname>Ilona</firstname>
+			<eventid>112</eventid>
+			<event>Ebola Breakfast Workshop</event>
+		</item>
+		<item>
+			<speakerid>606</speakerid>
+			<lastname>Thaler</lastname>
+			<firstname>Mario</firstname>
+			<eventid>112</eventid>
+			<event>Ebola Breakfast Workshop</event>
+		</item>
+		<item>
+			<speakerid>505</speakerid>
+			<lastname>Martin-Moreno</lastname>
+			<firstname>Jose Maria</firstname>
+			<eventid>112</eventid>
+			<event>Ebola Breakfast Workshop</event>
+		</item>
+		<item>
+			<speakerid>454</speakerid>
+			<lastname>Seychell</lastname>
+			<firstname>Martin</firstname>
+			<eventid>79</eventid>
+			<event>Real world patient data</event>
+		</item>
+		<item>
+			<speakerid>454</speakerid>
+			<lastname>Seychell</lastname>
+			<firstname>Martin</firstname>
+			<eventid>79</eventid>
+			<event>Real world patient data</event>
+		</item>
+		<item>
+			<speakerid>609</speakerid>
+			<lastname>Male</lastname>
+			<firstname>Christoph </firstname>
+			<eventid>84</eventid>
+			<event>Healthcare partnerships</event>
+		</item>
+		<item>
+			<speakerid>610</speakerid>
+			<lastname>Cimera</lastname>
+			<firstname>Dijana </firstname>
+			<eventid>97</eventid>
+			<event>European integration &amp; social health insurance</event>
+		</item>
+		<item>
+			<speakerid>597</speakerid>
+			<lastname>Buzeti</lastname>
+			<firstname>Tatjana</firstname>
+			<eventid>98</eventid>
+			<event>Health for jobs and prosperity in SEE</event>
+		</item>
+		<item>
+			<speakerid>601</speakerid>
+			<lastname>Vr?ic</lastname>
+			<firstname>Andrej</firstname>
+			<eventid>98</eventid>
+			<event>Health for jobs and prosperity in SEE</event>
+		</item>
+		<item>
+			<speakerid>611</speakerid>
+			<lastname>Galan</lastname>
+			<firstname>Adriana </firstname>
+			<eventid>98</eventid>
+			<event>Health for jobs and prosperity in SEE</event>
+		</item>
+		<item>
+			<speakerid>612</speakerid>
+			<lastname>Terzic</lastname>
+			<firstname>Natasa </firstname>
+			<eventid>98</eventid>
+			<event>Health for jobs and prosperity in SEE</event>
+		</item>
+		<item>
+			<speakerid>528</speakerid>
+			<lastname>Hunter</lastname>
+			<firstname>David </firstname>
+			<eventid>98</eventid>
+			<event>Health for jobs and prosperity in SEE</event>
+		</item>
+		<item>
+			<speakerid>613</speakerid>
+			<lastname>Spak </lastname>
+			<firstname>Carina </firstname>
+			<eventid>111</eventid>
+			<event>Undocumented migrants</event>
+		</item>
+		<item>
+			<speakerid>577</speakerid>
+			<lastname>Emiroglu</lastname>
+			<firstname>Nedret </firstname>
+			<eventid>112</eventid>
+			<event>Ebola Breakfast Workshop</event>
+		</item>
+		<item>
+			<speakerid>562</speakerid>
+			<lastname>Fullaondo</lastname>
+			<firstname>Ane</firstname>
+			<eventid>95</eventid>
+			<event>Deploying eHealth</event>
+		</item>
+		<item>
+			<speakerid>614</speakerid>
+			<lastname>Gabrielyan</lastname>
+			<firstname>Karine</firstname>
+			<eventid>108</eventid>
+			<event>From MDGs to the post-2015 agenda</event>
+		</item>
+		<item>
+			<speakerid>615</speakerid>
+			<lastname>Cotelea</lastname>
+			<firstname>Svetlana</firstname>
+			<eventid>108</eventid>
+			<event>From MDGs to the post-2015 agenda</event>
+		</item>
+		<item>
+			<speakerid>273</speakerid>
+			<lastname>Bedlington</lastname>
+			<firstname>Nicola</firstname>
+			<eventid>105</eventid>
+			<event>Closing Plenary</event>
+		</item>
+		<item>
+			<speakerid>355</speakerid>
+			<lastname>Azais</lastname>
+			<firstname>Boris</firstname>
+			<eventid>105</eventid>
+			<event>Closing Plenary</event>
+		</item>
+		<item>
+			<speakerid>384</speakerid>
+			<lastname>O'Donnell</lastname>
+			<firstname>Peter</firstname>
+			<eventid>105</eventid>
+			<event>Closing Plenary</event>
+		</item>
+		<item>
+			<speakerid>454</speakerid>
+			<lastname>Seychell</lastname>
+			<firstname>Martin</firstname>
+			<eventid>100</eventid>
+			<event>Active and Healthy Ageing</event>
+		</item>
+		<item>
+			<speakerid>598</speakerid>
+			<lastname>Johansen</lastname>
+			<firstname>Ib </firstname>
+			<eventid>102</eventid>
+			<event>Deploying eHealth</event>
+		</item>
+		<item>
+			<speakerid>156</speakerid>
+			<lastname>Bowis</lastname>
+			<firstname>John</firstname>
+			<eventid>91</eventid>
+			<event>Patient empowerment</event>
+		</item>
+		<item>
+			<speakerid>616</speakerid>
+			<lastname>Tsouros</lastname>
+			<firstname>Agis </firstname>
+			<eventid>76</eventid>
+			<event>Opening Plenary</event>
+		</item>
+		<item>
+			<speakerid>401</speakerid>
+			<lastname>Giepmans</lastname>
+			<firstname>Paul</firstname>
+			<eventid>76</eventid>
+			<event>Opening Plenary</event>
 		</item>
 	</channel>
 </rss>
