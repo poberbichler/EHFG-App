@@ -9,7 +9,7 @@
 	<bean id="twitterStreamFactory" class="twitter4j.TwitterStreamFactory">
 		<constructor-arg ref="twitterConfiguration" />
 	</bean>
-
+	
 	<bean id="twitterConfiguration" class="twitter4j.conf.Configuration"
 		factory-bean="twitterConfigurationBuilder" factory-method="build">
 	</bean>

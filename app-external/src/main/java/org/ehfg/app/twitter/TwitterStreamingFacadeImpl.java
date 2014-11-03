@@ -74,24 +74,26 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade, ApplicationC
 			hashtag = "#".concat(hashtag);
 		}
 		
-
 		if (!streams.containsKey(hashtag)) {
-			//TODO: use spring mock profile for streamfactory, so we do not need this if
+			TwitterStream stream = null;
+			
+			// spring profiles could be used directly by writing an abstraction for TwitterStreamFactory
 			if (isMockProfileActive()) {
 				logger.warn("adding mock stream for hashtag {} - mock profile is active", hashtag);
-				streams.put(hashtag, MockStream.getInstance());
+				stream = MockStreamFactory.getInstance();
 			}
 			
 			else {
-				final TwitterStream stream = streamFactory.getInstance();
-				stream.addListener(listenerFactory.getInstance(hashtag));
-				
-				FilterQuery query = new FilterQuery();
-				
-				query.track(new String[] { hashtag });
-				stream.filter(query);
-				streams.put(hashtag, stream);
+				stream = streamFactory.getInstance();
 			}
+			
+			stream.addListener(listenerFactory.getInstance(hashtag));
+			
+			FilterQuery query = new FilterQuery();
+			
+			query.track(new String[] { hashtag });
+			stream.filter(query);
+			streams.put(hashtag, stream);
 		}
 	}
 

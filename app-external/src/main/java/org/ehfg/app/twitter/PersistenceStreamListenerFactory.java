@@ -59,7 +59,7 @@ class PersistenceStreamListenerFactory {
 
 			TwitterUser author = twitterUserRepository.findOne(user.getId());
 			if (author == null) {
-				LOGGER.debug("adding user " + author);
+				LOGGER.debug("adding user {}", author);
 				author = new TwitterUser(user.getId(), user.getName(), user.getScreenName(), user.getProfileImageURL());
 			}
 
@@ -83,13 +83,13 @@ class PersistenceStreamListenerFactory {
 		@Override
 		@Transactional(readOnly = false)
 		public void onDeletionNotice(StatusDeletionNotice statusDeletionNotice) {
-			LOGGER.debug(String.format("deleting tweet with id '%s'", statusDeletionNotice.getStatusId()));
+			LOGGER.debug("deleting tweet with id '{}'", statusDeletionNotice.getStatusId());
 			tweetRepository.delete(statusDeletionNotice.getStatusId());
 		}
 
 		@Override
 		public void onException(Exception ex) {
-
+			
 		}
 
 		@Override
