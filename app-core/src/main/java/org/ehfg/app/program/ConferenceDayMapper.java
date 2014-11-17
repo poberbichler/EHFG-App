@@ -2,6 +2,7 @@ package org.ehfg.app.program;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.joda.time.LocalDate;
@@ -16,15 +17,17 @@ final class ConferenceDayMapper {
 	}
 
 	public static final List<ConferenceDay> map(final Collection<ConferenceDayDTO> source) {
-		final List<ConferenceDay> result = new ArrayList<>(source.size());
+		final List<ConferenceDay> result = new LinkedList<>();
 
 		for (final ConferenceDayDTO day : source) {
-			ConferenceDay target = new ConferenceDay();
-			target.setId(day.getId());
-			target.setDate(day.getDay().toDate());
-			target.setDescription(day.getDescription());
-
-			result.add(target);
+			if (!day.isDeleted()) {
+				ConferenceDay target = new ConferenceDay();
+				target.setId(day.getId());
+				target.setDate(day.getDay().toDate());
+				target.setDescription(day.getDescription());
+				
+				result.add(target);
+			}
 		}
 
 		return result;

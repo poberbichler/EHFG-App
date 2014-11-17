@@ -2,6 +2,8 @@ package org.ehfg.app.base;
 
 import java.util.List;
 
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections4.Predicate;
 import org.ehfg.app.validation.Validate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -60,7 +62,7 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 	public List<PointOfInterestDTO> savePointOfInterest(PointOfInterestDTO source) {
 		PointOfInterest target = fetchOrCreatePointOfInterest(source.getId());
 		mapFromDtoEntity(source, target);
-
+		
 		pointOfInterestRepository.save(target);
 		return findAllPointsOfInterest();
 	}
