@@ -28,7 +28,12 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 
 	@Override
 	public ConfigurationDTO getAppConfiguration() {
-		return configRepository.find();
+		ConfigurationDTO config = configRepository.find();
+		if (config == null) {
+			config = new ConfigurationDTO("EHFG", 1);
+		}
+		
+		return config;
 	}
 
 	@Override
