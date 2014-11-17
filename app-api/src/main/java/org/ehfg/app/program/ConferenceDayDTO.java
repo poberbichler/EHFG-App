@@ -1,5 +1,6 @@
 package org.ehfg.app.program;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.joda.time.LocalDate;
 
 /**
@@ -10,6 +11,7 @@ public final class ConferenceDayDTO implements Comparable<ConferenceDayDTO> {
 	private Long id;
 	private LocalDate day;
 	private String description;
+	private boolean deleted;
 
 	public ConferenceDayDTO() {
 
@@ -19,6 +21,7 @@ public final class ConferenceDayDTO implements Comparable<ConferenceDayDTO> {
 		this.id = id;
 		this.day = day;
 		this.description = description;
+		deleted = false;
 	}
 
 	@Override
@@ -81,6 +84,14 @@ public final class ConferenceDayDTO implements Comparable<ConferenceDayDTO> {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
+	public boolean isDeleted() {
+		return deleted;
+	}
+	
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
+	}
 
 	@Override
 	public int compareTo(ConferenceDayDTO that) {
@@ -89,5 +100,10 @@ public final class ConferenceDayDTO implements Comparable<ConferenceDayDTO> {
 		}
 
 		return this.day.compareTo(that.day);
+	}
+	
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
 	}
 }
