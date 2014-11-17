@@ -37,4 +37,15 @@
 	<beans profile="!in-memory-db">
 		<jee:jndi-lookup id="dataSource" jndi-name="jdbc/MySQLDS" />
 	</beans>
+	
+	<beans profile="in-memory-db">
+		<bean id="dataSource" factory-bean="dataSourceFactory" factory-method="getDatabase"/>
+		
+		<bean id="dataSourceFactory" class="org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory">
+			<property name="databaseName" value="ehfgApp" />
+			<property name="databaseType" value="H2" />
+		</bean>
+		
+		<bean id="databasePopulator" class="org.ehfg.app.mock.DatabasePopulator" autowire="constructor" />
+	</beans>
 </beans>
