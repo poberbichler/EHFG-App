@@ -7,7 +7,7 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.datetime.joda.DateTimeFormatterFactory;
 
 public class StringToLocalDateConverter implements Converter<String, LocalDate> {
-	private static final String DEAFULT_PATTERN = "yyyy-MM-dd";
+	private static final String DEAFULT_PATTERN = "dd.MM.yyyy";
 
 	@Override
 	public LocalDate convert(String source) {

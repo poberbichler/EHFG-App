@@ -1,0 +1,27 @@
+<html layout:decorator="includes/layout">
+<div layout:fragment="content">
+	<form method="post" th:action="@{twitterstreams/add}" class="form form-horizontal">
+		<h4>add stream</h4>
+		<div class="form-group">
+			<div class="col-sm-4">
+				<div class="input-group">
+					<span class="input-group-addon">#</span>
+					<input id="streamName" class="form-control" name="streamName" />
+				</div>
+			</div>
+			
+			<input id="submitInputForm" class="btn btn-primary" type="submit" value="add" />
+		</div>
+	</form>
+	
+	<div th:if="${not #lists.isEmpty(streams)}">
+		<div class="col-sm-3" style="padding-left: 0">
+			<h4>active streams <small>(click to delete)</small></h4>
+			<div class="list-group">
+				<a th:each="stream : ${streams}" th:text="${stream}" class="list-group-item"
+					th:href="@{'twitterstreams/delete/' + ${stream.substring(1)}}">stream</a>
+			</div>
+		</div>
+	</div>
+</div>
+</html>

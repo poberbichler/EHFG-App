@@ -1,0 +1,21 @@
+<html layout:decorator="includes/layout">
+<div layout:fragment="content">
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th>name</th>
+				<th>start</th>
+				<th>end</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+			<tr th:each="session : ${sessions}">
+				<td th:text="${session.sessionCode} + ' - ' + ${session.name}">sessioncode</td>
+				<td th:text="${session.startTime}">starttime</td>
+				<td th:text="${session.endTime}">endtime</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</html>

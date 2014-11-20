@@ -1,0 +1,40 @@
+<html layout:decorator="includes/layout">
+<div layout:fragment="content">
+	<form method="post" th:object="${dayForm}" class="form form-horizontal">
+		<ul id="dayList">
+			<li th:each="day,row : ${dayForm.days}">
+				<input th:field="*{days[__${row.index}__].deleted}" value="false" hidden="true"/>
+				<input th:field="*{days[__${row.index}__].day}" /> - 
+				<input th:field="*{days[__${row.index}__].description}" />
+				<a onclick="removeDay(this)" href="#" th:text="'remove'">remove</a>
+			</li>
+		</ul>
+		
+		<input value="add" class="btn btn-default" id="addRow" />
+		<input type="submit" value="save" class="btn btn-primary"/>
+	</form>
+	
+	<script type="text/javascript">
+		$("input[id^='day']").datepicker({dateFormat: 'dd.mm.yy'});
+		$("#addRow").click(function() {
+			var index = $('#dayList li').length;
+			
+			var newRow = '<li>';
+			newRow += '<input name="days[' + index + '].deleted" value="false" hidden="true"/>';
+			newRow += '<input id="day" name="days[' + index + '].day" value="" /> - ';
+			newRow += '<input name="days[' + index + '].description" value="" /> ';
+			newRow += '<a href="#" onclick="removeDay(this)">remove</a>';
+			newRow += '</li>';
+			
+			$('#dayList').append(newRow);
+			$("input[id^='day']").datepicker({dateFormat: 'dd.mm.yy'});
+		});
+		
+		function removeDay(element) {
+			var parent = $(element).parent();
+			parent.find('input[name$="deleted"]').attr('value', true);
+			parent.hide();
+		}
+	</script>
+</div>
+</html>
