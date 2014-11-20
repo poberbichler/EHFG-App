@@ -4,6 +4,10 @@ import java.util.List;
 
 import org.ehfg.app.program.ConferenceDayDTO;
 
+/**
+ * @author patrick
+ * @since 11.2014
+ */
 public class ConferenceDayForm {
 	private List<ConferenceDayDTO> days;
 

@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+/**
+ * @author patrick
+ * @since 11.2014
+ */
 @Controller
 @RequestMapping("maintenance/conferencedays")
 public class ConferenceDayController {

@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @author patrick
- * @since 26.10.2014
+ * @since 11.2014
  */
 @Controller
 @RequestMapping("session/overview")

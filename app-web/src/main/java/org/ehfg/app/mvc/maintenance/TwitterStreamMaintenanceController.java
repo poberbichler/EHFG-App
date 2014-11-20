@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+/**
+ * @author patrick
+ * @since 11.2014
+ */
 @Controller
 @RequestMapping(value = "maintenance/twitterstreams")
 public class TwitterStreamMaintenanceController {

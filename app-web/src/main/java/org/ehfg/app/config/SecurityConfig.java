@@ -1,4 +1,4 @@
-package org.ehfg.app.web.security;
+package org.ehfg.app.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -19,13 +19,14 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
 	void configureGlobal(final AuthenticationManagerBuilder builder) throws Exception {
-		builder.inMemoryAuthentication().withUser("patrick").password("123").roles(USER_ROLE)
-			.and().withUser("ehfg").password("ehfg").roles(USER_ROLE);
+		builder.inMemoryAuthentication()
+			.withUser("patrick").password("123").roles(USER_ROLE).and()
+			.withUser("ehfg").password("ehfg").roles(USER_ROLE);
 	}
 
 	@Override
 	public void configure(final WebSecurity web) {
-		web.ignoring().antMatchers("/rest/**", "/assets/**", "/report/**");
+		web.ignoring().antMatchers("/rest/**", "/webjars/**", "/report/**");
 	}
 
 	@Override
@@ -38,7 +39,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.usernameParameter("username")
 			.passwordParameter("password")
 			.loginProcessingUrl("/process-login")
-			.defaultSuccessUrl("/index")
+			.defaultSuccessUrl("/session/overview")
 			.failureUrl("/login/failed")
 			.and().httpBasic().and().csrf().disable();
 	}
