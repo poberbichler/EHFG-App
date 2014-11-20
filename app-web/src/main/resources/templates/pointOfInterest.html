@@ -1,0 +1,99 @@
+<html layout:decorator="includes/layout">
+<div layout:fragment="content" th:with="tableEmpty=${#lists.isEmpty(points)}">
+	<div >
+		<p th:text="'no point created yet'" th:if="${tableEmpty}"></p>
+		<table class="table table-striped table-bordered" th:unless="${tableEmpty}">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Address</th>
+					<th>Description</th>
+					<th>xValue</th>
+					<th>yValue</th>
+					<th>Contact</th>
+					<th>Website</th>
+					<th></th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each="point : ${points}">
+					<td th:text="${point.name}">name</td>
+					<td th:text="${point.address}">address</td>
+					<td th:text="${point.description}">description</td>
+					<td th:text="${point.xValue}">xValue</td>
+					<td th:text="${point.yValue}">yValue</td>
+					<td th:text="${point.contact}">contact</td>
+					<td th:text="${point.website}">website</td>
+					<td>
+						<a th:href="@{'pointofinterest/edit/' + ${point.id}}">edit</a>,
+						<a th:href="@{'pointofinterest/delete/' + ${point.id}}">delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<a id="createNewPoint" th:text="'new point of interest'" class="btn btn-primary" th:hidden="${editPoint.id != null}"></a>
+	<form th:action="@{/mvc/maintenance/pointofinterest}" method="post" id="inputForm" 
+		th:object="${editPoint}"  class="form form-horizontal" th:hidden="${editPoint.id == null}">
+		
+		<input th:field="*{id}" hidden="true" />
+		<div class="form-group">
+			<label for="name" class="col-sm-2 control-label">name</label>
+			<div class="col-sm-4">
+				<input th:field="*{name}" id="name" class="form-control" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="address" class="col-sm-2 control-label">address</label>
+			<div class="col-sm-4">
+				<input th:field="*{address}" id="address" class="form-control" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="description" class="col-sm-2 control-label">description</label>
+			<div class="col-sm-4">
+				<input th:field="*{description}" id="description" class="form-control" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="xValue" class="col-sm-2 control-label">xValue</label>
+			<div class="col-sm-4">
+				<input th:field="*{coordinate.xValue}" id="xValue" class="form-control" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="yValue" class="col-sm-2 control-label">yValue</label>
+			<div class="col-sm-4">
+				<input th:field="*{coordinate.yValue}" id="yValue" class="form-control" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="contact" class="col-sm-2 control-label">contact</label>
+			<div class="col-sm-4">
+				<input th:field="*{contact}" id="contact" class="form-control" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="website" class="col-sm-2 control-label">website</label>
+			<div class="col-sm-4">
+				<input th:field="*{website}" id="website" class="form-control" />
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<input type="submit" value="submit" class="btn btn-primary" />
+			</div>
+		</div>
+	</form>
+	
+	<script type="text/javascript">
+		$('#createNewPoint').click(function(event) {
+			$(this).hide();
+			$('#inputForm').show();
+		});
+	</script>
+</div>
+</html>

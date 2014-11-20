@@ -1,0 +1,9 @@
+<div th:fragment="sidebar" class="list-group">
+	<a th:href="@{/mvc/session/overview}" class="list-group-item" th:classappend="${activePage} == 'session' ? 'active'">Session Overview</a>
+	<a th:href="@{/mvc/speaker/overview}" class="list-group-item" th:classappend="${activePage} == 'speaker' ? 'active'">Speaker Overview</a>
+	<a th:href="@{/mvc/maintenance/general}" class="list-group-item" th:classappend="${activePage} eq 'generalMaintenance' ? 'active'">General Maintenance</a>
+	<a th:href="@{/mvc/maintenance/twitterstreams}" class="list-group-item" th:classappend="${activePage} == 'twitterStreams' ? 'active'">Twitter Streams</a>
+	<a th:href="@{/mvc/maintenance/conferencedays}" class="list-group-item" th:classappend="${activePage} == 'conferenceDays' ? 'active'">Conference Days</a>
+	<a th:href="@{/mvc/maintenance/pointofinterest}" class="list-group-item" th:classappend="${activePage} == 'pointOfInterest' ? 'active'">Point of Interest</a>
+	<a th:href="@{/mvc/maintenance/location}" class="list-group-item" th:classappend="${activePage} == 'location' ? 'active'">Location</a>
+</div>

@@ -55,5 +55,6 @@ public final class AppModule {
 		configuration.add("/rest/.*");
 		configuration.add("/ws/.*");
 		configuration.add("/mvc/.*");
+		configuration.add("/webjars/.*");
 	}
 }
