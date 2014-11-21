@@ -32,7 +32,7 @@ public class ConferenceDayController {
 	@RequestMapping(method = RequestMethod.POST)
 	public String saveDays(@ModelAttribute("dayForm") ConferenceDayForm form, BindingResult result) {
 		programFacade.saveDays(form.getDays());
-		return "redirect:/mvc/maintenance/conferencedays";
+		return "redirect:/maintenance/conferencedays";
 	}
 	
 	private ModelAndView createPage() {

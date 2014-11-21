@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @since 11.2014
  */
 @Controller
-@RequestMapping("session/overview")
+@RequestMapping({"/", "session/overview"})
 public class SessionOverviewController {
 	private final ProgramFacade programFacade;
 	

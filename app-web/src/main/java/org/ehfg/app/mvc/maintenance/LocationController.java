@@ -54,7 +54,7 @@ public class LocationController {
 			masterDataFacade.saveLocation(location);
 		}
 		
-		return "redirect:/mvc/maintenance/location";
+		return "redirect:/maintenance/location";
 	}
 	
 	private Collection<String> resolveLocations(final Collection<LocationDTO> alreadyAssignedLocations) {

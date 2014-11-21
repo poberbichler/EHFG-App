@@ -25,7 +25,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("maintenance/pointofinterest")
 public class PointOfInterestController {
-	private static final String TO_BASE_PAGE = "redirect:/mvc/maintenance/pointofinterest";
+	private static final String TO_BASE_PAGE = "redirect:/maintenance/pointofinterest";
 	private final MasterDataFacade masterDataFacade;
 
 	@Autowired

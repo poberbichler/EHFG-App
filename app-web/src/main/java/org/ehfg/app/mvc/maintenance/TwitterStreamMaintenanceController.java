@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping(value = "maintenance/twitterstreams")
 public class TwitterStreamMaintenanceController {
-	private static final String TO_VIEW = "redirect:/mvc/maintenance/twitterstreams";
+	private static final String TO_VIEW = "redirect:/maintenance/twitterstreams";
 	private final TwitterFacade twitterFacade;
 	
 	@Autowired

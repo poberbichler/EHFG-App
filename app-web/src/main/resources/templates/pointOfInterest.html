@@ -35,7 +35,7 @@
 	</div>
 	
 	<a id="createNewPoint" th:text="'new point of interest'" class="btn btn-primary" th:hidden="${editPoint.id != null}"></a>
-	<form th:action="@{/mvc/maintenance/pointofinterest}" method="post" id="inputForm" 
+	<form th:action="@{/maintenance/pointofinterest}" method="post" id="inputForm" 
 		th:object="${editPoint}"  class="form form-horizontal" th:hidden="${editPoint.id == null}">
 		
 		<input th:field="*{id}" hidden="true" />
