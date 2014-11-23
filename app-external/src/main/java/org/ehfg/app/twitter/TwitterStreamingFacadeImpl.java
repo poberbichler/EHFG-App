@@ -6,15 +6,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-
 import org.apache.commons.lang3.BooleanUtils;
 import org.ehfg.app.base.ConfigurationDTO;
 import org.ehfg.app.base.MasterDataFacade;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
@@ -30,7 +29,7 @@ import twitter4j.TwitterStreamFactory;
  * @since 14.03.2014
  */
 @Component("twitterStreamingFacade")
-class TwitterStreamingFacadeImpl implements TwitterStreamingFacade, ApplicationContextAware {
+class TwitterStreamingFacadeImpl implements TwitterStreamingFacade, ApplicationContextAware, InitializingBean, DisposableBean {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 	
 	private final Map<String, TwitterStream> streams = new HashMap<>();
@@ -49,23 +48,6 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade, ApplicationC
 		this.streamFactory = streamFactory;
 		this.listenerFactory = listenerFactory;
 		this.masterDataFacade = masterDataFacade;
-	}
-
-	@PostConstruct
-	private void addDefaultStream() {
-		if (BooleanUtils.isTrue(defaultStartup)) {
-			final ConfigurationDTO config = masterDataFacade.getAppConfiguration();
-			if (config != null && config.getHashtag() != null) {
-				this.addListener(config.getHashtag());
-			}
-		}
-	}
-
-	@PreDestroy
-	private void removeStreams() {
-		for (final String hashtag : findAllListeners()) {
-			removeListener(hashtag);
-		}
 	}
 
 	@Override
@@ -139,5 +121,22 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade, ApplicationC
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 		this.applicationContext = applicationContext;
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		if (BooleanUtils.isTrue(defaultStartup)) {
+			final ConfigurationDTO config = masterDataFacade.getAppConfiguration();
+			if (config != null && config.getHashtag() != null) {
+				this.addListener(config.getHashtag());
+			}
+		}
+	}
+
+	@Override
+	public void destroy() throws Exception {
+		for (final String hashtag : findAllListeners()) {
+			removeListener(hashtag);
+		}
 	}
 }

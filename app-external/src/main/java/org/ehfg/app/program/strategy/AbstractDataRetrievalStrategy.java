@@ -3,13 +3,13 @@ package org.ehfg.app.program.strategy;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
-import javax.annotation.PostConstruct;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -23,7 +23,7 @@ import org.springframework.stereotype.Service;
  * @since 21.06.2014
  */
 @Service
-public abstract class AbstractDataRetrievalStrategy<T> {
+public abstract class AbstractDataRetrievalStrategy<T> implements InitializingBean {
 	private static final String URL_DELIMITER = "/";
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -44,14 +44,14 @@ public abstract class AbstractDataRetrievalStrategy<T> {
 		this.fetchedClazz = fetchedClazz;
 		this.urlSnippet = urlSnippet;
 	}
-
-	@PostConstruct
-	private void initializeContextAndResource() throws MalformedURLException, JAXBException {
+	
+	@Override
+	public void afterPropertiesSet() throws Exception {
 		dataResource = new UrlResource(buildUrl());
 		jaxbContext = JAXBContext.newInstance(fetchedClazz);
 	}
 
-	public T fetchData() throws JAXBException, IOException {
+	public final T fetchData() throws JAXBException, IOException {
 		logger.info("fetching data from {}", dataResource.getURL().getPath());
 
 		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
@@ -60,7 +60,7 @@ public abstract class AbstractDataRetrievalStrategy<T> {
 		return fetchedClazz.cast(data);
 	}
 
-	public Class<T> getFetchedClass() {
+	public final Class<T> getFetchedClass() {
 		return fetchedClazz;
 	}
 
