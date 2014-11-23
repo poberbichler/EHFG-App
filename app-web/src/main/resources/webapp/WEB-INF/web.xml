@@ -3,15 +3,6 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
 	version="2.4">
 
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:META-INF/spring/spring.complete.xml</param-value>
-	</context-param>
-	
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
-	
 	<!-- Spring Security -->
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
@@ -31,6 +22,25 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
+	<servlet-mapping>
+		<servlet-name>maintenanceServlet</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>org.ehfg.app.config.WebConfig</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>contextClass</param-name>
+		<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
 	<!-- JAXRS -->
 	<servlet>
 		<servlet-name>EHFG-REST</servlet-name>
@@ -48,11 +58,6 @@
 
 		<load-on-startup>2</load-on-startup>
 	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>maintenanceServlet</servlet-name>
-		<url-pattern>/*</url-pattern>
-	</servlet-mapping>
 
 	<servlet-mapping>
 		<servlet-name>EHFG-REST</servlet-name>

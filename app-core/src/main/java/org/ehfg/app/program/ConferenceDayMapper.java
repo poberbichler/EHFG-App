@@ -1,7 +1,5 @@
 package org.ehfg.app.program;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -16,7 +14,7 @@ final class ConferenceDayMapper {
 		// do not allow instantiation
 	}
 
-	public static final List<ConferenceDay> map(final Collection<ConferenceDayDTO> source) {
+	public static final List<ConferenceDay> mapToEntity(final Iterable<ConferenceDayDTO> source) {
 		final List<ConferenceDay> result = new LinkedList<>();
 
 		for (final ConferenceDayDTO day : source) {
@@ -33,8 +31,8 @@ final class ConferenceDayMapper {
 		return result;
 	}
 	
-	public static final List<ConferenceDayDTO> map(final Iterable<ConferenceDay> source) {
-		final List<ConferenceDayDTO> result = new ArrayList<>();
+	public static final List<ConferenceDayDTO> mapToDTO(final Iterable<ConferenceDay> source) {
+		final List<ConferenceDayDTO> result = new LinkedList<>();
 		for (final ConferenceDay day : source) {
 			result.add(map(day));
 		}

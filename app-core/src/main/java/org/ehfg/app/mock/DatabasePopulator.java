@@ -10,15 +10,20 @@ import org.ehfg.app.program.ProgramFacade;
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormatter;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.format.datetime.joda.DateTimeFormatterFactory;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
  * populates the in-memory db for the mock profile
  * 
  * @author patrick
- * @since 17.11.2014
+ * @since 11.2014
  */
+@Component
+@Profile("in-memory-db")
 public class DatabasePopulator implements InitializingBean {
 	private static final ConfigurationDTO CONFIG;
 	
@@ -37,6 +42,7 @@ public class DatabasePopulator implements InitializingBean {
 	private final MasterDataFacade masterDataFacade;
 	private final ProgramFacade programFacade;
 
+	@Autowired
 	public DatabasePopulator(MasterDataFacade masterDataFacade,
 			ProgramFacade programFacade) {
 		this.masterDataFacade = masterDataFacade;

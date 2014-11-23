@@ -72,7 +72,7 @@ final class ProgramFacadeImpl implements ProgramFacade {
 	@Override
 	public Map<ConferenceDayDTO, List<SessionDTO>> findAllSessions() {
 		final Map<ConferenceDayDTO, List<SessionDTO>> result = new TreeMap<>();
-		final List<ConferenceDayDTO> conferenceDays = ConferenceDayMapper.map(conferenceDayRepository.findAll());
+		final List<ConferenceDayDTO> conferenceDays = ConferenceDayMapper.mapToDTO(conferenceDayRepository.findAll());
 
 		for (final SessionDTO session : sessionRepository.findAll()) {
 			final ConferenceDayDTO conferenceDay = findDay(conferenceDays, session);
@@ -114,7 +114,7 @@ final class ProgramFacadeImpl implements ProgramFacade {
 
 	@Override
 	public List<ConferenceDayDTO> findDays() {
-		List<ConferenceDayDTO> result = ConferenceDayMapper.map(conferenceDayRepository.findAll());
+		List<ConferenceDayDTO> result = ConferenceDayMapper.mapToDTO(conferenceDayRepository.findAll());
 		Collections.sort(result);
 
 		return result;
@@ -123,7 +123,7 @@ final class ProgramFacadeImpl implements ProgramFacade {
 	@Override
 	@Transactional(readOnly = false)
 	public void saveDays(List<ConferenceDayDTO> dayList) {
-		final List<ConferenceDay> source = ConferenceDayMapper.map(dayList);
+		final List<ConferenceDay> source = ConferenceDayMapper.mapToEntity(dayList);
 		conferenceDayRepository.deleteAll();
 		conferenceDayRepository.save(source);
 	}

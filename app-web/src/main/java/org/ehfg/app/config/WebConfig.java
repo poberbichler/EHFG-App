@@ -1,18 +1,67 @@
 package org.ehfg.app.config;
 
+import nz.net.ultraq.thymeleaf.LayoutDialect;
+
+import org.ehfg.app.converter.StringToLocalDateConverter;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ImportResource;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.format.FormatterRegistry;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.thymeleaf.spring4.SpringTemplateEngine;
+import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
+import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 
 /**
  * @author patrick
  * @since 11.2014
  */
-@ImportResource({"classpath:META-INF\\spring\\spring.base.xml",
-	"classpath:META-INF\\spring\\spring.persistence.xml",
-	"classpath:META-INF\\spring\\spring.rest.xml",
-	"classpath:META-INF\\spring\\spring.twitter.xml"})
+@EnableWebMvc
+@Configuration
+@EnableScheduling
+@EnableAspectJAutoProxy
 @ComponentScan(basePackages = "org.ehfg.app")
-public class WebConfig extends WebMvcConfigurationSupport {
-
+public class WebConfig extends WebMvcConfigurerAdapter {
+	@Bean
+	public SpringResourceTemplateResolver templateResolver() {
+		final SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
+		resolver.setPrefix("classpath:templates/");
+		resolver.setSuffix(".html");
+		resolver.setTemplateMode("HTML5");
+		resolver.setCacheable(false);
+		
+		return resolver;
+	}
+	
+	@Bean
+	public SpringTemplateEngine templateEngine() {
+		final SpringTemplateEngine templateEngine = new SpringTemplateEngine();
+		templateEngine.setTemplateResolver(templateResolver());
+		templateEngine.addDialect(new LayoutDialect());
+		
+		return templateEngine;
+	}
+	
+	@Bean
+	public ThymeleafViewResolver viewResolver() {
+		final ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
+		viewResolver.setTemplateEngine(templateEngine());
+		
+		return viewResolver;
+	}
+	
+	@Override
+	public void addFormatters(FormatterRegistry registry) {
+		registry.addConverter(new StringToLocalDateConverter());
+	}
+	
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+		registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+	}
 }

@@ -70,7 +70,6 @@ public abstract class AbstractDataRetrievalStrategy<T> {
 	 * <p>
 	 * leading or ending slashed will automatically be removed/added, so the result will always be a valid url
 	 * 
-	 * @return
 	 * @throws MalformedURLException
 	 *             in case of an error
 	 */
