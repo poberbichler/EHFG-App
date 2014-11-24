@@ -14,7 +14,8 @@ angular.module('ehfgApp.sessions', [])
         $scope.session = session;
 
         speakerService.findByIds(session.speakers).then(function(speakers) {
-           $scope.speakers = speakers;
+        	console.log(speakers);
+        	$scope.speakers = speakers;
         });
     });
 }])
@@ -62,6 +63,30 @@ angular.module('ehfgApp.sessions', [])
             }));
 
             return result.promise;
+        },
+        
+        findBySpeakerId: function(speakerId) {
+        	var endResult = $q.defer();
+        	endResult.resolve(this.findAll().then(function(conferenceDays) {
+        		var result = [];
+        		for (var i in conferenceDays) {
+        			var day = conferenceDays[i];
+        			
+        			for (var j in day.sessions) {
+        				var session = day.sessions[j];
+        				for (var speaker in session.speakers) {
+        					if (session.speakers[speaker] === speakerId) {
+        						result.push(session);
+        						break;
+        					}
+        				}
+        			}
+        		}
+        		
+        		return result;
+        	}));
+        	
+        	return endResult.promise;
         }
     }
 })

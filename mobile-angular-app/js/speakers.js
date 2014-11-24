@@ -6,6 +6,18 @@ angular.module('ehfgApp.speakers', [])
     });
 }])
 
+.controller('SpeakerDetailCtrl', ['$scope', '$stateParams', 'SpeakerService', 'SessionService', 
+    function($scope, $stateParams, speakerService, sessionService) {
+	
+	speakerService.findById($stateParams.speakerId).then(function(data) {
+		$scope.speaker = data;
+	});
+	
+	sessionService.findBySpeakerId($stateParams.speakerId).then(function(data) {
+		$scope.sessions = data;
+	});
+}])
+
 
 .factory('SpeakerService', ['$http', '$q', function($http, $q) {
     var SPEAKER_STORAGE = "SPEAKERS";
@@ -34,18 +46,36 @@ angular.module('ehfgApp.speakers', [])
 
         findByIds: function(speakerIds) {
             var endResult = $q.defer();
+            
             return this.findAll().then(function(speakers) {
                 var result = [];
                 for (var speakerId in speakerIds) {
                     for (var i in speakers) {
-                        if (speakers[i].id == speakerId) {
+                        if (speakers[i].id == speakerIds[speakerId]) {
                             result.push(speakers[i]);
                         }
                     }
                 }
 
+                endResult.resolve(result);
                 return endResult.promise;
             });
+        },
+        
+        findById: function(speakerId) {
+        	var result = $q.defer();
+        	
+        	result.resolve(this.findAll().then(function(speakers) {
+        		for (var i in speakers) {
+        			if (speakers[i].id === speakerId) {
+        				return speakers[i];
+        			}
+        		}
+        		
+        		return null;
+        	}));
+        	
+        	return result.promise;
         }
     }
 }])

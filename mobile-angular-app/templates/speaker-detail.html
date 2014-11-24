@@ -1,0 +1,13 @@
+<ion-view title="{{speaker.fullName}}">
+	<ion-content class="has-header has-footer">
+	    <img ng-src="{{speaker.imageUrl}}" class="speakerImage"></img>
+	    <p ng-bind-html="speaker.description"></p>
+	    
+	    <div class="list list-inset">
+	    	<div class="item item-divider">Sessions</div>
+	    	<ion-item class="item" ng-repeat="session in sessions" ng-href="#/sessions/{{session.id}}">
+	    		{{session.code}} - {{session.name}}
+	    	</ion-item>
+	    </div>
+	</ion-content>
+</ion-view>

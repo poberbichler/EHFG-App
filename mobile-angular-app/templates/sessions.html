@@ -1,12 +1,12 @@
-<ion-view title="Speakers">
-    <ion-content class="has-header">
+<ion-view title="Sessions">
+    <ion-content class="has-header has-footer">
         <ion-list>
             <div ng-repeat="day in conferenceDays">
                 <ion-item class="item item-divider">
                     {{day.description}}
                 </ion-item>
 
-                <ion-item ng-repeat="session in day.sessions" class="item" href="#/session/{{session.id}}">
+                <ion-item ng-repeat="session in day.sessions" class="item" href="#/sessions/{{session.id}}">
                     {{session.code}} - {{session.name}}
                 </ion-item>
             </div>

@@ -30,9 +30,6 @@ angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.me
                 templateUrl: 'templates/twitter.html',
                 controller: 'TwitterCtrl'
             }
-        },
-        data: {
-            menuHighlight: 'twitter'
         }
     });
 
@@ -43,10 +40,17 @@ angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.me
                 templateUrl: 'templates/speakers.html',
                 controller: 'SpeakerCtrl'
             }
-        },
-        data: {
-            menuHighlight: 'speaker'
         }
+    });
+    
+    $stateProvider.state('app.speakers.detail', {
+    	url: '/:speakerId',
+    	views: {
+    		'menuContent@app': {
+    			templateUrl: 'templates/speaker-detail.html',
+    			controller: 'SpeakerDetailCtrl'
+    		}
+    	}
     });
 
     $stateProvider.state('app.sessions', {
@@ -56,24 +60,18 @@ angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.me
                 templateUrl: 'templates/sessions.html',
                 controller: 'SessionCtrl'
             }
-        },
-        data: {
-            menuHighlight: 'session'
         }
     });
 
-    $stateProvider.state('app.session-detail', {
-       url: '/session/:sessionId',
+    $stateProvider.state('app.sessions.detail', {
+       url: '/:sessionId',
        views: {
-           'menuContent': {
+           'menuContent@app': {
                templateUrl: 'templates/session-detail.html',
                controller: 'SessionDetailCtrl'
            }
-       },
-        data: {
-            menuHighlight: 'session'
-        }
+       }
     });
-
-  $urlRouterProvider.otherwise('/twitter');
+    
+    $urlRouterProvider.otherwise('/twitter');
 })

@@ -28,13 +28,19 @@
       </ion-list>
     </ion-content>
   </ion-side-menu>
+  
+	<ion-side-menu side="right">
+		<header class="bar bar-header bar-stable">
+			<h1 class="t>Settings</h1>
+		</header>
+	</ion-side-menu>>
 </ion-side-menus>
 
 <div class="tabs-striped tabs-background-positive tabs-light">
     <div class="tabs">
-        <a class="tab-item" href="#/twitter" ng-class="{active: checkActive('twitter')}">Twitter</a>
-        <a class="tab-item" href="#/speakers" ng-class="{active: checkActive('speaker')}">Speakers</a>
-        <a class="tab-item" href="#/sessions"ng-class="{active: checkActive('session')}">Sessions</a>
-        <a class="tab-item" href="#/map" ng-class="{active: checkActive('map')}">Map</a>
+        <a class="tab-item" ui-sref="app.twitter" ui-sref-active="active">Twitter</a>
+        <a class="tab-item" ui-sref="app.sessions" ui-sref-active="active">Sessions</a>
+        <a class="tab-item" ui-sref="app.speakers" ui-sref-active="active">Speakers</a>
+        <a class="tab-item" ui-sref="app.map" ui-sref-active="active">Map</a>
     </div>
 </div>
