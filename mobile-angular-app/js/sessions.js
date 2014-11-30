@@ -2,7 +2,6 @@ angular.module('ehfgApp.sessions', [])
 
 .controller('SessionCtrl', ['$scope', 'SessionService', function($scope, sessionService) {
     sessionService.findAll().then(function(conferenceDays) {
-        console.log(conferenceDays);
         $scope.conferenceDays = conferenceDays;
     })
 }])
@@ -14,7 +13,6 @@ angular.module('ehfgApp.sessions', [])
         $scope.session = session;
 
         speakerService.findByIds(session.speakers).then(function(speakers) {
-        	console.log(speakers);
         	$scope.speakers = speakers;
         });
     });
@@ -22,6 +20,7 @@ angular.module('ehfgApp.sessions', [])
 
 .factory('SessionService', function($http, $q) {
     var SESSION_STORAGE = 'SESSIONS';
+    var SHOW_ALL_SESSIONS = true;
 
     return {
         findAll: function() {
@@ -87,6 +86,16 @@ angular.module('ehfgApp.sessions', [])
         	}));
         	
         	return endResult.promise;
+        },
+        
+        showAllSessions: function() {
+        	console.log('[sessionservice] toggle to true', SHOW_ALL_SESSIONS);
+        	SHOW_ALL_SESSIONS = true;
+        },
+        
+        showFavouriteSessions: function() {
+        	console.log('[sessionservice] toggle to false', SHOW_ALL_SESSIONS);
+        	SHOW_ALL_SESSIONS = false;
         }
     }
 })

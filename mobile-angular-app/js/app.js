@@ -17,16 +17,16 @@ angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.me
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
-    $stateProvider.state('app', {
-      abstract: true,
-      templateUrl: "templates/menu.html",
-      controller: 'MenuCtrl'
+	$stateProvider.state('app', {
+		abstract: true,
+		templateUrl: "templates/layout.html",
+		controller: 'MenuCtrl'
     });
 
     $stateProvider.state('app.twitter', {
         url: "/twitter",
         views: {
-            'menuContent': {
+            'content': {
                 templateUrl: 'templates/twitter.html',
                 controller: 'TwitterCtrl'
             }
@@ -36,7 +36,7 @@ angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.me
     $stateProvider.state('app.speakers', {
         url: "/speakers",
         views: {
-            'menuContent': {
+            'content': {
                 templateUrl: 'templates/speakers.html',
                 controller: 'SpeakerCtrl'
             }
@@ -46,7 +46,7 @@ angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.me
     $stateProvider.state('app.speakers.detail', {
     	url: '/:speakerId',
     	views: {
-    		'menuContent@app': {
+    		'content@app': {
     			templateUrl: 'templates/speaker-detail.html',
     			controller: 'SpeakerDetailCtrl'
     		}
@@ -56,7 +56,7 @@ angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.me
     $stateProvider.state('app.sessions', {
         url: '/sessions',
         views: {
-            'menuContent': {
+            'content': {
                 templateUrl: 'templates/sessions.html',
                 controller: 'SessionCtrl'
             }
@@ -66,7 +66,7 @@ angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.me
     $stateProvider.state('app.sessions.detail', {
        url: '/:sessionId',
        views: {
-           'menuContent@app': {
+           'content@app': {
                templateUrl: 'templates/session-detail.html',
                controller: 'SessionDetailCtrl'
            }
