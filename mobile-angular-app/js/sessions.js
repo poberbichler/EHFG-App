@@ -20,15 +20,15 @@ angular.module('ehfgApp.sessions', [])
 
 .factory('SessionService', function($http, $q) {
     var SESSION_STORAGE = 'SESSIONS';
-    var SHOW_ALL_SESSIONS = true;
-
+    var SHOW_FAVOURITE_SESSIONS = 'FAVOURITE_SESSIONS';
+    
     return {
         findAll: function() {
             var result = $q.defer();
 
             var storage = JSON.parse(localStorage.getItem(SESSION_STORAGE));
             if (storage === null || storage.length === 0) {
-                $http.jsonp('http://localhost:8080/rest/session/all?callback=JSON_CALLBACK')
+                $http.jsonp('http://localhost:8888/rest/session/all?callback=JSON_CALLBACK')
                     .success(function(data, status) {
                         localStorage.setItem(SESSION_STORAGE, JSON.stringify(data));
                         result.resolve(data);
@@ -89,13 +89,25 @@ angular.module('ehfgApp.sessions', [])
         },
         
         showAllSessions: function() {
-        	console.log('[sessionservice] toggle to true', SHOW_ALL_SESSIONS);
-        	SHOW_ALL_SESSIONS = true;
+        	if (this.getFavouriteSessionFlag() == true) {
+        		localStorage.setItem(SHOW_FAVOURITE_SESSIONS, false);
+        	}
         },
         
         showFavouriteSessions: function() {
-        	console.log('[sessionservice] toggle to false', SHOW_ALL_SESSIONS);
-        	SHOW_ALL_SESSIONS = false;
+        	if (this.getFavouriteSessionFlag() == false) {
+        		localStorage.setItem(SHOW_FAVOURITE_SESSIONS, true);
+        	}
+        },
+        
+        getFavouriteSessionFlag: function() {
+        	var result = localStorage.getItem(SHOW_FAVOURITE_SESSIONS);
+        	if (result === null) {
+        		localStorage.setItem(SHOW_FAVOURITE_SESSIONS, 'false');
+        		return false;
+        	}
+        	
+        	return result === 'true';
         }
     }
 })
