@@ -1,10 +1,17 @@
 <ion-view title="Twitter">
     <ion-content class="has-header has-footer">
-        <h1>Twitter</h1>
-        <ul>
-            <li ng-repeat="tweet in tweets">
-                {{tweet.id}}: {{tweet.text}}
-            </li>
-        </ul>
+        <div class="list card">
+        	<div class="item item-icon-left">
+        		<i class="icon ion-pound"></i>EHFG2014
+        	</div>
+        
+        	<div class="item" ng-repeat="tweet in tweetResource.tweets">
+        		{{tweet.message}}
+        	</div>
+        	
+        	<div class="item item-divider" ng-click="loadMoreTweets()" ng-show="tweetResource.morePages">
+        		Load more tweets...
+        	</div>
+        </div>
     </ion-content>
 </ion-view>

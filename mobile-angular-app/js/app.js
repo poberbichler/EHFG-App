@@ -1,4 +1,4 @@
-angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.menu', 'ehfgApp.speakers', 'ehfgApp.sessions'])
+angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.menu', 'ehfgApp.speakers', 'ehfgApp.sessions', 'ehfgApp.map'])
 
 // used by the ionic starter application, still have to check what it does
 .run(function($ionicPlatform) {
@@ -71,6 +71,16 @@ angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.me
                controller: 'SessionDetailCtrl'
            }
        }
+    });
+    
+    $stateProvider.state('app.map', {
+    	url: '/map',
+    	views: {
+    		'content': {
+    			templateUrl: 'templates/map.html',
+    			controller: 'MapCtrl'
+    		}
+    	}
     });
     
     $urlRouterProvider.otherwise('/twitter');

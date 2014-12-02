@@ -1,6 +1,7 @@
 package org.ehfg.app.mock;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Date;
@@ -65,17 +66,25 @@ public class DatabasePopulator implements InitializingBean, ApplicationContextAw
 		masterDataFacade.saveAppConfiguration(CONFIG);
 		programFacade.saveDays(DAY_LIST);
 
+		insertTwitterUser();
+		insertTweets();
+	}
+
+	private void insertTweets() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+		final Object tweetRepository = applicationContext.getBean("tweetRepository");
+		final Class<?> tweetRepositoryClass = tweetRepository.getClass();
+		final Method saveTweetMethod = tweetRepositoryClass.getMethod("save", Object.class);
+
+		saveTweetMethod.invoke(tweetRepository, createTweet(1L, "Message1"));
+		saveTweetMethod.invoke(tweetRepository, createTweet(2L, "Message2"));
+	}
+
+	private void insertTwitterUser() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
 		final Object twitterUserRepository = applicationContext.getBean("twitterUserRepository");
 		final Class<?> twitterUserRepositoryClass = twitterUserRepository.getClass();
 		final Method saveTwitterUserMethod = twitterUserRepositoryClass.getMethod("save", Object.class);
 
 		saveTwitterUserMethod.invoke(twitterUserRepository, TWEET_USER);
-
-		final Object tweetRepository = applicationContext.getBean("tweetRepository");
-		final Class<?> tweetRepositoryClass = tweetRepository.getClass();
-		final Method saveTweetMethod = tweetRepositoryClass.getMethod("save", Iterable.class);
-
-		saveTweetMethod.invoke(tweetRepository,  Arrays.asList(createTweet(1L, "Message1"), createTweet(2L, "Message2")));
 	}
 
 	@Override

@@ -64,6 +64,7 @@ final class TwitterFacadeImpl implements TwitterFacade {
 	}
 
 	@Override
+	@org.springframework.transaction.annotation.Transactional
 	public TweetPageDTO findTweetPage(Integer pageId) {
 		final ConfigurationDTO config = masterDataFacade.getAppConfiguration();
 		final Page<Tweet> tweets = tweetRepository.findByHashtagOrderByCreationDateDesc(config.getHashtag(),
