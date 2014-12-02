@@ -18,8 +18,8 @@
 		<ion-content class="has-header" ng-controller="MenuCtrl">
 			<ion-list>
 				<ion-item nav-clear class="item item-divider">Sessions</ion-item>
-				<ion-radio ng-model="favouriteSessions" ng-value="true">Show favourite sessions</ion-radio>
-				<ion-radio ng-model="favouriteSessions" ng-value="false">Show all sessions</ion-radio>
+				<ion-radio menu-close ng-model="favouriteSessions" ng-value="true">Show favourite sessions</ion-radio>
+				<ion-radio menu-close ng-model="favouriteSessions" ng-value="false">Show all sessions</ion-radio>
 				
 				<ion-item nav-clear class="item item-divider">Settings</ion-item>
 				<ion-item nav-clear menu-close ng-click="resetData()">Reset data</ion-item>

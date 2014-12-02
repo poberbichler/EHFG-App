@@ -4,11 +4,19 @@ angular.module('ehfgApp.sessions', [])
     sessionService.findAll().then(function(conferenceDays) {
         $scope.conferenceDays = conferenceDays;
     })
+    
+    $scope.addToFavourites = function(sessionId) {
+    	sessionService.addToFavourites(sessionId);
+    }
+    
+    $scope.removeFromFavourites = function(sessionId) {
+    	sessionService.removeFromFavourites(sessionId);
+    }
 }])
 
 .controller('SessionDetailCtrl', ['$scope', '$stateParams','SessionService', 'SpeakerService',
     function($scope, $stateParams, sessionService, speakerService) {
-
+	
     sessionService.findById($stateParams.sessionId).then(function(session) {
         $scope.session = session;
 
@@ -18,9 +26,30 @@ angular.module('ehfgApp.sessions', [])
     });
 }])
 
+.filter('favouriteSessions', ['SessionService', function(sessionService) {
+	return function(items) {
+		if (sessionService.getFavouriteSessionFlag() === false) {
+			return items;
+		}
+		
+		var result = [];
+		var favouriteSessions = sessionService.findFavouriteSessions();
+		
+		for (i in items) {
+			var item = items[i];
+			if (favouriteSessions.indexOf(item.id) !== -1) {
+				result.push(item);
+			}
+		}
+		
+		return result;
+	}
+}])
+
 .factory('SessionService', function($http, $q) {
     var SESSION_STORAGE = 'SESSIONS';
-    var SHOW_FAVOURITE_SESSIONS = 'FAVOURITE_SESSIONS';
+    var FAVOURITE_SESSIONS = 'FAVOURITE_SESSIONS';
+    var SHOW_FAVOURITE_SESSIONS = 'SHOW_FAVOURITE_SESSIONS';
     
     return {
         findAll: function() {
@@ -28,7 +57,7 @@ angular.module('ehfgApp.sessions', [])
 
             var storage = JSON.parse(localStorage.getItem(SESSION_STORAGE));
             if (storage === null || storage.length === 0) {
-                $http.jsonp('http://localhost:8888/rest/session/all?callback=JSON_CALLBACK')
+                $http.jsonp('http://localhost:8080/rest/session/all?callback=JSON_CALLBACK')
                     .success(function(data, status) {
                         localStorage.setItem(SESSION_STORAGE, JSON.stringify(data));
                         result.resolve(data);
@@ -108,6 +137,18 @@ angular.module('ehfgApp.sessions', [])
         	}
         	
         	return result === 'true';
+        },
+        
+        findFavouriteSessions: function() {
+        	return JSON.parse(localStorage.getItem(FAVOURITE_SESSIONS)) || [];
+        },
+        
+        addToFavourites: function(sessionId) {
+        	this.findFavouriteSessions().push(sessionId);
+        },
+        
+        removeFromFavourites: function(sessionId) {
+        	this.findFavouriteSessions().splice(sessionId, 1);
         }
     }
 })

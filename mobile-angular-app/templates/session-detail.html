@@ -1,6 +1,9 @@
 <ion-view title="{{session.code}} - {{session.name}}">
     <ion-content class="has-header has-footer">
         <h1>{{session.name}}</h1>
+        <h3 ng-show="true"><a ng-click="addToFavourites()" href>add to favourites</a></h3>
+        <h3 ng-hide="true"><a ng-click="removeFromFavourites()" href>remove from favourites</a></h3>
+        
         <p ng-bind-html="session.description"></p>
 
         <div class="list list-inset">
