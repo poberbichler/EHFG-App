@@ -11,13 +11,12 @@ import org.ehfg.app.base.ConfigurationDTO;
 import org.ehfg.app.base.MasterDataFacade;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.EnvironmentAware;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
 import twitter4j.FilterQuery;
@@ -29,7 +28,7 @@ import twitter4j.TwitterStreamFactory;
  * @since 14.03.2014
  */
 @Component("twitterStreamingFacade")
-class TwitterStreamingFacadeImpl implements TwitterStreamingFacade, ApplicationContextAware, InitializingBean, DisposableBean {
+class TwitterStreamingFacadeImpl implements TwitterStreamingFacade, EnvironmentAware, InitializingBean, DisposableBean {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 	
 	private final Map<String, TwitterStream> streams = new HashMap<>();
@@ -37,7 +36,7 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade, ApplicationC
 	private final PersistenceStreamListenerFactory listenerFactory;
 	private final MasterDataFacade masterDataFacade;
 	
-	private ApplicationContext applicationContext;
+	private Environment environment;
 
 	@Value("${twitter.default.listener.start}")
 	private boolean defaultStartup;
@@ -83,7 +82,7 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade, ApplicationC
 	 * @return {@code true} if the 'mock' profile is active, {@code false} otherwise
 	 */
 	private boolean isMockProfileActive() {
-		for (final String profile : applicationContext.getEnvironment().getActiveProfiles()) {
+		for (final String profile : environment.getActiveProfiles()) {
 			if (profile.equalsIgnoreCase("mock")) {
 				return true;
 			}
@@ -110,17 +109,11 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade, ApplicationC
 		
 		logger.info("removing stream for hashtag '{}'", hashtag);
 		
-		
 		TwitterStream stream = streams.get(hashtag);
 		if (stream != null) {
 			stream.cleanUp();
 			streams.remove(hashtag);
 		}
-	}
-
-	@Override
-	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-		this.applicationContext = applicationContext;
 	}
 
 	@Override
@@ -138,5 +131,10 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade, ApplicationC
 		for (final String hashtag : findAllListeners()) {
 			removeListener(hashtag);
 		}
+	}
+
+	@Override
+	public void setEnvironment(Environment environment) {
+		this.environment = environment;
 	}
 }

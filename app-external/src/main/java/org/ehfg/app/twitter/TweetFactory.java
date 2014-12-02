@@ -15,7 +15,7 @@ import twitter4j.URLEntity;
  * @since 12.04.2014
  */
 class TweetFactory {
-	public final static Tweet create(final Status status, final String hashtag, TwitterUser user) {
+	public final static Tweet create(final Status status, final String hashtag, final TwitterUser user) {
 		final Tweet result = new Tweet();
 		result.setAuthor(user);
 		result.setCreationDate(status.getCreatedAt());

@@ -39,7 +39,7 @@ class PersistenceStreamListenerFactory {
 	 * @author patrick
 	 * @since 14.03.2014
 	 */
-	private static final class PeristenceStreamListener implements StatusListener {
+	private static class PeristenceStreamListener implements StatusListener {
 		private static final Logger LOGGER = LoggerFactory.getLogger(PeristenceStreamListener.class);
 
 		private final TweetRepository tweetRepository;
