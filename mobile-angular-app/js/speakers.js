@@ -23,7 +23,7 @@
 
 	            var storage = JSON.parse(localStorage.getItem(SPEAKER_STORAGE));
 	            if (storage === null || storage.length === 0) {
-	                $http.jsonp(EHFG_BASE_URL + '/speaker/all?callback=JSON_CALLBACK')
+	                $http.jsonp(BASE_URL + '/speaker/all?callback=JSON_CALLBACK')
 	                    .success(function(data, status) {
 	                        localStorage.setItem(SPEAKER_STORAGE, JSON.stringify(data));
 	                        result.resolve(data);

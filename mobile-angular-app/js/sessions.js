@@ -1,20 +1,13 @@
 (function() {
-	var SessionCtrl = function($scope, sessionService) {
-	    sessionService.findAll().then(function(conferenceDays) {
-	        $scope.conferenceDays = conferenceDays;
-	    });
-	    
-	    $scope.addToFavourites = function(sessionId) {
-	    	sessionService.addToFavourites(sessionId);
-	    }
-	    
-	    $scope.removeFromFavourites = function(sessionId) {
-	    	sessionService.removeFromFavourites(sessionId);
-	    }
+	var SessionCtrl = function(conferenceDays) {
+		this.conferenceDays = conferenceDays;
 	}
-
+	
 	var SessionDetailCtrl = function($scope, $stateParams, sessionService, speakerService) {
-	    sessionService.findById($stateParams.sessionId).then(function(session) {
+		$scope.addToFavourites = sessionService.addToFavourites;
+		$scope.removeFromFavourites = sessionService.removeFromFavourites;
+
+		sessionService.findById($stateParams.sessionId).then(function(session) {
 	        $scope.session = session;
 	
 	        speakerService.findByIds(session.speakers).then(function(speakers) {
@@ -54,7 +47,7 @@
 	
 	            var storage = JSON.parse(localStorage.getItem(SESSION_STORAGE));
 	            if (storage === null || storage.length === 0) {
-	                $http.jsonp(EHFG_BASE_URL + '/session/all?callback=JSON_CALLBACK')
+	                $http.jsonp(BASE_URL + '/session/all?callback=JSON_CALLBACK')
 	                    .success(function(data, status) {
 	                        localStorage.setItem(SESSION_STORAGE, JSON.stringify(data));
 	                        result.resolve(data);
@@ -141,7 +134,7 @@
 	        },
 	        
 	        addToFavourites: function(sessionId) {
-	        	this.findFavouriteSessions().push(sessionId);
+	        	console.log(this);//.push(sessionId);
 	        },
 	        
 	        removeFromFavourites: function(sessionId) {
@@ -151,7 +144,7 @@
 	}
 	
 	angular.module('ehfgApp.sessions', [])
-		.controller('SessionCtrl', ['$scope', 'SessionService', SessionCtrl])
+		.controller('SessionCtrl', ['conferenceDays', SessionCtrl])
 		.controller('SessionDetailCtrl', ['$scope', '$stateParams','SessionService', 'SpeakerService', SessionDetailCtrl])
 		.filter('favouriteSessions', ['SessionService', FavouriteSessionFilter])
 		.factory('SessionService', ['$http', '$q', SessionService])

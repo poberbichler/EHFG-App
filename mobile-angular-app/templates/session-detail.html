@@ -1,9 +1,15 @@
 <ion-view title="{{session.code}} - {{session.name}}">
-    <ion-content class="has-header has-footer">
-        <h1>{{session.name}}</h1>
-        <h3 ng-show="true"><a ng-click="addToFavourites()" href>add to favourites</a></h3>
-        <h3 ng-hide="true"><a ng-click="removeFromFavourites()" href>remove from favourites</a></h3>
-        
+    <ion-content class="has-header has-footer padding">
+    	<p>
+    		<span>sessionTime</span> - 
+    		<span>sessionlocation</span>
+    	</p>
+    	<p><span>
+    		<a>Show on map</a>&nbsp;|&nbsp;
+    		<a ng-show="true">add to favourites</a><a ng-hide="true">remove from favourites</a>
+    	</span></p>
+
+        <h2>{{session.name}}</h2>
         <p ng-bind-html="session.description"></p>
 
         <div class="list list-inset">
