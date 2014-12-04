@@ -80,7 +80,7 @@ var loadAndCreateTwitterFeed = function() {
 var updateTwitterFeed = function() {
     var latestTweet = JSON.parse(localStorage.getItem('lastTweet'));
     if (latestTweet !== null) {
-        restCallWithParams("twitter/update", {lastTweet: new Date(latestTweet.timestamp)}, function(result) {
+        restCallWithParams("twitter/update", {lastTweet: 'Thu+Dec+04+2014+04%3A45%3A30+GMT%2B0100+(CET)&_=1417708929882'}, function(result) {
             $(createTwitterElements(result)).prependTo($('#tweets')).hide().slideDown(500);
             updateTimestamps();
         });

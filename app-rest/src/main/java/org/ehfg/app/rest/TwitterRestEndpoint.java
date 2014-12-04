@@ -39,10 +39,10 @@ public final class TwitterRestEndpoint {
 	}
 
 	@GET
-	@Path("update")
+	@Path("update/{lastTweet}")
 	@Produces(Type.JSONP)
-	public JSONWithPadding updateTweets(@QueryParam("callback") String callback, @QueryParam("lastTweet") Date lastTweet) {
-		return new JSONWithPadding(twitterFacade.findNewerTweetsForCongress(lastTweet), callback);
+	public JSONWithPadding updateTweets(@QueryParam("callback") String callback, @PathParam("lastTweet") Long timestamp) {
+		return new JSONWithPadding(twitterFacade.findNewerTweetsForCongress(new Date(timestamp)), callback);
 	}
 
 	@GET
