@@ -36,7 +36,7 @@
 	        views: {
 	            'content': {
 	                templateUrl: 'templates/speakers.html',
-	                controller: 'SpeakerCtrl'
+	                controller: 'SpeakerCtrl as speakerCtrl'
 	            }
 	        }
 	    });
@@ -46,7 +46,7 @@
 	    	views: {
 	    		'content@app': {
 	    			templateUrl: 'templates/speaker-detail.html',
-	    			controller: 'SpeakerDetailCtrl'
+	    			controller: 'SpeakerDetailCtrl as speakerDetailCtrl'
 	    		}
 	    	}
 	    });
@@ -59,12 +59,6 @@
 	                controller: 'SessionCtrl as sessionCtrl',
 	            }
 	        },
-	        
-	        resolve: {
-	        	conferenceDays: ['SessionService', function(sessionService) {
-	        		return sessionService.findAll();
-	        	}]
-	        }
 	    });
 
 	    $stateProvider.state('app.sessions.detail', {

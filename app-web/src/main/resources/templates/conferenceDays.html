@@ -15,7 +15,7 @@
 	</form>
 	
 	<script type="text/javascript">
-		$("input[id^='day']").datepicker({dateFormat: 'dd.mm.yy'});
+		$("input[id$='day']").datepicker({dateFormat: 'dd.mm.yy'});
 		$("#addRow").click(function() {
 			var index = $('#dayList li').length;
 			
@@ -27,7 +27,7 @@
 			newRow += '</li>';
 			
 			$('#dayList').append(newRow);
-			$("input[id^='day']").datepicker({dateFormat: 'dd.mm.yy'});
+			$("input[id$='day']").datepicker({dateFormat: 'dd.mm.yy'});
 		});
 		
 		function removeDay(element) {

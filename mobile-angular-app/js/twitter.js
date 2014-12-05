@@ -61,7 +61,6 @@
 			findNewer: updateResource.findNewer,
 			findInitial: pageResource.findInitial
 		}
-		
 	}
 	
 	angular.module('ehfgApp.twitter', [])

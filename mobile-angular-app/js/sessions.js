@@ -1,6 +1,9 @@
 (function() {
-	var SessionCtrl = function(conferenceDays) {
-		this.conferenceDays = conferenceDays;
+	var SessionCtrl = function(sessionService) {
+		var vm = this;
+		sessionService.findAll().then(function(data) {
+			vm.conferenceDays = data;
+		});
 	}
 	
 	var SessionDetailCtrl = function($scope, $stateParams, sessionService, speakerService) {
@@ -44,7 +47,6 @@
 	    return {
 	        findAll: function() {
 	            var result = $q.defer();
-	
 	            var storage = JSON.parse(localStorage.getItem(SESSION_STORAGE));
 	            if (storage === null || storage.length === 0) {
 	                $http.jsonp(BASE_URL + '/session/all?callback=JSON_CALLBACK')
@@ -63,29 +65,24 @@
 	        },
 	
 	        findById: function(sessionId) {
-	            var result = $q.defer();
-	
-	            result.resolve(this.findAll().then(function(conferenceDays) {
+	            return this.findAll().then(function(conferenceDays) {
 	                for (var i in conferenceDays) {
 	                    var day = conferenceDays[i];
 	                    for (var j in day.sessions) {
 	                        var session = day.sessions[j];
 	
 	                        if (session.id == sessionId) {
-	                            return session;
+	                            return $q.when(session);
 	                        }
 	                    }
 	                }
 	
 	                return null;
-	            }));
-	
-	            return result.promise;
+	            });
 	        },
 	        
 	        findBySpeakerId: function(speakerId) {
-	        	var endResult = $q.defer();
-	        	endResult.resolve(this.findAll().then(function(conferenceDays) {
+	        	return this.findAll().then(function(conferenceDays) {
 	        		var result = [];
 	        		for (var i in conferenceDays) {
 	        			var day = conferenceDays[i];
@@ -101,10 +98,8 @@
 	        			}
 	        		}
 	        		
-	        		return result;
-	        	}));
-	        	
-	        	return endResult.promise;
+	        		return $q.when(result);
+	        	});
 	        },
 	        
 	        showAllSessions: function() {
@@ -144,7 +139,7 @@
 	}
 	
 	angular.module('ehfgApp.sessions', [])
-		.controller('SessionCtrl', ['conferenceDays', SessionCtrl])
+		.controller('SessionCtrl', ['SessionService', SessionCtrl])
 		.controller('SessionDetailCtrl', ['$scope', '$stateParams','SessionService', 'SpeakerService', SessionDetailCtrl])
 		.filter('favouriteSessions', ['SessionService', FavouriteSessionFilter])
 		.factory('SessionService', ['$http', '$q', SessionService])

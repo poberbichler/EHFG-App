@@ -1,81 +1,78 @@
 (function() {
-	var SpeakerCtrl = function($scope, speakerService) {
-	    speakerService.findAll().then(function(data) {
-	        $scope.speakers = data;
-	    });
+	var SpeakerCtrl = function(speakerService) {
+		var vm = this;
+		speakerService.findAll().then(function(data) {
+			vm.speakers = data;
+		});
 	}
 	
-	var SessionService = function($scope, $stateParams, speakerService, sessionService) {
+	var SpeakerDetailCtrl = function($stateParams, speakerService, sessionService) {
+		var vm = this;
+		
 		speakerService.findById($stateParams.speakerId).then(function(data) {
-			$scope.speaker = data;
+			vm.speaker = data;
 		});
-	
+		
 		sessionService.findBySpeakerId($stateParams.speakerId).then(function(data) {
-			$scope.sessions = data;
+			vm.sessions = data;
 		});
 	}
 	
-	var SpeakerService = function($http, $q) {
+	var SpeakerResource = function($resource) {
+		return $resource(BASE_URL + '/speaker/all?callback=JSON_CALLBACK', {}, {
+			findAll: {method: 'JSONP', isArray:true}
+		});
+	}
+	
+	var SpeakerService = function($q, speakerResource) {
 	    var SPEAKER_STORAGE = "SPEAKERS";
+	    
 	    return {
-	        findAll: function() {
-	            var result = $q.defer();
-
-	            var storage = JSON.parse(localStorage.getItem(SPEAKER_STORAGE));
-	            if (storage === null || storage.length === 0) {
-	                $http.jsonp(BASE_URL + '/speaker/all?callback=JSON_CALLBACK')
-	                    .success(function(data, status) {
-	                        localStorage.setItem(SPEAKER_STORAGE, JSON.stringify(data));
-	                        result.resolve(data);
-	                    }
-	                );
-	            }
-
-	            else {
-	                result.resolve(storage);
-	            }
-
-	            return result.promise;
-	        },
-
-	        findByIds: function(speakerIds) {
-	            var endResult = $q.defer();
-	            
-	            return this.findAll().then(function(speakers) {
-	                var result = [];
-	                for (var speakerId in speakerIds) {
-	                    for (var i in speakers) {
-	                        if (speakers[i].id == speakerIds[speakerId]) {
-	                            result.push(speakers[i]);
-	                        }
-	                    }
-	                }
-
-	                endResult.resolve(result);
-	                return endResult.promise;
-	            });
-	        },
-	        
-	        findById: function(speakerId) {
-	        	var result = $q.defer();
-	        	
-	        	result.resolve(this.findAll().then(function(speakers) {
-	        		for (var i in speakers) {
-	        			if (speakers[i].id === speakerId) {
-	        				return speakers[i];
-	        			}
-	        		}
-	        		
-	        		return null;
-	        	}));
-	        	
-	        	return result.promise;
-	        }
+	    	findAll: findAll,
+	    	findById: findById,
+	    	findByIds: findByIds
+	    }
+	    
+	    function findAll() {
+	    	var storage = JSON.parse(localStorage.getItem(SPEAKER_STORAGE));
+            if (storage === null || storage.length === 0) {
+            	return speakerResource.findAll(function(data) {
+            		localStorage.setItem(SPEAKER_STORAGE, JSON.stringify(data));
+            	}).$promise;
+            }
+            
+            return $q.when(storage);
+	    }
+	    
+	    function findById(speakerId) {
+	    	return this.findAll().then(function(speakers) {
+	    		for (var i in speakers) {
+	    			if (speakers[i].id === speakerId) {
+	    				return $q.when(speakers[i]);
+	    			}
+	    		}
+	    		
+	    		return null;
+	    	});
+	    }
+	    
+	    function findByIds(speakerIds) {
+	    	return this.findAll().then(function(speakers) {
+	    		var result = [];
+	    		for (var i in speakers) {
+	    			if (speakerIds.indexOf(speakers[i].id) !== -1) {
+	    				result.push(speakers[i]);
+	    			}
+	    		}
+	    		
+	    		return $q.when(result);
+	    	});
 	    }
 	}
 	
 	angular.module('ehfgApp.speakers', [])
-		.controller('SpeakerCtrl', ['$scope', 'SpeakerService', SpeakerCtrl])
-		.controller('SpeakerDetailCtrl', ['$scope', '$stateParams', 'SpeakerService', 'SessionService', SessionService]) 
-		.factory('SpeakerService', ['$http', '$q', SpeakerService]) 
+		.controller('SpeakerCtrl', ['SpeakerService', SpeakerCtrl])
+		.controller('SpeakerDetailCtrl', ['$stateParams', 'SpeakerService', 'SessionService', SpeakerDetailCtrl]) 
+		.factory('SpeakerResource', ['$resource', SpeakerResource])
+		.factory('SpeakerService', ['$q', 'SpeakerResource', SpeakerService])
 })()

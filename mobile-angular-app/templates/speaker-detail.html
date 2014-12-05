@@ -1,11 +1,11 @@
-<ion-view title="{{speaker.fullName}}">
+<ion-view title="{{speakerDetailCtrl.speaker.fullName}}">
 	<ion-content class="has-header has-footer padding">
-	    <img ng-src="{{speaker.imageUrl}}" class="speakerImage"></img>
-	    <p ng-bind-html="speaker.description"></p>
+	    <img ng-src="{{speakerDetailCtrl.speaker.imageUrl}}" class="speakerImage"></img>
+	    <p ng-bind-html="speakerDetailCtrl.speaker.description"></p>
 	    
 	    <div class="list list-inset">
 	    	<div class="item item-divider">Sessions</div>
-	    	<ion-item class="item" ng-repeat="session in sessions" ng-href="#/sessions/{{session.id}}">
+	    	<ion-item class="item" ng-repeat="session in speakerDetailCtrl.sessions" ng-href="#/sessions/{{session.id}}">
 	    		{{session.code}} - {{session.name}}
 	    	</ion-item>
 	    </div>
