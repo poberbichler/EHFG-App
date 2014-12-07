@@ -1,12 +1,13 @@
 <ion-view title="{{session.code}} - {{session.name}}">
     <ion-content class="has-header has-footer padding">
     	<p>
-    		<span>sessionTime</span> - 
-    		<span>sessionlocation</span>
+    		<span>{{session.start | date:'MMM d, HH:mm':'UTC'}} - {{session.end | date:'HH:mm':'UTC'}}</span> | 
+    		<span>{{session.location}}</span>
     	</p>
     	<p><span>
     		<a>Show on map</a>&nbsp;|&nbsp;
-    		<a ng-show="true">add to favourites</a><a ng-hide="true">remove from favourites</a>
+    		<a ng-hide="session.isInFavourites" ng-click="addToFavourites()" href>add to favourites</a>
+    		<a ng-show="session.isInFavourites" ng-click="removeFromFavourites()" href>remove from favourites</a>
     	</span></p>
 
         <h2>{{session.name}}</h2>

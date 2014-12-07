@@ -59,6 +59,11 @@
 	                controller: 'SessionCtrl as sessionCtrl',
 	            }
 	        },
+	        resolve: {
+	        	conferenceDays: ['SessionService', function(sessionService) {
+	        		return sessionService.findAll();
+	        	}]
+	        }
 	    });
 
 	    $stateProvider.state('app.sessions.detail', {

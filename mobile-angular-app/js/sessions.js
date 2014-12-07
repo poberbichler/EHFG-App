@@ -1,9 +1,6 @@
 (function() {
-	var SessionCtrl = function(sessionService) {
-		var vm = this;
-		sessionService.findAll().then(function(data) {
-			vm.conferenceDays = data;
-		});
+	var SessionCtrl = function(conferenceDays) {
+		this.conferenceDays = conferenceDays;
 	}
 	
 	var SessionDetailCtrl = function($scope, $stateParams, sessionService, speakerService) {
@@ -12,13 +9,25 @@
 
 		sessionService.findById($stateParams.sessionId).then(function(session) {
 	        $scope.session = session;
+	        $scope.session.isInFavourites = sessionService.isFavouriteSession(session.id);
 	
 	        speakerService.findByIds(session.speakers).then(function(speakers) {
 	        	$scope.speakers = speakers;
 	        });
 	    });
+		
+		$scope.addToFavourites = function() {
+			$scope.session.isInFavourites = true;
+			sessionService.addToFavourites($scope.session.id);
+		}
+		
+		$scope.removeFromFavourites = function() {
+			$scope.session.isInFavourites = false;
+			sessionService.removeFromFavourites($scope.session.id);
+		}
 	}
 	
+	//TODO: try to find a better solution. actually using a filter is ok, becase there are not that many sessions...  
 	var FavouriteSessionFilter = function(sessionService) {
 		return function(items) {
 			if (sessionService.getFavouriteSessionFlag() === false) {
@@ -28,7 +37,7 @@
 			var result = [];
 			var favouriteSessions = sessionService.findFavouriteSessions();
 			
-			for (i in items) {
+			for (var i in items) {
 				var item = items[i];
 				if (favouriteSessions.indexOf(item.id) !== -1) {
 					result.push(item);
@@ -46,22 +55,20 @@
 	    
 	    return {
 	        findAll: function() {
-	            var result = $q.defer();
 	            var storage = JSON.parse(localStorage.getItem(SESSION_STORAGE));
 	            if (storage === null || storage.length === 0) {
+	            	var result = $q.defer();
 	                $http.jsonp(BASE_URL + '/session/all?callback=JSON_CALLBACK')
 	                    .success(function(data, status) {
 	                        localStorage.setItem(SESSION_STORAGE, JSON.stringify(data));
 	                        result.resolve(data);
 	                    }
 	                );
+	                
+	                return result.promise;
 	            }
-	
-	            else {
-	                result.resolve(storage);
-	            }
-	
-	            return result.promise;
+	            
+	            return $q.when(storage);
 	        },
 	
 	        findById: function(sessionId) {
@@ -124,22 +131,30 @@
 	        	return result === 'true';
 	        },
 	        
+	        isFavouriteSession: function(sessionId) {
+	        	return this.findFavouriteSessions().indexOf(sessionId) !== -1;
+	        },
+	        
 	        findFavouriteSessions: function() {
 	        	return JSON.parse(localStorage.getItem(FAVOURITE_SESSIONS)) || [];
 	        },
 	        
 	        addToFavourites: function(sessionId) {
-	        	console.log(this);//.push(sessionId);
+	        	var favourites = this.findFavouriteSessions();
+	        	favourites.push(sessionId);
+	        	localStorage.setItem(FAVOURITE_SESSIONS, JSON.stringify(favourites));
 	        },
 	        
 	        removeFromFavourites: function(sessionId) {
-	        	this.findFavouriteSessions().splice(sessionId, 1);
+	        	var favourites = this.findFavouriteSessions();
+	        	favourites.splice(sessionId, 1);
+	        	localStorage.setItem(FAVOURITE_SESSIONS, JSON.stringify(favourites));
 	        }
 	    }
 	}
 	
 	angular.module('ehfgApp.sessions', [])
-		.controller('SessionCtrl', ['SessionService', SessionCtrl])
+		.controller('SessionCtrl', ['conferenceDays', SessionCtrl])
 		.controller('SessionDetailCtrl', ['$scope', '$stateParams','SessionService', 'SpeakerService', SessionDetailCtrl])
 		.filter('favouriteSessions', ['SessionService', FavouriteSessionFilter])
 		.factory('SessionService', ['$http', '$q', SessionService])
