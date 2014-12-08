@@ -77,7 +77,7 @@
 	    });
 	    
 	    $stateProvider.state('app.map', {
-	    	url: '/map',
+	    	url: '/map/:location',
 	    	views: {
 	    		'content': {
 	    			templateUrl: 'templates/map.html',

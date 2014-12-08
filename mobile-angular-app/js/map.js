@@ -1,5 +1,11 @@
 (function() {
-	function MapCtrl(mapService) {
+	function MapCtrl($stateParams, mapService) {
+		if ($stateParams.location !== undefined && $stateParams.location.length !== 0) {
+			var highlightLocation = {};
+			this.highlightLocation = highlightLocation;
+		}
+
+		
 		this.zoom = 16;
 		this.center = {
 				latitude: 47.170329, 
@@ -23,7 +29,7 @@
 	}
 	
 	angular.module('ehfgApp.map', ['uiGmapgoogle-maps'])
-		.controller('MapCtrl', ['MapService', MapCtrl])
+		.controller('MapCtrl', ['$stateParams', 'MapService', MapCtrl])
 		.factory('MapService', ['$resource', MapService])
 })();
 

@@ -1,17 +1,17 @@
 <ion-view title="Map">
 	<div id="map-parent">
 		<ui-gmap-google-map center="mapCtrl.center" zoom="mapCtrl.zoom">
-			<ui-gmap-markers models="mapCtrl.locations" idkey="id" coords="'coordinate'">
-				<ui-gmap-windows>
-					<div ng-non-bindable>{{name}}</div>
-				</ui-gmap-windows>	
-			</ui-gmap-markers>
-
 			<ui-gmap-markers models="mapCtrl.points" idkey="name" coords="'coordinate'">
 				<ui-gmap-windows>
 					<div ng-non-bindable>{{description}}</div>
 				</ui-gmap-windows>	
 			</ui-gmap-marker>
+
+			<div ng-if="">
+				<ui-gmap-marker idkey="'highlight'" coords="{latitude:.., longitude:..}">
+				
+				</ui-gmap-marker>
+			</div>
 		</ui-gmap-google-map>
 	</div>
 </ion-view>

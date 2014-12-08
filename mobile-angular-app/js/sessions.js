@@ -6,7 +6,7 @@
 	var SessionDetailCtrl = function($scope, $stateParams, sessionService, speakerService) {
 		$scope.addToFavourites = sessionService.addToFavourites;
 		$scope.removeFromFavourites = sessionService.removeFromFavourites;
-
+		
 		sessionService.findById($stateParams.sessionId).then(function(session) {
 	        $scope.session = session;
 	        $scope.session.isInFavourites = sessionService.isFavouriteSession(session.id);
@@ -27,7 +27,7 @@
 		}
 	}
 	
-	//TODO: try to find a better solution. actually using a filter is ok, becase there are not that many sessions...  
+	//TODO: check if a solution inside the sessionService would be better. actually using a filter is ok, because there are not that many sessions...  
 	var FavouriteSessionFilter = function(sessionService) {
 		return function(items) {
 			if (sessionService.getFavouriteSessionFlag() === false) {
