@@ -1,4 +1,4 @@
-package org.ehfg.app.program.repository.impl;
+package org.ehfg.app.program.repository;
 
 import java.io.IOException;
 import java.util.HashMap;

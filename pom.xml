@@ -12,6 +12,7 @@
 		<module>app-external</module>
 		<module>app-rest</module>
 		<module>app-web</module>
+		<module>app-mock</module>
 	</modules>
 
 	<properties>

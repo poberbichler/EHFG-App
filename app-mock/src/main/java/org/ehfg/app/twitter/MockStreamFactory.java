@@ -2,6 +2,8 @@ package org.ehfg.app.twitter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
 
 import twitter4j.ConnectionLifeCycleListener;
 import twitter4j.FilterQuery;
@@ -31,12 +33,11 @@ import twitter4j.conf.Configuration;
  * @author patrick
  * @since 03.11.2014
  */
-final class MockStreamFactory {
-	private MockStreamFactory() {
-		// do not allow instantiation
-	}
-
-	public static TwitterStream getInstance() {
+@Component
+@Profile("mock")
+final class MockStreamFactory implements TwitterStreamFactoryHolder {
+	@Override
+	public TwitterStream getStream() {
 		return INSTANCE;
 	}
 

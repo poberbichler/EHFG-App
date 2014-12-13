@@ -1,4 +1,4 @@
-package org.ehfg.app.program.repository.mock;
+package org.ehfg.app.program.repository;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;

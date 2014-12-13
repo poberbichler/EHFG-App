@@ -1,4 +1,4 @@
-package org.ehfg.app.mock;
+package org.ehfg.app.populator;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -38,7 +38,6 @@ public class DatabasePopulator implements InitializingBean, ApplicationContextAw
 	private static final Object TWEET_USER;
 	private static final List<ConferenceDayDTO> DAY_LIST;
 	private static final DateTimeFormatter FORMAT = new DateTimeFormatterFactory("dd.MM.yyyy").createDateTimeFormatter();
-
 
 	static {
 		TWEET_USER = createTweetUser();

@@ -1,4 +1,4 @@
-package org.ehfg.app.program.repository.impl;
+package org.ehfg.app.program.repository;
 
 import org.ehfg.app.program.AbstractSessionRepository;
 import org.ehfg.app.program.SessionDTO;

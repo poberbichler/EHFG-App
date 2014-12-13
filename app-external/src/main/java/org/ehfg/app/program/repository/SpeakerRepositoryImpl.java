@@ -1,4 +1,4 @@
-package org.ehfg.app.program.repository.impl;
+package org.ehfg.app.program.repository;
 
 import org.ehfg.app.program.AbstractSpeakerRepository;
 import org.ehfg.app.program.SpeakerDTO;

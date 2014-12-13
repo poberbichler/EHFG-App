@@ -24,7 +24,7 @@ public class ExternalConfig {
 	public TwitterStreamFactory twitterStreamFactory() {
 		return new TwitterStreamFactory(twitterConfiguration());
 	}
-
+	
 	@Bean
 	public twitter4j.conf.Configuration twitterConfiguration() {
 		final ConfigurationBuilder builder = new ConfigurationBuilder();
