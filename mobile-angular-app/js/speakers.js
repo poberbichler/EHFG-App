@@ -18,7 +18,7 @@
 		});
 	}
 	
-	var SpeakerResource = function($resource) {
+	var SpeakerResource = function($resource, BASE_URL) {
 		return $resource(BASE_URL + '/speaker/all?callback=JSON_CALLBACK', {}, {
 			findAll: {method: 'JSONP', isArray:true}
 		});
@@ -71,6 +71,6 @@
 	angular.module('ehfgApp.speakers', [])
 		.controller('SpeakerCtrl', ['SpeakerService', SpeakerCtrl])
 		.controller('SpeakerDetailCtrl', ['$stateParams', 'SpeakerService', 'SessionService', SpeakerDetailCtrl]) 
-		.factory('SpeakerResource', ['$resource', SpeakerResource])
+		.factory('SpeakerResource', ['$resource', 'BASE_URL', SpeakerResource])
 		.factory('SpeakerService', ['$q', 'LocalStorageService', 'SpeakerResource', SpeakerService])
 })()

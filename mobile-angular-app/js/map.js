@@ -17,7 +17,7 @@
 		}
 	}
 	
-	function MapService($resource) {
+	function MapService($resource, BASE_URL) {
 		return {
 			locations: new $resource(BASE_URL + '/location/:method/:name?callback=JSON_CALLBACK', {}, {
 					findAll: {method: 'JSONP', isArray: true, params: {method: 'all'}},
@@ -37,7 +37,7 @@
 	
 	angular.module('ehfgApp.map', ['uiGmapgoogle-maps'])
 		.controller('MapCtrl', ['MapService', 'highlightLocation', MapCtrl])
-		.factory('MapService', ['$resource', MapService])
+		.factory('MapService', ['$resource', 'BASE_URL', MapService])
 })();
 
 function onGoogleReady() {

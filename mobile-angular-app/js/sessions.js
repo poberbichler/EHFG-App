@@ -47,7 +47,7 @@
 		}
 	}
 	
-	var SessionResource = function($resource) {
+	var SessionResource = function($resource, BASE_URL) {
 		return $resource(BASE_URL + '/session/all?callback=JSON_CALLBACK', {}, {
 			findAll: {method: 'JSONP', isArray: true}
 		});
@@ -152,5 +152,5 @@
 		.controller('SessionDetailCtrl', ['$scope', '$stateParams','SessionService', 'SpeakerService', SessionDetailCtrl])
 		.filter('favouriteSessions', ['SessionService', FavouriteSessionFilter])
 		.factory('SessionService', ['$q', 'SessionResource', 'LocalStorageService', SessionService])
-		.factory('SessionResource', ['$resource', SessionResource])
+		.factory('SessionResource', ['$resource', 'BASE_URL', SessionResource])
 })();

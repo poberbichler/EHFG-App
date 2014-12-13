@@ -99,7 +99,8 @@
 	    $urlRouterProvider.otherwise('/twitter');
 	}
 	
-	angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.menu', 'ehfgApp.speakers', 'ehfgApp.sessions', 'ehfgApp.map', 'ehfgApp.storage'])
+	angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.menu', 'ehfgApp.speakers', 
+	                           'ehfgApp.sessions', 'ehfgApp.map', 'ehfgApp.storage', 'ehfgApp.config'])
 		.config(['$stateProvider', '$urlRouterProvider', Config])
 		.run(['$ionicPlatform', runFunction])
 })();

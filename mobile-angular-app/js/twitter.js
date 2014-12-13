@@ -9,6 +9,11 @@
 	
 	var TwitterService = function(twitterResource) {
 		var tweetData = {};
+		
+		function mapData(data) {
+			tweetData.morePages = data.morePages;
+			tweetData.currentPage = data.currentPage;
+		}
 
 		return {
 			init: init,
@@ -39,14 +44,9 @@
 				});
 			}
 		}
-		
-		function mapData(data) {
-			tweetData.morePages = data.morePages;
-			tweetData.currentPage = data.currentPage;
-		}
 	}
 	
-	var TwitterResource = function($http, $resource) {
+	var TwitterResource = function($resource, BASE_URL) {
 		var pageResource = new $resource(BASE_URL + '/twitter/tweetpage/:page?callback=JSON_CALLBACK', {page: 0}, {
 			findInitial: {method: 'JSONP', isArray: false},
 			findMore: {method: 'JSONP', isArray: false, params: {page: '@page'}}
@@ -65,6 +65,6 @@
 	
 	angular.module('ehfgApp.twitter', [])
 		.controller('TwitterCtrl', ['TwitterService', TwitterCtrl])
-		.factory('TwitterResource', ['$http', '$resource', TwitterResource])
+		.factory('TwitterResource', ['$resource', 'BASE_URL', TwitterResource])
 		.factory('TwitterService', ['TwitterResource', TwitterService])
 })();
