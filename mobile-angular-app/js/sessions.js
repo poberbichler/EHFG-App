@@ -27,7 +27,6 @@
 		}
 	}
 	
-	//TODO: check if a solution inside the sessionService would be better. actually using a filter is ok, because there are not that many sessions...  
 	var FavouriteSessionFilter = function(sessionService) {
 		return function(items) {
 			if (sessionService.getFavouriteSessionFlag() === false) {
