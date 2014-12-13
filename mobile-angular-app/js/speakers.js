@@ -24,9 +24,7 @@
 		});
 	}
 	
-	var SpeakerService = function($q, speakerResource) {
-	    var SPEAKER_STORAGE = "SPEAKERS";
-	    
+	var SpeakerService = function($q, localStorageService, speakerResource) {
 	    return {
 	    	findAll: findAll,
 	    	findById: findById,
@@ -34,10 +32,10 @@
 	    }
 	    
 	    function findAll() {
-	    	var storage = JSON.parse(localStorage.getItem(SPEAKER_STORAGE));
-            if (storage === null || storage.length === 0) {
+	    	var storage = localStorageService.findSpeakers();
+            if (storage.length === 0) {
             	return speakerResource.findAll(function(data) {
-            		localStorage.setItem(SPEAKER_STORAGE, JSON.stringify(data));
+            		localStorageService.setSpeakers(data);
             	}).$promise;
             }
             
@@ -74,5 +72,5 @@
 		.controller('SpeakerCtrl', ['SpeakerService', SpeakerCtrl])
 		.controller('SpeakerDetailCtrl', ['$stateParams', 'SpeakerService', 'SessionService', SpeakerDetailCtrl]) 
 		.factory('SpeakerResource', ['$resource', SpeakerResource])
-		.factory('SpeakerService', ['$q', 'SpeakerResource', SpeakerService])
+		.factory('SpeakerService', ['$q', 'LocalStorageService', 'SpeakerResource', SpeakerService])
 })()

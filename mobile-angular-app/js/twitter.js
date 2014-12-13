@@ -1,15 +1,15 @@
 (function() {
 	var TwitterCtrl = function(twitterService) {
 		this.tweetResource = twitterService.tweetData;
-	    this.loadMoreTweets = twitterService.loadMoreTweets;
-	    this.updateFeed = twitterService.updateFeed;
-	    
-	    twitterService.init();
+		this.loadMoreTweets = twitterService.loadMoreTweets;
+		this.updateFeed = twitterService.updateFeed;
+
+		twitterService.init();
 	}
 	
 	var TwitterService = function(twitterResource) {
 		var tweetData = {};
-		
+
 		return {
 			init: init,
 			tweetData: tweetData,

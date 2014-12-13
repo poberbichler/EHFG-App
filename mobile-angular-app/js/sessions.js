@@ -48,114 +48,110 @@
 		}
 	}
 	
-	var SessionService = function($http, $q) {
-	    var SESSION_STORAGE = 'SESSIONS';
-	    var FAVOURITE_SESSIONS = 'FAVOURITE_SESSIONS';
-	    var SHOW_FAVOURITE_SESSIONS = 'SHOW_FAVOURITE_SESSIONS';
-	    
+	var SessionResource = function($resource) {
+		return $resource(BASE_URL + '/session/all?callback=JSON_CALLBACK', {}, {
+			findAll: {method: 'JSONP', isArray: true}
+		});
+	}
+	
+	var SessionService = function($q, sessionResource, localStorageService) {
 	    return {
-	        findAll: function() {
-	            var storage = JSON.parse(localStorage.getItem(SESSION_STORAGE));
-	            if (storage === null || storage.length === 0) {
-	            	var result = $q.defer();
-	                $http.jsonp(BASE_URL + '/session/all?callback=JSON_CALLBACK')
-	                    .success(function(data, status) {
-	                        localStorage.setItem(SESSION_STORAGE, JSON.stringify(data));
-	                        result.resolve(data);
-	                    }
-	                );
-	                
-	                return result.promise;
-	            }
-	            
-	            return $q.when(storage);
-	        },
-	
-	        findById: function(sessionId) {
-	            return this.findAll().then(function(conferenceDays) {
-	                for (var i in conferenceDays) {
-	                    var day = conferenceDays[i];
-	                    for (var j in day.sessions) {
-	                        var session = day.sessions[j];
-	
-	                        if (session.id == sessionId) {
-	                            return $q.when(session);
-	                        }
-	                    }
-	                }
-	
-	                return null;
-	            });
-	        },
-	        
-	        findBySpeakerId: function(speakerId) {
-	        	return this.findAll().then(function(conferenceDays) {
-	        		var result = [];
-	        		for (var i in conferenceDays) {
-	        			var day = conferenceDays[i];
-	        			
-	        			for (var j in day.sessions) {
-	        				var session = day.sessions[j];
-	        				for (var speaker in session.speakers) {
-	        					if (session.speakers[speaker] === speakerId) {
-	        						result.push(session);
-	        						break;
-	        					}
-	        				}
-	        			}
-	        		}
-	        		
-	        		return $q.when(result);
-	        	});
-	        },
-	        
-	        showAllSessions: function() {
-	        	if (this.getFavouriteSessionFlag() == true) {
-	        		localStorage.setItem(SHOW_FAVOURITE_SESSIONS, false);
-	        	}
-	        },
-	        
-	        showFavouriteSessions: function() {
-	        	if (this.getFavouriteSessionFlag() == false) {
-	        		localStorage.setItem(SHOW_FAVOURITE_SESSIONS, true);
-	        	}
-	        },
-	        
-	        getFavouriteSessionFlag: function() {
-	        	var result = localStorage.getItem(SHOW_FAVOURITE_SESSIONS);
-	        	if (result === null) {
-	        		localStorage.setItem(SHOW_FAVOURITE_SESSIONS, 'false');
-	        		return false;
-	        	}
-	        	
-	        	return result === 'true';
-	        },
-	        
-	        isFavouriteSession: function(sessionId) {
-	        	return this.findFavouriteSessions().indexOf(sessionId) !== -1;
-	        },
-	        
-	        findFavouriteSessions: function() {
-	        	return JSON.parse(localStorage.getItem(FAVOURITE_SESSIONS)) || [];
-	        },
-	        
-	        addToFavourites: function(sessionId) {
-	        	var favourites = this.findFavouriteSessions();
-	        	favourites.push(sessionId);
-	        	localStorage.setItem(FAVOURITE_SESSIONS, JSON.stringify(favourites));
-	        },
-	        
-	        removeFromFavourites: function(sessionId) {
-	        	var favourites = this.findFavouriteSessions();
-	        	favourites.splice(sessionId, 1);
-	        	localStorage.setItem(FAVOURITE_SESSIONS, JSON.stringify(favourites));
-	        }
+	    	findAll: findAll,
+	    	findById: findById,
+	    	findBySpeakerId: findBySpeakerId,
+	    	
+	    	showAllSessions: showAllSessions,
+	    	showFavouriteSessions: showFavouriteSessions,
+	    	getFavouriteSessionFlag: getFavouriteSessionFlag,
+	    	
+	    	isFavouriteSession: isFavouriteSession,
+	    	findFavouriteSessions: findFavouriteSessions,
+	    	addToFavourites: addToFavourites,
+	    	removeFromFavourites: removeFromFavourites
 	    }
+	        
+	    function findAll() {
+            var storage = localStorageService.findSessions();
+            if (storage.length === 0) {
+            	return sessionResource.findAll(function(data) {
+            		localStorageService.setSessions(data);
+            	}).$promise;
+            }
+            
+            return $q.when(storage);
+        }
+	
+        function findById(sessionId) {
+            return this.findAll().then(function(conferenceDays) {
+                for (var i in conferenceDays) {
+                    var day = conferenceDays[i];
+                    for (var j in day.sessions) {
+                        var session = day.sessions[j];
+
+                        if (session.id == sessionId) {
+                            return $q.when(session);
+                        }
+                    }
+                }
+
+                return null;
+            });
+        }
+        
+        function findBySpeakerId(speakerId) {
+        	return this.findAll().then(function(conferenceDays) {
+        		var result = [];
+        		for (var i in conferenceDays) {
+        			var day = conferenceDays[i];
+        			
+        			for (var j in day.sessions) {
+        				var session = day.sessions[j];
+        				for (var speaker in session.speakers) {
+        					if (session.speakers[speaker] === speakerId) {
+        						result.push(session);
+        						break;
+        					}
+        				}
+        			}
+        		}
+        		
+        		return $q.when(result);
+        	});
+        }
+        
+        function showAllSessions() {
+        	localStorageService.setFavouriteSessionSelected(false);
+        }
+        
+        function showFavouriteSessions() {
+    		localStorageService.setFavouriteSessionSelected(true);
+        }
+        
+        function getFavouriteSessionFlag() {
+        	return localStorageService.showFavouriteSessionsSelected();
+        }
+        
+        function findFavouriteSessions() {
+        	return localStorageService.findFavouriteSessions();
+        }
+
+        function isFavouriteSession(sessionId) {
+        	return this.findFavouriteSessions().indexOf(sessionId) !== -1;
+        }
+        
+        function addToFavourites(sessionId) {
+        	localStorageService.addToFavouriteSessions(sessionId);
+        }
+        
+        function removeFromFavourites(sessionId) {
+        	localStorageService.removeFromFavouriteSessions(sessionId);
+        }
 	}
 	
 	angular.module('ehfgApp.sessions', [])
 		.controller('SessionCtrl', ['conferenceDays', SessionCtrl])
 		.controller('SessionDetailCtrl', ['$scope', '$stateParams','SessionService', 'SpeakerService', SessionDetailCtrl])
 		.filter('favouriteSessions', ['SessionService', FavouriteSessionFilter])
-		.factory('SessionService', ['$http', '$q', SessionService])
+		.factory('SessionService', ['$q', 'SessionResource', 'LocalStorageService', SessionService])
+		.factory('SessionResource', ['$resource', SessionResource])
 })();
