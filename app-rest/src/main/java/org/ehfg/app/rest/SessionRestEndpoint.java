@@ -27,13 +27,10 @@ import com.sun.jersey.api.json.JSONWithPadding;
 @Component
 @Path("session")
 public final class SessionRestEndpoint {
-	private static final DateTimeZone viennaTimeZone = DateTimeZone.forID("Europe/Vienna");
-	
 	private final ProgramFacade programFacade;
 
 	@Autowired
 	public SessionRestEndpoint(ProgramFacade programFacade) {
-		super();
 		this.programFacade = programFacade;
 	}
 
@@ -55,8 +52,8 @@ public final class SessionRestEndpoint {
 				final JSONObject jsonSession = new JSONObject();
 				jsonSession.put("id", session.getId());
 				jsonSession.put("description", session.getDescription());
-				jsonSession.put("start", session.getStartTime().withZone(viennaTimeZone).getMillis());
-				jsonSession.put("end", session.getEndTime().withZone(viennaTimeZone).getMillis());
+				jsonSession.put("start", session.getStartTime().withZoneRetainFields(DateTimeZone.UTC).getMillis());
+				jsonSession.put("end", session.getEndTime().withZoneRetainFields(DateTimeZone.UTC).getMillis());
 				jsonSession.put("name", session.getName());
 				jsonSession.put("location", session.getLocationId());
 				jsonSession.put("speakers", session.getSpeakers());
