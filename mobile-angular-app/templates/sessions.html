@@ -3,11 +3,11 @@
         <ion-list>
             <div ng-repeat="day in sessionCtrl.conferenceDays">
                 <ion-item class="item item-divider">
-                    {{day.description}}
+                    {{::day.description}}
                 </ion-item>
 
                 <ion-item ng-repeat="session in day.sessions | favouriteSessions" class="item" ng-href="#/sessions/{{session.id}}">
-                    {{session.code}} - {{session.name}}
+                    {{::session.code}} - {{::session.name}}
                 </ion-item>
             </div>
         <ion-list>

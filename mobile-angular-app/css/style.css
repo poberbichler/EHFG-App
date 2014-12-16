@@ -5,19 +5,19 @@
 	min-height: 180px;
 }
 
-div.tabs-striped.tabs-background-positive.tabs-light > div.tabs {
+div.tabs-striped.tabs-background-positive.tabs-light div.tabs,
+ion-header-bar.bar-stable.nav-title-slide-ios7.bar.bar-header.disable-user-behavior {
 	background-color: #6699cc;
 }
 
-body > ion-nav-view > ion-side-menus > ion-pane > ion-nav-bar.bar.bar-stable {
-	background-color: #6699cc;
-}
-
-body > ion-nav-view > ion-side-menus > ion-pane > ion-nav-bar.bar.bar-stable > h1.title {
+div.title.title-center.header-item,
+div.tabs-striped.tabs-background-positive.tabs-light div.tabs a.tab-item {
 	color: white;
 	text-shadow: 0px 1px 0px rgb(50, 50, 50);
 	outline-color: black;
-} 
+	border-color: white;
+	
+}
 
 .angular-google-map, .angular-google-map-container {
   width: 100%;

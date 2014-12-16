@@ -1,4 +1,4 @@
-<ion-view title="Twitter">
+<ion-view title="Twitter" nav-view-transition="android">
     <ion-content class="has-header has-footer">
         <div class="list card">
         	<div class="item item-icon-left">
@@ -8,7 +8,7 @@
         	
         	<div ng-repeat="tweet in twitterCtrl.tweetResource.tweets" style="margin-top: 5px;">
         		<div class="item item-divider">
-        			{{tweet.fullName}} @{{tweet.nickName}}
+        			{{::tweet.fullName}} @{{::tweet.nickName}}
         		</div>
         		
         		<div class="item item-avatar item-text-wrap">

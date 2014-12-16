@@ -14,7 +14,7 @@
 		});
 	}
 	
-	var Config = function($stateProvider, $urlRouterProvider) {
+	var Config = function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 		$stateProvider.state('app', {
 			abstract: true,
 			templateUrl: "templates/layout.html",
@@ -97,10 +97,11 @@
 	    });
 	    
 	    $urlRouterProvider.otherwise('/twitter');
+	    $ionicConfigProvider.views.transition('android');
 	}
 	
 	angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.menu', 'ehfgApp.speakers', 
 	                           'ehfgApp.sessions', 'ehfgApp.map', 'ehfgApp.storage', 'ehfgApp.config'])
-		.config(['$stateProvider', '$urlRouterProvider', Config])
+		.config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider', Config])
 		.run(['$ionicPlatform', runFunction])
 })();

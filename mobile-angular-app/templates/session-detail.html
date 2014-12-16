@@ -1,9 +1,10 @@
-<ion-view title="{{session.code}} - {{session.name}}">
+<ion-view>
+	<ion-nav-title>{{::session.code}} - {{::session.name}}</ion-nav-title>
     <ion-content class="has-header has-footer padding">
     	<p style="margin-bottom: 0">
 <!--     		<span>{{session.start | date:'MMM d, HH:mm':'UTC'}} - {{session.end | date:'HH:mm':'UTC'}}</span> |  -->
-    		<span>{{session.start | date:'MMM d, HH:mm'}} - {{session.end | date:'HH:mm'}}</span> | 
-    		<span>{{session.location}}</span>
+    		<span>{{::session.start | date:'MMM d, HH:mm'}} - {{::session.end | date:'HH:mm'}}</span> | 
+    		<span>{{::session.location}}</span>
     	</p>
     	<p><span>
     		<a ng-href="#map/{{session.location}}">Show on map</a>&nbsp;|&nbsp;
@@ -11,13 +12,13 @@
     		<a ng-show="session.isInFavourites" ng-click="removeFromFavourites()" href>remove from favourites</a>
     	</span></p>
 
-        <h2>{{session.name}}</h2>
+        <h2>{{::session.name}}</h2>
         <p ng-bind-html="session.description"></p>
 
         <div class="list list-inset">
 			<ion-item class="item item-divider">Speakers</ion-item>
             <ion-item class="item" ng-repeat="speaker in speakers" ng-href="#/speakers/{{speaker.id}}">
-                {{speaker.fullName}}
+                {{::speaker.fullName}}
             </ion-item>
         </div>
     </ion-content>
