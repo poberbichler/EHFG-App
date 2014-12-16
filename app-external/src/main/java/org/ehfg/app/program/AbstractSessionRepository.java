@@ -29,7 +29,7 @@ public abstract class AbstractSessionRepository implements SessionRepository {
 	protected final Logger logger = LoggerFactory.getLogger(getClass());
 	protected final Map<String, SessionDTO> dataCache = new LinkedHashMap<>();
 
-	protected void fillCache(RssEvent data, RssSpeakerEvents speakerEvents) {
+	protected final void fillCache(RssEvent data, RssSpeakerEvents speakerEvents) {
 		if (data != null) {
 			List<Event> sessions = data.getChannel().getItems();
 			Map<String, Set<String>> speakerMap = buildSpeakerMap(speakerEvents);
