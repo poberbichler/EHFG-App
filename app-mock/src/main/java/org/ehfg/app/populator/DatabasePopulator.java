@@ -2,10 +2,9 @@ package org.ehfg.app.populator;
 
 import java.util.Collection;
 
+import org.ehfg.app.MockService;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -15,8 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author patrick
  * @since 11.2014
  */
-@Component
-@Profile("in-memory-db")
+@MockService
 public class DatabasePopulator implements InitializingBean {
 	final Collection<DatabasePopulateStrategy> strategies;
 

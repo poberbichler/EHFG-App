@@ -5,13 +5,13 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Date;
 
-import org.springframework.stereotype.Service;
+import org.ehfg.app.MockService;
 
 /**
  * @author patrick
  * @since 12.2014
  */
-@Service
+@MockService
 class TwitterPopulateStrategy extends AbstractPopulateStrategy {
 	@Override
 	public void execute() throws Exception {

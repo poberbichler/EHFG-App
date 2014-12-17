@@ -2,25 +2,16 @@ package org.ehfg.app.populator;
 
 import java.util.Arrays;
 
+import org.ehfg.app.MockService;
 import org.ehfg.app.program.ConferenceDayDTO;
-import org.ehfg.app.program.ProgramFacade;
 import org.joda.time.LocalDate;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
  * @author patrick
  * @since 12.2014
  */
-@Service
+@MockService
 class ConferenceDayPopulateStrategy extends AbstractPopulateStrategy {
-	private final ProgramFacade programFacade;
-
-	@Autowired
-	public ConferenceDayPopulateStrategy(ProgramFacade programFacade) {
-		this.programFacade = programFacade;
-	}
-
 	@Override
 	public void execute() throws Exception {
 		programFacade.saveDays(Arrays.asList(

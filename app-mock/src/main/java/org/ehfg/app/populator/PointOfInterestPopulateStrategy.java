@@ -1,23 +1,15 @@
 package org.ehfg.app.populator;
 
-import org.ehfg.app.base.MasterDataFacade;
+import org.ehfg.app.MockService;
 import org.ehfg.app.base.PointOfInterestDTO;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
  * @author patrick
  * @since 12.2014
  */
-@Service
+@MockService
 class PointOfInterestPopulateStrategy extends AbstractPopulateStrategy {
 	private static final int NUMBER_OF_POINTS = 6;
-	private MasterDataFacade masterDataFacade;
-
-	@Autowired
-	public PointOfInterestPopulateStrategy(MasterDataFacade masterDataFacade) {
-		this.masterDataFacade = masterDataFacade;
-	}
 
 	@Override
 	public void execute() throws Exception {
