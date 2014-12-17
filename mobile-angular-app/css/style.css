@@ -18,6 +18,10 @@ div.tabs-striped.tabs-background-positive.tabs-light div.tabs a.tab-item {
 	border-color: white;
 }
 
+div.tabs-striped.tabs-background-positive.tabs-light div.tabs {
+	border: 0;
+}
+
 div.tabs-striped.tabs-background-positive.tabs-light div.tabs a.tab-item.active {
 	border-color: 3px solid #B5CAFF !important;
 	color: white;
