@@ -6,7 +6,7 @@
         		<a href ng-click="twitterCtrl.updateFeed()">update</a>
         	</div>
         	
-        	<div ng-repeat="tweet in twitterCtrl.tweetResource.tweets" style="margin-top: 5px;">
+        	<div ng-repeat="tweet in twitterCtrl.tweetResource.tweets track by tweet.id" style="margin-top: 5px;">
         		<div class="item item-divider">
         			{{::tweet.fullName}} @{{::tweet.nickName}}
         		</div>
