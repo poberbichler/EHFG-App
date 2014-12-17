@@ -1,5 +1,5 @@
 (function() {
-	var MenuCtrl = function($ionicSideMenuDelegate, $ionicPopup, sessionService) {
+	var MenuCtrl = function($ionicSideMenuDelegate, $ionicPopup, $window, sessionService) {
 		this.favouriteSessions = sessionService.getFavouriteSessionFlag();
 		
 		this.favouriteSessionToggle = function(newValue, ctrl) {
@@ -30,9 +30,10 @@
 		
 		this.resetData = function() {
 			localStorage.clear();
+			console.log($window);
 		}
 	}
 	
 	angular.module('ehfgApp.menu', [])
-		.controller('MenuCtrl', ['$ionicSideMenuDelegate', '$ionicPopup', 'SessionService', MenuCtrl]);
+		.controller('MenuCtrl', ['$ionicSideMenuDelegate', '$ionicPopup', '$window', 'SessionService', MenuCtrl]);
 })();

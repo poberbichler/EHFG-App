@@ -1,6 +1,6 @@
 (function() {
-	// TODO: used and created by the ionic starter application, still have to check what it does exactly
-	var runFunction = function($ionicPlatform) {
+	// created by the ionic starter application
+	function RunFunction($ionicPlatform) {
 		$ionicPlatform.ready(function() {
 			// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard for form inputs)
 			if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -14,7 +14,7 @@
 		});
 	}
 	
-	var Config = function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+	function Config($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 		$stateProvider.state('app', {
 			abstract: true,
 			templateUrl: "templates/layout.html",
@@ -103,5 +103,5 @@
 	angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.menu', 'ehfgApp.speakers', 
 	                           'ehfgApp.sessions', 'ehfgApp.map', 'ehfgApp.storage', 'ehfgApp.config'])
 		.config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider', Config])
-		.run(['$ionicPlatform', runFunction])
+		.run(['$ionicPlatform', RunFunction])
 })();

@@ -12,14 +12,15 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 public final class TweetDTO {
 	private final static int MAX_LENGTH = 30;
 
+	public final Long id;
 	public final String fullName;
 	public final String nickName;
 	public final String message;
 	public final String profileImage;
 	public final Date timestamp;
 
-	public TweetDTO(String fullName, String nickName, String message, String profileImage, Date timestamp) {
-		super();
+	public TweetDTO(Long id, String fullName, String nickName, String message, String profileImage, Date timestamp) {
+		this.id = id;
 		this.fullName = fullName;
 		this.nickName = nickName;
 		this.message = message;
