@@ -42,7 +42,7 @@
 					result.push(item);
 				}
 			}
-			
+
 			return result;
 		}
 	}

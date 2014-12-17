@@ -1,7 +1,11 @@
 <ion-view title="Speakers">
 	<ion-content class="has-header has-footer">
 		<ion-list>
-			<ion-item ng-repeat="speaker in speakerCtrl.speakers track by speaker.id" ng-href="#/speakers/{{speaker.id}}" class="item">
+			<ion-item class="item item-input">
+				<input type="text" placeholder="Filter Speakers" ng-model="speakerCtrl.filter" />
+			</ion-item>
+			
+			<ion-item ng-repeat="speaker in speakerCtrl.speakers | filter:speakerCtrl.filter track by speaker.id" ng-href="#/speakers/{{speaker.id}}" class="item">
 				{{::speaker.fullName}}
 			</ion-item>
 		</ion-list>

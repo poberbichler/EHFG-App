@@ -6,7 +6,7 @@
                     {{::day.description}}
                 </ion-item>
 
-                <ion-item ng-repeat="session in day.sessions track by session.id | favouriteSessions" class="item" ng-href="#/sessions/{{session.id}}">
+                <ion-item ng-repeat="session in day.sessions | favouriteSessions track by session.id" class="item" ng-href="#/sessions/{{session.id}}">
                     {{::session.code}} - {{::session.name}}
                 </ion-item>
             </div>

@@ -4,6 +4,8 @@
 		speakerService.findAll().then(function(data) {
 			vm.speakers = data;
 		});
+		
+		vm.filter = '';
 	}
 	
 	var SpeakerDetailCtrl = function($stateParams, speakerService, sessionService) {

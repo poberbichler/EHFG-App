@@ -43,7 +43,7 @@ class TwitterPopulateStrategy extends AbstractPopulateStrategy {
 		final Constructor<?> constructor = twitterUserclass.getDeclaredConstructors()[1];
 		constructor.setAccessible(true);
 
-		return constructor.newInstance(123L, "poberbichler", "Patrick Oberbichler",
+		return constructor.newInstance(123L, "Patrick Oberbichler", "poberbichler",
 				"https://pbs.twimg.com/profile_images/2441790961/b1nxj0dyy72d4gt17ylz.png");
 	}
 
