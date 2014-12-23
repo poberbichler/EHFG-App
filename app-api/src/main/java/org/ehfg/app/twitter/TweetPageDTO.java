@@ -1,22 +1,17 @@
 package org.ehfg.app.twitter;
 
-import java.util.List;
+import java.util.Collection;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.ehfg.app.AbstractPageableDTO;
 
 /**
  * @author patrick
- * @since 02.04.2014
+ * @since 12.2014
  */
-public final class TweetPageDTO {
-	public final List<TweetDTO> tweets;
-	public final Integer currentPage;
-	public final Boolean morePages;
-
-	public TweetPageDTO(List<TweetDTO> tweets, Integer currentPage, Boolean morePages) {
-		this.tweets = tweets;
-		this.currentPage = currentPage;
-		this.morePages = morePages;
+public final class TweetPageDTO extends AbstractPageableDTO<TweetDTO> {
+	public TweetPageDTO(Collection<TweetDTO> data, int currentPage, int maxPages) {
+		super(data, currentPage, maxPages);
 	}
 
 	@Override

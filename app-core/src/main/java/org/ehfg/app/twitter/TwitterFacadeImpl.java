@@ -4,16 +4,18 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.lang3.Validate;
 import org.ehfg.app.base.ConfigurationDTO;
 import org.ehfg.app.base.MasterDataFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author patrick
- * @since 13.03.2014
+ * @since 03.2014
  */
 @Component
 final class TwitterFacadeImpl implements TwitterFacade {
@@ -64,15 +66,25 @@ final class TwitterFacadeImpl implements TwitterFacade {
 	}
 
 	@Override
-	@org.springframework.transaction.annotation.Transactional
+	@Transactional(readOnly = false)
 	public TweetPageDTO findTweetPage(Integer pageId) {
 		final ConfigurationDTO config = masterDataFacade.getAppConfiguration();
-		final Page<Tweet> tweets = tweetRepository.findByHashtagOrderByCreationDateDesc(config.getHashtag(),
-				new PageRequest(pageId, config.getNumberOfTweets()));
-
-		return new TweetPageDTO(TweetMapper.map(tweets.getContent()), pageId, tweets.hasNextPage());
+		return this.findTweetPageWithSize(pageId, config.getNumberOfTweets());
 	}
+	
 
+	@Override
+	@Transactional(readOnly = false)
+	public TweetPageDTO findTweetPageWithSize(Integer pageId, Integer pageSize) {
+		Validate.notNull(pageId, "pageId must not be null!");
+		Validate.notNull(pageSize, "pageSize must not be null!");
+		
+		final Page<Tweet> tweets = tweetRepository.findByHashtagOrderByCreationDateDesc(
+				this.findHashtag(), new PageRequest(pageId, pageSize));
+		
+		return new TweetPageDTO(TweetMapper.map(tweets.getContent()), pageId, tweets.getTotalPages());
+	}
+	
 	@Override
 	public TwitterStreamStatus checkIfRelevantStreamIsRunning() {
 		final List<String> currentStreams = findStreams();

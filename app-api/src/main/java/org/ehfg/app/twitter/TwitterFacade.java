@@ -17,6 +17,7 @@ public interface TwitterFacade {
 	
 	List<TweetDTO> findNewerTweetsForCongress(Date lastTweet);
 	TweetPageDTO findTweetPage(Integer pageId);
+	TweetPageDTO findTweetPageWithSize(Integer pageId, Integer pageSize);
 	
 	/**
 	 * checks if this year's stream is running, and starts it in case it wasn't running

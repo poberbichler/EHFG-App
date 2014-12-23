@@ -13,6 +13,8 @@ import org.ehfg.app.MockService;
  */
 @MockService
 class TwitterPopulateStrategy extends AbstractPopulateStrategy {
+	private static final int MAX_TWEETS = 4000;
+	
 	@Override
 	public void execute() throws Exception {
 		final Object tweetUser = createTweetUser();
@@ -24,9 +26,10 @@ class TwitterPopulateStrategy extends AbstractPopulateStrategy {
 		final Object tweetRepository = applicationContext.getBean("tweetRepository");
 		final Class<?> tweetRepositoryClass = tweetRepository.getClass();
 		final Method saveTweetMethod = tweetRepositoryClass.getMethod("save", Object.class);
-
-		saveTweetMethod.invoke(tweetRepository, createTweet(1L, "Message1", tweetUser));
-		saveTweetMethod.invoke(tweetRepository, createTweet(2L, "Message2", tweetUser));
+		
+		for (int i = 0; i < MAX_TWEETS; i++) {
+			saveTweetMethod.invoke(tweetRepository, createTweet(Long.valueOf(i), "Message ".concat(Integer.toString(i)), tweetUser));
+		}
 	}
 
 	private void insertTwitterUser(Object tweetUser) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
