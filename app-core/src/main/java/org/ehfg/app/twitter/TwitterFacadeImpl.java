@@ -79,10 +79,11 @@ final class TwitterFacadeImpl implements TwitterFacade {
 		Validate.notNull(pageId, "pageId must not be null!");
 		Validate.notNull(pageSize, "pageSize must not be null!");
 		
+		final String currentHashtag = this.findHashtag();
 		final Page<Tweet> tweets = tweetRepository.findByHashtagOrderByCreationDateDesc(
-				this.findHashtag(), new PageRequest(pageId, pageSize));
+				currentHashtag, new PageRequest(pageId, pageSize));
 		
-		return new TweetPageDTO(TweetMapper.map(tweets.getContent()), pageId, tweets.getTotalPages());
+		return new TweetPageDTO(TweetMapper.map(tweets.getContent()), pageId, tweets.getTotalPages(), currentHashtag);
 	}
 	
 	@Override

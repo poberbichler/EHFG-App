@@ -13,6 +13,7 @@
 		function mapData(data) {
 			tweetData.morePages = data.morePages;
 			tweetData.currentPage = data.currentPage;
+			tweetData.currentHashtag = data.currentHashtag;
 		}
 
 		return {

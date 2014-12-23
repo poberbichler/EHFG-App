@@ -10,8 +10,15 @@ import org.ehfg.app.AbstractPageableDTO;
  * @since 12.2014
  */
 public final class TweetPageDTO extends AbstractPageableDTO<TweetDTO> {
-	public TweetPageDTO(Collection<TweetDTO> data, int currentPage, int maxPages) {
+	private final String currentHashtag;
+	
+	public TweetPageDTO(Collection<TweetDTO> data, int currentPage, int maxPages, String currentHashtag) {
 		super(data, currentPage, maxPages);
+		this.currentHashtag = currentHashtag;
+	}
+	
+	public String getCurrentHashtag() {
+		return currentHashtag;
 	}
 
 	@Override
