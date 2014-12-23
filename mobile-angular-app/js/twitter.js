@@ -23,24 +23,24 @@
 		} 
 
 		function init() {
-			twitterResource.findInitial(function(data) {
-				mapData(data);
-				tweetData.tweets = data.tweets;
+			twitterResource.findInitial(function(result) {
+				mapData(result);
+				tweetData.tweets = result.data;
 			});
 		}
 		
 		function loadMoreTweets() {
-			twitterResource.findMore({page: tweetData.currentPage+1}, function(data) {
-				mapData(data);
-				tweetData.tweets = tweetData.tweets.concat(data.tweets)
+			twitterResource.findMore({page: tweetData.currentPage+1}, function(result) {
+				mapData(result);
+				tweetData.tweets = tweetData.tweets.concat(result.data)
 			});
 		}
 		
 		function updateFeed() {
 			if (tweetData !== null && tweetData.tweets[0] !== null) {
 				var latestTweet = tweetData.tweets[0];
-				twitterResource.findNewer({'lastTweet': latestTweet.timestamp}, function(data) {
-					tweetData.tweets = data.concat(tweetData.tweets);
+				twitterResource.findNewer({'lastTweet': latestTweet.timestamp}, function(result) {
+					tweetData.tweets = result.concat(tweetData.tweets);
 				});
 			}
 		}
