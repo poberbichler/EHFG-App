@@ -3,7 +3,9 @@ package org.ehfg.app.populator;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.ehfg.app.MockService;
 
@@ -25,11 +27,14 @@ class TwitterPopulateStrategy extends AbstractPopulateStrategy {
 	private void insertTweets(Object tweetUser) throws Exception {
 		final Object tweetRepository = applicationContext.getBean("tweetRepository");
 		final Class<?> tweetRepositoryClass = tweetRepository.getClass();
-		final Method saveTweetMethod = tweetRepositoryClass.getMethod("save", Object.class);
+		final Method saveTweetMethod = tweetRepositoryClass.getMethod("save", Iterable.class);
 		
+		final List<Object> tweetList = new ArrayList<>(MAX_TWEETS);
 		for (int i = 0; i < MAX_TWEETS; i++) {
-			saveTweetMethod.invoke(tweetRepository, createTweet(Long.valueOf(i), "Message ".concat(Integer.toString(i)), tweetUser));
+			tweetList.add(createTweet(Long.valueOf(i), "Message ".concat(Integer.toString(i)), tweetUser));
 		}
+		
+		saveTweetMethod.invoke(tweetRepository, tweetList);
 	}
 
 	private void insertTwitterUser(Object tweetUser) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
@@ -55,6 +60,6 @@ class TwitterPopulateStrategy extends AbstractPopulateStrategy {
 		final Constructor<?> constructor = tweetClass.getDeclaredConstructors()[1];
 		constructor.setAccessible(true);
 
-		return constructor.newInstance(id, message, new Date(), "#EHFG2014", message, tweetUser);
+		return constructor.newInstance(id, message, new Date(System.nanoTime()), "#EHFG2014", message, tweetUser);
 	}
 }
