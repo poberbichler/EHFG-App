@@ -6,7 +6,27 @@
 }
 
 div.item-avatar .twitter-image {
+	top: 10px;
 	border-radius: 15%;
+	max-height: 55px;
+	max-width: 55px;
+}
+
+div.item.item-avatar.tweet-body {
+	padding-top: 10px;
+	padding-left: 85px;
+	margin-bottom: 5px;
+}
+
+.tweet-nickname {
+	color: gray;
+	font-size: 80%;
+}
+
+.tweet-data {
+	float: right;
+	color: gray;
+	font-size: 80%;
 }
 
 div.tabs-striped.tabs-background-positive.tabs-light div.tabs,
