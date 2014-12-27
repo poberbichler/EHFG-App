@@ -15,16 +15,16 @@ import twitter4j.conf.ConfigurationBuilder;
  * @since 11.2014
  */
 @Configuration
-@PropertySource({"classpath:config/twitter.properties"})
+@PropertySource({ "classpath:config/twitter.properties" })
 public class ExternalConfig {
 	@Autowired
 	private Environment environment;
-	
+
 	@Bean
 	public TwitterStreamFactory twitterStreamFactory() {
 		return new TwitterStreamFactory(twitterConfiguration());
 	}
-	
+
 	@Bean
 	public twitter4j.conf.Configuration twitterConfiguration() {
 		final ConfigurationBuilder builder = new ConfigurationBuilder();
@@ -34,10 +34,10 @@ public class ExternalConfig {
 		builder.setOAuthAccessToken(environment.getProperty("twitter.access.token"));
 		builder.setOAuthAccessTokenSecret(environment.getProperty("twitter.access.secret"));
 		builder.setUseSSL(environment.getProperty("twitter.use.ssl", boolean.class));
-		
+
 		return builder.build();
 	}
-	
+
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
 		return new PropertySourcesPlaceholderConfigurer();

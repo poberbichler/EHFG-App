@@ -1,6 +1,7 @@
 package org.ehfg.app.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,13 +16,18 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 class SecurityConfig extends WebSecurityConfigurerAdapter {
+	@Value("${maintenance.user}")
+	private String username;
+	
+	@Value("${maintenance.password}")
+	private String password;
+	
 	private final static String USER_ROLE = "USER";
 	
 	@Autowired
 	void configureGlobal(final AuthenticationManagerBuilder builder) throws Exception {
 		builder.inMemoryAuthentication()
-			.withUser("patrick").password("123").roles(USER_ROLE).and()
-			.withUser("ehfg").password("ehfg").roles(USER_ROLE);
+			.withUser(username).password(password).roles(USER_ROLE);
 	}
 
 	@Override
