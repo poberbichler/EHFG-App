@@ -31,7 +31,7 @@ class TwitterPopulateStrategy extends AbstractPopulateStrategy {
 		
 		final List<Object> tweetList = new ArrayList<>(MAX_TWEETS);
 		for (int i = 0; i < MAX_TWEETS; i++) {
-			tweetList.add(createTweet(Long.valueOf(i), "Message ".concat(Integer.toString(i)), tweetUser));
+			tweetList.add(createTweet(Long.valueOf(i), "Message ".concat(Integer.toString(i)), tweetUser, i));
 		}
 		
 		saveTweetMethod.invoke(tweetRepository, tweetList);
@@ -46,8 +46,8 @@ class TwitterPopulateStrategy extends AbstractPopulateStrategy {
 	}
 
 	private Object createTweetUser() throws Exception {
-
 		final Class<?> twitterUserclass = Class.forName("org.ehfg.app.twitter.TwitterUser");
+
 		final Constructor<?> constructor = twitterUserclass.getDeclaredConstructors()[1];
 		constructor.setAccessible(true);
 
@@ -55,11 +55,11 @@ class TwitterPopulateStrategy extends AbstractPopulateStrategy {
 				"https://pbs.twimg.com/profile_images/2441790961/b1nxj0dyy72d4gt17ylz.png");
 	}
 
-	private Object createTweet(long id, String message, Object tweetUser) throws Exception {
+	private Object createTweet(long id, String message, Object tweetUser, int timeoffset) throws Exception {
 		final Class<?> tweetClass = Class.forName("org.ehfg.app.twitter.Tweet");
 		final Constructor<?> constructor = tweetClass.getDeclaredConstructors()[1];
 		constructor.setAccessible(true);
 
-		return constructor.newInstance(id, message, new Date(System.nanoTime()), "#EHFG2014", message, tweetUser);
+		return constructor.newInstance(id, message, new Date(System.currentTimeMillis() + timeoffset), "#EHFG2014", message, tweetUser);
 	}
 }

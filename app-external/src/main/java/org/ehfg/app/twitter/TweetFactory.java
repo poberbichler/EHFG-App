@@ -4,9 +4,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.ehfg.app.twitter.Tweet;
-import org.ehfg.app.twitter.TwitterUser;
-
 import twitter4j.Status;
 import twitter4j.URLEntity;
 

@@ -23,10 +23,11 @@
 
 	    $stateProvider.state('app.twitter', {
 	        url: "/twitter",
+	        cache: false,
 	        views: {
-	            'content': {
-	                templateUrl: 'templates/twitter.html',
-	                controller: 'TwitterCtrl as twitterCtrl'
+	        	'content': {
+	        		templateUrl: 'templates/twitter.html',
+	        		controller: 'TwitterCtrl as twitterCtrl'
 	            }
 	        }
 	    });
@@ -35,8 +36,8 @@
 	        url: "/speakers",
 	        views: {
 	            'content': {
-	                templateUrl: 'templates/speakers.html',
-	                controller: 'SpeakerCtrl as speakerCtrl'
+	            	templateUrl: 'templates/speakers.html',
+	            	controller: 'SpeakerCtrl as speakerCtrl'
 	            }
 	        }
 	    });

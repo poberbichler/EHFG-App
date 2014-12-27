@@ -1,5 +1,5 @@
 (function() {
-	var TwitterCtrl = function(twitterService) {
+	function TwitterCtrl(twitterService) {
 		this.tweetResource = twitterService.tweetData;
 		this.loadMoreTweets = twitterService.loadMoreTweets;
 		this.updateFeed = twitterService.updateFeed;
@@ -7,7 +7,7 @@
 		twitterService.init();
 	}
 	
-	var TwitterService = function(twitterResource) {
+	function TwitterService(twitterResource) {
 		var tweetData = {};
 		
 		function mapData(data) {
@@ -47,7 +47,7 @@
 		}
 	}
 	
-	var TwitterResource = function($resource, BASE_URL) {
+	function TwitterResource($resource, BASE_URL) {
 		var pageResource = new $resource(BASE_URL + '/twitter/tweetpage/:page?callback=JSON_CALLBACK', {page: 0}, {
 			findInitial: {method: 'JSONP', isArray: false},
 			findMore: {method: 'JSONP', isArray: false, params: {page: '@page'}}
@@ -64,8 +64,37 @@
 		}
 	}
 	
+	function TwitterDateFilter($filter) {
+		return function(input) {
+			var second = 1000;
+		    var minute = 1000 * 60;
+		    var hour = minute * 60;
+		    var day = hour * 24;
+
+		    var difference = new Date().getTime() - input;
+		    if (difference < day) {
+		        if (difference < minute) {
+		            var value = (difference/second).toFixed(0);
+		            return "" + value + "s";
+		        }
+
+		        if (difference < hour) {
+		            var value = (difference/minute).toFixed(0);
+		            return "" + value + "m";
+
+		        }
+
+		        var value = (difference/hour).toFixed(0);
+		        return "" + value + "h";
+		    }
+			
+			return $filter('date')(input, 'MMM d, HH:mm');
+		}
+	}
+	
 	angular.module('ehfgApp.twitter', [])
 		.controller('TwitterCtrl', ['TwitterService', TwitterCtrl])
 		.factory('TwitterResource', ['$resource', 'BASE_URL', TwitterResource])
 		.factory('TwitterService', ['TwitterResource', TwitterService])
+		.filter('twitterDateFilter', ['$filter', TwitterDateFilter])
 })();
