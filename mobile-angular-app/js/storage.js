@@ -1,5 +1,5 @@
 (function() {
-	function localStorageService() {
+	function LocalStorageService() {
 		var SPEAKER_STORAGE = 'SPEAKERS';
 		var SESSION_STORAGE = 'SESSIONS';
 		
@@ -81,5 +81,5 @@
 		}
 	}
 	
-	angular.module('ehfgApp.storage', []).factory('LocalStorageService', localStorageService);
+	angular.module('ehfgApp.storage', []).factory('LocalStorageService', LocalStorageService);
 })();

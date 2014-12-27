@@ -30,7 +30,7 @@
 		
 		this.resetData = function() {
 			localStorage.clear();
-			console.log($window);
+			$window.location.reload();
 		}
 	}
 	
