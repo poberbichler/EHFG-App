@@ -31,7 +31,7 @@
 		}
 
 		function setSpeakers(speakers) {
-			localStorage.setItem(SPEAKER_STORAGE, JSON.stringify(speakers));
+			setItemInStorage(SPEAKER_STORAGE, speakers);
 		}
 
 		function findSpeakers() {
@@ -39,7 +39,7 @@
 		}
 		
 		function setSessions(sessions) {
-			localStorage.setItem(SESSION_STORAGE, JSON.stringify(sessions));
+			setItemInStorage(SESSION_STORAGE, sessions);
 		}
 		
 		function findSessions() {
@@ -67,13 +67,13 @@
 		function addToFavouriteSessions(sessionId) {
 			var favourites = this.findFavouriteSessions();
         	favourites.push(sessionId);
-        	localStorage.setItem(FAVOURITE_SESSIONS, JSON.stringify(favourites));
+        	setItemInStorage(FAVOURITE_SESSIONS, favourites);
 		}
 		
 		function removeFromFavouriteSessions(sessionId) {
 			var favourites = this.findFavouriteSessions();
         	favourites.splice(sessionId, 1);
-        	localStorage.setItem(FAVOURITE_SESSIONS, JSON.stringify(favourites));
+        	setItemInStorage(FAVOURITE_SESSIONS, favourites);
 		}
 		
 		function resetData() {
