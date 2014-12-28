@@ -5,13 +5,32 @@
 		
 		var FAVOURITE_SESSIONS = 'FAVOURITE_SESSIONS';
 		var SHOW_FAVOURITE_SESSIONS = 'SHOW_FAVOURITE_SESSIONS';
-		
+
+		var LAST_UPDATE = 'LAST_UPDATE';
+
 		function resolveFromStorage(storageName) {
 			return JSON.parse(localStorage.getItem(storageName)) || [];
 		}
 		
 		function setItemInStorage(storageName, item) {
 			localStorage.setItem(storageName, JSON.stringify(item));
+		}
+
+		function checkForUpdate() {
+		   var lastUpdate = localStorage.getItem(LAST_UPDATE);
+			if (lastUpdate !== null) {
+				var difference = new Date().getTime() - lastUpdate;
+				if (difference > 1000 * 60 * 60 * 2) { // 2 hours
+					localStorage.removeItem(SPEAKER_STORAGE);
+					localStorage.removeItem(SESSION_STORAGE);
+
+					localStorage.setItem(LAST_UPDATE, new Date().getTime());
+				}
+			}
+
+			else {
+				localStorage.setItem(LAST_UPDATE, new Date().getTime());
+			}
 		}
 
 		return {
@@ -35,6 +54,7 @@
 		}
 
 		function findSpeakers() {
+			checkForUpdate();
 			return resolveFromStorage(SPEAKER_STORAGE);
 		}
 		
@@ -43,6 +63,7 @@
 		}
 		
 		function findSessions() {
+			checkForUpdate();
 			return resolveFromStorage(SESSION_STORAGE);
 		}
 		
