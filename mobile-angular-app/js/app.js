@@ -101,8 +101,17 @@
 	    $ionicConfigProvider.views.transition('android');
 	}
 	
-	angular.module('ehfgApp', ['ionic', 'ngResource', 'ehfgApp.twitter', 'ehfgApp.menu', 'ehfgApp.speakers', 
-	                           'ehfgApp.sessions', 'ehfgApp.map', 'ehfgApp.storage', 'ehfgApp.config'])
+	angular.module('ehfgApp', [
+		'ionic',
+		'ngResource',
+		'ehfgApp.twitter',
+		'ehfgApp.menu',
+		'ehfgApp.speakers',
+		'ehfgApp.sessions',
+		'ehfgApp.map',
+		'ehfgApp.storage',
+		'ehfgApp.config'
+	])
 		.config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider', Config])
 		.run(['$ionicPlatform', RunFunction])
 })();

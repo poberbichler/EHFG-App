@@ -2,7 +2,7 @@
 	var MenuCtrl = function($ionicSideMenuDelegate, $ionicPopup, $window, sessionService) {
 		this.favouriteSessions = sessionService.getFavouriteSessionFlag();
 		
-		this.favouriteSessionToggle = function(newValue, ctrl) {
+		this.favouriteSessionToggle = function(newValue) {
 			if (newValue === true) {
 				sessionService.showFavouriteSessions();
 			}
@@ -17,7 +17,7 @@
 		}
 		
 		this.showAboutDialog = function() {
-			var aboutDialog = $ionicPopup.show({
+			$ionicPopup.show({
 				template: 
 					'<p>The European Health Forum Gastein is an annual international conference where stakeholders within'
 		            + 'the field of healthcare and public health meet to discuss a broad spectrum of major topics.</p>'

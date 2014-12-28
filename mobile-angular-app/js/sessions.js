@@ -35,7 +35,7 @@
 			
 			var result = [];
 			var favouriteSessions = sessionService.findFavouriteSessions();
-			
+
 			for (var i in items) {
 				var item = items[i];
 				if (favouriteSessions.indexOf(item.id) !== -1) {

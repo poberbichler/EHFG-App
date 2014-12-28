@@ -72,8 +72,12 @@
 		
 		function removeFromFavouriteSessions(sessionId) {
 			var favourites = this.findFavouriteSessions();
-        	favourites.splice(sessionId, 1);
-        	setItemInStorage(FAVOURITE_SESSIONS, favourites);
+			var index = favourites.indexOf(sessionId);
+
+			if (index !== -1) {
+        		favourites.splice(index, 1);
+        		setItemInStorage(FAVOURITE_SESSIONS, favourites);
+			}
 		}
 		
 		function resetData() {
