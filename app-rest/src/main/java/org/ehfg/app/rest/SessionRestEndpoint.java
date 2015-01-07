@@ -22,7 +22,7 @@ import com.sun.jersey.api.json.JSONWithPadding;
 
 /**
  * @author patrick
- * @since 12.04.2014
+ * @since 04.2014
  */
 @Component
 @Path("session")

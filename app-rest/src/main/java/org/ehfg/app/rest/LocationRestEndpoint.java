@@ -15,7 +15,7 @@ import com.sun.jersey.api.json.JSONWithPadding;
 
 /**
  * @author patrick
- * @since 19.07.2014
+ * @since 07.2014
  */
 @Component
 @Path("location")

@@ -13,7 +13,7 @@ import org.joda.time.format.DateTimeFormat;
  * basic representation of a session
  * 
  * @author patrick
- * @since 02.03.2014
+ * @since 03.2014
  */
 public final class SessionDTO implements Comparable<SessionDTO> {
 	private String id;
