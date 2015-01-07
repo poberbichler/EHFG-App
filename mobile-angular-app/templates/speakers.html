@@ -8,7 +8,7 @@
 			<ion-item class="item speaker-item" ng-href="#/speakers/{{speaker.id}}"
 					  collection-repeat="speaker in speakerCtrl.speakers | filter: speakerCtrl.filter track by speaker.id"
 					  collection-item-width="'100%'" collection-item-height="54">
-				{{speaker.fullName}}
+				<span ng-bind-html="speaker.fullName"></span>
 			</ion-item>
 		</ion-list>
 	</ion-content>
