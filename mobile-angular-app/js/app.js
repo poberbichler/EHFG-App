@@ -59,11 +59,6 @@
 	                templateUrl: 'templates/sessions.html',
 	                controller: 'SessionCtrl as sessionCtrl',
 	            }
-	        },
-	        resolve: {
-	        	conferenceDays: ['SessionService', function(sessionService) {
-	        		return sessionService.findAll();
-	        	}]
 	        }
 	    });
 

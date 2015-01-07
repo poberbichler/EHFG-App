@@ -69,10 +69,10 @@
 	    	});
 	    }
 	}
-	
+
 	angular.module('ehfgApp.speakers', [])
 		.controller('SpeakerCtrl', ['SpeakerService', SpeakerCtrl])
-		.controller('SpeakerDetailCtrl', ['$stateParams', 'SpeakerService', 'SessionService', SpeakerDetailCtrl]) 
+		.controller('SpeakerDetailCtrl', ['$stateParams', 'SpeakerService', 'SessionService', SpeakerDetailCtrl])
 		.factory('SpeakerResource', ['$resource', 'BASE_URL', SpeakerResource])
 		.factory('SpeakerService', ['$q', 'LocalStorageService', 'SpeakerResource', SpeakerService])
 })()

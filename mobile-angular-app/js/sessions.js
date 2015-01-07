@@ -1,6 +1,9 @@
 (function() {
-	var SessionCtrl = function(conferenceDays) {
-		this.conferenceDays = conferenceDays;
+	var SessionCtrl = function(sessionService) {
+		var vm = this;
+		sessionService.findAll().then(function(conferenceDays) {
+			vm.conferenceDays = conferenceDays;
+		})
 	}
 	
 	var SessionDetailCtrl = function($scope, $stateParams, sessionService, speakerService) {
@@ -28,22 +31,12 @@
 	}
 	
 	var FavouriteSessionFilter = function(sessionService) {
-		return function(items) {
+		return function(item) {
 			if (sessionService.getFavouriteSessionFlag() === false) {
-				return items;
-			}
-			
-			var result = [];
-			var favouriteSessions = sessionService.findFavouriteSessions();
-
-			for (var i in items) {
-				var item = items[i];
-				if (favouriteSessions.indexOf(item.id) !== -1) {
-					result.push(item);
-				}
+				return true;
 			}
 
-			return result;
+			return sessionService.findFavouriteSessions().indexOf(item.id) !== -1;
 		}
 	}
 	
@@ -148,7 +141,7 @@
 	}
 	
 	angular.module('ehfgApp.sessions', [])
-		.controller('SessionCtrl', ['conferenceDays', SessionCtrl])
+		.controller('SessionCtrl', ['SessionService', SessionCtrl])
 		.controller('SessionDetailCtrl', ['$scope', '$stateParams','SessionService', 'SpeakerService', SessionDetailCtrl])
 		.filter('favouriteSessions', ['SessionService', FavouriteSessionFilter])
 		.factory('SessionService', ['$q', 'SessionResource', 'LocalStorageService', SessionService])

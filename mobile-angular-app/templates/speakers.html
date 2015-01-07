@@ -4,10 +4,11 @@
 			<ion-item class="item item-input">
 				<input type="text" placeholder="Filter Speakers" ng-model="speakerCtrl.filter" />
 			</ion-item>
-			
-			<ion-item ng-repeat="speaker in speakerCtrl.speakers | filter: speakerCtrl.filter track by speaker.id"
-				ng-href="#/speakers/{{::speaker.id}}" class="item">
-				{{::speaker.fullName}}
+
+			<ion-item class="item speaker-item" ng-href="#/speakers/{{speaker.id}}"
+					  collection-repeat="speaker in speakerCtrl.speakers | filter: speakerCtrl.filter track by speaker.id"
+					  collection-item-width="'100%'" collection-item-height="54">
+				{{speaker.fullName}}
 			</ion-item>
 		</ion-list>
 	</ion-content>
