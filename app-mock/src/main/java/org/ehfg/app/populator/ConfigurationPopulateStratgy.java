@@ -11,6 +11,6 @@ import org.ehfg.app.base.ConfigurationDTO;
 class ConfigurationPopulateStratgy extends AbstractPopulateStrategy {
 	@Override
 	public void execute() throws Exception {
-		masterDataFacade.saveAppConfiguration(new ConfigurationDTO("EHFG2014", 10));
+		masterDataFacade.saveAppConfiguration(new ConfigurationDTO("EHFG2014", 10, ""));
 	}
 }

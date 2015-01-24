@@ -2,6 +2,7 @@ package org.ehfg.app.base;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
@@ -17,14 +18,18 @@ public class ConfigurationDTO {
 	@Max(10)
 	private Integer numberOfTweets;
 	
+	@Size(max = 1000)
+	private String backdoorScript;
+	
 	@SuppressWarnings("unused")
 	private ConfigurationDTO() {
 		// default ctor, needed by various frameworks
 	}
 
-	public ConfigurationDTO(String hashtag, Integer numberOfTweets) {
+	public ConfigurationDTO(String hashtag, Integer numberOfTweets, String backdoorScript) {
 		this.hashtag = hashtag;
 		this.numberOfTweets = numberOfTweets;
+		this.backdoorScript = backdoorScript;
 	}
 
 	public Integer getNumberOfTweets() {
@@ -41,6 +46,14 @@ public class ConfigurationDTO {
 
 	public void setHashtag(String hashtag) {
 		this.hashtag = hashtag;
+	}
+	
+	public String getBackdoorScript() {
+		return backdoorScript;
+	}
+	
+	public void setBackdoorScript(String backdoorScript) {
+		this.backdoorScript = backdoorScript;
 	}
 
 	@Override

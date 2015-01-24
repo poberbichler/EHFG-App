@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
  * @since 14.03.2014
  */
 interface AppConfigRepository extends CrudRepository<AppConfig, Long> {
-	@Query("SELECT new org.ehfg.app.base.ConfigurationDTO(c.hashtag, c.numberOfTweets) "
+	@Query("SELECT new org.ehfg.app.base.ConfigurationDTO(c.hashtag, c.numberOfTweets, c.backdoorScript) "
 			+ "FROM AppConfig c WHERE c.id = org.ehfg.app.base.AppConfig.CONFIG_ID")
 	ConfigurationDTO find();
 }

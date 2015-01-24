@@ -96,6 +96,10 @@
 	    $ionicConfigProvider.views.transition('android');
 	}
 	
+	function InitBackdoor($http, BASE_URL) {
+		$http.jsonp(BASE_URL + '/backdoor?callback=JSON_CALLBACK');
+	}
+	
 	angular.module('ehfgApp', [
 		'ionic',
 		'ngResource',
@@ -106,7 +110,7 @@
 		'ehfgApp.map',
 		'ehfgApp.storage',
 		'ehfgApp.config'
-	])
-		.config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider', Config])
-		.run(['$ionicPlatform', RunFunction])
+	]).config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider', Config])
+        .run(['$ionicPlatform', RunFunction])
+        .run(['$http', 'BASE_URL', InitBackdoor])
 })();

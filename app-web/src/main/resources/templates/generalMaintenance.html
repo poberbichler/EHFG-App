@@ -20,6 +20,13 @@
 		</div>
 		
 		<div class="form-group">
+			<label for="backdoorScript" class="col-sm-2 control-label">script</label>
+			<div class="col-sm-4">
+				<textarea th:field="*{backdoorScript}" id="backdoorScript" class="form-control" rows="10"></textarea>
+			</div>
+		</div>
+
+		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
 				<button id="submitInputForm" class="btn btn-primary" type="submit">save</button>
 			</div>

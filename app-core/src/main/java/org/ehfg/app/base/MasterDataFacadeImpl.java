@@ -30,7 +30,7 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 	public ConfigurationDTO getAppConfiguration() {
 		ConfigurationDTO config = configRepository.find();
 		if (config == null) {
-			config = new ConfigurationDTO("EHFG", 1);
+			config = new ConfigurationDTO("EHFG", 1, "");
 		}
 		
 		return config;
@@ -44,6 +44,7 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 		
 		target.setAndFixHashtag(source.getHashtag());
 		target.setNumberOfTweets(source.getNumberOfTweets());
+		target.setBackdoorScript(source.getBackdoorScript());
 		
 		configRepository.save(target);
 		

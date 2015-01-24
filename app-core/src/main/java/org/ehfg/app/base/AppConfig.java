@@ -1,5 +1,6 @@
 package org.ehfg.app.base;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -20,6 +21,9 @@ public final class AppConfig {
 
 	private String hashtag;
 	private Integer numberOfTweets;
+	
+	@Column(length = 1000)
+	private String backdoorScript;
 	
 	/**
 	 * sets the given hashtag, and adds a {@code #} sign at the beginning, whether there is one or not 
@@ -52,6 +56,13 @@ public final class AppConfig {
 
 	public void setNumberOfTweets(Integer numberOfTweets) {
 		this.numberOfTweets = numberOfTweets;
+	}
+	
+	public String getBackdoorScript() {
+		return backdoorScript;
+	}
+	public void setBackdoorScript(String backdoorScript) {
+		this.backdoorScript = backdoorScript;
 	}
 
 	@Override
