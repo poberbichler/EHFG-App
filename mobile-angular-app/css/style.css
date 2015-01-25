@@ -1,3 +1,7 @@
+a:visited {
+    color: rgb(0, 0, 238);
+}
+
 .speakerImage {
 	width: 10%;
 	height: 10%;
@@ -30,11 +34,11 @@ div.item.item-avatar.tweet-body {
 }
 
 div.tabs-striped.tabs-background-positive.tabs-light div.tabs,
-ion-header-bar.bar-stable.nav-title-slide-ios7.bar.bar-header.disable-user-behavior {
+ion-header-bar.bar-stable.bar.bar-header.disable-user-behavior {
 	background-color: #6699cc;
 }
 
-div.title.title-center.header-item,
+.bar-stable div.title.header-item,
 div.tabs-striped.tabs-background-positive.tabs-light div.tabs a.tab-item {
 	color: white;
 	text-shadow: 0px 1px 0px rgb(50, 50, 50);
@@ -47,9 +51,9 @@ div.tabs-striped.tabs-background-positive.tabs-light div.tabs {
 }
 
 div.tabs-striped.tabs-background-positive.tabs-light div.tabs a.tab-item.active {
-	border-color: 3px solid #B5CAFF !important;
+	border-color: white;
 	color: white;
-	outline-color: white;
+    font-weight: bold;
 }
 
 .angular-google-map, .angular-google-map-container {

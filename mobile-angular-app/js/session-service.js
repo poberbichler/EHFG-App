@@ -71,7 +71,7 @@
 
                 // use utc timestamp
                 var currentDate = new Date();
-                currentDate.setMinutes(date.getMinutes() + date.getTimezoneOffset());
+                currentDate.setMinutes(currentDate.getMinutes() + currentDate.getTimezoneOffset());
                 var now = currentDate.getTime();
 
                 for (var i in conferenceDays) {
