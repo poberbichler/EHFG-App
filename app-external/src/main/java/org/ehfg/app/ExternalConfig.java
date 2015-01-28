@@ -1,6 +1,12 @@
 package org.ehfg.app;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.concurrent.ConcurrentMapCache;
+import org.springframework.cache.support.SimpleCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -15,6 +21,7 @@ import twitter4j.conf.ConfigurationBuilder;
  * @since 11.2014
  */
 @Configuration
+@EnableCaching
 @PropertySource({ "classpath:config/twitter.properties" })
 public class ExternalConfig {
 	@Autowired
@@ -37,7 +44,17 @@ public class ExternalConfig {
 
 		return builder.build();
 	}
-
+	
+	@Bean
+	public CacheManager cacheManager() {
+		final SimpleCacheManager cacheManager = new SimpleCacheManager();
+		cacheManager.setCaches(Arrays.asList(
+				new ConcurrentMapCache("speaker"), 
+				new ConcurrentMapCache("session")));
+		
+		return cacheManager;
+	}
+	
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
 		return new PropertySourcesPlaceholderConfigurer();

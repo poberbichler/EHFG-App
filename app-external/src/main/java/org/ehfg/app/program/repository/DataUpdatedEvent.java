@@ -11,6 +11,8 @@ import org.springframework.context.ApplicationEvent;
  * 
  * @author patrick
  * @since 21.06.2014
+ * 
+ * @deprecated is not needed any more if {@link SessionRepositoryImpl} and {@link SpeakerRepositoryImpl} are finished
  */
 class DataUpdatedEvent extends ApplicationEvent {
 	private final Logger logger = LoggerFactory.getLogger(getClass());

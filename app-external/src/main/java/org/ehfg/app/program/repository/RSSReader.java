@@ -24,6 +24,8 @@ import org.springframework.stereotype.Repository;
  * 
  * @author patrick
  * @since 06.06.2014
+ * 
+ * @deprecated is not needed any more if {@link SessionRepositoryImpl} and {@link SpeakerRepositoryImpl} are finished
  */
 @Repository
 @Profile({ "!mock" })

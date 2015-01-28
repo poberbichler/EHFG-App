@@ -1,34 +1,46 @@
-package org.ehfg.app.program;
+package org.ehfg.app.cachableprogram;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
-import org.ehfg.app.cachableprogram.SpeakerRepositoryImpl;
+import org.ehfg.app.program.EscapeUtils;
+import org.ehfg.app.program.SpeakerDTO;
+import org.ehfg.app.program.SpeakerRepository;
 import org.ehfg.app.program.data.speaker.RssSpeaker;
 import org.ehfg.app.program.data.speaker.Speaker;
+import org.ehfg.app.program.strategy.AbstractDataRetrievalStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Repository;
 
 /**
  * @author patrick
- * @since 12.07.2014
- * 
- * @Deprecated use {@link SpeakerRepositoryImpl} instead
+ * @since 01.2015
  */
-public abstract class AbstractSpeakerRepository implements SpeakerRepository {
-	protected final Logger logger = LoggerFactory.getLogger(getClass());
-	protected final Map<String, SpeakerDTO> dataCache = new LinkedHashMap<>();
+@Repository
+@Profile({ "!mock" })
+public class SpeakerRepositoryImpl implements SpeakerRepository {
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	
+	private final AbstractDataRetrievalStrategy<RssSpeaker> retrievalStrategy;
 
-	protected void fillCache(RssSpeaker data) {
-		if (data != null) {
-			List<Speaker> speakers = data.getChannel().getSpeakers();
+	@Autowired
+	public SpeakerRepositoryImpl(AbstractDataRetrievalStrategy<RssSpeaker> retrievalStrategy) {
+		this.retrievalStrategy = retrievalStrategy;
+	}
 
+	@Override
+	@Cacheable("speaker")
+	public Collection<SpeakerDTO> findAll() {
+		try {
+			List<Speaker> speakers = retrievalStrategy.fetchData().getChannel().getSpeakers();
 			logger.info("received {} speakers", speakers.size());
-			dataCache.clear();
 
 			int filterCounter = 0;
 			List<SpeakerDTO> speakerList = new ArrayList<>(speakers.size());
@@ -40,7 +52,6 @@ public abstract class AbstractSpeakerRepository implements SpeakerRepository {
 					continue;
 				}
 
-				// TODO: superawesome regexp would be better
 				String description = EscapeUtils.escapeText(speaker.getBio());
 				description = StringUtils.remove(description.trim(), "<strong>");
 				description = StringUtils.remove(description.trim(), "<div>");
@@ -62,19 +73,11 @@ public abstract class AbstractSpeakerRepository implements SpeakerRepository {
 			logger.info("filtered {} speakers", filterCounter);
 
 			Collections.sort(speakerList);
-			for (SpeakerDTO speaker : speakerList) {
-				dataCache.put(speaker.getId(), speaker);
-			}
+			return speakerList;
 		}
-
-		else {
-			logger.error("did not receive data for {}", RssSpeaker.class.getName());
+		
+		catch (Exception e) {
+			throw new RuntimeException(e);
 		}
 	}
-
-	@Override
-	public List<SpeakerDTO> findAll() {
-		return new ArrayList<>(dataCache.values());
-	}
-
 }

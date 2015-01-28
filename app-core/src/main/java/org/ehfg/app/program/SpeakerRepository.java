@@ -1,8 +1,11 @@
 package org.ehfg.app.program;
 
-import java.util.List;
+import java.util.Collection;
 
-interface SpeakerRepository {
-	SpeakerDTO findById(Long speakerId);
-	List<SpeakerDTO> findAll();
+/**
+ * @author patrick
+ * @since 06.2014
+ */
+public interface SpeakerRepository {
+	Collection<SpeakerDTO> findAll();
 }

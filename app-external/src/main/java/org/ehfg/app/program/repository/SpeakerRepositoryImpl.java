@@ -14,8 +14,8 @@ import org.springframework.stereotype.Repository;
  * @author patrick
  * @since 21.06.2014
  */
-@Repository
-@Profile({ "!mock" })
+//@Repository
+//@Profile({ "!mock" })
 class SpeakerRepositoryImpl extends AbstractSpeakerRepository implements ApplicationListener<DataUpdatedEvent> {
 	@Override
 	public void onApplicationEvent(DataUpdatedEvent event) {

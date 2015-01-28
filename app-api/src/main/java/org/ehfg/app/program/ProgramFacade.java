@@ -9,7 +9,7 @@ import java.util.Map;
  * @since 06.04.2014
  */
 public interface ProgramFacade {
-	List<SpeakerDTO> findAllSpeakers();
+	Collection<SpeakerDTO> findAllSpeakers();
 	
 	Collection<SpeakerDTO> findSpeakersWithSession();
 
@@ -21,7 +21,7 @@ public interface ProgramFacade {
 
 	ConferenceDayDTO addDay();
 	
-	List<SessionDTO> findAllSessionsWithoutDayInformation();
+	Collection<SessionDTO> findAllSessionsWithoutDayInformation();
 	
 	List<String> findAvailableLocations();
 }

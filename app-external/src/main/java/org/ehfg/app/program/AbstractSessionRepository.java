@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
+import org.ehfg.app.cachableprogram.SessionRepositoryImpl;
 import org.ehfg.app.program.SessionDTO;
 import org.ehfg.app.program.SessionRepository;
 import org.ehfg.app.program.data.events.Event;
@@ -24,6 +25,8 @@ import org.slf4j.LoggerFactory;
  * 
  * @author patrick
  * @since 12.07.2014
+ * 
+ * @Deprecated use {@link SessionRepositoryImpl} instead
  */
 public abstract class AbstractSessionRepository implements SessionRepository {
 	protected final Logger logger = LoggerFactory.getLogger(getClass());
@@ -96,22 +99,5 @@ public abstract class AbstractSessionRepository implements SessionRepository {
 	@Override
 	public List<SessionDTO> findAll() {
 		return new ArrayList<>(dataCache.values());
-	}
-	
-	@Override
-	public SessionDTO findById(Long sessionId) {
-		return dataCache.get(sessionId.toString());
-	}
-	
-	@Override
-	public List<SessionDTO> findBySpeaker(Long speakerId) {
-		final List<SessionDTO> result = new ArrayList<>();
-		for (final SessionDTO session : dataCache.values()) {
-			if (session.getSpeakers().contains(speakerId)) {
-				result.add(session);
-			}
-		}
-
-		return result;
 	}
 }

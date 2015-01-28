@@ -38,7 +38,7 @@ final class ProgramFacadeImpl implements ProgramFacade {
 	}
 
 	@Override
-	public List<SpeakerDTO> findAllSpeakers() {
+	public Collection<SpeakerDTO> findAllSpeakers() {
 		return speakerRepository.findAll();
 	}
 	
@@ -140,7 +140,7 @@ final class ProgramFacadeImpl implements ProgramFacade {
 	}
 
 	@Override
-	public List<SessionDTO> findAllSessionsWithoutDayInformation() {
+	public Collection<SessionDTO> findAllSessionsWithoutDayInformation() {
 		return sessionRepository.findAll();
 	}
 

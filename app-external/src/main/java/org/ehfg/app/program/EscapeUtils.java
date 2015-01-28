@@ -12,7 +12,7 @@ import org.jsoup.select.Elements;
  * @author patrick
  * @since 22.06.2014
  */
-class EscapeUtils {
+public final class EscapeUtils {
 	private EscapeUtils() {
 		// do not allow instantiation
 	}
@@ -30,7 +30,7 @@ class EscapeUtils {
 	 *            to be escaped
 	 * @return unescaped version of the text
 	 */
-	static String escapeText(String inputText) {
+	public static String escapeText(String inputText) {
 		String escapedText = StringEscapeUtils.unescapeHtml4(inputText.replaceAll("&nbsp;", ""));
 		Document document = Jsoup.parse(escapedText);
 
