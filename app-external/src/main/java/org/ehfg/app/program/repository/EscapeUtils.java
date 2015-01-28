@@ -1,4 +1,4 @@
-package org.ehfg.app.program;
+package org.ehfg.app.program.repository;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.jsoup.Jsoup;
@@ -12,7 +12,7 @@ import org.jsoup.select.Elements;
  * @author patrick
  * @since 22.06.2014
  */
-public final class EscapeUtils {
+final class EscapeUtils {
 	private EscapeUtils() {
 		// do not allow instantiation
 	}

@@ -5,8 +5,8 @@ import java.util.Random;
 import org.ehfg.app.MockService;
 import org.ehfg.app.base.CoordinateDTO;
 import org.ehfg.app.base.MasterDataFacade;
-import org.ehfg.app.program.AbstractSessionRepository;
 import org.ehfg.app.program.ProgramFacade;
+import org.ehfg.app.program.SessionRepository;
 import org.joda.time.format.DateTimeFormatter;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,7 @@ abstract class AbstractPopulateStrategy implements DatabasePopulateStrategy, App
 	protected ProgramFacade programFacade;
 	
 	@Autowired
-	protected AbstractSessionRepository sessionRepository;
+	protected SessionRepository sessionRepository;
 	
 	protected ApplicationContext applicationContext;
 	

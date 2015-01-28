@@ -1,10 +1,8 @@
 package org.ehfg.app.program.strategy;
 
-import java.io.IOException;
 import java.net.MalformedURLException;
 
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
 import org.slf4j.Logger;
@@ -51,13 +49,19 @@ public abstract class AbstractDataRetrievalStrategy<T> implements InitializingBe
 		jaxbContext = JAXBContext.newInstance(fetchedClazz);
 	}
 
-	public final T fetchData() throws JAXBException, IOException {
-		logger.info("fetching data from {}", dataResource.getURL().getPath());
-
-		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-		Object data = unmarshaller.unmarshal(dataResource.getInputStream());
-
-		return fetchedClazz.cast(data);
+	public T fetchData() {
+		try {
+			logger.info("fetching data from {}", dataResource.getURL().getPath());
+			
+			Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+			Object data = unmarshaller.unmarshal(dataResource.getInputStream());
+			
+			return fetchedClazz.cast(data);
+		}
+		
+		catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	public final Class<T> getFetchedClass() {
