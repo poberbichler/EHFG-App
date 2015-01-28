@@ -10,7 +10,7 @@ import org.jsoup.select.Elements;
  * helper class to remove unnecessary html text from the ehfg server
  * 
  * @author patrick
- * @since 22.06.2014
+ * @since 06.2014
  */
 final class EscapeUtils {
 	private EscapeUtils() {

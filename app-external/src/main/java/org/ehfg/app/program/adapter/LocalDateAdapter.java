@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @author patrick
- * @since 22.06.2014
+ * @since 06.2014
  */
 public final class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
 	private static final Logger logger = LoggerFactory.getLogger(LocalDateAdapter.class);

@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
  * to use it, this class has to be subclassed - that's it
  * 
  * @author patrick
- * @since 21.06.2014
+ * @since 06.2014
  */
 @Service
 public abstract class AbstractDataRetrievalStrategy<T> implements InitializingBean {
