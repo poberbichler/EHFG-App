@@ -74,10 +74,10 @@ public abstract class AbstractDataRetrievalStrategy<T> implements InitializingBe
 	 * <p>
 	 * leading or ending slashed will automatically be removed/added, so the result will always be a valid url
 	 * 
-	 * @throws MalformedURLException
+	 * @throws MalformedURLException in case the url can't be built
 	 *             in case of an error
 	 */
-	private String buildUrl() throws MalformedURLException {
+	private String buildUrl() {
 		if (baseUrl == null) {
 			return "";
 		}

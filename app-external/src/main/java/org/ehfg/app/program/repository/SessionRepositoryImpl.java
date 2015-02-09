@@ -1,6 +1,5 @@
 package org.ehfg.app.program.repository;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -9,8 +8,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import javax.xml.bind.JAXBException;
 
 import org.apache.commons.lang3.StringUtils;
 import org.ehfg.app.program.SessionDTO;
@@ -83,7 +80,7 @@ class SessionRepositoryImpl implements SessionRepository {
 		}
 	}
 	
-	private Map<String, Set<String>> fetchSpeakerMap() throws JAXBException, IOException {
+	private Map<String, Set<String>> fetchSpeakerMap() {
 		final List<SpeakerEvent> speakerEvents = speakerEventStrategy.fetchData().getChannel().getSpeakerEvents();
 		final Map<String, Set<String>> result = new HashMap<>(speakerEvents.size());
 
