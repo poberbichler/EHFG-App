@@ -6,13 +6,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.apache.commons.lang3.BooleanUtils;
 import org.ehfg.app.base.ConfigurationDTO;
 import org.ehfg.app.base.MasterDataFacade;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -25,14 +26,14 @@ import twitter4j.TwitterStream;
  * @since 14.03.2014
  */
 @Component("twitterStreamingFacade")
-class TwitterStreamingFacadeImpl implements TwitterStreamingFacade, InitializingBean, DisposableBean {
+class TwitterStreamingFacadeImpl implements TwitterStreamingFacade {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
-	
+
 	private final Map<String, TwitterStream> streams = new HashMap<>();
 	private final TwitterStreamFactoryHolder streamFactory;
 	private final PersistenceStreamListenerFactory listenerFactory;
 	private final MasterDataFacade masterDataFacade;
-	
+
 	@Value("${twitter.default.listener.start}")
 	private boolean defaultStartup;
 
@@ -49,13 +50,13 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade, Initializing
 		if (!hashtag.startsWith("#")) {
 			hashtag = "#".concat(hashtag);
 		}
-		
+
 		if (!streams.containsKey(hashtag)) {
 			final TwitterStream stream = streamFactory.getStream();
 			stream.addListener(listenerFactory.getInstance(hashtag));
-			
+
 			FilterQuery query = new FilterQuery();
-			
+
 			query.track(new String[] { hashtag });
 			stream.filter(query);
 			streams.put(hashtag, stream);
@@ -77,9 +78,9 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade, Initializing
 		if (!hashtag.startsWith("#")) {
 			hashtag = "#".concat(hashtag);
 		}
-		
+
 		logger.info("removing stream for hashtag '{}'", hashtag);
-		
+
 		TwitterStream stream = streams.get(hashtag);
 		if (stream != null) {
 			stream.cleanUp();
@@ -87,8 +88,8 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade, Initializing
 		}
 	}
 
-	@Override
-	public void afterPropertiesSet() throws Exception {
+	@PostConstruct
+	public void afterPropertiesSet() {
 		if (BooleanUtils.isTrue(defaultStartup)) {
 			final ConfigurationDTO config = masterDataFacade.getAppConfiguration();
 			if (config != null && config.getHashtag() != null) {
@@ -97,7 +98,7 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade, Initializing
 		}
 	}
 
-	@Override
+	@PreDestroy
 	public void destroy() throws Exception {
 		for (final String hashtag : findAllListeners()) {
 			removeListener(hashtag);

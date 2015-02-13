@@ -2,8 +2,9 @@ package org.ehfg.app.populator;
 
 import java.util.Collection;
 
+import javax.annotation.PostConstruct;
+
 import org.ehfg.app.MockService;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @since 11.2014
  */
 @MockService
-public class DatabasePopulator implements InitializingBean {
+public class DatabasePopulator {
 	final Collection<DatabasePopulateStrategy> strategies;
 
 	@Autowired
@@ -23,7 +24,7 @@ public class DatabasePopulator implements InitializingBean {
 		this.strategies = strategies;
 	}
 
-	@Override
+	@PostConstruct
 	@Transactional(readOnly = false)
 	public void afterPropertiesSet() throws Exception {
 		for (final DatabasePopulateStrategy strategy : strategies) {

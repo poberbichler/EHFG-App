@@ -2,12 +2,12 @@ package org.ehfg.app.program.strategy;
 
 import java.net.MalformedURLException;
 
+import javax.annotation.PostConstruct;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -21,7 +21,7 @@ import org.springframework.stereotype.Service;
  * @since 06.2014
  */
 @Service
-public abstract class AbstractDataRetrievalStrategy<T> implements InitializingBean {
+public abstract class AbstractDataRetrievalStrategy<T> {
 	private static final String URL_DELIMITER = "/";
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -43,7 +43,7 @@ public abstract class AbstractDataRetrievalStrategy<T> implements InitializingBe
 		this.urlSnippet = urlSnippet;
 	}
 	
-	@Override
+	@PostConstruct
 	public void afterPropertiesSet() throws Exception {
 		dataResource = new UrlResource(buildUrl());
 		jaxbContext = JAXBContext.newInstance(fetchedClazz);
