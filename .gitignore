@@ -12,7 +12,7 @@ bin/
 .idea/
 .springBeans
 
-*/platforms/*
-*/plugins/org.apache.cordova.inappbrowser/*
+platforms
 
 node_modules/
+plugins
