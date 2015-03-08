@@ -2,6 +2,8 @@ package org.ehfg.app;
 
 import java.util.Properties;
 
+import javax.annotation.Resource;
+import javax.annotation.Resource.AuthenticationType;
 import javax.sql.DataSource;
 
 import org.hibernate.jpa.HibernatePersistenceProvider;
@@ -73,6 +75,7 @@ public class PersistenceConfig {
 	@Profile("!in-memory-db")
 	public static class DefaultDatabaseConfig {
 		@Bean
+		@Resource(name = "jdbc/jdbc/MySQLDS", authenticationType = AuthenticationType.CONTAINER, type = DataSource.class)
 		public DataSource dataSource() {
 			return new JndiDataSourceLookup().getDataSource("jdbc/MySQLDS");
 		}

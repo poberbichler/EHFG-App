@@ -56,7 +56,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
 		return viewResolver;
 	}
-
+	
 	@Override
 	public void addFormatters(FormatterRegistry registry) {
 		registry.addConverter(new StringToLocalDateConverter());
