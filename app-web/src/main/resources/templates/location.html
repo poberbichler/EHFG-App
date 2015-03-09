@@ -19,7 +19,7 @@
 		</tbody>
 	</table>
 	
-	<form th:unless="${#lists.isEmpty(availableLocations)}" th:object="${editLocation}" method="post" class="form form-horizontal">
+	<form th:action="@{#}" th:unless="${#lists.isEmpty(availableLocations)}" th:object="${editLocation}" method="post" class="form form-horizontal">
 		<div class="form-group">
 			<label for="locationName" class="col-sm-2 control-label">Name</label>
 			<div class="col-sm-4">

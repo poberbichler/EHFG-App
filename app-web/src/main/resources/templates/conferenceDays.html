@@ -1,6 +1,6 @@
 <html layout:decorator="includes/layout">
 <div layout:fragment="content">
-	<form method="post" th:object="${dayForm}" class="form form-horizontal">
+	<form th:action="@{#}" method="post" th:object="${dayForm}" class="form form-horizontal">
 		<ul id="dayList">
 			<li th:each="day,row : ${dayForm.days}">
 				<input th:field="*{days[__${row.index}__].deleted}" value="false" hidden="true"/>

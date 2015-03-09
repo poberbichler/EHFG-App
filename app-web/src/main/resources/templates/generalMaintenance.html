@@ -1,6 +1,6 @@
 <html layout:decorator="includes/layout">
 <div layout:fragment="content">
-	<form method="post" th:object="${config}" class="form form-horizontal">
+	<form th:action="@{#}" method="post" th:object="${config}" class="form form-horizontal">
 		<ul th:if="${#fields.hasErrors('*')}">
 			<li th:each="error : ${#fields.errors('*')}" th:text="${error}">error</li>
 		</ul>

@@ -6,15 +6,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
 
 /**
  * @author patrick
  * @since 24.04.2014
  */
 @Configuration
-@EnableWebSecurity
+@EnableWebMvcSecurity
 class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Value("${maintenance.user}")
 	private String username;
@@ -47,6 +47,6 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.loginProcessingUrl("/process-login")
 			.defaultSuccessUrl("/session/overview")
 			.failureUrl("/login/failed")
-			.and().httpBasic().and().csrf().disable();
+			.and().httpBasic().and().csrf();
 	}
 }
