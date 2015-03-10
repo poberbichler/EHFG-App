@@ -26,8 +26,8 @@
 					<td th:text="${point.contact}">contact</td>
 					<td th:text="${point.website}">website</td>
 					<td>
-						<a th:href="@{'pointofinterest/edit/' + ${point.id}}">edit</a>,
-						<a th:href="@{'pointofinterest/delete/' + ${point.id}}">delete</a>
+						<a th:href="@{pointofinterest/edit/__${point.id}__}">edit</a>,
+						<a th:href="@{pointofinterest/delete/__${point.id}__}">delete</a>
 					</td>
 				</tr>
 			</tbody>

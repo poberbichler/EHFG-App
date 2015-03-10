@@ -19,7 +19,7 @@
 			<h4>active streams <small>(click to delete)</small></h4>
 			<div class="list-group">
 				<a th:each="stream : ${streams}" th:text="${stream}" class="list-group-item"
-					th:href="@{'twitterstreams/delete/' + ${stream.substring(1)}}">stream</a>
+					th:href="@{twitterstreams/delete/__${stream.substring(1)}__}">stream</a>
 			</div>
 		</div>
 	</div>
