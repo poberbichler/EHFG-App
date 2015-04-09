@@ -27,7 +27,6 @@
 			<groupId>org.ehfg</groupId>
 			<artifactId>app-rest</artifactId>
 			<version>${project.parent.version}</version>
-			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
@@ -135,8 +134,7 @@
 
 			<build>
 				<plugins>
-					<!-- war plugin has to be specified before the antrun plugin - otherwise 
-						build would break -->
+					<!-- war plugin has to be specified before the antrun plugin - otherwise build would break -->
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-war-plugin</artifactId>
@@ -158,8 +156,7 @@
 						</configuration>
 					</plugin>
 
-					<!-- TODO: check if this plugin could be removed - the app doesn't need 
-						to run on the server any more -->
+					<!-- TODO: check if this plugin could be removed - the app doesn't need to run on the server any more -->
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-antrun-plugin</artifactId>
@@ -171,12 +168,10 @@
 								<configuration>
 									<target name="backup local config and replace with server-config">
 										<!-- backup the local config.js file -->
-										<copy file="${mobile-path}/js/config.js" tofile="${mobile-path}/js/config-tmp.js"
-											overwrite="true" />
+										<copy file="${mobile-path}/js/config.js" tofile="${mobile-path}/js/config-tmp.js" overwrite="true" />
 
 										<!-- rename config-server.js to config.js -->
-										<copy file="${mobile-path}/js/config-server.js" tofile="${mobile-path}/js/config.js"
-											overwrite="true" />
+										<copy file="${mobile-path}/js/config-server.js" tofile="${mobile-path}/js/config.js" overwrite="true" />
 									</target>
 								</configuration>
 

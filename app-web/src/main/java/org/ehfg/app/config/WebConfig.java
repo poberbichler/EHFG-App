@@ -27,7 +27,7 @@ import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 @EnableAspectJAutoProxy
 @ComponentScan(basePackages = "org.ehfg.app")
 @PropertySource(ignoreResourceNotFound = true, 
-		value = { "config.properties", "file:////${user.home}/ehfg.properties" })
+		value = { "classpath:config.properties", "file:////${user.home}/ehfg.properties" })
 public class WebConfig extends WebMvcConfigurerAdapter {
 	@Bean
 	public SpringResourceTemplateResolver templateResolver() {
