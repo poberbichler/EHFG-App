@@ -12,51 +12,70 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
-
-import twitter4j.TwitterStreamFactory;
-import twitter4j.conf.ConfigurationBuilder;
+import org.springframework.social.UserIdSource;
+import org.springframework.social.config.annotation.ConnectionFactoryConfigurer;
+import org.springframework.social.config.annotation.EnableSocial;
+import org.springframework.social.config.annotation.SocialConfigurer;
+import org.springframework.social.connect.ConnectionFactoryLocator;
+import org.springframework.social.connect.UsersConnectionRepository;
+import org.springframework.social.connect.mem.InMemoryUsersConnectionRepository;
+import org.springframework.social.twitter.api.Twitter;
+import org.springframework.social.twitter.api.impl.TwitterTemplate;
+import org.springframework.social.twitter.connect.TwitterConnectionFactory;
 
 /**
  * @author patrick
  * @since 11.2014
  */
+@EnableSocial
 @Configuration
 @EnableCaching
 @PropertySource({ "classpath:config/twitter.properties" })
-public class ExternalConfig {
+public class ExternalConfig implements SocialConfigurer {
 	@Autowired
 	private Environment environment;
 
 	@Bean
-	public TwitterStreamFactory twitterStreamFactory() {
-		return new TwitterStreamFactory(twitterConfiguration());
-	}
-
-	@Bean
-	public twitter4j.conf.Configuration twitterConfiguration() {
-		final ConfigurationBuilder builder = new ConfigurationBuilder();
-		builder.setDebugEnabled(environment.getProperty("twitter.debug.enabled", boolean.class));
-		builder.setOAuthConsumerKey(environment.getProperty("twitter.consumer.key"));
-		builder.setOAuthConsumerSecret(environment.getProperty("twitter.consumer.secret"));
-		builder.setOAuthAccessToken(environment.getProperty("twitter.access.token"));
-		builder.setOAuthAccessTokenSecret(environment.getProperty("twitter.access.secret"));
-		builder.setUseSSL(environment.getProperty("twitter.use.ssl", boolean.class));
-
-		return builder.build();
-	}
-	
-	@Bean
 	public CacheManager cacheManager() {
 		final SimpleCacheManager cacheManager = new SimpleCacheManager();
-		cacheManager.setCaches(Arrays.asList(
-				new ConcurrentMapCache("speaker"), 
-				new ConcurrentMapCache("session")));
-		
+		cacheManager.setCaches(Arrays.asList(new ConcurrentMapCache("speaker"), new ConcurrentMapCache("session")));
+
 		return cacheManager;
 	}
-	
+
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
 		return new PropertySourcesPlaceholderConfigurer();
+	}
+
+	@Bean
+	public Twitter twitter() {
+		return new TwitterTemplate(
+				environment.getProperty("twitter.consumer.key"),
+				environment.getProperty("twitter.consumer.secret"), 
+				environment.getProperty("twitter.access.token"),
+				environment.getProperty("twitter.access.secret"));
+	}
+
+	@Override
+	public void addConnectionFactories(ConnectionFactoryConfigurer configurer, Environment environment) {
+		configurer.addConnectionFactory(new TwitterConnectionFactory(
+				environment.getProperty("twitter.consumer.key"), 
+				environment.getProperty("twitter.consumer.secret")));
+	}
+
+	@Override
+	public UserIdSource getUserIdSource() {
+		return new UserIdSource() {
+			@Override
+			public String getUserId() {
+				return "EHFG_APP";
+			}
+		};
+	}
+
+	@Override
+	public UsersConnectionRepository getUsersConnectionRepository(ConnectionFactoryLocator factoryLocator) {
+		return new InMemoryUsersConnectionRepository(factoryLocator);
 	}
 }

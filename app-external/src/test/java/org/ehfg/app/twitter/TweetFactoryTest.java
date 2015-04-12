@@ -1,14 +1,10 @@
 package org.ehfg.app.twitter;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.util.Date;
 
-import org.ehfg.app.twitter.Tweet;
-import org.ehfg.app.twitter.TweetFactory;
-import org.ehfg.app.twitter.TwitterUser;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -16,13 +12,10 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import twitter4j.Status;
-import twitter4j.URLEntity;
-
 @RunWith(MockitoJUnitRunner.class)
 public final class TweetFactoryTest {
 	@Mock
-	private Status status;
+	private org.springframework.social.twitter.api.Tweet status;
 
 	@Mock
 	private TwitterUser user;
@@ -33,15 +26,15 @@ public final class TweetFactoryTest {
 
 	@Before
 	public void initMocks() {
-		URLEntity entity = mock(URLEntity.class);
-		when(entity.getDisplayURL()).thenReturn("app.ehfg.org/123");
-		when(entity.getExpandedURL()).thenReturn("https://app.ehfg.org/123");
-		when(entity.getURL()).thenReturn("http://t.co/IyExg1bi61");
+//		URLEntity entity = mock(URLEntity.class);
+//		when(entity.getDisplayURL()).thenReturn("app.ehfg.org/123");
+//		when(entity.getExpandedURL()).thenReturn("https://app.ehfg.org/123");
+//		when(entity.getURL()).thenReturn("http://t.co/IyExg1bi61");
 
 		when(status.getCreatedAt()).thenReturn(new Date());
 		when(status.getId()).thenReturn(ANY_ID);
 		when(status.getText()).thenReturn(MESSAGE);
-		when(status.getURLEntities()).thenReturn(new URLEntity[] { entity });
+		when(status.getUnmodifiedText()).thenReturn(MESSAGE);
 	}
 
 	@Test

@@ -1,5 +1,6 @@
 package org.ehfg.app.twitter;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -31,7 +32,7 @@ final class TwitterFacadeImpl implements TwitterFacade {
 	}
 
 	@Override
-	public List<String> findStreams() {
+	public Collection<String> findStreams() {
 		return streamingFacade.findAllListeners();
 	}
 
@@ -88,7 +89,7 @@ final class TwitterFacadeImpl implements TwitterFacade {
 	
 	@Override
 	public TwitterStreamStatus checkIfRelevantStreamIsRunning() {
-		final List<String> currentStreams = findStreams();
+		final Collection<String> currentStreams = findStreams();
 		final String thisYearsHashtag = findHashtag();
 		
 		if (currentStreams.isEmpty() || !currentStreams.contains(thisYearsHashtag)) {

@@ -1,5 +1,6 @@
 package org.ehfg.app.twitter;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import java.util.List;
  * @since 13.03.2014
  */
 public interface TwitterFacade {
-	List<String> findStreams();
+	Collection<String> findStreams();
 	void addStream(String hashtag);
 	void removeStream(String hashtag);
 	

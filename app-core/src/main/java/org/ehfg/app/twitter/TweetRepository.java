@@ -12,7 +12,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * @author patrick
  * @since 03.2014
  */
-interface TweetRepository extends PagingAndSortingRepository<Tweet, Long> {
+public interface TweetRepository extends PagingAndSortingRepository<Tweet, Long> {
 	@Query("SELECT new org.ehfg.app.twitter.TweetDTO(t.id, a.fullName, a.nickName, t.message, a.profileImage, t.creationDate) "
 			+ "FROM Tweet t INNER JOIN t.author a ORDER BY t.creationDate DESC")
 	List<TweetDTO> findTweets();

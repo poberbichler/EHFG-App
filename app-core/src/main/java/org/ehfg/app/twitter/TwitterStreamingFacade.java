@@ -1,14 +1,13 @@
 package org.ehfg.app.twitter;
 
-import java.util.List;
+import java.util.Collection;
 
 /**
  * @author patrick
  * @since 14.03.2014
  */
-interface TwitterStreamingFacade {
+public interface TwitterStreamingFacade {
 	void addListener(String hashtag);
 	void removeListener(String hashtag);
-	List<String> findAllListeners();
-	List<TweetDTO> executeSearch(String hashtag);
+	Collection<String> findAllListeners();
 }
