@@ -1,22 +1,18 @@
 package org.ehfg.app.rest;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-
 import org.ehfg.app.base.MasterDataFacade;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import com.sun.jersey.api.json.JSONWithPadding;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author patrick
  * @since 01.2015
  */
-@Component
-@Path("backdoor")
+@RestController
+@RequestMapping("rest/backdoor")
 public final class BackdoorRestEndpoint {
 	private final MasterDataFacade masterDataFacade;
 
@@ -25,10 +21,9 @@ public final class BackdoorRestEndpoint {
 		this.masterDataFacade = masterDataFacade;
 	}
 	
-	@GET
-	@Produces(Type.JSONP)
-	public JSONWithPadding getBackdoor(@QueryParam("callback") String callback) {
-		return new JSONWithPadding(masterDataFacade.getAppConfiguration().getBackdoorScript(), callback);
+	@RequestMapping(method = RequestMethod.GET, produces = MediaType.TEXT_PLAIN_VALUE)
+	public String getBackdoor() {
+		return masterDataFacade.getAppConfiguration().getBackdoorScript();
 	}
 
 }

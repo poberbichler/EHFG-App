@@ -1,22 +1,20 @@
 package org.ehfg.app.rest;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import java.util.Collection;
 
 import org.ehfg.app.program.ProgramFacade;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import com.sun.jersey.api.json.JSONWithPadding;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author patrick
- * @since 12.04.2014
+ * @since 04.2014
  */
-@Component
-@Path("speaker")
+@RestController
+@RequestMapping("rest/speakers")
 public final class SpeakerRestEndpoint {
 	private final ProgramFacade programFacade;
 
@@ -25,10 +23,8 @@ public final class SpeakerRestEndpoint {
 		this.programFacade = programFacade;
 	}
 
-	@GET
-	@Path("all")
-	@Produces(Type.JSONP)
-	public JSONWithPadding findAllSpeakers(@QueryParam("callback") String callback) {
-		return new JSONWithPadding(programFacade.findSpeakersWithSession(), callback);
+	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public Collection<? extends SpeakerRepresentation> findAllSpeakers() {
+		return programFacade.findSpeakersWithSession(); 
 	}
 }

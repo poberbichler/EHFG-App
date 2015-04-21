@@ -1,19 +1,16 @@
 package org.ehfg.app.program;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.ehfg.app.rest.SpeakerRepresentation;
 
 /**
  * basic represenation of a speaker
  * 
  * @author patrick
- * @since 25.01.2014
+ * @since 01.2014
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-public final class SpeakerDTO implements Comparable<SpeakerDTO> {
+public final class SpeakerDTO implements Comparable<SpeakerDTO>, SpeakerRepresentation {
 	private String id;
 	private String firstName;
 	private String lastName;
@@ -32,6 +29,7 @@ public final class SpeakerDTO implements Comparable<SpeakerDTO> {
 		this.imageUrl = builder.imageUrl;
 	}
 
+	@Override
 	public String getImageUrl() {
 		return imageUrl;
 	}
@@ -40,10 +38,12 @@ public final class SpeakerDTO implements Comparable<SpeakerDTO> {
 		this.imageUrl = imageUrl;
 	}
 
+	@Override
 	public String getFullName() {
 		return String.format("%s %s", lastName, firstName);
 	}
 
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -52,6 +52,7 @@ public final class SpeakerDTO implements Comparable<SpeakerDTO> {
 		this.description = description;
 	}
 
+	@Override
 	public String getId() {
 		return id;
 	}
@@ -60,6 +61,7 @@ public final class SpeakerDTO implements Comparable<SpeakerDTO> {
 		this.id = id;
 	}
 
+	@Override
 	public String getFirstName() {
 		return firstName;
 	}
@@ -68,6 +70,7 @@ public final class SpeakerDTO implements Comparable<SpeakerDTO> {
 		this.firstName = firstName;
 	}
 
+	@Override
 	public String getLastName() {
 		return lastName;
 	}

@@ -1,24 +1,22 @@
 package org.ehfg.app.rest;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import java.util.Collection;
 
 import org.ehfg.app.base.LocationDTO;
 import org.ehfg.app.base.MasterDataFacade;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import com.sun.jersey.api.json.JSONWithPadding;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author patrick
  * @since 07.2014
  */
-@Component
-@Path("location")
+@RestController
+@RequestMapping("rest/locations")
 public final class LocationRestEndpoint {
 	private final MasterDataFacade masterDataFacade;
 
@@ -27,24 +25,19 @@ public final class LocationRestEndpoint {
 		this.masterDataFacade = masterDataFacade;
 	}
 
-	@GET
-	@Path("all")
-	@Produces(Type.JSONP)
-	public JSONWithPadding findAll(@QueryParam("callback") String callback) {
-		return new JSONWithPadding(masterDataFacade.findAllLocation(), callback);
+	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public Collection<? extends LocationRepresentation> findAll() {
+		return masterDataFacade.findAllLocation();
 	}
 	
-	@GET
-	@Path("name/{locationName}")
-	@Produces(Type.JSONP)
-	public JSONWithPadding findByName(@PathParam("locationName") String locationName, @QueryParam("callback") String callback) {
-		LocationDTO result = null;
+	@RequestMapping(value = "{locationName}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public LocationRepresentation findByName(@PathVariable("locationName") String locationName) {
 		for (final LocationDTO location : masterDataFacade.findAllLocation()) {
 			if (location.getName().equalsIgnoreCase(locationName)) {
-				result = location;
-				break;
+				return location;
 			}
 		}
-		return new JSONWithPadding(result, callback);
+		
+		return null;
 	}
 }

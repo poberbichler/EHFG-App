@@ -1,11 +1,9 @@
 package org.ehfg.app.base;
 
 import javax.validation.constraints.NotNull;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.ehfg.app.rest.CoordinateRepresentation;
 
 /**
  * representation of a coordinate
@@ -13,14 +11,11 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @author patrick
  * @since 02.03.2014
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-public final class CoordinateDTO {
+public final class CoordinateDTO implements CoordinateRepresentation {
 	@NotNull
-	@XmlElement(name = "latitude")
 	private Double xValue;
 
 	@NotNull
-	@XmlElement(name = "longitude")
 	private Double yValue;
 
 	public CoordinateDTO() {
@@ -48,9 +43,20 @@ public final class CoordinateDTO {
 	public void setyValue(Double yValue) {
 		this.yValue = yValue;
 	}
-	
+
+	@Override
+	public double getLatitude() {
+		return getxValue();
+	}
+
+	@Override
+	public double getLongitude() {
+		return getyValue();
+	}
+
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
 	}
+
 }

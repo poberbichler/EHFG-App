@@ -1,36 +1,31 @@
 package org.ehfg.app.rest;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import java.util.Collection;
 
 import org.ehfg.app.base.MasterDataFacade;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import com.sun.jersey.api.json.JSONWithPadding;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author patrick
  * @since 04.2014
  */
-@Component
-@Path("points")
+@RestController
+@RequestMapping("rest/points")
 public final class PointOfInterestRestEndpoint {
 	private final MasterDataFacade masterDataFacade;
 
 	@Autowired
 	public PointOfInterestRestEndpoint(MasterDataFacade masterDataFacade) {
-		super();
 		this.masterDataFacade = masterDataFacade;
 	}
 	
-	@GET
-	@Path("all")
-	@Produces(Type.JSONP)
-	public JSONWithPadding findAllPoints(@QueryParam("callback") String callback) {
-		return new JSONWithPadding(masterDataFacade.findAllPointsOfInterest(), callback);
+	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public Collection<? extends PointOfInterestRepresentation> findAllPoints() {
+		return masterDataFacade.findAllPointsOfInterest();
 	}
 
 }

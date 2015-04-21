@@ -1,13 +1,16 @@
 package org.ehfg.app.program;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.ehfg.app.rest.ConferenceDayRepresentation;
 import org.joda.time.LocalDate;
 
 /**
  * @author patrick
  * @since 04.04.2014
  */
-public final class ConferenceDayDTO implements Comparable<ConferenceDayDTO> {
+public final class ConferenceDayDTO implements Comparable<ConferenceDayDTO>, ConferenceDayRepresentation {
 	private Long id;
 	private LocalDate day;
 	private String description;
@@ -22,43 +25,6 @@ public final class ConferenceDayDTO implements Comparable<ConferenceDayDTO> {
 		this.day = day;
 		this.description = description;
 		deleted = false;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((day == null) ? 0 : day.hashCode());
-		result = prime * result + ((description == null) ? 0 : description.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ConferenceDayDTO other = (ConferenceDayDTO) obj;
-		if (day == null) {
-			if (other.day != null)
-				return false;
-		} else if (!day.equals(other.day))
-			return false;
-		if (description == null) {
-			if (other.description != null)
-				return false;
-		} else if (!description.equals(other.description))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
 	}
 
 	public LocalDate getDay() {
@@ -84,11 +50,11 @@ public final class ConferenceDayDTO implements Comparable<ConferenceDayDTO> {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	public boolean isDeleted() {
 		return deleted;
 	}
-	
+
 	public void setDeleted(boolean deleted) {
 		this.deleted = deleted;
 	}
@@ -101,7 +67,26 @@ public final class ConferenceDayDTO implements Comparable<ConferenceDayDTO> {
 
 		return this.day.compareTo(that.day);
 	}
-	
+
+	@Override
+	public boolean equals(Object thatObject) {
+		if (this == thatObject) {
+			return true;
+		}
+
+		if (!(thatObject instanceof ConferenceDayDTO)) {
+			return false;
+		}
+
+		ConferenceDayDTO that = (ConferenceDayDTO) thatObject;
+		return new EqualsBuilder().append(this.id, that.id).isEquals();
+	}
+
+	@Override
+	public int hashCode() {
+		return new HashCodeBuilder().append(id).hashCode();
+	}
+
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);

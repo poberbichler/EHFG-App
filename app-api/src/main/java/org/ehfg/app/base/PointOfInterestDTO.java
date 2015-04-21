@@ -4,12 +4,13 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.ehfg.app.rest.PointOfInterestRepresentation;
 
 /**
  * @author patrick
  * @since 13.04.2014
  */
-public final class PointOfInterestDTO {
+public final class PointOfInterestDTO implements PointOfInterestRepresentation {
 	private Long id;
 
 	@NotNull
@@ -47,6 +48,7 @@ public final class PointOfInterestDTO {
 		this(id, name, address, description, contact, website, new CoordinateDTO(xCoordinate, yCoordinate));
 	}
 
+	@Override
 	public Long getId() {
 		return id;
 	}
@@ -55,6 +57,7 @@ public final class PointOfInterestDTO {
 		this.id = id;
 	}
 
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -63,6 +66,7 @@ public final class PointOfInterestDTO {
 		this.name = name;
 	}
 
+	@Override
 	public String getAddress() {
 		return address;
 	}
@@ -71,6 +75,7 @@ public final class PointOfInterestDTO {
 		this.address = address;
 	}
 
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -79,6 +84,7 @@ public final class PointOfInterestDTO {
 		this.description = description;
 	}
 
+	@Override
 	public CoordinateDTO getCoordinate() {
 		return coordinate;
 	}
@@ -95,6 +101,7 @@ public final class PointOfInterestDTO {
 		return coordinate.getyValue();
 	}
 
+	@Override
 	public String getContact() {
 		return contact;
 	}
@@ -103,6 +110,7 @@ public final class PointOfInterestDTO {
 		this.contact = contact;
 	}
 
+	@Override
 	public String getWebsite() {
 		return website;
 	}

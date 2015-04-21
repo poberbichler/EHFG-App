@@ -30,7 +30,6 @@ public final class Tweet {
 	}
 
 	public Tweet(Long id, String message, Date creationDate, String hashtag, String formattedMesssage, TwitterUser author) {
-		super();
 		this.id = id;
 		this.message = message;
 		this.creationDate = creationDate;

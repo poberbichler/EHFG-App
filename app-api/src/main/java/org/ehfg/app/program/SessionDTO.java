@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.ehfg.app.rest.SessionRepresentation;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 
@@ -15,7 +16,7 @@ import org.joda.time.format.DateTimeFormat;
  * @author patrick
  * @since 03.2014
  */
-public final class SessionDTO implements Comparable<SessionDTO> {
+public final class SessionDTO implements Comparable<SessionDTO>, SessionRepresentation {
 	private String id;
 	private String name;
 	private String description;
@@ -41,6 +42,7 @@ public final class SessionDTO implements Comparable<SessionDTO> {
 		this.sessionCode = builder.sessionCode;
 	}
 
+	@Override
 	public String getSessionCode() {
 		return sessionCode;
 	}
@@ -49,6 +51,7 @@ public final class SessionDTO implements Comparable<SessionDTO> {
 		this.sessionCode = sessionCode;
 	}
 
+	@Override
 	public DateTime getStartTime() {
 		return startTime;
 	}
@@ -57,6 +60,7 @@ public final class SessionDTO implements Comparable<SessionDTO> {
 		this.startTime = startTime;
 	}
 
+	@Override
 	public DateTime getEndTime() {
 		return endTime;
 	}
@@ -65,6 +69,7 @@ public final class SessionDTO implements Comparable<SessionDTO> {
 		this.endTime = endTime;
 	}
 
+	@Override
 	public String getId() {
 		return id;
 	}
@@ -73,6 +78,7 @@ public final class SessionDTO implements Comparable<SessionDTO> {
 		this.id = id;
 	}
 
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -81,6 +87,7 @@ public final class SessionDTO implements Comparable<SessionDTO> {
 		this.name = name;
 	}
 
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -89,6 +96,7 @@ public final class SessionDTO implements Comparable<SessionDTO> {
 		this.description = description;
 	}
 
+	@Override
 	public Set<String> getSpeakers() {
 		if (speakers == null) {
 			return Collections.emptySet();
@@ -97,6 +105,7 @@ public final class SessionDTO implements Comparable<SessionDTO> {
 		return speakers;
 	}
 
+	@Override
 	public String getLocationId() {
 		return location;
 	}

@@ -4,6 +4,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.ehfg.app.rest.LocationRepresentation;
 
 /**
  * basic representation of a location
@@ -11,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @author patrick
  * @since 02.03.2014
  */
-public final class LocationDTO {
+public final class LocationDTO implements LocationRepresentation {
 	private Long id;
 	@NotNull
 	private String name;
@@ -35,6 +36,7 @@ public final class LocationDTO {
 		this(id, name, new CoordinateDTO(xValue, yValue));
 	}
 
+	@Override
 	public Long getId() {
 		return id;
 	}
@@ -43,6 +45,7 @@ public final class LocationDTO {
 		this.id = id;
 	}
 
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -51,6 +54,7 @@ public final class LocationDTO {
 		this.name = name;
 	}
 
+	@Override
 	public CoordinateDTO getCoordinate() {
 		return coordinate;
 	}

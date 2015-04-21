@@ -1,31 +1,24 @@
 package org.ehfg.app.rest;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-
-import org.codehaus.jettison.json.JSONArray;
-import org.codehaus.jettison.json.JSONException;
-import org.codehaus.jettison.json.JSONObject;
 import org.ehfg.app.program.ConferenceDayDTO;
 import org.ehfg.app.program.ProgramFacade;
 import org.ehfg.app.program.SessionDTO;
-import org.joda.time.DateTimeZone;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import com.sun.jersey.api.json.JSONWithPadding;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author patrick
  * @since 04.2014
  */
-@Component
-@Path("session")
+@RestController
+@RequestMapping("rest/sessions")
 public final class SessionRestEndpoint {
 	private final ProgramFacade programFacade;
 
@@ -34,38 +27,15 @@ public final class SessionRestEndpoint {
 		this.programFacade = programFacade;
 	}
 
-	@GET
-	@Path("all")
-	@Produces(Type.JSONP)
-	public JSONWithPadding findAllSessions(@QueryParam("callback") String callback) throws JSONException {
-		final JSONArray result = new JSONArray();
-
-		for (final Entry<ConferenceDayDTO, List<SessionDTO>> entry : programFacade.findAllSessions().entrySet()) {
-			final ConferenceDayDTO day = entry.getKey();
-
-			final JSONObject jsonDay = new JSONObject();
-			jsonDay.put("description", day.getDescription());
-			jsonDay.put("timestamp", day.getDay().toDate().getTime());
-			
-			final JSONArray sessions = new JSONArray();
-			for (final SessionDTO session : entry.getValue()) {
-				final JSONObject jsonSession = new JSONObject();
-				jsonSession.put("id", session.getId());
-				jsonSession.put("description", session.getDescription());
-				jsonSession.put("start", session.getStartTime().withZoneRetainFields(DateTimeZone.UTC).getMillis());
-				jsonSession.put("end", session.getEndTime().withZoneRetainFields(DateTimeZone.UTC).getMillis());
-				jsonSession.put("name", session.getName());
-				jsonSession.put("location", session.getLocationId());
-				jsonSession.put("speakers", session.getSpeakers());
-				jsonSession.put("code", session.getSessionCode());
-
-				sessions.put(jsonSession);
-			}
-
-			jsonDay.put("sessions", sessions);
-			result.put(jsonDay);
+	@RequestMapping(method = RequestMethod.GET)
+	public Map<ConferenceDayRepresentation, List<? extends SessionRepresentation>> findAllSessions() {
+		Map<ConferenceDayDTO, List<SessionDTO>> findAllSessions = programFacade.findAllSessions();
+		
+		Map<ConferenceDayRepresentation, List<? extends SessionRepresentation>> result = new HashMap<>();
+		for (Entry<ConferenceDayDTO, List<SessionDTO>> entry : findAllSessions.entrySet()) {
+			result.put(entry.getKey(), entry.getValue());
 		}
-
-		return new JSONWithPadding(result, callback);
+		
+		return result;
 	}
 }

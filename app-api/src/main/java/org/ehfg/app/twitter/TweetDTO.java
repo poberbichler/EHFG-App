@@ -2,22 +2,20 @@ package org.ehfg.app.twitter;
 
 import java.util.Date;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.ehfg.app.rest.TweetRepresentation;
 
 /**
  * @author patrick
  * @since 20.03.2014
  */
-public final class TweetDTO {
-	private final static int MAX_LENGTH = 30;
-
-	public final Long id;
-	public final String fullName;
-	public final String nickName;
-	public final String message;
-	public final String profileImage;
-	public final Date timestamp;
+public final class TweetDTO implements TweetRepresentation {
+	private final Long id;
+	private final String fullName;
+	private final String nickName;
+	private final String message;
+	private final String profileImage;
+	private final Date timestamp;
 
 	public TweetDTO(Long id, String fullName, String nickName, String message, String profileImage, Date timestamp) {
 		this.id = id;
@@ -28,21 +26,36 @@ public final class TweetDTO {
 		this.timestamp = timestamp;
 	}
 
-	/**
-	 * @return the fullname of the person, but shortended, so it can easily be
-	 *         viewed on an iphone - damn you steve jobs!
-	 */
-	public String getFullNameForScreen() {
-		int totalLength = fullName.length() + nickName.length();
-		
-		if (totalLength >= MAX_LENGTH) {
-			int maxLengthFullName = fullName.length() - (totalLength - MAX_LENGTH);
-			return StringUtils.abbreviate(fullName, maxLengthFullName);
-		}
+	@Override
+	public Long getId() {
+		return id;
+	}
 
+	@Override
+	public String getFullName() {
 		return fullName;
 	}
 
+	@Override
+	public String getNickName() {
+		return nickName;
+	}
+
+	@Override
+	public String getMessage() {
+		return message;
+	}
+
+	@Override
+	public String getProfileImage() {
+		return profileImage;
+	}
+
+	@Override
+	public Date getTimestamp() {
+		return timestamp;
+	}
+	
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
