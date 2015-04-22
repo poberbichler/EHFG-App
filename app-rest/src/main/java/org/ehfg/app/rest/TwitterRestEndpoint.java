@@ -8,16 +8,16 @@ import org.ehfg.app.twitter.TwitterFacade;
 import org.ehfg.app.twitter.TwitterStreamStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author patrick
  * @since 04.2014
  */
-@Component
+@RestController
 @RequestMapping("rest/twitter")
 public final class TwitterRestEndpoint {
 	private final TwitterFacade twitterFacade;

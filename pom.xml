@@ -18,34 +18,34 @@
 	<properties>
 		<java.version>1.7</java.version>
 
-		<spring.version>4.1.0.RELEASE</spring.version>
-		<spring-security.version>3.2.3.RELEASE</spring-security.version>
-		<spring-data.version>1.5.0.RELEASE</spring-data.version>
+		<spring.version>4.1.6.RELEASE</spring.version>
+		<spring-security.version>4.0.0.RELEASE</spring-security.version>
+		<spring-data.version>1.8.0.RELEASE</spring-data.version>
 		<spring-social.version>1.1.0.RELEASE</spring-social.version>
 
-		<hibernate.version>4.3.4.Final</hibernate.version>
-		<hibernate-validator.version>5.1.0.Final</hibernate-validator.version>
-		<logback.version>1.1.2</logback.version>
-		<jackson.version>2.4.2</jackson.version>
-		<commons-lang.version>3.3.2</commons-lang.version>
+		<hibernate.version>4.3.9.Final</hibernate.version>
+		<hibernate-validator.version>5.1.3.Final</hibernate-validator.version>
+		<logback.version>1.1.3</logback.version>
+		<jackson.version>2.5.2</jackson.version>
+		<commons-lang.version>3.4</commons-lang.version>
 		<commons-collections.version>4.0</commons-collections.version>
-		<h2.version>1.4.182</h2.version>
+		<h2.version>1.4.187</h2.version>
 		<validation.version>1.1.0.Final</validation.version>
-		<mysql-connector.version>5.1.21</mysql-connector.version>
+		<mysql-connector.version>5.1.35</mysql-connector.version>
 		<servlet-api.version>3.1.0</servlet-api.version>
-		<jsoup.version>1.7.3</jsoup.version>
-		<joda-time.version>2.3</joda-time.version>
-		<aspectj.version>1.8.0</aspectj.version>
+		<jsoup.version>1.8.2</jsoup.version>
+		<joda-time.version>2.7</joda-time.version>
+		<aspectj.version>1.8.5</aspectj.version>
 		<el-impl.version>2.2</el-impl.version>
 
-		<thymeleaf.version>2.1.3.RELEASE</thymeleaf.version>
-		<thymeleaf-layout-dialect.version>1.2.1</thymeleaf-layout-dialect.version>
-		<jquery.version>2.1.1</jquery.version>
-		<jquery-ui.version>1.11.1</jquery-ui.version>
-		<bootstrap.version>3.3.1</bootstrap.version>
+		<thymeleaf.version>2.1.4.RELEASE</thymeleaf.version>
+		<thymeleaf-layout-dialect.version>1.2.8</thymeleaf-layout-dialect.version>
+		<jquery.version>2.1.3</jquery.version>
+		<jquery-ui.version>1.11.3</jquery-ui.version>
+		<bootstrap.version>3.3.4</bootstrap.version>
 
-		<junit.version>4.11</junit.version>
-		<mockito.version>1.9.5</mockito.version>
+		<junit.version>4.12</junit.version>
+		<mockito.version>1.10.19</mockito.version>
 	</properties>
 
 	<dependencyManagement>
