@@ -27,7 +27,7 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade {
 	private final Map<String, Stream> streams = new HashMap<>();
 
 	@Autowired
-	public TwitterStreamingFacadeImpl(Twitter twitter, PersistentStreamFactory streamFactory) {
+	public TwitterStreamingFacadeImpl(Twitter twitter, StreamListenerFactory streamFactory) {
 		this.twitter = twitter;
 		this.streamListenerFactory = streamFactory;
 	}
