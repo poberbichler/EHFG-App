@@ -3,11 +3,13 @@ package org.ehfg.app.config;
 import nz.net.ultraq.thymeleaf.LayoutDialect;
 
 import org.ehfg.app.converter.StringToLocalDateConverter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -29,6 +31,9 @@ import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 @PropertySource(ignoreResourceNotFound = true, 
 		value = { "classpath:config.properties", "file:////${user.home}/ehfg.properties" })
 public class WebConfig extends WebMvcConfigurerAdapter {
+	@Autowired
+	private Environment environment;
+	
 	@Bean
 	public SpringResourceTemplateResolver templateResolver() {
 		final SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
@@ -65,5 +70,10 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+		
+		final String mobilePath = environment.getProperty("absolute.mobile.path");
+		if (mobilePath != null) {
+			registry.addResourceHandler("/mobile/**").addResourceLocations(mobilePath);
+		}
 	}
 }
