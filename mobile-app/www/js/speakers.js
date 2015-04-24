@@ -21,8 +21,8 @@
 	}
 	
 	var SpeakerResource = function($resource, BASE_URL) {
-		return $resource(BASE_URL + '/speaker/all?callback=JSON_CALLBACK', {}, {
-			findAll: {method: 'JSONP', isArray:true}
+		return $resource(BASE_URL + '/speakers', {}, {
+			findAll: {method: 'GET', isArray:true}
 		});
 	}
 	

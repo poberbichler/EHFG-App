@@ -19,13 +19,13 @@
 	
 	function MapService($resource, BASE_URL) {
 		return {
-			locations: new $resource(BASE_URL + '/location/:method/:name?callback=JSON_CALLBACK', {}, {
-					findAll: {method: 'JSONP', isArray: true, params: {method: 'all'}},
-					findByName: {method: 'JSONP', params: {method: 'name', name: '@name'}}
+			locations: new $resource(BASE_URL + '/locations/:name', {}, {
+					findAll: {method: 'GET', isArray: true},
+					findByName: {method: 'GET', params: {name: '@name'}}
 				}),
 			
-			points: new $resource(BASE_URL + '/points/all?callback=JSON_CALLBACK', {}, {
-					findAll: {method: 'JSONP', isArray: true, transformResponse: function(data) {
+			points: new $resource(BASE_URL + '/points', {}, {
+					findAll: {method: 'GET', isArray: true, transformResponse: function(data) {
 						for (var i in data) {
 							data[i].icon = 'img/marker.png';
 						}

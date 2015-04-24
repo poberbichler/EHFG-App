@@ -97,7 +97,7 @@
 	}
 	
 	function InitBackdoor($http, BASE_URL) {
-		$http.jsonp(BASE_URL + '/backdoor?callback=JSON_CALLBACK');
+		$http.get(BASE_URL + '/backdoor');
 	}
 	
 	angular.module('ehfgApp', [

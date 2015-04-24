@@ -48,13 +48,13 @@
 	}
 	
 	function TwitterResource($resource, BASE_URL) {
-		var pageResource = new $resource(BASE_URL + '/twitter/tweetpage/:page?callback=JSON_CALLBACK', {page: 0}, {
-			findInitial: {method: 'JSONP', isArray: false},
-			findMore: {method: 'JSONP', isArray: false, params: {page: '@page'}}
+		var pageResource = new $resource(BASE_URL + '/twitter/tweetpage/:page', {page: 0}, {
+			findInitial: {method: 'GET', isArray: false},
+			findMore: {method: 'GET', isArray: false, params: {page: '@page'}}
 		});
 		
-		var updateResource = new $resource(BASE_URL + '/twitter/update/:lastTweet?callback=JSON_CALLBACK', {lastTweet: '@lastTweet'}, {
-			findNewer: {method: 'JSONP', isArray: true}
+		var updateResource = new $resource(BASE_URL + '/twitter/update/:lastTweet', {lastTweet: '@lastTweet'}, {
+			findNewer: {method: 'GET', isArray: true}
 		});
 
 		return {

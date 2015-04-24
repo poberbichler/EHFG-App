@@ -45,8 +45,8 @@
 	}
 	
 	var SessionResource = function($resource, BASE_URL) {
-		return $resource(BASE_URL + '/session/all?callback=JSON_CALLBACK', {}, {
-			findAll: {method: 'JSONP', isArray: true}
+		return $resource(BASE_URL + '/sessions', {}, {
+			findAll: {method: 'GET', isArray: true}
 		});
 	}
 	
