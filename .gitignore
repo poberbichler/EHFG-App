@@ -10,6 +10,7 @@
 bin/
 /target
 .idea/
+*.iml
 .springBeans
 
 platforms
