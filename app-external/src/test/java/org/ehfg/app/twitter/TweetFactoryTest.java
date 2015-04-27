@@ -3,6 +3,8 @@ package org.ehfg.app.twitter;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 
 import org.junit.Before;
@@ -11,6 +13,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+import org.springframework.social.twitter.api.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public final class TweetFactoryTest {
@@ -26,11 +29,14 @@ public final class TweetFactoryTest {
 
 	@Before
 	public void initMocks() {
-//		URLEntity entity = mock(URLEntity.class);
-//		when(entity.getDisplayURL()).thenReturn("app.ehfg.org/123");
-//		when(entity.getExpandedURL()).thenReturn("https://app.ehfg.org/123");
-//		when(entity.getURL()).thenReturn("http://t.co/IyExg1bi61");
+		UrlEntity urlEntity = new UrlEntity("app.ehfg.org/123", "https://app.ehfg.org/123", "http://t.co/IyExg1bi61", null);
+		Entities entities = new Entities(
+				Arrays.asList(urlEntity),
+				Collections.<HashTagEntity>emptyList(),
+				Collections.<MentionEntity>emptyList(),
+				Collections.<MediaEntity>emptyList());
 
+		when(status.getEntities()).thenReturn(entities);
 		when(status.getCreatedAt()).thenReturn(new Date());
 		when(status.getId()).thenReturn(ANY_ID);
 		when(status.getText()).thenReturn(MESSAGE);
@@ -38,14 +44,15 @@ public final class TweetFactoryTest {
 	}
 
 	@Test
-	@Ignore
 	public void shouldUpdateUrlsCorrect() {
 		Tweet createdTweet = TweetFactory.create(status, ANY_HASHTAG, user);
 		assertEquals(user, createdTweet.getAuthor());
 		assertEquals(MESSAGE, createdTweet.getMessage());
 		assertEquals(ANY_HASHTAG, createdTweet.getHashtag());
-		final String expectedFormattedMessage = "OMG, <span class=\"hashtag\">#EHFG2014</span> was awsome... <span class=\"hashtag\">#EHFG2013;</span> "
-				+ "<a href=\"https://app.ehfg.org/123\" target=\"_blank\">app.ehfg.org/123</a> app.ehfg.org/1234 app.ehfg.org/12 ";
+		final String expectedFormattedMessage =
+				"OMG, <span class=\"hashtag\">#EHFG2014</span> was awsome... <span class=\"hashtag\">#EHFG2013;</span> " +
+						"<a href=\"#\" onclick=\"window.open('https://app.ehfg.org/123', '_blank')\">" +
+						"app.ehfg.org/123</a> app.ehfg.org/1234 app.ehfg.org/12 ";
 
 		assertEquals(expectedFormattedMessage, createdTweet.getFormattedMesssage());
 	}

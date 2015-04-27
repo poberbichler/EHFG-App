@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 public final class LocalTimeAdapter extends XmlAdapter<String, LocalTime> {
 	private static final Logger logger = LoggerFactory.getLogger(LocalTimeAdapter.class);
 	private static final DateTimeFormatter PATTERN = DateTimeFormat.forPattern("HH:mm");
-	
+
 	@Override
 	public LocalTime unmarshal(String value) throws Exception {
 		try {
@@ -40,8 +40,7 @@ public final class LocalTimeAdapter extends XmlAdapter<String, LocalTime> {
 		if (value == null) {
 			return "";
 		}
-		
+
 		return value.toString("hh:mm");
 	}
-
 }

@@ -7,10 +7,9 @@ import java.util.Map;
 
 import org.springframework.social.twitter.api.UrlEntity;
 
-
 /**
  * @author patrick
- * @since 12.04.2014
+ * @since 04.2015
  */
 class TweetFactory {
 	public final static Tweet create(final org.springframework.social.twitter.api.Tweet source, final String hashtag, final TwitterUser user) {
@@ -43,8 +42,8 @@ class TweetFactory {
 
 	/**
 	 * Creates a map for the given array of {@link UrlEntity}.<br>
-	 * The key of the map will be the <strong>displaytext</strong> of the url,
-	 * where the value will be the full {@link URLEntity}
+	 * The key of the map will be the <b>displaytext</b> of the url,
+	 * where the value will be the full {@link UrlEntity}
 	 */
 	private static Map<String, UrlEntity> createUrlMap(final Collection<UrlEntity> urlEntities) {
 		if (urlEntities == null || urlEntities.isEmpty()) {
