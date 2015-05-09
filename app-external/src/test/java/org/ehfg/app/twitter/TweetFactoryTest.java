@@ -8,12 +8,15 @@ import java.util.Collections;
 import java.util.Date;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.springframework.social.twitter.api.*;
+import org.springframework.social.twitter.api.Entities;
+import org.springframework.social.twitter.api.HashTagEntity;
+import org.springframework.social.twitter.api.MediaEntity;
+import org.springframework.social.twitter.api.MentionEntity;
+import org.springframework.social.twitter.api.UrlEntity;
 
 @RunWith(MockitoJUnitRunner.class)
 public final class TweetFactoryTest {

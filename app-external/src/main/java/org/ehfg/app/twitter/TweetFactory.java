@@ -2,8 +2,9 @@ package org.ehfg.app.twitter;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import org.springframework.social.twitter.api.UrlEntity;
 
@@ -11,8 +12,12 @@ import org.springframework.social.twitter.api.UrlEntity;
  * @author patrick
  * @since 04.2015
  */
-class TweetFactory {
-	public final static Tweet create(final org.springframework.social.twitter.api.Tweet source, final String hashtag, final TwitterUser user) {
+final class TweetFactory {
+	private TweetFactory() {
+		// do not allow instantiation
+	}
+
+	static Tweet create(final org.springframework.social.twitter.api.Tweet source, final String hashtag, final TwitterUser user) {
 		final Tweet result = new Tweet();
 		result.setAuthor(user);
 		result.setCreationDate(source.getCreatedAt());
@@ -49,12 +54,7 @@ class TweetFactory {
 		if (urlEntities == null || urlEntities.isEmpty()) {
 			return Collections.emptyMap();
 		}
-
-		final Map<String, UrlEntity> result = new HashMap<>();
-		for (final UrlEntity urlEntity : urlEntities) {
-			result.put(urlEntity.getUrl(), urlEntity);
-		}
-
-		return result;
+		
+		return urlEntities.stream().collect(Collectors.toMap(UrlEntity::getUrl, Function.identity()));
 	}
 }

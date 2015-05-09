@@ -28,7 +28,7 @@ public final class SpeakerDTO implements Comparable<SpeakerDTO>, SpeakerRepresen
 		this.description = builder.description;
 		this.imageUrl = builder.imageUrl;
 	}
-
+	
 	@Override
 	public String getImageUrl() {
 		return imageUrl;

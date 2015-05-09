@@ -21,6 +21,15 @@ final class ConferenceDay implements Comparable<ConferenceDay> {
 	private String description;
 	private Date date;
 
+	public ConferenceDay() {
+
+	}
+
+	public ConferenceDay(String description, Date date) {
+		this.description = description;
+		this.date = date;
+	}
+
 	public Long getId() {
 		return id;
 	}

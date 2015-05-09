@@ -30,7 +30,7 @@ final class EscapeUtils {
 	 *            to be escaped
 	 * @return unescaped version of the text
 	 */
-	public static String escapeText(String inputText) {
+	static String escapeText(String inputText) {
 		String escapedText = StringEscapeUtils.unescapeHtml4(inputText.replaceAll("&nbsp;", ""));
 		Document document = Jsoup.parse(escapedText);
 
@@ -46,12 +46,9 @@ final class EscapeUtils {
 		String replace = styleAttribute.replaceAll("font-family: '[A-Za-z0-9]*'", "");
 		select.attr("style", replace);
 
-		// remove empty paragraphs
-		for (Element element : document.select("p")) {
-			if (element.text().trim().isEmpty()) {
-				element.remove();
-			}
-		}
+		document.select("p").stream()
+				.filter(element -> element.text().trim().isEmpty())
+				.forEach(Element::remove);
 
 		return document.body().html();
 	}

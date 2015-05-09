@@ -1,18 +1,15 @@
 package org.ehfg.app.program;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
-import java.util.TreeMap;
+import java.util.stream.Collectors;
 
-import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.collections4.Predicate;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -45,71 +42,39 @@ final class ProgramFacadeImpl implements ProgramFacade {
 	@Override
 	public Collection<SpeakerDTO> findSpeakersWithSession() {
 		final Set<String> eventSpeakers = findEverySpeakerForSession();
-		final Set<SpeakerDTO> allSpeakers = new HashSet<>(findAllSpeakers());
-		
-		CollectionUtils.filter(allSpeakers, new Predicate<SpeakerDTO>() {
-			@Override
-			public boolean evaluate(SpeakerDTO object) {
-				return eventSpeakers.contains(object.getId());
-			}
-		});
-		
-		List<SpeakerDTO> result = new ArrayList<>(allSpeakers);
-		Collections.sort(result);
-		
-		return result;
+		return findAllSpeakers().stream()
+				.filter(speaker -> eventSpeakers.contains(speaker.getId()))
+				.distinct().sorted()
+				.collect(Collectors.toList());
 	}
 
 	private Set<String> findEverySpeakerForSession() {
-		final Set<String> result = new HashSet<>();
-		for (SessionDTO session : findAllSessionsWithoutDayInformation()) {
-			result.addAll(session.getSpeakers());
-		}
-		
-		return result;
+		return findAllSessionsWithoutDayInformation().stream()
+				.map(SessionDTO::getSpeakers)
+				.reduce(new HashSet<>(), (allSpeakers, currentSpeakers) -> {
+					allSpeakers.addAll(currentSpeakers);
+					return allSpeakers;
+				});
 	}
 
 	@Override
 	public Map<ConferenceDayDTO, List<SessionDTO>> findAllSessions() {
-		final Map<ConferenceDayDTO, List<SessionDTO>> result = new TreeMap<>();
 		final List<ConferenceDayDTO> conferenceDays = ConferenceDayMapper.mapToDTO(conferenceDayRepository.findAll());
 
-		for (final SessionDTO session : sessionRepository.findAll()) {
-			final ConferenceDayDTO conferenceDay = findDay(conferenceDays, session);
-
-			if (conferenceDay == null) {
-				continue;
-			}
-
-			if (!result.containsKey(conferenceDay)) {
-				result.put(conferenceDay, new ArrayList<SessionDTO>());
-			}
-
-			result.get(conferenceDay).add(session);
-		}
-		
-		return result;
+		return sessionRepository.findAll().stream()
+				.filter(session -> findDay(conferenceDays, session).isPresent())
+				.collect(Collectors.groupingBy(session -> findDay(conferenceDays, session).get()));
 	}
 
 	/**
 	 * searches for a {@link ConferenceDayDTO} for the given date
-	 * 
-	 * @param days
-	 *            list of {@link ConferenceDayDTO}
-	 * @param session
-	 *            to be searched for
-	 * @return the resulting {@link ConferenceDayDTO}
 	 */
-	private ConferenceDayDTO findDay(final List<ConferenceDayDTO> days, final SessionDTO session) {
+	private Optional<ConferenceDayDTO> findDay(final List<ConferenceDayDTO> days, final SessionDTO session) {
 		final DateTime sessionDate = session.getStartTime();
-		
-		for (final ConferenceDayDTO day : days) {
-			if (sessionDate.toLocalDate().equals(day.getDay())) {
-				return day;
-			}
-		}
 
-		return null;
+		return days.stream()
+				.filter(day -> day.getDay().equals(sessionDate.toLocalDate()))
+				.findFirst();
 	}
 
 	@Override
@@ -146,11 +111,9 @@ final class ProgramFacadeImpl implements ProgramFacade {
 
 	@Override
 	public List<String> findAvailableLocations() {
-		Set<String> result = new HashSet<>();
-		for (SessionDTO session : sessionRepository.findAll()) {
-			result.add(session.getLocationId());
-		}
-		
-		return new LinkedList<>(result);
+		return sessionRepository.findAll().stream()
+				.map(SessionDTO::getLocationId)
+				.distinct()
+				.collect(Collectors.toList());
 	}
 }

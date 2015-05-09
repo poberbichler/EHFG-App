@@ -1,13 +1,10 @@
 package org.ehfg.app.program.repository;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
 import org.ehfg.app.program.SessionDTO;
@@ -44,57 +41,38 @@ class SessionRepositoryImpl implements SessionRepository {
 	@Override
 	@Cacheable("session")
 	public Collection<SessionDTO> findAll() {
-		try {
-			List<Event> sessions = eventStrategy.fetchData().getChannel().getItems();
-			Map<String, Set<String>> speakerMap = fetchSpeakerMap();
+		List<Event> sessions = eventStrategy.fetchData().getChannel().getItems();
+		Map<String, Set<String>> speakerMap = fetchSpeakerMap();
 
-			logger.info("received {} sessions", sessions.size());
-			
-			final List<SessionDTO> result = new ArrayList<>(sessions.size());
-			for (final Event session : sessions) {
-				logger.debug("preparing text for session {}", session);
+		logger.info("received {} sessions", sessions.size());
 
-				String details = EscapeUtils.escapeText(session.getDetails());
-				details = StringUtils.removeStart(details, "<p> ");
-				details = StringUtils.removeStart(details, "<strong>");
-				details = StringUtils.removeStart(details, EscapeUtils.escapeText(session.getEvent()));
-				details = StringUtils.removeStart(details, ".");
-				details = StringUtils.removeStart(details, "<br>");
-				details = StringUtils.removeStart(details, "<br/>");
-				details = StringUtils.removeStart(details, "<br />");
-				details = StringUtils.removeStart(details, "<br></br>");
+		return sessions.stream().map(session -> {
+			logger.debug("preparing text for session {}", session);
 
-				result.add(new SessionDTO.Builder().id(session.getId())
-						.name(session.getEvent()).sessionCode(session.getCode())
-						.description(EscapeUtils.escapeText(details))
-						.startTime(session.getDay().toDateTime(session.getStart())).endTime(session.getDay().toDateTime(session.getEnd()))
-						.location(session.getRoom()).speakers(speakerMap.get(session.getId())).build());
-			}
+			String details = EscapeUtils.escapeText(session.getDetails());
+			details = StringUtils.removeStart(details, "<p> ");
+			details = StringUtils.removeStart(details, "<strong>");
+			details = StringUtils.removeStart(details, EscapeUtils.escapeText(session.getEvent()));
+			details = StringUtils.removeStart(details, ".");
+			details = StringUtils.removeStart(details, "<br>");
+			details = StringUtils.removeStart(details, "<br/>");
+			details = StringUtils.removeStart(details, "<br />");
+			details = StringUtils.removeStart(details, "<br></br>");
 
-			Collections.sort(result);
-			return result;
-		}
-		
-		catch (Exception e) {
-			throw new RuntimeException(e);
-		}
+			return new SessionDTO.Builder().id(session.getId())
+					.name(session.getEvent()).sessionCode(session.getCode())
+					.description(EscapeUtils.escapeText(details))
+					.startTime(session.getDay().toDateTime(session.getStart())).endTime(session.getDay().toDateTime(session.getEnd()))
+					.location(session.getRoom()).speakers(speakerMap.get(session.getId())).build();
+		}).sorted().collect(Collectors.toList());
 	}
 	
 	private Map<String, Set<String>> fetchSpeakerMap() {
 		final List<SpeakerEvent> speakerEvents = speakerEventStrategy.fetchData().getChannel().getSpeakerEvents();
-		final Map<String, Set<String>> result = new HashMap<>(speakerEvents.size());
-
 		logger.info("received {} speakers for events", speakerEvents.size());
-		for (SpeakerEvent speakerEvent : speakerEvents) {
-			final String eventId = speakerEvent.getEventid();
-
-			if (!result.containsKey(eventId)) {
-				result.put(eventId, new HashSet<String>());
-			}
-
-			result.get(eventId).add(speakerEvent.getSpeakerid());
-		}
-		
-		return result;
+		return speakerEvents.stream()
+				.collect(Collectors.groupingBy(
+						SpeakerEvent::getEventid,
+						Collectors.mapping(SpeakerEvent::getSpeakerid, Collectors.toSet())));
 	}
 }
