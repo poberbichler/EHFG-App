@@ -1,17 +1,18 @@
 package org.ehfg.app.config;
 
 import nz.net.ultraq.thymeleaf.LayoutDialect;
-
 import org.ehfg.app.converter.StringToLocalDateConverter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration;
+import org.springframework.boot.context.embedded.EmbeddedServletContainerFactory;
+import org.springframework.boot.context.embedded.EmbeddedWebApplicationContext;
+import org.springframework.boot.context.embedded.ServletRegistrationBean;
+import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
+import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -30,10 +31,22 @@ import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 @ComponentScan(basePackages = "org.ehfg.app")
 @PropertySource(ignoreResourceNotFound = true, 
 		value = { "classpath:config.properties", "file:////${user.home}/ehfg.properties" })
+@Import(EmbeddedServletContainerAutoConfiguration.class)
 public class WebConfig extends WebMvcConfigurerAdapter {
 	@Autowired
 	private Environment environment;
-	
+
+	@Bean
+	public ServletRegistrationBean servletRegistrationBean() {
+		DispatcherServlet dispatcherServlet = new DispatcherServlet();
+		dispatcherServlet.setContextClass(EmbeddedWebApplicationContext.class);
+
+		ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(dispatcherServlet);
+		servletRegistrationBean.addUrlMappings("/*");
+		servletRegistrationBean.setName("maintenanceServlet");
+		return servletRegistrationBean;
+	}
+
 	@Bean
 	public SpringResourceTemplateResolver templateResolver() {
 		final SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();

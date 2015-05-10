@@ -15,7 +15,7 @@ import org.ehfg.app.MockService;
  */
 @MockService
 class TwitterPopulateStrategy extends AbstractPopulateStrategy {
-	private static final int MAX_TWEETS = 4000;
+	private static final int MAX_TWEETS = 5;
 	
 	@Override
 	public void execute() throws Exception {
@@ -31,9 +31,10 @@ class TwitterPopulateStrategy extends AbstractPopulateStrategy {
 		
 		final List<Object> tweetList = new ArrayList<>(MAX_TWEETS);
 		for (int i = 0; i < MAX_TWEETS; i++) {
-			tweetList.add(createTweet(Long.valueOf(i), "Message ".concat(Integer.toString(i)), tweetUser, i));
+			tweetList.add(createTweet(i, "Message ".concat(Integer.toString(i)), tweetUser, i));
 		}
-		
+
+		saveTweetMethod.setAccessible(true);
 		saveTweetMethod.invoke(tweetRepository, tweetList);
 	}
 
@@ -41,7 +42,8 @@ class TwitterPopulateStrategy extends AbstractPopulateStrategy {
 		final Object twitterUserRepository = applicationContext.getBean("twitterUserRepository");
 		final Class<?> twitterUserRepositoryClass = twitterUserRepository.getClass();
 		final Method saveTwitterUserMethod = twitterUserRepositoryClass.getMethod("save", Object.class);
-
+		
+		saveTwitterUserMethod.setAccessible(true);
 		saveTwitterUserMethod.invoke(twitterUserRepository, tweetUser);
 	}
 

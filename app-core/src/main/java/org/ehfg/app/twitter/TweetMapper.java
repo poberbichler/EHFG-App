@@ -17,7 +17,7 @@ final class TweetMapper {
 	 * Takes the given collection of {@link Tweet} and creates a collection of {@link TweetDTO}
 	 * @return never null
 	 */
-	final Collection<TweetDTO> map(final Collection<Tweet> source) {
+	static Collection<TweetDTO> map(final Collection<Tweet> source) {
 		if (source == null) {
 			return Collections.emptyList();
 		}

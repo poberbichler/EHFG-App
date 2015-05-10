@@ -43,6 +43,16 @@
 			<scope>runtime</scope>
 		</dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -123,79 +133,4 @@
 			<artifactId>commons-collections4</artifactId>
 		</dependency>
 	</dependencies>
-
-	<profiles>
-		<profile>
-			<id>server</id>
-
-			<properties>
-				<mobile-path>../mobile-app/www</mobile-path>
-			</properties>
-
-			<build>
-				<plugins>
-					<!-- war plugin has to be specified before the antrun plugin - otherwise build would break -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-war-plugin</artifactId>
-
-						<configuration>
-							<packagingExcludes>**/app-mock*.jar</packagingExcludes>
-
-							<webResources>
-								<resource>
-									<directory>${mobile-path}</directory>
-									<excludes>
-										<exclude>**/config-tmp.js</exclude>
-										<exclude>**/config-server.js</exclude>
-									</excludes>
-								</resource>
-							</webResources>
-
-							<warSourceExcludes>**/config-tmp.js,**/config-server.js</warSourceExcludes>
-						</configuration>
-					</plugin>
-
-					<!-- TODO: check if this plugin could be removed - the app doesn't need to run on the server any more -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-antrun-plugin</artifactId>
-
-						<executions>
-							<execution>
-								<id>prepare-backup</id>
-								<phase>prepare-package</phase>
-								<configuration>
-									<target name="backup local config and replace with server-config">
-										<!-- backup the local config.js file -->
-										<copy file="${mobile-path}/js/config.js" tofile="${mobile-path}/js/config-tmp.js" overwrite="true" />
-
-										<!-- rename config-server.js to config.js -->
-										<copy file="${mobile-path}/js/config-server.js" tofile="${mobile-path}/js/config.js" overwrite="true" />
-									</target>
-								</configuration>
-
-								<goals>
-									<goal>run</goal>
-								</goals>
-							</execution>
-
-							<execution>
-								<id>retrieve-backup</id>
-								<phase>package</phase>
-								<configuration>
-									<target name="move back file from backup">
-										<move file="${mobile-path}/js/config-tmp.js" tofile="${mobile-path}/js/config.js" />
-									</target>
-								</configuration>
-								<goals>
-									<goal>run</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
 </project>
