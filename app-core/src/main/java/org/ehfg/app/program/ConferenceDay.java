@@ -1,11 +1,11 @@
 package org.ehfg.app.program;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -21,7 +21,10 @@ class ConferenceDay implements Comparable<ConferenceDay> {
 	@GeneratedValue
 	private Long id;
 
+	@NotNull
 	private String description;
+	
+	@NotNull
 	private LocalDate date;
 
 	public ConferenceDay() {

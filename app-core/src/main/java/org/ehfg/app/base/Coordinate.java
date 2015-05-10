@@ -22,7 +22,6 @@ final class Coordinate {
 	}
 
 	public Coordinate(Double xValue, Double yValue) {
-		super();
 		this.xValue = xValue;
 		this.yValue = yValue;
 	}
