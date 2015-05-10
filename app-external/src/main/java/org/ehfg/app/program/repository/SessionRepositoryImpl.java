@@ -62,8 +62,10 @@ class SessionRepositoryImpl implements SessionRepository {
 			return new SessionDTO.Builder().id(session.getId())
 					.name(session.getEvent()).sessionCode(session.getCode())
 					.description(EscapeUtils.escapeText(details))
-					.startTime(session.getDay().toDateTime(session.getStart())).endTime(session.getDay().toDateTime(session.getEnd()))
-					.location(session.getRoom()).speakers(speakerMap.get(session.getId())).build();
+					.location(session.getRoom()).speakers(speakerMap.get(session.getId()))
+					.startTime(session.getDay().atTime(session.getStart()))
+					.endTime(session.getDay().atTime(session.getEnd()))
+					.build();
 		}).sorted().collect(Collectors.toList());
 	}
 	

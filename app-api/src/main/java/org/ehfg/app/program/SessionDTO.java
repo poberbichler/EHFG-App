@@ -1,14 +1,14 @@
 package org.ehfg.app.program;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.ehfg.app.rest.SessionRepresentation;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.ehfg.app.rest.SessionRepresentation;
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
 
 /**
  * basic representation of a session
@@ -20,8 +20,8 @@ public final class SessionDTO implements Comparable<SessionDTO>, SessionRepresen
 	private String id;
 	private String name;
 	private String description;
-	private DateTime startTime;
-	private DateTime endTime;
+	private LocalDateTime startTime;
+	private LocalDateTime endTime;
 	private String sessionCode;
 
 	private String location;
@@ -52,20 +52,20 @@ public final class SessionDTO implements Comparable<SessionDTO>, SessionRepresen
 	}
 
 	@Override
-	public DateTime getStartTime() {
+	public LocalDateTime getStartTime() {
 		return startTime;
 	}
 
-	public void setStartTime(DateTime startTime) {
+	public void setStartTime(LocalDateTime startTime) {
 		this.startTime = startTime;
 	}
 
 	@Override
-	public DateTime getEndTime() {
+	public LocalDateTime getEndTime() {
 		return endTime;
 	}
 
-	public void setEndTime(DateTime endTime) {
+	public void setEndTime(LocalDateTime endTime) {
 		this.endTime = endTime;
 	}
 
@@ -142,8 +142,8 @@ public final class SessionDTO implements Comparable<SessionDTO>, SessionRepresen
 		private String id;
 		private String name;
 		private String description;
-		private DateTime startTime;
-		private DateTime endTime;
+		private LocalDateTime startTime;
+		private LocalDateTime endTime;
 		private String sessionCode;
 
 		private String location;
@@ -168,12 +168,12 @@ public final class SessionDTO implements Comparable<SessionDTO>, SessionRepresen
 			return this;
 		}
 
-		public Builder startTime(DateTime startTime) {
+		public Builder startTime(LocalDateTime startTime) {
 			this.startTime = startTime;
 			return this;
 		}
 
-		public Builder endTime(DateTime endTime) {
+		public Builder endTime(LocalDateTime endTime) {
 			this.endTime = endTime;
 			return this;
 		}
@@ -210,18 +210,16 @@ public final class SessionDTO implements Comparable<SessionDTO>, SessionRepresen
 		
 
 		/**
-		 * @param timeString
-		 *            to be converted
-		 * @return new {@link DateTime} with the given value, or current
-		 *         timestamp in case of an error
+		 * @param timeString to be converted
+		 * @return new {@link LocalDateTime} with the given value, or current timestamp in case of an error
 		 */
-		private DateTime convertToDate(String timeString) {
+		private LocalDateTime convertToDate(String timeString) {
 			try {
-				return DateTime.parse(timeString, DateTimeFormat.forPattern("dd.MM.yyyy HH:mm"));
+				return LocalDateTime.parse(timeString, DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm"));
 			}
 
 			catch (Exception e) {
-				return DateTime.now();
+				return LocalDateTime.now();
 			}
 		}
 	}

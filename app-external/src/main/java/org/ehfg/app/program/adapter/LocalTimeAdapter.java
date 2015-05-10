@@ -1,12 +1,11 @@
 package org.ehfg.app.program.adapter;
 
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-
-import org.joda.time.LocalTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * {@link XmlAdapter} to map a given string of the format {@code 15:24} to a {@link LocalTime}
@@ -16,16 +15,15 @@ import org.slf4j.LoggerFactory;
  */
 public final class LocalTimeAdapter extends XmlAdapter<String, LocalTime> {
 	private static final Logger logger = LoggerFactory.getLogger(LocalTimeAdapter.class);
-	private static final DateTimeFormatter PATTERN = DateTimeFormat.forPattern("HH:mm");
 
 	@Override
 	public LocalTime unmarshal(String value) throws Exception {
 		try {
 			if (value.equals("24:00")) {
-				return LocalTime.parse("23:59", PATTERN);
+				return LocalTime.parse("23:59", DateTimeFormatter.ISO_LOCAL_TIME);
 			}
 			
-			return LocalTime.parse(value, PATTERN);
+			return LocalTime.parse(value, DateTimeFormatter.ISO_LOCAL_TIME);
 		}
 		
 		catch (Exception e) {
@@ -41,6 +39,6 @@ public final class LocalTimeAdapter extends XmlAdapter<String, LocalTime> {
 			return "";
 		}
 
-		return value.toString("hh:mm");
+		return value.toString();
 	}
 }

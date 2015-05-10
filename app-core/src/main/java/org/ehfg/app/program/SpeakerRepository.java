@@ -7,5 +7,8 @@ import java.util.Collection;
  * @since 06.2014
  */
 public interface SpeakerRepository {
+	/**
+	 * @return collection of {@link SpeakerDTO} (never null)
+	 */
 	Collection<SpeakerDTO> findAll();
 }

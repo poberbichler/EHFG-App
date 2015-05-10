@@ -1,12 +1,10 @@
 package org.ehfg.app.rest;
 
-import java.util.Set;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-
-import org.joda.time.DateTime;
+import java.time.LocalDateTime;
+import java.util.Set;
 
 /**
  * @author patrick
@@ -24,10 +22,10 @@ public interface SessionRepresentation {
 	String getDescription();
 
 	@XmlElement(name = "startTime")
-	DateTime getStartTime();
+	LocalDateTime getStartTime();
 
 	@XmlElement(name = "endTime")
-	DateTime getEndTime();
+	LocalDateTime getEndTime();
 
 	@XmlElement(name = "sessionCode")
 	String getSessionCode();

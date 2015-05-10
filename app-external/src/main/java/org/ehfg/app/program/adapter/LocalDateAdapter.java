@@ -1,11 +1,11 @@
 package org.ehfg.app.program.adapter;
 
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-
-import org.joda.time.LocalDate;
-import org.joda.time.format.DateTimeFormat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  * @author patrick
@@ -17,7 +17,7 @@ public final class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
 	@Override
 	public LocalDate unmarshal(String value) throws Exception {
 		try {
-			return LocalDate.parse(value, DateTimeFormat.forPattern("yyyy-MM-dd"));
+			return LocalDate.parse(value, DateTimeFormatter.ISO_LOCAL_DATE);
 		}
 		
 		catch (Exception e) {
@@ -32,8 +32,8 @@ public final class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
 		if (value == null) {
 			return "";
 		}
-		
-		return value.toString("dd.MM.yyyy");
+
+		return value.toString();
 	}
 
 }

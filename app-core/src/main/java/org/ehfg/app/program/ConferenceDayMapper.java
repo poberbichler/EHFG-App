@@ -5,8 +5,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.joda.time.LocalDate;
-
 /**
  * @author patrick
  * @since 04.04.2014
@@ -19,7 +17,7 @@ final class ConferenceDayMapper {
 	public static List<ConferenceDay> mapToEntity(final Collection<ConferenceDayDTO> source) {
 		return source.stream()
 				.filter(day -> !day.isDeleted())
-				.map(day -> new ConferenceDay(day.getDescription(), day.getDay().toDate()))
+				.map(day -> new ConferenceDay(day.getDescription(), day.getDay()))
 				.collect(Collectors.toList());
 	}
 	
@@ -30,6 +28,6 @@ final class ConferenceDayMapper {
 	}
 	
 	public static ConferenceDayDTO map(final ConferenceDay source) {
-		return new ConferenceDayDTO(source.getId(), LocalDate.fromDateFields(source.getDate()), source.getDescription());
+		return new ConferenceDayDTO(source.getId(), source.getDate(), source.getDescription());
 	}
 }

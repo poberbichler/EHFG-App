@@ -1,19 +1,13 @@
 package org.ehfg.app.program;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
-
-import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author patrick
@@ -70,7 +64,7 @@ final class ProgramFacadeImpl implements ProgramFacade {
 	 * searches for a {@link ConferenceDayDTO} for the given date
 	 */
 	private Optional<ConferenceDayDTO> findDay(final List<ConferenceDayDTO> days, final SessionDTO session) {
-		final DateTime sessionDate = session.getStartTime();
+		final LocalDateTime sessionDate = session.getStartTime();
 
 		return days.stream()
 				.filter(day -> day.getDay().equals(sessionDate.toLocalDate()))
@@ -97,7 +91,7 @@ final class ProgramFacadeImpl implements ProgramFacade {
 	@Transactional(readOnly = false)
 	public ConferenceDayDTO addDay() {
 		final ConferenceDay day = new ConferenceDay();
-		day.setDate(new Date());
+		day.setDate(LocalDate.now());
 		day.setDescription("description");
 		conferenceDayRepository.save(day);
 

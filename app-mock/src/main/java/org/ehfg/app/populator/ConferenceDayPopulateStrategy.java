@@ -1,10 +1,10 @@
 package org.ehfg.app.populator;
 
-import java.util.Arrays;
-
 import org.ehfg.app.MockService;
 import org.ehfg.app.program.ConferenceDayDTO;
-import org.joda.time.LocalDate;
+
+import java.time.LocalDate;
+import java.util.Arrays;
 
 /**
  * @author patrick

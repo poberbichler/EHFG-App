@@ -1,18 +1,17 @@
 package org.ehfg.app.populator;
 
-import java.util.Random;
-
 import org.ehfg.app.MockService;
 import org.ehfg.app.base.CoordinateDTO;
 import org.ehfg.app.base.MasterDataFacade;
 import org.ehfg.app.program.ProgramFacade;
 import org.ehfg.app.program.SessionRepository;
-import org.joda.time.format.DateTimeFormatter;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.format.datetime.joda.DateTimeFormatterFactory;
+
+import java.time.format.DateTimeFormatter;
+import java.util.Random;
 
 /**
  * @author patrick
@@ -20,7 +19,7 @@ import org.springframework.format.datetime.joda.DateTimeFormatterFactory;
  */
 @MockService
 abstract class AbstractPopulateStrategy implements DatabasePopulateStrategy, ApplicationContextAware {
-	protected static final DateTimeFormatter FORMAT = new DateTimeFormatterFactory("dd.MM.yyyy").createDateTimeFormatter();
+	protected static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 	
 	@Autowired
 	protected MasterDataFacade masterDataFacade;

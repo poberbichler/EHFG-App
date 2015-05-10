@@ -1,16 +1,16 @@
 package org.ehfg.app.program.data.events;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.ehfg.app.program.adapter.LocalDateAdapter;
+import org.ehfg.app.program.adapter.LocalTimeAdapter;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.ehfg.app.program.adapter.LocalDateAdapter;
-import org.ehfg.app.program.adapter.LocalTimeAdapter;
-import org.joda.time.LocalDate;
-import org.joda.time.LocalTime;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @XmlRootElement(name = "item")
 @XmlAccessorType(XmlAccessType.FIELD)
