@@ -6,11 +6,13 @@ import javax.sql.DataSource;
 
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.repository.query.QueryLookupStrategy.Key;
+import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;
@@ -72,9 +74,18 @@ public class PersistenceConfig {
 	
 	@Profile("!in-memory-db")
 	public static class DefaultDatabaseConfig {
+		@Value("${db.url}")
+		private String url;
+
+		@Value("${db.username}")
+		private String username;
+
+		@Value("${db.password}")
+		private String password;
+
 		@Bean
 		public DataSource dataSource() {
-			return new JndiDataSourceLookup().getDataSource("jdbc/MySQLDS");
+			return new SingleConnectionDataSource(url, username, password, false);
 		}
 	}
 }
