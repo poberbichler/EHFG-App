@@ -5,13 +5,14 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.ehfg.app.rest.ConferenceDayRepresentation;
 
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 /**
  * @author patrick
- * @since 04.04.2014
+ * @since 04.2014
  */
-public final class ConferenceDayDTO implements Comparable<ConferenceDayDTO>, ConferenceDayRepresentation {
+public final class ConferenceDayDTO implements Comparable<ConferenceDayDTO> {
 	private Long id;
 	private LocalDate day;
 	private String description;

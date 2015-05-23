@@ -3,6 +3,8 @@ package org.ehfg.app.program;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.ehfg.app.rest.SessionRepresentation;
 
+import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
@@ -40,6 +42,10 @@ public final class SessionDTO implements Comparable<SessionDTO>, SessionRepresen
 		this.location = builder.location;
 		this.speakers = builder.speakers;
 		this.sessionCode = builder.sessionCode;
+	}
+
+	public LocalDate getDay() {
+		return startTime.toLocalDate();
 	}
 
 	@Override

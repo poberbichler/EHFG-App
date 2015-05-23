@@ -10,5 +10,5 @@ package org.ehfg.app.twitter;
 public enum TwitterStreamStatus {
 	RUNNING,
 	HAD_TO_RESTART,
-	NOT_RUNNING;
+	NOT_RUNNING
 }

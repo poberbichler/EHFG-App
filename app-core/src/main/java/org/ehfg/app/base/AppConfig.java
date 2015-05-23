@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @since 14.03.2014
  */
 @Entity
-public final class AppConfig {
+public class AppConfig {
 	public static final Long CONFIG_ID = 42L;
 
 	@Id

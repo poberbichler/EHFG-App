@@ -1,5 +1,6 @@
 package org.ehfg.app.program;
 
+import org.ehfg.app.rest.ConferenceDayRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -44,20 +45,19 @@ final class ProgramFacadeImpl implements ProgramFacade {
 
 	private Set<String> findEverySpeakerForSession() {
 		return findAllSessionsWithoutDayInformation().stream()
-				.map(SessionDTO::getSpeakers)
-				.reduce(new HashSet<>(), (allSpeakers, currentSpeakers) -> {
-					allSpeakers.addAll(currentSpeakers);
-					return allSpeakers;
-				});
+				.flatMap(session -> session.getSpeakers().stream())
+				.collect(Collectors.toSet());
 	}
 
 	@Override
-	public Map<ConferenceDayDTO, List<SessionDTO>> findAllSessions() {
+	public Map<LocalDate, ? extends ConferenceDayRepresentation> findAllSessions() {
 		final List<ConferenceDayDTO> conferenceDays = ConferenceDayMapper.mapToDTO(conferenceDayRepository.findAll());
 
 		return sessionRepository.findAll().stream()
 				.filter(session -> findDay(conferenceDays, session).isPresent())
-				.collect(Collectors.groupingBy(session -> findDay(conferenceDays, session).get()));
+				.collect(Collectors.toMap(SessionDTO::getDay,
+						session -> new ConferenceDayWithSessionsDTO(findDay(conferenceDays, session).get().getDescription(), session),
+						(existingSession, newSession) -> existingSession.addSession(newSession.getSessions())));
 	}
 
 	/**
