@@ -126,6 +126,19 @@
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
 
+        <!--TODO: update to real versions as soon as there is internet-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>2.4.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-jaxb-annotations</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+
 		<dependency>
 			<groupId>org.thymeleaf</groupId>
 			<artifactId>thymeleaf-spring4</artifactId>

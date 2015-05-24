@@ -1,7 +1,5 @@
 package org.ehfg.app;
 
-import java.util.Arrays;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
@@ -23,13 +21,15 @@ import org.springframework.social.twitter.api.Twitter;
 import org.springframework.social.twitter.api.impl.TwitterTemplate;
 import org.springframework.social.twitter.connect.TwitterConnectionFactory;
 
+import java.util.Arrays;
+
 /**
  * @author patrick
  * @since 11.2014
  */
 @EnableSocial
-@Configuration
 @EnableCaching
+@Configuration
 @PropertySource({ "classpath:config/twitter.properties" })
 public class ExternalConfig implements SocialConfigurer {
 	@Autowired
@@ -66,12 +66,7 @@ public class ExternalConfig implements SocialConfigurer {
 
 	@Override
 	public UserIdSource getUserIdSource() {
-		return new UserIdSource() {
-			@Override
-			public String getUserId() {
-				return "EHFG_APP";
-			}
-		};
+		return () -> "EHFG_APP";
 	}
 
 	@Override

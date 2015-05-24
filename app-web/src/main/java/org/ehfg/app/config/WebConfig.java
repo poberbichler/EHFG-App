@@ -1,7 +1,11 @@
 package org.ehfg.app.config;
 
+import com.fasterxml.jackson.databind.Module;
+import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
 import nz.net.ultraq.thymeleaf.LayoutDialect;
+import org.ehfg.app.converter.LocalDateTimeToUTCTimestampSerializer;
 import org.ehfg.app.converter.LocalDateToStringConverter;
+import org.ehfg.app.converter.LocalDateToUTCTimestampSerializer;
 import org.ehfg.app.converter.StringToLocalDateConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration;
@@ -10,6 +14,10 @@ import org.springframework.boot.context.embedded.ServletRegistrationBean;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 import org.springframework.format.FormatterRegistry;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -18,6 +26,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * @author patrick
@@ -88,5 +100,16 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 		if (mobilePath != null) {
 			registry.addResourceHandler("/mobile/**").addResourceLocations(mobilePath);
 		}
+	}
+
+	@Override
+	public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+		final Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder();
+		builder.indentOutput(true).modulesToInstall(new JaxbAnnotationModule());
+		builder.serializerByType(LocalDate.class, new LocalDateToUTCTimestampSerializer());
+		builder.serializerByType(LocalDateTime.class, new LocalDateTimeToUTCTimestampSerializer());
+
+		converters.add(new MappingJackson2HttpMessageConverter(builder.build()));
+		converters.add(new StringHttpMessageConverter());
 	}
 }

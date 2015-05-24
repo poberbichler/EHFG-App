@@ -2,6 +2,8 @@ package org.ehfg.app.base;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.ehfg.app.rest.PointOfInterestRepresentation;
@@ -91,14 +93,6 @@ public final class PointOfInterestDTO implements PointOfInterestRepresentation {
 
 	public void setCoordinate(CoordinateDTO coordinate) {
 		this.coordinate = coordinate;
-	}
-
-	public Double getxValue() {
-		return coordinate.getxValue();
-	}
-
-	public Double getyValue() {
-		return coordinate.getyValue();
 	}
 
 	@Override

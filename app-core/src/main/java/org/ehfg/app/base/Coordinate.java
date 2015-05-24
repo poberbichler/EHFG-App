@@ -10,7 +10,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @since 13.04.2014
  */
 @Embeddable
-final class Coordinate {
+class Coordinate {
 	@NotNull
 	private Double xValue;
 

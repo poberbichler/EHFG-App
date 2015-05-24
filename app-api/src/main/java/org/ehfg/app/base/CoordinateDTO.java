@@ -1,6 +1,9 @@
 package org.ehfg.app.base;
 
 import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.ehfg.app.rest.CoordinateRepresentation;
