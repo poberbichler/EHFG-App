@@ -2,11 +2,8 @@ package org.ehfg.app.twitter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.social.twitter.api.StreamDeleteEvent;
-import org.springframework.social.twitter.api.StreamListener;
-import org.springframework.social.twitter.api.StreamWarningEvent;
+import org.springframework.social.twitter.api.*;
 import org.springframework.social.twitter.api.Tweet;
-import org.springframework.social.twitter.api.TwitterProfile;
 
 class PersistentTwitterStreamListener implements StreamListener {
 	private static final Logger LOGGER = LoggerFactory.getLogger(PersistentTwitterStreamListener.class);
@@ -28,7 +25,7 @@ class PersistentTwitterStreamListener implements StreamListener {
 
 		TwitterUser author = twitterUserRepository.findOne(user.getId());
 		if (author == null) {
-			LOGGER.debug("adding user {}", author);
+			LOGGER.debug("adding user [{}]", user);
 			author = new TwitterUser(user.getId(), user.getName(), user.getScreenName(), user.getProfileImageUrl());
 		}
 
@@ -57,11 +54,11 @@ class PersistentTwitterStreamListener implements StreamListener {
 
 	@Override
 	public void onLimit(int numberOfLimitedTweets) {
-		// TODO Auto-generated method stub
+		LOGGER.info("tweet limit [{}] reached!?", numberOfLimitedTweets);
 	}
 
 	@Override
 	public void onWarning(StreamWarningEvent warningEvent) {
-		// TODO Auto-generated method stub
+		LOGGER.info("twitter stream received warning [{}]!?", warningEvent.getMessage());
 	}
 }
