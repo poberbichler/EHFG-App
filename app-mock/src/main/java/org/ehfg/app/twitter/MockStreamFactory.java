@@ -1,5 +1,6 @@
 package org.ehfg.app.twitter;
 
+import ch.qos.logback.core.status.StatusListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Profile;
@@ -9,18 +10,11 @@ import org.springframework.social.twitter.api.StreamWarningEvent;
 import org.springframework.social.twitter.api.Tweet;
 import org.springframework.stereotype.Component;
 
-import ch.qos.logback.core.status.StatusListener;
-
 /**
- * Factory used for creating {@link StreamListener} mock instances, where every
- * method throws an {@link UnsupportedOperationException}<br>
- * The only exceptions are {@link TwitterStream#cleanUp()},
- * {@link TwitterStream#filter(FilterQuery)} and
- * {@link TwitterStream#addListener(StatusListener)}, due to the fact that these
- * are used directly
- * 
+ * Factory used for creating {@link StreamListener} mock instances, where ever method just logs the ouput
+ *
  * @author patrick
- * @since 03.11.2014
+ * @since 11.2014
  */
 @Component
 @Profile("mock")

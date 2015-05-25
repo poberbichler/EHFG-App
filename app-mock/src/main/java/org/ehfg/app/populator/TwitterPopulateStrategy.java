@@ -6,7 +6,9 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.IntStream;
 
+import org.ehfg.app.ExternalConfig;
 import org.ehfg.app.MockService;
 
 /**
@@ -30,9 +32,7 @@ class TwitterPopulateStrategy extends AbstractPopulateStrategy {
 		final Method saveTweetMethod = tweetRepositoryClass.getMethod("save", Iterable.class);
 		
 		final List<Object> tweetList = new ArrayList<>(MAX_TWEETS);
-		for (int i = 0; i < MAX_TWEETS; i++) {
-			tweetList.add(createTweet(i, "Message ".concat(Integer.toString(i)), tweetUser, i));
-		}
+		IntStream.range(0, MAX_TWEETS).forEach(i -> tweetList.add(createTweet(i, "Message ".concat(Integer.toString(i)), tweetUser, i)));
 
 		saveTweetMethod.setAccessible(true);
 		saveTweetMethod.invoke(tweetRepository, tweetList);
@@ -54,14 +54,20 @@ class TwitterPopulateStrategy extends AbstractPopulateStrategy {
 		constructor.setAccessible(true);
 
 		return constructor.newInstance(123L, "Patrick Oberbichler", "poberbichler",
-				"https://pbs.twimg.com/profile_images/2441790961/b1nxj0dyy72d4gt17ylz.png");
+				"https://abs.twimg.com/sticky/default_profile_images/default_profile_6_normal.png");
 	}
 
-	private Object createTweet(long id, String message, Object tweetUser, int timeoffset) throws Exception {
-		final Class<?> tweetClass = Class.forName("org.ehfg.app.twitter.Tweet");
-		final Constructor<?> constructor = tweetClass.getDeclaredConstructors()[1];
-		constructor.setAccessible(true);
+	private Object createTweet(long id, String message, Object tweetUser, int timeoffset) {
+		try {
+			final Class<?> tweetClass = Class.forName("org.ehfg.app.twitter.Tweet");
+			final Constructor<?> constructor = tweetClass.getDeclaredConstructors()[1];
+			constructor.setAccessible(true);
 
-		return constructor.newInstance(id, message, new Date(System.currentTimeMillis() + timeoffset), "#EHFG2014", message, tweetUser);
+			return constructor.newInstance(id, message, new Date(System.currentTimeMillis() + timeoffset), "#EHFG2014", message, tweetUser);
+		}
+
+		catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 }
