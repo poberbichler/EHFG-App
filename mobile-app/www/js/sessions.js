@@ -1,7 +1,8 @@
 (function() {
 	var SessionCtrl = function(sessionService) {
 		var vm = this;
-		sessionService.findAll().then(function(conferenceDays) {
+
+        sessionService.findAll().then(function(conferenceDays) {
 			vm.conferenceDays = conferenceDays;
 		});
 
@@ -46,7 +47,7 @@
 	
 	var SessionResource = function($resource, BASE_URL) {
 		return $resource(BASE_URL + '/sessions', {}, {
-			findAll: {method: 'GET', isArray: true}
+			findAll: {method: 'GET', isArray: false}
 		});
 	}
 	

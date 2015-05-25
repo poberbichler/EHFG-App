@@ -1,20 +1,20 @@
 <ion-side-menus>
-	<ion-pane ion-side-menu-content>
-		<ion-nav-bar class="bar-stable nav-title-slide-ios7">
+	<ion-side-menu-content>
+		<ion-nav-bar class="bar-stable">
 			<ion-nav-buttons side="right">
 				<button ng-click="menuCtrl.openSideMenu()" class="button icon ion-navicon"></button>
 			</ion-nav-buttons>
 		</ion-nav-bar>
 	
 		<ion-nav-view name="content"></ion-nav-view>
-	</ion-pane>
+	</ion-side-menu-content>
 
 	<ion-side-menu side="right">
-		<header class="bar bar-header bar-stable">
+        <ion-header-bar class="bar-stable">
 			<h1 class="title">Settings</h1>
-		</header>
-		
-		<ion-content class="has-header">
+        </ion-header-bar>
+
+		<ion-content>
 			<ion-list>
 				<ion-item nav-clear class="item item-divider">Sessions</ion-item>
 				<ion-radio menu-close ng-model="menuCtrl.favouriteSessions" ng-value="true" ng-change="menuCtrl.favouriteSessionToggle(true)">

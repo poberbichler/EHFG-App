@@ -71,7 +71,7 @@
 	           }
 	       }
 	    });
-	    
+
 	    $stateProvider.state('app.map', {
 	    	url: '/map/:location',
 	    	views: {
@@ -80,20 +80,20 @@
 	    			controller: 'MapCtrl as mapCtrl'
 	    		}
 	    	},
-	    	
+
 	    	resolve: {
-	    		highlightLocation: ['$stateParams', 'MapService', function($stateParams, mapService) {
-	    			if ($stateParams.location !== undefined && $stateParams.location.length !== 0) {
-	    				return mapService.locations.findByName({name: $stateParams.location}).$promise;
-	    			}
-	    			
-	    			return null;
-	    		}]
+                highlightLocation: ['$stateParams', 'MapService', function($stateParams, mapService) {
+                    if ($stateParams.location !== undefined && $stateParams.location.length !== 0) {
+                        return mapService.locations.findByName({name: $stateParams.location}).$promise;
+                    }
+
+                    return null;
+                }]
 	    	}
-	    });
-	    
-	    $urlRouterProvider.otherwise('/twitter');
-	    $ionicConfigProvider.views.transition('android');
+        });
+
+        $urlRouterProvider.otherwise('/twitter');
+        $ionicConfigProvider.views.transition('android');
 	}
 	
 	function InitBackdoor($http, BASE_URL) {
