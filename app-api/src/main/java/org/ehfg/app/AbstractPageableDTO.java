@@ -21,7 +21,7 @@ public abstract class AbstractPageableDTO<T> {
 	public AbstractPageableDTO(Collection<T> data, int currentPage, int maxPages) {
 		this.data = data;
 		this.currentPage = currentPage;
-		this.maxPages = maxPages;
+		this.maxPages = maxPages - 1;
 	}
 
 	public boolean isMorePages() {

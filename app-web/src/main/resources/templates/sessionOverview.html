@@ -13,7 +13,7 @@
 		<tbody>
 			<tr th:each="session : ${sessions}">
 				<td th:text="${session.id}">id</td>
-				<td th:text="${session.sessionCode} + ' - ' + ${session.name}">sessioncode</td>
+				<td th:text="${session.code} + ' - ' + ${session.name}">sessioncode</td>
 				<td th:text="${session.startTime}">starttime</td>
 				<td th:text="${session.endTime}">endtime</td>
 			</tr>

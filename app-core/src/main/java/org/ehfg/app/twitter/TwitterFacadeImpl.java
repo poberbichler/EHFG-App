@@ -83,7 +83,7 @@ final class TwitterFacadeImpl implements TwitterFacade {
 		final String currentHashtag = this.findHashtag();
 		final Page<Tweet> tweets = tweetRepository.findByHashtagOrderByCreationDateDesc(
 				currentHashtag, new PageRequest(pageId, pageSize));
-		
+
 		return new TweetPageDTO(TweetMapper.map(tweets.getContent()), pageId, tweets.getTotalPages(), currentHashtag);
 	}
 	

@@ -35,9 +35,10 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade {
 	@Override
 	public void addListener(String input) {
 		String hashtag = validateAndAddHashToTag(input);
-		
+
 		logger.info("adding filter for hastag [{}]", hashtag);
-		final Stream filter = twitter.streamingOperations().filter(hashtag, Arrays.asList(streamListenerFactory.getObject(hashtag)));
+
+		final Stream filter = twitter.streamingOperations().filter(hashtag.substring(1), Arrays.asList(streamListenerFactory.getObject(hashtag)));
 		streams.put(hashtag, filter);
 	}
 

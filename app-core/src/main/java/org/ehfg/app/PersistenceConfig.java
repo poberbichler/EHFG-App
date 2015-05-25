@@ -85,7 +85,7 @@ public class PersistenceConfig {
 
 		@Bean
 		public DataSource dataSource() {
-			return new SingleConnectionDataSource(url, username, password, false);
+			return new SingleConnectionDataSource(url, username, password, true);
 		}
 	}
 }

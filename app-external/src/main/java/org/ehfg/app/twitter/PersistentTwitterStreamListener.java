@@ -5,6 +5,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.social.twitter.api.*;
 import org.springframework.social.twitter.api.Tweet;
 
+/**
+ * @author patrick
+ * @since 04.2015
+ */
 class PersistentTwitterStreamListener implements StreamListener {
 	private static final Logger LOGGER = LoggerFactory.getLogger(PersistentTwitterStreamListener.class);
 	

@@ -50,7 +50,7 @@
 	}
 	
 	function TwitterResource($resource, BASE_URL) {
-		var pageResource = new $resource(BASE_URL + '/twitter/tweetpage/:page', {page: 0}, {
+		var pageResource = new $resource(BASE_URL + '/twitter/page/:page', {page: 0}, {
 			findInitial: {method: 'GET', isArray: false},
 			findMore: {method: 'GET', isArray: false, params: {page: '@page'}}
 		});

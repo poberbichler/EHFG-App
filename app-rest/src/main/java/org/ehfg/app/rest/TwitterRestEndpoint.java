@@ -32,12 +32,12 @@ public final class TwitterRestEndpoint {
 		return twitterFacade.findHashtag();
 	}
 
-	@RequestMapping(value = "updates/{lastTweet}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "update/{lastTweet}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Collection<? extends TweetRepresentation> updateTweets(@PathVariable("lastTweet") Long timestamp) {
 		return twitterFacade.findNewerTweetsForCongress(new Date(timestamp));
 	}
 
-	@RequestMapping(value = "tweetpage/{page}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "page/{page}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public TweetPageDTO findTweetsByPage(@PathVariable("page") Integer pageId) {
 		return twitterFacade.findTweetPage(pageId);
 	}
