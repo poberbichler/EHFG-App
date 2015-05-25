@@ -1,6 +1,5 @@
 package org.ehfg.app.config;
 
-import com.fasterxml.jackson.databind.Module;
 import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
 import nz.net.ultraq.thymeleaf.LayoutDialect;
 import org.ehfg.app.converter.LocalDateTimeToUTCTimestampSerializer;

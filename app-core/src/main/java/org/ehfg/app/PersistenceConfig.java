@@ -1,9 +1,5 @@
 package org.ehfg.app;
 
-import java.util.Properties;
-
-import javax.sql.DataSource;
-
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,10 +11,12 @@ import org.springframework.data.repository.query.QueryLookupStrategy.Key;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
-import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import javax.sql.DataSource;
+import java.util.Properties;
 
 /**
  * @author patrick
@@ -60,6 +58,7 @@ public class PersistenceConfig {
 		return transactionManager;
 	}
 	
+	@Configuration
 	@Profile("in-memory-db")
 	public static class InMemoryDatabaseConfig {
 		@Bean
@@ -67,11 +66,12 @@ public class PersistenceConfig {
 			final EmbeddedDatabaseFactory factory = new EmbeddedDatabaseFactory();
 			factory.setDatabaseName("ehfgApp");
 			factory.setDatabaseType(EmbeddedDatabaseType.H2);
-			
+
 			return factory.getDatabase();
 		}
 	}
-	
+
+	@Configuration
 	@Profile("!in-memory-db")
 	public static class DefaultDatabaseConfig {
 		@Value("${db.url}")
