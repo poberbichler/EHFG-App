@@ -17,7 +17,7 @@ class LocationPopulateStrategy extends AbstractPopulateStrategy {
 	public void execute() throws Exception {
 		final Set<String> locationSet = new HashSet<>();
 		for (final SessionDTO session : sessionRepository.findAll()) {
-			locationSet.add(session.getLocationId());
+			locationSet.add(session.getLocation());
 		}
 		
 		for (final String location : locationSet) {

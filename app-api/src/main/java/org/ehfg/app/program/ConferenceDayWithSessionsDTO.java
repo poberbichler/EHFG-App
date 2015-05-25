@@ -4,10 +4,10 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.ehfg.app.rest.ConferenceDayRepresentation;
 import org.ehfg.app.rest.SessionRepresentation;
 
-import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedList;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 /**
  * Representation <b>only</b> of the necessary information of a conferenceday, including sessions.<br>
@@ -18,7 +18,7 @@ import java.util.LinkedList;
  */
 public class ConferenceDayWithSessionsDTO implements ConferenceDayRepresentation {
 	private final String description;
-	private final Collection<SessionRepresentation> sessions = new LinkedList<>();
+	private final Collection<SessionRepresentation> sessions = new TreeSet<>();
 
 	public ConferenceDayWithSessionsDTO(String description, SessionRepresentation initialSession) {
 		this.description = description;

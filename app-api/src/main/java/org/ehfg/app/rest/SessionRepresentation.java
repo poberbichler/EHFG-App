@@ -11,7 +11,7 @@ import java.util.Set;
  * @since 04.2015
  */
 @XmlAccessorType(XmlAccessType.NONE)
-public interface SessionRepresentation {
+public interface SessionRepresentation extends Comparable<SessionRepresentation> {
 	@XmlElement(name = "id")
 	String getId();
 
@@ -27,12 +27,25 @@ public interface SessionRepresentation {
 	@XmlElement(name = "endTime")
 	LocalDateTime getEndTime();
 
-	@XmlElement(name = "sessionCode")
-	String getSessionCode();
+	@XmlElement(name = "code")
+	String getCode();
 
-	@XmlElement(name = "locationId")
-	String getLocationId();
+	@XmlElement(name = "location")
+	String getLocation();
 
 	@XmlElement(name = "speakers")
 	Set<String> getSpeakers();
+
+	@Override
+	default int compareTo(SessionRepresentation that) {
+		if (this.getStartTime().equals(that.getStartTime())) {
+			if (getCode().equals(that.getCode())) {
+				return this.getName().compareTo(that.getName());
+			}
+
+			return this.getCode().compareTo(that.getCode());
+		}
+
+		return this.getStartTime().compareTo(that.getStartTime());
+	}
 }

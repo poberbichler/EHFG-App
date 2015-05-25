@@ -106,7 +106,7 @@ final class ProgramFacadeImpl implements ProgramFacade {
 	@Override
 	public List<String> findAvailableLocations() {
 		return sessionRepository.findAll().stream()
-				.map(SessionDTO::getLocationId)
+				.map(SessionDTO::getLocation)
 				.distinct()
 				.collect(Collectors.toList());
 	}

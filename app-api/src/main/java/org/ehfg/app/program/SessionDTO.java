@@ -18,7 +18,7 @@ import java.util.Set;
  * @author patrick
  * @since 03.2014
  */
-public final class SessionDTO implements Comparable<SessionDTO>, SessionRepresentation {
+public final class SessionDTO implements SessionRepresentation {
 	private String id;
 	private String name;
 	private String description;
@@ -49,7 +49,7 @@ public final class SessionDTO implements Comparable<SessionDTO>, SessionRepresen
 	}
 
 	@Override
-	public String getSessionCode() {
+	public String getCode() {
 		return sessionCode;
 	}
 
@@ -112,7 +112,7 @@ public final class SessionDTO implements Comparable<SessionDTO>, SessionRepresen
 	}
 
 	@Override
-	public String getLocationId() {
+	public String getLocation() {
 		return location;
 	}
 
@@ -123,19 +123,6 @@ public final class SessionDTO implements Comparable<SessionDTO>, SessionRepresen
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
-	}
-
-	@Override
-	public int compareTo(SessionDTO that) {
-		if (this.startTime.equals(that.startTime)) {
-			if (this.sessionCode.equals(that.sessionCode)) {
-				return this.name.compareTo(that.name);
-			}
-			
-			return this.sessionCode.compareTo(that.sessionCode);
-		}
-		
-		return this.startTime.compareTo(that.startTime);
 	}
 
 	/**
