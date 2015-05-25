@@ -1,26 +1,26 @@
 <ion-view title="Twitter">
     <ion-content class="has-header has-footer">
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="twitterCtrl.updateFeed()"></ion-refresher>
         <div class="list card" style="margin-top: 10px">
-        	<div class="item item-icon-left">
-        		<i class="icon ion-pound"></i>{{::twitterCtrl.tweetResource.currentHashtag}}
-        		<a href="#" ng-click="twitterCtrl.updateFeed()"><i class="icon ion-refresh" style="right: 11px; left: auto"></i></a>
-        	</div>
-        	
-        	<div ng-repeat="tweet in twitterCtrl.tweetResource.tweets track by tweet.id">
-        		<div class="item item-divider">
-        			<span>{{::tweet.fullName}}</span> <span class="tweet-nickname">@{{::tweet.nickName}}</span>
-        			<span class="tweet-data">{{::tweet.timestamp | twitterDateFilter}}</span>
-        		</div>
-        		
-        		<div class="item item-avatar item-text-wrap tweet-body">
-    				<img ng-src="{{::tweet.profileImage}}" class="twitter-image">
-    				<p ng-bind-html="tweet.message"></p>
-    			</div>
-        	</div>
-        	
-        	<div class="item item-divider" ng-click="twitterCtrl.loadMoreTweets()" ng-show="twitterCtrl.tweetResource.morePages">
-        		Load more tweets...
-        	</div>
+            <div class="item item-icon-left">
+                <i class="icon ion-pound"></i>{{::twitterCtrl.tweetResource.currentHashtag}}
+            </div>
+
+            <div ng-repeat="tweet in twitterCtrl.tweetResource.tweets track by tweet.id">
+                <div class="item item-divider">
+                    <span>{{::tweet.fullName}}</span> <span class="tweet-nickname">@{{::tweet.nickName}}</span>
+                    <span class="tweet-data">{{::tweet.timestamp | twitterDateFilter}}</span>
+                </div>
+
+                <div class="item item-avatar item-text-wrap tweet-body">
+                    <img ng-src="{{::tweet.profileImage}}" class="twitter-image">
+                    <p ng-bind-html="tweet.message"></p>
+                </div>
+            </div>
+
+            <div class="item item-divider" ng-click="twitterCtrl.loadMoreTweets()" ng-show="twitterCtrl.tweetResource.morePages">
+                Load more tweets...
+            </div>
         </div>
     </ion-content>
 </ion-view>

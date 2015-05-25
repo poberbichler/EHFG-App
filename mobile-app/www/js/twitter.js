@@ -7,7 +7,7 @@
 		twitterService.init();
 	}
 	
-	function TwitterService(twitterResource) {
+	function TwitterService($rootScope, twitterResource) {
 		var tweetData = {};
 		
 		function mapData(data) {
@@ -42,7 +42,9 @@
 				var latestTweet = tweetData.tweets[0];
 				twitterResource.findNewer({'lastTweet': latestTweet.timestamp}, function(result) {
 					tweetData.tweets = result.concat(tweetData.tweets);
-				});
+				}).$promise.finally(function() {
+                    $rootScope.$broadcast('scroll.refreshComplete');
+                });
 			}
 		}
 	}
@@ -95,6 +97,6 @@
 	angular.module('ehfgApp.twitter', [])
 		.controller('TwitterCtrl', ['TwitterService', TwitterCtrl])
 		.factory('TwitterResource', ['$resource', 'BASE_URL', TwitterResource])
-		.factory('TwitterService', ['TwitterResource', TwitterService])
+		.factory('TwitterService', ['$rootScope', 'TwitterResource', TwitterService])
 		.filter('twitterDateFilter', ['$filter', TwitterDateFilter])
 })();
