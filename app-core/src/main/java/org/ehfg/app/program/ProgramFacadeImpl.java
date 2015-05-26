@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
  * @author patrick
  * @since 06.04.2014
  */
-@Component("programFacade")
+@Component
 @Transactional(readOnly = true)
 final class ProgramFacadeImpl implements ProgramFacade {
 	private final SpeakerRepository speakerRepository;
@@ -57,7 +57,8 @@ final class ProgramFacadeImpl implements ProgramFacade {
 				.filter(session -> findDay(conferenceDays, session).isPresent())
 				.collect(Collectors.toMap(SessionDTO::getDay,
 						session -> new ConferenceDayWithSessionsDTO(findDay(conferenceDays, session).get().getDescription(), session),
-						(existingSession, newSession) -> existingSession.addSession(newSession.getSessions())));
+						(existingSession, newSession) -> existingSession.addSession(newSession.getSessions()),
+						TreeMap::new));
 	}
 
 	/**
