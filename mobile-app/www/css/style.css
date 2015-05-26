@@ -39,6 +39,7 @@ ion-header-bar.bar-stable.bar.bar-header.disable-user-behavior {
     background-size: 0;
 }
 
+.button-icon.icon.ion-navicon,
 .bar-stable div.title.header-item,
 ion-header-bar.bar-stable.bar h1.title,
 div.tabs-background-positive.tabs-light div.tabs a.tab-item {
@@ -48,6 +49,7 @@ div.tabs-background-positive.tabs-light div.tabs a.tab-item {
 	border-color: white;
 }
 
+.button-icon.icon.ion-navicon,
 div.tabs-background-positive.tabs-light div.tabs {
 	border: 0;
 }
