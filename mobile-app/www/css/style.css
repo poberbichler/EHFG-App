@@ -1,5 +1,10 @@
+a,
 span a:visited {
-    color: rgb(0, 0, 238);
+    color: #6699cc;
+}
+
+span.hashtag {
+    font-weight: bold;
 }
 
 .speakerImage {
