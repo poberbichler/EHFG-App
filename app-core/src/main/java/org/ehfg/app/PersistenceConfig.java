@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.repository.query.QueryLookupStrategy.Key;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
@@ -37,7 +38,8 @@ public class PersistenceConfig {
 		entityManagerFactory.setPersistenceUnitName("ehfgAppPersistenceUnit");
 		entityManagerFactory.setPersistenceProvider(new HibernatePersistenceProvider());
 		entityManagerFactory.setJpaProperties(jpaProperties());
-		
+		entityManagerFactory.setPackagesToScan("org.ehfg.app", Jsr310JpaConverters.class.getPackage().getName());
+
 		return entityManagerFactory;
 	}
 	
@@ -85,7 +87,9 @@ public class PersistenceConfig {
 
 		@Bean
 		public DataSource dataSource() {
-			return new SingleConnectionDataSource(url, username, password, true);
+			SingleConnectionDataSource db = new SingleConnectionDataSource(url, username, password, true);
+			db.setAutoCommit(false);
+			return db;
 		}
 	}
 }
