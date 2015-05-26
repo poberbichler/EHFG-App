@@ -4,10 +4,21 @@ import java.util.Collection;
 
 /**
  * @author patrick
- * @since 14.03.2014
+ * @since 03.2014
  */
 public interface TwitterStreamingFacade {
-	void addListener(String hashtag);
-	void removeListener(String hashtag);
+	/**
+	 * adds a listener for the given hashtag
+	 */
+	void addListener(Hashtag hashtag);
+
+	/**
+	 * removes the listener for the given hashtag. does nothing if the hashtag is not found
+	 */
+	void removeListener(Hashtag hashtag);
+
+	/**
+	 * @return an unmodifiable list of every listener
+	 */
 	Collection<String> findAllListeners();
 }

@@ -38,12 +38,14 @@ final class TwitterFacadeImpl implements TwitterFacade {
 
 	@Override
 	public void addStream(String hashtag) {
-		streamingFacade.addListener(hashtag);
+		Validate.notNull(hashtag, "hashtag must not be null");
+		streamingFacade.addListener(Hashtag.valueOf(hashtag));
 	}
 
 	@Override
 	public void removeStream(String hashtag) {
-		streamingFacade.removeListener(hashtag);
+		Validate.notNull(hashtag, "hashtag must not be null");
+		streamingFacade.removeListener(Hashtag.valueOf(hashtag));
 	}
 
 	@Override

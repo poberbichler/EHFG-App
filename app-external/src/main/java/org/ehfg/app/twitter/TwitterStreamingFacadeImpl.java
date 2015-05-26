@@ -1,9 +1,7 @@
 package org.ehfg.app.twitter;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.Validate;
 import org.slf4j.Logger;
@@ -24,7 +22,7 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade {
 	private final Twitter twitter;
 	private final StreamListenerFactory streamListenerFactory;
 	
-	private final Map<String, Stream> streams = new HashMap<>();
+	private final Map<Hashtag, Stream> streams = new HashMap<>();
 
 	@Autowired
 	public TwitterStreamingFacadeImpl(Twitter twitter, StreamListenerFactory streamFactory) {
@@ -33,18 +31,15 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade {
 	}
 
 	@Override
-	public void addListener(String input) {
-		String hashtag = validateAndAddHashToTag(input);
-
+	public void addListener(Hashtag hashtag) {
 		logger.info("adding filter for hastag [{}]", hashtag);
 
-		final Stream filter = twitter.streamingOperations().filter(hashtag.substring(1), Arrays.asList(streamListenerFactory.getObject(hashtag)));
+		final Stream filter = twitter.streamingOperations().filter(hashtag.getHashtagWithoutHash(), Arrays.asList(streamListenerFactory.getObject(hashtag)));
 		streams.put(hashtag, filter);
 	}
 
 	@Override
-	public void removeListener(String input) {
-		String hashtag = validateAndAddHashToTag(input);
+	public void removeListener(Hashtag hashtag) {
 		logger.info("removing filter for hashtag [{}]", hashtag);
 		
 		final Stream stream = streams.get(hashtag);
@@ -56,16 +51,8 @@ class TwitterStreamingFacadeImpl implements TwitterStreamingFacade {
 
 	@Override
 	public Collection<String> findAllListeners() {
-		return streams.keySet();
-	}
-	
-	private String validateAndAddHashToTag(String input) {
-		Validate.notNull(input, "input must not be nul");
-		
-		if (!input.startsWith("#")) {
-			return "#".concat(input);
-		}
-		
-		return input;
+		return Collections.unmodifiableCollection(streams.keySet().stream()
+				.map(Hashtag::getHashtagWithHash)
+				.collect(Collectors.toList()));
 	}
 }

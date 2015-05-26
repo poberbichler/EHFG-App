@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
 @Profile("mock")
 final class MockStreamFactory implements StreamListenerFactory {
 	@Override
-	public StreamListener getObject(String hashtag) {
+	public StreamListener getObject(Hashtag hashtag) {
 		return INSTANCE;
 	}
 

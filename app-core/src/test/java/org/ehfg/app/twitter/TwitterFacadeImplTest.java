@@ -1,14 +1,5 @@
 package org.ehfg.app.twitter;
 
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyNoMoreInteractions;
-import static org.mockito.Mockito.when;
-
-import java.util.Arrays;
-import java.util.Collections;
-
 import org.ehfg.app.base.ConfigurationDTO;
 import org.ehfg.app.base.MasterDataFacade;
 import org.junit.Before;
@@ -17,6 +8,12 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+
+import java.util.Arrays;
+import java.util.Collections;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class TwitterFacadeImplTest {
@@ -73,6 +70,6 @@ public class TwitterFacadeImplTest {
 		assertEquals(TwitterStreamStatus.HAD_TO_RESTART, status);
 
 		verify(streamingFacade).findAllListeners();
-		verify(streamingFacade).addListener(CURRENT_HASHTAG);
+		verify(streamingFacade).addListener(Hashtag.valueOf(CURRENT_HASHTAG));
 	}
 }

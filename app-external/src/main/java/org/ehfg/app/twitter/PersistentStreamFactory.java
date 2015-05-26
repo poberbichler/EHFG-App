@@ -18,7 +18,7 @@ class PersistentStreamFactory implements StreamListenerFactory {
 	}
 
 	@Override
-	public StreamListener getObject(String hashtag) {
+	public StreamListener getObject(Hashtag hashtag) {
 		return new PersistentTwitterStreamListener(tweetRepository, twitterUserRepository, hashtag);
 	}
 }

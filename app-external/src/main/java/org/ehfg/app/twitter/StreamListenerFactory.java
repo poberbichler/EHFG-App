@@ -10,5 +10,5 @@ interface StreamListenerFactory {
 	/**
 	 * @return a new {@link StreamListener} for the given hashtag
 	 */
-	StreamListener getObject(String hashtag);
+	StreamListener getObject(Hashtag hashtag);
 }

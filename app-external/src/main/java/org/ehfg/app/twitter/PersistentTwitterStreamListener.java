@@ -15,9 +15,9 @@ class PersistentTwitterStreamListener implements StreamListener {
 	private final TweetRepository tweetRepository;
 	private final TwitterUserRepository twitterUserRepository;
 	
-	private final String hashtag;
+	private final Hashtag hashtag;
 	
-	public PersistentTwitterStreamListener(TweetRepository tweetRepository, TwitterUserRepository twitterUserRepository, String hashtag) {
+	public PersistentTwitterStreamListener(TweetRepository tweetRepository, TwitterUserRepository twitterUserRepository, Hashtag hashtag) {
 		this.tweetRepository = tweetRepository;
 		this.twitterUserRepository = twitterUserRepository;
 		this.hashtag = hashtag;
@@ -44,7 +44,7 @@ class PersistentTwitterStreamListener implements StreamListener {
 		org.ehfg.app.twitter.Tweet tweet = tweetRepository.findOne(sourceTweet.getId());
 		if (tweet == null) {
 			LOGGER.debug("adding new tweet");
-			tweet = TweetFactory.create(sourceTweet, hashtag, author);
+			tweet = TweetFactory.create(sourceTweet, hashtag.getHashtagWithHash(), author);
 		}
 
 		tweetRepository.save(tweet);
