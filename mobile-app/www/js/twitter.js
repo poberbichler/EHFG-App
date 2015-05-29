@@ -73,21 +73,7 @@
 		    var hour = minute * 60;
 		    var day = hour * 24;
 		
-            // input is already an utc timestamp
-            //var difference = Math.abs(utcTimeService.getCurrentTime() - utcTimeService.getUtcTimeFor(input));
-            //console.log('utc input', utcTimeService.getUtcTimeFor(input).getTime(), 'utc current time', utcTimeService.getCurrentTime());
-		    var utc = utcTimeService.getUtcTimeFor(input).getTime();
-		    var current = new Date().getTime();
-		    var currentUtc = utcTimeService.getCurrentTime().getTime();
-		    var difference = current - utcTimeService.getUtcTimeFor(input);
-		    
-            console.log('    utc', new Date(utc));
-            console.log('non utc', new Date(input));
-            console.log('current', new Date(current));
-            console.log('cur utc', new Date(currentUtc));
-            
-            console.log(difference);
-
+		    var difference = utcTimeService.getCurrentTime().getTime() - utcTimeService.getUtcTimeFor(input).getTime();
 		    if (difference < day) {
 		        if (difference < minute) {
 		            var value = (difference/second).toFixed(0);
