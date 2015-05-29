@@ -3,6 +3,7 @@ package org.ehfg.app.populator;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -63,7 +64,7 @@ class TwitterPopulateStrategy extends AbstractPopulateStrategy {
 			final Constructor<?> constructor = tweetClass.getDeclaredConstructors()[1];
 			constructor.setAccessible(true);
 
-			return constructor.newInstance(id, message, new Date(System.currentTimeMillis() + timeoffset), "#EHFG2014", message, tweetUser);
+			return constructor.newInstance(id, message, LocalDateTime.now().minusMinutes(timeoffset), "#EHFG2014", message, tweetUser);
 		}
 
 		catch (Exception e) {

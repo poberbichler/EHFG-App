@@ -66,14 +66,26 @@
 		}
 	}
 	
-	function TwitterDateFilter($filter) {
+	function TwitterDateFilter($filter, utcTimeService) {
 		return function(input) {
 			var second = 1000;
 		    var minute = 1000 * 60;
 		    var hour = minute * 60;
 		    var day = hour * 24;
+		
+	    // still a very basic draft
+            // input is already an utc timestamp
+            console.log(utcTimeService.getCurrentTime() - utcTimeService.getUtcTimeFor(input));
+            var difference = Math.abs(utcTimeService.getCurrentTime() - input);
+            //console.log('utc input', utcTimeService.getUtcTimeFor(input).getTime(), 'utc current time', utcTimeService.getCurrentTime());
+            console.log('    utc', utcTimeService.getUtcTimeFor(input).getTime());
+            console.log('non utc', input);
+            console.log('current', new Date().getTime());
+            console.log('cur utc', utcTimeService.getCurrentTime().getTime());
 
-		    var difference = new Date().getTime() - input;
+            console.log(input - utcTimeService.getUtcTimeFor(input).getTime());
+            console.log(new Date().getTime() - utcTimeService.getCurrentTime().getTime());
+
 		    if (difference < day) {
 		        if (difference < minute) {
 		            var value = (difference/second).toFixed(0);
@@ -90,7 +102,7 @@
 		        return "" + value + "h";
 		    }
 			
-			return $filter('date')(input, 'MMM d, HH:mm');
+			return $filter('date')(input, 'MMM d, HH:mm', 'UTC');
 		}
 	}
 	
@@ -98,5 +110,5 @@
 		.controller('TwitterCtrl', ['TwitterService', TwitterCtrl])
 		.factory('TwitterResource', ['$resource', 'BASE_URL', TwitterResource])
 		.factory('TwitterService', ['$rootScope', 'TwitterResource', TwitterService])
-		.filter('twitterDateFilter', ['$filter', TwitterDateFilter])
+		.filter('twitterDateFilter', ['$filter', 'UtcTimeService', TwitterDateFilter])
 })();

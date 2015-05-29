@@ -99,7 +99,27 @@
 	function InitBackdoor($http, BASE_URL) {
 		$http.get(BASE_URL + '/backdoor');
 	}
-	
+
+    function UtcTimeService() {
+        return {
+            getCurrentTime: getCurrentTime,
+            getUtcTimeFor: getUtcTimeFor
+        }
+
+        function getCurrentTime() {
+            return this.getUtcTimeFor(new Date());
+        }
+
+        function getUtcTimeFor(input) {
+            if (!(input instanceof Date)) {
+                input = new Date(input);
+            }
+
+            input.setMinutes(input.getMinutes() + input.getTimezoneOffset());
+            return input;
+        }
+    }
+
 	angular.module('ehfgApp', [
 		'ionic',
 		'ngResource',
@@ -113,4 +133,5 @@
 	]).config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider', Config])
         .run(['$ionicPlatform', RunFunction])
         .run(['$http', 'BASE_URL', InitBackdoor])
+        .factory('UtcTimeService', [UtcTimeService]);
 })();

@@ -1,9 +1,9 @@
 package org.ehfg.app.twitter;
 
-import java.util.Date;
-
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.ehfg.app.rest.TweetRepresentation;
+
+import java.time.LocalDateTime;
 
 /**
  * @author patrick
@@ -15,9 +15,9 @@ public final class TweetDTO implements TweetRepresentation {
 	private final String nickName;
 	private final String message;
 	private final String profileImage;
-	private final Date timestamp;
+	private final LocalDateTime timestamp;
 
-	public TweetDTO(Long id, String fullName, String nickName, String message, String profileImage, Date timestamp) {
+	public TweetDTO(Long id, String fullName, String nickName, String message, String profileImage, LocalDateTime timestamp) {
 		this.id = id;
 		this.fullName = fullName;
 		this.nickName = nickName;
@@ -52,10 +52,10 @@ public final class TweetDTO implements TweetRepresentation {
 	}
 
 	@Override
-	public Date getTimestamp() {
+	public LocalDateTime getTimestamp() {
 		return timestamp;
 	}
-	
+
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);

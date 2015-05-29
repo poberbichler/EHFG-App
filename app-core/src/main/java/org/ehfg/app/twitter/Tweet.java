@@ -1,24 +1,23 @@
 package org.ehfg.app.twitter;
 
-import java.util.Date;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import java.time.LocalDateTime;
 
 /**
  * @author patrick
  * @since 13.03.2014
  */
 @Entity
-public final class Tweet {
+public class Tweet {
 	@Id
 	private Long id;
 
 	private String message;
-	private Date creationDate;
+	private LocalDateTime creationDate;
 	private String hashtag;
 	private String formattedMesssage;
 
@@ -29,7 +28,7 @@ public final class Tweet {
 
 	}
 
-	public Tweet(Long id, String message, Date creationDate, String hashtag, String formattedMesssage, TwitterUser author) {
+	public Tweet(Long id, String message, LocalDateTime creationDate, String hashtag, String formattedMesssage, TwitterUser author) {
 		this.id = id;
 		this.message = message;
 		this.creationDate = creationDate;
@@ -62,11 +61,11 @@ public final class Tweet {
 		this.author = author;
 	}
 
-	public Date getCreationDate() {
+	public LocalDateTime getCreationDate() {
 		return creationDate;
 	}
 
-	public void setCreationDate(Date creationDate) {
+	public void setCreationDate(LocalDateTime creationDate) {
 		this.creationDate = creationDate;
 	}
 

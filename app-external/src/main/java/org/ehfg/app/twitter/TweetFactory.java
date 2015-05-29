@@ -1,5 +1,7 @@
 package org.ehfg.app.twitter;
 
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
@@ -20,7 +22,7 @@ final class TweetFactory {
 	static Tweet create(final org.springframework.social.twitter.api.Tweet source, final String hashtag, final TwitterUser user) {
 		final Tweet result = new Tweet();
 		result.setAuthor(user);
-		result.setCreationDate(source.getCreatedAt());
+		result.setCreationDate(LocalDateTime.ofInstant(source.getCreatedAt().toInstant(), ZoneOffset.systemDefault()));
 		result.setHashtag(hashtag);
 		result.setId(source.getId());
 		result.setMessage(source.getUnmodifiedText());
