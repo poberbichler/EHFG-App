@@ -22,7 +22,7 @@ final class TweetFactory {
 	static Tweet create(final org.springframework.social.twitter.api.Tweet source, final String hashtag, final TwitterUser user) {
 		final Tweet result = new Tweet();
 		result.setAuthor(user);
-		result.setCreationDate(LocalDateTime.ofInstant(source.getCreatedAt().toInstant(), ZoneOffset.systemDefault()));
+		result.setCreationDate(LocalDateTime.ofInstant(source.getCreatedAt().toInstant(), ZoneOffset.UTC));
 		result.setHashtag(hashtag);
 		result.setId(source.getId());
 		result.setMessage(source.getUnmodifiedText());

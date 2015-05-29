@@ -1,9 +1,9 @@
 package org.ehfg.app.twitter;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.validation.constraints.NotNull;
 import java.util.Objects;
+
+import javax.persistence.Column;
+import javax.validation.constraints.NotNull;
 
 /**
  * Immutable domainclass for a single hashtag. The static constructor ensures that the internal hashtag will always

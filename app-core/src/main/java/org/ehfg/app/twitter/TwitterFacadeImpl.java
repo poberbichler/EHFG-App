@@ -1,8 +1,8 @@
 package org.ehfg.app.twitter;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.lang3.Validate;
@@ -59,7 +59,7 @@ final class TwitterFacadeImpl implements TwitterFacade {
 	}
 
 	@Override
-	public List<TweetDTO> findNewerTweetsForCongress(Date lastTweet) {
+	public List<TweetDTO> findNewerTweetsForCongress(LocalDateTime lastTweet) {
 		final ConfigurationDTO config = masterDataFacade.getAppConfiguration();
 		if (config != null && config.getHashtag() != null) {
 			return tweetRepository.findNewerTweetsByHashtag(config.getHashtag(), lastTweet);

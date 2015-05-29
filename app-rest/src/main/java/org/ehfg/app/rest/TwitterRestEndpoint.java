@@ -1,7 +1,9 @@
 package org.ehfg.app.rest;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Collection;
-import java.util.Date;
 
 import org.ehfg.app.twitter.TweetPageDTO;
 import org.ehfg.app.twitter.TwitterFacade;
@@ -34,7 +36,7 @@ public final class TwitterRestEndpoint {
 
 	@RequestMapping(value = "update/{lastTweet}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Collection<? extends TweetRepresentation> updateTweets(@PathVariable("lastTweet") Long timestamp) {
-		return twitterFacade.findNewerTweetsForCongress(new Date(timestamp));
+		return twitterFacade.findNewerTweetsForCongress(LocalDateTime.ofInstant(Instant.ofEpochMilli(timestamp), ZoneId.systemDefault()));
 	}
 
 	@RequestMapping(value = "page/{page}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)

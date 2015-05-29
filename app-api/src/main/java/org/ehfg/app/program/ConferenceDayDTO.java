@@ -1,12 +1,10 @@
 package org.ehfg.app.program;
 
+import java.time.LocalDate;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.ehfg.app.rest.ConferenceDayRepresentation;
-
-import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
 
 /**
  * @author patrick

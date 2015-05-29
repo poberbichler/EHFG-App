@@ -1,9 +1,5 @@
 package org.ehfg.app.program;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.ehfg.app.rest.SessionRepresentation;
-
-import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -11,6 +7,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.ehfg.app.rest.SessionRepresentation;
 
 /**
  * basic representation of a session

@@ -1,7 +1,7 @@
 package org.ehfg.app.twitter;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -16,7 +16,7 @@ public interface TwitterFacade {
 	List<TweetDTO> findAllTweets();
 	String findHashtag();
 	
-	List<TweetDTO> findNewerTweetsForCongress(Date lastTweet);
+	List<TweetDTO> findNewerTweetsForCongress(LocalDateTime lastTweet);
 	TweetPageDTO findTweetPage(Integer pageId);
 	TweetPageDTO findTweetPageWithSize(Integer pageId, Integer pageSize);
 	
