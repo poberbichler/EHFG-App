@@ -60,7 +60,7 @@ final class TwitterFacadeImpl implements TwitterFacade {
 	public List<TweetDTO> findNewerTweetsForCongress(LocalDateTime lastTweet) {
 		final ConfigurationDTO config = masterDataFacade.getAppConfiguration();
 		if (config != null && config.getHashtag() != null) {
-			return tweetRepository.findNewerTweetsByHashtag(config.getHashtag(), lastTweet, new Sort(new Sort.Order(Sort.Direction.DESC, "creationDate")))
+			return tweetRepository.findNewerTweetsByHashtag(config.getHashtag(), lastTweet, byCreationDate())
 					.stream()
 					.map(t -> new TweetDTO(t.getId(), t.getAuthor().getFullName(), t.getAuthor().getNickName(),
 							t.getFormattedMesssage(), t.getAuthor().getProfileImage(), t.getCreationDate()))
@@ -68,6 +68,10 @@ final class TwitterFacadeImpl implements TwitterFacade {
 		}
 
 		return Collections.emptyList();
+	}
+
+	private Sort byCreationDate() {
+		return new Sort(new Sort.Order(Sort.Direction.DESC, "creationDate"));
 	}
 
 	@Override

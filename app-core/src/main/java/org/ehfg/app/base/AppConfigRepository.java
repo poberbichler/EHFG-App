@@ -8,7 +8,7 @@ import org.springframework.data.repository.Repository;
  * @since 06.2015
  */
 interface AppConfigRepository extends Repository<AppConfig, String> {
-	@Query("{id: " + AppConfig.CONFIG_ID + "}")
+	@Query("{id: '" + AppConfig.CONFIG_ID + "'}")
 	AppConfig find();
 
 	AppConfig save(AppConfig config);

@@ -3,6 +3,7 @@ package org.ehfg.app.base;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.apache.commons.lang3.StringUtils;
 import org.ehfg.app.validation.Validate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -76,7 +77,7 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 	 * @return a {@link PointOfInterest} (never null)
 	 */
 	private PointOfInterest fetchOrCreatePointOfInterest(String id) {
-		if (id == null) {
+		if (StringUtils.isEmpty(id)) {
 			return new PointOfInterest();
 		}
 		
