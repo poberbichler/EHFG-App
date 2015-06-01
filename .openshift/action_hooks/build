@@ -1,0 +1,4 @@
+cd $OPENSHIFT_REPO_DIR
+export JAVA_HOME=/etc/alternatives/java_sdk_1.8.0_openjdk
+export PATH=$JAVA_HOME/bin:$PATH
+$OPENSHIFT_DATA_DIR/mvn/bin/mvn -s $OPENSHIFT_DATA_DIR/settings.xml clean package -DskipTests=true

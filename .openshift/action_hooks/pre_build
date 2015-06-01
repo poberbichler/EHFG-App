@@ -1,0 +1,14 @@
+#!/bin/bash
+cd $OPENSHIFT_DATA_DIR
+
+if [ ! -d "mvn" ]; then
+    wget "http://mirror.symnds.com/software/Apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz"
+    mkdir mvn
+    tar -xvf apache-maven-3.3.3-bin.tar.gz -C mvn --strip-components=1
+fi
+
+if [ ! -f "settings.xml" ]; then
+    echo "<settings>" > settings.xml
+    echo "  <localRepository>${OPENSHIFT_DATA_DIR}/m2/</localRepository>" >> settings.xml
+    echo "</settings>" >> settings.xml
+fi
