@@ -1,34 +1,34 @@
 package org.ehfg.app.twitter;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import java.time.LocalDateTime;
 
 /**
  * @author patrick
- * @since 13.03.2014
+ * @since 06.2015
  */
-@Entity
+@Document
 public class Tweet {
 	@Id
-	private Long id;
+	private String id;
 
 	private String message;
 	private LocalDateTime creationDate;
 	private String hashtag;
 	private String formattedMesssage;
 
-	@ManyToOne
+	@DBRef
 	private TwitterUser author;
 
 	public Tweet() {
 
 	}
 
-	public Tweet(Long id, String message, LocalDateTime creationDate, String hashtag, String formattedMesssage, TwitterUser author) {
+	public Tweet(String id, String message, LocalDateTime creationDate, String hashtag, String formattedMesssage, TwitterUser author) {
 		this.id = id;
 		this.message = message;
 		this.creationDate = creationDate;
@@ -37,11 +37,11 @@ public class Tweet {
 		this.author = author;
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

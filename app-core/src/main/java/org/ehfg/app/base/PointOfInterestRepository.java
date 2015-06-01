@@ -1,17 +1,14 @@
 package org.ehfg.app.base;
 
-import java.util.List;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
+import java.util.List;
 
 /**
  * @author patrick
- * @since 13.04.2014
+ * @since 06.2015
  */
-interface PointOfInterestRepository extends CrudRepository<PointOfInterest, Long> {
-	@Query("SELECT new org.ehfg.app.base.PointOfInterestDTO(p.id, p.name, p.address, p.description, "
-			+ "p.contact, p.website, p.coordinate.xValue, p.coordinate.yValue) "
-			+ "FROM PointOfInterest p")
-	List<PointOfInterestDTO> findAllPoints();
+interface PointOfInterestRepository extends MongoRepository<PointOfInterest, String> {
+	// empty
 }

@@ -11,7 +11,7 @@ import org.ehfg.app.rest.PointOfInterestRepresentation;
  * @since 13.04.2014
  */
 public final class PointOfInterestDTO implements PointOfInterestRepresentation {
-	private Long id;
+	private String id;
 
 	@NotNull
 	private String name;
@@ -31,7 +31,7 @@ public final class PointOfInterestDTO implements PointOfInterestRepresentation {
 		this.coordinate = new CoordinateDTO();
 	}
 
-	public PointOfInterestDTO(Long id, String name, String address, String description, String contact, String website,
+	public PointOfInterestDTO(String id, String name, String address, String description, String contact, String website,
 			CoordinateDTO coordinate) {
 		super();
 		this.id = id;
@@ -43,17 +43,17 @@ public final class PointOfInterestDTO implements PointOfInterestRepresentation {
 		this.coordinate = coordinate;
 	}
 
-	public PointOfInterestDTO(Long id, String name, String address, String description, String contact, String website, Double xCoordinate,
+	public PointOfInterestDTO(String id, String name, String address, String description, String contact, String website, Double xCoordinate,
 			Double yCoordinate) {
 		this(id, name, address, description, contact, website, new CoordinateDTO(xCoordinate, yCoordinate));
 	}
 
 	@Override
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

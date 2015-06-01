@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @XmlAccessorType(XmlAccessType.NONE)
 public interface TweetRepresentation {
 	@XmlElement(name = "id")
-	Long getId();
+	String getId();
 
 	@XmlElement(name = "fullName")
 	String getFullName();

@@ -5,8 +5,9 @@ export JAVA_HOME=/etc/alternatives/java_sdk_1.8.0_openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 
 nohup java -jar app-web/target/app-web-jar-with-dependencies.jar \
---db.url=jdbc:mysql://${OPENSHIFT_MYSQL_DB_HOST}:${OPENSHIFT_MYSQL_DB_PORT}/${OPENSHIFT_APP_NAME} \
---db.username=${OPENSHIFT_MYSQL_DB_USERNAME} \
---db.password=${OPENSHIFT_MYSQL_DB_PASSWORD} \
+--db.url=${OPENSHIFT_MONGODB_DB_HOST}:${OPENSHIFT_MONGODB_DB_PORT} \
+--db.name=${OPENSHIFT_APP_NAME} \
+--db.username=${OPENSHIFT_MONGODB_DB_USERNAME} \
+--db.password=${OPENSHIFT_MONGODB_DB_PASSWORD} \
 --server.port=${OPENSHIFT_DIY_PORT} \
---server.address=${OPENSHIFT_DIY_IP}
+--server.address=${OPENSHIFT_DIY_IP} &

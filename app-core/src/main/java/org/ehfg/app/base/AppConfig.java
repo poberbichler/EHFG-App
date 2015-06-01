@@ -1,28 +1,25 @@
 package org.ehfg.app.base;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * final class for the general configuration of the app
  * 
  * @author patrick
- * @since 14.03.2014
+ * @since 06.2015
  */
-@Entity
+@Document
 public class AppConfig {
-	public static final Long CONFIG_ID = 42L;
+	public static final String CONFIG_ID = "42";
 
 	@Id
-	private final Long id = CONFIG_ID;
+	private final String id = CONFIG_ID;
 
 	private String hashtag;
 	private Integer numberOfTweets;
 	
-	@Column(length = 1000)
 	private String backdoorScript;
 	
 	/**
@@ -38,7 +35,7 @@ public class AppConfig {
 		}
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 

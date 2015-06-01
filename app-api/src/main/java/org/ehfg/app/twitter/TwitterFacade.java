@@ -13,7 +13,6 @@ public interface TwitterFacade {
 	void addStream(String hashtag);
 	void removeStream(String hashtag);
 	
-	List<TweetDTO> findAllTweets();
 	String findHashtag();
 	
 	List<TweetDTO> findNewerTweetsForCongress(LocalDateTime lastTweet);

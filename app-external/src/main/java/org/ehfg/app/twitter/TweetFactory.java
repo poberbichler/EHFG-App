@@ -24,7 +24,7 @@ final class TweetFactory {
 		result.setAuthor(user);
 		result.setCreationDate(LocalDateTime.ofInstant(source.getCreatedAt().toInstant(), ZoneOffset.UTC));
 		result.setHashtag(hashtag);
-		result.setId(source.getId());
+		result.setId(Long.toString(source.getId()));
 		result.setMessage(source.getUnmodifiedText());
 		
 		final Map<String, UrlEntity> urlMap = createUrlMap(source.getEntities().getUrls());

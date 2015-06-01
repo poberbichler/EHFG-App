@@ -15,7 +15,6 @@ import java.util.stream.Collectors;
  * @since 06.04.2014
  */
 @Component
-@Transactional(readOnly = true)
 final class ProgramFacadeImpl implements ProgramFacade {
 	private final SpeakerRepository speakerRepository;
 	private final SessionRepository sessionRepository;
@@ -81,7 +80,6 @@ final class ProgramFacadeImpl implements ProgramFacade {
 	}
 
 	@Override
-	@Transactional(readOnly = false)
 	public void saveDays(List<ConferenceDayDTO> dayList) {
 		final List<ConferenceDay> source = ConferenceDayMapper.mapToEntity(dayList);
 		conferenceDayRepository.deleteAll();
@@ -89,7 +87,6 @@ final class ProgramFacadeImpl implements ProgramFacade {
 	}
 
 	@Override
-	@Transactional(readOnly = false)
 	public ConferenceDayDTO addDay() {
 		final ConferenceDay day = new ConferenceDay();
 		day.setDate(LocalDate.now());

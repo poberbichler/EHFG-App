@@ -1,11 +1,12 @@
 package org.ehfg.app.twitter;
 
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.repository.CrudRepository;
 
 /**
  * @author patrick
- * @since 13.03.2014
+ * @since 06.2015
  */
-interface TwitterUserRepository extends CrudRepository<TwitterUser, Long> {
-
+interface TwitterUserRepository extends MongoRepository<TwitterUser, String> {
+	// empty
 }

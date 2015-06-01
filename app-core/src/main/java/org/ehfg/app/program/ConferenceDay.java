@@ -3,22 +3,19 @@ package org.ehfg.app.program;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 /**
  * @author patrick
- * @since 04.04.2014
+ * @since 06.2015
  */
-@Entity
+@Document
 class ConferenceDay implements Comparable<ConferenceDay> {
 	@Id
-	@GeneratedValue
-	private Long id;
+	private String id;
 
 	@NotNull
 	private String description;
@@ -35,11 +32,11 @@ class ConferenceDay implements Comparable<ConferenceDay> {
 		this.date = date;
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

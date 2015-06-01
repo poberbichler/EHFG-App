@@ -4,13 +4,16 @@ import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.Validate;
 import org.ehfg.app.base.ConfigurationDTO;
 import org.ehfg.app.base.MasterDataFacade;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -49,11 +52,6 @@ final class TwitterFacadeImpl implements TwitterFacade {
 	}
 
 	@Override
-	public List<TweetDTO> findAllTweets() {
-		return tweetRepository.findTweets();
-	}
-
-	@Override
 	public String findHashtag() {
 		return masterDataFacade.getAppConfiguration().getHashtag();
 	}
@@ -62,14 +60,17 @@ final class TwitterFacadeImpl implements TwitterFacade {
 	public List<TweetDTO> findNewerTweetsForCongress(LocalDateTime lastTweet) {
 		final ConfigurationDTO config = masterDataFacade.getAppConfiguration();
 		if (config != null && config.getHashtag() != null) {
-			return tweetRepository.findNewerTweetsByHashtag(config.getHashtag(), lastTweet);
+			return tweetRepository.findNewerTweetsByHashtag(config.getHashtag(), lastTweet, new Sort(new Sort.Order(Sort.Direction.DESC, "creationDate")))
+					.stream()
+					.map(t -> new TweetDTO(t.getId(), t.getAuthor().getFullName(), t.getAuthor().getNickName(),
+							t.getFormattedMesssage(), t.getAuthor().getProfileImage(), t.getCreationDate()))
+					.collect(Collectors.toList());
 		}
 
 		return Collections.emptyList();
 	}
 
 	@Override
-	@Transactional(readOnly = false)
 	public TweetPageDTO findTweetPage(Integer pageId) {
 		final ConfigurationDTO config = masterDataFacade.getAppConfiguration();
 		return this.findTweetPageWithSize(pageId, config.getNumberOfTweets());
@@ -77,7 +78,6 @@ final class TwitterFacadeImpl implements TwitterFacade {
 	
 
 	@Override
-	@Transactional(readOnly = false)
 	public TweetPageDTO findTweetPageWithSize(Integer pageId, Integer pageSize) {
 		Validate.notNull(pageId, "pageId must not be null!");
 		Validate.notNull(pageSize, "pageSize must not be null!");

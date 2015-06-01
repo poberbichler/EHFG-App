@@ -11,7 +11,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @since 04.2014
  */
 public final class ConferenceDayDTO implements Comparable<ConferenceDayDTO> {
-	private Long id;
+	private String id;
 	private LocalDate day;
 	private String description;
 	private boolean deleted;
@@ -20,7 +20,7 @@ public final class ConferenceDayDTO implements Comparable<ConferenceDayDTO> {
 
 	}
 
-	public ConferenceDayDTO(Long id, LocalDate day, String description) {
+	public ConferenceDayDTO(String id, LocalDate day, String description) {
 		this.id = id;
 		this.day = day;
 		this.description = description;
@@ -43,11 +43,11 @@ public final class ConferenceDayDTO implements Comparable<ConferenceDayDTO> {
 		this.description = description;
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

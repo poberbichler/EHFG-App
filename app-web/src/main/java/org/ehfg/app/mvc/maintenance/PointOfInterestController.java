@@ -64,7 +64,7 @@ public class PointOfInterestController {
 	}
 	
 	@RequestMapping(value = "delete/{pointId}", method = RequestMethod.GET)
-	public String deletePointOfInterest(@PathVariable("pointId") Long pointId) {
+	public String deletePointOfInterest(@PathVariable("pointId") String pointId) {
 		masterDataFacade.removePoint(pointId);
 		return TO_BASE_PAGE;
 	}

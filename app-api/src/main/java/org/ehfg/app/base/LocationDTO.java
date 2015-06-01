@@ -13,7 +13,7 @@ import org.ehfg.app.rest.LocationRepresentation;
  * @since 02.03.2014
  */
 public final class LocationDTO implements LocationRepresentation {
-	private Long id;
+	private String id;
 	@NotNull
 	private String name;
 	
@@ -25,23 +25,23 @@ public final class LocationDTO implements LocationRepresentation {
 		coordinate = new CoordinateDTO();
 	}
 
-	public LocationDTO(Long id, String name, CoordinateDTO coordinate) {
+	public LocationDTO(String id, String name, CoordinateDTO coordinate) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.coordinate = coordinate;
 	}
 	
-	public LocationDTO(Long id, String name, Double xValue, Double yValue) {
+	public LocationDTO(String id, String name, Double xValue, Double yValue) {
 		this(id, name, new CoordinateDTO(xValue, yValue));
 	}
 
 	@Override
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

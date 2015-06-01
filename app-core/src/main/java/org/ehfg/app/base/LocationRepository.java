@@ -1,15 +1,14 @@
 package org.ehfg.app.base;
 
-import java.util.List;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
+import java.util.List;
 
 /**
  * @author patrick
- * @since 19.07.2014
+ * @since 06.2015
  */
-interface LocationRepository extends CrudRepository<Location, Long>{
-	@Query("SELECT new org.ehfg.app.base.LocationDTO(l.id, l.name, l.coordinate.xValue, l.coordinate.yValue) FROM Location l")
-	List<LocationDTO> findAllLocations();
+interface LocationRepository extends MongoRepository<Location, String> {
+	// empty
 }

@@ -27,10 +27,10 @@ class PersistentTwitterStreamListener implements StreamListener {
 	public void onTweet(Tweet sourceTweet) {
 		TwitterProfile user = sourceTweet.getUser();
 
-		TwitterUser author = twitterUserRepository.findOne(user.getId());
+		TwitterUser author = twitterUserRepository.findOne(Long.toString(user.getId()));
 		if (author == null) {
 			LOGGER.debug("adding user [{}]", user);
-			author = new TwitterUser(user.getId(), user.getName(), user.getScreenName(), user.getProfileImageUrl());
+			author = new TwitterUser(Long.toString(user.getId()), user.getName(), user.getScreenName(), user.getProfileImageUrl());
 		}
 
 		else {
@@ -41,7 +41,7 @@ class PersistentTwitterStreamListener implements StreamListener {
 
 		twitterUserRepository.save(author);
 
-		org.ehfg.app.twitter.Tweet tweet = tweetRepository.findOne(sourceTweet.getId());
+		org.ehfg.app.twitter.Tweet tweet = tweetRepository.findOne(Long.toString(sourceTweet.getId()));
 		if (tweet == null) {
 			LOGGER.debug("adding new tweet");
 			tweet = TweetFactory.create(sourceTweet, hashtag.getHashtagWithHash(), author);
@@ -53,7 +53,7 @@ class PersistentTwitterStreamListener implements StreamListener {
 
 	@Override
 	public void onDelete(StreamDeleteEvent deleteEvent) {
-		tweetRepository.delete(deleteEvent.getTweetId());
+		tweetRepository.delete(Long.toString(deleteEvent.getTweetId()));
 	}
 
 	@Override

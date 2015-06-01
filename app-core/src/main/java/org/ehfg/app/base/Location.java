@@ -1,51 +1,47 @@
 package org.ehfg.app.base;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * @author patrick
- * @since 19.07.2014
+ * @since 07.2014
  */
-@Entity
+@Document
 final class Location {
 	@Id
-	@GeneratedValue
-	private Long id;
+	private String id;
 
 	@NotNull
 	private String name;
 
 	@Valid
 	@NotNull
-	@Embedded
 	private Coordinate coordinate;
 	
 	public Location() {
 		
 	}
 
-	public Location(Long id, String name, Coordinate coordinate) {
+	public Location(String id, String name, Coordinate coordinate) {
 		this.id = id;
 		this.name = name;
 		this.coordinate = coordinate;
 	}
 	
-	public Location(Long id, String name, Double xValue, Double yValue) {
+	public Location(String id, String name, Double xValue, Double yValue) {
 		this(id, name, new Coordinate(xValue, yValue));
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

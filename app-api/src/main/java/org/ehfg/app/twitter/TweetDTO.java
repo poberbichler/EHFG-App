@@ -9,15 +9,15 @@ import java.time.LocalDateTime;
  * @author patrick
  * @since 20.03.2014
  */
-public final class TweetDTO implements TweetRepresentation {
-	private final Long id;
+public final class TweetDTO implements TweetRepresentation, Comparable<TweetDTO> {
+	private final String id;
 	private final String fullName;
 	private final String nickName;
 	private final String message;
 	private final String profileImage;
 	private final LocalDateTime timestamp;
 
-	public TweetDTO(Long id, String fullName, String nickName, String message, String profileImage, LocalDateTime timestamp) {
+	public TweetDTO(String id, String fullName, String nickName, String message, String profileImage, LocalDateTime timestamp) {
 		this.id = id;
 		this.fullName = fullName;
 		this.nickName = nickName;
@@ -27,7 +27,7 @@ public final class TweetDTO implements TweetRepresentation {
 	}
 
 	@Override
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
@@ -59,5 +59,10 @@ public final class TweetDTO implements TweetRepresentation {
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
+	}
+
+	@Override
+	public int compareTo(TweetDTO o) {
+		return this.getTimestamp().compareTo(o.getTimestamp());
 	}
 }

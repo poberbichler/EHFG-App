@@ -2,7 +2,6 @@ package org.ehfg.app.twitter;
 
 import java.util.Objects;
 
-import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -14,7 +13,6 @@ import javax.validation.constraints.NotNull;
  */
 public class Hashtag {
 	@NotNull
-	@Column(name = "hashtag")
 	private final String hashtag;
 
 

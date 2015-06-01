@@ -1,53 +1,38 @@
 package org.ehfg.app.twitter;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.annotation.Id;
 
 /**
  * @author patrick
- * @since 13.03.2014
+ * @since 06.2015
  */
-@Entity
+@Document
 public class TwitterUser {
 	@Id
-	private Long id;
+	private String id;
 
 	private String fullName;
 	private String nickName;
 	private String profileImage;
 
-	@OneToMany(mappedBy = "author")
-	private final List<Tweet> tweets = new ArrayList<>();
-
 	public TwitterUser() {
 		
 	}
 
-	public TwitterUser(Long id, String fullName, String nickName,
-			String profileImage) {
-		super();
+	public TwitterUser(String id, String fullName, String nickName, String profileImage) {
 		this.id = id;
 		this.fullName = fullName;
 		this.nickName = nickName;
 		this.profileImage = profileImage;
 	}
 
-	public void addTweet(Tweet tweet) {
-		tweets.add(tweet);
-	}
-
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -73,10 +58,6 @@ public class TwitterUser {
 
 	public void setProfileImage(String profileImage) {
 		this.profileImage = profileImage;
-	}
-
-	public List<Tweet> getTweets() {
-		return Collections.unmodifiableList(tweets);
 	}
 
 	@Override

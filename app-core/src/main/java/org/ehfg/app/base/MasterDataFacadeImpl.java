@@ -1,6 +1,7 @@
 package org.ehfg.app.base;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.ehfg.app.validation.Validate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
  * @since 14.03.2014
  */
 @Component
-@Transactional(readOnly = true)
 final class MasterDataFacadeImpl implements MasterDataFacade {
 	private final AppConfigRepository configRepository;
 	private final PointOfInterestRepository pointOfInterestRepository;
@@ -28,17 +28,16 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 
 	@Override
 	public ConfigurationDTO getAppConfiguration() {
-		ConfigurationDTO config = configRepository.find();
+		AppConfig config = configRepository.find();
 		if (config == null) {
-			config = new ConfigurationDTO("EHFG", 1, "");
+			return new ConfigurationDTO("EHFG", 1, "");
 		}
-		
-		return config;
+
+		return new ConfigurationDTO(config.getHashtag(), config.getNumberOfTweets(), config.getBackdoorScript());
 	}
 
 	@Override
 	@Validate
-	@Transactional(readOnly = false)
 	public ConfigurationDTO saveAppConfiguration(ConfigurationDTO source) {
 		final AppConfig target = new AppConfig();
 		
@@ -53,11 +52,14 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 
 	@Override
 	public List<PointOfInterestDTO> findAllPointsOfInterest() {
-		return pointOfInterestRepository.findAllPoints();
+		return pointOfInterestRepository.findAll().stream()
+				.map(point -> new PointOfInterestDTO(point.getId(), point.getName(), point.getAddress(),
+								point.getDescription(), point.getContact(), point.getWebsite(),
+								point.getCoordinate().getxValue(), point.getCoordinate().getyValue())
+				).collect(Collectors.toList());
 	}
 
 	@Override
-	@Transactional(readOnly = false)
 	public List<PointOfInterestDTO> savePointOfInterest(PointOfInterestDTO source) {
 		PointOfInterest target = fetchOrCreatePointOfInterest(source.getId());
 		mapFromDtoEntity(source, target);
@@ -73,7 +75,7 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 	 * @param id to be checked
 	 * @return a {@link PointOfInterest} (never null)
 	 */
-	private PointOfInterest fetchOrCreatePointOfInterest(Long id) {
+	private PointOfInterest fetchOrCreatePointOfInterest(String id) {
 		if (id == null) {
 			return new PointOfInterest();
 		}
@@ -98,20 +100,20 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 	}
 
 	@Override
-	@Transactional(readOnly = false)
-	public void removePoint(Long id) {
+	public void removePoint(String id) {
 		pointOfInterestRepository.delete(id);
 	}
 
 	@Override
 	public List<LocationDTO> findAllLocation() {
-		return locationRepository.findAllLocations();
+		return locationRepository.findAll().stream()
+				.map(l -> new LocationDTO(l.getId(), l.getName(), l.getCoordinate().getxValue(), l.getCoordinate().getyValue()))
+				.collect(Collectors.toList());
 	}
 
 	@Override
 	@Validate
-	@Transactional(readOnly = false)
-	public Long saveLocation(LocationDTO source) {
+	public String saveLocation(LocationDTO source) {
 		Location target = new Location(source.getId(), source.getName(), 
 				source.getCoordinate().getxValue(), source.getCoordinate().getyValue());
 		
@@ -120,8 +122,7 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 	}
 
 	@Override
-	@Transactional(readOnly = false)
-	public void deleteLocation(Long locationId) {
+	public void deleteLocation(String locationId) {
 		locationRepository.delete(locationId);
 	}
 }

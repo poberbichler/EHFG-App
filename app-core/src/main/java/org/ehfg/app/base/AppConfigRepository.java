@@ -1,14 +1,15 @@
 package org.ehfg.app.base;
 
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.mongodb.repository.Query;
+import org.springframework.data.repository.Repository;
 
 /**
  * @author patrick
- * @since 14.03.2014
+ * @since 06.2015
  */
-interface AppConfigRepository extends CrudRepository<AppConfig, Long> {
-	@Query("SELECT new org.ehfg.app.base.ConfigurationDTO(c.hashtag, c.numberOfTweets, c.backdoorScript) "
-			+ "FROM AppConfig c WHERE c.id = org.ehfg.app.base.AppConfig.CONFIG_ID")
-	ConfigurationDTO find();
+interface AppConfigRepository extends Repository<AppConfig, String> {
+	@Query("{id: " + AppConfig.CONFIG_ID + "}")
+	AppConfig find();
+
+	AppConfig save(AppConfig config);
 }

@@ -1,23 +1,20 @@
 package org.ehfg.app.base;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * @author patrick
- * @since 13.04.2014
+ * @since 06.2015
  */
-@Entity
+@Document
 final class PointOfInterest {
 	@Id
-	@GeneratedValue
-	private Long id;
+	private String id;
 
 	@NotNull
 	private String name;
@@ -32,14 +29,13 @@ final class PointOfInterest {
 
 	@Valid
 	@NotNull
-	@Embedded
 	private Coordinate coordinate;
 
 	public PointOfInterest() {
 
 	}
 
-	public PointOfInterest(Long id, String name, String address, String description, String contact, String website, Coordinate coordinate) {
+	public PointOfInterest(String id, String name, String address, String description, String contact, String website, Coordinate coordinate) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -50,11 +46,11 @@ final class PointOfInterest {
 		this.coordinate = coordinate;
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

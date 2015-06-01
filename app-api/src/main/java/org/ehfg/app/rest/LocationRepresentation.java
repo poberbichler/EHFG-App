@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlElement;
 @XmlAccessorType(XmlAccessType.NONE)
 public interface LocationRepresentation {
 	@XmlElement(name = "id")
-	Long getId();
+	String getId();
 
 	@XmlElement(name = "name")
 	String getName();

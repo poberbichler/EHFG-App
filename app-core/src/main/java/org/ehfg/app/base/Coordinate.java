@@ -1,6 +1,5 @@
 package org.ehfg.app.base;
 
-import javax.persistence.Embeddable;
 import javax.validation.constraints.NotNull;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -9,7 +8,6 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @author patrick
  * @since 13.04.2014
  */
-@Embeddable
 class Coordinate {
 	@NotNull
 	private Double xValue;
