@@ -1,13 +1,12 @@
 package org.ehfg.app.base;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.apache.commons.lang3.StringUtils;
 import org.ehfg.app.validation.Validate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author patrick
@@ -29,11 +28,7 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 
 	@Override
 	public ConfigurationDTO getAppConfiguration() {
-		AppConfig config = configRepository.find();
-		if (config == null) {
-			return new ConfigurationDTO("EHFG", 1, "");
-		}
-
+		final AppConfig config = configRepository.find().orElse(AppConfig.withDefaultValues());
 		return new ConfigurationDTO(config.getHashtag(), config.getNumberOfTweets(), config.getBackdoorScript());
 	}
 
@@ -54,10 +49,17 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 	@Override
 	public List<PointOfInterestDTO> findAllPointsOfInterest() {
 		return pointOfInterestRepository.findAll().stream()
-				.map(point -> new PointOfInterestDTO(point.getId(), point.getName(), point.getAddress(),
-								point.getDescription(), point.getContact(), point.getWebsite(),
-								point.getCoordinate().getxValue(), point.getCoordinate().getyValue())
-				).collect(Collectors.toList());
+				.map(MasterDataFacadeImpl::mapToDto)
+				.collect(Collectors.toList());
+	}
+
+	private static PointOfInterestDTO mapToDto(PointOfInterest input) {
+		if (input == null) {
+			return null;
+		}
+
+		return new PointOfInterestDTO(input.getId(), input.getName(), input.getAddress(), input.getDescription(),
+				input.getContact(), input.getWebsite(), input.getCoordinate().getxValue(), input.getCoordinate().getyValue());
 	}
 
 	@Override
@@ -108,8 +110,16 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 	@Override
 	public List<LocationDTO> findAllLocation() {
 		return locationRepository.findAll().stream()
-				.map(l -> new LocationDTO(l.getId(), l.getName(), l.getCoordinate().getxValue(), l.getCoordinate().getyValue()))
+				.map(MasterDataFacadeImpl::mapToDto)
 				.collect(Collectors.toList());
+	}
+
+	private static LocationDTO mapToDto(Location input) {
+		if (input == null) {
+			return null;
+		}
+
+		return new LocationDTO(input.getId(), input.getName(), input.getCoordinate().getxValue(), input.getCoordinate().getyValue());
 	}
 
 	@Override

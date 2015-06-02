@@ -7,9 +7,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.data.repository.query.QueryLookupStrategy.Key;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -41,12 +40,10 @@ public class PersistenceConfig extends AbstractMongoConfiguration {
 	@Override
 	public Mongo mongo() throws Exception {
 		final List<MongoCredential> credentials;
-
 		if (StringUtils.isEmpty(username) && StringUtils.isEmpty(password)) {
 			credentials = Collections.emptyList();
 		} else {
-			credentials = new ArrayList<>(1);
-			credentials.add(MongoCredential.createCredential(username, databaseName, password.toCharArray()));
+			credentials = Arrays.asList(MongoCredential.createCredential(username, databaseName, password.toCharArray()));
 		}
 
 		final MongoClient client = new MongoClient(new ServerAddress(url), credentials);

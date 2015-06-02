@@ -27,28 +27,20 @@ class PersistentTwitterStreamListener implements StreamListener {
 	public void onTweet(Tweet sourceTweet) {
 		TwitterProfile user = sourceTweet.getUser();
 
-		TwitterUser author = twitterUserRepository.findOne(Long.toString(user.getId()));
-		if (author == null) {
+		final TwitterUser author = twitterUserRepository.findOne(Long.toString(user.getId())).orElseGet(() -> {
 			LOGGER.debug("adding user [{}]", user);
-			author = new TwitterUser(Long.toString(user.getId()), user.getName(), user.getScreenName(), user.getProfileImageUrl());
-		}
 
-		else {
-			author.setFullName(user.getName());
-			author.setNickName(user.getScreenName());
-			author.setProfileImage(user.getProfileImageUrl());
-		}
+			final TwitterUser result = new TwitterUser();
+			result.setId(Long.toString(user.getId()));
+			return result;
+		});
+
+		author.setFullName(user.getName());
+		author.setNickName(user.getScreenName());
+		author.setProfileImage(user.getProfileImageUrl());
 
 		twitterUserRepository.save(author);
-
-		org.ehfg.app.twitter.Tweet tweet = tweetRepository.findOne(Long.toString(sourceTweet.getId()));
-		if (tweet == null) {
-			LOGGER.debug("adding new tweet");
-			tweet = TweetFactory.create(sourceTweet, hashtag.getHashtagWithHash(), author);
-		}
-
-		tweetRepository.save(tweet);
-
+		tweetRepository.save(TweetFactory.create(sourceTweet, hashtag.getHashtagWithHash(), author));
 	}
 
 	@Override

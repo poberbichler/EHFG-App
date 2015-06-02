@@ -21,15 +21,26 @@ public class AppConfig {
 	private Integer numberOfTweets;
 	
 	private String backdoorScript;
-	
+
 	/**
-	 * sets the given hashtag, and adds a {@code #} sign at the beginning, whether there is one or not 
+	 * @return a new instance of Appconfig, including some default values
+	 */
+	static AppConfig withDefaultValues() {
+		final AppConfig result = new AppConfig();
+		result.setHashtag("#EHFG2015");
+		result.setBackdoorScript("console.log('hello world');");
+		result.setNumberOfTweets(10);
+		return result;
+	}
+
+	/**
+	 * sets the given hashtag, and adds a {@code #} sign at the beginning, whether there is one or not
 	 */
 	public void setAndFixHashtag(String hashtag) {
 		if (hashtag.startsWith("#")) {
 			this.hashtag = hashtag;
 		}
-		
+
 		else {
 			this.hashtag = "#".concat(hashtag);
 		}
