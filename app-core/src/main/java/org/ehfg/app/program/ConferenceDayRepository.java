@@ -1,7 +1,6 @@
 package org.ehfg.app.program;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.repository.CrudRepository;
 
 /**
  * @author patrick

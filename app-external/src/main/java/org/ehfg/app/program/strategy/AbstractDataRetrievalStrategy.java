@@ -1,17 +1,15 @@
 package org.ehfg.app.program.strategy;
 
-import java.net.MalformedURLException;
-
-import javax.annotation.PostConstruct;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Unmarshaller;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.PostConstruct;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Unmarshaller;
 
 /**
  * Abstract strategy for retrieving data from the ehfg server <br>
@@ -73,9 +71,6 @@ public abstract class AbstractDataRetrievalStrategy<T> {
 	 * <code>http://www.ehfg.org/feed/events/data.rss</code>
 	 * <p>
 	 * leading or ending slashed will automatically be removed/added, so the result will always be a valid url
-	 * 
-	 * @throws MalformedURLException in case the url can't be built
-	 *             in case of an error
 	 */
 	private String buildUrl() {
 		if (baseUrl == null) {

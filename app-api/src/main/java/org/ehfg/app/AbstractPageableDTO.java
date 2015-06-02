@@ -18,7 +18,7 @@ public abstract class AbstractPageableDTO<T> {
 	 * @param currentPage
 	 * @param maxPages
 	 */
-	public AbstractPageableDTO(Collection<T> data, int currentPage, int maxPages) {
+	protected AbstractPageableDTO(Collection<T> data, int currentPage, int maxPages) {
 		this.data = data;
 		this.currentPage = currentPage;
 		this.maxPages = maxPages - 1;

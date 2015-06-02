@@ -19,7 +19,7 @@ import java.util.Random;
  */
 @MockService
 abstract class AbstractPopulateStrategy implements DatabasePopulateStrategy, ApplicationContextAware {
-	protected static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+	static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 	
 	@Autowired
 	protected MasterDataFacade masterDataFacade;
@@ -30,12 +30,12 @@ abstract class AbstractPopulateStrategy implements DatabasePopulateStrategy, App
 	@Autowired
 	protected SessionRepository sessionRepository;
 	
-	protected ApplicationContext applicationContext;
+	ApplicationContext applicationContext;
 	
 	/**
 	 * @return a random {@link CoordinateDTO}. latitude and longitude lie somewhere between the centre of Bad Hofgastein
 	 */
-	protected final CoordinateDTO generateRandomCoordinate() {
+	final CoordinateDTO generateRandomCoordinate() {
 		final Random random = new Random();
 		
 		final double xBaseValue 	= 47.170323d;

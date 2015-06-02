@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class TweetReportController {
 	private static final int PAGE_SIZE = 100;
 	
-	private TwitterFacade twitterFacade;
+	private final TwitterFacade twitterFacade;
 
 	@Autowired
 	public TweetReportController(TwitterFacade twitterFacade) {

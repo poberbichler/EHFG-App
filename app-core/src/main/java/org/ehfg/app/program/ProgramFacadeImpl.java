@@ -3,7 +3,6 @@ package org.ehfg.app.program;
 import org.ehfg.app.rest.ConferenceDayRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

@@ -1,12 +1,5 @@
 package org.ehfg.app.mvc.maintenance;
 
-import java.util.Collection;
-import java.util.List;
-
-import javax.validation.Valid;
-
-import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.collections4.Predicate;
 import org.ehfg.app.base.MasterDataFacade;
 import org.ehfg.app.base.PointOfInterestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.validation.Valid;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * @author patrick
@@ -52,7 +49,7 @@ public class PointOfInterestController {
 	}
 	
 	@RequestMapping(value = "edit/{id}", method = RequestMethod.GET)
-	public ModelAndView editPointOfInterest(@PathVariable("id") final Long pointId) {
+	public ModelAndView editPointOfInterest(@PathVariable("id") final String pointId) {
 		final List<PointOfInterestDTO> allPoints = masterDataFacade.findAllPointsOfInterest();
 		
 		ModelAndView view = new ModelAndView("pointOfInterest");
@@ -69,12 +66,7 @@ public class PointOfInterestController {
 		return TO_BASE_PAGE;
 	}
 	
-	private PointOfInterestDTO findPointInList(final Collection<PointOfInterestDTO> points, final Long pointId) {
-		return CollectionUtils.find(points, new Predicate<PointOfInterestDTO>() {
-			@Override
-			public boolean evaluate(PointOfInterestDTO point) {
-				return point.getId().equals(pointId);
-			}
-		});
+	private PointOfInterestDTO findPointInList(final Collection<PointOfInterestDTO> points, final String pointId) {
+		return points.stream().filter(p -> p.getId().equals(pointId)).findFirst().get();
 	}
 }
