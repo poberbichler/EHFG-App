@@ -49,11 +49,11 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 	@Override
 	public List<PointOfInterestDTO> findAllPointsOfInterest() {
 		return pointOfInterestRepository.findAll().stream()
-				.map(MasterDataFacadeImpl::mapToDto)
+				.map(this::mapToDto)
 				.collect(Collectors.toList());
 	}
 
-	private static PointOfInterestDTO mapToDto(PointOfInterest input) {
+	private PointOfInterestDTO mapToDto(PointOfInterest input) {
 		if (input == null) {
 			return null;
 		}
@@ -110,11 +110,11 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 	@Override
 	public List<LocationDTO> findAllLocation() {
 		return locationRepository.findAll().stream()
-				.map(MasterDataFacadeImpl::mapToDto)
+				.map(this::mapToDto)
 				.collect(Collectors.toList());
 	}
 
-	private static LocationDTO mapToDto(Location input) {
+	private LocationDTO mapToDto(Location input) {
 		if (input == null) {
 			return null;
 		}
