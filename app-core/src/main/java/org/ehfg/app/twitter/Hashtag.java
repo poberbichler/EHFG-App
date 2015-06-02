@@ -1,8 +1,7 @@
 package org.ehfg.app.twitter;
 
-import java.util.Objects;
-
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 /**
  * Immutable domainclass for a single hashtag. The static constructor ensures that the internal hashtag will always
@@ -15,7 +14,6 @@ public class Hashtag {
 	@NotNull
 	private final String hashtag;
 
-
 	/**
 	 * @return a new instance of Hashtag with the given hashtag
 	 */
@@ -25,13 +23,6 @@ public class Hashtag {
 		}
 
 		return new Hashtag("#".concat(hashtag));
-	}
-
-	/**
-	 * needed by hibernate
-	 */
-	private Hashtag() {
-		this.hashtag = null;
 	}
 
 	private Hashtag(String hashtag) {
@@ -44,6 +35,10 @@ public class Hashtag {
 
 	public String getHashtagWithHash() {
 		return hashtag;
+	}
+
+	public String getHashtagForDb() {
+		return getHashtagWithHash().toLowerCase();
 	}
 
 	@Override

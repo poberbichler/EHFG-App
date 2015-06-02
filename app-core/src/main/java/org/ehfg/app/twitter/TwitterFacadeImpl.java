@@ -56,7 +56,7 @@ final class TwitterFacadeImpl implements TwitterFacade {
 	public Collection<TweetDTO> findNewerTweetsForCongress(LocalDateTime lastTweet) {
 		final ConfigurationDTO config = masterDataFacade.getAppConfiguration();
 		if (config != null && config.getHashtag() != null) {
-			return TweetMapper.map(tweetRepository.findNewerTweetsByHashtag(config.getHashtag(), lastTweet, byCreationDate()));
+			return TweetMapper.map(tweetRepository.findNewerTweetsByHashtag(config.getHashtag().toLowerCase(), lastTweet, byCreationDate()));
 		}
 
 		return Collections.emptyList();
@@ -80,7 +80,7 @@ final class TwitterFacadeImpl implements TwitterFacade {
 
 		final String currentHashtag = this.findHashtag();
 		final Page<Tweet> tweets = tweetRepository.findByHashtagOrderByCreationDateDesc(
-				currentHashtag, new PageRequest(pageId, pageSize));
+				currentHashtag.toLowerCase(), new PageRequest(pageId, pageSize));
 
 		return new TweetPageDTO(TweetMapper.map(tweets.getContent()), pageId, tweets.getTotalPages(), currentHashtag);
 	}

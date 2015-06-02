@@ -40,7 +40,7 @@ class PersistentTwitterStreamListener implements StreamListener {
 		author.setProfileImage(user.getProfileImageUrl());
 
 		twitterUserRepository.save(author);
-		tweetRepository.save(TweetFactory.create(sourceTweet, hashtag.getHashtagWithHash(), author));
+		tweetRepository.save(TweetFactory.create(sourceTweet, hashtag.getHashtagForDb(), author));
 	}
 
 	@Override
