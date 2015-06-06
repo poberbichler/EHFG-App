@@ -2,10 +2,7 @@ package org.ehfg.app.config;
 
 import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
 import nz.net.ultraq.thymeleaf.LayoutDialect;
-import org.ehfg.app.converter.LocalDateTimeToUTCTimestampSerializer;
-import org.ehfg.app.converter.LocalDateToStringConverter;
-import org.ehfg.app.converter.LocalDateToUTCTimestampSerializer;
-import org.ehfg.app.converter.StringToLocalDateConverter;
+import org.ehfg.app.converter.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.embedded.EmbeddedWebApplicationContext;
 import org.springframework.boot.context.embedded.ServletRegistrationBean;
@@ -98,6 +95,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	public void addFormatters(FormatterRegistry registry) {
 		registry.addConverter(new StringToLocalDateConverter());
 		registry.addConverter(new LocalDateToStringConverter());
+		registry.addConverter(new LongToLocalDateTimeConverter());
 	}
 
 	@Override

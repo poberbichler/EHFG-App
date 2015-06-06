@@ -1,10 +1,5 @@
 package org.ehfg.app.rest;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.util.Collection;
-
 import org.ehfg.app.twitter.TweetPageDTO;
 import org.ehfg.app.twitter.TwitterFacade;
 import org.ehfg.app.twitter.TwitterStreamStatus;
@@ -14,6 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalDateTime;
+import java.util.Collection;
 
 /**
  * @author patrick
@@ -35,8 +33,8 @@ public final class TwitterRestEndpoint {
 	}
 
 	@RequestMapping(value = "update/{lastTweet}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public Collection<? extends TweetRepresentation> updateTweets(@PathVariable("lastTweet") Long timestamp) {
-		return twitterFacade.findNewerTweetsForCongress(LocalDateTime.ofInstant(Instant.ofEpochMilli(timestamp), ZoneId.systemDefault()));
+	public Collection<? extends TweetRepresentation> updateTweets(@PathVariable("lastTweet") LocalDateTime timestamp) {
+		return twitterFacade.findNewerTweetsForCongress(timestamp);
 	}
 
 	@RequestMapping(value = "page/{page}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
