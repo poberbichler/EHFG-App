@@ -14,7 +14,7 @@ import java.util.List;
  * @since 06.2015
  */
 interface TweetRepository extends MongoRepository<Tweet, String> {
-	@Query("{hashtag: ?0, creationDate: {$gte: ?1}}")
+	@Query("{hashtag: ?0, creationDate: {$gt: ?1}}")
 	List<Tweet> findNewerTweetsByHashtag(String hashtag, LocalDateTime lastTweet, Sort sort);
 
 	Page<Tweet> findByHashtagOrderByCreationDateDesc(String hashtag, Pageable pageable);
