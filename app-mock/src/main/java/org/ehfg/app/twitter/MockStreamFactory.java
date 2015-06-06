@@ -1,13 +1,12 @@
 package org.ehfg.app.twitter;
 
+import org.ehfg.app.MockService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.Profile;
 import org.springframework.social.twitter.api.StreamDeleteEvent;
 import org.springframework.social.twitter.api.StreamListener;
 import org.springframework.social.twitter.api.StreamWarningEvent;
 import org.springframework.social.twitter.api.Tweet;
-import org.springframework.stereotype.Component;
 
 /**
  * Factory used for creating {@link StreamListener} mock instances, where ever method just logs the ouput
@@ -15,8 +14,7 @@ import org.springframework.stereotype.Component;
  * @author patrick
  * @since 11.2014
  */
-@Component
-@Profile("mock")
+@MockService
 final class MockStreamFactory implements StreamListenerFactory {
 	@Override
 	public StreamListener getObject(Hashtag hashtag) {

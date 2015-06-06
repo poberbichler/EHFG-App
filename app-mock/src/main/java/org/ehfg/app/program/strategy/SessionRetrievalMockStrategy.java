@@ -1,20 +1,18 @@
 package org.ehfg.app.program.strategy;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Unmarshaller;
-
+import org.ehfg.app.MockService;
 import org.ehfg.app.program.data.events.RssEvent;
-import org.springframework.context.annotation.Profile;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
-import org.springframework.stereotype.Service;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Unmarshaller;
 
 /**
  * @author patrick
  * @since 01.2015
  */
-@Service
-@Profile({ "mock" })
+@MockService
 public class SessionRetrievalMockStrategy extends AbstractDataRetrievalStrategy<RssEvent> {
 	private RssEvent rssEvent;
 	
