@@ -81,5 +81,7 @@ div.tabs-background-positive.tabs-light div.tabs a.tab-item.active {
 }
 
 img.logo {
-
+    width: 40px;
+    height: 40px;
+    margin-top: -3px;
 }
