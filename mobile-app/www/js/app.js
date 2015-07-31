@@ -94,6 +94,7 @@
 
         $urlRouterProvider.otherwise('/twitter');
         $ionicConfigProvider.views.transition('android');
+        $ionicConfigProvider.navBar.alignTitle('center');
 	}
 	
 	function InitBackdoor($http, BASE_URL) {
