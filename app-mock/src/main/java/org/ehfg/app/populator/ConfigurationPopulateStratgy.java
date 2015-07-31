@@ -1,13 +1,13 @@
 package org.ehfg.app.populator;
 
-import org.ehfg.app.MockService;
+import org.ehfg.app.InMemoryService;
 import org.ehfg.app.base.ConfigurationDTO;
 
 /**
  * @author patrick
  * @since 12.2014
  */
-@MockService
+@InMemoryService
 class ConfigurationPopulateStratgy extends AbstractPopulateStrategy {
 	@Override
 	public void execute() throws Exception {

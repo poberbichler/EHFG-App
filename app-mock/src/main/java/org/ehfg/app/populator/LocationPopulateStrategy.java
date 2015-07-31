@@ -3,7 +3,7 @@ package org.ehfg.app.populator;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.ehfg.app.MockService;
+import org.ehfg.app.InMemoryService;
 import org.ehfg.app.base.LocationDTO;
 import org.ehfg.app.program.SessionDTO;
 
@@ -11,7 +11,7 @@ import org.ehfg.app.program.SessionDTO;
  * @author patrick
  * @since 12.2014
  */
-@MockService
+@InMemoryService
 class LocationPopulateStrategy extends AbstractPopulateStrategy {
 	@Override
 	public void execute() throws Exception {

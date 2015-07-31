@@ -1,6 +1,6 @@
 package org.ehfg.app.populator;
 
-import org.ehfg.app.MockService;
+import org.ehfg.app.InMemoryService;
 import org.ehfg.app.base.PointOfInterestDTO;
 
 import java.util.stream.IntStream;
@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
  * @author patrick
  * @since 12.2014
  */
-@MockService
+@InMemoryService
 class PointOfInterestPopulateStrategy extends AbstractPopulateStrategy {
 	private static final int NUMBER_OF_POINTS = 6;
 

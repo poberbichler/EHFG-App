@@ -4,7 +4,7 @@ import java.util.Collection;
 
 import javax.annotation.PostConstruct;
 
-import org.ehfg.app.MockService;
+import org.ehfg.app.InMemoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author patrick
  * @since 11.2014
  */
-@MockService
+@InMemoryService
 public class DatabasePopulator {
 	final Collection<DatabasePopulateStrategy> strategies;
 

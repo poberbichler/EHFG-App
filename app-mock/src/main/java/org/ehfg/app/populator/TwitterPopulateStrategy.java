@@ -8,13 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
-import org.ehfg.app.MockService;
+import org.ehfg.app.InMemoryService;
 
 /**
  * @author patrick
  * @since 12.2014
  */
-@MockService
+@InMemoryService
 class TwitterPopulateStrategy extends AbstractPopulateStrategy {
 	private static final int MAX_TWEETS = 5;
 	

@@ -1,6 +1,6 @@
 package org.ehfg.app.populator;
 
-import org.ehfg.app.MockService;
+import org.ehfg.app.InMemoryService;
 import org.ehfg.app.program.ConferenceDayDTO;
 
 import java.time.LocalDate;
@@ -10,7 +10,7 @@ import java.util.Arrays;
  * @author patrick
  * @since 12.2014
  */
-@MockService
+@InMemoryService
 class ConferenceDayPopulateStrategy extends AbstractPopulateStrategy {
 	@Override
 	public void execute() throws Exception {

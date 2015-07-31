@@ -1,6 +1,6 @@
 package org.ehfg.app.populator;
 
-import org.ehfg.app.MockService;
+import org.ehfg.app.InMemoryService;
 import org.ehfg.app.base.CoordinateDTO;
 import org.ehfg.app.base.MasterDataFacade;
 import org.ehfg.app.program.ProgramFacade;
@@ -17,7 +17,7 @@ import java.util.Random;
  * @author patrick
  * @since 12.2014
  */
-@MockService
+@InMemoryService
 abstract class AbstractPopulateStrategy implements DatabasePopulateStrategy, ApplicationContextAware {
 	static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 	
