@@ -7,7 +7,7 @@
 		twitterService.init();
 	}
 	
-	function TwitterService($rootScope, twitterResource) {
+	function TwitterService($rootScope, $ionicLoading, $ionicPopup, twitterResource) {
 		var tweetData = {};
 		
 		function mapData(data) {
@@ -31,10 +31,20 @@
 		}
 		
 		function loadMoreTweets() {
+            $ionicLoading.show({
+                template: '<ion-spinner></ion-spinner><br />Loading...'
+            });
 			twitterResource.findMore({page: tweetData.currentPage+1}, function(result) {
 				mapData(result);
 				tweetData.tweets = tweetData.tweets.concat(result.data)
-			});
+			}, function() {
+                $ionicPopup.alert({
+                    title: 'Something went wrong...',
+                    template: 'Connection to the server could not be established'
+                });
+            }).$promise.finally(function() {
+               $ionicLoading.hide();
+            });
 		}
 		
 		function updateFeed() {
@@ -42,7 +52,12 @@
 				var latestTweet = tweetData.tweets[0];
 				twitterResource.findNewer({'lastTweet': latestTweet.timestamp}, function(result) {
 					tweetData.tweets = result.concat(tweetData.tweets);
-				}).$promise.finally(function() {
+				}, function() {
+                    $ionicPopup.alert({
+                        title: 'Something went wrong...',
+                        template: 'Connection to the server could not be established'
+                    });
+                }).$promise.finally(function() {
                     $rootScope.$broadcast('scroll.refreshComplete');
                 });
 			}
@@ -97,6 +112,6 @@
 	angular.module('ehfgApp.twitter', [])
 		.controller('TwitterCtrl', ['TwitterService', TwitterCtrl])
 		.factory('TwitterResource', ['$resource', 'BASE_URL', TwitterResource])
-		.factory('TwitterService', ['$rootScope', 'TwitterResource', TwitterService])
+		.factory('TwitterService', ['$rootScope', '$ionicLoading', '$ionicPopup', 'TwitterResource', TwitterService])
 		.filter('twitterDateFilter', ['$filter', 'UtcTimeService', TwitterDateFilter])
 })();
