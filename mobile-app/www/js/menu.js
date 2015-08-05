@@ -19,9 +19,9 @@
 		this.showAboutDialog = function() {
 			$ionicPopup.show({
 				template: 
-					'<p>The European Health Forum Gastein is an annual international conference where stakeholders within'
-		            + 'the field of healthcare and public health meet to discuss a broad spectrum of major topics.</p>'
-		            + '<p>The theme of this year is "Electing Health-The Europe We Want."</p>'
+					'<p>The European Health Forum Gastein is an annual international conference where stakeholders within '
+		            + 'the field of healthcare and public health meet to discuss a broad spectrum of important topics.</p>'
+		            + '<p>The theme of this year is "Securing health in Europe. Balancing priorities, sharing responsibilities"</p>'
 		            + '<p>Please direct any questions or concerns to <a href="mailto:info@ehfg.org">info@ehfg.org</a></p>',
 				title: 'About',
 				buttons: [{text: 'Exit'}]
