@@ -1,51 +1,39 @@
 (function() {
-	var SessionCtrl = function(sessionService) {
-		var vm = this;
-
-        sessionService.findAll().then(function(conferenceDays) {
-			vm.conferenceDays = conferenceDays;
-		});
-
-		sessionService.findCurrentSessions().then(function(sessions) {
-			vm.currentSessions = sessions;
-		});
+	function SessionCtrl(sessionService) {
+        this.conferenceDays = sessionService.findAll();
+        this.currentSessions = sessionService.findCurrentSessions();
 	}
 	
-	var SessionDetailCtrl = function($scope, $stateParams, sessionService, speakerService) {
+	function SessionDetailCtrl($scope, $stateParams, sessionService, favouriteSessionService, speakerService) {
 		$scope.addToFavourites = sessionService.addToFavourites;
 		$scope.removeFromFavourites = sessionService.removeFromFavourites;
 		
-		sessionService.findById($stateParams.sessionId).then(function(session) {
-	        $scope.session = session;
-	        $scope.session.isInFavourites = sessionService.isFavouriteSession(session.id);
-	
-	        speakerService.findByIds(session.speakers).then(function(speakers) {
-	        	$scope.speakers = speakers;
-	        });
-	    });
-		
+		$scope.session = sessionService.findById($stateParams.sessionId);
+        $scope.session.isInFavourites = favouriteSessionService.isFavouriteSession($stateParams.sessionId);
+        $scope.speakers = speakerService.findByIds($scope.session.speakers);
+
 		$scope.addToFavourites = function() {
 			$scope.session.isInFavourites = true;
-			sessionService.addToFavourites($scope.session.id);
+            favouriteSessionService.addToFavourites($scope.session.id);
 		}
 		
 		$scope.removeFromFavourites = function() {
 			$scope.session.isInFavourites = false;
-			sessionService.removeFromFavourites($scope.session.id);
+            favouriteSessionService.removeFromFavourites($scope.session.id);
 		}
 	}
 	
-	var FavouriteSessionFilter = function(sessionService) {
+	function FavouriteSessionFilter(favouriteSessionService) {
 		return function(item) {
-			if (sessionService.getFavouriteSessionFlag() === false) {
+			if (favouriteSessionService.isFavouriteSessionsSelected() === false) {
 				return true;
 			}
 
-			return sessionService.findFavouriteSessions().indexOf(item.id) !== -1;
+            return favouriteSessionService.isFavouriteSession(item.id);
 		}
 	}
 	
-	var SessionResource = function($resource, BASE_URL) {
+	function SessionResource($resource, BASE_URL) {
 		return $resource(BASE_URL + '/sessions', {}, {
 			findAll: {method: 'GET', isArray: false}
 		});
@@ -53,7 +41,7 @@
 	
 	angular.module('ehfgApp.sessions', [])
 		.controller('SessionCtrl', ['SessionService', SessionCtrl])
-		.controller('SessionDetailCtrl', ['$scope', '$stateParams','SessionService', 'SpeakerService', SessionDetailCtrl])
-		.filter('favouriteSessions', ['SessionService', FavouriteSessionFilter])
+		.controller('SessionDetailCtrl', ['$scope', '$stateParams','SessionService', 'FavouriteSessionService', 'SpeakerService', SessionDetailCtrl])
+		.filter('favouriteSessions', ['FavouriteSessionService', FavouriteSessionFilter])
 		.factory('SessionResource', ['$resource', 'BASE_URL', SessionResource])
 })();

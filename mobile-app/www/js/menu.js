@@ -1,7 +1,7 @@
 (function() {
-	function MenuCtrl($ionicSideMenuDelegate, $ionicPopup, $state, $window, cacheFactory, configurationService) {
-		this.favouriteSessions = configurationService.isFavouriteSessionsSelected();
-		this.favouriteSessionToggle = configurationService.toggleFavouriteSessions;
+	function MenuCtrl($ionicSideMenuDelegate, $ionicPopup, $state, $window, cacheFactory, favouriteSessionService) {
+		this.favouriteSessions = favouriteSessionService.isFavouriteSessionsSelected();
+		this.favouriteSessionToggle = favouriteSessionService.toggleFavouriteSessions;
 
         this.openSideMenu = function() {
             $ionicSideMenuDelegate.toggleRight();
@@ -26,39 +26,6 @@
 		}
 	}
 
-    function ConfigurationService(cacheFactory) {
-        var configCache = cacheFactory.get('config');
-        if (!configCache) {
-            configCache = new cacheFactory('config', {
-                deleteOnExpire: 'none'
-            });
-        }
-
-        if (configCache.keys().length === 0) {
-            configCache.put('favourite.sessions', []);
-            configCache.put('show.favourite.sessions', false);
-        }
-
-        return {
-            isFavouriteSessionsSelected: isFavouriteSessionsSelected,
-            toggleFavouriteSessions: toggleFavouriteSessions
-        }
-
-        function isFavouriteSessionsSelected() {
-            return configCache.get('show.favourite.sessions');
-        }
-
-        function toggleFavouriteSessions() {
-            var currentValue = isFavouriteSessionsSelected();
-            if (currentValue) {
-                configCache.put('show.favourite.sessions', false);
-            } else {
-                configCache.put('show.favourite.sessions', true);
-            }
-        }
-    }
-
 	angular.module('ehfgApp.menu', [])
-		.controller('MenuCtrl', ['$ionicSideMenuDelegate', '$ionicPopup', '$state', '$window', 'CacheFactory', 'ConfigurationService', MenuCtrl])
-        .factory('ConfigurationService', ['CacheFactory', ConfigurationService]);
+		.controller('MenuCtrl', ['$ionicSideMenuDelegate', '$ionicPopup', '$state', '$window', 'CacheFactory', 'FavouriteSessionService', MenuCtrl])
 })();

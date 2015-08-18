@@ -57,7 +57,7 @@
 	        views: {
 	            'content': {
 	                templateUrl: 'templates/sessions.html',
-	                controller: 'SessionCtrl as sessionCtrl',
+	                controller: 'SessionCtrl as sessionCtrl'
 	            }
 	        }
 	    });
@@ -139,7 +139,6 @@
 		'ehfgApp.speakers',
 		'ehfgApp.sessions',
 		'ehfgApp.map',
-		'ehfgApp.storage',
 		'ehfgApp.config'
 	]).config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider', 'CacheFactoryProvider', Config])
         .run(['$ionicPlatform', RunFunction])

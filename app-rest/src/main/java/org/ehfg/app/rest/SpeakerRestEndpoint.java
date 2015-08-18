@@ -1,13 +1,13 @@
 package org.ehfg.app.rest;
 
-import java.util.Collection;
-
 import org.ehfg.app.program.ProgramFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Collection;
 
 /**
  * @author patrick
@@ -25,6 +25,6 @@ public final class SpeakerRestEndpoint {
 
 	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Collection<? extends SpeakerRepresentation> findAllSpeakers() {
-		return programFacade.findSpeakersWithSession(); 
+		return programFacade.findSpeakersWithSession();
 	}
 }
