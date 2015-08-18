@@ -1,78 +1,73 @@
 (function() {
-	var SpeakerCtrl = function(speakerService) {
-		var vm = this;
-		speakerService.findAll().then(function(data) {
-			vm.speakers = data;
-		});
-		
-		vm.filter = '';
+    function SpeakerCtrl(speakerService) {
+        this.filter = '';
+        this.speakers = speakerService.findAll();
+    }
+
+	function SpeakerDetailCtrl($stateParams, speakerService, sessionService) {
+        this.speaker = speakerService.findById($stateParams.speakerId);
+        this.sessions = sessionService.findBySpeakerId($stateParams.speakerId);
 	}
 	
-	var SpeakerDetailCtrl = function($stateParams, speakerService, sessionService) {
-		var vm = this;
-		
-		speakerService.findById($stateParams.speakerId).then(function(data) {
-			vm.speaker = data;
-		});
-		
-		sessionService.findBySpeakerId($stateParams.speakerId).then(function(data) {
-			vm.sessions = data;
-		});
-	}
-	
-	var SpeakerResource = function($resource, BASE_URL) {
+	function SpeakerResource($resource, BASE_URL) {
 		return $resource(BASE_URL + '/speakers', {}, {
 			findAll: {method: 'GET', isArray:true}
 		});
 	}
 	
-	var SpeakerService = function($q, localStorageService, speakerResource) {
-	    return {
-	    	findAll: findAll,
-	    	findById: findById,
-	    	findByIds: findByIds
-	    }
-	    
-	    function findAll() {
-	    	var storage = localStorageService.findSpeakers();
-            if (storage.length === 0) {
-            	return speakerResource.findAll(function(data) {
-            		localStorageService.setSpeakers(data);
-            	}).$promise;
+	function SpeakerService(cacheFactory, speakerResource) {
+        var speakerCache = cacheFactory.get('speakers');
+
+        if (!speakerCache) {
+            speakerCache = new cacheFactory('speakers', {
+                onExpire: initCache
+            });
+
+            if (speakerCache.keys().length === 0) {
+                initCache('all');
             }
-            
-            return $q.when(storage);
+        }
+
+        function initCache(key) {
+            if (key === 'all') {
+                speakerCache.put('all', speakerResource.findAll(function(data) {
+                    for (var i in data) {
+                        var current = data[i];
+                        if (current.id !== undefined) {
+                            speakerCache.put(current.id, current);
+                        }
+                    }
+                }).$promise);
+            }
+        }
+
+	    return {
+            findAll: findAll,
+            findById: findById,
+            findByIds: findByIds
+        };
+
+	    function findAll() {
+            return speakerCache.get('all');
 	    }
 	    
 	    function findById(speakerId) {
-	    	return this.findAll().then(function(speakers) {
-	    		for (var i in speakers) {
-	    			if (speakers[i].id === speakerId) {
-	    				return $q.when(speakers[i]);
-	    			}
-	    		}
-	    		
-	    		return null;
-	    	});
+            return speakerCache.get(speakerId);
 	    }
 	    
 	    function findByIds(speakerIds) {
-	    	return this.findAll().then(function(speakers) {
-	    		var result = [];
-	    		for (var i in speakers) {
-	    			if (speakerIds.indexOf(speakers[i].id) !== -1) {
-	    				result.push(speakers[i]);
-	    			}
-	    		}
-	    		
-	    		return $q.when(result);
-	    	});
-	    }
+            var result = [];
+            for (var i in speakerIds) {
+                result.push(speakerCache.get(speakerIds[i]));
+            }
+
+            return result;
+        }
 	}
 
 	angular.module('ehfgApp.speakers', [])
 		.controller('SpeakerCtrl', ['SpeakerService', SpeakerCtrl])
 		.controller('SpeakerDetailCtrl', ['$stateParams', 'SpeakerService', 'SessionService', SpeakerDetailCtrl])
 		.factory('SpeakerResource', ['$resource', 'BASE_URL', SpeakerResource])
-		.factory('SpeakerService', ['$q', 'LocalStorageService', 'SpeakerResource', SpeakerService])
+		.factory('SpeakerService', ['CacheFactory', 'SpeakerResource', SpeakerService])
 })()

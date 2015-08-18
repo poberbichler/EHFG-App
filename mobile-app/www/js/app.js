@@ -14,7 +14,7 @@
 		});
 	}
 	
-	function Config($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+	function Config($stateProvider, $urlRouterProvider, $ionicConfigProvider, cacheFactory) {
 		$stateProvider.state('app', {
 			abstract: true,
 			templateUrl: "templates/layout.html",
@@ -95,9 +95,18 @@
         $urlRouterProvider.otherwise('/twitter');
         $ionicConfigProvider.views.transition('android');
         $ionicConfigProvider.navBar.alignTitle('center');
+
+        angular.extend(cacheFactory.defaults, {
+            maxAge: 1000 * 60 * 60 * 2, // 2 hours
+            //maxAge: 1000  * 15, // 15 seconds
+            deleteOnExpire: 'aggressive',
+            storageMode: 'localStorage',
+            storagePrefix: 'ehfg.app.',
+            storeOnResolve: 'true'
+        });
 	}
 	
-	function InitBackdoor($http, BASE_URL) {
+	function InitApplication($http, BASE_URL) {
 		$http.get(BASE_URL + '/backdoor');
 	}
 
@@ -124,6 +133,7 @@
 	angular.module('ehfgApp', [
 		'ionic',
 		'ngResource',
+        'angular-cache',
 		'ehfgApp.twitter',
 		'ehfgApp.menu',
 		'ehfgApp.speakers',
@@ -131,8 +141,8 @@
 		'ehfgApp.map',
 		'ehfgApp.storage',
 		'ehfgApp.config'
-	]).config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider', Config])
+	]).config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider', 'CacheFactoryProvider', Config])
         .run(['$ionicPlatform', RunFunction])
-        .run(['$http', 'BASE_URL', InitBackdoor])
+        .run(['$http', 'BASE_URL', 'SpeakerService', 'SessionService', InitApplication]) // used to instantiate caches
         .factory('UtcTimeService', [UtcTimeService]);
 })();
