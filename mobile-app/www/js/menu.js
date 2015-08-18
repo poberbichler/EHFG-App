@@ -1,21 +1,12 @@
 (function() {
-	var MenuCtrl = function($ionicSideMenuDelegate, $ionicPopup, $window, sessionService) {
-		this.favouriteSessions = sessionService.getFavouriteSessionFlag();
-		
-		this.favouriteSessionToggle = function(newValue) {
-			if (newValue === true) {
-				sessionService.showFavouriteSessions();
-			}
-			
-			else {
-				sessionService.showAllSessions();
-			}
-		}
-		
-		this.openSideMenu = function() {
-			$ionicSideMenuDelegate.toggleRight();
-		}
-		
+	function MenuCtrl($ionicSideMenuDelegate, $ionicPopup, $state, $window, cacheFactory, configurationService) {
+		this.favouriteSessions = configurationService.isFavouriteSessionsSelected();
+		this.favouriteSessionToggle = configurationService.toggleFavouriteSessions;
+
+        this.openSideMenu = function() {
+            $ionicSideMenuDelegate.toggleRight();
+        }
+
 		this.showAboutDialog = function() {
 			$ionicPopup.show({
 				template: 
@@ -29,11 +20,45 @@
 		}
 		
 		this.resetData = function() {
-			localStorage.clear();
-			$window.location.reload();
+            $state.go('app.twitter');
+            cacheFactory.clearAll();
+            $window.location.reload();
 		}
 	}
-	
+
+    function ConfigurationService(cacheFactory) {
+        var configCache = cacheFactory.get('config');
+        if (!configCache) {
+            configCache = new cacheFactory('config', {
+                deleteOnExpire: 'none'
+            });
+        }
+
+        if (configCache.keys().length === 0) {
+            configCache.put('favourite.sessions', []);
+            configCache.put('show.favourite.sessions', false);
+        }
+
+        return {
+            isFavouriteSessionsSelected: isFavouriteSessionsSelected,
+            toggleFavouriteSessions: toggleFavouriteSessions
+        }
+
+        function isFavouriteSessionsSelected() {
+            return configCache.get('show.favourite.sessions');
+        }
+
+        function toggleFavouriteSessions() {
+            var currentValue = isFavouriteSessionsSelected();
+            if (currentValue) {
+                configCache.put('show.favourite.sessions', false);
+            } else {
+                configCache.put('show.favourite.sessions', true);
+            }
+        }
+    }
+
 	angular.module('ehfgApp.menu', [])
-		.controller('MenuCtrl', ['$ionicSideMenuDelegate', '$ionicPopup', '$window', 'SessionService', MenuCtrl]);
+		.controller('MenuCtrl', ['$ionicSideMenuDelegate', '$ionicPopup', '$state', '$window', 'CacheFactory', 'ConfigurationService', MenuCtrl])
+        .factory('ConfigurationService', ['CacheFactory', ConfigurationService]);
 })();
