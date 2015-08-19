@@ -5,6 +5,7 @@
     "grunt-processhtml": "^0.3.3"
   },
   "cordovaPlugins": [
-    "org.apache.cordova.console"
+    "org.apache.cordova.console",
+    "org.apache.cordova.network-information"
   ]
 }

