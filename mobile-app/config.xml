@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.mobileapp152306" version="0.0.1" xmlns="http://www.w3.org/ns/widgets">
-  <name>EHFG-App</name>
+<widget id="org.ehfg.app2" version="0.0.1" xmlns="http://www.w3.org/ns/widgets">
+  <name>EHFG</name>
   <description>
         Offical App of the European Health Forum Gastein
     </description>
@@ -66,5 +66,4 @@
     <splash src="resources/android/splash/drawable-port-xxhdpi-screen.png" density="port-xxhdpi"/>
     <splash src="resources/android/splash/drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>
   </platform>
-  <icon src="resources/android/icon/drawable-xhdpi-icon.png"/>
 </widget>
