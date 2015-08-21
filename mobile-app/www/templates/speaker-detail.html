@@ -1,7 +1,7 @@
 <ion-view>
 	<ion-nav-title ng-bind-html="::speakerDetailCtrl.speaker.fullName"></ion-nav-title>
 	<ion-content class="has-header has-footer padding">
-	    <img ng-src="{{::speakerDetailCtrl.speaker.imageUrl}}" class="speakerImage"></img>
+	    <img ng-src="{{::speakerDetailCtrl.speaker.imageUrl | imageLookup}}" class="speakerImage"></img>
 	    <p ng-bind-html="speakerDetailCtrl.speaker.description"></p>
 	    
 	    <div class="list list-inset" ng-hide="speakerDetailCtrl.sessions === 0">

@@ -65,9 +65,16 @@
         }
 	}
 
+    function ImageLookup() {
+        return function(input) {
+            return input;
+        }
+    }
+
 	angular.module('ehfgApp.speakers', [])
 		.controller('SpeakerCtrl', ['SpeakerService', SpeakerCtrl])
 		.controller('SpeakerDetailCtrl', ['$stateParams', 'SpeakerService', 'SessionService', SpeakerDetailCtrl])
 		.factory('SpeakerResource', ['$resource', 'BASE_URL', SpeakerResource])
 		.factory('SpeakerService', ['CacheFactory', 'SpeakerResource', SpeakerService])
+        .filter('imageLookup', [ImageLookup])
 })()
