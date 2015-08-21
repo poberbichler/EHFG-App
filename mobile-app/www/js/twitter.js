@@ -27,6 +27,7 @@
 			twitterResource.findInitial(function(result) {
 				mapData(result);
 				tweetData.tweets = result.data;
+				console.log(tweetData);
 			});
 		}
 		
@@ -108,10 +109,17 @@
 			return $filter('date')(input, 'MMM d, HH:mm', 'UTC');
 		}
 	}
+
+	function TrustedHtmlFilter($sce) {
+		return function(input) {
+			return $sce.trustAsHtml(input);
+		}
+	}
 	
 	angular.module('ehfgApp.twitter', [])
 		.controller('TwitterCtrl', ['TwitterService', TwitterCtrl])
 		.factory('TwitterResource', ['$resource', 'BASE_URL', TwitterResource])
 		.factory('TwitterService', ['$rootScope', '$ionicLoading', '$ionicPopup', 'TwitterResource', TwitterService])
 		.filter('twitterDateFilter', ['$filter', 'UtcTimeService', TwitterDateFilter])
+		.filter('trustedHtml', ['$sce', TrustedHtmlFilter])
 })();
