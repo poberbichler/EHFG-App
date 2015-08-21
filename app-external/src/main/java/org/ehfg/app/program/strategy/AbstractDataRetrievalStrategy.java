@@ -26,6 +26,9 @@ public abstract class AbstractDataRetrievalStrategy<T> {
 	@Value("${rss.base.url}")
 	private String baseUrl;
 
+	@Value("${rss.sufix}")
+	private String rssSufix;
+
 	private Resource dataResource;
 	private JAXBContext jaxbContext;
 
@@ -68,17 +71,12 @@ public abstract class AbstractDataRetrievalStrategy<T> {
 
 	/**
 	 * builds the valid url, e.g.: <br>
-	 * <code>http://www.ehfg.org/feed/events/data.rss</code>
+	 * <code>http://www.ehfg.org/feed/events/data/2015.rss</code>
 	 * <p>
 	 * leading or ending slashed will automatically be removed/added, so the result will always be a valid url
 	 */
 	private String buildUrl() {
-		if (baseUrl == null) {
-			return "";
-		}
-		StringBuilder builder = new StringBuilder();
-		builder.append(baseUrl);
-
+		StringBuilder builder = new StringBuilder(baseUrl);
 		if (!baseUrl.endsWith(URL_DELIMITER) && !urlSnippet.startsWith(URL_DELIMITER)) {
 			builder.append("/");
 		}
@@ -88,8 +86,8 @@ public abstract class AbstractDataRetrievalStrategy<T> {
 			builder.append(URL_DELIMITER);
 		}
 
-		builder.append("data.rss");
-
+		builder.append("data/");
+		builder.append(rssSufix);
 		return builder.toString();
 	}
 }
