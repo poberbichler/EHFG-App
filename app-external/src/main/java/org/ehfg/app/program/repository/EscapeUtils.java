@@ -52,4 +52,20 @@ final class EscapeUtils {
 
 		return document.body().html();
 	}
+
+	static String escapeLinks(Document document) {
+		document.select("a").stream()
+				.filter(element -> !element.attr("href").startsWith("mailto"))
+				.forEach(element -> {
+					final String href = element.attr("href");
+					element.attr("href", "#");
+					element.attr("onclick", String.format("window.open('%s', '_blank')", href));
+				});
+
+		return document.body().html();
+	}
+
+	static String escapeLinks(String inputText) {
+		return escapeLinks(Jsoup.parse(inputText));
+	}
 }

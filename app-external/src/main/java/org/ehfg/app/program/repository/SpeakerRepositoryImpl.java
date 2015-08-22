@@ -1,9 +1,5 @@
 package org.ehfg.app.program.repository;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.apache.commons.lang3.StringUtils;
 import org.ehfg.app.program.SpeakerDTO;
 import org.ehfg.app.program.SpeakerRepository;
@@ -15,6 +11,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author patrick
@@ -52,6 +52,7 @@ class SpeakerRepositoryImpl implements SpeakerRepository {
 					description = StringUtils.removeStart(description.trim(), "</strong>");
 					description = StringUtils.removeStart(description.trim(), ";");
 					description = StringUtils.removeStart(description.trim(), ",");
+					description = EscapeUtils.escapeLinks(description);
 
 					final String imagePath = speaker.getImagePath() == null ? "" : speaker.getImagePath().trim();
 					return new SpeakerDTO.Builder().id(speaker.getId()).firstName(speaker.getFirstname())

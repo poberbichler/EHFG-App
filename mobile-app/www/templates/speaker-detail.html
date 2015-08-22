@@ -2,7 +2,7 @@
 	<ion-nav-title ng-bind-html="::speakerDetailCtrl.speaker.fullName"></ion-nav-title>
 	<ion-content class="has-header has-footer padding">
 	    <img class="speakerImage" speaker-image="speakerDetailCtrl.speaker.imageUrl"></img>
-	    <p ng-bind-html="::speakerDetailCtrl.speaker.description"></p>
+	    <p ng-bind-html="::speakerDetailCtrl.speaker.description | trustedHtml"></p>
 	    
 	    <div class="list list-inset" ng-hide="speakerDetailCtrl.sessions === 0">
 	    	<div class="item item-divider">Sessions</div>
