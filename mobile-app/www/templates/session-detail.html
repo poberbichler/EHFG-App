@@ -16,8 +16,8 @@
 
         <div class="list list-inset" ng-hide="speakers.length === 0">
 			<ion-item class="item item-divider">Speakers</ion-item>
-            <ion-item class="item" ng-repeat="speaker in speakers track by speaker.id" ng-href="#/speakers/{{speaker.id}}">
-                {{::speaker.fullName}}
+            <ion-item class="item" ng-repeat="speaker in speakers track by speaker.id" ng-href="#/speakers/{{::speaker.id}}">
+                <span ng-bind-html="::speaker.fullName"></span>
             </ion-item>
         </div>
     </ion-content>
