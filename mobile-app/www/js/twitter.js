@@ -27,7 +27,6 @@
 			twitterResource.findInitial(function(result) {
 				mapData(result);
 				tweetData.tweets = result.data;
-				console.log(tweetData);
 			});
 		}
 		

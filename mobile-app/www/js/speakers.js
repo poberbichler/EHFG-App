@@ -65,9 +65,29 @@
         }
 	}
 
-    function ImageLookup() {
-        return function(input) {
-            return input;
+    function SpeakerImage() {
+        return {
+            restrict: 'A',
+            link: linkFunction,
+            scope: {imageUrl: '&speakerImage'}
+        }
+
+        function linkFunction(scope, element, attrs) {
+            var imageId = scope.imageUrl().split('/').pop();
+
+            var firstUrl = 'img/speakers/'.concat(imageId);
+            var secondUrl = scope.imageUrl();
+            var thirdUrl = 'img/speakers/speakersdefaultperson.jpg';
+
+            attrs.$set('src', firstUrl);
+            element.bind('error', function(event) {
+                if (attrs.src === firstUrl) {
+                    attrs.$set('src', secondUrl);
+                } else if (attrs.src === secondUrl) {
+                    attrs.$set('src', thirdUrl);
+                }
+            });
+
         }
     }
 
@@ -76,5 +96,5 @@
 		.controller('SpeakerDetailCtrl', ['$stateParams', 'SpeakerService', 'SessionService', SpeakerDetailCtrl])
 		.factory('SpeakerResource', ['$resource', 'BASE_URL', SpeakerResource])
 		.factory('SpeakerService', ['CacheFactory', 'SpeakerResource', SpeakerService])
-        .filter('imageLookup', [ImageLookup])
+        .directive('speakerImage', [SpeakerImage])
 })()
