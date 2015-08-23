@@ -17,10 +17,6 @@ public final class SpeakerDTO implements Comparable<SpeakerDTO>, SpeakerRepresen
 	private String description;
 	private String imageUrl;
 
-	public SpeakerDTO() {
-		// needed for JAXRS
-	}
-	
 	private SpeakerDTO(Builder builder) {
 		this.id = builder.id;
 		this.firstName = builder.firstName;

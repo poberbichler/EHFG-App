@@ -1,10 +1,9 @@
 package org.ehfg.app.program;
 
-import static org.junit.Assert.assertEquals;
-
-import org.ehfg.app.program.SpeakerDTO;
 import org.junit.Ignore;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * TODO: should be updated to new logic
@@ -47,10 +46,6 @@ public final class SpeakerComparisonTest {
 	 * @return {@link SpeakerDTO} with the given parameters
 	 */
 	private SpeakerDTO speaker(String firstName, String lastName) {
-		SpeakerDTO speaker = new SpeakerDTO();
-		speaker.setFirstName(firstName);
-		speaker.setLastName(lastName);
-		
-		return speaker;
+		return new SpeakerDTO.Builder().firstName(firstName).lastName(lastName).build();
 	}
 }

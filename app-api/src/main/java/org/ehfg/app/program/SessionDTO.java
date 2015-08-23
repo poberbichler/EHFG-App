@@ -1,5 +1,8 @@
 package org.ehfg.app.program;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.ehfg.app.rest.SessionRepresentation;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -7,9 +10,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.ehfg.app.rest.SessionRepresentation;
 
 /**
  * basic representation of a session
@@ -27,10 +27,6 @@ public final class SessionDTO implements SessionRepresentation {
 
 	private String location;
 	private Set<String> speakers;
-
-	public SessionDTO() {
-		// default ctor is needed for jaxrs
-	}
 
 	private SessionDTO(Builder builder) {
 		this.id = builder.id;

@@ -2,7 +2,10 @@ package org.ehfg.app.config;
 
 import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
 import nz.net.ultraq.thymeleaf.LayoutDialect;
-import org.ehfg.app.converter.*;
+import org.ehfg.app.converter.LocalDateTimeToUTCTimestampSerializer;
+import org.ehfg.app.converter.LocalDateToStringConverter;
+import org.ehfg.app.converter.LongToLocalDateTimeConverter;
+import org.ehfg.app.converter.StringToLocalDateConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.embedded.EmbeddedWebApplicationContext;
 import org.springframework.boot.context.embedded.ServletRegistrationBean;
@@ -25,7 +28,6 @@ import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -112,7 +114,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
 		final Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder();
 		builder.indentOutput(true).modulesToInstall(new JaxbAnnotationModule());
-		builder.serializerByType(LocalDate.class, new LocalDateToUTCTimestampSerializer());
 		builder.serializerByType(LocalDateTime.class, new LocalDateTimeToUTCTimestampSerializer());
 
 		converters.add(new MappingJackson2HttpMessageConverter(builder.build()));
