@@ -1,5 +1,7 @@
 package org.ehfg.app.twitter;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.stream.Collectors;
@@ -26,7 +28,10 @@ final class TweetMapper {
 			final TwitterUser user = tweet.getAuthor();
 
 			final String message = tweet.getFormattedMesssage() != null ? tweet.getFormattedMesssage() : tweet.getMessage();
-			return new TweetDTO(tweet.getId(), user.getFullName(), user.getNickName(), message, user.getProfileImage(), tweet.getCreationDate());
+
+			// TODO: not an ideal solution, creationDate inside Tweet should be ZoneDateTime next year (?)
+			final ZonedDateTime utcCreationDate = tweet.getCreationDate().atZone(ZoneId.systemDefault()).withZoneSameInstant(ZoneId.of("Europe/Vienna"));
+			return new TweetDTO(tweet.getId(), user.getFullName(), user.getNickName(), message, user.getProfileImage(), utcCreationDate.toLocalDateTime());
 		}).collect(Collectors.toList());
 	}
 }
