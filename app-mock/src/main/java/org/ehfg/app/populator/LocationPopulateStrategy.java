@@ -1,11 +1,11 @@
 package org.ehfg.app.populator;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import org.ehfg.app.InMemoryService;
 import org.ehfg.app.base.LocationDTO;
 import org.ehfg.app.program.SessionDTO;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author patrick

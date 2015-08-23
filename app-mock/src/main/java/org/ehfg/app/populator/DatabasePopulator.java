@@ -1,12 +1,11 @@
 package org.ehfg.app.populator;
 
-import java.util.Collection;
-
-import javax.annotation.PostConstruct;
-
 import org.ehfg.app.InMemoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.PostConstruct;
+import java.util.Collection;
 
 /**
  * Populates the in-memory db for the mock profile<br>

@@ -1,9 +1,9 @@
 package org.ehfg.app.base;
 
-import javax.validation.constraints.NotNull;
-
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.ehfg.app.rest.CoordinateRepresentation;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * representation of a coordinate

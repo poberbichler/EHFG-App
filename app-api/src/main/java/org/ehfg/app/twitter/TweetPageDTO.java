@@ -1,9 +1,9 @@
 package org.ehfg.app.twitter;
 
-import java.util.Collection;
-
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.ehfg.app.AbstractPageableDTO;
+
+import java.util.Collection;
 
 /**
  * @author patrick

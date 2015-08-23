@@ -1,10 +1,10 @@
 package org.ehfg.app.base;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.ehfg.app.rest.PointOfInterestRepresentation;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 /**
  * @author patrick

@@ -1,22 +1,18 @@
 package org.ehfg.app.twitter;
 
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.when;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Date;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.springframework.social.twitter.api.Entities;
-import org.springframework.social.twitter.api.HashTagEntity;
-import org.springframework.social.twitter.api.MediaEntity;
-import org.springframework.social.twitter.api.MentionEntity;
-import org.springframework.social.twitter.api.UrlEntity;
+import org.springframework.social.twitter.api.*;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Date;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public final class TweetFactoryTest {

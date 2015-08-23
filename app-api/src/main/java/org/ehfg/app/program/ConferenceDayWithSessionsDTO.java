@@ -1,12 +1,12 @@
 package org.ehfg.app.program;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.TreeSet;
-
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.ehfg.app.rest.ConferenceDayRepresentation;
 import org.ehfg.app.rest.SessionRepresentation;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.TreeSet;
 
 /**
  * Representation <b>only</b> of the necessary information of a conferenceday, including sessions.<br>

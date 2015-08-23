@@ -1,11 +1,5 @@
 package org.ehfg.app.mvc.maintenance;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-
-import javax.validation.Valid;
-
 import org.ehfg.app.base.LocationDTO;
 import org.ehfg.app.base.MasterDataFacade;
 import org.ehfg.app.program.ProgramFacade;
@@ -17,6 +11,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.validation.Valid;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author patrick

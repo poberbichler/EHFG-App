@@ -1,8 +1,8 @@
 package org.ehfg.app.data;
 
-import java.util.List;
-
 import org.ehfg.app.program.ConferenceDayDTO;
+
+import java.util.List;
 
 /**
  * @author patrick
