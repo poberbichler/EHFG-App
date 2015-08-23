@@ -50,6 +50,7 @@ class SessionRepositoryImpl implements SessionRepository {
 			logger.debug("preparing text for session {}", session);
 
 			String details = EscapeUtils.escapeText(session.getDetails());
+			details = EscapeUtils.escapeLinks(details);
 			details = StringUtils.removeStart(details, "<p> ");
 			details = StringUtils.removeStart(details, "<strong>");
 			details = StringUtils.removeStart(details, EscapeUtils.escapeText(session.getEvent()));

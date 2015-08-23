@@ -1,10 +1,16 @@
 package org.ehfg.app.program.repository;
 
 import org.apache.commons.lang3.StringEscapeUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 /**
  * helper class to remove unnecessary html text from the ehfg server
@@ -13,6 +19,8 @@ import org.jsoup.select.Elements;
  * @since 06.2014
  */
 final class EscapeUtils {
+	private static final Logger LOGGER = LoggerFactory.getLogger(EscapeUtils.class);
+
 	private EscapeUtils() {
 		// do not allow instantiation
 	}
@@ -50,22 +58,66 @@ final class EscapeUtils {
 				.filter(element -> element.text().trim().isEmpty())
 				.forEach(Element::remove);
 
-		return document.body().html();
-	}
-
-	static String escapeLinks(Document document) {
 		document.select("a").stream()
-				.filter(element -> !element.attr("href").startsWith("mailto"))
-				.forEach(element -> {
-					final String href = element.attr("href");
-					element.attr("href", "#");
-					element.attr("onclick", String.format("window.open('%s', '_blank')", href));
-				});
+				.filter(element -> element.text().trim().isEmpty())
+				.forEach(Element::remove);
 
 		return document.body().html();
 	}
 
 	static String escapeLinks(String inputText) {
-		return escapeLinks(Jsoup.parse(inputText));
+		Document document = Jsoup.parse(inputText);
+		document.select("a").stream()
+				.filter(LinkPredicates.MAIL_TO.negate())
+				.filter(LinkPredicates.SESSION_LINK.negate())
+				.forEach(LinkModifiers.HREF_TO_ONCLICK);
+
+		document.select("a").stream()
+				.filter(LinkPredicates.SESSION_LINK)
+				.forEach(LinkModifiers.TO_APP_LINK);
+
+		return document.body().html();
+	}
+
+	enum LinkPredicates implements Predicate<Element> {
+		MAIL_TO {
+			@Override
+			public boolean test(Element element) {
+				return element.attr("href").startsWith("mailto");
+			}
+		},
+
+		SESSION_LINK {
+			@Override
+			public boolean test(Element element) {
+				return element.attr("href").matches("(https?://)?www.ehfg.org/detailevent1?.html\\?eid=\\d+");
+			}
+		}
+	}
+
+	enum LinkModifiers implements Consumer<Element> {
+		HREF_TO_ONCLICK {
+			@Override
+			public void accept(Element element) {
+				final String href = element.attr("href");
+				element.attr("href", "#");
+				element.attr("onclick", String.format("window.open('%s', '_blank')", href));
+			}
+		},
+
+		TO_APP_LINK {
+			@Override
+			public void accept(Element element) {
+				final String href = element.attr("href");
+				final String[] splitString = StringUtils.split(href, "=");
+
+				if (splitString == null || splitString.length != 2) {
+					LOGGER.error("wrong url to be parsed as session link [{}] - this should not happen", href);
+				} else {
+					element.attr("href", "#/sessions/".concat(splitString[1]));
+					element.removeAttr("target");
+				}
+			}
+		}
 	}
 }
