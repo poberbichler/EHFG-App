@@ -1,20 +1,25 @@
 (function() {
-	function MapCtrl(mapService, highlightLocation) {
-		this.zoom = 16;
-		this.points = mapService.points.findAll();
-		
-		if (highlightLocation === null) {
-			this.center = {latitude: 47.170329, longitude: 13.103852}
-		}
-		
-		else {
-			this.highlightLocation = highlightLocation;
-			// copy the properties, otherwise the center location of 'hightlightLocation' will be changed
-			this.center = {
+	function MapCtrl($scope, mapService, highlightLocation) {
+		var vm = this;
+
+		$scope.$on('$ionicView.enter', function(event, view) {
+			vm.zoom = 16;
+
+			if (!vm.points) {
+				vm.points = mapService.points.findAll();
+			}
+
+			if (highlightLocation === null) {
+				vm.center = {latitude: 47.170329, longitude: 13.103852}
+			}  else {
+				vm.highlightLocation = highlightLocation;
+				// copy the properties, otherwise the center location of 'hightlightLocation' will be changed
+				vm.center = {
 					latitude: highlightLocation.coordinate.latitude,
 					longitude: highlightLocation.coordinate.longitude
+				}
 			}
-		}
+		});
 	}
 	
 	function MapService($resource, BASE_URL) {
@@ -36,7 +41,7 @@
 	}
 
 	angular.module('ehfgApp.map', ['uiGmapgoogle-maps'])
-		.controller('MapCtrl', ['MapService', 'highlightLocation', MapCtrl])
+		.controller('MapCtrl', ['$scope', 'MapService', 'highlightLocation', MapCtrl])
 		.factory('MapService', ['$resource', 'BASE_URL', MapService])
 })();
 
