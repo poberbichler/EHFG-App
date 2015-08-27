@@ -12,12 +12,17 @@
 			if (highlightLocation === null) {
 				vm.center = {latitude: 47.170329, longitude: 13.103852}
 			}  else {
-				vm.highlightLocation = highlightLocation;
-				// copy the properties, otherwise the center location of 'hightlightLocation' will be changed
-				vm.center = {
-					latitude: highlightLocation.coordinate.latitude,
-					longitude: highlightLocation.coordinate.longitude
-				}
+				vm.points.$promise.then(function(data) {
+					angular.forEach(data, function(point, index) {
+						if (point.name && point.name === highlightLocation.name) {
+							point.icon = 'img/highlightmarker.png';
+							vm.center = {
+								latitude: point.coordinate.latitude,
+								longitude: point.coordinate.longitude
+							}
+						}
+					});
+				});
 			}
 		});
 	}

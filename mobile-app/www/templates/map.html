@@ -2,16 +2,10 @@
 	<div id="map-parent" data-tap-disabled="true">
 		<ui-gmap-google-map center="mapCtrl.center" zoom="mapCtrl.zoom">
 			<ui-gmap-markers models="mapCtrl.points" idkey="name" coords="'coordinate'" icon="'icon'">
-                <ui-gmap-windows show="show">
+                <ui-gmap-windows>
                     <div ng-non-bindable>{{::description}}</div>
                 </ui-gmap-windows>
             </ui-gmap-markers>
-
-            <ui-gmap-marker idkey="'highlight'" coords="mapCtrl.highlightLocation.coordinate">
-                <ui-gmap-window show="'true'">
-                    <div>{{mapCtrl.highlightLocation.name}}</div>
-                </ui-gmap-window>
-            </ui-gmap-marker>
 		</ui-gmap-google-map>
 	</div>
 </ion-view>
