@@ -9,9 +9,8 @@
 				vm.points = mapService.points.findAll();
 			}
 
-			if (highlightLocation === null) {
-				vm.center = {latitude: 47.170329, longitude: 13.103852}
-			}  else {
+            vm.center = {latitude: 47.170329, longitude: 13.103852}
+			if (highlightLocation !== null) {
 				vm.points.$promise.then(function(data) {
 					angular.forEach(data, function(point, index) {
 						if (point.name && point.name === highlightLocation.name) {
