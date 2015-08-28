@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
  * basic representation of a location
  * 
  * @author patrick
- * @since 02.03.2014
+ * @since 03.2014
  */
 public final class LocationDTO implements LocationRepresentation {
 	private String id;
@@ -20,7 +20,9 @@ public final class LocationDTO implements LocationRepresentation {
 	@Valid
 	@NotNull
 	private CoordinateDTO coordinate;
-	
+
+	private PointOfInterestDTO mappedPointOfInterest;
+
 	public LocationDTO() {
 		coordinate = new CoordinateDTO();
 	}
@@ -63,7 +65,15 @@ public final class LocationDTO implements LocationRepresentation {
 		this.coordinate = coordinate;
 	}
 
-	@Override
+    public PointOfInterestDTO getMappedPointOfInterest() {
+        return mappedPointOfInterest;
+    }
+
+    public void setMappedPointOfInterest(PointOfInterestDTO mappedPointOfInterest) {
+        this.mappedPointOfInterest = mappedPointOfInterest;
+    }
+
+    @Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
 	}

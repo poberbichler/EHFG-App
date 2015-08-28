@@ -7,6 +7,7 @@
 				<th>name</th>
 				<th>xValue</th>
 				<th>yValue</th>
+				<th>mapping</th>
                 <th></th>
 			</tr>
 		</thead>
@@ -16,40 +17,64 @@
 				<td th:text="${location.name}">name</td>
 				<td th:text="${location.coordinate.xValue}">xValue</td>
 				<td th:text="${location.coordinate.yValue}">yValue</td>
+				<td th:text="${location.mappedPointOfInterest?.name}">mapped point</td>
                 <td><a th:href="@{location/delete/__${location.id}__}">delete</a></td>
 			</tr>
 		</tbody>
 	</table>
-	
+
 	<form th:action="@{#}" th:unless="${#lists.isEmpty(availableLocations)}" th:object="${editLocation}" method="post" class="form form-horizontal">
 		<div class="form-group">
 			<label for="locationName" class="col-sm-2 control-label">Name</label>
 			<div class="col-sm-4">
-				<select th:field="*{name}" class="form-control">
+				<select id="locationName" th:field="*{name}" class="form-control">
 					<option th:each="name : ${availableLocations}" th:value="${name}" th:text="${name}">option</option>
 				</select>
 			</div>
 		</div>
-	
+
 		<div class="form-group">
-			<label for="xCoordinate" class="col-sm-2 control-label">X-Coordinate</label>
+			<label for="mappedPoint" class="col-sm-2 control-label">Point of Interest</label>
 			<div class="col-sm-4">
-				<input th:field="*{coordinate.xValue}" class="form-control" />
+				<select id="mappedPoint" th:field="*{mappedPointOfInterest}" class="form-control">
+                    <option th:value="${null}" th:text="'--- Please choose ---'">null</option>
+					<option th:each="point : ${pointsOfInterest}" th:value="${point}" th:text="${point.name}">point</option>
+				</select>
 			</div>
 		</div>
-		
-		<div class="form-group">
-			<label for="yCoordinate" class="col-sm-2 control-label">Y-Coordinate</label>
-			<div class="col-sm-4">
-				<input th:field="*{coordinate.yValue}" class="form-control" />
-			</div>
-		</div>
-		
-		<div class="form-group">
-			<div class="col-sm-offset-2 col-sm-10">
-				<input type="submit" value="save" class="btn btn-primary" />
-			</div>
-		</div>
+
+        <div id="coordinate-input">
+            <div class="form-group">
+                <label for="xCoordinate" class="col-sm-2 control-label">X-Coordinate</label>
+                <div class="col-sm-4">
+                    <input th:field="*{coordinate.xValue}" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="yCoordinate" class="col-sm-2 control-label">Y-Coordinate</label>
+                <div class="col-sm-4">
+                    <input th:field="*{coordinate.yValue}" class="form-control" />
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" value="save" class="btn btn-primary" />
+            </div>
+        </div>
 	</form>
+
+    <script type="text/javascript">
+        $('#mappedPoint').on('change', function(event) {
+            if (!$(this).val()) {
+                $('#coordinate-input').show();
+            } else {
+                $('#coordinate-input').hide();
+            }
+        });
+    </script>
 </div>
 </html>

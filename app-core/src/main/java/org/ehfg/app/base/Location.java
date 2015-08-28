@@ -2,6 +2,7 @@ package org.ehfg.app.base;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.Valid;
@@ -12,19 +13,22 @@ import javax.validation.constraints.NotNull;
  * @since 07.2014
  */
 @Document
-final class Location {
+class Location {
 	@Id
 	private String id;
 
 	@NotNull
 	private String name;
 
+	@DBRef
+	private PointOfInterest point;
+
 	@Valid
 	@NotNull
 	private Coordinate coordinate;
-	
+
 	public Location() {
-		
+
 	}
 
 	public Location(String id, String name, Coordinate coordinate) {
@@ -32,7 +36,7 @@ final class Location {
 		this.name = name;
 		this.coordinate = coordinate;
 	}
-	
+
 	public Location(String id, String name, Double xValue, Double yValue) {
 		this(id, name, new Coordinate(xValue, yValue));
 	}
@@ -59,6 +63,14 @@ final class Location {
 
 	public void setCoordinate(Coordinate coordinate) {
 		this.coordinate = coordinate;
+	}
+
+	public PointOfInterest getPoint() {
+		return point;
+	}
+
+	public void setPoint(PointOfInterest point) {
+		this.point = point;
 	}
 
 	@Override

@@ -43,6 +43,7 @@ public class LocationController {
 		view.addObject("activePage", "location");
 		view.addObject("locations", alreadyAssignedLocations);
 		view.addObject("availableLocations", resolveLocations(alreadyAssignedLocations));
+		view.addObject("pointsOfInterest", masterDataFacade.findAllPointsOfInterest());
 		view.addObject("editLocation", new LocationDTO());
 		
 		return view;
