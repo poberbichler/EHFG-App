@@ -18,3 +18,8 @@ platforms
 node_modules/
 plugins
 vendor/
+
+*_prod.html
+*_ionic.html
+app.min.js
+mobile-app/www/img/speakers
