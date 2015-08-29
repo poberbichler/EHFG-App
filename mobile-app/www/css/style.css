@@ -71,8 +71,9 @@ div.tabs-background-positive.tabs-light div.tabs a.tab-item.active {
 }
 
 #map-parent {
-	height: 100%; 
-	padding: 44px 0;
+    position: absolute;
+    left: 0;
+    right: 0;
 }
 
 .speaker-item {
