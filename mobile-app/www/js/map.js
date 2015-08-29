@@ -11,17 +11,25 @@
 
             vm.center = {latitude: 47.170329, longitude: 13.103852}
 			if (highlightLocation !== null) {
-				vm.points.$promise.then(function(data) {
-					angular.forEach(data, function(point, index) {
-						if (point.name && point.name === highlightLocation.name) {
-							point.icon = 'img/highlightmarker.png';
-							vm.center = {
-								latitude: point.coordinate.latitude,
-								longitude: point.coordinate.longitude
-							}
-						}
-					});
-				});
+                if (highlightLocation.pointId) {
+                    vm.points.$promise.then(function(data) {
+                        angular.forEach(data, function(point, index) {
+                            if (point.id && point.id === highlightLocation.pointId) {
+                                point.icon = 'img/highlightmarker.png';
+                                vm.center = {
+                                    latitude: point.coordinate.latitude,
+                                    longitude: point.coordinate.longitude
+                                }
+                            }
+                        });
+				    });
+                } else {
+                    vm.highlightLocation = highlightLocation;
+                    vm.center = {
+                        latitude: highlightLocation.coordinate.latitude,
+                        longitude: highlightLocation.coordinate.longitude
+                    }
+                }
 			}
 		});
 	}

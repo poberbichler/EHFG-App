@@ -4,7 +4,6 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.ehfg.app.rest.LocationRepresentation;
 import org.ehfg.app.validation.LocationMappingValid;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -64,6 +63,11 @@ public final class LocationDTO implements LocationRepresentation {
 	@Override
 	public CoordinateDTO getCoordinate() {
 		return coordinate;
+	}
+
+	@Override
+	public String getPointOfInterestId() {
+		return mappedPointOfInterest != null ? mappedPointOfInterest.getId() : null;
 	}
 
 	public void setCoordinate(CoordinateDTO coordinate) {

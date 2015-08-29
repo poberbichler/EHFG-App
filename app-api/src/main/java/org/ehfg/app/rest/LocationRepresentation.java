@@ -18,4 +18,7 @@ public interface LocationRepresentation {
 
 	@XmlElement(name = "coordinate")
 	CoordinateRepresentation getCoordinate();
+
+	@XmlElement(name = "pointId")
+	String getPointOfInterestId();
 }
