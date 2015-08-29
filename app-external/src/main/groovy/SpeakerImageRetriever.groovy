@@ -1,15 +1,11 @@
 package at.oberbichler.test
 
-import java.nio.file.Path;
-import java.util.zip.ZipOutputStream;
-
-import groovyx.net.http.ContentType;
-import groovyx.net.http.HTTPBuilder
-import groovyx.net.http.RESTClient;
+import groovyx.net.http.ContentType
+import groovyx.net.http.RESTClient
 
 def retrieveDataFromUrl(String url) {
 	def restClient = new RESTClient(url);
-	restClient.get(path: 'speakers/data.rss', contentType: ContentType.TEXT) {response, reader ->
+	restClient.get(path: 'speakers/data/2015.rss', contentType: ContentType.TEXT) {response, reader ->
 		response.headers.each { header -> println "${header.name} - ${header.value}" }
 
 		println '============';

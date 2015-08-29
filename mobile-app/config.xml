@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="org.ehfg.app2" version="0.0.1" xmlns="http://www.w3.org/ns/widgets">
+<widget id="org.ehfg.app" version="2.0.0" xmlns="http://www.w3.org/ns/widgets">
   <name>EHFG</name>
   <description>
         Offical App of the European Health Forum Gastein
@@ -7,7 +7,7 @@
   <author email="patrick.oberbichler@gmail.com" href="https://github.com/poberbichler/">
         Patrick Oberbichler
     </author>
-  <content src="index.html"/>
+  <content src="index_ionic.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
@@ -15,6 +15,10 @@
   <preference name="BackupWebStorage" value="none"/>
   <preference name="SplashScreen" value="screen"/>
   <preference name="SplashScreenDelay" value="3000"/>
+  <!-- configure statusbar for ios -->
+  <preference name="StatusBarOverlaysWebView" value="false" />
+  <preference name="StatusBarBackgroundColor" value="#6699cc" />
+  <preference name="StatusBarStyle" value="lightcontent" />
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>

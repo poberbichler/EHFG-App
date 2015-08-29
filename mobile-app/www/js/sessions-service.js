@@ -126,7 +126,11 @@
         }
 
         function isFavouriteSession(sessionId) {
-            return this.findFavouriteSessions().indexOf(sessionId) !== -1;
+            var favouriteSessions = this.findFavouriteSessions();
+            if (!favouriteSessions) {
+                return false;
+            }
+            return favouriteSessions.indexOf(sessionId) !== -1;
         }
 
         function addToFavourites(sessionId) {

@@ -21,7 +21,13 @@ module.exports = function(grunt) {
 				files: {
 					'www/index_prod.html': ['www/index.html']
 				}
-			}
+			},
+
+            ionic: {
+                files: {
+                    'www/index_ionic.html' : ['www/index.html']
+                }
+            }
 		}
 	});
 	
@@ -29,4 +35,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-processhtml');
 	
 	grunt.registerTask('default', ['uglify', 'processhtml']);
+    grunt.registerTask('ionic', ['uglify', 'processhtml:ionic']);
+    grunt.registerTask('prod', ['uglify', 'processhtml']);
 }

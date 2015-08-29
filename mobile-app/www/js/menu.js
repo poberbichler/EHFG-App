@@ -21,8 +21,10 @@
 		
 		this.resetData = function() {
             $state.go('app.twitter');
-            cacheFactory.clearAll();
-            $window.location.reload();
+            window.setTimeout(function() {
+                cacheFactory.clearAll();
+                $window.location.reload();
+            }, 250);
 		}
 	}
 
