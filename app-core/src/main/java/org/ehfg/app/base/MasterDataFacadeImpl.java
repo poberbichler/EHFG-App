@@ -119,15 +119,25 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 			return null;
 		}
 
+        if (input.getPoint() != null) {
+            return new LocationDTO(input.getId(), input.getName(), mapToDto(input.getPoint()));
+        }
+
 		return new LocationDTO(input.getId(), input.getName(), input.getCoordinate().getxValue(), input.getCoordinate().getyValue());
 	}
 
 	@Override
-	@Validate
 	public String saveLocation(LocationDTO source) {
-		Location target = new Location(source.getId(), source.getName(), 
-				source.getCoordinate().getxValue(), source.getCoordinate().getyValue());
-		
+		Location target = null;
+		if (source.getMappedPointOfInterest() != null && !StringUtils.isEmpty(source.getMappedPointOfInterest().getId())) {
+			PointOfInterest point = pointOfInterestRepository.findOne(source.getMappedPointOfInterest().getId());
+			target = new Location(source.getId(), source.getName(), point);
+
+		} else {
+			target = new Location(source.getId(), source.getName(),
+					source.getCoordinate().getxValue(), source.getCoordinate().getyValue());
+		}
+
 		locationRepository.save(target);
 		return target.getId();
 	}

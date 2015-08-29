@@ -15,8 +15,8 @@
 		<tbody>
 			<tr th:each="location : ${locations}">
 				<td th:text="${location.name}">name</td>
-				<td th:text="${location.coordinate.xValue}">xValue</td>
-				<td th:text="${location.coordinate.yValue}">yValue</td>
+				<td th:text="${location.coordinate?.xValue}">xValue</td>
+				<td th:text="${location.coordinate?.yValue}">yValue</td>
 				<td th:text="${location.mappedPointOfInterest?.name}">mapped point</td>
                 <td><a th:href="@{location/delete/__${location.id}__}">delete</a></td>
 			</tr>
@@ -24,6 +24,10 @@
 	</table>
 
 	<form th:action="@{#}" th:unless="${#lists.isEmpty(availableLocations)}" th:object="${editLocation}" method="post" class="form form-horizontal">
+		<ul th:if="${#fields.hasErrors('*')}">
+			<li th:each="error : ${#fields.errors('*')}" th:text="${error}">error</li>
+		</ul>
+
 		<div class="form-group">
 			<label for="locationName" class="col-sm-2 control-label">Name</label>
 			<div class="col-sm-4">
@@ -36,9 +40,9 @@
 		<div class="form-group">
 			<label for="mappedPoint" class="col-sm-2 control-label">Point of Interest</label>
 			<div class="col-sm-4">
-				<select id="mappedPoint" th:field="*{mappedPointOfInterest}" class="form-control">
+				<select id="mappedPoint" th:field="*{mappedPointOfInterest.id}" class="form-control">
                     <option th:value="${null}" th:text="'--- Please choose ---'">null</option>
-					<option th:each="point : ${pointsOfInterest}" th:value="${point}" th:text="${point.name}">point</option>
+					<option th:each="point : ${pointsOfInterest}" th:value="${point.id}" th:text="${point.name}">point</option>
 				</select>
 			</div>
 		</div>

@@ -2,6 +2,7 @@ package org.ehfg.app.base;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.ehfg.app.rest.LocationRepresentation;
+import org.ehfg.app.validation.LocationMappingValid;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -12,15 +13,13 @@ import javax.validation.constraints.NotNull;
  * @author patrick
  * @since 03.2014
  */
+@LocationMappingValid
 public final class LocationDTO implements LocationRepresentation {
 	private String id;
 	@NotNull
 	private String name;
 	
-	@Valid
-	@NotNull
 	private CoordinateDTO coordinate;
-
 	private PointOfInterestDTO mappedPointOfInterest;
 
 	public LocationDTO() {
@@ -37,6 +36,12 @@ public final class LocationDTO implements LocationRepresentation {
 	public LocationDTO(String id, String name, Double xValue, Double yValue) {
 		this(id, name, new CoordinateDTO(xValue, yValue));
 	}
+
+    public LocationDTO(String id, String name, PointOfInterestDTO pointOfInterestDTO) {
+        this.id = id;
+        this.name = name;
+        this.mappedPointOfInterest = pointOfInterestDTO;
+    }
 
 	@Override
 	public String getId() {

@@ -23,12 +23,16 @@ class Location {
 	@DBRef
 	private PointOfInterest point;
 
-	@Valid
-	@NotNull
 	private Coordinate coordinate;
 
-	public Location() {
+    public Location() {
+        // no arg ctor needed by mongodb
+    }
 
+	public Location(String id, String name, PointOfInterest point) {
+		this.id = id;
+		this.name = name;
+		this.point = point;
 	}
 
 	public Location(String id, String name, Coordinate coordinate) {
