@@ -15,10 +15,8 @@
   <preference name="BackupWebStorage" value="none"/>
   <preference name="SplashScreen" value="screen"/>
   <preference name="SplashScreenDelay" value="3000"/>
-  <!-- configure statusbar for ios -->
-  <preference name="StatusBarOverlaysWebView" value="false" />
-  <preference name="StatusBarBackgroundColor" value="#6699cc" />
-  <preference name="StatusBarStyle" value="lightcontent" />
+  <preference name="StatusBarStyle" value="lightcontent"/>
+  <preference name="StatusBarOverlaysWebView" value="true" />
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
