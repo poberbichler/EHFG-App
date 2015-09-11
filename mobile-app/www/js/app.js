@@ -126,7 +126,9 @@
         }
 
         function getCurrentTime() {
-            return this.getUtcTimeFor(new Date());
+            var result = this.getUtcTimeFor(new Date());
+            result.setHours(result.getHours() + 2);
+            return result;
         }
 
         function getUtcTimeFor(input) {
