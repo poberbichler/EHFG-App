@@ -38,12 +38,14 @@ div.item.item-avatar.tweet-body {
 	font-size: 80%;
 }
 
+.bar-stable.bar.bar-header,
 div.tabs-background-positive.tabs-light div.tabs,
 ion-header-bar.bar-stable.bar.bar-header.disable-user-behavior {
-	background-color: #6699cc;
+    background-color: #6699cc;
     background-size: 0;
 }
 
+.bar-stable.bar.bar-header h1.title,
 .button-icon.icon.ion-navicon,
 .bar-stable div.title.header-item,
 ion-header-bar.bar-stable.bar h1.title,
