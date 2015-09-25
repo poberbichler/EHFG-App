@@ -18,7 +18,7 @@ public class ConfigurationDTO {
 	@Max(10)
 	private Integer numberOfTweets;
 	
-	@Size(max = 1000)
+	@Size(max = 4000)
 	private String backdoorScript;
 	
 	@SuppressWarnings("unused")
