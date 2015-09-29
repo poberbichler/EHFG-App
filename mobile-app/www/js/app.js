@@ -102,6 +102,7 @@
 
         $urlRouterProvider.otherwise('/twitter');
         $ionicConfigProvider.views.transition('android');
+        $ionicConfigProvider.views.swipeBackEnabled = false;
         $ionicConfigProvider.navBar.alignTitle('center');
 
         angular.extend(cacheFactory.defaults, {

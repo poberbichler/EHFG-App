@@ -17,6 +17,9 @@ public class LongToLocalDateTimeConverter implements Converter<String, LocalDate
 			return LocalDateTime.now();
 		}
 
-		return LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.valueOf(source)), ZoneId.systemDefault());
+		final LocalDateTime utcTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(Long.valueOf(source)), ZoneId.of("UTC"));
+		return utcTime.atZone(ZoneId.of("UTC")).withZoneSameInstant(ZoneId.systemDefault()).toLocalDateTime().minusHours(2);
+		//final LocalDateTime europeVienna = utcTime.atZone(ZoneId.of("UTC")).withZoneSameInstant(ZoneId.of("Europe/Vienna")).toLocalDateTime();
+		//return utcTime;
 	}
 }
