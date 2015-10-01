@@ -1,0 +1,19 @@
+<html layout:decorator="report/reportTemplate">
+<div layout:fragment="content">
+    <h3>Tweet Overview</h3>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <th>Session</th>
+            <th>Number of Tweets</th>
+        </thead>
+
+        <tbody>
+            <tr th:each="line : ${reportLines}">
+                <td th:text="${line.session}">sessionName</td>
+                <td th:text="${line.tweets}">numberOfTweets</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</html>

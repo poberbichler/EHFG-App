@@ -3,6 +3,8 @@ package org.ehfg.app.twitter;
 import org.apache.commons.lang3.Validate;
 import org.ehfg.app.base.ConfigurationDTO;
 import org.ehfg.app.base.MasterDataFacade;
+import org.ehfg.app.program.ProgramFacade;
+import org.ehfg.app.program.SessionDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -10,8 +12,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-import java.util.Collection;
-import java.util.Collections;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author patrick
@@ -22,12 +24,14 @@ final class TwitterFacadeImpl implements TwitterFacade {
 	private final TweetRepository tweetRepository;
 	private final TwitterStreamingFacade streamingFacade;
 	private final MasterDataFacade masterDataFacade;
+	private final ProgramFacade programFacade;
 
 	@Autowired
-	public TwitterFacadeImpl(TweetRepository tweetRepository, TwitterStreamingFacade streamingFacade, MasterDataFacade masterDataFacade) {
+	public TwitterFacadeImpl(TweetRepository tweetRepository, TwitterStreamingFacade streamingFacade, MasterDataFacade masterDataFacade, ProgramFacade programFacade) {
 		this.tweetRepository = tweetRepository;
 		this.streamingFacade = streamingFacade;
 		this.masterDataFacade = masterDataFacade;
+		this.programFacade = programFacade;
 	}
 
 	@Override
@@ -83,6 +87,26 @@ final class TwitterFacadeImpl implements TwitterFacade {
 				currentHashtag.toLowerCase(), new PageRequest(pageId, pageSize));
 
 		return new TweetPageDTO(TweetMapper.map(tweets.getContent()), pageId, tweets.getTotalPages(), currentHashtag);
+	}
+
+	@Override
+	public Collection<TwitterStatisticLine> findStats() {
+		final List<Tweet> allTweets = tweetRepository.findAll();
+		final Collection<SessionDTO> sessions = programFacade.findAllSessionsWithoutDayInformation();
+
+		Map<SessionDTO, Integer> sessionTweetCountMap = new HashMap<>();
+		allTweets.parallelStream().forEach(tweet ->
+			sessions.stream()
+					.filter(session -> session.wasDuring(tweet.getCreationDate()))
+					.forEach(session -> {
+						sessionTweetCountMap.putIfAbsent(session, 0);
+						sessionTweetCountMap.computeIfPresent(session, (s, counter) -> counter++);
+					})
+		);
+
+		return sessionTweetCountMap.entrySet().stream()
+				.map(entry -> new TwitterStatisticLine(entry.getKey().getNameWithCode(), entry.getValue()))
+				.collect(Collectors.toList());
 	}
 
 	@Override

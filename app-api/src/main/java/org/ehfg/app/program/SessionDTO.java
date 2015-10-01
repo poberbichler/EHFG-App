@@ -39,6 +39,14 @@ public final class SessionDTO implements SessionRepresentation {
 		this.sessionCode = builder.sessionCode;
 	}
 
+	public String getNameWithCode() {
+		return sessionCode + " - " + name;
+	}
+
+	public boolean wasDuring(LocalDateTime input) {
+		return input != null && input.isAfter(startTime) && input.isBefore(endTime);
+	}
+
 	public LocalDate getDay() {
 		return startTime.toLocalDate();
 	}

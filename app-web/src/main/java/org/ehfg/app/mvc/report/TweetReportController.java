@@ -36,4 +36,11 @@ public class TweetReportController {
 		
 		return view;
 	}
+
+	@RequestMapping("tweet/stats")
+	public ModelAndView twitterStats() {
+		final ModelAndView view = new ModelAndView("report/tweetStats");
+		view.addObject("reportLines", twitterFacade.findStats());
+		return view;
+	}
 }
