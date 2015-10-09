@@ -1,8 +1,14 @@
 package org.ehfg.app.mvc.export;
 
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import java.time.format.DateTimeFormatter;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.poi.hssf.usermodel.*;
 import org.ehfg.app.twitter.TweetDTO;
 import org.ehfg.app.twitter.TwitterFacade;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,25 +49,18 @@ class TweetExport extends AbstractExcelView {
 
         headerRow.createCell(TEXT_COLUMN_INDEX).setCellValue("Text");
         headerRow.createCell(FULL_NAME_COLUMN_INDEX).setCellValue("User");
-        headerRow.createCell(NICK_NAME_COLUMN_INDEX).setCellValue("Nickname");
+        headerRow.createCell(NICKNAME_COLUMN_INDEX).setCellValue("Nickname");
         headerRow.createCell(CREATED_COLUMN_INDEX).setCellValue("Created");
 
-        List<TweetDTO> tweets = twitterFacade.findTweetsForExport((String) model.getOrDefault("hashtag", "#EHFG2015t"));
+        List<TweetDTO> tweets = twitterFacade.findTweetsForExport((String) model.getOrDefault("hashtag", "EHFG2015"));
         for (int rowCounter = 0; rowCounter < tweets.size(); rowCounter++) {
             TweetDTO tweet = tweets.get(rowCounter);
 
             HSSFRow tweetRow = tweetSheet.createRow(rowCounter+1);
-			tweetRow.createCell(TEXT_COLUMN_INDEX).setCellValue(tweet.getMessage());
+            tweetRow.createCell(TEXT_COLUMN_INDEX).setCellValue(tweet.getMessage());
             tweetRow.createCell(FULL_NAME_COLUMN_INDEX).setCellValue(tweet.getFullName());
-            tweetRow.createCell(NICK_NAME_COLUMN_INDEX).setCellValue(tweet.getNickName());
+            tweetRow.createCell(NICKNAME_COLUMN_INDEX).setCellValue(tweet.getNickName());
             tweetRow.createCell(CREATED_COLUMN_INDEX).setCellValue(tweet.getTimestamp().format(DATE_TIME_FORMATTER));
         }
-
-		tweetSheet.autoSizeColumn(TEXT_COLUMN_INDEX);
-		tweetSheet.autoSizeColumn(FULL_NAME_COLUMN_INDEX);
-		tweetSheet.autoSizeColumn(NICK_NAME_COLUMN_INDEX);
-		tweetSheet.autoSizeColumn(CREATED_COLUMN_INDEX);
-
-		response.setHeader("Content-Disposition", "attachment; filename=\"tweets.xls\"");
     }
 }
