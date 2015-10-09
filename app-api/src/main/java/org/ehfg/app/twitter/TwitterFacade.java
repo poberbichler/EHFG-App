@@ -2,6 +2,7 @@ package org.ehfg.app.twitter;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * @author patrick
@@ -26,4 +27,6 @@ public interface TwitterFacade {
 	 * @return the {@link TwitterStreamStatus}, based on the current stream
 	 */
 	TwitterStreamStatus checkIfRelevantStreamIsRunning();
+
+    List<TweetDTO> findTweetsForExport(String hashtag);
 }

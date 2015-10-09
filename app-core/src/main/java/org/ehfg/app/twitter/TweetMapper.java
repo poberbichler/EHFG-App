@@ -24,14 +24,16 @@ final class TweetMapper {
 			return Collections.emptyList();
 		}
 
-		return source.stream().map(tweet -> {
-			final TwitterUser user = tweet.getAuthor();
-
-			final String message = tweet.getFormattedMesssage() != null ? tweet.getFormattedMesssage() : tweet.getMessage();
-
-			// TODO: not an ideal solution, creationDate inside Tweet should be ZoneDateTime next year (?)
-			final ZonedDateTime utcCreationDate = tweet.getCreationDate().atZone(ZoneId.systemDefault()).withZoneSameInstant(ZoneId.of("Europe/Vienna"));
-			return new TweetDTO(tweet.getId(), user.getFullName(), user.getNickName(), message, user.getProfileImage(), utcCreationDate.toLocalDateTime());
-		}).collect(Collectors.toList());
+		return source.stream().map(TweetMapper::mapTweet).collect(Collectors.toList());
 	}
+
+    static TweetDTO mapTweet(Tweet tweet) {
+        final TwitterUser user = tweet.getAuthor();
+
+        final String message = tweet.getFormattedMesssage() != null ? tweet.getFormattedMesssage() : tweet.getMessage();
+
+        // TODO: not an ideal solution, creationDate inside Tweet should be ZoneDateTime next year (?)
+        final ZonedDateTime utcCreationDate = tweet.getCreationDate().atZone(ZoneId.systemDefault()).withZoneSameInstant(ZoneId.of("Europe/Vienna"));
+        return new TweetDTO(tweet.getId(), user.getFullName(), user.getNickName(), message, user.getProfileImage(), utcCreationDate.toLocalDateTime());
+    }
 }

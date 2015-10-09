@@ -32,7 +32,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(final WebSecurity web) {
-		web.ignoring().antMatchers("/rest/**", "/webjars/**", "/report/**", "/mobile/**");
+		web.ignoring().antMatchers("/rest/**", "/webjars/**", "/report/**", "/mobile/**", "/export/**");
 	}
 
 	@Override

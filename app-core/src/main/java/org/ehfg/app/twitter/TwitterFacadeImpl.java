@@ -121,4 +121,13 @@ final class TwitterFacadeImpl implements TwitterFacade {
 
 		return TwitterStreamStatus.RUNNING;
 	}
+
+    @Override
+    public List<TweetDTO> findTweetsForExport(String hashtag) {
+        Validate.notNull(hashtag, "hashtag must not be null");
+        return tweetRepository.findByHashtag(hashtag)
+                .parallelStream()
+                .map(TweetMapper::mapTweet)
+                .collect(Collectors.toList());
+    }
 }

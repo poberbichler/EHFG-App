@@ -18,4 +18,6 @@ interface TweetRepository extends MongoRepository<Tweet, String> {
 	List<Tweet> findNewerTweetsByHashtag(String hashtag, LocalDateTime lastTweet, Sort sort);
 
 	Page<Tweet> findByHashtagOrderByCreationDateDesc(String hashtag, Pageable pageable);
+
+    List<Tweet> findByHashtag(String hashtag);
 }

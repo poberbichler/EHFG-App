@@ -42,5 +42,5 @@ public class TweetReportController {
 		final ModelAndView view = new ModelAndView("report/tweetStats");
 		view.addObject("reportLines", twitterFacade.findStats());
 		return view;
-	}
+    }
 }

@@ -19,9 +19,11 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.servlet.DispatcherServlet;
+import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.BeanNameViewResolver;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
@@ -86,12 +88,21 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	}
 
 	@Bean
-	public ThymeleafViewResolver viewResolver() {
+	public ViewResolver viewResolver() {
 		final ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
 		viewResolver.setTemplateEngine(templateEngine());
+        viewResolver.setOrder(1);
+        viewResolver.setExcludedViewNames(new String[] {"tweetExport"});
 
 		return viewResolver;
 	}
+
+    @Bean
+    public ViewResolver beanNameViewResolver() {
+        final BeanNameViewResolver resolver = new BeanNameViewResolver();
+        resolver.setOrder(2);
+        return resolver;
+    }
 	
 	@Override
 	public void addFormatters(FormatterRegistry registry) {
