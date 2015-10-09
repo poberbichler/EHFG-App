@@ -24,16 +24,26 @@ final class TweetMapper {
 			return Collections.emptyList();
 		}
 
-		return source.stream().map(TweetMapper::mapTweet).collect(Collectors.toList());
+		return source.stream().map(tweet -> mapTweet(tweet, ShowFormattedMesage.YES)).collect(Collectors.toList());
 	}
 
-    static TweetDTO mapTweet(Tweet tweet) {
+	static TweetDTO mapUnformattedTweet(Tweet tweet) {
+		return mapTweet(tweet, ShowFormattedMesage.NO);
+	}
+
+	private static TweetDTO mapTweet(Tweet tweet, ShowFormattedMesage showFormattedMesage) {
         final TwitterUser user = tweet.getAuthor();
 
-        final String message = tweet.getFormattedMesssage() != null ? tweet.getFormattedMesssage() : tweet.getMessage();
+        final String message = showFormattedMesage == ShowFormattedMesage.YES ?
+				tweet.getFormattedMesssage() != null ? tweet.getFormattedMesssage() : tweet.getMessage()
+				: tweet.getMessage();
 
         // TODO: not an ideal solution, creationDate inside Tweet should be ZoneDateTime next year (?)
         final ZonedDateTime utcCreationDate = tweet.getCreationDate().atZone(ZoneId.systemDefault()).withZoneSameInstant(ZoneId.of("Europe/Vienna"));
         return new TweetDTO(tweet.getId(), user.getFullName(), user.getNickName(), message, user.getProfileImage(), utcCreationDate.toLocalDateTime());
     }
+
+	private enum ShowFormattedMesage {
+		YES, NO;
+	}
 }

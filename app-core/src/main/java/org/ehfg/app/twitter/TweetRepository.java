@@ -19,5 +19,5 @@ interface TweetRepository extends MongoRepository<Tweet, String> {
 
 	Page<Tweet> findByHashtagOrderByCreationDateDesc(String hashtag, Pageable pageable);
 
-    List<Tweet> findByHashtag(String hashtag);
+    List<Tweet> findByHashtagIgnoreCase(String hashtag);
 }
