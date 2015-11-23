@@ -1,14 +1,8 @@
 package org.ehfg.app.mvc.export;
 
-import java.time.format.DateTimeFormatter;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.ehfg.app.twitter.TweetDTO;
 import org.ehfg.app.twitter.TwitterFacade;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +23,7 @@ import java.util.Map;
 class TweetExport extends AbstractExcelView {
     private static final int TEXT_COLUMN_INDEX = 0;
     private static final int FULL_NAME_COLUMN_INDEX = 1;
-    private static final int NICK_NAME_COLUMN_INDEX = 2;
+    private static final int NICKNAME_COLUMN_INDEX = 2;
     private static final int CREATED_COLUMN_INDEX = 3;
 
     private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
