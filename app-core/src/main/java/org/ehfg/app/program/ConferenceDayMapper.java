@@ -1,9 +1,9 @@
 package org.ehfg.app.program;
 
 import java.util.Collection;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 /**
  * @author patrick
@@ -22,9 +22,9 @@ final class ConferenceDayMapper {
 	}
 	
 	public static List<ConferenceDayDTO> mapToDTO(final Iterable<ConferenceDay> source) {
-		final List<ConferenceDayDTO> result = new LinkedList<>();
-		source.forEach(day -> result.add(map(day)));
-		return result;
+        return StreamSupport.stream(source.spliterator(), false)
+                .map(day -> map(day))
+                .collect(Collectors.toList());
 	}
 	
 	public static ConferenceDayDTO map(final ConferenceDay source) {

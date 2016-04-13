@@ -1,6 +1,10 @@
 package org.ehfg.app;
 
-import com.mongodb.*;
+import com.mongodb.Mongo;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoCredential;
+import com.mongodb.ServerAddress;
+import com.mongodb.WriteConcern;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +12,6 @@ import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.data.repository.query.QueryLookupStrategy.Key;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -43,7 +46,7 @@ public class PersistenceConfig extends AbstractMongoConfiguration {
 		if (StringUtils.isEmpty(username) && StringUtils.isEmpty(password)) {
 			credentials = Collections.emptyList();
 		} else {
-			credentials = Arrays.asList(MongoCredential.createCredential(username, databaseName, password.toCharArray()));
+			credentials = Collections.singletonList(MongoCredential.createCredential(username, databaseName, password.toCharArray()));
 		}
 
 		final MongoClient client = new MongoClient(new ServerAddress(url), credentials);
