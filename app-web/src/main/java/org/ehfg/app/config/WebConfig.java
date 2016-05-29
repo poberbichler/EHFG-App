@@ -9,7 +9,6 @@ import org.ehfg.app.converter.StringToLocalDateConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.embedded.EmbeddedWebApplicationContext;
 import org.springframework.boot.context.embedded.ServletRegistrationBean;
-import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,8 +32,6 @@ import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -51,14 +48,6 @@ import java.util.List;
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Autowired
     private Environment environment;
-
-    @Bean
-    public TomcatEmbeddedServletContainerFactory tomcatEmbeddedServletContainerFactory() throws UnknownHostException {
-        final TomcatEmbeddedServletContainerFactory factory = new TomcatEmbeddedServletContainerFactory();
-        factory.setPort(environment.getProperty("server.port", Integer.class));
-        factory.setAddress(InetAddress.getByName(environment.getProperty("server.address")));
-        return factory;
-    }
 
     @Bean
     public ServletRegistrationBean servletRegistrationBean() {
