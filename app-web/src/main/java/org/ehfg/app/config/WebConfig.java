@@ -1,7 +1,6 @@
 package org.ehfg.app.config;
 
 import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
-import nz.net.ultraq.thymeleaf.LayoutDialect;
 import org.ehfg.app.converter.LocalDateTimeToUTCTimestampSerializer;
 import org.ehfg.app.converter.LocalDateToStringConverter;
 import org.ehfg.app.converter.LongToLocalDateTimeConverter;
@@ -28,9 +27,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.BeanNameViewResolver;
-import org.thymeleaf.spring4.SpringTemplateEngine;
-import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
-import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -58,36 +54,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         servletRegistrationBean.addUrlMappings("/*");
         servletRegistrationBean.setName("maintenanceServlet");
         return servletRegistrationBean;
-    }
-
-    @Bean
-    public SpringResourceTemplateResolver templateResolver() {
-        final SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
-        resolver.setPrefix("classpath:templates/");
-        resolver.setSuffix(".html");
-        resolver.setTemplateMode("HTML5");
-        resolver.setCacheable(false);
-
-        return resolver;
-    }
-
-    @Bean
-    public SpringTemplateEngine templateEngine() {
-        final SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-        templateEngine.setTemplateResolver(templateResolver());
-        templateEngine.addDialect(new LayoutDialect());
-
-        return templateEngine;
-    }
-
-    @Bean
-    public ViewResolver viewResolver() {
-        final ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
-        viewResolver.setTemplateEngine(templateEngine());
-        viewResolver.setOrder(1);
-        viewResolver.setExcludedViewNames(new String[]{"tweetExport"});
-
-        return viewResolver;
     }
 
     @Bean
