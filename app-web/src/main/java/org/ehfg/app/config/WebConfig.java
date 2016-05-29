@@ -6,8 +6,6 @@ import org.ehfg.app.converter.LocalDateToStringConverter;
 import org.ehfg.app.converter.LongToLocalDateTimeConverter;
 import org.ehfg.app.converter.StringToLocalDateConverter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.embedded.EmbeddedWebApplicationContext;
-import org.springframework.boot.context.embedded.ServletRegistrationBean;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +19,6 @@ import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -44,17 +41,6 @@ import java.util.List;
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Autowired
     private Environment environment;
-
-    @Bean
-    public ServletRegistrationBean servletRegistrationBean() {
-        DispatcherServlet dispatcherServlet = new DispatcherServlet();
-        dispatcherServlet.setContextClass(EmbeddedWebApplicationContext.class);
-
-        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(dispatcherServlet);
-        servletRegistrationBean.addUrlMappings("/*");
-        servletRegistrationBean.setName("maintenanceServlet");
-        return servletRegistrationBean;
-    }
 
     @Bean
     public ViewResolver beanNameViewResolver() {
