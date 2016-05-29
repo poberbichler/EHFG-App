@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.ehfg</groupId>
 		<artifactId>app-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>app-external</artifactId>
 
