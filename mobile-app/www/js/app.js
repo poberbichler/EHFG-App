@@ -150,7 +150,7 @@
 		'ehfgApp.menu',
 		'ehfgApp.speakers',
 		'ehfgApp.sessions',
-		'ehfgApp.map',
+        'ehfgApp.map',
 		'ehfgApp.config'
 	]).config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider', 'CacheFactoryProvider', Config])
         .factory('UtcTimeService', [UtcTimeService])

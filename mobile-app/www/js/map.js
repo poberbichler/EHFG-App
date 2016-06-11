@@ -52,11 +52,15 @@
 		}
 	}
 
+    function UiMapAsyncLoaderCallback(uiGmapGoogleMapApiProvider) {
+        uiGmapGoogleMapApiProvider.configure({
+            v: '3.20',
+            libraries: 'weather,geometry,visualization'
+        });
+    }
+
 	angular.module('ehfgApp.map', ['uiGmapgoogle-maps'])
 		.controller('MapCtrl', ['$scope', 'MapService', 'highlightLocation', MapCtrl])
 		.factory('MapService', ['$resource', 'BASE_URL', MapService])
+        .config(UiMapAsyncLoaderCallback)
 })();
-
-function onGoogleReady() {
-	angular.bootstrap(document.getElementById("map"), ['uiGmapgoogle-maps']);
-}
