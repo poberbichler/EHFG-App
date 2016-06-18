@@ -18,7 +18,12 @@
 				buttons: [{text: 'Exit'}]
 			});
 		}
-		
+
+        this.search = function(input) {
+            $ionicSideMenuDelegate.toggleRight();
+            $state.go('app.search', {searchParam: input}, {reload: true});
+        }
+
 		this.resetData = function() {
             $state.go('app.twitter');
             window.setTimeout(function() {

@@ -40,7 +40,7 @@ import java.util.List;
 @PropertySource(ignoreResourceNotFound = true,
         value = {"classpath:config.properties", "file:////${user.home}/ehfg.properties"})
 public class WebConfig extends WebMvcConfigurerAdapter {
-    @Value("${absolute.mobile.path}")
+    @Value("${absolute.mobile.path:}")
     private String absoluteMobilePath;
 
     @Override

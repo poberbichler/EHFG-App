@@ -100,6 +100,27 @@
 	    	}
         });
 
+        $stateProvider.state('app.search', {
+            url: '/search/:searchParam',
+            cache: false,
+            views: {
+                'content': {
+                    templateUrl: 'templates/search.html',
+                    controller: 'SearchCtrl as searchCtrl'
+                }
+            },
+
+            resolve: {
+                searchResult: ['$stateParams', 'SearchResource', function($stateParams, searchResource) {
+                    if ($stateParams.searchParam) {
+                        return searchResource.get({input: $stateParams.searchParam});
+                    }
+
+                    return null;
+                }]
+            }
+        });
+
         $urlRouterProvider.otherwise('/twitter');
         $ionicConfigProvider.views.transition('android');
         $ionicConfigProvider.views.swipeBackEnabled = false;
@@ -151,7 +172,8 @@
 		'ehfgApp.speakers',
 		'ehfgApp.sessions',
         'ehfgApp.map',
-		'ehfgApp.config'
+		'ehfgApp.config',
+        'ehfgApp.search'
 	]).config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider', 'CacheFactoryProvider', Config])
         .factory('UtcTimeService', [UtcTimeService])
         .run(['$ionicPlatform', '$ionicPopup', RunFunction])

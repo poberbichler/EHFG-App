@@ -1,0 +1,28 @@
+<ion-view>
+    <ion-nav-title>Results for "{{::searchCtrl.searchParam}}"</ion-nav-title>
+    <ion-content class="has-header has-footer">
+        <ion-list ng-show="::searchCtrl.searchResult">
+            <ion-item ng-show="::searchCtrl.searchResult.SPEAKER" class="item-divider">Speakers</ion-item>
+            <ion-item ng-repeat="item in ::searchCtrl.searchResult.SPEAKER track by item.id">
+                {{::item}}
+            </ion-item>
+
+            <ion-item ng-show="::searchCtrl.searchResult.SESSION" class="item-divider">Sessions</ion-item>
+            <ion-item ng-repeat="item in ::searchCtrl.searchResult.SESSION track by item.id">
+                {{::item}}
+            </ion-item>
+
+            <ion-item ng-show="::searchCtrl.searchResult.TWEET" class="item-divider">Tweets</ion-item>
+            <ion-item ng-repeat="item in ::searchCtrl.searchResult.TWEET track by item.id">
+                {{::item}}
+            </ion-item>
+
+            <ion-item ng-show="::searchCtrl.searchResult.LOCATION" class="item-divider">Location</ion-item>
+            <ion-item ng-repeat="item in ::searchCtrl.searchResult.LOCATION track by item.id">
+                {{::item}}
+            </ion-item>
+        </ion-list>
+
+        <h1 ng-hide="::searchCtrl.searchResult">nothing found... :(</h1>
+    </ion-content>
+</ion-view>
