@@ -9,6 +9,8 @@
 				vm.points = mapService.points.findAll();
 			}
 
+            console.log(highlightLocation);
+
             vm.center = {latitude: 47.170329, longitude: 13.103852}
 			if (highlightLocation !== null) {
                 if (highlightLocation.pointId) {

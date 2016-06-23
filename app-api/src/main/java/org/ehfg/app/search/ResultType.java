@@ -7,6 +7,5 @@ package org.ehfg.app.search;
 public enum ResultType {
 	SPEAKER,
 	SESSION,
-	LOCATION,
-	TWEET;
+	LOCATION;
 }

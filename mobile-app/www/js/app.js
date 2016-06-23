@@ -92,7 +92,7 @@
 	    	resolve: {
                 highlightLocation: ['$stateParams', 'MapService', function($stateParams, mapService) {
                     if ($stateParams.location !== undefined && $stateParams.location.length !== 0) {
-                        return mapService.locations.findByName({name: $stateParams.location}).$promise;
+                        return mapService.locations.findByName({name: $stateParams.location});
                     }
 
                     return null;

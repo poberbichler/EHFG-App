@@ -5,6 +5,7 @@ import org.ehfg.app.search.ResultType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import java.util.Collection;
 
 /**
  * @author patrick
@@ -12,12 +13,18 @@ import javax.xml.bind.annotation.XmlElement;
  */
 @XmlAccessorType(XmlAccessType.NONE)
 public interface SearchResultRepresentation {
-	@XmlElement(name = "id")
-	String getId();
+	@XmlElement(name = "results")
+	Collection<SearchResultDataRepresentation> getResults();
 
-	@XmlElement(name = "type")
-	ResultType getType();
+	@XmlElement(name = "tweets")
+	Collection<TweetRepresentation> getTweets();
 
-	@XmlElement(name = "description")
-	String getDescription();
+	@XmlAccessorType(XmlAccessType.NONE)
+	interface SearchResultDataRepresentation {
+		@XmlElement(name = "type")
+		ResultType getType();
+
+		@XmlElement(name = "data")
+		Collection<SearchResultItemRepresentation> getResults();
+	}
 }

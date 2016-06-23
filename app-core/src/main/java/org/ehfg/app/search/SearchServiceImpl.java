@@ -1,5 +1,6 @@
 package org.ehfg.app.search;
 
+import org.ehfg.app.rest.SearchResultItemRepresentation;
 import org.ehfg.app.rest.SearchResultRepresentation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,20 +18,20 @@ public class SearchServiceImpl implements SearchService {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 
 	@Override
-	public Map<ResultType, Collection<? extends SearchResultRepresentation>> findBy(String input) {
+	public SearchResultRepresentation findBy(String input) {
 		logger.info("searching for [{}]", input);
 
 		if (StringUtils.isEmpty(input)) {
-			return Collections.emptyMap();
+			return SearchResult.empty();
 		}
 
-		Map<ResultType, Collection<? extends SearchResultRepresentation>> resultMap = new HashMap<>();
-		resultMap.put(ResultType.SPEAKER, Arrays.asList(new SearchResult("1", ResultType.SPEAKER, "Sepp Forcher"),
-				new SearchResult("2", ResultType.SPEAKER, "Günther Leiner"),
-				new SearchResult("3", ResultType.SPEAKER, "Noch wer")));
-		resultMap.put(ResultType.LOCATION, Arrays.asList(new SearchResult("2", ResultType.LOCATION, "Festsaal")));
-		resultMap.put(ResultType.SESSION, Arrays.asList(new SearchResult("3", ResultType.SESSION, "W1 - Keynote")));
-		resultMap.put(ResultType.TWEET, Arrays.asList(new SearchResult("4", ResultType.TWEET, "#EHFG2016 is awesome")));
-		return resultMap;
+		Map<ResultType, Collection<SearchResultItemRepresentation>> resultMap = new HashMap<>();
+		resultMap.put(ResultType.SPEAKER, Arrays.asList(new SearchResultItem("124", ResultType.SPEAKER, "Helmut Brand"),
+				new SearchResultItem("156", ResultType.SPEAKER, "John Bowis"),
+				new SearchResultItem("742", ResultType.SPEAKER, "Annemans Lieven")));
+		resultMap.put(ResultType.LOCATION, Arrays.asList(new SearchResultItem("2", ResultType.LOCATION, "Conference Centre Room 1")));
+		resultMap.put(ResultType.SESSION, Arrays.asList(new SearchResultItem("3", ResultType.SESSION, "W1 - Keynote")));
+
+		return new SearchResult(resultMap, Collections.emptyList());
 	}
 }
