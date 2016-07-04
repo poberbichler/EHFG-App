@@ -12,15 +12,8 @@ import org.apache.lucene.search.TermQuery;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.RAMDirectory;
-import org.ehfg.app.base.LocationDTO;
-import org.ehfg.app.base.MasterDataFacade;
-import org.ehfg.app.base.PointOfInterestDTO;
-import org.ehfg.app.program.ProgramFacade;
-import org.ehfg.app.program.SessionDTO;
-import org.ehfg.app.program.SpeakerDTO;
 import org.ehfg.app.rest.SearchResultRepresentation;
 import org.ehfg.app.twitter.TweetDTO;
-import org.ehfg.app.twitter.TwitterFacade;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +23,7 @@ import org.springframework.util.StringUtils;
 
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.Collection;
 
 /**
  * @author patrick
@@ -37,20 +31,19 @@ import java.io.StringReader;
  */
 @Service
 public class SearchServiceImpl implements SearchService, ApplicationListener<UpdateIndexEvent> {
-	public static final int MAX_RESULTS = 50;
+	private static final int MAX_RESULTS = 50;
+
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 
-	private final ProgramFacade programFacade;
-	private final MasterDataFacade masterDataFacade;
-	private final TwitterFacade twitterFacade;
+	private final Collection<SearchIndexDataProvider<Indexable>> providers;
+	private final SearchIndexDataProvider<TweetDTO> tweetProvider;
 
 	private Directory index = new RAMDirectory();
 
 	@Autowired
-	public SearchServiceImpl(ProgramFacade programFacade, MasterDataFacade masterDataFacade, TwitterFacade twitterFacade) {
-		this.programFacade = programFacade;
-		this.masterDataFacade = masterDataFacade;
-		this.twitterFacade = twitterFacade;
+	public SearchServiceImpl(Collection<SearchIndexDataProvider<Indexable>> providers, SearchIndexDataProvider<TweetDTO> tweetProvider) {
+		this.providers = providers;
+		this.tweetProvider = tweetProvider;
 	}
 
 	@Override
@@ -105,29 +98,15 @@ public class SearchServiceImpl implements SearchService, ApplicationListener<Upd
 
 			IndexWriterConfig indexWriterConfig = new IndexWriterConfig(new StandardAnalyzer());
 			try (IndexWriter indexWriter = new IndexWriter(index, indexWriterConfig)) {
-				for (SpeakerDTO speakerDTO : programFacade.findAllSpeakers()) {
-					logger.debug("creating index for speaker [{}]", speakerDTO.getDisplayName());
-					indexWriter.addDocument(buildDocument(speakerDTO));
+				for (SearchIndexDataProvider<Indexable> provider : providers) {
+					logger.info("creating index for types [{}]", provider.getResultTypes());
+					for (Indexable indexable : provider.getData()) {
+						indexWriter.addDocument(buildDocument(indexable));
+					}
 				}
 
-				for (SessionDTO sessionDTO : programFacade.findAllSessionsWithoutDayInformation()) {
-					logger.debug("creating index for session [{}]", sessionDTO.getDisplayName());
-					indexWriter.addDocument(buildDocument(sessionDTO));
-				}
-
-				for (LocationDTO locationDTO : masterDataFacade.findAllLocation()) {
-					logger.debug("creating index for location [{}]", locationDTO.getDisplayName());
-					indexWriter.addDocument(buildDocument(locationDTO));
-
-				}
-
-				for (PointOfInterestDTO pointOfInterestDTO : masterDataFacade.findAllPointsOfInterest()) {
-					logger.debug("creating index for point [{}]", pointOfInterestDTO.getDisplayName());
-					indexWriter.addDocument(buildDocument(pointOfInterestDTO));
-				}
-
-				String hashtag = masterDataFacade.getAppConfiguration().getHashtag();
-				for (TweetDTO tweetDTO : twitterFacade.findTweetsForExport(hashtag)) {
+				logger.info("creating index for tweets...");
+				for (TweetDTO tweetDTO : tweetProvider.getData()) {
 					logger.debug("creating index for tweet [{}]", tweetDTO.getId());
 					indexWriter.addDocument(TweetToDocumentMapper.from(tweetDTO));
 				}

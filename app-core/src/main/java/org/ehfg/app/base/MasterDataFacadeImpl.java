@@ -1,11 +1,18 @@
 package org.ehfg.app.base;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.ehfg.app.search.Indexable;
+import org.ehfg.app.search.ResultType;
+import org.ehfg.app.search.SearchIndexDataProvider;
 import org.ehfg.app.validation.Validate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
+import java.util.EnumSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -13,7 +20,7 @@ import java.util.stream.Collectors;
  * @since 14.03.2014
  */
 @Component
-final class MasterDataFacadeImpl implements MasterDataFacade {
+class MasterDataFacadeImpl implements MasterDataFacade, SearchIndexDataProvider<Indexable> {
 	private final AppConfigRepository configRepository;
 	private final PointOfInterestRepository pointOfInterestRepository;
 	private final LocationRepository locationRepository;
@@ -145,5 +152,15 @@ final class MasterDataFacadeImpl implements MasterDataFacade {
 	@Override
 	public void deleteLocation(String locationId) {
 		locationRepository.delete(locationId);
+	}
+
+	@Override
+	public Collection<? extends Indexable> getData() {
+		return CollectionUtils.union(findAllLocation(), findAllPointsOfInterest());
+	}
+
+	@Override
+	public Set<ResultType> getResultTypes() {
+		return EnumSet.of(ResultType.LOCATION);
 	}
 }

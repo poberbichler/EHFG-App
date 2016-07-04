@@ -14,23 +14,22 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 /**
- * Task to clean every {@link Cache} of the configured {@link CacheManager} 
- * every hour<br>
+ * Task to clean every {@link Cache} of the configured {@link CacheManager} every hour<br>
  * After this hour, the {@link Cache caches} will be initialized again
- * 
+ *
  * @author patrick
  * @since 01.2015
  */
 @Service
 class CacheResettingTask implements ApplicationEventPublisherAware {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
-	
+
 	private final CacheManager cacheManager;
 	private final SessionRepository sessionRepository;
 	private final SpeakerRepository speakerRepository;
 
 	private ApplicationEventPublisher publisher;
-	
+
 	@Autowired
 	public CacheResettingTask(CacheManager cacheManager, SessionRepository sessionRepository, SpeakerRepository speakerRepository) {
 		this.cacheManager = cacheManager;
@@ -46,7 +45,7 @@ class CacheResettingTask implements ApplicationEventPublisherAware {
 			logger.debug("cleaning cache [{}]", cacheName);
 			cacheManager.getCache(cacheName).clear();
 		}
-		
+
 		sessionRepository.findAll();
 		speakerRepository.findAll();
 
