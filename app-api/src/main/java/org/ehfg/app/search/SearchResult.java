@@ -27,6 +27,11 @@ public class SearchResult implements SearchResultRepresentation {
 		return this;
 	}
 
+	public SearchResult add(TweetRepresentation tweet) {
+		this.tweets.add(tweet);
+		return this;
+	}
+
 	@Override
 	public Collection<SearchResultDataRepresentation> getResults() {
 		return Arrays.asList(

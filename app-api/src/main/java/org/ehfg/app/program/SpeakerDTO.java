@@ -3,6 +3,8 @@ package org.ehfg.app.program;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.ehfg.app.rest.SpeakerRepresentation;
+import org.ehfg.app.search.Indexable;
+import org.ehfg.app.search.ResultType;
 
 /**
  * basic represenation of a speaker
@@ -10,7 +12,7 @@ import org.ehfg.app.rest.SpeakerRepresentation;
  * @author patrick
  * @since 01.2014
  */
-public final class SpeakerDTO implements Comparable<SpeakerDTO>, SpeakerRepresentation {
+public final class SpeakerDTO implements Comparable<SpeakerDTO>, SpeakerRepresentation, Indexable {
 	private String id;
 	private String firstName;
 	private String lastName;
@@ -51,6 +53,16 @@ public final class SpeakerDTO implements Comparable<SpeakerDTO>, SpeakerRepresen
 	@Override
 	public String getId() {
 		return id;
+	}
+
+	@Override
+	public String getDisplayName() {
+		return getFullName();
+	}
+
+	@Override
+	public ResultType getType() {
+		return ResultType.SPEAKER;
 	}
 
 	public void setId(String id) {
