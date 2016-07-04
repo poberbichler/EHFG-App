@@ -13,5 +13,8 @@ public interface SearchService {
 	 */
 	SearchResultRepresentation findBy(String input);
 
+	/**
+	 * builds the internal fulltext search index
+	 */
 	void buildIndex();
 }

@@ -1,6 +1,5 @@
 package org.ehfg.app.search;
 
-import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
@@ -25,10 +24,10 @@ import org.ehfg.app.twitter.TwitterFacade;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.io.StringReader;
 
@@ -37,7 +36,7 @@ import java.io.StringReader;
  * @since 06.2016
  */
 @Service
-public class SearchServiceImpl implements SearchService {
+public class SearchServiceImpl implements SearchService, ApplicationListener<UpdateIndexEvent> {
 	public static final int MAX_RESULTS = 50;
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -89,42 +88,50 @@ public class SearchServiceImpl implements SearchService {
 	}
 
 	@Override
-	@PostConstruct
+	public void onApplicationEvent(UpdateIndexEvent updateIndexEvent) {
+		logger.info("received [{}], updating index", updateIndexEvent);
+		buildIndex();
+	}
+
+	@Override
 	public void buildIndex() {
 		try {
-			Analyzer analyzer = new StandardAnalyzer();
-			IndexWriterConfig indexWriterConfig = new IndexWriterConfig(analyzer);
-			IndexWriter indexWriter = new IndexWriter(index, indexWriterConfig);
-
-			for (SpeakerDTO speakerDTO : programFacade.findAllSpeakers()) {
-				logger.debug("creating index for speaker [{}]", speakerDTO.getDisplayName());
-				indexWriter.addDocument(buildDocument(speakerDTO));
+			if (index != null) {
+				index.close();
 			}
 
-			for (SessionDTO sessionDTO : programFacade.findAllSessionsWithoutDayInformation()) {
-				logger.debug("creating index for session [{}]", sessionDTO.getDisplayName());
-				indexWriter.addDocument(buildDocument(sessionDTO));
+			// create a new index
+			index = new RAMDirectory();
+
+			IndexWriterConfig indexWriterConfig = new IndexWriterConfig(new StandardAnalyzer());
+			try (IndexWriter indexWriter = new IndexWriter(index, indexWriterConfig)) {
+				for (SpeakerDTO speakerDTO : programFacade.findAllSpeakers()) {
+					logger.debug("creating index for speaker [{}]", speakerDTO.getDisplayName());
+					indexWriter.addDocument(buildDocument(speakerDTO));
+				}
+
+				for (SessionDTO sessionDTO : programFacade.findAllSessionsWithoutDayInformation()) {
+					logger.debug("creating index for session [{}]", sessionDTO.getDisplayName());
+					indexWriter.addDocument(buildDocument(sessionDTO));
+				}
+
+				for (LocationDTO locationDTO : masterDataFacade.findAllLocation()) {
+					logger.debug("creating index for location [{}]", locationDTO.getDisplayName());
+					indexWriter.addDocument(buildDocument(locationDTO));
+
+				}
+
+				for (PointOfInterestDTO pointOfInterestDTO : masterDataFacade.findAllPointsOfInterest()) {
+					logger.debug("creating index for point [{}]", pointOfInterestDTO.getDisplayName());
+					indexWriter.addDocument(buildDocument(pointOfInterestDTO));
+				}
+
+				String hashtag = masterDataFacade.getAppConfiguration().getHashtag();
+				for (TweetDTO tweetDTO : twitterFacade.findTweetsForExport(hashtag)) {
+					logger.debug("creating index for tweet [{}]", tweetDTO.getId());
+					indexWriter.addDocument(TweetToDocumentMapper.from(tweetDTO));
+				}
 			}
-
-			for (LocationDTO locationDTO : masterDataFacade.findAllLocation()) {
-				logger.debug("creating index for location [{}]", locationDTO.getDisplayName());
-				indexWriter.addDocument(buildDocument(locationDTO));
-
-			}
-
-			for (PointOfInterestDTO pointOfInterestDTO : masterDataFacade.findAllPointsOfInterest()) {
-				logger.debug("creating index for point [{}]", pointOfInterestDTO.getDisplayName());
-				indexWriter.addDocument(buildDocument(pointOfInterestDTO));
-			}
-
-			String hashtag = masterDataFacade.getAppConfiguration().getHashtag();
-			for (TweetDTO tweetDTO : twitterFacade.findTweetsForExport(hashtag)) {
-				logger.debug("creating index for tweet [{}]", tweetDTO.getId());
-				indexWriter.addDocument(TweetToDocumentMapper.from(tweetDTO));
-			}
-
-
-			indexWriter.close();
 		} catch (IOException e) {
 			logger.error("this IOException should never happen, we are doing no I/O", e);
 		}
