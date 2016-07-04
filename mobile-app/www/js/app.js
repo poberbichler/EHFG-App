@@ -41,7 +41,7 @@
 	    });
 
 	    $stateProvider.state('app.speakers', {
-	        url: "/speakers",
+	        url: "/speaker",
 	        views: {
 	            'content': {
 	            	templateUrl: 'templates/speakers.html',

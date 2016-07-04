@@ -3,13 +3,13 @@
     <ion-content class="has-header has-footer">
         <ion-list ng-show="::searchCtrl.searchResult">
             <div ng-repeat="result in ::searchCtrl.searchResult.results">
-                <ion-item class="item-divider">{{::result.type|lowercase}}</ion-item>
-                <ion-item ng-repeat="item in ::result.result" ng-href="#/{{::item.type | lowercase}}/{{::item.id}}"><!-- track by item.id"-->
-                    {{::item}}
+                <ion-item class="item-divider" ng-show="::result.data.length > 0">{{::result.type | lowercase}}</ion-item>
+                <ion-item ng-repeat="item in ::result.data track by item.id" ng-href="#/{{::item.type | lowercase}}/{{::item.id}}">
+                    <span ng-bind-html="::item.description"></span>
                 </ion-item>
             </div>
 
-            <ion-item ng-show="::searchCtrl.searchResult.tweets" class="item-divider">Tweets</ion-item>
+            <ion-item ng-show="::searchCtrl.searchResult.tweets.length > 0" class="item-divider">Tweets</ion-item>
             <ion-item ng-repeat="item in ::searchCtrl.searchResult.TWEET track by item.id">
                 {{::item}}
             </ion-item>

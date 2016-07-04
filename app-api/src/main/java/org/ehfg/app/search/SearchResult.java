@@ -4,26 +4,27 @@ import org.ehfg.app.rest.SearchResultItemRepresentation;
 import org.ehfg.app.rest.SearchResultRepresentation;
 import org.ehfg.app.rest.TweetRepresentation;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author patrick
  * @since 06.2016
  */
 public class SearchResult implements SearchResultRepresentation {
-	private final Map<ResultType, Collection<SearchResultItemRepresentation>> items;
-	private final Collection<TweetRepresentation> tweets;
+	private final Map<ResultType, Collection<SearchResultItemRepresentation>> items = new EnumMap<>(ResultType.class);
+	private final Collection<TweetRepresentation> tweets = new ArrayList<>();
 
-	public SearchResult(Map<ResultType, Collection<SearchResultItemRepresentation>> items, Collection<TweetRepresentation> tweets) {
-		this.items = items;
-		this.tweets = tweets;
+	public static SearchResult empty() {
+		final SearchResult result = new SearchResult();
+		for (ResultType type : ResultType.values()){
+			result.items.put(type, Collections.emptyList());
+		}
+		return result;
 	}
 
-	public static SearchResultRepresentation empty() {
-		return new SearchResult(Collections.emptyMap(), Collections.emptyList());
+	public SearchResult add(SearchResultItemRepresentation item) {
+		this.items.computeIfAbsent(item.getType(), i -> new LinkedList<>()).add(item);
+		return this;
 	}
 
 	@Override
