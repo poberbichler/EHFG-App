@@ -7,16 +7,7 @@
             </div>
 
             <div ng-repeat="tweet in twitterCtrl.tweetResource.tweets track by tweet.id">
-                <div class="item item-divider">
-                    <span>{{::tweet.fullName}}</span>
-                    <span class="tweet-data">{{::tweet.timestamp | twitterDateFilter}}</span>
-                    <p class="tweet-nickname">@{{::tweet.nickName}}</p>
-                </div>
-
-                <div class="item item-avatar item-text-wrap tweet-body">
-                    <img ng-src="{{::tweet.profileImage}}" class="twitter-image">
-                    <p ng-bind-html="tweet.message | trustedHtml"></p>
-                </div>
+                <tweet tweet="tweet"></tweet>
             </div>
 
             <div class="item item-divider" ng-click="twitterCtrl.loadMoreTweets()" ng-show="twitterCtrl.tweetResource.morePages">

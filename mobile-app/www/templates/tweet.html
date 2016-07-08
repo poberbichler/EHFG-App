@@ -1,0 +1,10 @@
+<div class="item item-divider">
+    <span>{{::tweet.fullName}}</span>
+    <span class="tweet-data">{{::tweet.timestamp | twitterDateFilter}}</span>
+    <p class="tweet-nickname">@{{::tweet.nickName}}</p>
+</div>
+
+<div class="item item-avatar item-text-wrap tweet-body">
+    <img ng-src="{{::tweet.profileImage}}" class="twitter-image">
+    <p ng-bind-html="tweet.message | trustedHtml"></p>
+</div>

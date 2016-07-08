@@ -80,7 +80,7 @@
 			findInitial: pageResource.findInitial
 		}
 	}
-	
+
 	function TwitterDateFilter($filter, utcTimeService) {
 		return function(input) {
 			var second = 1000;
@@ -114,6 +114,14 @@
 			return $sce.trustAsHtml(input);
 		}
 	}
+
+    function TweetDirective() {
+        return {
+            restrict: 'E',
+            scope: '&',
+            templateUrl: 'templates/tweet.html'
+        }
+    }
 	
 	angular.module('ehfgApp.twitter', [])
 		.controller('TwitterCtrl', ['TwitterService', TwitterCtrl])
@@ -121,4 +129,5 @@
 		.factory('TwitterService', ['$rootScope', '$ionicLoading', '$ionicPopup', 'TwitterResource', TwitterService])
 		.filter('twitterDateFilter', ['$filter', 'UtcTimeService', TwitterDateFilter])
 		.filter('trustedHtml', ['$sce', TrustedHtmlFilter])
+        .directive('tweet', [TweetDirective])
 })();
