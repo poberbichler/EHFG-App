@@ -34,5 +34,27 @@
             </div>
         </tbody>
     </table>
+
+    <p th:if="${#lists.isEmpty(searchResult.tweets)}" th:text="'no tweets found'">no tweets found</p>
+    <table class="table table-bordered table-striped" th:unless="${#lists.isEmpty(searchResult.tweets)}">
+        <thead>
+        <th>id</th>
+        <th>full name</th>
+        <th>nickname</th>
+        <th>message</th>
+        <th>profile image</th>
+        <th>timestamp</th>
+        </thead>
+        <tbody>
+            <tr th:each="tweet : ${resultList.tweets}">
+                <td th:text="${tweet.id}">123></td>
+                <td th:text="${tweet.fullName}">SPEAKER></td>
+                <td th:text="${tweet.nickName}">Helmut Brand></td>
+                <td th:text="${tweet.message}">Helmut Brand></td>
+                <td th:text="${tweet.profileImage}">Helmut Brand></td>
+                <td th:text="${tweet.timestamp}">Helmut Brand></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 </html>

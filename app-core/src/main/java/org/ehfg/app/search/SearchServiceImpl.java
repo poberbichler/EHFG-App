@@ -101,7 +101,7 @@ public class SearchServiceImpl implements SearchService {
 					}
 				}
 
-				logger.info("creating index for tweets...");
+				logger.info("creating index for tweets");
 				for (TweetDTO tweetDTO : tweetProvider.getData()) {
 					logger.debug("creating index for tweet [{}]", tweetDTO.getId());
 					indexWriter.addDocument(TweetToDocumentMapper.from(tweetDTO));
