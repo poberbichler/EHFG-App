@@ -17,7 +17,7 @@ import org.ehfg.app.twitter.TweetDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -30,7 +30,7 @@ import java.util.Collection;
  * @since 06.2016
  */
 @Service
-public class SearchServiceImpl implements SearchService, ApplicationListener<UpdateIndexEvent> {
+public class SearchServiceImpl implements SearchService {
 	private static final int MAX_RESULTS = 50;
 
 	private final Logger logger = LoggerFactory.getLogger(getClass());
@@ -60,6 +60,7 @@ public class SearchServiceImpl implements SearchService, ApplicationListener<Upd
 			IndexSearcher indexSearcher = new IndexSearcher(directoryReader);
 
 			TopDocs search = indexSearcher.search(new TermQuery(new Term(Indexable.CONTENT_FIELD, input)), MAX_RESULTS);
+			logger.debug("found [{}] results for input [{}]", search.scoreDocs.length, input);
 			for (ScoreDoc scoreDoc : search.scoreDocs) {
 				Document doc = indexSearcher.doc(scoreDoc.doc);
 				if (doc.get(Indexable.TYPE_FIELD).equals(TweetToDocumentMapper.TYPE_TWEET)) {
@@ -81,12 +82,7 @@ public class SearchServiceImpl implements SearchService, ApplicationListener<Upd
 	}
 
 	@Override
-	public void onApplicationEvent(UpdateIndexEvent updateIndexEvent) {
-		logger.info("received [{}], updating index", updateIndexEvent);
-		buildIndex();
-	}
-
-	@Override
+	@EventListener(UpdateIndexEvent.class)
 	public void buildIndex() {
 		try {
 			if (index != null) {

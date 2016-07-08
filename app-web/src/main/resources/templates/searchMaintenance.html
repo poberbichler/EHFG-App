@@ -1,0 +1,38 @@
+<html layout:decorator="includes/layout">
+<div layout:fragment="content">
+    <form th:action="@{#}" method="post" class="form form-horizontal">
+        <div class="form-group">
+            <label for="searchInput" class="col-sm-2 control-label">Search</label>
+            <div class="col-sm-4">
+                <input id="searchInput" class="form-control" name="searchInput" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button id="submitInputForm" class="btn btn-primary" type="submit">search</button>
+            </div>
+        </div>
+    </form>
+
+    <a th:href="@{search/refresh}" th:text="'refresh index'" class="button">refresh index</a>
+
+    <p th:unless="${searchResult.hasValues()}" th:text="'nothing found'">nothing found</p>
+    <table class="table table-bordered table-striped" th:if="${searchResult.hasValues()}">
+        <thead>
+            <th>id</th>
+            <th>type</th>
+            <th>description</th>
+        </thead>
+        <tbody>
+            <div th:each="resultList : ${searchResult.getResults()}">
+                <tr th:each="resultItem : ${resultList.getResults()}">
+                    <td th:text="${resultItem.id}">123></td>
+                    <td th:text="${resultItem.type}">SPEAKER></td>
+                    <td th:text="${resultItem.description}">Helmut Brand></td>
+                </tr>
+            </div>
+        </tbody>
+    </table>
+</div>
+</html>

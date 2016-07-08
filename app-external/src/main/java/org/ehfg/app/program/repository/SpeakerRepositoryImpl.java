@@ -40,7 +40,7 @@ class SpeakerRepositoryImpl implements SpeakerRepository {
 		return speakers.stream()
 				.filter(speaker -> !(StringUtils.isEmpty(speaker.getFirstname()) && StringUtils.isEmpty(speaker.getLastname())))
 				.map(speaker -> {
-					logger.debug("preparing text for speaker {}", speaker);
+					logger.trace("preparing text for speaker {}", speaker);
 					String description = EscapeUtils.escapeText(speaker.getBio());
 					description = StringUtils.remove(description.trim(), "<strong>");
 					description = StringUtils.remove(description.trim(), "<div>");

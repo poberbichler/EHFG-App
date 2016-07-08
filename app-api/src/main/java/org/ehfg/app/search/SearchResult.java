@@ -45,6 +45,12 @@ public class SearchResult implements SearchResultRepresentation {
 		return tweets;
 	}
 
+	public boolean hasValues() {
+		return items.values().stream()
+				.filter(c -> !c.isEmpty())
+				.findAny().isPresent();
+	}
+
 
 	private static class SearchResultData implements SearchResultDataRepresentation {
 		private final ResultType type;
