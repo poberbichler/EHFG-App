@@ -1,6 +1,10 @@
 package org.ehfg.app.program;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.ehfg.app.rest.ConferenceDayRepresentation;
+import org.ehfg.app.search.Indexable;
+import org.ehfg.app.search.ResultType;
+import org.ehfg.app.search.SearchIndexDataProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +18,7 @@ import java.util.stream.Collectors;
  * @since 06.04.2014
  */
 @Component
-final class ProgramFacadeImpl implements ProgramFacade {
+final class ProgramFacadeImpl implements ProgramFacade, SearchIndexDataProvider<Indexable> {
 	private final SpeakerRepository speakerRepository;
 	private final SessionRepository sessionRepository;
 	private final ConferenceDayRepository conferenceDayRepository;
@@ -106,5 +110,16 @@ final class ProgramFacadeImpl implements ProgramFacade {
 				.map(SessionDTO::getLocation)
 				.distinct()
 				.collect(Collectors.toList());
+	}
+
+	@Override
+	public Collection<? extends Indexable> getData() {
+		return CollectionUtils.union(findAllSessionsWithoutDayInformation(), findAllSpeakers());
+
+	}
+
+	@Override
+	public Set<ResultType> getResultTypes() {
+		return EnumSet.of(ResultType.SPEAKER, ResultType.SESSION);
 	}
 }

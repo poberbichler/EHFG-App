@@ -41,7 +41,7 @@
 	    });
 
 	    $stateProvider.state('app.speakers', {
-	        url: "/speakers",
+	        url: "/speaker",
 	        views: {
 	            'content': {
 	            	templateUrl: 'templates/speakers.html',
@@ -92,12 +92,33 @@
 	    	resolve: {
                 highlightLocation: ['$stateParams', 'MapService', function($stateParams, mapService) {
                     if ($stateParams.location !== undefined && $stateParams.location.length !== 0) {
-                        return mapService.locations.findByName({name: $stateParams.location}).$promise;
+                        return mapService.locations.findByName({name: $stateParams.location});
                     }
 
                     return null;
                 }]
 	    	}
+        });
+
+        $stateProvider.state('app.search', {
+            url: '/search/:searchParam',
+            cache: false,
+            views: {
+                'content': {
+                    templateUrl: 'templates/search.html',
+                    controller: 'SearchCtrl as searchCtrl'
+                }
+            },
+
+            resolve: {
+                searchResult: ['$stateParams', 'SearchResource', function($stateParams, searchResource) {
+                    if ($stateParams.searchParam) {
+                        return searchResource.get({input: $stateParams.searchParam});
+                    }
+
+                    return null;
+                }]
+            }
         });
 
         $urlRouterProvider.otherwise('/twitter');
@@ -151,7 +172,8 @@
 		'ehfgApp.speakers',
 		'ehfgApp.sessions',
         'ehfgApp.map',
-		'ehfgApp.config'
+		'ehfgApp.config',
+        'ehfgApp.search'
 	]).config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider', 'CacheFactoryProvider', Config])
         .factory('UtcTimeService', [UtcTimeService])
         .run(['$ionicPlatform', '$ionicPopup', RunFunction])

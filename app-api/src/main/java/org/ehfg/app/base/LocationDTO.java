@@ -2,6 +2,8 @@ package org.ehfg.app.base;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.ehfg.app.rest.LocationRepresentation;
+import org.ehfg.app.search.Indexable;
+import org.ehfg.app.search.ResultType;
 import org.ehfg.app.validation.LocationMappingValid;
 
 import javax.validation.constraints.NotNull;
@@ -13,7 +15,7 @@ import javax.validation.constraints.NotNull;
  * @since 03.2014
  */
 @LocationMappingValid
-public final class LocationDTO implements LocationRepresentation {
+public final class LocationDTO implements LocationRepresentation, Indexable {
 	private String id;
 	@NotNull
 	private String name;
@@ -45,6 +47,21 @@ public final class LocationDTO implements LocationRepresentation {
 	@Override
 	public String getId() {
 		return id;
+	}
+
+	@Override
+	public String getDisplayName() {
+		return name;
+	}
+
+	@Override
+	public ResultType getType() {
+		return ResultType.LOCATION;
+	}
+
+	@Override
+	public String getDescription() {
+		return name;
 	}
 
 	public void setId(String id) {

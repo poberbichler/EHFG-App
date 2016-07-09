@@ -5,6 +5,8 @@ import org.ehfg.app.base.ConfigurationDTO;
 import org.ehfg.app.base.MasterDataFacade;
 import org.ehfg.app.program.ProgramFacade;
 import org.ehfg.app.program.SessionDTO;
+import org.ehfg.app.search.ResultType;
+import org.ehfg.app.search.SearchIndexDataProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -20,7 +22,7 @@ import java.util.stream.Collectors;
  * @since 03.2014
  */
 @Component
-final class TwitterFacadeImpl implements TwitterFacade {
+final class TwitterFacadeImpl implements TwitterFacade, SearchIndexDataProvider<TweetDTO> {
 	private final TweetRepository tweetRepository;
 	private final TwitterStreamingFacade streamingFacade;
 	private final MasterDataFacade masterDataFacade;
@@ -130,4 +132,14 @@ final class TwitterFacadeImpl implements TwitterFacade {
                 .map(TweetMapper::mapUnformattedTweet)
                 .collect(Collectors.toList());
     }
+
+	@Override
+	public Collection<? extends TweetDTO> getData() {
+		return findTweetsForExport(findHashtag());
+	}
+
+	@Override
+	public Set<ResultType> getResultTypes() {
+		return EnumSet.noneOf(ResultType.class);
+	}
 }

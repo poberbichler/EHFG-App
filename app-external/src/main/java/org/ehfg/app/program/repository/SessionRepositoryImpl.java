@@ -47,7 +47,7 @@ class SessionRepositoryImpl implements SessionRepository {
 		logger.info("received {} sessions", sessions.size());
 
 		return sessions.stream().map(session -> {
-			logger.debug("preparing text for session {}", session);
+			logger.trace("preparing text for session {}", session);
 
 			String details = EscapeUtils.escapeText(session.getDetails());
 			details = EscapeUtils.escapeLinks(details);

@@ -36,7 +36,7 @@ import java.util.List;
 @EnableWebMvc
 @Configuration
 @EnableScheduling
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 @PropertySource(ignoreResourceNotFound = true,
         value = {"classpath:config.properties", "file:////${user.home}/ehfg.properties"})
 public class WebConfig extends WebMvcConfigurerAdapter {

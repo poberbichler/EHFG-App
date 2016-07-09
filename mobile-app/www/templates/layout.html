@@ -19,6 +19,12 @@
 
 		<ion-content>
 			<ion-list>
+                <ion-item nav-clear class="item item-divider">Search</ion-item>
+                <ion-item class="item item-input">
+                    <input type="text" placeholder="Search" ng-model="menuCtrl.searchInput" />
+                </ion-item>
+                <ion-item class="item" ng-click="menuCtrl.search(menuCtrl.searchInput)">Search</ion-item>
+
 				<ion-item nav-clear class="item item-divider">Sessions</ion-item>
 				<ion-radio menu-close ng-model="menuCtrl.favouriteSessions" ng-value="true" ng-change="menuCtrl.favouriteSessionToggle(true)">
 					Show favourite sessions
