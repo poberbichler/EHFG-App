@@ -4,8 +4,8 @@ cd $OPENSHIFT_REPO_DIR
 export JAVA_HOME=/etc/alternatives/java_sdk_1.8.0
 export PATH=$JAVA_HOME/bin:$PATH
 
-nohup java -jar app-web/target/app-web-jar-with-dependencies.jar \
---spring.data.mongodb.host=${OPENSHIFT_MONGODB_DB_HOST}
+nohup java -jar app-web/target/app-web-1.0-SNAPSHOT.jar \
+--spring.data.mongodb.host=${OPENSHIFT_MONGODB_DB_HOST} \
 --spring.data.mongodb.port=${OPENSHIFT_MONGODB_DB_PORT} \
 --spring.data.mongodb.database=${OPENSHIFT_APP_NAME} \
 --spring.data.mongodb.username=${OPENSHIFT_MONGODB_DB_USERNAME} \

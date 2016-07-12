@@ -9,6 +9,10 @@
     <artifactId>app-web</artifactId>
     <packaging>jar</packaging>
 
+    <properties>
+        <project.build.finalName>app-web-jar-with-dependencies</project.build.finalName>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
