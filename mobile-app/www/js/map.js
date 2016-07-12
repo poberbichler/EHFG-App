@@ -9,10 +9,8 @@
 				vm.points = mapService.points.findAll();
 			}
 
-            console.log(highlightLocation);
-
             vm.center = {latitude: 47.170329, longitude: 13.103852}
-			if (highlightLocation !== null) {
+			if (highlightLocation) {
                 if (highlightLocation.pointId) {
                     vm.points.$promise.then(function(data) {
                         angular.forEach(data, function(point, index) {
@@ -34,14 +32,20 @@
                 }
 			}
 		});
+
+        vm.categories = [
+            {name: 'Venues', style: 'toggle-assertive', selected: true},
+            {name: 'Hotels', style: 'toggle-calm', selected: true},
+            {name: 'Restaurants', style: '', selected: true}
+        ]
 	}
-	
+
 	function MapService($resource, BASE_URL) {
 		return {
 			locations: new $resource(BASE_URL + '/locations/:name', {}, {
 					findByName: {method: 'GET', params: {name: '@name'}}
 				}),
-			
+
 			points: new $resource(BASE_URL + '/points', {}, {
                 findAll: {method: 'GET', isArray: true, transformResponse: function(rawData) {
                     var data = angular.fromJson(rawData);

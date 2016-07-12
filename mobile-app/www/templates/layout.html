@@ -9,7 +9,25 @@
                 <img class="logo" src="img/logo.png" />
             </ion-nav-buttons>
 		</ion-nav-bar>
+
 		<ion-nav-view name="content"></ion-nav-view>
+
+        <div class="tabs-icon-top tabs-background-positive tabs-light">
+            <div class="tabs tabs-icon-top">
+                <a class="tab-item" ui-sref="app.twitter" ui-sref-active="active">
+                    <i class="icon ion-social-twitter"></i>Twitter
+                </a>
+                <a class="tab-item" ui-sref="app.sessions" ui-sref-active="active">
+                    <i class="icon ion-calendar"></i>Sessions
+                </a>
+                <a class="tab-item" ui-sref="app.speakers" ui-sref-active="active">
+                    <i class="icon ion-person-stalker"></i>Speakers
+                </a>
+                <a class="tab-item" ui-sref="app.map" ui-sref-active="active">
+                    <i class="icon ion-map"></i>Map
+                </a>
+            </div>
+        </div>
 	</ion-side-menu-content>
 
 	<ion-side-menu side="right">
@@ -19,20 +37,25 @@
 
 		<ion-content>
 			<ion-list>
-                <ion-item nav-clear class="item item-divider">Search</ion-item>
-                <ion-item class="item item-input">
+                <!--<ion-item nav-clear class="item item-divider">Search</ion-item>-->
+                <div class="item item-input-inset">
+                    <label class="item-input-wrapper">
+                        <!--<i class="icon ion-search placeholder-icon"></i>-->
+                        <input type="text" ng-model="menuCtrl.searchInput">
+                    </label>
+                    <button class="button button-small" ng-click="menuCtrl.search(menuCtrl.searchInput)">
+                        <i class="icon ion-search placeholder-icon"></i>
+                    </button>
+                </div>
+
+                <!--
+                <ion-item class="item item-input-inset">
                     <input type="text" placeholder="Search" ng-model="menuCtrl.searchInput" />
                 </ion-item>
                 <ion-item class="item" ng-click="menuCtrl.search(menuCtrl.searchInput)">Search</ion-item>
+                -->
+                <div ui-view="sidebar-content"></div>
 
-				<ion-item nav-clear class="item item-divider">Sessions</ion-item>
-				<ion-radio menu-close ng-model="menuCtrl.favouriteSessions" ng-value="true" ng-change="menuCtrl.favouriteSessionToggle(true)">
-					Show favourite sessions
-				</ion-radio>
-				<ion-radio menu-close ng-model="menuCtrl.favouriteSessions" ng-value="false" ng-change="menuCtrl.favouriteSessionToggle(false)">
-					Show all sessions
-				</ion-radio>
-				
 				<ion-item nav-clear class="item item-divider">Settings</ion-item>
 				<ion-item nav-clear menu-close ng-click="menuCtrl.resetData()">Reset data</ion-item>
 				<ion-item nav-clear menu-close ng-click="menuCtrl.showAboutDialog()">About</ion-item>
@@ -40,20 +63,3 @@
 		</ion-content>
 	</ion-side-menu>
 </ion-side-menus>
-
-<div class="tabs-icon-top tabs-background-positive tabs-light">
-    <div class="tabs tabs-icon-top">
-        <a class="tab-item" ui-sref="app.twitter" ui-sref-active="active">
-            <i class="icon ion-social-twitter"></i>Twitter
-        </a>
-        <a class="tab-item" ui-sref="app.sessions" ui-sref-active="active">
-            <i class="icon ion-calendar"></i>Sessions
-        </a>
-        <a class="tab-item" ui-sref="app.speakers" ui-sref-active="active">
-            <i class="icon ion-person-stalker"></i>Speakers
-        </a>
-        <a class="tab-item" ui-sref="app.map" ui-sref-active="active">
-            <i class="icon ion-map"></i>Map
-        </a>
-    </div>
-</div>
