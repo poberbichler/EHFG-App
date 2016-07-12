@@ -66,7 +66,12 @@
 	            'content': {
 	                templateUrl: 'templates/sessions.html',
 	                controller: 'SessionCtrl as sessionCtrl'
-	            }
+	            },
+
+                'sidebar-content': {
+                    controller: 'MenuCtrl as menuCtrl',
+                    templateUrl: 'templates/sidebar/session-sidebar.html'
+                }
 	        }
 	    });
 
@@ -86,7 +91,12 @@
 	    		'content': {
 	    			templateUrl: 'templates/map.html',
 	    			controller: 'MapCtrl as mapCtrl'
-	    		}
+	    		},
+
+                'sidebar-content': {
+                    controller: 'MapCtrl as mapCtrl',
+                    templateUrl: 'templates/sidebar/map-sidebar.html'
+                }
 	    	},
 
 	    	resolve: {
