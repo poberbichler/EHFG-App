@@ -1,4 +1,4 @@
 <ion-item nav-clear class="item item-divider">Categories</ion-item>
 <div ng-repeat="category in mapCtrl.categories">
-    <ion-toggle ng-model="category.selected" toggle-class="{{::category.style}}">{{::category.name}}</ion-toggle>
+    <ion-toggle ng-model="category.selected" toggle-class="{{::category.cssClass}}">{{::category.name}}</ion-toggle>
 </div>

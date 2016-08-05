@@ -33,24 +33,30 @@
 			}
 		});
 
-        vm.categories = [
-            {name: 'Venues', style: 'toggle-assertive', selected: true},
-            {name: 'Hotels', style: 'toggle-calm', selected: true},
-            {name: 'Restaurants', style: '', selected: true}
-        ]
+        vm.categories = mapService.categories.findAll();
 	}
 
 	function MapService($resource, BASE_URL) {
 		return {
 			locations: new $resource(BASE_URL + '/locations/:name', {}, {
-					findByName: {method: 'GET', params: {name: '@name'}}
-				}),
+                findByName: {method: 'GET', params: {name: '@name'}}
+            }),
 
 			points: new $resource(BASE_URL + '/points', {}, {
                 findAll: {method: 'GET', isArray: true, transformResponse: function(rawData) {
                     var data = angular.fromJson(rawData);
                     for (var i in data) {
                         data[i].icon = 'img/marker.png';
+                    }
+                    return data;
+                }}
+            }),
+
+            categories: new $resource(BASE_URL + '/mapcategories', {}, {
+                findAll: {method: 'GET', isArray: true, transformResponse: function(rawData) {
+                    var data = angular.fromJson(rawData);
+                    for (var i in data) {
+                        data[i].selected = true;
                     }
                     return data;
                 }}

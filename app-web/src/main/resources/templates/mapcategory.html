@@ -16,16 +16,20 @@
                 <td th:text="${category.name}">name</td>
                 <td th:text="${category.cssClass}">css</td>
                 <td th:text="${category.imageUrl}">imageUrl</td>
-                <td><a th:href="@{mapcategory/delete/__${category.id}__}">delete</a></td>
+                <td>
+                    <a th:href="@{mapcategory/__${category.id}__}">edit</a>,
+                    <a th:href="@{mapcategory/delete/__${category.id}__}">delete</a>
+                </td>
             </tr>
         </tbody>
     </table>
 
-    <form th:action="@{#}" th:object="${editCategory}" method="post" class="form form-horizontal">
+    <form th:action="@{/maintenance/mapcategory}" th:object="${editCategory}" method="post" class="form form-horizontal">
         <ul th:if="${#fields.hasErrors('*')}">
             <li th:each="error : ${#fields.errors('*')}" th:text="${error}">error</li>
         </ul>
 
+        <input th:field="*{id}" hidden="true" />
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">Name</label>
             <div class="col-sm-4">

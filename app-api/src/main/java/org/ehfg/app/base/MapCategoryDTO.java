@@ -8,13 +8,13 @@ import org.ehfg.app.rest.MapCategoryRepresentation;
  * @since 08.2016
  */
 public class MapCategoryDTO implements MapCategoryRepresentation {
-    private final String id;
+    private String id;
     private String name;
     private String cssClass;
     private String imageUrl;
 
     public MapCategoryDTO() {
-        this.id = null;
+        // needed by various frameworks
     }
 
     public MapCategoryDTO(String id, String name, String cssClass, String imageUrl) {
@@ -22,6 +22,10 @@ public class MapCategoryDTO implements MapCategoryRepresentation {
         this.name = name;
         this.cssClass = cssClass;
         this.imageUrl = imageUrl;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setName(String name) {

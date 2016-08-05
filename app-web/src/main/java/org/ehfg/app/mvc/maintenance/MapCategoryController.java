@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.util.Collection;
+import java.util.Optional;
 
 /**
  * @author poberbichler
@@ -25,13 +27,20 @@ public class MapCategoryController {
         this.masterDataFacade = masterDataFacade;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView getPage() {
+    @RequestMapping(value = {"", "{id}"}, method = RequestMethod.GET)
+    public ModelAndView getPage(@PathVariable("id") Optional<String> categoryId) {
         ModelAndView view = new ModelAndView("mapcategory");
 
         view.addObject("activePage", "mapcategory");
-        view.addObject("categories", masterDataFacade.findAllMapCategories());
-        view.addObject("editCategory", new MapCategoryDTO());
+        Collection<MapCategoryDTO> allCategories = masterDataFacade.findAllMapCategories();
+        view.addObject("categories", allCategories);
+
+        MapCategoryDTO editCategory = allCategories.stream()
+                .filter(c -> c.getId().equals(categoryId.orElseGet(String::new)))
+                .findFirst()
+                .orElseGet(MapCategoryDTO::new);
+
+        view.addObject("editCategory", editCategory);
         return view;
     }
 

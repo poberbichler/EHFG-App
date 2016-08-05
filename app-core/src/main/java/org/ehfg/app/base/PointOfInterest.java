@@ -27,24 +27,12 @@ final class PointOfInterest {
 
 	private String website;
 
+	private MapCategory mapCategory;
+
 	@Valid
 	@NotNull
 	private Coordinate coordinate;
 
-	public PointOfInterest() {
-
-	}
-
-	public PointOfInterest(String id, String name, String address, String description, String contact, String website, Coordinate coordinate) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.address = address;
-		this.description = description;
-		this.contact = contact;
-		this.website = website;
-		this.coordinate = coordinate;
-	}
 
 	public String getId() {
 		return id;
@@ -100,6 +88,14 @@ final class PointOfInterest {
 
 	public void setWebsite(String website) {
 		this.website = website;
+	}
+
+	public MapCategory getMapCategory() {
+		return mapCategory;
+	}
+
+	public void setMapCategory(MapCategory mapCategory) {
+		this.mapCategory = mapCategory;
 	}
 
 	@Override
