@@ -1,0 +1,57 @@
+<html layout:decorator="includes/layout">
+<div layout:fragment="content" th:with="tableEmpty=${#lists.isEmpty(categories)}">
+    <p th:text="'no category set yet'" th:if="${tableEmpty}"></p>
+    <table class="table table-bordered table-striped" th:unless="${tableEmpty}">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Css Class</th>
+                <th>Image URL</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="category : ${categories}">
+                <td th:text="${category.name}">name</td>
+                <td th:text="${category.cssClass}">css</td>
+                <td th:text="${category.imageUrl}">imageUrl</td>
+                <td><a th:href="@{mapcategory/delete/__${category.id}__}">delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form th:action="@{#}" th:object="${editCategory}" method="post" class="form form-horizontal">
+        <ul th:if="${#fields.hasErrors('*')}">
+            <li th:each="error : ${#fields.errors('*')}" th:text="${error}">error</li>
+        </ul>
+
+        <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-4">
+                <input th:field="*{name}" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="cssClass" class="col-sm-2 control-label">Css Class</label>
+            <div class="col-sm-4">
+                <input th:field="*{cssClass}" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="imageUrl" class="col-sm-2 control-label">Image Url</label>
+            <div class="col-sm-4">
+                <input th:field="*{imageUrl}" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" value="save" class="btn btn-primary" />
+            </div>
+        </div>
+    </form>
+</div>
+</html>
