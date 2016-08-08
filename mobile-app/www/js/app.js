@@ -106,7 +106,11 @@
                     }
 
                     return null;
-                }]
+                }],
+
+				points: ['MapService', function(mapService) {
+					return mapService.points.findAll();
+				}]
 	    	}
         });
 

@@ -1,13 +1,10 @@
 (function() {
-	function MapCtrl($scope, mapService, highlightLocation) {
+	function MapCtrl($scope, mapService, points, highlightLocation) {
 		var vm = this;
+        vm.points = points;
 
-		$scope.$on('$ionicView.enter', function(event, view) {
+		$scope.$on('$ionicView.enter', function() {
 			vm.zoom = 16;
-
-			if (!vm.points) {
-				vm.points = mapService.points.findAll();
-			}
 
             vm.center = {latitude: 47.170329, longitude: 13.103852}
 			if (highlightLocation) {
@@ -33,8 +30,15 @@
 			}
 		});
 
-        vm.categories = mapService.categories.findAll();
-	}
+        this.categories = mapService.categories.findAll();
+        this.categoryToggled = function(category) {
+            for (var i in vm.points) {
+                if (vm.points[i].category === category.name) {
+                    vm.points[i].markerOptions.visible = category.selected;
+                }
+            }
+        }
+    }
 
 	function MapService($resource, BASE_URL) {
 		return {
@@ -47,7 +51,9 @@
                     var data = angular.fromJson(rawData);
                     for (var i in data) {
                         data[i].icon = 'img/marker.png';
+                        data[i].markerOptions = { visible: true }
                     }
+
                     return data;
                 }}
             }),
@@ -72,7 +78,7 @@
     }
 
 	angular.module('ehfgApp.map', ['uiGmapgoogle-maps'])
-		.controller('MapCtrl', ['$scope', 'MapService', 'highlightLocation', MapCtrl])
+		.controller('MapCtrl', ['$scope', 'MapService', 'points', 'highlightLocation', MapCtrl])
 		.factory('MapService', ['$resource', 'BASE_URL', MapService])
         .config(UiMapAsyncLoaderCallback)
 })();

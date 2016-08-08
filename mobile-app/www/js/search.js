@@ -13,7 +13,6 @@
     function CapitalizeFilter($filter) {
         return function(input) {
             return input.charAt(0).toUpperCase() + $filter('lowercase')(input.slice(1));
-
         }
     }
 

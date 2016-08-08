@@ -1,9 +1,9 @@
 <ion-view title="Map">
 	<div id="map-parent" class="has-header has-footer" data-tap-disabled="true">
 		<ui-gmap-google-map center="mapCtrl.center" zoom="mapCtrl.zoom">
-			<ui-gmap-markers models="mapCtrl.points" idkey="name" coords="'coordinate'" icon="'icon'">
+			<ui-gmap-markers models="mapCtrl.points" options="'markerOptions'" idkey="name" coords="'coordinate'" icon="'icon'" modelsByRef="true">
                 <ui-gmap-windows>
-                    <div ng-non-bindable>{{::description}}</div>
+                    <div ng-non-bindable>{{::description}}, {{markerOptions}}</div>
                 </ui-gmap-windows>
             </ui-gmap-markers>
 

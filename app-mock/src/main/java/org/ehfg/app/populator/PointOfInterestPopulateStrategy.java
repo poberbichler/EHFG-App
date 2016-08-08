@@ -20,6 +20,6 @@ class PointOfInterestPopulateStrategy extends AbstractPopulateStrategy {
 
 	private PointOfInterestDTO createRandomPoint() {
 		return new PointOfInterestDTO(null, "name", "address", "description, which is pretty damn long. like srsly long",
-				"contact", "website", super.generateRandomCoordinate());
+				"contact", "website", super.generateRandomCoordinate(), null);
 	}
 }

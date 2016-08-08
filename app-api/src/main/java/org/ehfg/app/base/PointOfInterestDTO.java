@@ -25,6 +25,8 @@ public final class PointOfInterestDTO implements PointOfInterestRepresentation, 
 	private String contact;
 	private String website;
 
+	private String category;
+
 	@Valid
 	@NotNull
 	private CoordinateDTO coordinate;
@@ -34,7 +36,7 @@ public final class PointOfInterestDTO implements PointOfInterestRepresentation, 
 	}
 
 	public PointOfInterestDTO(String id, String name, String address, String description, String contact, String website,
-			CoordinateDTO coordinate) {
+			CoordinateDTO coordinate, String category) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -43,11 +45,12 @@ public final class PointOfInterestDTO implements PointOfInterestRepresentation, 
 		this.contact = contact;
 		this.website = website;
 		this.coordinate = coordinate;
+		this.category = category;
 	}
 
 	public PointOfInterestDTO(String id, String name, String address, String description, String contact, String website, Double xCoordinate,
-			Double yCoordinate) {
-		this(id, name, address, description, contact, website, new CoordinateDTO(xCoordinate, yCoordinate));
+			Double yCoordinate, String category) {
+		this(id, name, address, description, contact, website, new CoordinateDTO(xCoordinate, yCoordinate), category);
 	}
 
 	@Override
@@ -121,6 +124,15 @@ public final class PointOfInterestDTO implements PointOfInterestRepresentation, 
 
 	public void setWebsite(String website) {
 		this.website = website;
+	}
+
+	@Override
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	@Override

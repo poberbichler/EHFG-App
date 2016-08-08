@@ -35,6 +35,7 @@ public class PointOfInterestController {
 		ModelAndView view = new ModelAndView("pointOfInterest");
 		view.addObject("activePage", "pointOfInterest");
 		view.addObject("points", masterDataFacade.findAllPointsOfInterest());
+		view.addObject("categories", masterDataFacade.findAllMapCategories());
 		view.addObject("editPoint", new PointOfInterestDTO());
 		
 		return view;
@@ -56,6 +57,7 @@ public class PointOfInterestController {
 		view.addObject("editPoint", findPointInList(allPoints, pointId));
 		view.addObject("points", allPoints);
 		view.addObject("activePage", "pointOfInterest");
+		view.addObject("categories", masterDataFacade.findAllMapCategories());
 		
 		return view;
 	}

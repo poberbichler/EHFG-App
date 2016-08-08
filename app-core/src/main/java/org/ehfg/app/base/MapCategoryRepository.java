@@ -7,5 +7,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * @since 08.2016
  */
 public interface MapCategoryRepository extends MongoRepository<MapCategory, String> {
-    // empty
+    MapCategory findByName(String name);
 }

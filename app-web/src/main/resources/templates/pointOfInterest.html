@@ -12,6 +12,7 @@
 					<th>yValue</th>
 					<th>Contact</th>
 					<th>Website</th>
+					<th>Category</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -25,6 +26,7 @@
 					<td th:text="${point.coordinate.yValue}">yValue</td>
 					<td th:text="${point.contact}">contact</td>
 					<td th:text="${point.website}">website</td>
+					<td th:text="${point.category}">category</td>
 					<td>
 						<a th:href="@{pointofinterest/edit/__${point.id}__}">edit</a>,
 						<a th:href="@{pointofinterest/delete/__${point.id}__}">delete</a>
@@ -79,6 +81,15 @@
 			<label for="website" class="col-sm-2 control-label">website</label>
 			<div class="col-sm-4">
 				<input th:field="*{website}" id="website" class="form-control" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="category" class="col-sm-2 control-label">category</label>
+			<div class="col-sm-4">
+				<select id="category" th:field="*{category}" class="form-control">
+					<option th:value="${null}" th:text="'--- Please choose ---'">null</option>
+					<option th:each="category : ${categories}" th:value="${category.name}" th:text="${category.name}">option</option>
+				</select>
 			</div>
 		</div>
 		
