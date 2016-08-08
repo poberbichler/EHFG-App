@@ -5,8 +5,7 @@
 
 		$scope.$on('$ionicView.enter', function() {
 			vm.zoom = 16;
-
-            vm.center = {latitude: 47.170329, longitude: 13.103852}
+            vm.center = {latitude: 47.170329, longitude: 13.103852};
 			if (highlightLocation) {
                 if (highlightLocation.pointId) {
                     vm.points.$promise.then(function(data) {
@@ -33,8 +32,10 @@
         this.categories = mapService.categories.findAll();
         this.categoryToggled = function(category) {
             for (var i in vm.points) {
+                // suboptimal, but i can't find solution to trigger the reload without changing the icon :(
                 if (vm.points[i].category === category.name) {
                     vm.points[i].markerOptions.visible = category.selected;
+                    vm.points[i].icon = category.selected ? vm.points[i].orginalIcon : 'img/empty.png';
                 }
             }
         }
@@ -51,7 +52,8 @@
                     var data = angular.fromJson(rawData);
                     for (var i in data) {
                         data[i].icon = 'img/marker.png';
-                        data[i].markerOptions = { visible: true }
+                        data[i].orginalIcon = 'img/marker.png';
+                        data[i].markerOptions = { visible: true };
                     }
 
                     return data;
