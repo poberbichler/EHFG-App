@@ -1,13 +1,15 @@
 (function() {
 	function MenuCtrl($ionicSideMenuDelegate, $ionicPopup, $state, $window, cacheFactory, favouriteSessionService) {
-		this.favouriteSessions = favouriteSessionService.isFavouriteSessionsSelected();
-		this.favouriteSessionToggle = favouriteSessionService.toggleFavouriteSessions;
+		var vm = this;
 
-        this.openSideMenu = function() {
+		vm.favouriteSessions = favouriteSessionService.isFavouriteSessionsSelected();
+		vm.favouriteSessionToggle = favouriteSessionService.toggleFavouriteSessions;
+
+		vm.openSideMenu = function() {
             $ionicSideMenuDelegate.toggleRight();
         }
 
-		this.showAboutDialog = function() {
+		vm.showAboutDialog = function() {
 			$ionicPopup.show({
 				template: 
 					'<p>The European Health Forum Gastein is an annual international conference where stakeholders within '
@@ -19,12 +21,13 @@
 			});
 		}
 
-        this.search = function(input) {
+		vm.search = function() {
             $ionicSideMenuDelegate.toggleRight();
-            $state.go('app.search', {searchParam: input}, {reload: true});
+            $state.go('app.search', {searchParam: vm.searchInput}, {reload: true});
+			vm.searchInput = '';
         }
 
-		this.resetData = function() {
+		vm.resetData = function() {
             $state.go('app.twitter');
             window.setTimeout(function() {
                 cacheFactory.clearAll();
