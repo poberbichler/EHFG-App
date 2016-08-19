@@ -1,7 +1,5 @@
 (function() {
     function SearchCtrl($stateParams, searchResult) {
-        console.log('searchParam: ', $stateParams.searchParam);
-        console.log('data from the backend: ', searchResult);
         this.searchParam = $stateParams.searchParam;
         this.searchResult = searchResult;
     }

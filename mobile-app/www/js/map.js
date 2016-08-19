@@ -33,9 +33,9 @@
         this.categoryToggled = function(category) {
             for (var i in vm.points) {
                 // suboptimal, but i can't find solution to trigger the reload without changing the icon :(
-                if (vm.points[i].category === category.name) {
+                if (vm.points[i].category && vm.points[i].category.name === category.name) {
                     vm.points[i].markerOptions.visible = category.selected;
-                    vm.points[i].icon = category.selected ? vm.points[i].orginalIcon : 'img/empty.png';
+                    vm.points[i].icon = vm.points[i].orginalIcon.replace('img/', category.selected ? 'img/' : 'img/empty_');
                 }
             }
         }
