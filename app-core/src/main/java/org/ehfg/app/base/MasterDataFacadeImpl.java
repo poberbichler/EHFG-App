@@ -68,7 +68,7 @@ class MasterDataFacadeImpl implements MasterDataFacade, SearchIndexDataProvider<
 
         return new PointOfInterestDTO(input.getId(), input.getName(), input.getAddress(), input.getDescription(),
                 input.getContact(), input.getWebsite(), input.getCoordinate().getxValue(), input.getCoordinate().getyValue(),
-                input.getMapCategory() == null ? null : input.getMapCategory().getName());
+                input.getMapCategory() == null ? null : mapToDto(input.getMapCategory()));
     }
 
     @Override
@@ -104,7 +104,7 @@ class MasterDataFacadeImpl implements MasterDataFacade, SearchIndexDataProvider<
         target.setName(source.getName());
         target.setContact(source.getContact());
         target.setWebsite(source.getWebsite());
-        target.setMapCategory(mapCategoryRepository.findByName(source.getCategory()));
+        target.setMapCategory(mapCategoryRepository.findByName(source.getCategoryName()));
 
         final CoordinateDTO coordinate = source.getCoordinate();
         target.setCoordinate(new Coordinate(coordinate.getxValue(), coordinate.getyValue()));

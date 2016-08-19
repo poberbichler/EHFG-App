@@ -1,6 +1,7 @@
 package org.ehfg.app.base;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.ehfg.app.rest.MapCategoryRepresentation;
 import org.ehfg.app.rest.PointOfInterestRepresentation;
 import org.ehfg.app.search.Indexable;
 import org.ehfg.app.search.ResultType;
@@ -25,7 +26,9 @@ public final class PointOfInterestDTO implements PointOfInterestRepresentation, 
 	private String contact;
 	private String website;
 
-	private String category;
+	private MapCategoryRepresentation category;
+
+	private String categoryName;
 
 	@Valid
 	@NotNull
@@ -36,7 +39,7 @@ public final class PointOfInterestDTO implements PointOfInterestRepresentation, 
 	}
 
 	public PointOfInterestDTO(String id, String name, String address, String description, String contact, String website,
-			CoordinateDTO coordinate, String category) {
+			CoordinateDTO coordinate, MapCategoryRepresentation category) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -49,7 +52,7 @@ public final class PointOfInterestDTO implements PointOfInterestRepresentation, 
 	}
 
 	public PointOfInterestDTO(String id, String name, String address, String description, String contact, String website, Double xCoordinate,
-			Double yCoordinate, String category) {
+			Double yCoordinate, MapCategoryRepresentation category) {
 		this(id, name, address, description, contact, website, new CoordinateDTO(xCoordinate, yCoordinate), category);
 	}
 
@@ -127,12 +130,20 @@ public final class PointOfInterestDTO implements PointOfInterestRepresentation, 
 	}
 
 	@Override
-	public String getCategory() {
+	public MapCategoryRepresentation getCategory() {
 		return category;
 	}
 
-	public void setCategory(String category) {
+	public void setCategory(MapCategoryRepresentation category) {
 		this.category = category;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+
+	public String getCategoryName() {
+		return categoryName;
 	}
 
 	@Override

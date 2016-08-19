@@ -42,6 +42,17 @@
     }
 
 	function MapService($resource, BASE_URL) {
+        function getMarkerImage(point) {
+            var markerPrefix= '';
+            if (point.category) {
+                if (point.category.cssClass) {
+                    markerPrefix = point.category.cssClass + '-';
+                }
+            }
+
+            return 'img/' + markerPrefix + 'marker.png';
+        }
+
 		return {
 			locations: new $resource(BASE_URL + '/locations/:name', {}, {
                 findByName: {method: 'GET', params: {name: '@name'}}
@@ -51,8 +62,8 @@
                 findAll: {method: 'GET', isArray: true, transformResponse: function(rawData) {
                     var data = angular.fromJson(rawData);
                     for (var i in data) {
-                        data[i].icon = 'img/marker.png';
-                        data[i].orginalIcon = 'img/marker.png';
+                        data[i].icon = getMarkerImage(data[i]);
+                        data[i].orginalIcon = getMarkerImage(data[i]);
                         data[i].markerOptions = { visible: true };
                     }
 

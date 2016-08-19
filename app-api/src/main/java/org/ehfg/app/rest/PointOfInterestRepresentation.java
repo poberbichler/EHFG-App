@@ -32,5 +32,5 @@ public interface PointOfInterestRepresentation {
 	CoordinateRepresentation getCoordinate();
 
 	@XmlElement(name = "category")
-	String getCategory();
+	MapCategoryRepresentation getCategory();
 }
