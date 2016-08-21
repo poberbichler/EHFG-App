@@ -6,6 +6,8 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @author patrick
@@ -21,21 +23,11 @@ public class Tweet {
 	private String hashtag;
 	private String formattedMesssage;
 
+    private boolean retweet = false;
+    private List<String> retweetedBy = new LinkedList<>();
+
 	@DBRef
 	private TwitterUser author;
-
-	public Tweet() {
-
-	}
-
-	public Tweet(String id, String message, LocalDateTime creationDate, String hashtag, String formattedMesssage, TwitterUser author) {
-		this.id = id;
-		this.message = message;
-		this.creationDate = creationDate;
-		this.hashtag = hashtag;
-		this.formattedMesssage = formattedMesssage;
-		this.author = author;
-	}
 
 	public String getId() {
 		return id;
@@ -85,7 +77,23 @@ public class Tweet {
 		this.formattedMesssage = formattedMesssage;
 	}
 
-	@Override
+    public List<String> getRetweetedBy() {
+        return retweetedBy;
+    }
+
+    public void addRetweet(String userName) {
+        retweetedBy.add(userName);
+    }
+
+    public boolean isRetweet() {
+        return retweet;
+    }
+
+    public void setRetweet(boolean retweet) {
+        this.retweet = retweet;
+    }
+
+    @Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
 	}

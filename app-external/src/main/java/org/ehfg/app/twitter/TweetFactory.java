@@ -26,6 +26,7 @@ final class TweetFactory {
 		result.setHashtag(hashtag);
 		result.setId(Long.toString(source.getId()));
 		result.setMessage(source.getUnmodifiedText());
+        result.setRetweet(source.isRetweet());
 		
 		final Map<String, UrlEntity> urlMap = createUrlMap(source.getEntities().getUrls());
 

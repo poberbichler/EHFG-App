@@ -4,6 +4,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import java.time.LocalDateTime;
+import java.util.Collection;
 
 /**
  * @author patrick
@@ -28,4 +29,10 @@ public interface TweetRepresentation {
 
 	@XmlElement(name = "timestamp")
 	LocalDateTime getTimestamp();
+
+    @XmlElement(name = "retweet")
+    boolean isRetweet();
+
+    @XmlElement(name = "retweetedBy")
+    Collection<String> getRetweetedBy();
 }

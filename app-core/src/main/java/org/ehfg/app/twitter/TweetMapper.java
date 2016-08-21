@@ -40,7 +40,7 @@ final class TweetMapper {
 
         // TODO: not an ideal solution, creationDate inside Tweet should be ZoneDateTime next year (?)
         final ZonedDateTime utcCreationDate = tweet.getCreationDate().atZone(ZoneId.systemDefault()).withZoneSameInstant(ZoneId.of("Europe/Vienna"));
-        return new TweetDTO(tweet.getId(), user.getFullName(), user.getNickName(), message, user.getProfileImage(), utcCreationDate.toLocalDateTime());
+        return new TweetDTO(tweet.getId(), user.getFullName(), user.getNickName(), message, user.getProfileImage(), utcCreationDate.toLocalDateTime(), tweet.isRetweet(), tweet.getRetweetedBy());
     }
 
 	private enum ShowFormattedMesage {

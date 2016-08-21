@@ -4,6 +4,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.ehfg.app.rest.TweetRepresentation;
 
 import java.time.LocalDateTime;
+import java.util.Collection;
 
 /**
  * @author patrick
@@ -16,17 +17,21 @@ public final class TweetDTO implements TweetRepresentation, Comparable<TweetDTO>
 	private final String message;
 	private final String profileImage;
 	private final LocalDateTime timestamp;
+    private final boolean retweet;
+    private final Collection<String> retweetedBy;
 
-	public TweetDTO(String id, String fullName, String nickName, String message, String profileImage, LocalDateTime timestamp) {
-		this.id = id;
-		this.fullName = fullName;
-		this.nickName = nickName;
-		this.message = message;
-		this.profileImage = profileImage;
-		this.timestamp = timestamp;
-	}
+    public TweetDTO(String id, String fullName, String nickName, String message, String profileImage, LocalDateTime timestamp, boolean retweet, Collection<String> retweetedBy) {
+        this.id = id;
+        this.fullName = fullName;
+        this.nickName = nickName;
+        this.message = message;
+        this.profileImage = profileImage;
+        this.timestamp = timestamp;
+        this.retweet = retweet;
+        this.retweetedBy = retweetedBy;
+    }
 
-	@Override
+    @Override
 	public String getId() {
 		return id;
 	}
@@ -56,7 +61,17 @@ public final class TweetDTO implements TweetRepresentation, Comparable<TweetDTO>
 		return timestamp;
 	}
 
-	@Override
+    @Override
+    public boolean isRetweet() {
+        return retweet;
+    }
+
+    @Override
+    public Collection<String> getRetweetedBy() {
+        return retweetedBy;
+    }
+
+    @Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
 	}

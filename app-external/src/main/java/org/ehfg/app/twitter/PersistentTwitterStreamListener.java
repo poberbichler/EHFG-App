@@ -39,6 +39,18 @@ class PersistentTwitterStreamListener implements StreamListener {
 		author.setNickName(user.getScreenName());
 		author.setProfileImage(user.getProfileImageUrl());
 
+        if (sourceTweet.isRetweet()) {
+            LOGGER.info("tweet got retweeted...");
+            org.ehfg.app.twitter.Tweet retweetedTweet = tweetRepository.findOne(Long.toString(sourceTweet.getRetweetedStatus().getId()));
+            if (retweetedTweet == null) {
+                LOGGER.warn("no tweet with id [{}] found that could have been retweeted", sourceTweet.getRetweetedStatus().getId());
+            } else {
+                LOGGER.info("tweet [{}] got retweeted", retweetedTweet.getId());
+                retweetedTweet.addRetweet(user.getScreenName());
+                tweetRepository.save(retweetedTweet);
+            }
+        }
+
 		twitterUserRepository.save(author);
 		tweetRepository.save(TweetFactory.create(sourceTweet, hashtag.getHashtagForDb(), author));
 	}
