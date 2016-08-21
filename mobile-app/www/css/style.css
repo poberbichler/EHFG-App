@@ -1,6 +1,6 @@
 a,
 span a:visited {
-    color: #6699cc;
+    color: #0F61A6;
 }
 
 span.hashtag {
@@ -41,7 +41,7 @@ div.item.item-avatar.tweet-body {
 .bar-stable.bar.bar-header,
 div.tabs-background-positive.tabs-light div.tabs,
 ion-header-bar.bar-stable.bar.bar-header.disable-user-behavior {
-    background-color: #6699cc;
+    background-color: #0F61A6;
     background-size: 0;
 }
 

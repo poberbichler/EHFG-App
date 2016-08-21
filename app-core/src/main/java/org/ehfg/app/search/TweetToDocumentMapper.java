@@ -6,7 +6,6 @@ import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
 import org.ehfg.app.twitter.TweetDTO;
 
-import java.io.StringReader;
 import java.time.LocalDateTime;
 
 /**
@@ -24,7 +23,7 @@ class TweetToDocumentMapper {
 	static Document from(TweetDTO tweet) {
 		Document doc = new Document();
 		doc.add(new StringField(Indexable.ID_FIELD, tweet.getId(), Field.Store.YES));
-		doc.add(new TextField(Indexable.CONTENT_FIELD, new StringReader(tweet.getMessage())));
+		doc.add(new TextField(Indexable.CONTENT_FIELD, tweet.getMessage(), Field.Store.YES));
 		doc.add(new StringField(Indexable.TYPE_FIELD, TYPE_TWEET, Field.Store.YES));
 		doc.add(new StringField(FIELD_AUTHOR_NAME, tweet.getFullName(), Field.Store.YES));
 		doc.add(new StringField(FIELD_AUTHOR_NICKNAME, tweet.getNickName(), Field.Store.YES));

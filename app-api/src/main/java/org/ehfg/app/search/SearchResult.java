@@ -32,25 +32,26 @@ public class SearchResult implements SearchResultRepresentation {
 		return this;
 	}
 
-	@Override
+    @Override
+    public boolean hasAnyResult() {
+        return items.values().stream()
+                .filter(c -> !c.isEmpty())
+                .findAny().isPresent()
+                && !tweets.isEmpty();
+    }
+
+    @Override
 	public Collection<SearchResultDataRepresentation> getResults() {
 		return Arrays.asList(
-				new SearchResultData(ResultType.LOCATION, items.get(ResultType.LOCATION)),
-				new SearchResultData(ResultType.SESSION, items.get(ResultType.SESSION)),
-				new SearchResultData(ResultType.SPEAKER, items.get(ResultType.SPEAKER)));
+				new SearchResultData(ResultType.LOCATION, items.getOrDefault(ResultType.LOCATION, Collections.emptyList())),
+				new SearchResultData(ResultType.SESSION, items.getOrDefault(ResultType.SESSION, Collections.emptyList())),
+				new SearchResultData(ResultType.SPEAKER, items.getOrDefault(ResultType.SPEAKER, Collections.emptyList())));
 	}
 
 	@Override
 	public Collection<TweetRepresentation> getTweets() {
 		return tweets;
 	}
-
-	public boolean hasValues() {
-		return items.values().stream()
-				.filter(c -> !c.isEmpty())
-				.findAny().isPresent();
-	}
-
 
 	private static class SearchResultData implements SearchResultDataRepresentation {
 		private final ResultType type;

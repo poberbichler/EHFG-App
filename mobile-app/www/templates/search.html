@@ -1,7 +1,7 @@
 <ion-view>
     <ion-nav-title>Results for "{{::searchCtrl.searchParam}}"</ion-nav-title>
     <ion-content class="has-header has-footer">
-        <ion-list ng-hide="::searchTrl.searchResults || searchCtrl.searchResult.tweets.length > 0">
+        <ion-list ng-hide="searchCtrl.searchResult.hasAnyResult">
             <ion-item class="item-divider">No results found</ion-item>
         </ion-list>
 

@@ -13,6 +13,9 @@ import java.util.Collection;
  */
 @XmlAccessorType(XmlAccessType.NONE)
 public interface SearchResultRepresentation {
+    @XmlElement(name = "hasAnyResult")
+    boolean hasAnyResult();
+
 	@XmlElement(name = "results")
 	Collection<SearchResultDataRepresentation> getResults();
 
