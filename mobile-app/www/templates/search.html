@@ -1,6 +1,10 @@
 <ion-view>
     <ion-nav-title>Results for "{{::searchCtrl.searchParam}}"</ion-nav-title>
     <ion-content class="has-header has-footer">
+        <ion-list ng-hide="::searchTrl.searchResults || searchCtrl.searchResult.tweets.length > 0">
+            <ion-item class="item-divider">No results found</ion-item>
+        </ion-list>
+
         <ion-list ng-show="::searchCtrl.searchResult">
             <div ng-repeat="result in ::searchCtrl.searchResult.results">
                 <ion-item class="item-divider" ng-show="::result.data.length > 0">{{::result.type | capitalize}}s</ion-item>
