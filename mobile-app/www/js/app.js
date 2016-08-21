@@ -36,7 +36,12 @@
 	        	'content': {
 	        		templateUrl: 'templates/twitter.html',
 	        		controller: 'TwitterCtrl as twitterCtrl'
-	            }
+	            },
+                
+                'sidebar-content': {
+                    'controller': 'TwitterCtrl as twitterCtrl',
+                    'templateUrl': 'templates/sidebar/twitter-sidebar.html'
+                } 
 	        }
 	    });
 
