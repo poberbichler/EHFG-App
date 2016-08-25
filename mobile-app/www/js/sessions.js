@@ -1,7 +1,10 @@
 (function() {
-	function SessionCtrl(sessionService) {
+	function SessionCtrl(sessionService, favouriteSessionService) {
         this.conferenceDays = sessionService.findAll();
         this.currentSessions = sessionService.findCurrentSessions();
+
+        this.favouriteSessions = favouriteSessionService.isFavouriteSessionsSelected();
+        this.favouriteSessionToggle = favouriteSessionService.toggleFavouriteSessions;
 	}
 	
 	function SessionDetailCtrl($scope, $stateParams, sessionService, favouriteSessionService, speakerService) {
@@ -40,7 +43,7 @@
 	}
 	
 	angular.module('ehfgApp.sessions', [])
-		.controller('SessionCtrl', ['SessionService', SessionCtrl])
+		.controller('SessionCtrl', ['SessionService', 'FavouriteSessionService', SessionCtrl])
 		.controller('SessionDetailCtrl', ['$scope', '$stateParams','SessionService', 'FavouriteSessionService', 'SpeakerService', SessionDetailCtrl])
 		.filter('favouriteSessions', ['FavouriteSessionService', FavouriteSessionFilter])
 		.factory('SessionResource', ['$resource', 'BASE_URL', SessionResource])

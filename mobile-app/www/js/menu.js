@@ -2,9 +2,6 @@
 	function MenuCtrl($ionicSideMenuDelegate, $ionicPopup, $state, $window, cacheFactory, favouriteSessionService) {
 		var vm = this;
 
-		vm.favouriteSessions = favouriteSessionService.isFavouriteSessionsSelected();
-		vm.favouriteSessionToggle = favouriteSessionService.toggleFavouriteSessions;
-
 		vm.openSideMenu = function() {
             $ionicSideMenuDelegate.toggleRight();
         }
@@ -37,5 +34,5 @@
 	}
 
 	angular.module('ehfgApp.menu', [])
-		.controller('MenuCtrl', ['$ionicSideMenuDelegate', '$ionicPopup', '$state', '$window', 'CacheFactory', 'FavouriteSessionService', MenuCtrl])
+		.controller('MenuCtrl', ['$ionicSideMenuDelegate', '$ionicPopup', '$state', '$window', 'CacheFactory', MenuCtrl])
 })();
