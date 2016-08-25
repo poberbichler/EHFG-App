@@ -7,4 +7,7 @@
 <div class="item item-avatar item-text-wrap tweet-body">
     <img ng-src="{{::tweet.profileImage}}" class="twitter-image">
     <p ng-bind-html="tweet.message | trustedHtml"></p>
+    <p ng-hide="showAllTweets.value">
+        RT: {{tweet.retweetedBy.join(', ')}}
+    </p>
 </div>

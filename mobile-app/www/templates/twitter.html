@@ -7,7 +7,7 @@
             </div>
 
             <div ng-repeat="tweet in twitterCtrl.tweetResource.tweets track by tweet.id">
-                <tweet tweet="tweet"></tweet>
+                <tweet tweet="tweet" show-all-tweets="twitterCtrl.showAllTweets" ng-show="twitterCtrl.showTweet(tweet)"></tweet>
             </div>
 
             <div class="item item-divider" ng-click="twitterCtrl.loadMoreTweets()" ng-show="twitterCtrl.tweetResource.morePages">

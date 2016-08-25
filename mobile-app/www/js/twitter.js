@@ -5,11 +5,23 @@
 		this.updateFeed = twitterService.updateFeed;
 
 		twitterService.init();
+
+        var vm = this;
+        this.showAllTweets = twitterService.showAllTweets;
+
+        this.showTweet = function(tweet) {
+            return twitterService.showAllTweets.value ? true : tweet.retweet === false;
+        }
 	}
-	
+
 	function TwitterService($rootScope, $ionicLoading, $ionicPopup, twitterResource) {
 		var tweetData = {};
-		
+
+        // we have to use an object in this case
+        var showAllTweets = {
+            value: true
+        };
+
 		function mapData(data) {
 			tweetData.morePages = data.morePages;
 			tweetData.currentPage = data.currentPage;
@@ -17,11 +29,12 @@
 		}
 
 		return {
-			init: init,
-			tweetData: tweetData,
-			updateFeed: updateFeed,
-			loadMoreTweets: loadMoreTweets
-		} 
+            init: init,
+            tweetData: tweetData,
+            updateFeed: updateFeed,
+            loadMoreTweets: loadMoreTweets,
+            showAllTweets: showAllTweets
+        }
 
 		function init() {
 			twitterResource.findInitial(function(result) {
@@ -29,7 +42,7 @@
 				tweetData.tweets = result.data;
 			});
 		}
-		
+
 		function loadMoreTweets() {
             $ionicLoading.show({
                 template: '<ion-spinner></ion-spinner><br />Loading...'
@@ -104,7 +117,7 @@
 		        var value = (difference/hour).toFixed(0);
 		        return "" + value + "h";
 		    }
-			
+
 			return $filter('date')(input, 'MMM d, HH:mm', 'UTC');
 		}
 	}
@@ -117,8 +130,11 @@
 
     function TweetDirective() {
         return {
+            scope: {
+                tweet: '=',
+                showAllTweets: '='
+            },
             restrict: 'E',
-            scope: '&',
             templateUrl: 'templates/tweet.html'
         }
     }

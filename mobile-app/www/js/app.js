@@ -74,7 +74,7 @@
 	            },
 
                 'sidebar-content': {
-                    controller: 'MenuCtrl as menuCtrl',
+                    controller: 'SessionCtrl as menuCtrl',
                     templateUrl: 'templates/sidebar/session-sidebar.html'
                 }
 	        }
