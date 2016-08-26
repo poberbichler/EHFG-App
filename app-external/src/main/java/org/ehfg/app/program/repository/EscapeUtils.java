@@ -27,11 +27,11 @@ final class EscapeUtils {
 
 	/**
 	 * utility function to removed unnecessary html from the input text <br>
-	 * first, every <code>&nbsp;</code> will be removed, and
+	 * first, every {@code &nbsp;} will be removed, and
 	 * {@link StringEscapeUtils#unescapeHtml4(String)} will be called<br>
 	 * after that, every image tag will be removed, as well as every empty
 	 * paragraph <br>
-	 * at last, every snippet of <code>style="font-familiy: ..."</code> will be
+	 * at last, every snippet of <code>style="font-family: ..."</code> will be
 	 * removed
 	 * 
 	 * @param inputText
@@ -51,7 +51,7 @@ final class EscapeUtils {
 		// remove different fonts
 		Elements select = document.select("*[style*=font-family]");
 		String styleAttribute = select.attr("style");
-		String replace = styleAttribute.replaceAll("font-family: '[A-Za-z0-9]*'", "");
+		String replace = styleAttribute.replaceAll("font-family:.*[A-Za-z0-9]*;?", "");
 		select.attr("style", replace);
 
 		document.select("p").stream()
