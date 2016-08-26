@@ -1,3 +1,12 @@
+@font-face {
+    font-family: sailec;
+    src: url('../fonts/Sailec.otf');
+}
+
+body, h1 {
+    font-family: sailec;
+}
+
 a,
 span a:visited {
     color: #0F61A6;
