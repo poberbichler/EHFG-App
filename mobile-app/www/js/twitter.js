@@ -3,24 +3,36 @@
 		this.tweetResource = twitterService.tweetData;
 		this.loadMoreTweets = twitterService.loadMoreTweets;
 		this.updateFeed = twitterService.updateFeed;
+        this.toggleShowAllTweets = twitterService.toggleShowAllTweets;
 
 		twitterService.init();
 
-        var vm = this;
         this.showAllTweets = twitterService.showAllTweets;
-
         this.showTweet = function(tweet) {
             return twitterService.showAllTweets.value ? true : tweet.retweet === false;
         }
 	}
 
-	function TwitterService($rootScope, $ionicLoading, $ionicPopup, twitterResource) {
+	function TwitterService($rootScope, $ionicLoading, $ionicPopup, cacheFactory, twitterResource) {
 		var tweetData = {};
+        var twitterCache = cacheFactory.get('twitter');
+        if (!twitterCache) {
+            twitterCache = new cacheFactory('twitter', {
+                deleteOnExpire: 'none'
+            });
+        }
 
         // we have to use an object in this case
         var showAllTweets = {
             value: true
         };
+
+        var showTweetsCache = twitterCache.get('showAllTweets');
+        if (showTweetsCache === undefined) {
+            twitterCache.put('showAllTweets', true);
+        }
+
+        showAllTweets.value = showTweetsCache;
 
 		function mapData(data) {
 			tweetData.morePages = data.morePages;
@@ -33,7 +45,8 @@
             tweetData: tweetData,
             updateFeed: updateFeed,
             loadMoreTweets: loadMoreTweets,
-            showAllTweets: showAllTweets
+            showAllTweets: showAllTweets,
+            toggleShowAllTweets: toggleShowAllTweets
         }
 
 		function init() {
@@ -42,6 +55,11 @@
 				tweetData.tweets = result.data;
 			});
 		}
+
+        function toggleShowAllTweets(newValue) {
+            console.log('putting into the showAllTweets cache:', newValue)
+            twitterCache.put('showAllTweets', newValue)
+        }
 
 		function loadMoreTweets() {
             $ionicLoading.show({
@@ -142,7 +160,7 @@
 	angular.module('ehfgApp.twitter', [])
 		.controller('TwitterCtrl', ['TwitterService', TwitterCtrl])
 		.factory('TwitterResource', ['$resource', 'BASE_URL', TwitterResource])
-		.factory('TwitterService', ['$rootScope', '$ionicLoading', '$ionicPopup', 'TwitterResource', TwitterService])
+		.factory('TwitterService', ['$rootScope', '$ionicLoading', '$ionicPopup', 'CacheFactory', 'TwitterResource', TwitterService])
 		.filter('twitterDateFilter', ['$filter', 'UtcTimeService', TwitterDateFilter])
 		.filter('trustedHtml', ['$sce', TrustedHtmlFilter])
         .directive('tweet', [TweetDirective])

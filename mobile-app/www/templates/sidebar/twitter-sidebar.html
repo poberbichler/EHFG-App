@@ -1,7 +1,7 @@
 <ion-item nav-clear class="item item-divider">Tweets</ion-item>
-<ion-radio menu-close ng-model="twitterCtrl.showAllTweets.value" ng-value="true">
+<ion-radio menu-close ng-model="twitterCtrl.showAllTweets.value" ng-value="true" ng-change="twitterCtrl.toggleShowAllTweets(true)">
     Show all Tweets
 </ion-radio>
-<ion-radio menu-close ng-model="twitterCtrl.showAllTweets.value" ng-value="false">
+<ion-radio menu-close ng-model="twitterCtrl.showAllTweets.value" ng-value="false" ng-change="twitterCtrl.toggleShowAllTweets(false)">
     Hide retweets
 </ion-radio>
