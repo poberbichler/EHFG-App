@@ -7,7 +7,12 @@
 <div class="item item-avatar item-text-wrap tweet-body">
     <img ng-src="{{::tweet.profileImage}}" class="twitter-image">
     <p ng-bind-html="tweet.message | trustedHtml"></p>
-    <p ng-hide="showAllTweets.value">
-        RT: {{tweet.retweetedBy.join(', ')}}
-    </p>
 </div>
+
+<p ng-hide="showAllTweets.value || tweet.retweetedBy.length === 0" class="retweets" style="padding-left: 16px; margin-bottom: 5px">
+    <span>
+        <i class="icon ion-arrow-return-left" style="font-size: 20px"></i>
+        <span style="padding: 0 5px 0 2px;">({{::tweet.retweetedBy.length}})</span>
+        <span>{{::tweet.retweetedBy.join(', ')}}</span>
+    </span>
+</p>

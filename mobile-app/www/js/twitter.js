@@ -27,12 +27,13 @@
             value: true
         };
 
-        var showTweetsCache = twitterCache.get('showAllTweets');
-        if (showTweetsCache === undefined) {
+        var showTweetsCacheValue = twitterCache.get('showAllTweets');
+        if (showTweetsCacheValue === undefined) {
             twitterCache.put('showAllTweets', true);
+            showTweetsCacheValue = true;
         }
 
-        showAllTweets.value = showTweetsCache;
+        showAllTweets.value = showTweetsCacheValue;
 
 		function mapData(data) {
 			tweetData.morePages = data.morePages;
@@ -57,7 +58,6 @@
 		}
 
         function toggleShowAllTweets(newValue) {
-            console.log('putting into the showAllTweets cache:', newValue)
             twitterCache.put('showAllTweets', newValue)
         }
 
