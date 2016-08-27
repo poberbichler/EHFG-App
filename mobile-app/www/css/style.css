@@ -124,3 +124,15 @@ img.logo {
 .toggle-small input:checked + .track .handle {
     background-color: rgb(235, 156, 31);
 }
+
+p.retweets {
+    padding-left: 16px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+p.retweets.expanded {
+    white-space: normal;
+}

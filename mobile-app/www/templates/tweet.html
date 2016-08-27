@@ -9,7 +9,7 @@
     <p ng-bind-html="tweet.message | trustedHtml"></p>
 </div>
 
-<p ng-hide="showAllTweets.value || tweet.retweetedBy.length === 0" class="retweets" style="padding-left: 16px; margin-bottom: 5px">
+<p ng-hide="showAllTweets.value || tweet.retweetedBy.length === 0" ng-class="{retweets: true, expanded: isExpanded}" ng-click="isExpanded = !isExpanded">
     <span>
         <i class="icon ion-arrow-return-left" style="font-size: 20px"></i>
         <span style="padding: 0 5px 0 2px;">({{::tweet.retweetedBy.length}})</span>

@@ -2,8 +2,10 @@ package org.ehfg.app.twitter;
 
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collectors;
 
 /**
@@ -40,7 +42,9 @@ final class TweetMapper {
 
         // TODO: not an ideal solution, creationDate inside Tweet should be ZoneDateTime next year (?)
         final ZonedDateTime utcCreationDate = tweet.getCreationDate().atZone(ZoneId.systemDefault()).withZoneSameInstant(ZoneId.of("Europe/Vienna"));
-        return new TweetDTO(tweet.getId(), user.getFullName(), user.getNickName(), message, user.getProfileImage(), utcCreationDate.toLocalDateTime(), tweet.isRetweet(), tweet.getRetweetedBy());
+        List<String> strings = Arrays.asList("asdf", "absdf", "asdkfjaskldf", "asdf", "asdf", "asdf", "asdf", "asdf", "asdf", "asdf", "asdf", "asdf");
+        return new TweetDTO(tweet.getId(), user.getFullName(), user.getNickName(), message, user.getProfileImage(), utcCreationDate.toLocalDateTime(), tweet.isRetweet(),
+                tweet.isRetweet() ? tweet.getRetweetedBy() : strings);
     }
 
 	private enum ShowFormattedMesage {
