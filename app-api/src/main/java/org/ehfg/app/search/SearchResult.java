@@ -37,7 +37,7 @@ public class SearchResult implements SearchResultRepresentation {
         return items.values().stream()
                 .filter(c -> !c.isEmpty())
                 .findAny().isPresent()
-                && !tweets.isEmpty();
+                || !tweets.isEmpty();
     }
 
     @Override
