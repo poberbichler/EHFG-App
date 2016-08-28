@@ -10,7 +10,8 @@ module.exports = function(grunt) {
                     'www/js/speakers.js',
                     'www/js/sessions.js',
                     'www/js/sessions-service.js',
-                    'www/js/map.js'
+                    'www/js/map.js',
+                    'www/js/search.js'
                 ],
 				dest: 'www/app.min.js'
 			}
