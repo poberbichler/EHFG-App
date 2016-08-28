@@ -1,6 +1,6 @@
 <ion-view>
 	<ion-nav-title ng-bind-html="::speakerDetailCtrl.speaker.fullName"></ion-nav-title>
-	<ion-content class="has-header has-footer padding">
+	<ion-content class="has-header has-footer padding list-at-bottom">
 	    <img class="speakerImage" speaker-image="speakerDetailCtrl.speaker.imageUrl"></img>
 	    <p ng-bind-html="::speakerDetailCtrl.speaker.description | trustedHtml"></p>
 	    

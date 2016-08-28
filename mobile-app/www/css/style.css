@@ -136,3 +136,7 @@ p.retweets {
 p.retweets.expanded {
     white-space: normal;
 }
+
+.has-footer.list-at-bottom {
+    bottom: 54px;
+}
