@@ -15,7 +15,7 @@
 
             <ion-item ng-show="searchCtrl.searchResult.tweets.length > 0" class="item-divider">Tweets</ion-item>
             <ion-item ng-repeat="tweet in ::searchCtrl.searchResult.tweets track by tweet.id">
-                <tweet tweet="tweet"></tweet>
+                <tweet tweet="tweet" show-all-tweets="{value: true}"></tweet>
             </ion-item>
         </ion-list>
     </ion-content>
