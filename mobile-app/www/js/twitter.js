@@ -29,8 +29,8 @@
 
         var showTweetsCacheValue = twitterCache.get('showAllTweets');
         if (showTweetsCacheValue === undefined) {
-            twitterCache.put('showAllTweets', true);
-            showTweetsCacheValue = true;
+            twitterCache.put('showAllTweets', false);
+            showTweetsCacheValue = false;
         }
 
         showAllTweets.value = showTweetsCacheValue;
