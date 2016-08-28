@@ -85,7 +85,7 @@
 
     function UiMapAsyncLoaderCallback(uiGmapGoogleMapApiProvider) {
         uiGmapGoogleMapApiProvider.configure({
-            v: '3.20',
+            v: '3.24',
             libraries: 'weather,geometry,visualization'
         });
     }
@@ -93,5 +93,5 @@
 	angular.module('ehfgApp.map', ['uiGmapgoogle-maps'])
 		.controller('MapCtrl', ['$scope', 'MapService', 'points', 'highlightLocation', MapCtrl])
 		.factory('MapService', ['$resource', 'BASE_URL', MapService])
-        .config(UiMapAsyncLoaderCallback)
+        .config(['uiGmapGoogleMapApiProvider', UiMapAsyncLoaderCallback])
 })();
