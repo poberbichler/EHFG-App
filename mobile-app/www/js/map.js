@@ -61,11 +61,11 @@
 			points: new $resource(BASE_URL + '/points', {}, {
                 findAll: {method: 'GET', isArray: true, transformResponse: function(rawData) {
                     var data = angular.fromJson(rawData);
-                    for (var i in data) {
-                        data[i].icon = getMarkerImage(data[i]);
-                        data[i].orginalIcon = getMarkerImage(data[i]);
-                        data[i].markerOptions = { visible: true };
-                    }
+                    angular.forEach(data, function(value) {
+                        value.icon = getMarkerImage(value);
+                        value.orginalIcon = getMarkerImage(value);
+                        value.markerOptions = { visible: true, label: value.category.name[0] };
+                    });
 
                     return data;
                 }}
@@ -74,9 +74,10 @@
             categories: new $resource(BASE_URL + '/mapcategories', {}, {
                 findAll: {method: 'GET', isArray: true, transformResponse: function(rawData) {
                     var data = angular.fromJson(rawData);
-                    for (var i in data) {
-                        data[i].selected = true;
-                    }
+                    angular.forEach(data, function(value) {
+                        value.selected = true;
+                    });
+
                     return data;
                 }}
             })
