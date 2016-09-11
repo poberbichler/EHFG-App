@@ -54,8 +54,8 @@
         }
 
 		return {
-			locations: new $resource(BASE_URL + '/locations/:name', {}, {
-                findByName: {method: 'GET', params: {name: '@name'}}
+			locations: new $resource(BASE_URL + '/locations/:name', {name: '@name'}, {
+                findByName: {method: 'GET'}
             }),
 
 			points: new $resource(BASE_URL + '/points', {}, {
