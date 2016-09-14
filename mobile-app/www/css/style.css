@@ -96,6 +96,15 @@ img.logo {
     height: 35px;
 }
 
+.toggle input:checked + .track {
+    border-color: rgb(15, 97, 166);
+    background-color: rgba(15, 97, 166, 0.5);
+}
+
+.toggle-small input:checked + .track .handle {
+    background-color: rgb(15, 97, 166);
+}
+
 .toggle.toggle-calm input:checked + .track {
     border-color: rgb(28, 138, 56);
     background-color: rgba(28, 138, 56, 0.5);
@@ -106,20 +115,11 @@ img.logo {
 }
 
 .toggle.toggle-assertive input:checked + .track {
-    border-color: rgb(15, 97, 166);
-    background-color: rgba(15, 97, 166, 0.5);
-}
-
-.toggle-small .toggle-assertive input:checked + .track .handle {
-    background-color: rgb(15, 97, 166);
-}
-
-.toggle input:checked + .track {
     border-color: rgb(235, 156, 31);
     background-color: rgba(235, 156, 31, 0.5);
 }
 
-.toggle-small input:checked + .track .handle {
+.toggle-small .toggle-assertive input:checked + .track .handle {
     background-color: rgb(235, 156, 31);
 }
 

@@ -64,7 +64,7 @@
                     angular.forEach(data, function(value) {
                         value.icon = getMarkerImage(value);
                         value.orginalIcon = getMarkerImage(value);
-                        value.markerOptions = { visible: true, label: value.category.name[0] };
+                        value.markerOptions = { visible: true };
                     });
 
                     return data;
