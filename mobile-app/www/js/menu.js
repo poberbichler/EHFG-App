@@ -31,6 +31,12 @@
                 $window.location.reload();
             }, 250);
 		}
+
+		vm.evaluateKey = function($event) {
+			if ($event.keyCode === 13) {
+				vm.search();
+			}
+		}
 	}
 
 	angular.module('ehfgApp.menu', [])
