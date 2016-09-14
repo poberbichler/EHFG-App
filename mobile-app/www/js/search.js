@@ -15,7 +15,7 @@
     }
 
     angular.module('ehfgApp.search', [])
-        .controller('SearchCtrl', SearchCtrl)
+        .controller('SearchCtrl', ['$stateParams', 'searchResult', SearchCtrl])
         .factory('SearchResource', ['$resource', 'BASE_URL', SearchResource])
         .filter('capitalize', ['$filter', CapitalizeFilter])
 })();
