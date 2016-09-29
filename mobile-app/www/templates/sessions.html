@@ -9,7 +9,7 @@
             </div>
 
             <div ng-repeat="day in ::sessionCtrl.conferenceDays">
-                <ion-item class="item item-divider">
+                <ion-item id="{{::day.description}}" class="item item-divider">
                     {{::day.description}}
                 </ion-item>
 

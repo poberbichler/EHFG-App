@@ -1,10 +1,18 @@
 (function() {
-	function SessionCtrl(sessionService, favouriteSessionService) {
+	function SessionCtrl($location, $ionicScrollDelegate, $filter, sessionService, favouriteSessionService) {
         this.conferenceDays = sessionService.findAll();
         this.currentSessions = sessionService.findCurrentSessions();
 
         this.favouriteSessions = favouriteSessionService.isFavouriteSessionsSelected();
         this.favouriteSessionToggle = favouriteSessionService.toggleFavouriteSessions;
+
+        var currentDayString = $filter('date')(new Date(), 'yyyy-MM-dd');
+        angular.forEach(this.conferenceDays, function(value, key) {
+            if (key === currentDayString) {
+                $location.hash(value.description);
+                $ionicScrollDelegate.anchorScroll(true);
+            }
+        });
 	}
 	
 	function SessionDetailCtrl($scope, $stateParams, sessionService, favouriteSessionService, speakerService) {
@@ -43,7 +51,7 @@
 	}
 	
 	angular.module('ehfgApp.sessions', [])
-		.controller('SessionCtrl', ['SessionService', 'FavouriteSessionService', SessionCtrl])
+		.controller('SessionCtrl', ['$location', '$ionicScrollDelegate', '$filter', 'SessionService', 'FavouriteSessionService', SessionCtrl])
 		.controller('SessionDetailCtrl', ['$scope', '$stateParams','SessionService', 'FavouriteSessionService', 'SpeakerService', SessionDetailCtrl])
 		.filter('favouriteSessions', ['FavouriteSessionService', FavouriteSessionFilter])
 		.factory('SessionResource', ['$resource', 'BASE_URL', SessionResource])
